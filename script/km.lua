@@ -649,7 +649,7 @@ function km_createMenu2(menu, x, y)
 		end
 	end
 	menu2.item = menu
-	menu2.width = (width + 1) * CC.FontSize
+	menu2.width = (width + 1) * CC.FontSize * 2 / 3
 	menu2.height = 8 + CC.FontSize * num * 1.5
 	menu2.x = x or CC.ScreenW2 - menu2.width / 2
 	menu2.y = y or CC.ScreenH2 - menu2.height / 2
