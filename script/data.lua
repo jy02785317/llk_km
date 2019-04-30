@@ -77,7 +77,7 @@ loadTXT = function(t, file)
             end
             idx = idx + 1
         end
-        local docId = doc['±‡∫≈'] or doc.id or (#t + 1)
+        local docId = doc['ÁºñÂè∑'] or doc.id or (#t + 1)
         -- print(docId, doc)
         t[docId] = doc
     end

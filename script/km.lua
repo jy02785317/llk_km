@@ -208,8 +208,8 @@ function km_uiLogic()
 end
 function km_operate()
 	local ev = KM.event
-	if ev.name == 'Ñ¡ÔñÈËÎï¿¨Æ¬' then
-		km_playScenario('Ñ¡ÔñÈËÎï¿¨Æ¬', ev.pid)
+	if ev.name == 'é€‰æ‹©äººç‰©å¡ç‰‡' then
+		km_playScenario('é€‰æ‹©äººç‰©å¡ç‰‡', ev.pid)
 	end
 	-- while true do
 	-- 	km_waitFrame(1)
@@ -258,8 +258,8 @@ function km_insertRole(pid, x, y)
 		-- y = sy,
 		bgpic = 1051,
 		border = 1202,
-		head = role['Í·Ïñ'] or 0,
-		name = '[W]' .. role['Ãû³Æ'] or '',
+		head = role['å¤´åƒ'] or 0,
+		name = '[W]' .. role['åç§°'] or '',
 		enable = true,
 		on = false,
 		ontime = 128,
@@ -281,7 +281,7 @@ function km_notice(text)
 	km_waitFrame(4)
 	notice.text = text
 	notice.show = true
-	km_waitEvent('Í¨Öª½áÊø')
+	km_waitEvent('é€šçŸ¥ç»“æŸ')
 	notice.show = false
 	km_waitFrame(4)
 end
@@ -290,18 +290,18 @@ function km_mutliText(text)
 	km_waitFrame(4)
 	multiText.text = text
 	multiText.show = true
-	km_waitEvent('¶àĞĞÎÄ±¾½áÊø')
+	km_waitEvent('å¤šè¡Œæ–‡æœ¬ç»“æŸ')
 	multiText.show = false
 	km_waitFrame(4)
 end
 function km_talk(pid, text)
 	local role = KM.role[pid] or {}
 	local talk = KM.UI.talk
-	talk.head = role['Í·Ïñ'] or 0
-	talk.name = role['Ãû³Æ'] or ''
+	talk.head = role['å¤´åƒ'] or 0
+	talk.name = role['åç§°'] or ''
 	talk.text = text
 	talk.show = true
-	km_waitEvent('¶Ô»°½áÊø')
+	km_waitEvent('å¯¹è¯ç»“æŸ')
 	talk.show = false
 	km_waitFrame()
 end
@@ -309,7 +309,7 @@ function km_confirm()
 	local ui = KM.UI
 	ui.talk.show = true
 	ui.confirm.show = true
-	km_waitEvent('È·ÈÏ½áÊø')
+	km_waitEvent('ç¡®è®¤ç»“æŸ')
 	ui.confirm.show = false
 	ui.talk.show = false
 	km_waitFrame()
@@ -320,7 +320,7 @@ function km_alert(text)
 	km_waitFrame(4)
 	alert.text = text
 	alert.show = true
-	km_waitEvent('¾¯¸æ½áÊø')
+	km_waitEvent('è­¦å‘Šç»“æŸ')
 	alert.show = false
 	km_waitFrame(4)
 end
@@ -351,14 +351,14 @@ function km_select(str, x, y)
 		v.y2 = v.y + 18
 	end
 	menu.show = true
-	km_waitEvent('Ñ¡Ôñ½áÊø')
+	km_waitEvent('é€‰æ‹©ç»“æŸ')
 	menu.show = false
 	km_waitFrame()
 	return KM.event.selection
 end
 function km_showRoleStatus(pid)
 	KM.UI.showRoleStatus = pid
-	km_waitEvent('¹Ø±ÕÈËÎïÏêÇé')
+	km_waitEvent('å…³é—­äººç‰©è¯¦æƒ…')
 	KM.UI.showRoleStatus = 0
 end
 --------------
@@ -368,32 +368,32 @@ function km_initUI()
 		mode = 0,	-- 0: auto mode, 1: manual mode, 2: battle mode
 		frame = 0,
 		frameT = 0,
-		scene = {	-- ³¡¾°
+		scene = {	-- åœºæ™¯
 			map = 0,
 			showRole = false,
-			role = {},	-- ÈËÎï¿¨Æ¬
+			role = {},	-- äººç‰©å¡ç‰‡
 		},
-		notice = {	-- ¾ÓÖĞÏÔÊ¾µÄÌáÊ¾ÎÄ±¾
+		notice = {	-- å±…ä¸­æ˜¾ç¤ºçš„æç¤ºæ–‡æœ¬
 			show = false,
 			text = '',
 		},
-		multiText = {	-- ¶àĞĞĞÅÏ¢
+		multiText = {	-- å¤šè¡Œä¿¡æ¯
 			show = false,
 			text = '',
 		},
-		talk = {	-- ¾çÇé¶Ô»°
+		talk = {	-- å‰§æƒ…å¯¹è¯
 			show = false,
 			head = 0,
 			name = '',
 			text = '',
 		},
-		menu = {	-- ²Ëµ¥
+		menu = {	-- èœå•
 			show = false,
 			x = 0,
 			y = 0,
 			item = {},
 		},
-		menu2 = {	-- ²Ëµ¥ ÁíÒ»ÖÖ·ç¸ñ
+		menu2 = {	-- èœå• å¦ä¸€ç§é£æ ¼
 			show = false,
 			x = 0,
 			y = 0,
@@ -401,7 +401,7 @@ function km_initUI()
 			height = 0,
 			item = {},
 		},
-		confirm = {	-- ÊÇ/·ñ È·ÈÏ
+		confirm = {	-- æ˜¯/å¦ ç¡®è®¤
 			show = false,
 		},
 		alert = {
@@ -441,7 +441,7 @@ function km_drawRoleCard(card, x, y, isActive)
 		if card.enable then
 			PlayWavE(0)
 			KM.event.category = 1
-			KM.event.name = 'Ñ¡ÔñÈËÎï¿¨Æ¬'
+			KM.event.name = 'é€‰æ‹©äººç‰©å¡ç‰‡'
 			KM.event.pid = card.id
 		else
 			PlayWavE(2)
@@ -480,7 +480,7 @@ function km_drawNotice(text, isActive)
 		return
 	end
 	if MOUSE.CLICK() then
-		KM.event.name = 'Í¨Öª½áÊø'
+		KM.event.name = 'é€šçŸ¥ç»“æŸ'
 	end
 end
 function km_drawMutliText(text, isActive)
@@ -491,14 +491,14 @@ function km_drawMutliText(text, isActive)
 		return
 	end
 	if MOUSE.CLICK() then
-		KM.event.name = '¶àĞĞÎÄ±¾½áÊø'
+		KM.event.name = 'å¤šè¡Œæ–‡æœ¬ç»“æŸ'
 	end
 end
 function km_drawTalk(head, name, text, isActive)
 	local mx, my = CC.ScreenW2 - 140, CC.ScreenH - 160
 	if head > 0 then
 		-- lib.PicLoadCache(2, head * 2, mx, CC.ScreenH2, 0)
-		if KM.UI.scene.role[1] and KM.role[KM.UI.scene.role[1].id]['Í·Ïñ'] == head then
+		if KM.UI.scene.role[1] and KM.role[KM.UI.scene.role[1].id]['å¤´åƒ'] == head then
 			lib.PicLoadCache(2, head * 2, CC.ScreenW2 + 96, CC.ScreenH2, 0)
 		else
 			lib.PicLoadCache(2, head * 2, CC.ScreenW2 - 96, CC.ScreenH2, 0)
@@ -512,7 +512,7 @@ function km_drawTalk(head, name, text, isActive)
 		return
 	end
 	if MOUSE.CLICK() then
-		KM.event.name = '¶Ô»°½áÊø'
+		KM.event.name = 'å¯¹è¯ç»“æŸ'
 	end
 end
 function km_drawConfirm(isActive)
@@ -525,7 +525,7 @@ function km_drawConfirm(isActive)
 	for i = 0, 1 do
 		if MOUSE.CLICK(x, y, x + 66, y + 44) then
 			lib.PicLoadCache(4, (pic + 2) * 2, x, y, 1)
-			KM.event.name = 'È·ÈÏ½áÊø'
+			KM.event.name = 'ç¡®è®¤ç»“æŸ'
 			KM.event.selection = i
 		elseif MOUSE.HOLD(x, y, x + 66, y + 44) then
 			lib.PicLoadCache(4, (pic + 2) * 2, x, y, 1)
@@ -549,7 +549,7 @@ function km_drawAlert(text, isActive)
 		return
 	end
 	if MOUSE.CLICK() then
-		KM.event.name = '¾¯¸æ½áÊø'
+		KM.event.name = 'è­¦å‘Šç»“æŸ'
 	end
 end
 function km_drawMenu(menu, isActive)
@@ -582,7 +582,7 @@ function km_drawMenu(menu, isActive)
 		if v.enable then
 			if MOUSE.CLICK(v.x1, v.y1, v.x2, v.y2) then
 				PlayWavE(0)
-				KM.event.name = 'Ñ¡Ôñ½áÊø'
+				KM.event.name = 'é€‰æ‹©ç»“æŸ'
 				KM.event.selection = k
 			elseif MOUSE.HOLD(v.x1, v.y1, v.x2, v.y2) then
 				menu.current = k
@@ -613,7 +613,7 @@ function km_drawMenu2(menu, isActive)
 					menu.current = i
 					if v.enable then
 						PlayWavE(0)
-						KM.event.name = v.name or 'Ñ¡Ôñ½áÊø'
+						KM.event.name = v.name or 'é€‰æ‹©ç»“æŸ'
 						KM.event.selection = i
 					else
 						PlayWavE(1)
@@ -683,66 +683,66 @@ function km_drawRoleStatus(pid)
 	y = y + 32
 	--
 	lib.PicLoadCache(4, 79 * 2, x, y, 1)
-	DrawStringEnhance(x + 128, y + 6, 'ÊôĞÔ', M_White, CC.FontSize, 0.5)
+	DrawStringEnhance(x + 128, y + 6, 'å±æ€§', M_White, CC.FontSize, 0.5)
 	y = y + CC.FontSize + 16
-	DrawStringEnhance(x, y, string.format('±øÁ¦[B][w]%12d', role.HP), C_Name, CC.FontSize, 0, 0)
+	DrawStringEnhance(x, y, string.format('å…µåŠ›[B][w]%12d', role.HP), C_Name, CC.FontSize, 0, 0)
 	DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
 	y = y + CC.FontSize
 	drawbar(x, y, role.HP, math.max(role.maxHP, 3000))
 	y = y + 8
-	DrawStringEnhance(x, y, string.format('²ßÂÔ[B][w]%12d', role.SP), C_Name, CC.FontSize, 0, 0)
+	DrawStringEnhance(x, y, string.format('ç­–ç•¥[B][w]%12d', role.SP), C_Name, CC.FontSize, 0, 0)
 	DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
 	y = y + CC.FontSize
 	drawbar(x, y, role.SP, math.max(role.maxSP, 100))
 	y = y + 8
-	DrawStringEnhance(x, y, string.format("¹¥»÷[B][w]%12d", role.atk), C_Name, CC.FontSize)
+	DrawStringEnhance(x, y, string.format("æ”»å‡»[B][w]%12d", role.atk), C_Name, CC.FontSize)
 	y = y + CC.FontSize
 	drawbar(x, y, role.atk, 1200)
 	y = y + 8
-	DrawStringEnhance(x, y, string.format("·ÀÓù[B][w]%12d", role.def), C_Name, CC.FontSize)
+	DrawStringEnhance(x, y, string.format("é˜²å¾¡[B][w]%12d", role.def), C_Name, CC.FontSize)
 	y = y + CC.FontSize
 	drawbar(x, y, role.def, 1200)
 	y = y + 8
-	DrawStringEnhance(x, y, string.format("¾«Éñ[B][w]%12d", role.mag), C_Name, CC.FontSize)
+	DrawStringEnhance(x, y, string.format("ç²¾ç¥[B][w]%12d", role.mag), C_Name, CC.FontSize)
 	y = y + CC.FontSize
 	drawbar(x, y, role.mag, 1200)
 	y = y + 8
-	DrawStringEnhance(x, y, string.format("ÒÆ¶¯[B][w]%12d", role.mov), C_Name, CC.FontSize)
+	DrawStringEnhance(x, y, string.format("ç§»åŠ¨[B][w]%12d", role.mov), C_Name, CC.FontSize)
 	y = y + CC.FontSize
 	drawbar(x, y, role.mov, 9)
 	y = y + 8
-	DrawStringEnhance(x, y, string.format("ËÙ¶È[B][w]%12d", role.spd), C_Name, CC.FontSize)
+	DrawStringEnhance(x, y, string.format("é€Ÿåº¦[B][w]%12d", role.spd), C_Name, CC.FontSize)
 	y = y + CC.FontSize
 	drawbar(x, y, role.spd, 15)
 	y = y + 8
-	DrawStringEnhance(x, y, string.format('¾­Ñé[B][w]%12d', role['¾­Ñé']), C_Name, CC.FontSize, 0, 0)
+	DrawStringEnhance(x, y, string.format('ç»éªŒ[B][w]%12d', role['ç»éªŒ']), C_Name, CC.FontSize, 0, 0)
 	DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.nextExp), M_White, CC.FontSizeS, 0, 0)
 	y = y + CC.FontSize
-	drawbar(x, y, role['¾­Ñé'], role.nextExp)
+	drawbar(x, y, role['ç»éªŒ'], role.nextExp)
 	y = y + 8
 	--
 	y = 96
 	x = x + 300
 	lib.PicLoadCache(4, 79 * 2, x, y, 1)
-	DrawStringEnhance(x + 128, y + 6, '¼¼ÄÜ', M_White, CC.FontSize, 0.5)
+	DrawStringEnhance(x + 128, y + 6, 'æŠ€èƒ½', M_White, CC.FontSize, 0.5)
 
 	
 	y = 300
 	lib.PicLoadCache(4, 79 * 2, x, y, 1)
-	DrawStringEnhance(x + 128, y + 6, '×°±¸', M_White, CC.FontSize, 0.5)
+	DrawStringEnhance(x + 128, y + 6, 'è£…å¤‡', M_White, CC.FontSize, 0.5)
 
 	x = x + 240
 	y = 416
-	lib.PicLoadCache(2, (role['Í·Ïñ']) * 2, x, y - 360, 1, nil, nil, 320)
+	lib.PicLoadCache(2, (role['å¤´åƒ']) * 2, x, y - 360, 1, nil, nil, 320)
 	LoadPicEnhance(115, x, y, 288, 128);
 	x = x + 8
 	y = y + 8
-	DrawStringEnhance(x + CC.FontSize * 2, y, '[B]' .. role['Ãû³Æ'] .. '', M_White, CC.FontSize, 0.5, 0)
-	DrawStringEnhance(x + 140, y + 4, '[B]¼¶', M_White, CC.FontSizeM, 1, 0)
-	DrawStringEnhance(x + 120, y, '[B]' .. role['µÈ¼¶'], M_White, CC.FontSize, 1, 0)
-	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[role['±øÖÖ']]['Ãû³Æ'], M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x + CC.FontSize * 2, y, '[B]' .. role['åç§°'] .. '', M_White, CC.FontSize, 0.5, 0)
+	DrawStringEnhance(x + 140, y + 4, '[B]çº§', M_White, CC.FontSizeM, 1, 0)
+	DrawStringEnhance(x + 120, y, '[B]' .. role['ç­‰çº§'], M_White, CC.FontSize, 1, 0)
+	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[role['å…µç§']]['åç§°'], M_White, CC.FontSizeM, 0, 0)
 	y = y + CC.FontSize
-	for i, v in ipairs({"ÎäÁ¦", "Í³Óù", "ÖÇÁ¦"}) do
+	for i, v in ipairs({"æ­¦åŠ›", "ç»Ÿå¾¡", "æ™ºåŠ›"}) do
 		DrawStringEnhance(x, y, string.format("%s[B][w]%12d", v, role[v]), C_Name, CC.FontSizeM)
 		y = y + CC.FontSizeM
 		drawbar(x, y, role[v])
@@ -756,7 +756,7 @@ function km_drawRoleStatus(pid)
 	lib.PicLoadCache(4, 10 * 2, x - 50, y - 8, 1)
 	if MOUSE.CLICK(x, y, x + 64, y + 48) then
 		lib.PicLoadCache(4, 20 * 2, x, y, 1)
-		KM.event.name = '¹Ø±ÕÈËÎïÏêÇé'
+		KM.event.name = 'å…³é—­äººç‰©è¯¦æƒ…'
 	elseif MOUSE.HOLD(x, y, x + 64, y + 48) then
 		lib.PicLoadCache(4, 20 * 2, x, y, 1)
 	elseif MOUSE.IN(x, y, x + 64, y + 48) then
@@ -768,23 +768,23 @@ function km_drawRoleStatus(pid)
 end
 function km_drawSceneUI()
 	local role = KM.role[1] or {}
-	local head = role['Í·Ïñ'] or 0
+	local head = role['å¤´åƒ'] or 0
 	local x, y = CC.ScreenW2, CC.ScreenH - 16
 	lib.PicLoadCache(4, 6 * 2, x, y, 0);
 	lib.PicLoadCache(2, (head + 6000) * 2, x - 350, y - 32);
 	-- if gs.ontime~=128 then
-	-- 	lib.PicLoadCache(2,(p["ÈİÃ²"]+6000)*2,x,y,2+8,math.abs(gs.ontime-128));
+	-- 	lib.PicLoadCache(2,(p["å®¹è²Œ"]+6000)*2,x,y,2+8,math.abs(gs.ontime-128));
 	-- end
 	-- x=x+128;y=y+18;
 	-- DrawStringEnhance(x,y,chinese_year_month(),C_Name,24,0.5);
 	-- x=x+120;
-	-- DrawStringEnhance(x,y,JY.Str[9170+p["Éí·İ"]],C_Name,24,0.5);
+	-- DrawStringEnhance(x,y,JY.Str[9170+p["èº«ä»½"]],C_Name,24,0.5);
 	-- x=x+180;
-	-- DrawStringEnhance(x,y,"×Ê½ğ",C_Name,24,1);
+	-- DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,24,1);
 	-- DrawStringEnhance(x,y," ".."500",C_WHITE,24);
 	-- x=x+180;
-	-- DrawStringEnhance(x,y,"ĞĞ¶¯Á¦",C_Name,24,1);
-	-- DrawStringEnhance(x,y," "..JY.Base["ĞĞ¶¯Á¦"],C_WHITE,24);
+	-- DrawStringEnhance(x,y,"è¡ŒåŠ¨åŠ›",C_Name,24,1);
+	-- DrawStringEnhance(x,y," "..JY.Base["è¡ŒåŠ¨åŠ›"],C_WHITE,24);
 end
 --------------
 -- local dt, w, h = DrawStringEnhanceInit(str,C_BLACK,size);
@@ -793,23 +793,23 @@ function creatCard(x, y, kind, id)
 	local width, height=112, 156;
 	local card={
 				x1=x,y1=y,x2=x+width,y2=y+height,w=width,h=height,
-				id=id,kind=kind,	--0 Éí·İ¿¨, 1 Îä½«¿¨, 2 »ù±¾¿¨,
-				pt=0,col=0,cid=0,	--µãÊı/»¨É«/¿¨Æ¬ÀàĞÍ(ÊÖÅÆ)
+				id=id,kind=kind,	--0 èº«ä»½å¡, 1 æ­¦å°†å¡, 2 åŸºæœ¬å¡,
+				pt=0,col=0,cid=0,	--ç‚¹æ•°/èŠ±è‰²/å¡ç‰‡ç±»å‹(æ‰‹ç‰Œ)
 				pic=1300,bgpic=1061,fpic=1201,hpic=1111,txt="",
 				hide=false,enable=true,on=false,sel=false,ontime=128,
 				}
 	-- if kind==0 then
-	-- 	local str={[0]="[B]Ö÷[n]¹«","[B]ÖÒ[n]³¼","[B]·´[n]Ôô","[B]ÄÚ[n]¼é"};
+	-- 	local str={[0]="[B]ä¸»[n]å…¬","[B]å¿ [n]è‡£","[B]å[n]è´¼","[B]å†…[n]å¥¸"};
 	-- 	card.txt=str[id];
 	-- elseif kind==1 then
-	-- 	card.txt=SHA.Person[id]["Ãû³Æ"];
+	-- 	card.txt=SHA.Person[id]["åç§°"];
 	-- 	card.pic=430+id;
 	-- 	card.fpic=1202;
 	-- elseif kind==2 then
-	-- 	card.txt=SHA.Card[id]["Ãû³Æ"];
-	-- 	card.pt=SHA.Card[id]["µãÊı"];
-	-- 	card.col=SHA.Card[id]["»¨É«"];
-	-- 	card.cid=SHA.Card[id]["ÀàĞÍ"];
+	-- 	card.txt=SHA.Card[id]["åç§°"];
+	-- 	card.pt=SHA.Card[id]["ç‚¹æ•°"];
+	-- 	card.col=SHA.Card[id]["èŠ±è‰²"];
+	-- 	card.cid=SHA.Card[id]["ç±»å‹"];
 	-- 	if card.cid==21 then
 	-- 		card.pic=1316;
 	-- 	elseif card.cid==31 then
@@ -819,7 +819,7 @@ function creatCard(x, y, kind, id)
 	-- 	end
     -- end
     card.kind = 1
-    card.txt = 'Öî¸ğÁÁ'
+    card.txt = 'è¯¸è‘›äº®'
     card.pic=430+id;
     card.fpic=1202;
 	return card;
@@ -995,7 +995,7 @@ function km_loadTXT(file)
                 doc[name] = v
             end
         end
-        local docId = doc['±àºÅ'] or doc.id or (#t + 1)
+        local docId = doc['ç¼–å·'] or doc.id or (#t + 1)
         -- print(docId, doc)
         t[docId] = doc
     end
@@ -1003,6 +1003,12 @@ function km_loadTXT(file)
 	return t
 end
 function km_initStaticData()
+	CC.Font = {}
+	local font = km_loadTXT(CONFIG.DataPath .. "font.txt")
+	for i, v in ipairs(font) do
+		CC.Font[v['æ–‡å­—']] = v['è´´å›¾']
+	end
+	CC.Font[' '] = 13624
 	KM.role = km_loadTXT(CC.RoleTxtFilename)
 	KM.city = km_loadTXT(CC.CityTxtFilename)
 	KM.unit = km_loadTXT(CC.UnitTxtFilename)
@@ -1012,19 +1018,19 @@ function km_initStaticData()
 			local t = {}
 			for kk, vv in pairs(KM.terrain) do
 				t[kk] = {
-					cost = vv['ÒÆ¶¯ÏûºÄ'],
-					def = vv['·ÀÓù'],
+					cost = vv['ç§»åŠ¨æ¶ˆè€—'],
+					def = vv['é˜²å¾¡'],
 				}
 			end
 			v.terrain = t
 		end
 		local unit_terrain = km_loadTXT(CC.UnitTerrainTxtFilename)
 		for k, v in pairs(unit_terrain) do
-			local tid = v['µØĞÎ']
-			local cost = v['ÒÆ¶¯ÏûºÄ']
-			local def = v['·ÀÓù']
+			local tid = v['åœ°å½¢']
+			local cost = v['ç§»åŠ¨æ¶ˆè€—']
+			local def = v['é˜²å¾¡']
 			if tid > 0 then
-				local num, units = Split(v['±øÖÖ'], ',')
+				local num, units = Split(v['å…µç§'], ',')
 				for i, vv in ipairs(units) do
 					local uid = tonumber(trim(vv))
 					local unit = KM.unit[uid]

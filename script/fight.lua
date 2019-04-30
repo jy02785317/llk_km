@@ -15,11 +15,11 @@ function WarFight(name1,name2)
 	return fight(id1,id2)
 end
 function FightMenu()
-	local id1=ShowPersonList(GetAllList(),"ÎäÁ¦");
+	local id1=ShowPersonList(GetAllList(),"æ­¦åŠ›");
 	if id1<=-1 then
 		return;
 	end
-	local id2=ShowPersonList(GetAllList(id1),"ÎäÁ¦");
+	local id2=ShowPersonList(GetAllList(id1),"æ­¦åŠ›");
 	if id2<=-1 then
 		return;
 	end
@@ -71,65 +71,65 @@ function fight_sub(id1,id2)
 	local card={[1]={},[2]={}};
 	local card_num={};
 	local str={
-					[1]={	"%sÔÚ´Ë£¬*À´½«ËÙËÙÍ¨ÃûÊÜËÀ£¡",						"ÎÒÄË%sÊÇÒ²£¡*È«Á¦Ò»Õ½°É£¡",
-							"ÎÒÄË%sÒ²£¡*À´½«Í¨ÃûÔÙÕ½£¡",						"%sÔÚ´Ë£¬*·ÅÂí¹ıÀ´°É£¡",
-							"%sÀ´ÁË£¡*¶ÔÃæÕ½½«£¬¿ÉÁôĞÕÃû£¿",					"%sÔÚ´Ë£¬*ÄÃÃüÀ´°É£¡",
-							"ÎÒÄË%s£¬*±¾½«µ¶ÏÂ²»Õ¶ÎŞÃûÖ®¹í£¡",					"%sÔÚ´Ë£¬*ÈÃÎÒ¿´Äãµ½µ×ÓĞ¶àÀ÷º¦",
-							"ÎÒÄË%sÒ²£¡*Ë­¸ÒÒ»Õ½£¡",							"ºÃ¼«ÁË£¡*%s½ÓÊÜÄãµÄÌôÕ½¡£",
-							"¾ÓÈ»ÓĞÈË¸ÒÌôÕ½ÎÒ%s£¿",								"¶àËµÎŞÒæ£¡*½ÓÕĞ°É£¡",
-							"%sÔÚ´Ë£¬*ÓĞ²»ÒªÃüµÄ¸ÒÉÏÀ´Âğ£¿",					"ÎÒ%s²»»áÊÖÈíµÄ¡£*À´°É£¬¿´ÕĞ£¡",
-							"ÎÒÄË%sÒ²£¬*½ñÈÕ±Ø¶¨Õ¶½«Á¢¹¦£¡",					"%sÔÚ´Ë£¬*¿´ÎÒÒ»ÕĞ½á¹ûÄã£¡",
-							"%sÔÚ´Ë£¬*»î¶¯»î¶¯Ò»ÏÂ°É£¡",						"%sÔÚ´Ë£¬*¿´ÎÒÒ»ÕĞ½á¹ûÄã£¡",
-							"ÎÒ%sÀ´ÁË£¡*¿´ÎÒÀ´´óÄÖÒ»·¬£¡",						"ÓĞÒâË¼£¬*ÎÒ%sÀ´¶·¶·Äã£¡",
-							"ÎÒÄË%s£¬*µĞ½«£¬ÎÒÀ´È¡ÄãÏîÉÏÈËÍ·ÁË£¡",				"ºß¡¢ÎŞÃûĞ¡±²£¡*¹ö¿ª£¡",
-							"ÎÒÄË%s¡£*ÄãÕâ¸ö²»ÖªÌì¸ßµØºñµÄ»ìµ°£¬*¿ì±¨ÃûÉÏÀ´£¡",	"ËµÊ²Ã´´À»°£¬*¿´ÎÒ%sµÄÀ÷º¦°É£¡",
-							"%sÔÚ´Ë£¬*¸úÎÒÒ»¾öÊ¤¸º°É£¡",						"¹ş¹ş¹ş£¡*ºÃ£¬·ÅÂí¹ıÀ´£¡",
-							"Áì½ÌÁì½ÌÎÒ%sµÄÎäÒÕ°É£¡",							"À´°É£¡*%sÀ´»á»áÄã£¡",
-							"Óöµ½ÁËÎÒ%sËãÄãµ¹Ã¹£¬*¹ş¹ş¹ş£¬½ñÌì¾ÍÊÇÄãµÄËÀÆÚ£¡",	"Õâ¸öÍæĞ¦ÕæÓĞÒâË¼£¬*¿´ÎÒÔõÃ´¿³ÏÂÄãµÄÄÔ´ü£¡",},
-					[2]={"Ñ½~Ñ½~Ñ½~Ñ½~Ñ½£¡£¡£¡","¿´ÕâÕĞ£¡","Äã¶ãµÃ¹ıÈ¥Âğ£¡","Ğ¡ĞÄÁË£¡","É±£¡£¡£¡",
-						"ÕâÕĞ¶Ô¸¶Äã£¬×ã¹»ÁË£¡","¿´ÎÒÈ¡Äã¹·Ãü£¡","²»ÄÜÔÙÈÃÄãÁË£¡","¾õÎò°É£¡","È¥ËÀ£¡",},
-					[3]={"ÕâÒ»ÕĞ£¬×ĞÏ¸¿´Çå³ş°É£¡","À´°É£¡*Èç¹ûÄã¸úµÃÉÏÎÒµÄËÙ¶È£¡","ÄãÈÇ»ğÎÒÁË£¡*À´ÊÔÊÔÕâÕĞ°É£¡","Ö»ÓĞÕâµãÄÜÄÍÂğ£¿*ÄÇ¿É²»ĞĞÅ¶£¡","À´°É£¡*ÄãÖµµÃÎÒÊ¹³öÕâÒ»ÕĞ£¡",
-						"»¹Ã»ÍêÄØ£¡ÔÙÀ´£¡","¹ş¹ş¹ş¹ş£¡*Ò»ÇĞµÄ×¼±¸¶¼ÊÇÎªÁËÕâÒ»ÕĞ£¡","......*ËÀ£¡","À´³¢³¢ÎÒµÄ¼Ò´«¾ø¼¼°É£¡","ÕâÒ»ÕĞ£¬*ËäÈ»»¹²»¹»ÊìÁ·£¬*µ«ÊÇ»÷°ÜÄã´Â´ÂÓĞÓà£¡",
-						"ÕæÓÂÃÍ£¡*²»¹ı½ÓµÃ×¡ÎÒÕâÒ»ÕĞÂğ£¬¿´ÕĞ£¡","ßíà¸à¸à¸à¸£¡*ÎÒÉúÆøÁË£¡*ÎÒÕæµÄÉúÆøÁË£¡","ÄãÒÑ¾­Íêµ°ÁË£¡*ÈÃÄã¼ûÊ¶ÎÒÕæÕıµÄ¾øÕĞ£¬*¾Íµ±ËÍÄãÏÂ»ÆÈªµÄÀñÎï°É£¡","¹ş¹ş¹ş£¬*Ì«ÂıÁË£¬Ì«ÂıÁË£¡","¹ş¹ş£¬ÄãÉÏµ±ÁË£¡*³ÔÎÒÕâÕĞ£¡",},
-					[4]={"ºß£¡","°¡£¡","¹ûÈ»ÓĞÒ»ÊÖ","ÕæÀ÷º¦£¡","ºÃ´óµÄÁ¦Æø£¡",
-						"ºÃ¿ìµÄËÙ¶È£¡","Õâ¼Ò»ï£¬*ÊÇ¹ÖÎïÂğ£¿","ÕæÃ»Ïëµ½......","»¹²»ÄÜÈÏÊä...","¾ÓÈ»Ã»·À×¡£¿",
-						"¿É¡¢¿É¶ñ...","ÍÛ°¡°¡°¡°¡......£¡","Ôõ¡¢ÔõÃ´¿ÉÄÜ...","ÍÛÑ½£¡*Ôã¡¢ÔãÁË£¡","ßíßí£¡",},
-					[5]={"²»¹ıÈç´Ë£¡","ºÃÏÕ£¡","»ª¶ø²»Êµ£¡","¿´À´Äã¼¼ÇîÁË","ÕâÒ²½ĞÕĞÊ½Âğ£¿",
-						"Äã»¹ÄÜÔÙÂıµãÂğ£¿","¾ÍÏñÈÄÑ÷Ñ÷Ò»Ñù","»»ÎÒ·´»÷ÁË£¡","ÄãÕâÕĞ¸ù±¾¾ÍÃ»ÓĞÁ·Êì£¡","ÔÙÀ´ÔÙÀ´£¡*Ò»µã¸Ğ¾õ¶¼Ã»ÓĞ£¡",
-						"ÔõÃ´À²£¬*Äã¾ÍÖ»ÓĞÕâÁ½ÏÂ×Ó£¿","¾ÍÆ¾ÕâµÈÎäÒÕ£¬*»¹ÏëÊ¤ÎÒ£¿","ÔõÃ´À²£¿*¸ù±¾²»¹ÜÓÃÂï£¡","ÕâÖÖµñ³æĞ¡¼¼ÔÚÎÒÃæÇ°£¬*¸ù±¾¾ÍÊÇ°àÃÅÅª¸«£¡","ÕæÓĞÒâË¼£¬*¿ÉÒÔ¶ÔÎÒÍêÈ«Ã»ÓÃ¡£",},
-					[6]={"¾ÓÈ»ÊäÁË...","ÎÒ²»ÄÜËÀÔÚÕâÀï...","ÔõÃ´»áÕâÑù£¡","²»¸ÃºÍËû´òµÄ...","Õâ¼Ò»ïÌ«¿Ö²ÀÁË£¡",
-						"Ïë²»µ½ÎÒ»á°ÜÔÚÕâÀï...","ÌìÒªÍöÎÒÂğ£¡","³ÜÈè£¡","Ææ¹Ö£¿*Á¦Æø...ÔõÃ´Ã»Á¦ÆøÁË?","ÔÙ²»ÄÜÁÙÕóÌÖÔôÁË£¡",
-						"°ÜÔÚÄãÊÖÉÏ£¬*ÎÒÎŞ»°¿ÉËµ¡£","ßí¡¢¹ûÈ»À÷º¦£¡","Õâ¾ÍÊÇÎÒºÍÄãÖ®¼äµÄ²î¾àÂğ......","...*......","ÌìÏÂÖ®´ó£¬*¾ÓÈ»»¹ÓĞÈç´ËÇ¿¾¢µÄ¶ÔÊÖ£¡",},
-					[7]={"µĞ½«±»ÎÒ»÷°ÜÁË£¡","¹ş¹ş¹ş¹ş£¡*»¹ÓĞÈË¸ÒÉÏÂğ£¡","²»¿°Ò»»÷£¡","ÕæÍ´¿ì£¡","»¶ºô°É£¡",
-						"ÖªµÀÀ÷º¦ÁË°É!","Õâ¾ÍÓ®ÁË£¿*»¹Ã»¹ıñ«ÄØ£¡","Ó®ÁË","Õâ¾ÍÊÇ·´ÔôµÄÏÂ³¡£¡","Ì«ÈõÁË£¡",},
+					[1]={	"%såœ¨æ­¤ï¼Œ*æ¥å°†é€Ÿé€Ÿé€šåå—æ­»ï¼",						"æˆ‘ä¹ƒ%sæ˜¯ä¹Ÿï¼*å…¨åŠ›ä¸€æˆ˜å§ï¼",
+							"æˆ‘ä¹ƒ%sä¹Ÿï¼*æ¥å°†é€šåå†æˆ˜ï¼",						"%såœ¨æ­¤ï¼Œ*æ”¾é©¬è¿‡æ¥å§ï¼",
+							"%sæ¥äº†ï¼*å¯¹é¢æˆ˜å°†ï¼Œå¯ç•™å§“åï¼Ÿ",					"%såœ¨æ­¤ï¼Œ*æ‹¿å‘½æ¥å§ï¼",
+							"æˆ‘ä¹ƒ%sï¼Œ*æœ¬å°†åˆ€ä¸‹ä¸æ–©æ— åä¹‹é¬¼ï¼",					"%såœ¨æ­¤ï¼Œ*è®©æˆ‘çœ‹ä½ åˆ°åº•æœ‰å¤šå‰å®³",
+							"æˆ‘ä¹ƒ%sä¹Ÿï¼*è°æ•¢ä¸€æˆ˜ï¼",							"å¥½æäº†ï¼*%sæ¥å—ä½ çš„æŒ‘æˆ˜ã€‚",
+							"å±…ç„¶æœ‰äººæ•¢æŒ‘æˆ˜æˆ‘%sï¼Ÿ",								"å¤šè¯´æ— ç›Šï¼*æ¥æ‹›å§ï¼",
+							"%såœ¨æ­¤ï¼Œ*æœ‰ä¸è¦å‘½çš„æ•¢ä¸Šæ¥å—ï¼Ÿ",					"æˆ‘%sä¸ä¼šæ‰‹è½¯çš„ã€‚*æ¥å§ï¼Œçœ‹æ‹›ï¼",
+							"æˆ‘ä¹ƒ%sä¹Ÿï¼Œ*ä»Šæ—¥å¿…å®šæ–©å°†ç«‹åŠŸï¼",					"%såœ¨æ­¤ï¼Œ*çœ‹æˆ‘ä¸€æ‹›ç»“æœä½ ï¼",
+							"%såœ¨æ­¤ï¼Œ*æ´»åŠ¨æ´»åŠ¨ä¸€ä¸‹å§ï¼",						"%såœ¨æ­¤ï¼Œ*çœ‹æˆ‘ä¸€æ‹›ç»“æœä½ ï¼",
+							"æˆ‘%sæ¥äº†ï¼*çœ‹æˆ‘æ¥å¤§é—¹ä¸€ç•ªï¼",						"æœ‰æ„æ€ï¼Œ*æˆ‘%sæ¥æ–—æ–—ä½ ï¼",
+							"æˆ‘ä¹ƒ%sï¼Œ*æ•Œå°†ï¼Œæˆ‘æ¥å–ä½ é¡¹ä¸Šäººå¤´äº†ï¼",				"å“¼ã€æ— åå°è¾ˆï¼*æ»šå¼€ï¼",
+							"æˆ‘ä¹ƒ%sã€‚*ä½ è¿™ä¸ªä¸çŸ¥å¤©é«˜åœ°åšçš„æ··è›‹ï¼Œ*å¿«æŠ¥åä¸Šæ¥ï¼",	"è¯´ä»€ä¹ˆè ¢è¯ï¼Œ*çœ‹æˆ‘%sçš„å‰å®³å§ï¼",
+							"%såœ¨æ­¤ï¼Œ*è·Ÿæˆ‘ä¸€å†³èƒœè´Ÿå§ï¼",						"å“ˆå“ˆå“ˆï¼*å¥½ï¼Œæ”¾é©¬è¿‡æ¥ï¼",
+							"é¢†æ•™é¢†æ•™æˆ‘%sçš„æ­¦è‰ºå§ï¼",							"æ¥å§ï¼*%sæ¥ä¼šä¼šä½ ï¼",
+							"é‡åˆ°äº†æˆ‘%sç®—ä½ å€’éœ‰ï¼Œ*å“ˆå“ˆå“ˆï¼Œä»Šå¤©å°±æ˜¯ä½ çš„æ­»æœŸï¼",	"è¿™ä¸ªç©ç¬‘çœŸæœ‰æ„æ€ï¼Œ*çœ‹æˆ‘æ€ä¹ˆç ä¸‹ä½ çš„è„‘è¢‹ï¼",},
+					[2]={"å‘€~å‘€~å‘€~å‘€~å‘€ï¼ï¼ï¼","çœ‹è¿™æ‹›ï¼","ä½ èº²å¾—è¿‡å»å—ï¼","å°å¿ƒäº†ï¼","æ€ï¼ï¼ï¼",
+						"è¿™æ‹›å¯¹ä»˜ä½ ï¼Œè¶³å¤Ÿäº†ï¼","çœ‹æˆ‘å–ä½ ç‹—å‘½ï¼","ä¸èƒ½å†è®©ä½ äº†ï¼","è§‰æ‚Ÿå§ï¼","å»æ­»ï¼",},
+					[3]={"è¿™ä¸€æ‹›ï¼Œä»”ç»†çœ‹æ¸…æ¥šå§ï¼","æ¥å§ï¼*å¦‚æœä½ è·Ÿå¾—ä¸Šæˆ‘çš„é€Ÿåº¦ï¼","ä½ æƒ¹ç«æˆ‘äº†ï¼*æ¥è¯•è¯•è¿™æ‹›å§ï¼","åªæœ‰è¿™ç‚¹èƒ½è€å—ï¼Ÿ*é‚£å¯ä¸è¡Œå“¦ï¼","æ¥å§ï¼*ä½ å€¼å¾—æˆ‘ä½¿å‡ºè¿™ä¸€æ‹›ï¼",
+						"è¿˜æ²¡å®Œå‘¢ï¼å†æ¥ï¼","å“ˆå“ˆå“ˆå“ˆï¼*ä¸€åˆ‡çš„å‡†å¤‡éƒ½æ˜¯ä¸ºäº†è¿™ä¸€æ‹›ï¼","......*æ­»ï¼","æ¥å°å°æˆ‘çš„å®¶ä¼ ç»æŠ€å§ï¼","è¿™ä¸€æ‹›ï¼Œ*è™½ç„¶è¿˜ä¸å¤Ÿç†Ÿç»ƒï¼Œ*ä½†æ˜¯å‡»è´¥ä½ ç»°ç»°æœ‰ä½™ï¼",
+						"çœŸå‹‡çŒ›ï¼*ä¸è¿‡æ¥å¾—ä½æˆ‘è¿™ä¸€æ‹›å—ï¼Œçœ‹æ‹›ï¼","å””å–”å–”å–”å–”ï¼*æˆ‘ç”Ÿæ°”äº†ï¼*æˆ‘çœŸçš„ç”Ÿæ°”äº†ï¼","ä½ å·²ç»å®Œè›‹äº†ï¼*è®©ä½ è§è¯†æˆ‘çœŸæ­£çš„ç»æ‹›ï¼Œ*å°±å½“é€ä½ ä¸‹é»„æ³‰çš„ç¤¼ç‰©å§ï¼","å“ˆå“ˆå“ˆï¼Œ*å¤ªæ…¢äº†ï¼Œå¤ªæ…¢äº†ï¼","å“ˆå“ˆï¼Œä½ ä¸Šå½“äº†ï¼*åƒæˆ‘è¿™æ‹›ï¼",},
+					[4]={"å“¼ï¼","å•Šï¼","æœç„¶æœ‰ä¸€æ‰‹","çœŸå‰å®³ï¼","å¥½å¤§çš„åŠ›æ°”ï¼",
+						"å¥½å¿«çš„é€Ÿåº¦ï¼","è¿™å®¶ä¼™ï¼Œ*æ˜¯æ€ªç‰©å—ï¼Ÿ","çœŸæ²¡æƒ³åˆ°......","è¿˜ä¸èƒ½è®¤è¾“...","å±…ç„¶æ²¡é˜²ä½ï¼Ÿ",
+						"å¯ã€å¯æ¶...","å“‡å•Šå•Šå•Šå•Š......ï¼","æ€ã€æ€ä¹ˆå¯èƒ½...","å“‡å‘€ï¼*ç³Ÿã€ç³Ÿäº†ï¼","å””å””ï¼",},
+					[5]={"ä¸è¿‡å¦‚æ­¤ï¼","å¥½é™©ï¼","åè€Œä¸å®ï¼","çœ‹æ¥ä½ æŠ€ç©·äº†","è¿™ä¹Ÿå«æ‹›å¼å—ï¼Ÿ",
+						"ä½ è¿˜èƒ½å†æ…¢ç‚¹å—ï¼Ÿ","å°±åƒé¥¶ç—’ç—’ä¸€æ ·","æ¢æˆ‘åå‡»äº†ï¼","ä½ è¿™æ‹›æ ¹æœ¬å°±æ²¡æœ‰ç»ƒç†Ÿï¼","å†æ¥å†æ¥ï¼*ä¸€ç‚¹æ„Ÿè§‰éƒ½æ²¡æœ‰ï¼",
+						"æ€ä¹ˆå•¦ï¼Œ*ä½ å°±åªæœ‰è¿™ä¸¤ä¸‹å­ï¼Ÿ","å°±å‡­è¿™ç­‰æ­¦è‰ºï¼Œ*è¿˜æƒ³èƒœæˆ‘ï¼Ÿ","æ€ä¹ˆå•¦ï¼Ÿ*æ ¹æœ¬ä¸ç®¡ç”¨å˜›ï¼","è¿™ç§é›•è™«å°æŠ€åœ¨æˆ‘é¢å‰ï¼Œ*æ ¹æœ¬å°±æ˜¯ç­é—¨å¼„æ–§ï¼","çœŸæœ‰æ„æ€ï¼Œ*å¯ä»¥å¯¹æˆ‘å®Œå…¨æ²¡ç”¨ã€‚",},
+					[6]={"å±…ç„¶è¾“äº†...","æˆ‘ä¸èƒ½æ­»åœ¨è¿™é‡Œ...","æ€ä¹ˆä¼šè¿™æ ·ï¼","ä¸è¯¥å’Œä»–æ‰“çš„...","è¿™å®¶ä¼™å¤ªææ€–äº†ï¼",
+						"æƒ³ä¸åˆ°æˆ‘ä¼šè´¥åœ¨è¿™é‡Œ...","å¤©è¦äº¡æˆ‘å—ï¼","è€»è¾±ï¼","å¥‡æ€ªï¼Ÿ*åŠ›æ°”...æ€ä¹ˆæ²¡åŠ›æ°”äº†?","å†ä¸èƒ½ä¸´é˜µè®¨è´¼äº†ï¼",
+						"è´¥åœ¨ä½ æ‰‹ä¸Šï¼Œ*æˆ‘æ— è¯å¯è¯´ã€‚","å””ã€æœç„¶å‰å®³ï¼","è¿™å°±æ˜¯æˆ‘å’Œä½ ä¹‹é—´çš„å·®è·å—......","...*......","å¤©ä¸‹ä¹‹å¤§ï¼Œ*å±…ç„¶è¿˜æœ‰å¦‚æ­¤å¼ºåŠ²çš„å¯¹æ‰‹ï¼",},
+					[7]={"æ•Œå°†è¢«æˆ‘å‡»è´¥äº†ï¼","å“ˆå“ˆå“ˆå“ˆï¼*è¿˜æœ‰äººæ•¢ä¸Šå—ï¼","ä¸å ªä¸€å‡»ï¼","çœŸç—›å¿«ï¼","æ¬¢å‘¼å§ï¼",
+						"çŸ¥é“å‰å®³äº†å§!","è¿™å°±èµ¢äº†ï¼Ÿ*è¿˜æ²¡è¿‡ç˜¾å‘¢ï¼","èµ¢äº†","è¿™å°±æ˜¯åè´¼çš„ä¸‹åœºï¼","å¤ªå¼±äº†ï¼",},
 				}
-	card_num[1]=5+p1["Íş·ç"];
-	card_num[2]=5+p2["Íş·ç"];
+	card_num[1]=5+p1["å¨é£"];
+	card_num[2]=5+p2["å¨é£"];
 	--[[
-	if p1["µÈ¼¶"]>=30 then
+	if p1["ç­‰çº§"]>=30 then
 		card_num[1]=6;
-	elseif p1["µÈ¼¶"]>=15 then
+	elseif p1["ç­‰çº§"]>=15 then
 		card_num[1]=5;
 	else
 		card_num[1]=4;
 	end
-	if p2["µÈ¼¶"]>=30 then
+	if p2["ç­‰çº§"]>=30 then
 		card_num[2]=6;
-	elseif p2["µÈ¼¶"]>=15 then
+	elseif p2["ç­‰çº§"]>=15 then
 		card_num[2]=5;
 	else
 		card_num[2]=4;
 	end
 	]]--
-	local hpmax={150+p1["µÈ¼¶"],150+p2["µÈ¼¶"]};
-	local hp={150+p1["µÈ¼¶"],150+p2["µÈ¼¶"]};
+	local hpmax={150+p1["ç­‰çº§"],150+p2["ç­‰çº§"]};
+	local hp={150+p1["ç­‰çº§"],150+p2["ç­‰çº§"]};
 	local mp={20,20};
-	if p1["ÎäÁ¦"]>p2["ÎäÁ¦"] then
+	if p1["æ­¦åŠ›"]>p2["æ­¦åŠ›"] then
 		mp[1]=35;
-	elseif p1["ÎäÁ¦"]<p2["ÎäÁ¦"] then
+	elseif p1["æ­¦åŠ›"]<p2["æ­¦åŠ›"] then
 		mp[2]=35;
 	end
-	local atk={math.max(math.modf(p1["ÎäÁ¦"]/10)-1,2),math.max(math.modf(p2["ÎäÁ¦"]/10)-1,2)};
+	local atk={math.max(math.modf(p1["æ­¦åŠ›"]/10)-1,2),math.max(math.modf(p2["æ­¦åŠ›"]/10)-1,2)};
 	if atk[1]-atk[2]>5 then
 		atk[2]=atk[1]-5;
 	elseif atk[2]-atk[1]>5 then
@@ -141,18 +141,18 @@ function fight_sub(id1,id2)
 	local atk_offset=8/math.max(atk[1],atk[2]);
 	atk[1]=math.modf(atk[1]*atk_offset);
 	atk[2]=math.modf(atk[2]*atk_offset);
-	atk[1]=atk[1]+math.modf(p1["·ÜÕ½"]/8)-p2["·ÜÕ½"]%8;
-	atk[2]=atk[2]+math.modf(p2["·ÜÕ½"]/8)-p1["·ÜÕ½"]%8;
-	if p1["Ê¿Æø"]<80 then
+	atk[1]=atk[1]+math.modf(p1["å¥‹æˆ˜"]/8)-p2["å¥‹æˆ˜"]%8;
+	atk[2]=atk[2]+math.modf(p2["å¥‹æˆ˜"]/8)-p1["å¥‹æˆ˜"]%8;
+	if p1["å£«æ°”"]<80 then
 		atk[1]=atk[1]-1;
 	end
-	if p1["Ê¿Æø"]<30 then
+	if p1["å£«æ°”"]<30 then
 		atk[1]=atk[1]-1;
 	end
-	if p2["Ê¿Æø"]<80 then
+	if p2["å£«æ°”"]<80 then
 		atk[2]=atk[2]-1;
 	end
-	if p2["Ê¿Æø"]<30 then
+	if p2["å£«æ°”"]<30 then
 		atk[2]=atk[2]-1;
 	end
 	if atk[1]<2 then
@@ -169,85 +169,85 @@ function fight_sub(id1,id2)
 	local sy=420;
 	local s={};
 	s[1]={
-			d=0,	--0123 ÏÂÉÏ×óÓÒ
+			d=0,	--0123 ä¸‹ä¸Šå·¦å³
 			x=32+size,
-			pic=p1["Õ½¶·¶¯×÷"],
-			action=9,	--0¾²Ö¹ 1ÒÆ¶¯ 2¹¥»÷ 3·ÀÓù 4±»¹¥»÷ 5´­Æø 9²»´æÔÚ
+			pic=p1["æˆ˜æ–—åŠ¨ä½œ"],
+			action=9,	--0é™æ­¢ 1ç§»åŠ¨ 2æ”»å‡» 3é˜²å¾¡ 4è¢«æ”»å‡» 5å–˜æ°” 9ä¸å­˜åœ¨
 			frame=0,
 			effect=0,
-			movewav=JY.Bingzhong[p1["±øÖÖ"]]["ÒôĞ§"],
-			atkbuff=JY.Bingzhong[p1["±øÖÖ"]]["¹¥»÷"]/2,
-			defbuff=JY.Bingzhong[p1["±øÖÖ"]]["·ÀÓù"]/2,
+			movewav=JY.Bingzhong[p1["å…µç§"]]["éŸ³æ•ˆ"],
+			atkbuff=JY.Bingzhong[p1["å…µç§"]]["æ”»å‡»"]/2,
+			defbuff=JY.Bingzhong[p1["å…µç§"]]["é˜²å¾¡"]/2,
 			loser=false,
 			txt="",
-			lv=p1["µÈ¼¶"],
-			mpadd=5+p1["¸£Ô´"]/10,
-			dl=1,	--µ×Á¦¿É·ñÊ¹ÓÃ
-			jj=0,	--¼±¾È¿É·ñÊ¹ÓÃ
-			wl=p1["ÎäÁ¦"],
-			ts=p1["Í³ÂÊ"],
-			lq=p1["ÁéÇÉ"],
+			lv=p1["ç­‰çº§"],
+			mpadd=5+p1["ç¦æº"]/10,
+			dl=1,	--åº•åŠ›å¯å¦ä½¿ç”¨
+			jj=0,	--æ€¥æ•‘å¯å¦ä½¿ç”¨
+			wl=p1["æ­¦åŠ›"],
+			ts=p1["ç»Ÿç‡"],
+			lq=p1["çµå·§"],
 		};
 	s[2]={
 			d=0,
 			x=CC.ScreenW-size-32,
-			pic=p2["Õ½¶·¶¯×÷"],
-			action=9,	--0¾²Ö¹ 1ÒÆ¶¯ 2¹¥»÷ 3·ÀÓù 4±»¹¥»÷ 5´­Æø 6¾ÙÊÖ 9²»´æÔÚ
+			pic=p2["æˆ˜æ–—åŠ¨ä½œ"],
+			action=9,	--0é™æ­¢ 1ç§»åŠ¨ 2æ”»å‡» 3é˜²å¾¡ 4è¢«æ”»å‡» 5å–˜æ°” 6ä¸¾æ‰‹ 9ä¸å­˜åœ¨
 			frame=0,
 			effect=0,
-			movewav=JY.Bingzhong[p2["±øÖÖ"]]["ÒôĞ§"],
-			atkbuff=JY.Bingzhong[p2["±øÖÖ"]]["¹¥»÷"]/2,
-			defbuff=JY.Bingzhong[p2["±øÖÖ"]]["·ÀÓù"]/2,
+			movewav=JY.Bingzhong[p2["å…µç§"]]["éŸ³æ•ˆ"],
+			atkbuff=JY.Bingzhong[p2["å…µç§"]]["æ”»å‡»"]/2,
+			defbuff=JY.Bingzhong[p2["å…µç§"]]["é˜²å¾¡"]/2,
 			loser=false,
 			txt="",
-			lv=p2["µÈ¼¶"],
-			mpadd=5+p2["¸£Ô´"]/10,
+			lv=p2["ç­‰çº§"],
+			mpadd=5+p2["ç¦æº"]/10,
 			dl=1,
-			jj=0,	--¼±¾È¿É·ñÊ¹ÓÃ
-			wl=p2["ÎäÁ¦"],
-			ts=p2["Í³ÂÊ"],
-			lq=p2["ÁéÇÉ"],
+			jj=0,	--æ€¥æ•‘å¯å¦ä½¿ç”¨
+			wl=p2["æ­¦åŠ›"],
+			ts=p2["ç»Ÿç‡"],
+			lq=p2["çµå·§"],
 		};
-	if p1["¸öĞÔ"]==1 then
+	if p1["ä¸ªæ€§"]==1 then
 		s[1].ym=1;
 		s[1].lj=7;
 		s[1].jj=1;
-	elseif p1["¸öĞÔ"]==2 then
+	elseif p1["ä¸ªæ€§"]==2 then
 		s[1].ym=3;
 		s[1].lj=5;
-	elseif p1["¸öĞÔ"]==3 then
+	elseif p1["ä¸ªæ€§"]==3 then
 		s[1].ym=5;
 		s[1].lj=3;
-	elseif p1["¸öĞÔ"]==4 then
+	elseif p1["ä¸ªæ€§"]==4 then
 		s[1].ym=7;
 		s[1].lj=1;
 	end
-	if p2["¸öĞÔ"]==1 then
+	if p2["ä¸ªæ€§"]==1 then
 		s[2].ym=1;
 		s[2].lj=7;
 		s[2].jj=1;
-	elseif p2["¸öĞÔ"]==2 then
+	elseif p2["ä¸ªæ€§"]==2 then
 		s[2].ym=3;
 		s[2].lj=5;
-	elseif p2["¸öĞÔ"]==3 then
+	elseif p2["ä¸ªæ€§"]==3 then
 		s[2].ym=5;
 		s[2].lj=3;
-	elseif p2["¸öĞÔ"]==4 then
+	elseif p2["ä¸ªæ€§"]==4 then
 		s[2].ym=7;
 		s[2].lj=1;
 	end
 	
 	
 	
-	s[1].ym=limitX(s[1].ym,0,math.modf(p1["Ê¿Æø"]/14));
-	s[1].lj=limitX(s[1].lj,0,math.modf(p1["Ê¿Æø"]/14));
-	s[2].ym=limitX(s[2].ym,0,math.modf(p2["Ê¿Æø"]/14));
-	s[2].lj=limitX(s[2].lj,0,math.modf(p2["Ê¿Æø"]/14));
+	s[1].ym=limitX(s[1].ym,0,math.modf(p1["å£«æ°”"]/14));
+	s[1].lj=limitX(s[1].lj,0,math.modf(p1["å£«æ°”"]/14));
+	s[2].ym=limitX(s[2].ym,0,math.modf(p2["å£«æ°”"]/14));
+	s[2].lj=limitX(s[2].lj,0,math.modf(p2["å£«æ°”"]/14));
 	local function admp(i,v)
 		v=math.modf(v);
 		mp[i]=limitX(mp[i]+v,0,100);
 	end
-	local function dechp(i,v,flag)	--flag ¸ñµ²³É¹¦
+	local function dechp(i,v,flag)	--flag æ ¼æŒ¡æˆåŠŸ
 		flag=flag or false;
 		if math.random(100)<s[3-i].atkbuff then
 			v=v+1;
@@ -259,7 +259,7 @@ function fight_sub(id1,id2)
 		if v<1 then
 			v=1;
 		end
-		--bq ²»Çü£¬×îµÍÉËº¦ÏÂÏŞ£¬·ñÔò²»ÊÜÉËº¦
+		--bq ä¸å±ˆï¼Œæœ€ä½ä¼¤å®³ä¸‹é™ï¼Œå¦åˆ™ä¸å—ä¼¤å®³
 		if flag and RND(s[i].ts/110) then
 			v=0;
 		end
@@ -268,7 +268,7 @@ function fight_sub(id1,id2)
 		if hp[i]<0 then
 			hp[i]=0;
 		end
-		--±»¹¥»÷Ê±mpÔö¼Ó
+		--è¢«æ”»å‡»æ—¶mpå¢åŠ 
 		admp(i,1+v/2);
 	end
 	local function show()
@@ -278,18 +278,18 @@ function fight_sub(id1,id2)
 		lib.PicLoadCache(5,58*2,0,0,1);
 			
 		DrawYJZBox(128,32,s[1].txt,C_WHITE,18);
-		lib.PicLoadCache(2,(p1["ÈİÃ²"]+2000)*2,32,16,1);
+		lib.PicLoadCache(2,(p1["å®¹è²Œ"]+2000)*2,32,16,1);
 		if s[1].losser then
 			--lib.Background(32,8,32+64,8+80,106);
 		end
-		DrawYJZBox(32+90,110,p1["Ãû³Æ"]..string.format("  ÎäÁ¦%3d",p1["ÎäÁ¦"]),C_WHITE,18);
+		DrawYJZBox(32+90,110,p1["åç§°"]..string.format("  æ­¦åŠ›%3d",p1["æ­¦åŠ›"]),C_WHITE,18);
 		
 		DrawYJZBox(-128,32,s[2].txt,C_WHITE,18);
-		lib.PicLoadCache(2,(p2["ÈİÃ²"]+2000)*2,CC.ScreenW-122,16,1);
+		lib.PicLoadCache(2,(p2["å®¹è²Œ"]+2000)*2,CC.ScreenW-122,16,1);
 		if s[2].losser then
 			--lib.Background(646,8,646+64,8+80,106);
 		end
-		DrawYJZBox(-32-90,110,string.format("ÎäÁ¦%3d  ",p2["ÎäÁ¦"])..p2["Ãû³Æ"],C_WHITE,18);
+		DrawYJZBox(-32-90,110,string.format("æ­¦åŠ›%3d  ",p2["æ­¦åŠ›"])..p2["åç§°"],C_WHITE,18);
 		
 		lib.PicLoadCache(4,220*2,32,128,1);
 		lib.PicLoadCache(4,222*2,CC.ScreenW-320,128,1);
@@ -472,7 +472,7 @@ function fight_sub(id1,id2)
 		show();
 		ReFresh();
 	end
-	local function atk_p(id,gd)--ÆÕÍ¨¹¥»÷ Æ½ÊÖ gd ±©»÷¸ÅÂÊ
+	local function atk_p(id,gd)--æ™®é€šæ”»å‡» å¹³æ‰‹ gd æš´å‡»æ¦‚ç‡
 		local n=3;
 		local flag=false;
 		s[id].action=2;
@@ -536,13 +536,13 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_ms(id,gd)--ÃëÉ± gd ±©»÷¸ÅÂÊ
+	local function atk_ms(id,gd)--ç§’æ€ gd æš´å‡»æ¦‚ç‡
 		local n=3;
 		s[id].action=2;
 		local flag=false;
 		s[id].txt=str[3][math.random(15)];
 		if ID[id]==2 then
-			s[id].txt=str[3][math.random(15)].."*¹íºúÕ¶£¡";
+			s[id].txt=str[3][math.random(15)].."*é¬¼èƒ¡æ–©ï¼";
 		end
 		PlayWavE(6);
 		JY.ReFreshTime=lib.GetTime();
@@ -625,14 +625,14 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_aq(id,gd)--°µÆ÷ÍµÏ® gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_aq(id,gd)--æš—å™¨å·è¢­ gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		s[id].action=2;
 		local flag1,flag2=0,false;
 		if math.random(5)==1 then
 			flag1=1;
 		end
-		if ID[id]==170	then	--»ÆÖÒ
+		if ID[id]==170	then	--é»„å¿ 
 			if flag1==0 then
 				if math.random(4)==1 then
 					flag1=1;
@@ -644,7 +644,7 @@ function fight_sub(id1,id2)
 			s[id].frame=i;
 			if i==0 then
 				PlayWavE(6);
-				s[id].txt="ºÙºÙºÙ*Äã¶ãµÃ¹ıÕâÒ»¼ıÂğ£¡";
+				s[id].txt="å˜¿å˜¿å˜¿*ä½ èº²å¾—è¿‡è¿™ä¸€ç®­å—ï¼";
 				JY.ReFreshTime=lib.GetTime();
 				show();
 				ReFresh(4);
@@ -683,9 +683,9 @@ function fight_sub(id1,id2)
 			ReFresh(n);
 		end
 		if flag2 then
-			s[3-id].txt="µñ³æĞ¡¼¼£¡";
+			s[3-id].txt="é›•è™«å°æŠ€ï¼";
 		else
-			s[3-id].txt="±°±É£¡";
+			s[3-id].txt="å‘é„™ï¼";
 			card_num[3-id]=card_num[3-id]-1;
 		end
 		JY.ReFreshTime=lib.GetTime();
@@ -698,7 +698,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_dz(id)--ÆÕÍ¨¹¥»÷ ½ö¶¯×÷
+	local function atk_dz(id)--æ™®é€šæ”»å‡» ä»…åŠ¨ä½œ
 		local n=3;
 		s[id].action=2;
 		for i=0,3 do
@@ -720,8 +720,8 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_dl(id)--µ×Á¦ ½ö¶¯×÷
-		s[id].txt="¿É¶ñ°¡£¡£¡*ÎÒÒªÔ×ÁËÄã£¡£¡£¡";
+	local function atk_dl(id)--åº•åŠ› ä»…åŠ¨ä½œ
+		s[id].txt="å¯æ¶å•Šï¼ï¼*æˆ‘è¦å®°äº†ä½ ï¼ï¼ï¼";
 		atk_dz(id);
 		JY.ReFreshTime=lib.GetTime();
 		ReFresh(4);
@@ -739,9 +739,9 @@ function fight_sub(id1,id2)
 			end
 		end
 	end
-	local function atk_jj(id)	--¼±¾È
+	local function atk_jj(id)	--æ€¥æ•‘
 		--loser
-		s[id].txt="ºô~ºÃÀ÷º¦~";
+		s[id].txt="å‘¼~å¥½å‰å®³~";
 		PlayWavE(8);
 		s[id].action=5;
 		for i=1,10 do
@@ -753,7 +753,7 @@ function fight_sub(id1,id2)
 			show();
 			ReFresh(8);
 		end
-		s[id].txt="»¹ºÃÎÒ»¹ÓĞ¶¹*¸Ï½ô³ÔÒ»¿Å°É£®";
+		s[id].txt="è¿˜å¥½æˆ‘è¿˜æœ‰è±†*èµ¶ç´§åƒä¸€é¢—å§ï¼";
 		PlayWavE(41);
 		for t=8,255,8 do
 			s[id].effect=t;
@@ -777,7 +777,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s0(id,gd)--ÆÕÍ¨¹¥»÷ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s0(id,gd)--æ™®é€šæ”»å‡» gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		s[id].action=2;
 		for i=0,3 do
@@ -810,7 +810,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s1(id,gd)--Ğ¡±©»÷ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s1(id,gd)--å°æš´å‡» gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		s[id].action=2;
 		local m=24;
@@ -869,7 +869,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s2(id,gd)--ÈıÁ¬»÷ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s2(id,gd)--ä¸‰è¿å‡» gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local flag=true;
 		s[id].txt=str[2][math.random(10)];
@@ -928,7 +928,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s3(id,gd)--´ó±©»÷ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s3(id,gd)--å¤§æš´å‡» gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		s[id].action=2;
 		local flag=false;
@@ -1007,7 +1007,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s4(id,gd)--ÎåÁ¬»÷ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s4(id,gd)--äº”è¿å‡» gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local flag=true;
 		s[id].txt=str[3][math.random(15)];
@@ -1065,7 +1065,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s5(id,gd)--»ØÂíÇ¹ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s5(id,gd)--å›é©¬æª gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local m=size/2;
 		s[id].action=2;
@@ -1184,7 +1184,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s6(id,gd)--±©»÷¼« gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s6(id,gd)--æš´å‡»æ gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local m=36;
 		s[id].action=2;
@@ -1337,7 +1337,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end
-	local function atk_s7(id,gd)--Á¬»÷¼« gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s7(id,gd)--è¿å‡»æ gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local m=24;
 		local lianji=6;
@@ -1433,7 +1433,7 @@ function fight_sub(id1,id2)
 		s[1].effect=0;
 		s[2].effect=0;
 	end	
-	local function atk_s8(id,gd)--ÃØ¼¼ gd±íÊ¾¸ñµ²¼¸ÂÊ
+	local function atk_s8(id,gd)--ç§˜æŠ€ gdè¡¨ç¤ºæ ¼æŒ¡å‡ ç‡
 		local n=3;
 		local flag=true;
 		s[id].txt=str[3][math.random(15)];
@@ -1611,9 +1611,9 @@ function fight_sub(id1,id2)
 		show();
 		ReFresh(25);
 		if hp[id]==hpmax[id] then
-			DrawStringEnhance(CC.ScreenW/2,210,JY.Person[ID[id]]["Ãû³Æ"].." ÍêÊ¤",C_WHITE,48,0.5)
+			DrawStringEnhance(CC.ScreenW/2,210,JY.Person[ID[id]]["åç§°"].." å®Œèƒœ",C_WHITE,48,0.5)
 		else
-			DrawStringEnhance(CC.ScreenW/2,210,JY.Person[ID[id]]["Ãû³Æ"].." Ê¤",C_WHITE,48,0.5)
+			DrawStringEnhance(CC.ScreenW/2,210,JY.Person[ID[id]]["åç§°"].." èƒœ",C_WHITE,48,0.5)
 		end
 		for t=1,10 do
 			JY.ReFreshTime=lib.GetTime();
@@ -1638,69 +1638,69 @@ function fight_sub(id1,id2)
 	end
 	local function card_value(id,n1,n2,n3)
 		local pid=ID[id];
-		local wl=JY.Person[pid]["ÎäÁ¦"];
+		local wl=JY.Person[pid]["æ­¦åŠ›"];
 		local offset=0--math.max(math.modf(wl/2)-41,0);
 		offset=math.max(wl/2-41,0);
 		local v=0;
-		local k=0;	--0ÆÕÍ¨¹¥»÷ 1Ğ¡±©»÷ 2ÈıÁ¬»÷ 3´ó±©»÷ 4ÎåÁ¬»÷
-		--¹ØÓğ:¹íºúÕ¶,½ğ¸ÕÂŞÉ·Õ¶ ==>¹ØÆ½,¹ØË÷,¹ØĞËÒ²»á  
-		--ÕÅ·É:ÁÒÏ®Ğı·ç»÷ÑÀ,òÔÌìÎè ==>ÕÅ°úÒ²»á  
-		--ÕÔÔÆ:±©Áú,·ÉÓ¥ ==>ÕÔÍ³,ÕÔ¹ãÒ²»á  
-		--Âí³¬:Âí¼ÒÖ®°ÂÒå  
-		--¸ÊÄş:´óº£Ö®òÔÁú
+		local k=0;	--0æ™®é€šæ”»å‡» 1å°æš´å‡» 2ä¸‰è¿å‡» 3å¤§æš´å‡» 4äº”è¿å‡»
+		--å…³ç¾½:é¬¼èƒ¡æ–©,é‡‘åˆšç½—ç…æ–© ==>å…³å¹³,å…³ç´¢,å…³å…´ä¹Ÿä¼š  
+		--å¼ é£:çƒˆè¢­æ—‹é£å‡»ç‰™,è›Ÿå¤©èˆ ==>å¼ è‹ä¹Ÿä¼š  
+		--èµµäº‘:æš´é¾™,é£é¹° ==>èµµç»Ÿ,èµµå¹¿ä¹Ÿä¼š  
+		--é©¬è¶…:é©¬å®¶ä¹‹å¥¥ä¹‰  
+		--ç”˜å®:å¤§æµ·ä¹‹è›Ÿé¾™
 		--specil	444
-		--mp[id]=100--ÎŞÏŞmp
+		--mp[id]=100--æ— é™mp
 		if wl>=100 and mp[id]>=99 and n1==4 and n2==4 and n3==4 then
 			return 65,9;
 		end
-		--°ÂÒå1		ÆßÁ¬»÷£¬½Ó±©»÷´©ÈË	1	111
-		if JY.Person[pid]["µ¥Ìô"]>=9 and mp[id]>=60 and n1==1 and n2==1 and n3==1 then
+		--å¥¥ä¹‰1		ä¸ƒè¿å‡»ï¼Œæ¥æš´å‡»ç©¿äºº	1	111
+		if JY.Person[pid]["å•æŒ‘"]>=9 and mp[id]>=60 and n1==1 and n2==1 and n3==1 then
 			return 60+offset,8;
 		end
 		--222
-		if RND(0.5) and JY.Person[pid]["µ¥Ìô"]>=8 and mp[id]>=60 and n1==2 and n2==2 and n3==2 then
+		if RND(0.5) and JY.Person[pid]["å•æŒ‘"]>=8 and mp[id]>=60 and n1==2 and n2==2 and n3==2 then
 			return 58+offset,8;
 		end
-		--Á¬»÷¡¤¼«	×óÓÒÀ´»ØÁ¬»÷	1	378
-		if RND(-5/3+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=55 and n1==3 and n2==7 and n3==8 then
+		--è¿å‡»Â·æ	å·¦å³æ¥å›è¿å‡»	1	378
+		if RND(-5/3+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=55 and n1==3 and n2==7 and n3==8 then
 			return 55+offset,7;
 		end
-		--±©»÷¡¤¼«	ÏÈ»ØÍË£¬È»ºó±©»÷´©ÈË	1	159
-		if RND(-5/3+JY.Person[pid]["µ¥Ìô"]/3) and  mp[id]>=55 and n1==1 and n2==5 and n3==9 then
+		--æš´å‡»Â·æ	å…ˆå›é€€ï¼Œç„¶åæš´å‡»ç©¿äºº	1	159
+		if RND(-5/3+JY.Person[pid]["å•æŒ‘"]/3) and  mp[id]>=55 and n1==1 and n2==5 and n3==9 then
 			return 55+offset,6;
 		end
-		--»ØÂíÇ¹ ÆÕÍ¨´©ÈË£¬½Ó±©»÷	3	557/567/577
-		if RND(-4/3+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=50 and n1==5 and n3==7 then
+		--å›é©¬æª æ™®é€šç©¿äººï¼Œæ¥æš´å‡»	3	557/567/577
+		if RND(-4/3+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=50 and n1==5 and n3==7 then
 			return 50+offset,5;
 		end
-		--¸öÈËÇ¿»¯	258
+		--ä¸ªäººå¼ºåŒ–	258
 		if mp[id]>=40 and n1==2 and n2==5 and (n3==8 or n3==9) then
-			if pid==381 then	--ÕÔÔÆ
-				return 45+offset,7;	--Á¬»÷¼«
-			elseif pid==499 then	--Âí³¬
-				return 45+offset,5;	--»ØÂí
-			elseif pid==95 then	--¹ØÓğ
-				return 45+offset,99;	--Ò»»÷
-			elseif pid==419 then	--ÕÅ·É
-				return 45+offset,6;	--±©»÷¼«
-			elseif pid==636 then	--ÂÀ²¼
-				return 45+offset,8;	--°ÂÒå1
+			if pid==381 then	--èµµäº‘
+				return 45+offset,7;	--è¿å‡»æ
+			elseif pid==499 then	--é©¬è¶…
+				return 45+offset,5;	--å›é©¬
+			elseif pid==95 then	--å…³ç¾½
+				return 45+offset,99;	--ä¸€å‡»
+			elseif pid==419 then	--å¼ é£
+				return 45+offset,6;	--æš´å‡»æ
+			elseif pid==636 then	--å•å¸ƒ
+				return 45+offset,8;	--å¥¥ä¹‰1
 			end
 		end
-		--ÎåÁ¬»÷	3		334/345/356
-		if RND(-1.0+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=45 and n1==3 and n3<7 and n2+1==n3 then
+		--äº”è¿å‡»	3		334/345/356
+		if RND(-1.0+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=45 and n1==3 and n3<7 and n2+1==n3 then
 			return 40+offset,4;
 		end
-		--´ó±©»÷ ±©»÷´©ÈË	4	266/277/288/299
-		if RND(-1.0+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=45 and n1==2 and n2>5 and n2==n3 then
+		--å¤§æš´å‡» æš´å‡»ç©¿äºº	4	266/277/288/299
+		if RND(-1.0+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=45 and n1==2 and n2>5 and n2==n3 then
 			return 40+offset,3;
 		end
-		--ÈıÁ¬ ÈıÁ¬»÷	7-1		123/234/345/456/567/678/789
-		if RND(0.1+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=40 and n1+1==n2 and n2+1==n3 then
+		--ä¸‰è¿ ä¸‰è¿å‡»	7-1		123/234/345/456/567/678/789
+		if RND(0.1+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=40 and n1+1==n2 and n2+1==n3 then
 			return 30+offset,2;
 		end
-		--ÈıÌõ Ğ¡±©»÷	9-1-1	111/222/333/444/555/666/777/888/999
-		if RND(0.1+JY.Person[pid]["µ¥Ìô"]/3) and mp[id]>=40 and n1==n2 and n2==n3 then
+		--ä¸‰æ¡ å°æš´å‡»	9-1-1	111/222/333/444/555/666/777/888/999
+		if RND(0.1+JY.Person[pid]["å•æŒ‘"]/3) and mp[id]>=40 and n1==n2 and n2==n3 then
 			return 30+offset,1;
 		end
 		--other
@@ -1764,7 +1764,7 @@ function fight_sub(id1,id2)
 	--card_sort(2);
 	local action_v={};
 	local action_k={};
-	local function automove() --ÈËÎï½Ó½ü£¬×Ô¶¯ÏòÆÁÄ»ÖĞĞÄÒÆ¶¯
+	local function automove() --äººç‰©æ¥è¿‘ï¼Œè‡ªåŠ¨å‘å±å¹•ä¸­å¿ƒç§»åŠ¨
 		local cx=(CC.ScreenW-size)/2;
 		local cur=1;
 		if math.abs(s[1].x-cx)<math.abs(s[2].x-cx) then
@@ -1793,14 +1793,14 @@ function fight_sub(id1,id2)
 	PlayWavE(4);
 	arrive(1);
 	local talkid=math.random(15);
-	s[1].txt=string.format(str[1][talkid*2-1],p1["ÍâºÅ"]);
+	s[1].txt=string.format(str[1][talkid*2-1],p1["å¤–å·"]);
 	s[1].d=3;
 	PlayWavE(6);
 	JY.ReFreshTime=lib.GetTime();
 	show();
 	ReFresh(25);
 	arrive(2);
-	s[2].txt=string.format(str[1][talkid*2],p2["ÍâºÅ"]);
+	s[2].txt=string.format(str[1][talkid*2],p2["å¤–å·"]);
 	s[2].d=2;
 	PlayWavE(6);
 	JY.ReFreshTime=lib.GetTime();
@@ -1811,8 +1811,8 @@ function fight_sub(id1,id2)
 	for i=1,2 do
 		local pid=ID[i];
 		local eid=ID[3-i];
-		if JY.Person[pid]["Ò»»÷"]>0 and JY.Person[pid]["ÎäÁ¦"]-JY.Person[eid]["ÎäÁ¦"]>=5 and math.random(100)<=25 then
-			atk_ms(i,JY.Person[eid]["ÎäÁ¦"]-65);
+		if JY.Person[pid]["ä¸€å‡»"]>0 and JY.Person[pid]["æ­¦åŠ›"]-JY.Person[eid]["æ­¦åŠ›"]>=5 and math.random(100)<=25 then
+			atk_ms(i,JY.Person[eid]["æ­¦åŠ›"]-65);
 			mp[i]=0;
 			msflag=true;
 			if hp[1]==0 then
@@ -1829,8 +1829,8 @@ function fight_sub(id1,id2)
 		for i=1,2 do
 			local pid=ID[i];
 			local eid=ID[3-i];
-			if JY.Person[pid]["°µÆ÷"]>0 and math.random(10)<=5 then
-				atk_aq(i,JY.Person[eid]["ÎäÁ¦"]-30);
+			if JY.Person[pid]["æš—å™¨"]>0 and math.random(10)<=5 then
+				atk_aq(i,JY.Person[eid]["æ­¦åŠ›"]-30);
 				break;
 			end
 		end
@@ -1883,15 +1883,15 @@ function fight_sub(id1,id2)
 			elseif action_k[cur]==9 then
 				atk_s8(cur,5);
 			elseif action_k[cur]==99 then
-				atk_ms(cur,JY.Person[ID[3-cur]]["ÎäÁ¦"]-60);
+				atk_ms(cur,JY.Person[ID[3-cur]]["æ­¦åŠ›"]-60);
 			else
 				atk_s0(cur,gd);
 			end
 			if action_k[cur]~=0 then
-				admp(cur,-math.modf(action_v[cur]/10)*8);		--¹¥»÷ÕßÏûºÄmp
+				admp(cur,-math.modf(action_v[cur]/10)*8);		--æ”»å‡»è€…æ¶ˆè€—mp
 			end
 			if action_k[3-cur]~=0 then
-				--admp(3-cur,-math.modf(action_v[3-cur]/10)*5); --·ÀÓùÕß²»ÏûºÄmp
+				--admp(3-cur,-math.modf(action_v[3-cur]/10)*5); --é˜²å¾¡è€…ä¸æ¶ˆè€—mp
 			end
 		end
 		if hp[1]==0 then
@@ -1908,12 +1908,12 @@ function fight_sub(id1,id2)
 			turn(1,3);
 			turn(2,2);
 		end
-		--¼±¾È
+		--æ€¥æ•‘
 		if hp[3-cur]<hpmax[3-cur]/2 and s[3-cur].jj>0 and math.random(100)<=20 then
 			s[3-cur].jj=0;
 			atk_jj(3-cur);
 		end
-		--µ×Á¦
+		--åº•åŠ›
 		if hp[3-cur]<hpmax[3-cur]/3 and s[3-cur].dl>0 and RND((s[3-cur].wl-70)/200) then
 			s[3-cur].dl=0;
 			atk_dl(3-cur);
@@ -1945,9 +1945,9 @@ function Five()
 	local map_size=g_size*(grid+0.2);
 	local mx,my=(CC.ScreenW-map_size)/2,(CC.ScreenH-map_size)/2;
 	local bgc=RGB(220,178,92);
-	local s_hb={"Ö´ºÚ","Ö´°×"};
-	local s_xy={"º®ĞÇ","ÏªÔÂ","ÊèĞÇ","»¨ÔÂ","²ĞÔÂ","ÓêÔÂ","½ğĞÇ","ËÉÔÂ","ÇğÔÂ","ĞÂÔÂ","ÈğĞÇ","É½ÔÂ","ÓÎĞÇ",
-				"³¤ĞÇ","Ï¿ÔÂ","ºãĞÇ","Ë®ÔÂ","Á÷ĞÇ","ÔÆÔÂ","ÆÖÔÂ","á°ÔÂ","ÒøÔÂ","Ã÷ĞÇ","Ğ±ÔÂ","ÃûÔÂ","åçĞÇ",
+	local s_hb={"æ‰§é»‘","æ‰§ç™½"};
+	local s_xy={"å¯’æ˜Ÿ","æºªæœˆ","ç–æ˜Ÿ","èŠ±æœˆ","æ®‹æœˆ","é›¨æœˆ","é‡‘æ˜Ÿ","æ¾æœˆ","ä¸˜æœˆ","æ–°æœˆ","ç‘æ˜Ÿ","å±±æœˆ","æ¸¸æ˜Ÿ",
+				"é•¿æ˜Ÿ","å³¡æœˆ","æ’æ˜Ÿ","æ°´æœˆ","æµæ˜Ÿ","äº‘æœˆ","æµ¦æœˆ","å²šæœˆ","é“¶æœˆ","æ˜æ˜Ÿ","æ–œæœˆ","åæœˆ","å½—æ˜Ÿ",
 				"","","","","","","","","","","","","","","","","","","","","","","","",""};
 	--map info
 	local map={};
@@ -1980,7 +1980,7 @@ function Five()
 	local s_type=0;
 	--UI
 	local bt={};
-	table.insert(bt,button_creat(1,1,CC.ScreenW-200,CC.ScreenH-80,"ÍË³ö",true,true));
+	table.insert(bt,button_creat(1,1,CC.ScreenW-200,CC.ScreenH-80,"é€€å‡º",true,true));
 	
 	local function redraw()
 		DrawGame();
@@ -2021,10 +2021,10 @@ function Five()
 		end
 		--Info
 		local x,y=mx-150,my+g_size*1.5;
-		lib.PicLoadCache(2,(JY.Person[eid]["ÈİÃ²"]+2000)*2,x,y,1);					x=x-32;y=y+132;
-		DrawStringEnhance(x,y,JY.Person[eid]["Ãû³Æ"].." "..JY.Person[eid]["×Ö"],C_WHITE,24);		y=y+24+2;
-		DrawPJ(JY.Person[eid]["Æ·¼¶"],x,y,C_Name,24);											y=y+24+2;
-		for i,v in pairs({"Í³ÂÊ","ÎäÁ¦","ÖÇÄ±","ÕşÎñ","÷ÈÁ¦"}) do
+		lib.PicLoadCache(2,(JY.Person[eid]["å®¹è²Œ"]+2000)*2,x,y,1);					x=x-32;y=y+132;
+		DrawStringEnhance(x,y,JY.Person[eid]["åç§°"].." "..JY.Person[eid]["å­—"],C_WHITE,24);		y=y+24+2;
+		DrawPJ(JY.Person[eid]["å“çº§"],x,y,C_Name,24);											y=y+24+2;
+		for i,v in pairs({"ç»Ÿç‡","æ­¦åŠ›","æ™ºè°‹","æ”¿åŠ¡","é­…åŠ›"}) do
 			DrawStringEnhance(x,y,v,C_Name,24);
 			local pic=213;
 			if JY.Person[eid][v]>=70 then
@@ -2040,9 +2040,9 @@ function Five()
 		end
 		x,y=mx+map_size+32,my+g_size/2;
 		if c_mode[1]==0 then
-			DrawStringEnhance(x,y,s_hb[1]..": ".."Íæ¼Ò",C_WHITE,24);
+			DrawStringEnhance(x,y,s_hb[1]..": ".."ç©å®¶",C_WHITE,24);
 		else
-			DrawStringEnhance(x,y,s_hb[1]..": "..JY.Person[eid]["Ãû³Æ"],C_WHITE,24);
+			DrawStringEnhance(x,y,s_hb[1]..": "..JY.Person[eid]["åç§°"],C_WHITE,24);
 		end
 		y=y+24+2;
 		if s_type>0 then
@@ -2052,18 +2052,18 @@ function Five()
 			y=y+52;
 		end
 		if c_mode[2]==0 then
-			DrawStringEnhance(x,y,s_hb[2]..": ".."Íæ¼Ò",C_WHITE,24);
+			DrawStringEnhance(x,y,s_hb[2]..": ".."ç©å®¶",C_WHITE,24);
 		else
-			DrawStringEnhance(x,y,s_hb[2]..": "..JY.Person[eid]["Ãû³Æ"],C_WHITE,24);
+			DrawStringEnhance(x,y,s_hb[2]..": "..JY.Person[eid]["åç§°"],C_WHITE,24);
 		end
 		y=y+24+2;
-		DrawStringEnhance(x,y,string.format("µÚ%02dÊÖ",turn),C_WHITE,24);
+		DrawStringEnhance(x,y,string.format("ç¬¬%02dæ‰‹",turn),C_WHITE,24);
 		y=my+g_size/2+(24+2)*11;
-		DrawStringEnhance(x,y,string.format("µÚ%02d¾Ö",gamecount),C_WHITE,24);
+		DrawStringEnhance(x,y,string.format("ç¬¬%02då±€",gamecount),C_WHITE,24);
 		y=y+24+2;
-		DrawStringEnhance(x,y,string.format("  %02dÊ¤",wincount),C_WHITE,24);
+		DrawStringEnhance(x,y,string.format("  %02dèƒœ",wincount),C_WHITE,24);
 		y=y+24+2;
-		DrawStringEnhance(x,y,string.format("  %02d¸º",losecount),C_WHITE,24);
+		DrawStringEnhance(x,y,string.format("  %02dè´Ÿ",losecount),C_WHITE,24);
 		y=y+24+2;
 		--UI
 		button_redraw(bt);
@@ -2094,7 +2094,7 @@ function Five()
 		return false;
 	end
 	local function GetValue(x,y,k)
-		--ÅĞ¶ÏĞÎÊÆ
+		--åˆ¤æ–­å½¢åŠ¿
 		local heng,shu,pie,la=10,10,10,10;
 		--heng
 		for i=1,4 do
@@ -2158,25 +2158,25 @@ function Five()
 		end
 		local Direction={heng,shu,pie,la};
 		local rv;
-		if math.max(heng,shu,pie,la)>=50 then	--³É5, 100·Ö
+		if math.max(heng,shu,pie,la)>=50 then	--æˆ5, 100åˆ†
 			rv=100;
-		elseif check(Direction,42,1) or check(Direction,41,2) or (check(Direction,41,1) and check(Direction,32,1)) then	--»î4¡¢Ë«ËÀ4¡¢ËÀ4»î3£¬ 90·Ö
+		elseif check(Direction,42,1) or check(Direction,41,2) or (check(Direction,41,1) and check(Direction,32,1)) then	--æ´»4ã€åŒæ­»4ã€æ­»4æ´»3ï¼Œ 90åˆ†
 			rv=80;
-		elseif check(Direction,32,2) then		--Ë«»î3£¬ 80·Ö
+		elseif check(Direction,32,2) then		--åŒæ´»3ï¼Œ 80åˆ†
 			rv=75;
-		elseif check(Direction,31,1) and check(Direction,32,1) then		--ËÀ3»î3£¬ 70·Ö
+		elseif check(Direction,31,1) and check(Direction,32,1) then		--æ­»3æ´»3ï¼Œ 70åˆ†
 			rv=40;
-		elseif check(Direction,41,1) then		--ËÀ4£¬ 60·Ö
+		elseif check(Direction,41,1) then		--æ­»4ï¼Œ 60åˆ†
 			rv=35;
-		elseif check(Direction,32,1) then		--»î3£¬ 50·Ö
+		elseif check(Direction,32,1) then		--æ´»3ï¼Œ 50åˆ†
 			rv=30;
-		elseif check(Direction,22,2) then		--Ë«»î2£¬ 40·Ö
+		elseif check(Direction,22,2) then		--åŒæ´»2ï¼Œ 40åˆ†
 			rv=25;
-		elseif check(Direction,31,1) then		--ËÀ3£¬ 30·Ö
+		elseif check(Direction,31,1) then		--æ­»3ï¼Œ 30åˆ†
 			rv=20;
-		elseif check(Direction,22,1) then		--»î2£¬ 20·Ö
+		elseif check(Direction,22,1) then		--æ´»2ï¼Œ 20åˆ†
 			rv=15;
-		elseif check(Direction,21,1) then		--ËÀ2£¬ 10·Ö
+		elseif check(Direction,21,1) then		--æ­»2ï¼Œ 10åˆ†
 			rv=10;
 		elseif turn==1 and x==cel and y==x then
 			rv=15;
@@ -2186,67 +2186,67 @@ function Five()
 		return rv+math.random(5);
 	end
 	local function XingYue()
-		if qx1==qy1 and qx1==cel then	--µÚÒ»×Ó±ØĞëÌìÔª
-			if (qx1==qx2 and math.abs(qy1-qy2)==1) or (qy1==qy2 and math.abs(qx1-qx2)==1) then	--Ö±Ö¹´ò·¨
+		if qx1==qy1 and qx1==cel then	--ç¬¬ä¸€å­å¿…é¡»å¤©å…ƒ
+			if (qx1==qx2 and math.abs(qy1-qy2)==1) or (qy1==qy2 and math.abs(qx1-qx2)==1) then	--ç›´æ­¢æ‰“æ³•
 				local dx=(qx3-qx1)*(qx2-qx1);
 				local dy=(qy3-qy1)*(qy2-qy1);
 				local ax=math.abs(qx3-qx2);
 				local ay=math.abs(qy3-qy2);
-				if (dx==2 and ay==0) or (dy==2 and ax==0) then							--º®ĞÇ
+				if (dx==2 and ay==0) or (dy==2 and ax==0) then							--å¯’æ˜Ÿ
 					s_type=1;
-				elseif (dx==2 and ay==1) or (dy==2 and ax==1) then						--ÏªÔÂ
+				elseif (dx==2 and ay==1) or (dy==2 and ax==1) then						--æºªæœˆ
 					s_type=2;	
-				elseif (dx==2 and ay==2) or (dy==2 and ax==2) then						--ÊèĞÇ
+				elseif (dx==2 and ay==2) or (dy==2 and ax==2) then						--ç–æ˜Ÿ
 					s_type=3;
-				elseif (dx==1 and ay==1) or (dy==1 and ax==1) then						--»¨ÔÂ
+				elseif (dx==1 and ay==1) or (dy==1 and ax==1) then						--èŠ±æœˆ
 					s_type=4;
-				elseif (dx==1 and ay==2) or (dy==1 and ax==2) then						--²ĞÔÂ
+				elseif (dx==1 and ay==2) or (dy==1 and ax==2) then						--æ®‹æœˆ
 					s_type=5;
-				elseif (dx==0 and ay==1) or (dy==0 and ax==1) then						--ÓêÔÂ
+				elseif (dx==0 and ay==1) or (dy==0 and ax==1) then						--é›¨æœˆ
 					s_type=6;
-				elseif (dx==0 and ay==2) or (dy==-1 and ax==2) then						--½ğĞÇ
+				elseif (dx==0 and ay==2) or (dy==-1 and ax==2) then						--é‡‘æ˜Ÿ
 					s_type=7;
-				elseif (dx==-1 and ay==0) or (dy==-1 and ax==0) then					--ËÉÔÂ
+				elseif (dx==-1 and ay==0) or (dy==-1 and ax==0) then					--æ¾æœˆ
 					s_type=8;
-				elseif (dx==-1 and ay==1) or (dy==-1 and ax==1) then					--ÇğÔÂ
+				elseif (dx==-1 and ay==1) or (dy==-1 and ax==1) then					--ä¸˜æœˆ
 					s_type=9;
-				elseif (dx==-1 and ay==2) or (dy==-1 and ax==2) then					--ĞÂÔÂ
+				elseif (dx==-1 and ay==2) or (dy==-1 and ax==2) then					--æ–°æœˆ
 					s_type=10;
-				elseif (dx==-2 and ay==0) or (dy==-2 and ax==0) then					--ÈğĞÇ
+				elseif (dx==-2 and ay==0) or (dy==-2 and ax==0) then					--ç‘æ˜Ÿ
 					s_type=11;
-				elseif (dx==-2 and ay==1) or (dy==-2 and ax==1) then					--É½ÔÂ
+				elseif (dx==-2 and ay==1) or (dy==-2 and ax==1) then					--å±±æœˆ
 					s_type=12;
-				elseif (dx==-2 and ay==2) or (dy==-2 and ax==2) then					--ÓÎĞÇ
+				elseif (dx==-2 and ay==2) or (dy==-2 and ax==2) then					--æ¸¸æ˜Ÿ
 					s_type=13;
 				end
-			elseif math.abs(qx1-qx2)==1 and math.abs(qy1-qy2)==1 then						--Ğ±Ö¹´ò·¨
+			elseif math.abs(qx1-qx2)==1 and math.abs(qy1-qy2)==1 then						--æ–œæ­¢æ‰“æ³•
 				local dx=(qx3-qx1)*(qx2-qx1);
 				local dy=(qy3-qy1)*(qy2-qy1);
-				if dx==2 and dy==2 then													--³¤ĞÇ
+				if dx==2 and dy==2 then													--é•¿æ˜Ÿ
 					s_type=14;
-				elseif (dx==2 and dy==1) or (dy==2 and dx==1) then						--Ï¿ÔÂ
+				elseif (dx==2 and dy==1) or (dy==2 and dx==1) then						--å³¡æœˆ
 					s_type=15;
-				elseif (dx==2 and dy==0) or (dy==2 and dx==0) then						--ºãĞÇ
+				elseif (dx==2 and dy==0) or (dy==2 and dx==0) then						--æ’æ˜Ÿ
 					s_type=16;
-				elseif (dx==2 and dy==-1) or (dy==2 and dx==-1) then					--Ë®ÔÂ
+				elseif (dx==2 and dy==-1) or (dy==2 and dx==-1) then					--æ°´æœˆ
 					s_type=17;
-				elseif (dx==2 and dy==-2) or (dy==2 and dx==-2) then					--Á÷ĞÇ
+				elseif (dx==2 and dy==-2) or (dy==2 and dx==-2) then					--æµæ˜Ÿ
 					s_type=18;
-				elseif (dx==1 and dy==0) or (dy==1 and dx==0) then						--ÔÆÔÂ
+				elseif (dx==1 and dy==0) or (dy==1 and dx==0) then						--äº‘æœˆ
 					s_type=19;
-				elseif (dx==1 and dy==-1) or (dy==1 and dx==-1) then					--ÆÖÔÂ
+				elseif (dx==1 and dy==-1) or (dy==1 and dx==-1) then					--æµ¦æœˆ
 					s_type=20;
-				elseif (dx==1 and dy==-2) or (dy==1 and dx==-2) then					--á°ÔÂ
+				elseif (dx==1 and dy==-2) or (dy==1 and dx==-2) then					--å²šæœˆ
 					s_type=21;
-				elseif (dx==0 and dy==-1) or (dy==0 and dx==-1) then					--ÒøÔÂ
+				elseif (dx==0 and dy==-1) or (dy==0 and dx==-1) then					--é“¶æœˆ
 					s_type=22;
-				elseif (dx==0 and dy==-2) or (dy==0 and dx==-2) then					--Ã÷ĞÇ
+				elseif (dx==0 and dy==-2) or (dy==0 and dx==-2) then					--æ˜æ˜Ÿ
 					s_type=23;
-				elseif (dx==-1 and dy==-1) or (dy==-1 and dx==-1) then					--Ğ±ÔÂ
+				elseif (dx==-1 and dy==-1) or (dy==-1 and dx==-1) then					--æ–œæœˆ
 					s_type=24;
-				elseif (dx==-1 and dy==-2) or (dy==-1 and dx==-2) then					--ÃûÔÂ
+				elseif (dx==-1 and dy==-2) or (dy==-1 and dx==-2) then					--åæœˆ
 					s_type=25;
-				elseif dx==-2 and dy==-2 then											--åçĞÇ
+				elseif dx==-2 and dy==-2 then											--å½—æ˜Ÿ
 					s_type=26;
 				end
 			end
@@ -2288,7 +2288,7 @@ function Five()
 		current=3-current;
 	end
 	local function manual()
-		--Âä×Ó
+		--è½å­
 		if MOUSE.status=='CLICK' and between(MOUSE.rx,gx-g_size/2,gx+grid_size+g_size/2) and between(MOUSE.ry,gy-g_size/2,gy+grid_size+g_size/2) then
 			local lx,ly=math.modf(0.5+(MOUSE.rx-gx)/g_size),math.modf(0.5+(MOUSE.ry-gy)/g_size);
 			if MOUSE.CLICK(gx+g_size*lx-qz_size,gy+g_size*ly-qz_size,gx+g_size*lx+qz_size,gy+g_size*ly+qz_size) then
@@ -2413,51 +2413,51 @@ function Five()
 		WaitKey();
 		PlayWavE(0);
 			--[[
-				Talk(eid,"Õâ¾ÖÆ½ÁË¡£");
-				Talk(eid,"ÄãÓ®ÁË¡£");
-				Talk(eid,"ÄãÊäÁË¡£");]]--
+				Talk(eid,"è¿™å±€å¹³äº†ã€‚");
+				Talk(eid,"ä½ èµ¢äº†ã€‚");
+				Talk(eid,"ä½ è¾“äº†ã€‚");]]--
 	end
 	--control
 	local gid=TableRandom({1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1224,1225,1226,1227,1228,1258,1259,1260,1261,1262,1263,1264});
 	local function config()
 		local m={
-					{"¿ªÊ¼",			nil,1,false};
-					{"¶ÔÊÖ: ",			nil,1,true};
-					{"ÏÈÊÖ: ×Ô¼º",		nil,1,true};
-					{"Àë¿ª",			nil,1,true};
+					{"å¼€å§‹",			nil,1,false};
+					{"å¯¹æ‰‹: ",			nil,1,true};
+					{"å…ˆæ‰‹: è‡ªå·±",		nil,1,true};
+					{"ç¦»å¼€",			nil,1,true};
 				}
 		while true do
 			if eid>0 then
 				m[1][4]=true;
-				m[2][1]="¶ÔÊÖ: "..JY.Person[eid]["Ãû³Æ"];
+				m[2][1]="å¯¹æ‰‹: "..JY.Person[eid]["åç§°"];
 			else
 				m[1][4]=false;
-				m[2][1]="Ñ¡Ôñ¶ÔÊÖ"
+				m[2][1]="é€‰æ‹©å¯¹æ‰‹"
 			end
 			if c_mode[1]==0 then
-				m[3][1]="ÏÈÊÖ: ×Ô¼º";
+				m[3][1]="å…ˆæ‰‹: è‡ªå·±";
 			else
-				m[3][1]="ÏÈÊÖ: ¶ÔÊÖ";
+				m[3][1]="å…ˆæ‰‹: å¯¹æ‰‹";
 			end
 			local str;
 			if eid>0 then
 				if c_mode[1]==0 then
-					str="ÇëÈ·ÈÏ£ºÍæ¼Ò(Ö´ºÚÏÈĞĞ) ¶ÔÕ½ [Green]"..JY.Person[eid]["Ãû³Æ"].."[Normal]¡£[n]¿ÉÒÔÂğ£¿";
+					str="è¯·ç¡®è®¤ï¼šç©å®¶(æ‰§é»‘å…ˆè¡Œ) å¯¹æˆ˜ [Green]"..JY.Person[eid]["åç§°"].."[Normal]ã€‚[n]å¯ä»¥å—ï¼Ÿ";
 				else
-					str="ÇëÈ·ÈÏ£º[Green]"..JY.Person[eid]["Ãû³Æ"].."[Normal](Ö´ºÚÏÈĞĞ) ¶ÔÕ½ Íæ¼Ò¡£[n]¿ÉÒÔÂğ£¿";
+					str="è¯·ç¡®è®¤ï¼š[Green]"..JY.Person[eid]["åç§°"].."[Normal](æ‰§é»‘å…ˆè¡Œ) å¯¹æˆ˜ ç©å®¶ã€‚[n]å¯ä»¥å—ï¼Ÿ";
 				end
 			else
-				str="ÇëÏÈÑ¡Ôñ¶ÔÊÖ¡£";
+				str="è¯·å…ˆé€‰æ‹©å¯¹æ‰‹ã€‚";
 			end
-			local r=TalkMenuEx("¹ÃÄï",gid,str,m);
+			local r=TalkMenuEx("å§‘å¨˜",gid,str,m);
 			if r==1 then
 				return 1;
 			elseif r==2 then
-				local id=ShowPersonList(GetAllList(),"ÖÇÄ±");
+				local id=ShowPersonList(GetAllList(),"æ™ºè°‹");
 				if id>0 then
 					eid=id;
-					eid_lv=math.modf((math.max(JY.Person[eid]["Í³ÂÊ"],JY.Person[eid]["ÖÇÄ±"])+math.max(JY.Person[eid]["ÕşÎñ"],JY.Person[eid]["÷ÈÁ¦"]))/2);
-					eid_ad=limitX(math.modf((JY.Person[eid]["ÎäÁ¦"]-JY.Person[eid]["Í³ÂÊ"])/5),-10,10);
+					eid_lv=math.modf((math.max(JY.Person[eid]["ç»Ÿç‡"],JY.Person[eid]["æ™ºè°‹"])+math.max(JY.Person[eid]["æ”¿åŠ¡"],JY.Person[eid]["é­…åŠ›"]))/2);
+					eid_ad=limitX(math.modf((JY.Person[eid]["æ­¦åŠ›"]-JY.Person[eid]["ç»Ÿç‡"])/5),-10,10);
 				end
 			elseif r==3 then
 				if c_mode[1]==0 then
@@ -2471,16 +2471,16 @@ function Five()
 		end
 	end
 	SetSceneID(70,0);
-	TalkEx("¹ÃÄï",gid,"»¶Ó­¡£");
+	TalkEx("å§‘å¨˜",gid,"æ¬¢è¿ã€‚");
 	while true do
 		local r=config();
 		if r==1 then
-			TalkEx("¹ÃÄï",gid,"×£ÄúÆì¿ªµÃÊ¤¡£");
+			TalkEx("å§‘å¨˜",gid,"ç¥æ‚¨æ——å¼€å¾—èƒœã€‚");
 			new_game();
 			SetSceneID(70,0);
-			TalkEx("¹ÃÄï",gid,"ÔÙÀ´Ò»¾ÖÂğ£¿");
+			TalkEx("å§‘å¨˜",gid,"å†æ¥ä¸€å±€å—ï¼Ÿ");
 		else
-			TalkEx("¹ÃÄï",gid,"ÆÚ´ıÄúÏÂ´ÎÔÙÀ´¡£");
+			TalkEx("å§‘å¨˜",gid,"æœŸå¾…æ‚¨ä¸‹æ¬¡å†æ¥ã€‚");
 			return;
 		end
 	end
@@ -2489,7 +2489,7 @@ end
 function SanQA()
 	local gid=TableRandom({1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1224,1225,1226,1227,1228,1258,1259,1260,1261,1262,1263,1264});
 	SetSceneID(70);
-	TalkEx("¹ÃÄï",gid,"»¶Ó­¡£");
+	TalkEx("å§‘å¨˜",gid,"æ¬¢è¿ã€‚");
 	local n={10,15,20,30,50,100,150,200,250,300,400,500,600};	--total 600ea
 	local pt={80,85,90,100,100,100,100,100,100,100,100,100,100}
 	local tk={};
@@ -2498,17 +2498,17 @@ function SanQA()
 		for i=1,600 do table.insert(tk,i) end
 	end
 	local m={
-				{n[1].."Ìâ",			nil,1,true};
-				{n[2].."Ìâ",			nil,1,true};
-				{n[3].."Ìâ",			nil,1,true};
-				{n[4].."Ìâ",			nil,1,true};
+				{n[1].."é¢˜",			nil,1,true};
+				{n[2].."é¢˜",			nil,1,true};
+				{n[3].."é¢˜",			nil,1,true};
+				{n[4].."é¢˜",			nil,1,true};
 			}
 	while true do
 		local rightnum,wrongnum,trynum=0,0,0;
-		local r=TalkMenuEx("¹ÃÄï",gid,"¿ªÊ¼ÌôÕ½Èı¹úÎÊ´ğ£¬×¼±¸ºÃÁËÂğ£¿[n]ÇëÑ¡ÔñÎÊÌâµÄÊıÄ¿°É¡£",m);
+		local r=TalkMenuEx("å§‘å¨˜",gid,"å¼€å§‹æŒ‘æˆ˜ä¸‰å›½é—®ç­”ï¼Œå‡†å¤‡å¥½äº†å—ï¼Ÿ[n]è¯·é€‰æ‹©é—®é¢˜çš„æ•°ç›®å§ã€‚",m);
 		if r>0 then
 			tk_init();
-			TalkEx("¹ÃÄï",gid,"×öºÃ×¼±¸£¬ÎÒÃÇ¿ªÊ¼°É£¡");
+			TalkEx("å§‘å¨˜",gid,"åšå¥½å‡†å¤‡ï¼Œæˆ‘ä»¬å¼€å§‹å§ï¼");
 			for i=1,n[r] do
 				local tid=TableRandom(tk);
 				local mdf=RND(0.5);
@@ -2522,52 +2522,52 @@ function SanQA()
 					end
 					local ra=math.random(1,4);
 					m1[ra][1]=JY.Str[qid+1];
-					local question=string.format("µÚ%dÌâ[n][wheat]%s",i,JY.Str[qid]);
-					local r1=TalkMenuEx("¹ÃÄï",gid,question,m1);
+					local question=string.format("ç¬¬%dé¢˜[n][wheat]%s",i,JY.Str[qid]);
+					local r1=TalkMenuEx("å§‘å¨˜",gid,question,m1);
 					if r1==0 then
 						break;
 					elseif r1==ra then
 						PlayWavE(3);
-						TalkEx("¹ÃÄï",gid,"ÕæÀ÷º¦£¬Ò»´Î¾Í´ğ¶ÔÁË£¡");
+						TalkEx("å§‘å¨˜",gid,"çœŸå‰å®³ï¼Œä¸€æ¬¡å°±ç­”å¯¹äº†ï¼");
 						rightnum=rightnum+1;
 					elseif mdf then
 						mdf=false;
-						TalkEx("¹ÃÄï",gid,"ºÇºÇ£¬Õâ¸ö´ğ°¸²»¶ÔÅ¶¡£[n]Ã»°ì·¨£¬ÔÙ¸øÄãÒ»´Î»ú»á°É¡£");
+						TalkEx("å§‘å¨˜",gid,"å‘µå‘µï¼Œè¿™ä¸ªç­”æ¡ˆä¸å¯¹å“¦ã€‚[n]æ²¡åŠæ³•ï¼Œå†ç»™ä½ ä¸€æ¬¡æœºä¼šå§ã€‚");
 						m1[r1][4]=false;
-						r1=TalkMenuEx("¹ÃÄï",gid,question,m1);
+						r1=TalkMenuEx("å§‘å¨˜",gid,question,m1);
 						if r1==0 then
 							break;
 						elseif r1==ra then
 							PlayWavE(3);
-							TalkEx("¹ÃÄï",gid,"×ÜËã¸øÄã×ö¶ÔÁË£¬²»»áÊÇÃÉµÄ°É£¿");
+							TalkEx("å§‘å¨˜",gid,"æ€»ç®—ç»™ä½ åšå¯¹äº†ï¼Œä¸ä¼šæ˜¯è’™çš„å§ï¼Ÿ");
 							rightnum=rightnum+1;
 							trynum=trynum+1;
 						else
-							TalkEx("¹ÃÄï",gid,"ÄãÌ«²î¾¢ÁË£¬²ÂÁ½»Ø¶¼Ã»ÓĞ²Â³öÀ´¡£");
+							TalkEx("å§‘å¨˜",gid,"ä½ å¤ªå·®åŠ²äº†ï¼ŒçŒœä¸¤å›éƒ½æ²¡æœ‰çŒœå‡ºæ¥ã€‚");
 							wrongnum=wrongnum+1;
 						end
 					else
-						TalkEx("¹ÃÄï",gid,"ºÇºÇ£¬Õâ¸ö´ğ°¸²»¶ÔÅ¶¡£");
+						TalkEx("å§‘å¨˜",gid,"å‘µå‘µï¼Œè¿™ä¸ªç­”æ¡ˆä¸å¯¹å“¦ã€‚");
 						wrongnum=wrongnum+1;
 					end
 				end
 			end
 			local ratio=math.modf(pt[r]*(rightnum-trynum/4)/n[r]);
-			local result=string.format("Ò»¹²%dµÀÌâ£¬ÄúµÄ»Ø´ğ: ÕıÈ·%d ´íÎó%d µÃ·Ö%d[n]",n[r],rightnum,wrongnum,ratio);
+			local result=string.format("ä¸€å…±%dé“é¢˜ï¼Œæ‚¨çš„å›ç­”: æ­£ç¡®%d é”™è¯¯%d å¾—åˆ†%d[n]",n[r],rightnum,wrongnum,ratio);
 			if ratio==100 then
-				result=result.."ÕæÊÇÌ«°ôÀ²£¬ÍêÈ«ÕıÈ·ÄØ£¡"
+				result=result.."çœŸæ˜¯å¤ªæ£’å•¦ï¼Œå®Œå…¨æ­£ç¡®å‘¢ï¼"
 			elseif ratio>80 then
-				result=result.."ºÃÀ÷º¦£¬ÆÚ´ıÄúÏÂ´Î¸üºÃµÄ±íÏÖ£¡"
+				result=result.."å¥½å‰å®³ï¼ŒæœŸå¾…æ‚¨ä¸‹æ¬¡æ›´å¥½çš„è¡¨ç°ï¼"
 			elseif ratio>60 then
-				result=result.."ÂíÂí»¢»¢°É£¬ÏÂ´Î¼ÓÓÍ¡£"
+				result=result.."é©¬é©¬è™è™å§ï¼Œä¸‹æ¬¡åŠ æ²¹ã€‚"
 			else
-				result=result.."¶î£¬ÔõÃ´ËµÄØ¡­¡­ÊÇÃ»ÓĞ·¢»Ó³öÕæÕıµÄÊµÁ¦Âğ£¿"
+				result=result.."é¢ï¼Œæ€ä¹ˆè¯´å‘¢â€¦â€¦æ˜¯æ²¡æœ‰å‘æŒ¥å‡ºçœŸæ­£çš„å®åŠ›å—ï¼Ÿ"
 			end
 			
-			TalkEx("¹ÃÄï",gid,result);
-			TalkEx("¹ÃÄï",gid,"ÒªÔÙÀ´Ò»´ÎÂğ£¿");
+			TalkEx("å§‘å¨˜",gid,result);
+			TalkEx("å§‘å¨˜",gid,"è¦å†æ¥ä¸€æ¬¡å—ï¼Ÿ");
 		else
-			TalkEx("¹ÃÄï",gid,"ÆÚ´ıÄúÏÂ´ÎÔÙÀ´¡£");
+			TalkEx("å§‘å¨˜",gid,"æœŸå¾…æ‚¨ä¸‹æ¬¡å†æ¥ã€‚");
 			break;
 		end
 	end
@@ -2575,23 +2575,23 @@ end
 function HuaRongD()
 	local gid=TableRandom({1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1224,1225,1226,1227,1228,1258,1259,1260,1261,1262,1263,1264});
 	SetSceneID(70);
-	TalkEx("¹ÃÄï",gid,"»¶Ó­¡£");
+	TalkEx("å§‘å¨˜",gid,"æ¬¢è¿ã€‚");
 	local m={
-				{"ÓÂ´³Îå¹Ø",			nil,1,true};
-				{"Ë®Ğ¹²»Í¨",			nil,1,true};
-				{"ºáµ¶Á¢Âí",			nil,1,true};
-				{"Ğ¡Ñà³ö³²",			nil,1,true};
-				{"½üÔÚåë³ß",			nil,1,true};
-				{"×ßÍ¶ÎŞÂ·",			nil,1,true};
+				{"å‹‡é—¯äº”å…³",			nil,1,true};
+				{"æ°´æ³„ä¸é€š",			nil,1,true};
+				{"æ¨ªåˆ€ç«‹é©¬",			nil,1,true};
+				{"å°ç‡•å‡ºå·¢",			nil,1,true};
+				{"è¿‘åœ¨å’«å°º",			nil,1,true};
+				{"èµ°æŠ•æ— è·¯",			nil,1,true};
 			}
 	while true do
 		local rightnum,wrongnum,trynum=0,0,0;
-		local r=TalkMenuEx("¹ÃÄï",gid,"¿ªÊ¼ÌôÕ½»ªÈİµÀ£¬×¼±¸ºÃÁËÂğ£¿[n]ÇëÑ¡Ôñ¹Ø¿¨°É¡£",m);
+		local r=TalkMenuEx("å§‘å¨˜",gid,"å¼€å§‹æŒ‘æˆ˜åå®¹é“ï¼Œå‡†å¤‡å¥½äº†å—ï¼Ÿ[n]è¯·é€‰æ‹©å…³å¡å§ã€‚",m);
 		if r>0 then
-			TalkEx("¹ÃÄï",gid,"×öºÃ×¼±¸£¬ÎÒÃÇ¿ªÊ¼°É£¡");
+			TalkEx("å§‘å¨˜",gid,"åšå¥½å‡†å¤‡ï¼Œæˆ‘ä»¬å¼€å§‹å§ï¼");
 			HuaRongD_sub(r);
 		else
-			TalkEx("¹ÃÄï",gid,"ÆÚ´ıÄúÏÂ´ÎÔÙÀ´¡£");
+			TalkEx("å§‘å¨˜",gid,"æœŸå¾…æ‚¨ä¸‹æ¬¡å†æ¥ã€‚");
 			break;
 		end
 	end	
@@ -2599,7 +2599,7 @@ end
 function HuaRongD_sub(gid)
 	local qp={};
 	local title="";
-	--1ÎªĞ¡±ø 2ÎªºáÅÅ 3ÎªÊúÅÅ 4Îª´ó·½¿é
+	--1ä¸ºå°å…µ 2ä¸ºæ¨ªæ’ 3ä¸ºç«–æ’ 4ä¸ºå¤§æ–¹å—
 	local qz={};
 	local function qz_set(kid,qid,x,y)
 		if kid==1 then
@@ -2656,13 +2656,13 @@ function HuaRongD_sub(gid)
 						y=y,
 						ox=x,
 						oy=y,
-						pic=JY.Person[pid]["ÈİÃ²"],
-						name=JY.Person[pid]["Ãû³Æ"],
+						pic=JY.Person[pid]["å®¹è²Œ"],
+						name=JY.Person[pid]["åç§°"],
 					}
 		end
 	end
 	local function qz_move(qid)
-		--ÉÏÏÂ×óÓÒ
+		--ä¸Šä¸‹å·¦å³
 		local dx={0,0,-1,1};
 		local dy={-1,1,0,0};
 		local qx,qy=0,0;
@@ -2693,77 +2693,77 @@ function HuaRongD_sub(gid)
 		end
 		qz={};
 		if gid==1 then
-			title="ÓÂ´³Îå¹Ø";
-			qz_insert(4,334,2,1);	--²Ü²Ù
-			qz_insert(2,419,1,3);	--ÕÅ·É
-			qz_insert(2,381,3,3);	--ÕÔÔÆ
-			qz_insert(2,499,1,4);	--Âí³¬
-			qz_insert(2,179,3,4);	--»ÆÖÒ
-			qz_insert(2,95,2,5);	--¹ØÓğ
-			qz_insert(1,237,1,1);	--ÖÜ²Ö
-			qz_insert(1,117,4,1);	--¹ØÆ½
-			qz_insert(1,616,1,2);	--Áõ·â
-			qz_insert(1,621,4,2);	--ÁÎ»¯
+			title="å‹‡é—¯äº”å…³";
+			qz_insert(4,334,2,1);	--æ›¹æ“
+			qz_insert(2,419,1,3);	--å¼ é£
+			qz_insert(2,381,3,3);	--èµµäº‘
+			qz_insert(2,499,1,4);	--é©¬è¶…
+			qz_insert(2,179,3,4);	--é»„å¿ 
+			qz_insert(2,95,2,5);	--å…³ç¾½
+			qz_insert(1,237,1,1);	--å‘¨ä»“
+			qz_insert(1,117,4,1);	--å…³å¹³
+			qz_insert(1,616,1,2);	--åˆ˜å°
+			qz_insert(1,621,4,2);	--å»–åŒ–
 		elseif gid==2 then
-			title="Ë®Ğ¹²»Í¨";
-			qz_insert(4,334,2,1);	--²Ü²Ù
-			qz_insert(3,419,4,1);	--ÕÅ·É
-			qz_insert(2,381,1,3);	--ÕÔÔÆ
-			qz_insert(2,499,3,3);	--Âí³¬
-			qz_insert(2,179,1,4);	--»ÆÖÒ
-			qz_insert(2,95,3,4);	--¹ØÓğ
-			qz_insert(1,237,1,1);	--ÖÜ²Ö
-			qz_insert(1,117,1,2);	--¹ØÆ½
-			qz_insert(1,616,1,5);	--Áõ·â
-			qz_insert(1,621,4,5);	--ÁÎ»¯
+			title="æ°´æ³„ä¸é€š";
+			qz_insert(4,334,2,1);	--æ›¹æ“
+			qz_insert(3,419,4,1);	--å¼ é£
+			qz_insert(2,381,1,3);	--èµµäº‘
+			qz_insert(2,499,3,3);	--é©¬è¶…
+			qz_insert(2,179,1,4);	--é»„å¿ 
+			qz_insert(2,95,3,4);	--å…³ç¾½
+			qz_insert(1,237,1,1);	--å‘¨ä»“
+			qz_insert(1,117,1,2);	--å…³å¹³
+			qz_insert(1,616,1,5);	--åˆ˜å°
+			qz_insert(1,621,4,5);	--å»–åŒ–
 		elseif gid==3 then
-			title="ºáµ¶Á¢Âí";
-			qz_insert(4,334,2,1);	--²Ü²Ù
-			qz_insert(3,419,1,1);	--ÕÅ·É
-			qz_insert(3,381,4,1);	--ÕÔÔÆ
-			qz_insert(3,499,1,3);	--Âí³¬
-			qz_insert(3,179,4,3);	--»ÆÖÒ
-			qz_insert(2,95,2,3);	--¹ØÓğ
-			qz_insert(1,237,2,4);	--ÖÜ²Ö
-			qz_insert(1,117,3,4);	--¹ØÆ½
-			qz_insert(1,616,1,5);	--Áõ·â
-			qz_insert(1,621,4,5);	--ÁÎ»¯
+			title="æ¨ªåˆ€ç«‹é©¬";
+			qz_insert(4,334,2,1);	--æ›¹æ“
+			qz_insert(3,419,1,1);	--å¼ é£
+			qz_insert(3,381,4,1);	--èµµäº‘
+			qz_insert(3,499,1,3);	--é©¬è¶…
+			qz_insert(3,179,4,3);	--é»„å¿ 
+			qz_insert(2,95,2,3);	--å…³ç¾½
+			qz_insert(1,237,2,4);	--å‘¨ä»“
+			qz_insert(1,117,3,4);	--å…³å¹³
+			qz_insert(1,616,1,5);	--åˆ˜å°
+			qz_insert(1,621,4,5);	--å»–åŒ–
 		elseif gid==4 then
-			title="Ğ¡Ñà³ö³²";
-			qz_insert(4,334,2,1);	--²Ü²Ù
-			qz_insert(3,419,1,1);	--ÕÅ·É
-			qz_insert(3,381,4,1);	--ÕÔÔÆ
-			qz_insert(2,499,1,3);	--Âí³¬
-			qz_insert(2,179,3,3);	--»ÆÖÒ
-			qz_insert(2,95,2,4);	--¹ØÓğ
-			qz_insert(1,237,1,4);	--ÖÜ²Ö
-			qz_insert(1,117,4,4);	--¹ØÆ½
-			qz_insert(1,616,1,5);	--Áõ·â
-			qz_insert(1,621,4,5);	--ÁÎ»¯
+			title="å°ç‡•å‡ºå·¢";
+			qz_insert(4,334,2,1);	--æ›¹æ“
+			qz_insert(3,419,1,1);	--å¼ é£
+			qz_insert(3,381,4,1);	--èµµäº‘
+			qz_insert(2,499,1,3);	--é©¬è¶…
+			qz_insert(2,179,3,3);	--é»„å¿ 
+			qz_insert(2,95,2,4);	--å…³ç¾½
+			qz_insert(1,237,1,4);	--å‘¨ä»“
+			qz_insert(1,117,4,4);	--å…³å¹³
+			qz_insert(1,616,1,5);	--åˆ˜å°
+			qz_insert(1,621,4,5);	--å»–åŒ–
 		elseif gid==5 then
-			title="½üÔÚåë³ß";
-			qz_insert(4,334,3,4);	--²Ü²Ù
-			qz_insert(3,419,2,1);	--ÕÅ·É
-			qz_insert(3,381,3,1);	--ÕÔÔÆ
-			qz_insert(3,499,4,1);	--Âí³¬
-			qz_insert(2,179,1,3);	--»ÆÖÒ
-			qz_insert(2,95,1,4);	--¹ØÓğ
-			qz_insert(1,237,1,1);	--ÖÜ²Ö
-			qz_insert(1,117,1,2);	--¹ØÆ½
-			qz_insert(1,616,3,3);	--Áõ·â
-			qz_insert(1,621,4,3);	--ÁÎ»¯
+			title="è¿‘åœ¨å’«å°º";
+			qz_insert(4,334,3,4);	--æ›¹æ“
+			qz_insert(3,419,2,1);	--å¼ é£
+			qz_insert(3,381,3,1);	--èµµäº‘
+			qz_insert(3,499,4,1);	--é©¬è¶…
+			qz_insert(2,179,1,3);	--é»„å¿ 
+			qz_insert(2,95,1,4);	--å…³ç¾½
+			qz_insert(1,237,1,1);	--å‘¨ä»“
+			qz_insert(1,117,1,2);	--å…³å¹³
+			qz_insert(1,616,3,3);	--åˆ˜å°
+			qz_insert(1,621,4,3);	--å»–åŒ–
 		elseif gid==6 then
-			title="×ßÍ¶ÎŞÂ·";
-			qz_insert(4,334,2,1);	--²Ü²Ù
-			qz_insert(3,419,1,1);	--ÕÅ·É
-			qz_insert(3,381,4,1);	--ÕÔÔÆ
-			qz_insert(3,499,1,3);	--Âí³¬
-			qz_insert(3,179,2,3);	--»ÆÖÒ
-			qz_insert(3,95,4,3);	--¹ØÓğ
-			qz_insert(1,237,3,3);	--ÖÜ²Ö
-			qz_insert(1,117,3,4);	--¹ØÆ½
-			qz_insert(1,616,1,5);	--Áõ·â
-			qz_insert(1,621,4,5);	--ÁÎ»¯
+			title="èµ°æŠ•æ— è·¯";
+			qz_insert(4,334,2,1);	--æ›¹æ“
+			qz_insert(3,419,1,1);	--å¼ é£
+			qz_insert(3,381,4,1);	--èµµäº‘
+			qz_insert(3,499,1,3);	--é©¬è¶…
+			qz_insert(3,179,2,3);	--é»„å¿ 
+			qz_insert(3,95,4,3);	--å…³ç¾½
+			qz_insert(1,237,3,3);	--å‘¨ä»“
+			qz_insert(1,117,3,4);	--å…³å¹³
+			qz_insert(1,616,1,5);	--åˆ˜å°
+			qz_insert(1,621,4,5);	--å»–åŒ–
 		end
 	end
 	qp_ini();
@@ -2774,8 +2774,8 @@ function HuaRongD_sub(gid)
 	local my=CC.ScreenH/2-map_height/2+24;
 	--UI
 	local bt={};
-	table.insert(bt,button_creat(1,1,CC.ScreenW-200,CC.ScreenH-120,"ÖØĞÂ¿ªÊ¼",true,true));
-	table.insert(bt,button_creat(1,2,CC.ScreenW-200,CC.ScreenH-80,"ÍË³ö",true,true));
+	table.insert(bt,button_creat(1,1,CC.ScreenW-200,CC.ScreenH-120,"é‡æ–°å¼€å§‹",true,true));
+	table.insert(bt,button_creat(1,2,CC.ScreenW-200,CC.ScreenH-80,"é€€å‡º",true,true));
 	local qz_cur=0;
 	local function redraw()
 		DrawGame();

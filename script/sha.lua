@@ -1,29 +1,29 @@
 SHA={
 	cardWidth = 96,
 	cardHeight = 128
-}	--‘§∂®“Â»´æ÷±‰¡øTable
+}	--È¢ÑÂÆö‰πâÂÖ®Â±ÄÂèòÈáèTable
 
 function creatCard(x,y,kind,id)
 	local width,height=SHA.cardWidth,SHA.cardHeight;
 	local card={
 				x1=x,y1=y,x2=x+width,y2=y+height,w=width,h=height,
-				id=id,kind=kind,	--0 …Ì∑›ø®, 1 Œ‰Ω´ø®, 2 ª˘±æø®,
-				pt=0,col=0,cid=0,	--µ„ ˝/ª®…´/ø®∆¨¿‡–Õ( ÷≈∆)
+				id=id,kind=kind,	--0 Ë∫´‰ªΩÂç°, 1 Ê≠¶Â∞ÜÂç°, 2 Âü∫Êú¨Âç°,
+				pt=0,col=0,cid=0,	--ÁÇπÊï∞/Ëä±Ëâ≤/Âç°ÁâáÁ±ªÂûã(ÊâãÁâå)
 				pic=1300,bgpic=1061,fpic=1201,hpic=1111,txt="",
 				hide=false,enable=true,on=false,sel=false,ontime=128,
 				}
 	if kind==0 then
-		local str={[0]="[B]÷˜[n]π´","[B]÷“[n]≥º","[B]∑¥[n]‘Ù","[B]ƒ⁄[n]ºÈ"};
+		local str={[0]="[B]‰∏ª[n]ÂÖ¨","[B]Âø†[n]Ëá£","[B]Âèç[n]Ë¥º","[B]ÂÜÖ[n]Â•∏"};
 		card.txt=str[id];
 	elseif kind==1 then
-		card.txt=SHA.Person[id]["√˚≥∆"];
+		card.txt=SHA.Person[id]["ÂêçÁß∞"];
 		card.pic=430+id;
 		card.fpic=1202;
 	elseif kind==2 then
-		card.txt=SHA.Card[id]["√˚≥∆"];
-		card.pt=SHA.Card[id]["µ„ ˝"];
-		card.col=SHA.Card[id]["ª®…´"];
-		card.cid=SHA.Card[id]["¿‡–Õ"];
+		card.txt=SHA.Card[id]["ÂêçÁß∞"];
+		card.pt=SHA.Card[id]["ÁÇπÊï∞"];
+		card.col=SHA.Card[id]["Ëä±Ëâ≤"];
+		card.cid=SHA.Card[id]["Á±ªÂûã"];
 		if card.cid==21 then
 			card.pic=1316;
 		elseif card.cid==31 then
@@ -204,7 +204,7 @@ function selectCard(cardlist,num1,num2)
 	num2=num2 or num1;
 	local num=0;
 	local bt={};
-	button_mainbt_1(bt,"æˆ∂®",1);
+	button_mainbt_1(bt,"ÂÜ≥ÂÆö",1);
 	bt[2].enable=false;
 	local function redraw()
 		drawSelectCard(cardlist);
@@ -289,7 +289,7 @@ function selectShenfen()
 	selectCard(cardlist,1);
 	PlayWavS(21);
 end
-function ShaConst()	--∂®“Â»´æ÷±‰¡ø
+function ShaConst()	--ÂÆö‰πâÂÖ®Â±ÄÂèòÈáè
 	SHA={
 			cardWidth=224/2,
 			cardHeight=312/2,
@@ -303,39 +303,39 @@ function ShaConst()	--∂®“Â»´æ÷±‰¡ø
 					msg="",
 				},
 			
-			-- ˝æ›Ω·ππ
+			--Êï∞ÊçÆÁªìÊûÑ
 			Save_Filename=CONFIG.DataPath .. "SHADATA.R3";
 			EFile=CONFIG.SoundPath .. "SE%03d.wav";
 			PersonSize=18,
 			Person_S={
-						["¥˙∫≈"]={0,0,2},
-						["√˚≥∆"]={2,2,14},
-						["—™µ„"]={16,0,2},
+						["‰ª£Âè∑"]={0,0,2},
+						["ÂêçÁß∞"]={2,2,14},
+						["Ë°ÄÁÇπ"]={16,0,2},
 					},
 			CardSize=28,
 			Card_S={
-						["¥˙∫≈"]={0,0,2},
-						["À˘ Ù∞¸"]={2,0,2},
-						["ª®…´"]={4,0,2},
-						["µ„ ˝"]={6,0,2},
-						["√˚≥∆"]={8,2,14},
-						["¿‡–Õ"]={22,0,2},
-						["π•ª˜∑∂Œß"]={24,0,2},
-						["Àµ√˜"]={26,0,2},
+						["‰ª£Âè∑"]={0,0,2},
+						["ÊâÄÂ±ûÂåÖ"]={2,0,2},
+						["Ëä±Ëâ≤"]={4,0,2},
+						["ÁÇπÊï∞"]={6,0,2},
+						["ÂêçÁß∞"]={8,2,14},
+						["Á±ªÂûã"]={22,0,2},
+						["ÊîªÂáªËåÉÂõ¥"]={24,0,2},
+						["ËØ¥Êòé"]={26,0,2},
 					},
 			SkillSize=20,
 			Skill_S={
-						["¥˙∫≈"]={0,0,2},
-						["√˚≥∆"]={2,2,14},
-						["¿‡–Õ"]={16,0,2},
-						["Àµ√˜"]={18,0,2},
+						["‰ª£Âè∑"]={0,0,2},
+						["ÂêçÁß∞"]={2,2,14},
+						["Á±ªÂûã"]={16,0,2},
+						["ËØ¥Êòé"]={18,0,2},
 					},
 		}
 end
-function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
+function LoadShaRecord()       -- ËØªÂèñÊ∏∏ÊàèËøõÂ∫¶
     local t1=lib.GetTime();
     local data=Byte.create(4*8);
-    --∂¡»°R*.idxŒƒº˛
+    --ËØªÂèñR*.idxÊñá‰ª∂
     local data=Byte.create(4*12);
     Byte.loadfile(data,SHA.Save_Filename,0,4*12);
 	local idx={}
@@ -344,11 +344,11 @@ function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
 	    idx[i]=Byte.get32(data,4*(i-1)*1);
 	end
 	
-    --∂¡»°R*.grpŒƒº˛
+    --ËØªÂèñR*.grpÊñá‰ª∂
 	--[[
-    JY.Data_Base=Byte.create(idx[1]-idx[0]);              --ª˘±æ ˝æ›
+    JY.Data_Base=Byte.create(idx[1]-idx[0]);              --Âü∫Êú¨Êï∞ÊçÆ
     Byte.loadfile(JY.Data_Base,CC.R_GRPFilename[id],idx[0],idx[1]-idx[0]);
-    --…Ë÷√∑√Œ ª˘±æ ˝æ›µƒ∑Ω∑®£¨’‚—˘æÕø…“‘”√∑√Œ ±Ìµƒ∑Ω Ω∑√Œ ¡À£Æ∂¯≤ª”√∞—∂˛Ω¯÷∆ ˝æ›◊™ªØŒ™±Ì£ÆΩ⁄‘ºº”‘ÿ ±º‰∫Õø’º‰
+    --ËÆæÁΩÆËÆøÈóÆÂü∫Êú¨Êï∞ÊçÆÁöÑÊñπÊ≥ïÔºåËøôÊ†∑Â∞±ÂèØ‰ª•Áî®ËÆøÈóÆË°®ÁöÑÊñπÂºèËÆøÈóÆ‰∫ÜÔºéËÄå‰∏çÁî®Êää‰∫åËøõÂà∂Êï∞ÊçÆËΩ¨Âåñ‰∏∫Ë°®ÔºéËäÇÁ∫¶Âä†ËΩΩÊó∂Èó¥ÂíåÁ©∫Èó¥
 	local meta_t={
 	    __index=function(t,k)
 	        return GetDataFromStruct(JY.Data_Base,0,CC.Base_S,k);
@@ -360,7 +360,7 @@ function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
 	}
     setmetatable(JY.Base,meta_t);]]--
 	
-    SHA.PersonNum=math.floor((idx[2]-idx[1])/SHA.PersonSize);   --»ÀŒÔ
+    SHA.PersonNum=math.floor((idx[2]-idx[1])/SHA.PersonSize);   --‰∫∫Áâ©
 	SHA.Data_Person=Byte.create(SHA.PersonSize*SHA.PersonNum);
 	Byte.loadfile(SHA.Data_Person,	SHA.Save_Filename,idx[1],SHA.PersonSize*SHA.PersonNum);
 	SHA.Person={};
@@ -377,7 +377,7 @@ function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
 		}
 		setmetatable(SHA.Person[i],meta_t);
 	end
-    SHA.CardNum=math.floor((idx[3]-idx[2])/SHA.CardSize);   -- ÷≈∆
+    SHA.CardNum=math.floor((idx[3]-idx[2])/SHA.CardSize);   --ÊâãÁâå
 	SHA.Data_Card=Byte.create(SHA.CardSize*SHA.CardNum);
 	Byte.loadfile(SHA.Data_Card,	SHA.Save_Filename,idx[2],SHA.CardSize*SHA.CardNum);
 	SHA.Card={};
@@ -394,7 +394,7 @@ function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
 		}
 		setmetatable(SHA.Card[i],meta_t);
 	end
-    SHA.SkillNum=math.floor((idx[4]-idx[3])/SHA.SkillSize);   --ººƒ‹
+    SHA.SkillNum=math.floor((idx[4]-idx[3])/SHA.SkillSize);   --ÊäÄËÉΩ
 	SHA.Data_Skill=Byte.create(SHA.SkillSize*SHA.SkillNum);
 	Byte.loadfile(SHA.Data_Skill,	SHA.Save_Filename,idx[3],SHA.SkillSize*SHA.SkillNum);
 	SHA.Skill={};
@@ -430,8 +430,8 @@ function LoadShaRecord()       -- ∂¡»°”Œœ∑Ω¯∂»
 	lib.Debug(string.format("Loadrecord time=%d",lib.GetTime()-t1));
 	
 end
---≤•∑≈“Ù–ße**
-function PlayWavS(id)              --≤•∑≈“Ù–ße**
+--Êí≠ÊîæÈü≥Êïàe**
+function PlayWavS(id)              --Êí≠ÊîæÈü≥Êïàe**
     if JY.EnableSound==0 then
         return ;
     end
@@ -448,7 +448,7 @@ end
 function ShaSub()
 	selectShenfen();
 	selectWujiang();
-	--√ø»À4’≈£¨÷˜π´+2
+	--ÊØè‰∫∫4Âº†Ôºå‰∏ªÂÖ¨+2
 	for id=1,#SHA.Player do
 		sendCard(id,14);
 	end
@@ -467,12 +467,12 @@ end
 function drawShaMap()
 	lib.FillColor(0,0,0,0,0);
 	lib.PicLoadCache(5,50*2,CC.ScreenW/2,CC.ScreenH/2);
-	--œ‘ æPlayer–≈œ¢
+	--ÊòæÁ§∫Player‰ø°ÊÅØ
 	drawCardList(SHA.UI.Player);
 	for i,v in ipairs(SHA.Player) do
 		local sx,sy
 		--card
-		if i>1 then	--∑«ÕÊº“
+		if i>1 then	--ÈùûÁé©ÂÆ∂
 			local cnum=#v.card;
 			if cnum>0 then
 				local w,h=SHA.cardWidth/4,SHA.cardHeight/4;
@@ -489,7 +489,7 @@ function drawShaMap()
 				DrawStringEnhance(sx,sy,"[W]"..#v.card,C_BLACK,20,0.5,0.5);
 			end
 		end
-		--Œ‰∆˜◊∞±∏¬Ì
+		--Ê≠¶Âô®Ë£ÖÂ§áÈ©¨
 		sx,sy=v.x+SHA.cardWidth+2,v.y+SHA.cardHeight/4+2;
 		local xadj=0;
 		if sx>CC.ScreenW then
@@ -499,7 +499,7 @@ function drawShaMap()
 		for j,cid in ipairs(v.item) do
 			if cid>0 then
 				local card=SHA.Card[cid];
-				local str=SHA.Str[21+card["ª®…´"]]..SHA.Str[card["µ„ ˝"]]..card["√˚≥∆"];
+				local str=SHA.Str[21+card["Ëä±Ëâ≤"]]..SHA.Str[card["ÁÇπÊï∞"]]..card["ÂêçÁß∞"];
 				DrawStringEnhance(sx,sy+20*(j-1),str,C_BLACK,20,xadj);
 			end
 		end
@@ -514,32 +514,32 @@ function drawShaMap()
 			sy=sy+22;
 		end
 	end
-	--œ‘ æÕÊº“ ÷≈∆
+	--ÊòæÁ§∫Áé©ÂÆ∂ÊâãÁâå
 	drawCardList(SHA.UI.MyCard);
-	--œ‘ æÃ· æ–≈œ¢
+	--ÊòæÁ§∫ÊèêÁ§∫‰ø°ÊÅØ
 	if #SHA.UI.msg>0 then
 		DrawStringEnhance(CC.ScreenW/2,CC.ScreenH*2/3,"[W]"..SHA.UI.msg,C_BLACK,36,0.5,1);
 	end
 end
 function initSha()
-	--≥ı ºªØÕÊº“–≈œ¢
+	--ÂàùÂßãÂåñÁé©ÂÆ∂‰ø°ÊÅØ
 	SHA.Player={};
 	for i=1,5 do
 		SHA.Player[i]={
-						pid=i,				--Œ‰Ω´ID
-						ai=true,			--ÕÊº“/AI
-						live=true,			--¥ÊªÓ
-						x=0,				--œ‘ æŒª÷√X
+						pid=i,				--Ê≠¶Â∞ÜID
+						ai=true,			--Áé©ÂÆ∂/AI
+						live=true,			--Â≠òÊ¥ª
+						x=0,				--ÊòæÁ§∫‰ΩçÁΩÆX
 						y=0,				--Y
-						role=0,				--÷˜/÷“/∑¥/ƒ⁄
+						role=0,				--‰∏ª/Âø†/Âèç/ÂÜÖ
 						hp=3,
 						hpmax=4,
-						item={0,0,0,0},		--Œ‰∆˜/∑¿æﬂ/¬ÌX2
-						spcard={},			--≈–∂®«¯
-						card={},			-- ÷≈∆
+						item={0,0,0,0},		--Ê≠¶Âô®/Èò≤ÂÖ∑/È©¨X2
+						spcard={},			--Âà§ÂÆöÂå∫
+						card={},			--ÊâãÁâå
 						};
 	end
-	if true then	--±Í◊º5»Àæ÷
+	if true then	--Ê†áÂáÜ5‰∫∫Â±Ä
 		SHA.Player[1].x=SHA.cardWidth;
 		SHA.Player[1].y=CC.ScreenH-SHA.cardHeight;
 		SHA.Player[2].x=CC.ScreenW-SHA.cardWidth;
@@ -551,17 +551,17 @@ function initSha()
 		SHA.Player[5].x=0;
 		SHA.Player[5].y=CC.ScreenH/2-SHA.cardHeight/2;
 	end
-	SHA.Player[1].ai=false;	--1∫≈Œ™ÕÊº“
-	--«Âø’À˘”–ø®≈∆≥ÿ
+	SHA.Player[1].ai=false;	--1Âè∑‰∏∫Áé©ÂÆ∂
+	--Ê∏ÖÁ©∫ÊâÄÊúâÂç°ÁâåÊ±†
 	SHA.CardPool={};
 	SHA.UsedCardPool={};
-	--Ω´ø…”√≈∆º”»Î∆˙≈∆«¯
+	--Â∞ÜÂèØÁî®ÁâåÂä†ÂÖ•ÂºÉÁâåÂå∫
 	for i=1,SHA.CardNum-1 do
-		if SHA.Card[i]["À˘ Ù∞¸"]==0 then
+		if SHA.Card[i]["ÊâÄÂ±ûÂåÖ"]==0 then
 			table.insert(SHA.UsedCardPool,i);
 		end
 	end
-	--œ¥≈∆£¨¥”∆˙≈∆«¯◊•»Îø®≈∆≥ÿ
+	--Ê¥óÁâåÔºå‰ªéÂºÉÁâåÂå∫ÊäìÂÖ•Âç°ÁâåÊ±†
 	initCard();
 end
 function initCard()
@@ -575,10 +575,10 @@ function sendCard(id,num)
 	end
 end
 function removeCard(id,cid)
-	table.insert(SHA.UsedCardPool,SHA.Player[id].card[cid]);	--º”»Î∆˙≈∆∂—
-	table.remove(SHA.Player[id].card,cid);						--¥” ÷≈∆∂—“∆≥˝
+	table.insert(SHA.UsedCardPool,SHA.Player[id].card[cid]);	--Âä†ÂÖ•ÂºÉÁâåÂ†Ü
+	table.remove(SHA.Player[id].card,cid);						--‰ªéÊâãÁâåÂ†ÜÁßªÈô§
 end
-function sortCard()	--∂‘ÕÊº“ ÷≈∆ ≈≈–Ú
+function sortCard()	--ÂØπÁé©ÂÆ∂ÊâãÁâå ÊéíÂ∫è
 	if #SHA.UI.MyCard>0 then
 		local frame=10;
 		PlayWavS(20);
@@ -599,7 +599,7 @@ function sortCard()	--∂‘ÕÊº“ ÷≈∆ ≈≈–Ú
 			--eventCardList(SHA.UI.MyCard,0);
 		end
 		table.sort(SHA.Player[1].card,	function(a,b)
-											if SHA.Card[a]["¿‡–Õ"]<SHA.Card[b]["¿‡–Õ"] then return true end
+											if SHA.Card[a]["Á±ªÂûã"]<SHA.Card[b]["Á±ªÂûã"] then return true end
 										end)
 		freshUI();
 		PlayWavS(20);
@@ -651,11 +651,11 @@ function ShaTurnUseCard(id)
 		sortCard();
 		local bt={}
 		local x,y=CC.ScreenW-SHA.cardWidth*3,CC.ScreenH-SHA.cardHeight*1.2-32;
-		table.insert(bt,button_creat(1,11,x,y,"»°œ˚",true,true));	x=x-100;
-		table.insert(bt,button_creat(1,12,x,y,"»∑∂®",true,true));
+		table.insert(bt,button_creat(1,11,x,y,"ÂèñÊ∂à",true,true));	x=x-100;
+		table.insert(bt,button_creat(1,12,x,y,"Á°ÆÂÆö",true,true));
 		table.insert(bt,button_creat(1,73,20,4,"Exit",true,true));
 		table.insert(bt,button_creat(1,74,120,4,"Dofile",true,true));
-		SHA.UI.msg="«Î≥ˆ≈∆°£"
+		SHA.UI.msg="ËØ∑Âá∫Áâå„ÄÇ"
 		while true do
 			local t1=lib.GetTime();
 			drawShaMap();
@@ -681,29 +681,29 @@ function ShaTurnUseCard(id)
 				end
 			end
 			eventCardList(SHA.UI.Player,0);
-			if eventCardList(SHA.UI.MyCard,1)==2 then	-- ÷≈∆—°‘Ò”–∏ƒ±‰£¨÷ÿ…Ë∞¥≈•Œƒ±æ
-				bt[2].txt="»∑∂®";
+			if eventCardList(SHA.UI.MyCard,1)==2 then	--ÊâãÁâåÈÄâÊã©ÊúâÊîπÂèòÔºåÈáçËÆæÊåâÈíÆÊñáÊú¨
+				bt[2].txt="Á°ÆÂÆö";
 				bt[2].enable=false;
 				local selcard=getSelCard(SHA.UI.MyCard);
 				if #selcard==1 then
 					local id=selcard[1];
 					local cid=SHA.UI.MyCard[id].id
 					local card=SHA.Card[cid];
-					local cardtype=card["¿‡–Õ"];
-					if between(cardtype,1,3) then	--…±
-						bt[2].txt="…±";
+					local cardtype=card["Á±ªÂûã"];
+					if between(cardtype,1,3) then	--ÊùÄ
+						bt[2].txt="ÊùÄ";
 						bt[2].enable=true;
-					elseif cardtype==21 and SHA.Player[1].hp<SHA.Player[1].hpmax then	--Ã“
-						bt[2].txt=" π”√";
+					elseif cardtype==21 and SHA.Player[1].hp<SHA.Player[1].hpmax then	--Ê°É
+						bt[2].txt="‰ΩøÁî®";
 						bt[2].enable=true;
-					elseif cardtype==31 then	--æ∆
-						bt[2].txt=" π”√";
+					elseif cardtype==31 then	--ÈÖí
+						bt[2].txt="‰ΩøÁî®";
 						bt[2].enable=true;
-					elseif between(cardtype,101,500) then	--Œ‰∆˜/∑¿æﬂ/¬Ì
-						bt[2].txt="◊∞±∏";
+					elseif between(cardtype,101,500) then	--Ê≠¶Âô®/Èò≤ÂÖ∑/È©¨
+						bt[2].txt="Ë£ÖÂ§á";
 						bt[2].enable=true;
 					elseif cardtype>500 then
-						bt[2].txt=" π”√";
+						bt[2].txt="‰ΩøÁî®";
 						bt[2].enable=true;
 					end
 				end
@@ -724,10 +724,10 @@ function useMyCard()
 		local id=selcard[1];
 		local cid=SHA.UI.MyCard[id].id
 		local card=SHA.Card[cid];
-		local cardtype=card["¿‡–Õ"];
-		if cardtype==1 then	--…±
+		local cardtype=card["Á±ªÂûã"];
+		if cardtype==1 then	--ÊùÄ
 			SHA.UI.MyCard={};
-			SHA.UI.msg="«Î—°‘Ò…±µƒ∂‘œÛ°£"
+			SHA.UI.msg="ËØ∑ÈÄâÊã©ÊùÄÁöÑÂØπË±°„ÄÇ"
 			local id2=selectPlayer();
 			if id2>0 then
 				showCard(1,cid,40);
@@ -735,34 +735,34 @@ function useMyCard()
 				removeCard(1,id);
 				freshUI();
 			end
-		elseif cardtype==21 then	--Ã“
+		elseif cardtype==21 then	--Ê°É
 			SHA.UI.MyCard={};
 			showCard(1,cid,40)
 			PlayWavS(95);
 			SHA.Player[1].hp=SHA.Player[1].hp+1;
 			removeCard(1,id);
 			freshUI();
-		elseif cardtype==31 then	--æ∆
+		elseif cardtype==31 then	--ÈÖí
 			
-		elseif between(cardtype,101,200) then	--Œ‰∆˜
+		elseif between(cardtype,101,200) then	--Ê≠¶Âô®
 			SHA.UI.MyCard={};
 			showCard(1,cid,40);
 			removeCard(1,id);
 			SHA.Player[1].item[1]=cid;
 			freshUI();
-		elseif between(cardtype,201,300) then	--∑¿æﬂ
+		elseif between(cardtype,201,300) then	--Èò≤ÂÖ∑
 			SHA.UI.MyCard={};
 			showCard(1,cid,40);
 			removeCard(1,id);
 			SHA.Player[1].item[2]=cid;
 			freshUI();
-		elseif between(cardtype,301,400) then	--¬Ì
+		elseif between(cardtype,301,400) then	--È©¨
 			SHA.UI.MyCard={};
 			showCard(1,cid,40);
 			removeCard(1,id);
 			SHA.Player[1].item[3]=cid;
 			freshUI();
-		elseif between(cardtype,401,500) then	--¬Ì
+		elseif between(cardtype,401,500) then	--È©¨
 			SHA.UI.MyCard={};
 			showCard(1,cid,40);
 			removeCard(1,id);
@@ -818,9 +818,9 @@ end
 ----------------
 ----	AI	----
 ----------------
-function Sha_AI2(id1,id2,kind)	--±ª∂Ø≥ˆ≈∆
+function Sha_AI2(id1,id2,kind)	--Ë¢´Âä®Âá∫Áâå
 	local cardkind=0;
-	if kind==1 then	--…±
+	if kind==1 then	--ÊùÄ
 		local id=Sha_AI_getCard(id1,11);
 		if id>0 then
 			showCard(id1,SHA.Player[id1].card[id]);
@@ -832,7 +832,7 @@ end
 function Sha_AI_getCard(id,cardkind)
 	local player=SHA.Player[id];
 	for i,v in ipairs(player.card) do
-		if SHA.Card[v]["¿‡–Õ"]==cardkind then
+		if SHA.Card[v]["Á±ªÂûã"]==cardkind then
 			return i;
 		end
 	end

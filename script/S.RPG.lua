@@ -10,7 +10,7 @@ function fillblank(s,num)
 		return string.format(string.format("%%%ds%%s%%%ds",left,right),"",s,"")
 	end
 end
-function limitX(x,minv,maxv)       --ÏŞÖÆxµÄ·¶Î§
+function limitX(x,minv,maxv)       --é™åˆ¶xçš„èŒƒå›´
   if x<minv then
     x=minv;
 	elseif x>maxv then
@@ -19,7 +19,7 @@ function limitX(x,minv,maxv)       --ÏŞÖÆxµÄ·¶Î§
 	return x
 end
 
-function filelength(filename)         --µÃµ½ÎÄ¼ş³¤¶È
+function filelength(filename)         --å¾—åˆ°æ–‡ä»¶é•¿åº¦
     local inp=io.open(filename,"rb");
 	if inp==nil then
 		return -1;
@@ -58,17 +58,17 @@ function DrawSkillTable(pid,x,y)
 			local i=5*row+col+1;
 			local cx=x+box_w*col;
 			local cy=y+box_h*row;
-			local pic=80;	--»Æ81 ÂÌ83 À¶85 ºì87
+			local pic=80;	--é»„81 ç»¿83 è“85 çº¢87
 			local color=M_Gray;
 			local str=JY.Str[8000+i];
 			if col==5 then
 				break;
 			end
-			if p["¼¼ÄÜ"..i]>0 then
+			if p["æŠ€èƒ½"..i]>0 then
 				color=C_WHITE;
 				pic=pic+1;
 				if MOUSE.IN(cx+1,cy+1,cx+box_w,cy+box_h) then
-					skill_id=p["¼¼ÄÜ"..i];
+					skill_id=p["æŠ€èƒ½"..i];
 					pic=pic+1;
 				end
 			end
@@ -84,60 +84,60 @@ function ReSetAttrib(id,flag)
 	if between(JY.Status,GAME_START,GAME_SMAP_MANUAL) then
 		flag=true;
 	end
-				if p["Ãû³Æ"]=="ÂÜÀò¿Ø" then
-					p["ÎäÁ¦"]=100;
-					p["ÖÇÄ±"]=100;
-					p["Í³ÂÊ"]=100;
-					p["ÕşÎñ"]=100;
-					p["÷ÈÁ¦"]=1;
-					p["ÁéÇÉ"]=1;
-					p["¸£Ô´"]=1;
-					p["±øÖÖ"]=21;
+				if p["åç§°"]=="èè‰æ§" then
+					p["æ­¦åŠ›"]=100;
+					p["æ™ºè°‹"]=100;
+					p["ç»Ÿç‡"]=100;
+					p["æ”¿åŠ¡"]=100;
+					p["é­…åŠ›"]=1;
+					p["çµå·§"]=1;
+					p["ç¦æº"]=1;
+					p["å…µç§"]=21;
 				end
 	--Get Weapon
 	local weapon1=0;
 	local weapon2=0;
 	local weapon3=0;
 	--[[
-	weapon1=p["ÎäÆ÷"];
-	weapon2=p["·À¾ß"];
-	weapon3=p["¸¨Öú"];]]--
+	weapon1=p["æ­¦å™¨"];
+	weapon2=p["é˜²å…·"];
+	weapon3=p["è¾…åŠ©"];]]--
 	
-	--¼ÆËãÎäÆ÷¼Ó³ÉºóµÄÊôĞÔ
-	local p_wuli=p["ÎäÁ¦"];
-	local p_tongshuai=p["Í³ÂÊ"];
-	local p_zhili=p["ÖÇÄ±"];
-	local p_zhengwu=p["ÕşÎñ"];
-	local p_meili=p["÷ÈÁ¦"];--[[
+	--è®¡ç®—æ­¦å™¨åŠ æˆåçš„å±æ€§
+	local p_wuli=p["æ­¦åŠ›"];
+	local p_tongshuai=p["ç»Ÿç‡"];
+	local p_zhili=p["æ™ºè°‹"];
+	local p_zhengwu=p["æ”¿åŠ¡"];
+	local p_meili=p["é­…åŠ›"];--[[
 	if weapon1>0 then
-		p_wuli=p_wuli+JY.Item[weapon1]["ÎäÁ¦"];
-		p_zhili=p_zhili+JY.Item[weapon1]["ÖÇÄ±"];
-		p_tongshuai=p_tongshuai+JY.Item[weapon1]["Í³ÂÊ"];
-		atk=atk+JY.Item[weapon1]["¹¥»÷"];
-		def=def+JY.Item[weapon1]["·ÀÓù"];
-		mov=mov+JY.Item[weapon1]["ÒÆ¶¯"];
+		p_wuli=p_wuli+JY.Item[weapon1]["æ­¦åŠ›"];
+		p_zhili=p_zhili+JY.Item[weapon1]["æ™ºè°‹"];
+		p_tongshuai=p_tongshuai+JY.Item[weapon1]["ç»Ÿç‡"];
+		atk=atk+JY.Item[weapon1]["æ”»å‡»"];
+		def=def+JY.Item[weapon1]["é˜²å¾¡"];
+		mov=mov+JY.Item[weapon1]["ç§»åŠ¨"];
 	end
 	if weapon2>0 then
-		p_wuli=p_wuli+JY.Item[weapon2]["ÎäÁ¦"];
-		p_zhili=p_zhili+JY.Item[weapon2]["ÖÇÄ±"];
-		p_tongshuai=p_tongshuai+JY.Item[weapon2]["Í³ÂÊ"];
-		atk=atk+JY.Item[weapon2]["¹¥»÷"];
-		def=def+JY.Item[weapon2]["·ÀÓù"];
-		mov=mov+JY.Item[weapon2]["ÒÆ¶¯"];
+		p_wuli=p_wuli+JY.Item[weapon2]["æ­¦åŠ›"];
+		p_zhili=p_zhili+JY.Item[weapon2]["æ™ºè°‹"];
+		p_tongshuai=p_tongshuai+JY.Item[weapon2]["ç»Ÿç‡"];
+		atk=atk+JY.Item[weapon2]["æ”»å‡»"];
+		def=def+JY.Item[weapon2]["é˜²å¾¡"];
+		mov=mov+JY.Item[weapon2]["ç§»åŠ¨"];
 	end
 	if weapon3>0 then
-		p_wuli=p_wuli+JY.Item[weapon3]["ÎäÁ¦"];
-		p_zhili=p_zhili+JY.Item[weapon3]["ÖÇÄ±"];
-		p_tongshuai=p_tongshuai+JY.Item[weapon3]["Í³ÂÊ"];
-		atk=atk+JY.Item[weapon3]["¹¥»÷"];
-		def=def+JY.Item[weapon3]["·ÀÓù"];
-		mov=mov+JY.Item[weapon3]["ÒÆ¶¯"];
+		p_wuli=p_wuli+JY.Item[weapon3]["æ­¦åŠ›"];
+		p_zhili=p_zhili+JY.Item[weapon3]["æ™ºè°‹"];
+		p_tongshuai=p_tongshuai+JY.Item[weapon3]["ç»Ÿç‡"];
+		atk=atk+JY.Item[weapon3]["æ”»å‡»"];
+		def=def+JY.Item[weapon3]["é˜²å¾¡"];
+		mov=mov+JY.Item[weapon3]["ç§»åŠ¨"];
 	end]]--
-	p["ÎäÁ¦2"]=p_wuli;
-	p["ÖÇÄ±2"]=p_zhili;
-	p["Í³ÂÊ2"]=p_tongshuai;
-	p["ÕşÎñ2"]=p_zhengwu;
-	p["÷ÈÁ¦2"]=p_meili;
+	p["æ­¦åŠ›2"]=p_wuli;
+	p["æ™ºè°‹2"]=p_zhili;
+	p["ç»Ÿç‡2"]=p_tongshuai;
+	p["æ”¿åŠ¡2"]=p_zhengwu;
+	p["é­…åŠ›2"]=p_meili;
 end
 function SelectArmy(num)
 	local s={};
@@ -147,7 +147,7 @@ function SelectArmy(num)
 	local total_num=0;
 	local size=20;
 	local size2=18;
-	s[1]={	str="Ñ¡ÔñÎä½«",
+	s[1]={	str="é€‰æ‹©æ­¦å°†",
 			txtdx=49,
 			pic=30,
 			x1=64,
@@ -155,7 +155,7 @@ function SelectArmy(num)
 			enable=true;
 			x2=64+98,
 			y2=58+32}
-	s[2]={	str="È«²¿È¡Ïû",
+	s[2]={	str="å…¨éƒ¨å–æ¶ˆ",
 			txtdx=49,
 			pic=30,
 			x1=174,
@@ -191,7 +191,7 @@ function SelectArmy(num)
 				end
 			end
 		end
-		total_num=index+num;	--×Ü³öÕ½ÈËÊı£¬±ØĞë³öÕ½ÈËÊı+´ıÑ¡ÈËÊı
+		total_num=index+num;	--æ€»å‡ºæˆ˜äººæ•°ï¼Œå¿…é¡»å‡ºæˆ˜äººæ•°+å¾…é€‰äººæ•°
 		for i,v in pairs(t_select) do
 			if true then
 				index=index+1;
@@ -207,7 +207,7 @@ function SelectArmy(num)
 				end
 			end
 		end
-		current_num=index;		--ÒÑÑ¡³öÕ½ÈËÊı(°üº¬ÁË±ØÑ¡)
+		current_num=index;		--å·²é€‰å‡ºæˆ˜äººæ•°(åŒ…å«äº†å¿…é€‰)
 		if #t_select>0 then
 			s[2].enable=true;
 		else
@@ -232,16 +232,16 @@ function SelectArmy(num)
 		lib.PicLoadCache(4,73*2,CC.ScreenW-672,56,1);
 		lib.PicLoadCache(4,72*2,CC.ScreenW-576-48,90,1);
 		lib.SetClip(0,0,0,0);
-		DrawStringEnhance(540,65,string.format("³öÕ½ÈËÊı %2d/%d",current_num,total_num),C_WHITE,size);
+		DrawStringEnhance(540,65,string.format("å‡ºæˆ˜äººæ•° %2d/%d",current_num,total_num),C_WHITE,size);
 		--DrawNumPic(650,68,current_num,total_num);
 		for i,v in pairs(per) do
 			if v.pid>=0 then
-				lib.PicLoadCache(2,(JY.Person[v.pid]["ÈİÃ²"]+2000)*2,v.x1,v.y1,1);
+				lib.PicLoadCache(2,(JY.Person[v.pid]["å®¹è²Œ"]+2000)*2,v.x1,v.y1,1);
 			end
 			if current==i+10 then
-				DrawStringEnhance(v.x1+45-size*#JY.Person[v.pid]["Ãû³Æ"]/4+1,v.y2-size-4,JY.Person[v.pid]["Ãû³Æ"],C_WHITE,size);
+				DrawStringEnhance(v.x1+45-size*#JY.Person[v.pid]["åç§°"]/4+1,v.y2-size-4,JY.Person[v.pid]["åç§°"],C_WHITE,size);
 			else
-				DrawStringEnhance(v.x1+45-size*#JY.Person[v.pid]["Ãû³Æ"]/4+1,v.y2-size-4,JY.Person[v.pid]["Ãû³Æ"],C_WHITE,size);
+				DrawStringEnhance(v.x1+45-size*#JY.Person[v.pid]["åç§°"]/4+1,v.y2-size-4,JY.Person[v.pid]["åç§°"],C_WHITE,size);
 			end
 		end
 		if current>10 then

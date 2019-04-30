@@ -1,24 +1,24 @@
 --[[
 SceneID
--1	ºÚÆÁ
-0	´óµØÍ¼
-43	Ðí²ý²Ü²Ù¹ÙÛ¡
-45	ÐìÖÝÌÕÖt¹ÙÛ¡
-48	±±Æ½ÒéÊÂÌü
-54	Æ½Ô­ÒéÊÂÌü/±±º£/Ð¡Åæ/ÏÂÚü/°×Âí/¹Å³Ç
-63	²Ü²Ù¾üÓªÕÊ
-66	Ðí²ý ²Ü²Ù»¨Ô°
-77	Ðí²ý„¢‚ä¹ÙÛ¡
-83	Úþ³ÇÒéÊÂÌü
-84	Ðí²ý¹¬µî
-85	ÂåÑô¹¬µî/Ðí²ýÒéÊÂÌü
-86	³ÂÁôÒéÊÂÌü/ÐìÖÝ
-87	ÐÅ¶ÈÒéÊÂÌü
-89	ÂåÑô¹¬µî£¨Ï×µÛ£©
-85	ÂåÑô¹¬µî£¨¶­×¿£©ÂÒÓÃ
-92	»´ÄÏÒéÊÂÌü
-97	¹ã´¨ÓªÕÊ/„¢‚ä
-95	³ÂÁôÓªÕÊ/»¢ÀÎ/Ô¬½B
+-1	é»‘å±
+0	å¤§åœ°å›¾
+43	è®¸æ˜Œæ›¹æ“å®˜é‚¸
+45	å¾å·žé™¶è¬™å®˜é‚¸
+48	åŒ—å¹³è®®äº‹åŽ…
+54	å¹³åŽŸè®®äº‹åŽ…/åŒ—æµ·/å°æ²›/ä¸‹é‚³/ç™½é©¬/å¤åŸŽ
+63	æ›¹æ“å†›è¥å¸
+66	è®¸æ˜Œ æ›¹æ“èŠ±å›­
+77	è®¸æ˜ŒåŠ‰å‚™å®˜é‚¸
+83	é‚ºåŸŽè®®äº‹åŽ…
+84	è®¸æ˜Œå®«æ®¿
+85	æ´›é˜³å®«æ®¿/è®¸æ˜Œè®®äº‹åŽ…
+86	é™ˆç•™è®®äº‹åŽ…/å¾å·ž
+87	ä¿¡åº¦è®®äº‹åŽ…
+89	æ´›é˜³å®«æ®¿ï¼ˆçŒ®å¸ï¼‰
+85	æ´›é˜³å®«æ®¿ï¼ˆè‘£å“ï¼‰ä¹±ç”¨
+92	æ·®å—è®®äº‹åŽ…
+97	å¹¿å·è¥å¸/åŠ‰å‚™
+95	é™ˆç•™è¥å¸/è™Žç‰¢/è¢ç´¹
 ]]--
 
 Event=	{
@@ -26,524 +26,524 @@ Event=	{
 				end,
 			[0101]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£²´ú»ÊµÛ¡¤[Green]ÁéµÛ[Normal]ÔÚÎ»ÆÚ¼ä£¬[n]×Ô[Red]¹âÎäÖÐÐË[Normal]ÒÔÀ´ÑÓÐøÁË£±£¶£°ÄêµÄººÍõ³¯[n]ÒÑ³ÉÎª¶ñ³¼¡¢»Â¹ÙµÄ³²Ñ¨¡£");
-					DrawMulitStrBox("ÁéµÛÌØ±ðÖØÓÃ»Â¹ÙÕÅÈÃµÈÊ®ÈË£¬[n]ÈË³Æ¡¸[Red]Ê®³£ÊÌ[Normal]¡¹£¬ÕÆÎÕÊµÈ¨¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(3,"µ­Èë");
-					DrawMulitStrBox("Õþ¾Ö¶¯ÂÒ£¬¸÷µØÎÁÒßËÁÅ°£¬ÌìÔÖ²»¶Ï£¬µÁÔô²þâ±¡£[n]Æ£ÓÚÂÒÊÀµÄ°ÙÐÕÃÇ¿ÊÍû×ÅÓ¢ÐÛµÄ³öÏÖ¡£");
-					LoadPic(3,"µ­³ö");
-					LoadPic(104,"µ­Èë");
-					DrawMulitStrBox("¹âºÍ£·Äê£¨£±£¸£´Äê£©£¬[n]ºÅ³Æ´óÏÍÁ¼Ê¦µÄ[Green]ÕÅ½Ç[Normal]·¢¶¯Å©ÃñÔÚºÓ±±Ò»´øÆðÒå£¬[n]Ê·³Æ¡¸[Red]»Æ½íÖ®ÂÒ[Normal]¡¹¡£");
-					DrawMulitStrBox("Æä¿ÚºÅÎª¡¸[Red]²ÔÌìÒÑËÀ£¬»ÆÌìµ±Á¢£»[n]          ËêÔÚ¼××Ó£¬ÌìÏÂ´ó¼ª¡£[Normal]¡¹¡£");
-					DrawMulitStrBox("ÔÚ³¯Í¢ÒÑÎÞÖÈÐòµÄ×´¿öÏÂ£¬[n]»Æ½í¾üÔÚ¸÷µØÀ©´óÊÆÁ¦£¬[n]»ª±±Ò»´øÒÑ±»»ÆÉ«ÆìÖÄ¸ÇÂú¡£");
-					LoadPic(104,"µ­³ö");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼’ä»£çš‡å¸Â·[Green]çµå¸[Normal]åœ¨ä½æœŸé—´ï¼Œ[n]è‡ª[Red]å…‰æ­¦ä¸­å…´[Normal]ä»¥æ¥å»¶ç»­äº†ï¼‘ï¼–ï¼å¹´çš„æ±‰çŽ‹æœ[n]å·²æˆä¸ºæ¶è‡£ã€å®¦å®˜çš„å·¢ç©´ã€‚");
+					DrawMulitStrBox("çµå¸ç‰¹åˆ«é‡ç”¨å®¦å®˜å¼ è®©ç­‰åäººï¼Œ[n]äººç§°ã€Œ[Red]åå¸¸ä¾[Normal]ã€ï¼ŒæŽŒæ¡å®žæƒã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(3,"æ·¡å…¥");
+					DrawMulitStrBox("æ”¿å±€åŠ¨ä¹±ï¼Œå„åœ°ç˜Ÿç–«è‚†è™ï¼Œå¤©ç¾ä¸æ–­ï¼Œç›—è´¼çŒ–ç—ã€‚[n]ç–²äºŽä¹±ä¸–çš„ç™¾å§“ä»¬æ¸´æœ›ç€è‹±é›„çš„å‡ºçŽ°ã€‚");
+					LoadPic(3,"æ·¡å‡º");
+					LoadPic(104,"æ·¡å…¥");
+					DrawMulitStrBox("å…‰å’Œï¼—å¹´ï¼ˆï¼‘ï¼˜ï¼”å¹´ï¼‰ï¼Œ[n]å·ç§°å¤§è´¤è‰¯å¸ˆçš„[Green]å¼ è§’[Normal]å‘åŠ¨å†œæ°‘åœ¨æ²³åŒ—ä¸€å¸¦èµ·ä¹‰ï¼Œ[n]å²ç§°ã€Œ[Red]é»„å·¾ä¹‹ä¹±[Normal]ã€ã€‚");
+					DrawMulitStrBox("å…¶å£å·ä¸ºã€Œ[Red]è‹å¤©å·²æ­»ï¼Œé»„å¤©å½“ç«‹ï¼›[n]          å²åœ¨ç”²å­ï¼Œå¤©ä¸‹å¤§å‰ã€‚[Normal]ã€ã€‚");
+					DrawMulitStrBox("åœ¨æœå»·å·²æ— ç§©åºçš„çŠ¶å†µä¸‹ï¼Œ[n]é»„å·¾å†›åœ¨å„åœ°æ‰©å¤§åŠ¿åŠ›ï¼Œ[n]åŽåŒ—ä¸€å¸¦å·²è¢«é»„è‰²æ——å¸œç›–æ»¡ã€‚");
+					LoadPic(104,"æ·¡å‡º");
 					if JY.FID==33 then
 						SetSceneID(55);
-						Talk("ÕÅ±¦","µØ¹«½«¾ü[Green]ÕÅ±¦[Normal]£¬[n]ÈË¹«½«¾ü[Green]ÕÅÁº[Normal]¸Õ¸Õ¹éÀ´¡£");
-						Talk("ÕÅÁº","Ó±´¨µÄ¹Ù¾üÈ«²¿´òÅÜÁË£¬[n]Ô¥ÖÝÒ»´øÊÇÎÒÃÇµÄ¡£");
-						Talk("ÕÅÁº","ÑÛÇ°ºÃÏñ¸¡ÏÖ´ó½«¾ü[Green]ºÎ½ø[Normal][n]µ½¶¼³ÇÍ¬»ï²Ô°×µÄÁ³µ°¡£");
-						Talk("ÕÅ½Ç","àÅ£¬Á½¸öÈË¶¼×öµÃºÃ¡£[n]ÒÔÕâÑùµÄÆøÊÆ±Ø¿ÉÒ»¹Ä×÷Æø»÷À£¹Ù¾ü£¡");
-						Talk("ÕÅ½Ç","[Red]ºº[Normal]³¯ÆøÊýÒÑ¾¡¡£[n]¶ÔÓÚ×ßÏòÃðÍöµÄ³¯´ú¸øÓèÒýµ¼ÊÇÎÒÃÇµÄÊ¹Ãü¡£");
-						Talk("ÕÅÁº","ÊÇ£¬×ñÃü£¡");
-						Talk("ÕÅ±¦","Ã÷°×ÁË¡£[n]¶¼Òª°´ÕÕ´óÏÍÁ¼Ê¦µÄÐÄÔ¸È¥×ö¡£");
+						Talk("å¼ å®","åœ°å…¬å°†å†›[Green]å¼ å®[Normal]ï¼Œ[n]äººå…¬å°†å†›[Green]å¼ æ¢[Normal]åˆšåˆšå½’æ¥ã€‚");
+						Talk("å¼ æ¢","é¢–å·çš„å®˜å†›å…¨éƒ¨æ‰“è·‘äº†ï¼Œ[n]è±«å·žä¸€å¸¦æ˜¯æˆ‘ä»¬çš„ã€‚");
+						Talk("å¼ æ¢","çœ¼å‰å¥½åƒæµ®çŽ°å¤§å°†å†›[Green]ä½•è¿›[Normal][n]åˆ°éƒ½åŸŽåŒä¼™è‹ç™½çš„è„¸è›‹ã€‚");
+						Talk("å¼ è§’","å—¯ï¼Œä¸¤ä¸ªäººéƒ½åšå¾—å¥½ã€‚[n]ä»¥è¿™æ ·çš„æ°”åŠ¿å¿…å¯ä¸€é¼“ä½œæ°”å‡»æºƒå®˜å†›ï¼");
+						Talk("å¼ è§’","[Red]æ±‰[Normal]æœæ°”æ•°å·²å°½ã€‚[n]å¯¹äºŽèµ°å‘ç­äº¡çš„æœä»£ç»™äºˆå¼•å¯¼æ˜¯æˆ‘ä»¬çš„ä½¿å‘½ã€‚");
+						Talk("å¼ æ¢","æ˜¯ï¼Œéµå‘½ï¼");
+						Talk("å¼ å®","æ˜Žç™½äº†ã€‚[n]éƒ½è¦æŒ‰ç…§å¤§è´¤è‰¯å¸ˆçš„å¿ƒæ„¿åŽ»åšã€‚");
 					elseif JY.FID==34 then
 						SetSceneID(54);
-						Talk("ºÎ½ø","Ê²Ã´£¡£¿ÔÚÔ¥ÖÝÒ²±»Ôô¾ü´ò°ÜÁË£¡£¿");
-						Talk("²Ü²Ù","ÎÒÊôÏÂ´øÀ´µÄÏûÏ¢£¬[n]ÊÇÈ·ÊµµÄÇé±¨¡£");
-						Talk("Ô¬½B","´ó½«¾ü£¬ÊÂÌ¬ÑÏÖØ°¡£¡[n]Ó¦¸ÃÂíÉÏ±à×éÌÖ·¥¾ü¡£");
-						Talk("ºÎ½ø","ÖªµÀÁË¡£ÄÇÃ´ÕÙ¼¯¸÷½«¾ü¡£");
+						Talk("ä½•è¿›","ä»€ä¹ˆï¼ï¼Ÿåœ¨è±«å·žä¹Ÿè¢«è´¼å†›æ‰“è´¥äº†ï¼ï¼Ÿ");
+						Talk("æ›¹æ“","æˆ‘å±žä¸‹å¸¦æ¥çš„æ¶ˆæ¯ï¼Œ[n]æ˜¯ç¡®å®žçš„æƒ…æŠ¥ã€‚");
+						Talk("è¢ç´¹","å¤§å°†å†›ï¼Œäº‹æ€ä¸¥é‡å•Šï¼[n]åº”è¯¥é©¬ä¸Šç¼–ç»„è®¨ä¼å†›ã€‚");
+						Talk("ä½•è¿›","çŸ¥é“äº†ã€‚é‚£ä¹ˆå¬é›†å„å°†å†›ã€‚");
 						SetSceneID(54);
-						Talk("ºÎ½ø","[Green]»Ê¸¦áÔ½«¾ü¡¢[Green]Öìƒy[Normal]½«¾ü¡¢[n][Green]Â¬Ö²[Normal]½«¾ü£¬»¹ÓÐ[Green]¶­×¿[Normal]½«¾ü£¡");
-						Talk("»Ê¸¦áÔ","ÊÇ£¡");
-						Talk("ºÎ½ø","ÄãÃÇÊÇµÖ¿¹Ôô¾üÈëÇÖµÄÖ÷Á¦²¿¶Ó¡£[n]ÈçºÎ£¬ÕâÑùµÄÐû²¼ºÜÇå³þ°É£¡");
-						Talk("Â¬Ö²","ÊÇ£¡[n]±Ø¾¡Ãà±¡Ö®Á¦£¬²»¸ºËùÍû¡£");
-						Talk("Öìƒy","Ò»¶¨»áÕòÑ¹Ôô¾ü¸øÄú¿´¡£");
-						Talk("¶­×¿","´ó½«¾ü¸óÏÂ£¬[n]ÇëµÈ´ýºÃÏûÏ¢°É£¡");
-						Talk("ºÎ½ø","àÅ£¬»¹ÓÐ[Green]Ô¬½B[Normal]ºÍ[Green]²Ü²Ù[Normal]£¡");
-						Talk("ºÎ½ø","ÑÏÁî¸÷µØÌ«ÊØ£¬[n]ÔÙÒ²²»ÄÜÔÊÐíÔô¾ÍÇÖÈë£¡");
-						Talk("Ô¬½B","×ñÃü£¬Á¢¿ÌÈ¥°ì£¡");
+						Talk("ä½•è¿›","[Green]çš‡ç”«åµ©å°†å†›ã€[Green]æœ±å„[Normal]å°†å†›ã€[n][Green]å¢æ¤[Normal]å°†å†›ï¼Œè¿˜æœ‰[Green]è‘£å“[Normal]å°†å†›ï¼");
+						Talk("çš‡ç”«åµ©","æ˜¯ï¼");
+						Talk("ä½•è¿›","ä½ ä»¬æ˜¯æŠµæŠ—è´¼å†›å…¥ä¾µçš„ä¸»åŠ›éƒ¨é˜Ÿã€‚[n]å¦‚ä½•ï¼Œè¿™æ ·çš„å®£å¸ƒå¾ˆæ¸…æ¥šå§ï¼");
+						Talk("å¢æ¤","æ˜¯ï¼[n]å¿…å°½ç»µè–„ä¹‹åŠ›ï¼Œä¸è´Ÿæ‰€æœ›ã€‚");
+						Talk("æœ±å„","ä¸€å®šä¼šé•‡åŽ‹è´¼å†›ç»™æ‚¨çœ‹ã€‚");
+						Talk("è‘£å“","å¤§å°†å†›é˜ä¸‹ï¼Œ[n]è¯·ç­‰å¾…å¥½æ¶ˆæ¯å§ï¼");
+						Talk("ä½•è¿›","å—¯ï¼Œè¿˜æœ‰[Green]è¢ç´¹[Normal]å’Œ[Green]æ›¹æ“[Normal]ï¼");
+						Talk("ä½•è¿›","ä¸¥ä»¤å„åœ°å¤ªå®ˆï¼Œ[n]å†ä¹Ÿä¸èƒ½å…è®¸è´¼å°±ä¾µå…¥ï¼");
+						Talk("è¢ç´¹","éµå‘½ï¼Œç«‹åˆ»åŽ»åŠžï¼");
 					else
 						SetSceneID(51);
-						Talk("‚÷Áî2","´óÊÂ²»ºÃÁË£¡»Æ½íÔôµÄ[Green]ÕÅ½Ç[Normal]£¬Æð±øÔì·´ÁË£¡[n]ÇëÄúÁ¢¿Ì»ðËÙ¸ÏÍùÕþÌü¼¯ºÏ¡£");
-						Talk(JY.PID,"ÄãËµÅÑÂÒ£¡£¿¾¹×ö³öÕâÃ´¹ý·ÖµÄÊÂ¡­¡­");
+						Talk("å‚³ä»¤2","å¤§äº‹ä¸å¥½äº†ï¼é»„å·¾è´¼çš„[Green]å¼ è§’[Normal]ï¼Œèµ·å…µé€ åäº†ï¼[n]è¯·æ‚¨ç«‹åˆ»ç«é€Ÿèµ¶å¾€æ”¿åŽ…é›†åˆã€‚");
+						Talk(JY.PID,"ä½ è¯´å›ä¹±ï¼ï¼Ÿç«Ÿåšå‡ºè¿™ä¹ˆè¿‡åˆ†çš„äº‹â€¦â€¦");
 						SetSceneID(54);
-						Talk("¹Ù†T","»Æ½íÔôµÄºáÐÐÁîÊ¥ÉÏ·³ÓÇ£¬[n]ÌØÃü[Green]ºÎ½ø[Normal]´óÈËÎª[Red]´ó½«¾ü[Normal]£¬Ç°ÍùÌÖ·¥Æäµ³Óð¡£[n]Ãü¸÷Öîºî½÷×ñ´Ó[Green]ºÎ½ø[Normal]½«¾üµÄÖ¸Ê¾£¬Ç°ÍùÌÖ·¥Ôô¾ü¡£");
-						Talk(JY.PID,"ÏÂ¹ÙÁìÖ¼¡£ÏÂ¹Ù±ØÒÔÈ«²¿ÐÄÁ¦´¦Àí´ËÊÂ¡£");
+						Talk("å®˜å“¡","é»„å·¾è´¼çš„æ¨ªè¡Œä»¤åœ£ä¸Šçƒ¦å¿§ï¼Œ[n]ç‰¹å‘½[Green]ä½•è¿›[Normal]å¤§äººä¸º[Red]å¤§å°†å†›[Normal]ï¼Œå‰å¾€è®¨ä¼å…¶å…šç¾½ã€‚[n]å‘½å„è¯¸ä¾¯è°¨éµä»Ž[Green]ä½•è¿›[Normal]å°†å†›çš„æŒ‡ç¤ºï¼Œå‰å¾€è®¨ä¼è´¼å†›ã€‚");
+						Talk(JY.PID,"ä¸‹å®˜é¢†æ—¨ã€‚ä¸‹å®˜å¿…ä»¥å…¨éƒ¨å¿ƒåŠ›å¤„ç†æ­¤äº‹ã€‚");
 						SetSceneID(54);
-						Talk(JY.PID,"Ë³´ÓÖ¼Òâ£¬ÎÒÃÇÁ¢¿Ì³ö·¢Õ÷ÌÖ»Æ½íÔô£¡[n]¶Ô³¯Í¢µ¶·æÏàÏòµÄÈË¾ø²»ÄÜÈÄË¡£¡");
+						Talk(JY.PID,"é¡ºä»Žæ—¨æ„ï¼Œæˆ‘ä»¬ç«‹åˆ»å‡ºå‘å¾è®¨é»„å·¾è´¼ï¼[n]å¯¹æœå»·åˆ€é”‹ç›¸å‘çš„äººç»ä¸èƒ½é¥¶æ•ï¼");
 						SetSceneID(67);
-						Talk(JY.PID,"£¨¡­¡­ÌýËµ»Æ½íµÄÐÅÖÚ±é¼°È«¹ú¸÷µØ£¬[n]Õâ´ÎµÄ¶¯ÂÒËÆºõ»á³ÖÐøºÜ¾Ã¡­¡­£©");
-						LoadPic(8,"µ­Èë");
-						DrawMulitStrBox("¸ú"..JY.Person[JY.PID]["Ãû³Æ"].."ËùÔ¤ÏëµÄÒ»Ñù£¬Õ½»ð½¥½¥¸²¸ÇÖÐ¹úÈ«ÍÁ¡£[n]Ê±´úÒÔÕâ³¡´óÂÒÎªÆõ»ú¿ªÊ¼ÓÐÁË¾Þ´ó±ä¶¯¡£[n]ÐÂÊ±´úµÄÓ¢ÐÛÃÇ£¬Ò»¸ö½ÓÒ»¸öµÄ¿ªÊ¼ÎªÊÀÈËËùÖª¡£");
-						LoadPic(8,"µ­³ö");
+						Talk(JY.PID,"ï¼ˆâ€¦â€¦å¬è¯´é»„å·¾çš„ä¿¡ä¼—éåŠå…¨å›½å„åœ°ï¼Œ[n]è¿™æ¬¡çš„åŠ¨ä¹±ä¼¼ä¹Žä¼šæŒç»­å¾ˆä¹…â€¦â€¦ï¼‰");
+						LoadPic(8,"æ·¡å…¥");
+						DrawMulitStrBox("è·Ÿ"..JY.Person[JY.PID]["åç§°"].."æ‰€é¢„æƒ³çš„ä¸€æ ·ï¼Œæˆ˜ç«æ¸æ¸è¦†ç›–ä¸­å›½å…¨åœŸã€‚[n]æ—¶ä»£ä»¥è¿™åœºå¤§ä¹±ä¸ºå¥‘æœºå¼€å§‹æœ‰äº†å·¨å¤§å˜åŠ¨ã€‚[n]æ–°æ—¶ä»£çš„è‹±é›„ä»¬ï¼Œä¸€ä¸ªæŽ¥ä¸€ä¸ªçš„å¼€å§‹ä¸ºä¸–äººæ‰€çŸ¥ã€‚");
+						LoadPic(8,"æ·¡å‡º");
 					end
 				end,
 			[0102]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£³´ú»ÊµÛ¡¤[Green]ÉÙµÛ[Normal]ÖÁ[n]µÚ£±£´´ú»ÊµÛ¡¤[Green]Ï×µÛ[Normal]ÔÚÎ»ÆÚ¼ä¡£");
-					DrawMulitStrBox("×Ô[Red]¹âÎäÖÐÐË[Normal]ÒÔÀ´ÑÓÐøÁË£±£¶£°ÄêµÄººÍõ³¯ÒÑ[n]Ãû´æÊµÍö£¬»ÊµÛÊ§È¥ÁËÇ¿ÓÐÁ¦µÄÖîºî×÷Îªºó¶Ü£¬[n]Á¬¶¼³Ç¶¼ÄÑÒÔÎ¬³Ö¡£");
-					DrawMulitStrBox("Íõ³¯±ÀÀ££¬µ¼ÖÂ¸÷µØÖîºî¸î¾Ý£¬[n]½øÈëÁË×ÔÏà²ÐÉ±µÄÕ½¹úÂÒÊÀÄê´ú¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(79,"µ­Èë");
-					DrawMulitStrBox("ÖÐÆ½£¶£¨£±£¸£¹£©Äê£´ÔÂ£¬[Green]ÁéµÛ[Normal]¼Ý±À£¬[n]»Ê×Ó[Green]±æ[Normal]¼´Î»[Green]ÉÙµÛ[Normal]¡£");
-					LoadPic(79,"µ­³ö");
-					DrawMulitStrBox("»Ê×Ó[Green]±æ[Normal]ÊÇ´ó½«¾ü[Green]ºÎ½ø[Normal]µÄÃÃÃÃºÎÌ«ºóÖ®×Ó£¬[n][Green]ºÎ½ø[Normal]µÄÈ¨ÊÆ½«²»¿ÉÍ¬ÈÕ¶øÓï£¬[n]ÕâÊÇ¿ÉÏë¶øÖªµÄÁË¡£");
-					DrawMulitStrBox("µ«µ½ÁË£¸ÔÂ£¬[n][Green]ºÎ½ø[Normal]È´±»ÕþµÐ»Â¹Ù¡¸[Red]Ê®³£ÊÌ[Normal]¡¹°µÉ±£¬[n]ËÀÓÚ·ÇÃü¡£");
-					DrawMulitStrBox("¡¸[Red]Ê®³£ÊÌ[Normal]¡¹»¹×¼±¸²ù³ýºÎ½øÊÖÏÂµÄ[Green]Ô¬½B[Normal]¡¢[n][Green]Ô¬Êõ[Normal]¡¢[Green]²Ü²Ù[Normal]µÈÈË£¬[n]¾ÍÔÚ´Ë»ìÂÒÖ®¼Ê£¬¾©³ÇÀ´ÁËÒ»Ð©²»ËÙÖ®¿Í¡£");
-					LoadPic(93,"µ­Èë");
-					DrawMulitStrBox("ÕòÑ¹Â¤Î÷ÅÑÂÒÖ®ºó£¬ÊÖÖÐÎÕÓÐÇ¿´ó±øÈ¨µÄ[Green]¶­×¿[Normal]£¬[n]ÂÊÁì´ó¾üÕ¼ÁìÁË¶¼³Ç[Red]ÂåÑô[Normal]¡£");
-					LoadPic(93,"µ­³ö");
-					LoadPic(106,"µ­Èë");
-					DrawMulitStrBox("ËûÐû²¼·ÏÉÙµÛ£¬Á¢³ÂÁôÍõ[Green]ÁõÐ­[Normal]Îª»ÊµÛ[n]´òµ¹¶ÔÁ¢ÅÉµÄ[Green]¶¡Ô­[Normal]£¬Ç¿ÐÐ·ÏÎ»¡£");
-					DrawMulitStrBox("È»¶ø£¬¶ÔÓÚ[Green]¶­×¿[Normal]µÄ±©ÐÐ£¬[n]¸÷µØ·´[Green]¶­×¿[Normal]ÆøÊÆÈÕÒæ¸ßÕÇ¡£");
-					DrawMulitStrBox("Í¬Äê£±£²ÔÂ£¬[Green]²Ü²Ù[Normal]»Øµ½¹ÊÏç³ÂÁô£¬[n]·¢±íºÅÁî¸÷µØÖîºî´òµ¹[Green]¶­×¿[Normal]µÄÏ­ÎÄ¡£");
-					LoadPic(106,"µ­³ö");
-					LoadPic(87,"µ­Èë");
-					DrawMulitStrBox("ÓëÆäÏàÓ¦µÄÓÍºÎ½øµÄÇ×ÐÅ²³º£[Green]Ô¬½B[Normal]¡¢ÆäµÜ[Green]Ô¬Êõ[Normal]¡¢[n]Æ½¶¨ÁË³¤É³ÅÑÂÒ£¬ÈË³Æ½­¶«Ö®»¢µÄÓÂ½«[Green]ŒOˆÔ[Normal]¡¢");
-					DrawMulitStrBox("Æ½¶¨ÁËÓÄÖÝÅÑÂÒµÄ°×Âí½«¾ü[Green]¹«Ëïè¶[Normal]¡¢[n]ÒÔ¼°Î÷Á¹µÄ[Green]ÂíÌÚ[Normal]¡£");
-					DrawMulitStrBox("¶øÇÒ£¬[Green]„¢‚ä[Normal]µÈ¶Ô[Green]¶­×¿[Normal]±©ÕþÐÄ»³²»ÂúµÄ¸÷µØÖîºî£¬[n]Ò²½á³ÉÁË¡¸[Red]·´¶­×¿ÁªÃË[Normal]¡¹¹²Í¬Æð±ø¡£");
-					LoadPic(87,"µ­³ö");
-					LoadPic(106,"µ­Èë");
-					DrawMulitStrBox("¶Ô´Ë£¬[Green]¶­×¿[Normal]Ò²ÔÚÂåÑôÖÜ±ß¼¯½á¾ü¶Ó£¬[n]¹¹³É³¹µ×¿¹Õ½Ö®ÊÆ¡£");
-					DrawMulitStrBox("³õÆ½£±£¨£±£¹£°£©Äê£±ÔÂ£¬[n][Green]¶­×¿[Normal]µÄ¾ü¶ÓÓë¡¸[Red]·´¶­×¿ÁªÃË[Normal]¡¹¿ªÊ¼½»Õ½¡£");
-					LoadPic(106,"µ­³ö");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼“ä»£çš‡å¸Â·[Green]å°‘å¸[Normal]è‡³[n]ç¬¬ï¼‘ï¼”ä»£çš‡å¸Â·[Green]çŒ®å¸[Normal]åœ¨ä½æœŸé—´ã€‚");
+					DrawMulitStrBox("è‡ª[Red]å…‰æ­¦ä¸­å…´[Normal]ä»¥æ¥å»¶ç»­äº†ï¼‘ï¼–ï¼å¹´çš„æ±‰çŽ‹æœå·²[n]åå­˜å®žäº¡ï¼Œçš‡å¸å¤±åŽ»äº†å¼ºæœ‰åŠ›çš„è¯¸ä¾¯ä½œä¸ºåŽç›¾ï¼Œ[n]è¿žéƒ½åŸŽéƒ½éš¾ä»¥ç»´æŒã€‚");
+					DrawMulitStrBox("çŽ‹æœå´©æºƒï¼Œå¯¼è‡´å„åœ°è¯¸ä¾¯å‰²æ®ï¼Œ[n]è¿›å…¥äº†è‡ªç›¸æ®‹æ€çš„æˆ˜å›½ä¹±ä¸–å¹´ä»£ã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(79,"æ·¡å…¥");
+					DrawMulitStrBox("ä¸­å¹³ï¼–ï¼ˆï¼‘ï¼˜ï¼™ï¼‰å¹´ï¼”æœˆï¼Œ[Green]çµå¸[Normal]é©¾å´©ï¼Œ[n]çš‡å­[Green]è¾¨[Normal]å³ä½[Green]å°‘å¸[Normal]ã€‚");
+					LoadPic(79,"æ·¡å‡º");
+					DrawMulitStrBox("çš‡å­[Green]è¾¨[Normal]æ˜¯å¤§å°†å†›[Green]ä½•è¿›[Normal]çš„å¦¹å¦¹ä½•å¤ªåŽä¹‹å­ï¼Œ[n][Green]ä½•è¿›[Normal]çš„æƒåŠ¿å°†ä¸å¯åŒæ—¥è€Œè¯­ï¼Œ[n]è¿™æ˜¯å¯æƒ³è€ŒçŸ¥çš„äº†ã€‚");
+					DrawMulitStrBox("ä½†åˆ°äº†ï¼˜æœˆï¼Œ[n][Green]ä½•è¿›[Normal]å´è¢«æ”¿æ•Œå®¦å®˜ã€Œ[Red]åå¸¸ä¾[Normal]ã€æš—æ€ï¼Œ[n]æ­»äºŽéžå‘½ã€‚");
+					DrawMulitStrBox("ã€Œ[Red]åå¸¸ä¾[Normal]ã€è¿˜å‡†å¤‡é“²é™¤ä½•è¿›æ‰‹ä¸‹çš„[Green]è¢ç´¹[Normal]ã€[n][Green]è¢æœ¯[Normal]ã€[Green]æ›¹æ“[Normal]ç­‰äººï¼Œ[n]å°±åœ¨æ­¤æ··ä¹±ä¹‹é™…ï¼Œäº¬åŸŽæ¥äº†ä¸€äº›ä¸é€Ÿä¹‹å®¢ã€‚");
+					LoadPic(93,"æ·¡å…¥");
+					DrawMulitStrBox("é•‡åŽ‹é™‡è¥¿å›ä¹±ä¹‹åŽï¼Œæ‰‹ä¸­æ¡æœ‰å¼ºå¤§å…µæƒçš„[Green]è‘£å“[Normal]ï¼Œ[n]çŽ‡é¢†å¤§å†›å é¢†äº†éƒ½åŸŽ[Red]æ´›é˜³[Normal]ã€‚");
+					LoadPic(93,"æ·¡å‡º");
+					LoadPic(106,"æ·¡å…¥");
+					DrawMulitStrBox("ä»–å®£å¸ƒåºŸå°‘å¸ï¼Œç«‹é™ˆç•™çŽ‹[Green]åˆ˜å[Normal]ä¸ºçš‡å¸[n]æ‰“å€’å¯¹ç«‹æ´¾çš„[Green]ä¸åŽŸ[Normal]ï¼Œå¼ºè¡ŒåºŸä½ã€‚");
+					DrawMulitStrBox("ç„¶è€Œï¼Œå¯¹äºŽ[Green]è‘£å“[Normal]çš„æš´è¡Œï¼Œ[n]å„åœ°å[Green]è‘£å“[Normal]æ°”åŠ¿æ—¥ç›Šé«˜æ¶¨ã€‚");
+					DrawMulitStrBox("åŒå¹´ï¼‘ï¼’æœˆï¼Œ[Green]æ›¹æ“[Normal]å›žåˆ°æ•…ä¹¡é™ˆç•™ï¼Œ[n]å‘è¡¨å·ä»¤å„åœ°è¯¸ä¾¯æ‰“å€’[Green]è‘£å“[Normal]çš„æª„æ–‡ã€‚");
+					LoadPic(106,"æ·¡å‡º");
+					LoadPic(87,"æ·¡å…¥");
+					DrawMulitStrBox("ä¸Žå…¶ç›¸åº”çš„æ²¹ä½•è¿›çš„äº²ä¿¡æ¸¤æµ·[Green]è¢ç´¹[Normal]ã€å…¶å¼Ÿ[Green]è¢æœ¯[Normal]ã€[n]å¹³å®šäº†é•¿æ²™å›ä¹±ï¼Œäººç§°æ±Ÿä¸œä¹‹è™Žçš„å‹‡å°†[Green]å­«å …[Normal]ã€");
+					DrawMulitStrBox("å¹³å®šäº†å¹½å·žå›ä¹±çš„ç™½é©¬å°†å†›[Green]å…¬å­™ç“’[Normal]ã€[n]ä»¥åŠè¥¿å‡‰çš„[Green]é©¬è…¾[Normal]ã€‚");
+					DrawMulitStrBox("è€Œä¸”ï¼Œ[Green]åŠ‰å‚™[Normal]ç­‰å¯¹[Green]è‘£å“[Normal]æš´æ”¿å¿ƒæ€€ä¸æ»¡çš„å„åœ°è¯¸ä¾¯ï¼Œ[n]ä¹Ÿç»“æˆäº†ã€Œ[Red]åè‘£å“è”ç›Ÿ[Normal]ã€å…±åŒèµ·å…µã€‚");
+					LoadPic(87,"æ·¡å‡º");
+					LoadPic(106,"æ·¡å…¥");
+					DrawMulitStrBox("å¯¹æ­¤ï¼Œ[Green]è‘£å“[Normal]ä¹Ÿåœ¨æ´›é˜³å‘¨è¾¹é›†ç»“å†›é˜Ÿï¼Œ[n]æž„æˆå½»åº•æŠ—æˆ˜ä¹‹åŠ¿ã€‚");
+					DrawMulitStrBox("åˆå¹³ï¼‘ï¼ˆï¼‘ï¼™ï¼ï¼‰å¹´ï¼‘æœˆï¼Œ[n][Green]è‘£å“[Normal]çš„å†›é˜Ÿä¸Žã€Œ[Red]åè‘£å“è”ç›Ÿ[Normal]ã€å¼€å§‹äº¤æˆ˜ã€‚");
+					LoadPic(106,"æ·¡å‡º");
 					if JY.FID==1 or JY.FID==2 or JY.FID==3 or JY.FID==4 or JY.FID==5 or JY.FID==10 or JY.FID==11 or JY.FID==13 or JY.FID==18 or JY.FID==19 or JY.FID==20 or JY.FID==21 or JY.FID==22 or JY.FID==23 or JY.FID==24 then
 						SetSceneID(55);
-						Talk("²Ü²Ù","ÏàÓ¦Ï­ÎÄµÄÖîºîÃÇ£¬[n]Ò»Â·±¼²¨£¬Ïë±Ø·Ç³£ÀÍÀÛ°É£¡¡£");
-						Talk("²Ü²Ù","ÎªÕýÒåÖ®ÊÂ£¬ÎÒÃÇ¾Ûµ½Ò»Æð£¬[n]ÒÔºó´ó¼Ò¶¼ÊÇÃËÓÑ¡£");
-						Talk("²Ü²Ù","ºÎ²»Ñ¸ËÙ±ø·ÖÈýÂ·£¬½ø¹¥¶¼³Ç£¬ÌÖ·¥[Green]¶­×¿[Normal]£¿");
-						Talk("ŒOˆÔ","[Green]²Ü²Ù[Normal]´óÈË£¬ÇëµÈÒ»µÈ£¡[n]ÏÖÔÚÒÑ³ÉÁ¢´ó¾ü£¬ÓÉË­µ±[Red]ÃËÖ÷[Normal]ÄØ£¿");
-						Talk("ŒOˆÔ","Èç¹ûÎÒÃÇ·Ö±ø¸÷×ÔÈ¥¹¥´ò£¬[n]½«ÓÐ±»[Green]¶­×¿[Normal]¾ü¶Ó¸÷¸ö»÷ÆÆµÄÎ£ÏÕ¡£");
-						Talk("²Ü²Ù","àÅ£¬[Green]ŒOˆÔ[Normal]´óÈËËùÑÔ¼«ÊÇ¡£");
-						Talk("²Ü²Ù","¼ÈÊÇÈç´Ë£¬[n]ÎÒÃÇ¾ÍÓµÕâÎ»[Green]Ô¬½B[Normal]´óÈËÎª[Red]ÃËÖ÷[Normal]ÈçºÎ£¿");
-						Talk("²Ü²Ù","Ô¬¼ÒËÄÊÀÈý¹«£¬ÄËÊÇºº³¯µÄ¹¦³¼£¬[n]µ±[Red]ÃËÖ÷[Normal]×îºÏÊÊ²»¹ýÁË¡£");
-						Talk("±«ÐÅ","ÃîÔÕ£¡[n]³ýÁË[Green]Ô¬½B[Normal]´óÈË£¬±ðÎÞËüÑ¡¡£");
-						Talk("²Ü²Ù","¼ÈÈ»´ó¼Ò±ðÎÞÒìÒé£¬[n]ÄÇÃ´£¬¾Í¾ö¶¨Çë[Green]Ô¬½B[Normal]´óÈËµ£ÈÎ[Red]ÃËÖ÷[Normal]°É£¡");
-						Talk("Ô¬½B","àÅ£¡ÄÇ¾Í¹§¾´²»Èç´ÓÃüÁË¡£");
-						Talk("Ô¬½B","¸÷Î»Öîºî£¬[n][Green]¶­×¿[Normal]ÒÑ¶ÔÎÒÃÇµÄÐÐ¶¯ÓÐËù²ì¾õ£¬[n]Ïë±ØÒ»¶¨×öºÃÁË³ä·Ö×¼±¸¡£");
-						Talk("Ô¬½B","ÏëÒª¹¥¿Ë[Red]ÂåÑô[Normal]£¬[n]±ØÐëÏÈÉ±ÈëÄÑÒÔ¹¥ÏÝµÄ¡¸[Red]»¢ÀÎ¹Ø[Normal]¡¹¡£");
-						Talk("Ô¬½B","È»¶ø£¬[Green]¶­×¿[Normal]¾üÖÐÓÐÕ¶É±[Green]¶¡Ô­[Normal][n]²¢¹é¸½ÓÚËûµÄ[Red]ÌìÏÂÎÞË«[Normal]µÄºÀ½Ü[Green]…Î²¼[Normal]¡£");
-						Talk("Ô¬½B","µ«ÊÇ£¬¸÷Â·ÖîºîÈç¹ûÍÅ½áÆðÀ´£¬[n]ÔÙÇ¿µÄ¾¢µÐÒ²²»×ãÎª¾å¡£");
-						Talk("Ô¬½B","ÇëÖîÎ»Ò»Í¬²ù³ý[Green]¶­×¿[Normal]µÄ±©Õþ£¬[n]ÕÑÊ¾ÌìÏÂ¹éÓÚÕýÍ³°É£¡");
+						Talk("æ›¹æ“","ç›¸åº”æª„æ–‡çš„è¯¸ä¾¯ä»¬ï¼Œ[n]ä¸€è·¯å¥”æ³¢ï¼Œæƒ³å¿…éžå¸¸åŠ³ç´¯å§ï¼ã€‚");
+						Talk("æ›¹æ“","ä¸ºæ­£ä¹‰ä¹‹äº‹ï¼Œæˆ‘ä»¬èšåˆ°ä¸€èµ·ï¼Œ[n]ä»¥åŽå¤§å®¶éƒ½æ˜¯ç›Ÿå‹ã€‚");
+						Talk("æ›¹æ“","ä½•ä¸è¿…é€Ÿå…µåˆ†ä¸‰è·¯ï¼Œè¿›æ”»éƒ½åŸŽï¼Œè®¨ä¼[Green]è‘£å“[Normal]ï¼Ÿ");
+						Talk("å­«å …","[Green]æ›¹æ“[Normal]å¤§äººï¼Œè¯·ç­‰ä¸€ç­‰ï¼[n]çŽ°åœ¨å·²æˆç«‹å¤§å†›ï¼Œç”±è°å½“[Red]ç›Ÿä¸»[Normal]å‘¢ï¼Ÿ");
+						Talk("å­«å …","å¦‚æžœæˆ‘ä»¬åˆ†å…µå„è‡ªåŽ»æ”»æ‰“ï¼Œ[n]å°†æœ‰è¢«[Green]è‘£å“[Normal]å†›é˜Ÿå„ä¸ªå‡»ç ´çš„å±é™©ã€‚");
+						Talk("æ›¹æ“","å—¯ï¼Œ[Green]å­«å …[Normal]å¤§äººæ‰€è¨€æžæ˜¯ã€‚");
+						Talk("æ›¹æ“","æ—¢æ˜¯å¦‚æ­¤ï¼Œ[n]æˆ‘ä»¬å°±æ‹¥è¿™ä½[Green]è¢ç´¹[Normal]å¤§äººä¸º[Red]ç›Ÿä¸»[Normal]å¦‚ä½•ï¼Ÿ");
+						Talk("æ›¹æ“","è¢å®¶å››ä¸–ä¸‰å…¬ï¼Œä¹ƒæ˜¯æ±‰æœçš„åŠŸè‡£ï¼Œ[n]å½“[Red]ç›Ÿä¸»[Normal]æœ€åˆé€‚ä¸è¿‡äº†ã€‚");
+						Talk("é²ä¿¡","å¦™å“‰ï¼[n]é™¤äº†[Green]è¢ç´¹[Normal]å¤§äººï¼Œåˆ«æ— å®ƒé€‰ã€‚");
+						Talk("æ›¹æ“","æ—¢ç„¶å¤§å®¶åˆ«æ— å¼‚è®®ï¼Œ[n]é‚£ä¹ˆï¼Œå°±å†³å®šè¯·[Green]è¢ç´¹[Normal]å¤§äººæ‹…ä»»[Red]ç›Ÿä¸»[Normal]å§ï¼");
+						Talk("è¢ç´¹","å—¯ï¼é‚£å°±æ­æ•¬ä¸å¦‚ä»Žå‘½äº†ã€‚");
+						Talk("è¢ç´¹","å„ä½è¯¸ä¾¯ï¼Œ[n][Green]è‘£å“[Normal]å·²å¯¹æˆ‘ä»¬çš„è¡ŒåŠ¨æœ‰æ‰€å¯Ÿè§‰ï¼Œ[n]æƒ³å¿…ä¸€å®šåšå¥½äº†å……åˆ†å‡†å¤‡ã€‚");
+						Talk("è¢ç´¹","æƒ³è¦æ”»å…‹[Red]æ´›é˜³[Normal]ï¼Œ[n]å¿…é¡»å…ˆæ€å…¥éš¾ä»¥æ”»é™·çš„ã€Œ[Red]è™Žç‰¢å…³[Normal]ã€ã€‚");
+						Talk("è¢ç´¹","ç„¶è€Œï¼Œ[Green]è‘£å“[Normal]å†›ä¸­æœ‰æ–©æ€[Green]ä¸åŽŸ[Normal][n]å¹¶å½’é™„äºŽä»–çš„[Red]å¤©ä¸‹æ— åŒ[Normal]çš„è±ªæ°[Green]å‘‚å¸ƒ[Normal]ã€‚");
+						Talk("è¢ç´¹","ä½†æ˜¯ï¼Œå„è·¯è¯¸ä¾¯å¦‚æžœå›¢ç»“èµ·æ¥ï¼Œ[n]å†å¼ºçš„åŠ²æ•Œä¹Ÿä¸è¶³ä¸ºæƒ§ã€‚");
+						Talk("è¢ç´¹","è¯·è¯¸ä½ä¸€åŒé“²é™¤[Green]è‘£å“[Normal]çš„æš´æ”¿ï¼Œ[n]æ˜­ç¤ºå¤©ä¸‹å½’äºŽæ­£ç»Ÿå§ï¼");
 					elseif JY.FID==6 then
 						SetSceneID(54);
-						Talk("¶­×¿","Ê²Ã´£¡£¿[n]¸÷µØÖîºîÒÑ¼¯½á£¬Ö±±¼¶¼³Ç¶øÀ´£¡£¿");
-						Talk("ÀîÈå","¸÷µØÖîºîÏàÓ¦[Green]²Ü²Ù[Normal]µÄÏ­ÎÄ£¬[n]Óµ[Green]Ô¬½B[Normal]ÎªÃËÖ÷£¬ÒÑ½á³ÉÁËÁªÃË¡£");
-						Talk("ÀîÈå","Ò»Á½¸öÖîºî»¹ºÃ¶Ô¸¶£¬[n]µ«ÊÇÈôÁªºÏÆðÀ´£¬¿ÖÅÂ²»Ò×¶Ô¸¶¡£");
-						Talk("¶­×¿","àÅ¡­¡­[n]´ËÊÂÉõ´ó£¬¸ÃÈçºÎÊÇºÃ£¿");
-						Talk("…Î²¼","Òå¸¸´óÈËºÎ±ØÓÇÐÄ£¿[n]ÄúÄª·ÇÍüÁËÓÐÎÒ[Green]…Î²¼[Normal]ÔÚ´Ë£¿");
-						Talk("…Î²¼","ÄÇÐ©µ¨Ð¡ÈçÊóµÄÆ¥·ò£¬[n]ÒªºôÅó½áµ³²Å¸ÒÀ´·¸£¬ÓÖÓÐºÎÄÜÄÍ£¿");
-						Talk("…Î²¼","Ö»ÒªÓÐÎÒ[Green]…Î²¼[Normal]ÔÚ£¬[n]¾Í¾ø²»»áÈÃµÐÈËÌ¤Èë¶¼³Ç°ë²½£¡");
-						Talk("¶­×¿","Å¶£¬Ã»´í£¡[n]Ö»ÒªÓÐÄãÔÚ£¬ÎÒ¾ÍÎÞËù¾åÅÂÁË¡£");
-						Talk("¶­×¿","¾ÍÊÇÎªÁË´ËÊ±£¬[n]ÎÒ²Å²»Ï§ÈÃ³ö[Red]³àÍÃÂí[Normal]£¬½«ÄãÄÉÎªÊôÏÂµÄ¡£");
-						Talk("¶­×¿","ÄãÂíÉÏ±¸ÆëÈËÂí£¬[n]ÓÃÄãÄÇ[Red]ÌìÏÂÎÞË«[Normal]µÄÎäÁ¦£¬É±¾¡ÄÇÐ©ÅÑÍ½°É£¡");
-						Talk("»ªÐÛ","[Green]¶­×¿[Normal]´óÈË£¬É±¼¦ÑÉÓÃÅ£µ¶£¡[n][Green]Ô¬½B[Normal]¡¢[Green]²Ü²Ù[Normal]Ö®±²¸ù±¾¾Í²»ÓÃÀÍ¼Ý[Green]…Î²¼[Normal]´óÈË£¬[n]Ä©½«±ã¿ÉÊ¤ÈÎ¡£");
-						Talk("»ªÐÛ","ÂåÑôÓÐÒ»ÒªÈû¡¸[Red]»¢ÀÎ¹Ø[Normal]¡¹£¬[n]¾ÍÈÃÄ©½«´òÏÈ·æ°É£¡");
-						Talk("¶­×¿","Å¶£¿ÊÇ[Green]»ªÐÛ[Normal]°¡£¡[n]ºÃ£¬ÎÒ¾ÍÅÉÄã×÷ÏÈ·æ¡£");
-						Talk("¶­×¿","ÄãËÙËÙ¼¯ºÏÈ«¾ü£¬ÔÚ¡¸[Red]»¢ÀÎ¹Ø[Normal]¡¹Ó­»÷µÐÈË£¬[n]¶¨ÒªÉ±µÃËûÃÇÆ¬¼×²»Áô£¡");
+						Talk("è‘£å“","ä»€ä¹ˆï¼ï¼Ÿ[n]å„åœ°è¯¸ä¾¯å·²é›†ç»“ï¼Œç›´å¥”éƒ½åŸŽè€Œæ¥ï¼ï¼Ÿ");
+						Talk("æŽå„’","å„åœ°è¯¸ä¾¯ç›¸åº”[Green]æ›¹æ“[Normal]çš„æª„æ–‡ï¼Œ[n]æ‹¥[Green]è¢ç´¹[Normal]ä¸ºç›Ÿä¸»ï¼Œå·²ç»“æˆäº†è”ç›Ÿã€‚");
+						Talk("æŽå„’","ä¸€ä¸¤ä¸ªè¯¸ä¾¯è¿˜å¥½å¯¹ä»˜ï¼Œ[n]ä½†æ˜¯è‹¥è”åˆèµ·æ¥ï¼Œææ€•ä¸æ˜“å¯¹ä»˜ã€‚");
+						Talk("è‘£å“","å—¯â€¦â€¦[n]æ­¤äº‹ç”šå¤§ï¼Œè¯¥å¦‚ä½•æ˜¯å¥½ï¼Ÿ");
+						Talk("å‘‚å¸ƒ","ä¹‰çˆ¶å¤§äººä½•å¿…å¿§å¿ƒï¼Ÿ[n]æ‚¨èŽ«éžå¿˜äº†æœ‰æˆ‘[Green]å‘‚å¸ƒ[Normal]åœ¨æ­¤ï¼Ÿ");
+						Talk("å‘‚å¸ƒ","é‚£äº›èƒ†å°å¦‚é¼ çš„åŒ¹å¤«ï¼Œ[n]è¦å‘¼æœ‹ç»“å…šæ‰æ•¢æ¥çŠ¯ï¼Œåˆæœ‰ä½•èƒ½è€ï¼Ÿ");
+						Talk("å‘‚å¸ƒ","åªè¦æœ‰æˆ‘[Green]å‘‚å¸ƒ[Normal]åœ¨ï¼Œ[n]å°±ç»ä¸ä¼šè®©æ•Œäººè¸å…¥éƒ½åŸŽåŠæ­¥ï¼");
+						Talk("è‘£å“","å“¦ï¼Œæ²¡é”™ï¼[n]åªè¦æœ‰ä½ åœ¨ï¼Œæˆ‘å°±æ— æ‰€æƒ§æ€•äº†ã€‚");
+						Talk("è‘£å“","å°±æ˜¯ä¸ºäº†æ­¤æ—¶ï¼Œ[n]æˆ‘æ‰ä¸æƒœè®©å‡º[Red]èµ¤å…”é©¬[Normal]ï¼Œå°†ä½ çº³ä¸ºå±žä¸‹çš„ã€‚");
+						Talk("è‘£å“","ä½ é©¬ä¸Šå¤‡é½äººé©¬ï¼Œ[n]ç”¨ä½ é‚£[Red]å¤©ä¸‹æ— åŒ[Normal]çš„æ­¦åŠ›ï¼Œæ€å°½é‚£äº›å›å¾’å§ï¼");
+						Talk("åŽé›„","[Green]è‘£å“[Normal]å¤§äººï¼Œæ€é¸¡ç„‰ç”¨ç‰›åˆ€ï¼[n][Green]è¢ç´¹[Normal]ã€[Green]æ›¹æ“[Normal]ä¹‹è¾ˆæ ¹æœ¬å°±ä¸ç”¨åŠ³é©¾[Green]å‘‚å¸ƒ[Normal]å¤§äººï¼Œ[n]æœ«å°†ä¾¿å¯èƒœä»»ã€‚");
+						Talk("åŽé›„","æ´›é˜³æœ‰ä¸€è¦å¡žã€Œ[Red]è™Žç‰¢å…³[Normal]ã€ï¼Œ[n]å°±è®©æœ«å°†æ‰“å…ˆé”‹å§ï¼");
+						Talk("è‘£å“","å“¦ï¼Ÿæ˜¯[Green]åŽé›„[Normal]å•Šï¼[n]å¥½ï¼Œæˆ‘å°±æ´¾ä½ ä½œå…ˆé”‹ã€‚");
+						Talk("è‘£å“","ä½ é€Ÿé€Ÿé›†åˆå…¨å†›ï¼Œåœ¨ã€Œ[Red]è™Žç‰¢å…³[Normal]ã€è¿Žå‡»æ•Œäººï¼Œ[n]å®šè¦æ€å¾—ä»–ä»¬ç‰‡ç”²ä¸ç•™ï¼");
 					else
 						
 					end
 				end,
 			[0103]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£´´ú»ÊµÛ¡¤[Green]Ï×µÛ[Normal]ÔÚÎ»ÆÚ¼ä¡£");
-					DrawMulitStrBox("×Ô[Red]¹âÎäÖÐÐË[Normal]ÒÔÀ´ÑÓÐøÁË£±£¶£°ÄêµÄººÍõ³¯ÒÑ[n]Ãû´æÊµÍö£¬»ÊµÛÊ§È¥ÁËÇ¿ÓÐÁ¦µÄÖîºî×÷Îªºó¶Ü£¬[n]Á¬¶¼³Ç¶¼ÄÑÒÔÎ¬³Ö¡£");
-					DrawMulitStrBox("Íõ³¯±ÀÀ££¬µ¼ÖÂ¸÷µØÖîºî¸î¾Ý£¬[n]ÀúÊ·ÎèÌ¨×ß½øÁË×ÔÏà²ÐÉ±µÄÕ½¹úÂÒÊÀÄê´ú¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(110,"µ­Èë");
-					DrawMulitStrBox("³õÆ½£³£¨£±£¹£²£©Äê£´ÔÂ£¬[n]³¤°²µÄ[Green]¶­×¿[Normal]È¨ÊÆ´ïµ½¼«µã£¬[n]È´±»Òå×Ó[Green]…Î²¼[Normal]ºÍË¾Í½[Green]ÍõÔÊ[Normal]ËùÉ±¡£");
-					LoadPic(79,"µ­³ö");
-					LoadPic(75,"µ­Èë");
-					DrawMulitStrBox("[Green]…Î²¼[Normal]ËäÔÝÊ±Õ¼¾ÝÁË¶¼³Ç³¤°²£¬[n]µ«Óë[Green]Àî‚à[Normal]µÈ¶­×¿¾üÓàµ³×÷Õ½Ê§°Ü£¬[n]ËæºóÌÓÀë³¤°²¡£");
-					LoadPic(75,"µ­³ö");
-					LoadPic(85,"µ­Èë");
-					DrawMulitStrBox("½øÈë¶¼³ÇµÄ[Green]Àî‚à[Normal]ÖïÉ±[Green]ÍõÔÊ[Normal]¡¢ÓÄ½û»ÊµÛ£¬[n]ÍÆÐÐÓë¶­×¿Ò»ÑùµÄ±©Õþ¡£[n]¶¼³Ç»Ä·Ï£¬³¯Í¢µÄÍþÐÅÉ¥Ê§´ù¾¡¡£");
-					LoadPic(85,"µ­³ö");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼”ä»£çš‡å¸Â·[Green]çŒ®å¸[Normal]åœ¨ä½æœŸé—´ã€‚");
+					DrawMulitStrBox("è‡ª[Red]å…‰æ­¦ä¸­å…´[Normal]ä»¥æ¥å»¶ç»­äº†ï¼‘ï¼–ï¼å¹´çš„æ±‰çŽ‹æœå·²[n]åå­˜å®žäº¡ï¼Œçš‡å¸å¤±åŽ»äº†å¼ºæœ‰åŠ›çš„è¯¸ä¾¯ä½œä¸ºåŽç›¾ï¼Œ[n]è¿žéƒ½åŸŽéƒ½éš¾ä»¥ç»´æŒã€‚");
+					DrawMulitStrBox("çŽ‹æœå´©æºƒï¼Œå¯¼è‡´å„åœ°è¯¸ä¾¯å‰²æ®ï¼Œ[n]åŽ†å²èˆžå°èµ°è¿›äº†è‡ªç›¸æ®‹æ€çš„æˆ˜å›½ä¹±ä¸–å¹´ä»£ã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(110,"æ·¡å…¥");
+					DrawMulitStrBox("åˆå¹³ï¼“ï¼ˆï¼‘ï¼™ï¼’ï¼‰å¹´ï¼”æœˆï¼Œ[n]é•¿å®‰çš„[Green]è‘£å“[Normal]æƒåŠ¿è¾¾åˆ°æžç‚¹ï¼Œ[n]å´è¢«ä¹‰å­[Green]å‘‚å¸ƒ[Normal]å’Œå¸å¾’[Green]çŽ‹å…[Normal]æ‰€æ€ã€‚");
+					LoadPic(79,"æ·¡å‡º");
+					LoadPic(75,"æ·¡å…¥");
+					DrawMulitStrBox("[Green]å‘‚å¸ƒ[Normal]è™½æš‚æ—¶å æ®äº†éƒ½åŸŽé•¿å®‰ï¼Œ[n]ä½†ä¸Ž[Green]æŽå‚•[Normal]ç­‰è‘£å“å†›ä½™å…šä½œæˆ˜å¤±è´¥ï¼Œ[n]éšåŽé€ƒç¦»é•¿å®‰ã€‚");
+					LoadPic(75,"æ·¡å‡º");
+					LoadPic(85,"æ·¡å…¥");
+					DrawMulitStrBox("è¿›å…¥éƒ½åŸŽçš„[Green]æŽå‚•[Normal]è¯›æ€[Green]çŽ‹å…[Normal]ã€å¹½ç¦çš‡å¸ï¼Œ[n]æŽ¨è¡Œä¸Žè‘£å“ä¸€æ ·çš„æš´æ”¿ã€‚[n]éƒ½åŸŽè’åºŸï¼Œæœå»·çš„å¨ä¿¡ä¸§å¤±æ®†å°½ã€‚");
+					LoadPic(85,"æ·¡å‡º");
 					SetSceneID(66);
-					DrawMulitStrBox("ÁíÒ»·½Ãæ£¬´Ó¶¼³Ç¸Ï³öÀ´µÄ[Green]…Î²¼[Normal]£¬[n]ÎªÁË¶«É½ÔÙÆðÑ°ÕÒ¾Ýµã£¬Õ·×ª¸÷µØ¡£");
-					DrawMulitStrBox("´ËÊ±[Green]…Î²¼[Normal]¿´ÖÐµÄ£¬[n]ÊÇ[Green]²Ü²Ù[Normal]¹¥´òÐìÖÝ¶ø³ÉÎª¿Õ³ÇµÄÙðÖÝ¡£");
-					DrawMulitStrBox("[Green]…Î²¼[Normal]ÔÚ[Green]êŒm[Normal]¡¢[Green]ˆåã[Normal]µÈÈËµÄÖ§Ô®ÏÂ£¬[n]ºÜ¿ìµÄ»÷ÆÆÁËÙðÖÝÖî³Ç£¬[n]²¢ÇÒÓûÍ»»÷[Green]²Ü²Ù¾ü[Normal]µÄºó·À¡£");
-					DrawMulitStrBox("[Green]²Ü²Ù[Normal]²»µÃ²»·ÅÆú¹¥´òÐìÖÝ£¬[n]µ÷Õû¾üÊÆ¸ÄÎªÓ­Õ½[Green]…Î²¼[Normal]£¬¼±ËÙ°ÎÓª³·ÍË¡£");
-					DrawMulitStrBox("ÃÍ½«[Green]…Î²¼[Normal]ºÍÖÇ½«[Green]²Ü²Ù[Normal]¶þÕßµÄ´ó¾ü£¬[n]ÔÚ¶¨ÌÕÉ½¸½½ü·¢Éú¼¤Õ½£¬[n]Õ¹¿ªÕù¶áÙðÖÝµÄ³¤ÆÚÕ½ÒÛ¡£");
+					DrawMulitStrBox("å¦ä¸€æ–¹é¢ï¼Œä»Žéƒ½åŸŽèµ¶å‡ºæ¥çš„[Green]å‘‚å¸ƒ[Normal]ï¼Œ[n]ä¸ºäº†ä¸œå±±å†èµ·å¯»æ‰¾æ®ç‚¹ï¼Œè¾—è½¬å„åœ°ã€‚");
+					DrawMulitStrBox("æ­¤æ—¶[Green]å‘‚å¸ƒ[Normal]çœ‹ä¸­çš„ï¼Œ[n]æ˜¯[Green]æ›¹æ“[Normal]æ”»æ‰“å¾å·žè€Œæˆä¸ºç©ºåŸŽçš„å…–å·žã€‚");
+					DrawMulitStrBox("[Green]å‘‚å¸ƒ[Normal]åœ¨[Green]é™³å®®[Normal]ã€[Green]å¼µé‚ˆ[Normal]ç­‰äººçš„æ”¯æ´ä¸‹ï¼Œ[n]å¾ˆå¿«çš„å‡»ç ´äº†å…–å·žè¯¸åŸŽï¼Œ[n]å¹¶ä¸”æ¬²çªå‡»[Green]æ›¹æ“å†›[Normal]çš„åŽé˜²ã€‚");
+					DrawMulitStrBox("[Green]æ›¹æ“[Normal]ä¸å¾—ä¸æ”¾å¼ƒæ”»æ‰“å¾å·žï¼Œ[n]è°ƒæ•´å†›åŠ¿æ”¹ä¸ºè¿Žæˆ˜[Green]å‘‚å¸ƒ[Normal]ï¼Œæ€¥é€Ÿæ‹”è¥æ’¤é€€ã€‚");
+					DrawMulitStrBox("çŒ›å°†[Green]å‘‚å¸ƒ[Normal]å’Œæ™ºå°†[Green]æ›¹æ“[Normal]äºŒè€…çš„å¤§å†›ï¼Œ[n]åœ¨å®šé™¶å±±é™„è¿‘å‘ç”Ÿæ¿€æˆ˜ï¼Œ[n]å±•å¼€äº‰å¤ºå…–å·žçš„é•¿æœŸæˆ˜å½¹ã€‚");
 					SetSceneID(63);
-					DrawMulitStrBox("´ËÊ±£¬ÔÚ½­¶«Õ½ÂÒµÄÎèÌ¨ÉÏ£¬³öÏÖÁËÒ»Î»ÉÙÄêÓ¢ÐÛ£¬[n]Ëû¾ÍÊÇÔøÔÚ¾£ÖÝÖ®Õ½ÖÐ°ÜÓÚÁõ±íµÄŒOˆÔÖ®×Ó[Green]ŒO²ß[Normal]¡£");
-					DrawMulitStrBox("[Green]ŒO²ß[Normal]Ò»Ö±ÊÜ»´ÄÏ[Green]Ô¬Êõ[Normal]µÄ±Ó»¤£¬[n]ÓÚÊÇ½«¸¸Ç×µÄÒÅÎï¡¤[Red]Óñçô[Normal]ÈÃ¸ø[Green]Ô¬Êõ[Normal]£¬[n]½èÓÃ±øÂí£¬È¡µÃ¶ÀÁ¢¡£");
-					DrawMulitStrBox("²¢ÒÔ´Ë½¨Á¢ºóÀ´¡¸[Red]Îâ[Normal]¡¹µÄ»ù´¡£¬[n]´Ó´ËÖ®ºó£¬±ã¿ªÊ¼ÁË[Green]ŒO²ß[Normal]µÄ³Æ°Ô½­¶«Ö®Õ½¡£");
+					DrawMulitStrBox("æ­¤æ—¶ï¼Œåœ¨æ±Ÿä¸œæˆ˜ä¹±çš„èˆžå°ä¸Šï¼Œå‡ºçŽ°äº†ä¸€ä½å°‘å¹´è‹±é›„ï¼Œ[n]ä»–å°±æ˜¯æ›¾åœ¨è†å·žä¹‹æˆ˜ä¸­è´¥äºŽåˆ˜è¡¨çš„å­«å …ä¹‹å­[Green]å­«ç­–[Normal]ã€‚");
+					DrawMulitStrBox("[Green]å­«ç­–[Normal]ä¸€ç›´å—æ·®å—[Green]è¢æœ¯[Normal]çš„åº‡æŠ¤ï¼Œ[n]äºŽæ˜¯å°†çˆ¶äº²çš„é—ç‰©Â·[Red]çŽ‰çŽº[Normal]è®©ç»™[Green]è¢æœ¯[Normal]ï¼Œ[n]å€Ÿç”¨å…µé©¬ï¼Œå–å¾—ç‹¬ç«‹ã€‚");
+					DrawMulitStrBox("å¹¶ä»¥æ­¤å»ºç«‹åŽæ¥ã€Œ[Red]å´[Normal]ã€çš„åŸºç¡€ï¼Œ[n]ä»Žæ­¤ä¹‹åŽï¼Œä¾¿å¼€å§‹äº†[Green]å­«ç­–[Normal]çš„ç§°éœ¸æ±Ÿä¸œä¹‹æˆ˜ã€‚");
 					if JY.FID==1 then
 						SetSceneID(54);
-						Talk("²Ü²Ù","ÕæÊÇÊ§²ß[n]ÙðÖÝ¾¹»áÈç´ËµÄÂäÈëËûÈËÖ®ÊÖ¡£");
-						Talk("ÏÄºîª","¹ýÈ¥Ö®ÊÂÒÑÎÞ·¨Íì»Ø£¬[n]ÏÖÔÚÓ¦µ±Óë[Green]…Î²¼[Normal]¾öÕ½£¬¶á»ØÙðÖÝ¡£");
-						Talk("ÏÄºîœY","ÎÒ¾ü±ø¶à½«¹ã£¬[n]¾ø²»Ñ·ÓÚ[Green]…Î²¼[Normal]¡£");
-						Talk("²Ü²Ù","ÄãÃÇËµµÄ¶¼ÕýÈ·£¬[n]µ«ÎÒ¾ü±³ºóÉÐÓÐ[Green]„¢‚ä[Normal]¡£");
-						Talk("²Ü²Ù","¶øÇÒ[Green]„¢‚ä[Normal]È°ÎÒÍ£Õ½£¬[n]×Ô¼ºÈ´×¤±øÔÚÐìÖÝ¡£");
-						Talk("²Ü²Ù","µ±ÎÒ¾üÓë[Green]…Î²¼[Normal]×÷Õ½ÆÚ¼ä£¬[n]Èô[Green]„¢‚ä[Normal]´Ó±³ºóÉ±Èë£¬ÄÇ¿É¾Í¸¹±³ÊÜµÐÁË¡£");
-						Talk("¹ù¼Î","´óÈËÇë·ÅÐÄ£¬[n][Green]„¢‚ä[Normal]¸Õ¸Õ½ø×¤ÐìÖÝ£¬¾ü±¸ÉÐ²»³ÉÆøºò¡£");
-						Talk("¹ù¼Î","ÈÕÇ°ËûÒªÇóÍ£Õ½£¬[n]ÎªµÄ±ãÊÇ²»ÏëÓëÎÒ¾ü¿ªÕ½£¬[n]×ãÒÔÖ¤Ã÷ÓðÒíÎ´·á¡£");
-						Talk("¹ù¼Î","µ±½ñÖ®ÊÆ£¬[n]ÎÒÃÇÓ¦¸ÃÏÈ¿¼ÂÇÈçºÎ¶á»ØÙðÖÝ²ÅÊÇ¡£");
-						Talk("Ü÷ª","[Green]¹ù¼Î[Normal]´óÈËËùÑÔ¼«ÊÇ£¬[n][Green]…Î²¼[Normal]ÊÇÖ»Öª½ø²»ÖªÍËµÄÃ§·ò£¬[n]Ò²Ðí»á·´¶øÀ´¹¥´òÎÒÃÇ¡£");
-						Talk("Ü÷ª","ÏÖÔÚÎÒÃÇÖ»Ðë×¨ÐÄÓÚÓë[Green]…Î²¼[Normal]Ö®Õ½¼´¿É¡£");
-						Talk("²Ü²Ù","ºÃ£¬ÄÇÃ´£¬[n]¾ÍÏÈÕ½[Green]…Î²¼[Normal]°É£¡");
-						Talk("²Ü²Ù","[Green]…Î²¼[Normal]ÊÇ[Red]ÌìÏÂÎÞË«[Normal]µÄºÀ½Ü£¬[n]ÏÖ½ñ¸üÓÐ[Green]êŒm[Normal]µÈÈË¸¨Öú£¬ÇÐÇÐ²»¿ÉÇáÊÓ¡£");
+						Talk("æ›¹æ“","çœŸæ˜¯å¤±ç­–[n]å…–å·žç«Ÿä¼šå¦‚æ­¤çš„è½å…¥ä»–äººä¹‹æ‰‹ã€‚");
+						Talk("å¤ä¾¯æƒ‡","è¿‡åŽ»ä¹‹äº‹å·²æ— æ³•æŒ½å›žï¼Œ[n]çŽ°åœ¨åº”å½“ä¸Ž[Green]å‘‚å¸ƒ[Normal]å†³æˆ˜ï¼Œå¤ºå›žå…–å·žã€‚");
+						Talk("å¤ä¾¯æ·µ","æˆ‘å†›å…µå¤šå°†å¹¿ï¼Œ[n]ç»ä¸é€ŠäºŽ[Green]å‘‚å¸ƒ[Normal]ã€‚");
+						Talk("æ›¹æ“","ä½ ä»¬è¯´çš„éƒ½æ­£ç¡®ï¼Œ[n]ä½†æˆ‘å†›èƒŒåŽå°šæœ‰[Green]åŠ‰å‚™[Normal]ã€‚");
+						Talk("æ›¹æ“","è€Œä¸”[Green]åŠ‰å‚™[Normal]åŠæˆ‘åœæˆ˜ï¼Œ[n]è‡ªå·±å´é©»å…µåœ¨å¾å·žã€‚");
+						Talk("æ›¹æ“","å½“æˆ‘å†›ä¸Ž[Green]å‘‚å¸ƒ[Normal]ä½œæˆ˜æœŸé—´ï¼Œ[n]è‹¥[Green]åŠ‰å‚™[Normal]ä»ŽèƒŒåŽæ€å…¥ï¼Œé‚£å¯å°±è…¹èƒŒå—æ•Œäº†ã€‚");
+						Talk("éƒ­å˜‰","å¤§äººè¯·æ”¾å¿ƒï¼Œ[n][Green]åŠ‰å‚™[Normal]åˆšåˆšè¿›é©»å¾å·žï¼Œå†›å¤‡å°šä¸æˆæ°”å€™ã€‚");
+						Talk("éƒ­å˜‰","æ—¥å‰ä»–è¦æ±‚åœæˆ˜ï¼Œ[n]ä¸ºçš„ä¾¿æ˜¯ä¸æƒ³ä¸Žæˆ‘å†›å¼€æˆ˜ï¼Œ[n]è¶³ä»¥è¯æ˜Žç¾½ç¿¼æœªä¸°ã€‚");
+						Talk("éƒ­å˜‰","å½“ä»Šä¹‹åŠ¿ï¼Œ[n]æˆ‘ä»¬åº”è¯¥å…ˆè€ƒè™‘å¦‚ä½•å¤ºå›žå…–å·žæ‰æ˜¯ã€‚");
+						Talk("è€å½§","[Green]éƒ­å˜‰[Normal]å¤§äººæ‰€è¨€æžæ˜¯ï¼Œ[n][Green]å‘‚å¸ƒ[Normal]æ˜¯åªçŸ¥è¿›ä¸çŸ¥é€€çš„èŽ½å¤«ï¼Œ[n]ä¹Ÿè®¸ä¼šåè€Œæ¥æ”»æ‰“æˆ‘ä»¬ã€‚");
+						Talk("è€å½§","çŽ°åœ¨æˆ‘ä»¬åªé¡»ä¸“å¿ƒäºŽä¸Ž[Green]å‘‚å¸ƒ[Normal]ä¹‹æˆ˜å³å¯ã€‚");
+						Talk("æ›¹æ“","å¥½ï¼Œé‚£ä¹ˆï¼Œ[n]å°±å…ˆæˆ˜[Green]å‘‚å¸ƒ[Normal]å§ï¼");
+						Talk("æ›¹æ“","[Green]å‘‚å¸ƒ[Normal]æ˜¯[Red]å¤©ä¸‹æ— åŒ[Normal]çš„è±ªæ°ï¼Œ[n]çŽ°ä»Šæ›´æœ‰[Green]é™³å®®[Normal]ç­‰äººè¾…åŠ©ï¼Œåˆ‡åˆ‡ä¸å¯è½»è§†ã€‚");
 					elseif JY.FID==2 then
 						SetSceneID(51);
-						Talk("ŒOÇ¬","[Green]„¢‚ä[Normal]´óÈË£¬[n]ÄãÀ´µÃÕýºÃ£¬¿ìÈ¥¼ûÎÒÃÇÖ÷¹«¡£");
+						Talk("å­«ä¹¾","[Green]åŠ‰å‚™[Normal]å¤§äººï¼Œ[n]ä½ æ¥å¾—æ­£å¥½ï¼Œå¿«åŽ»è§æˆ‘ä»¬ä¸»å…¬ã€‚");
 						SetSceneID(50);
-						LoadPic(77,"µ­Èë");
-						Talk("„¢‚ä","[Green]ÌÕÖt[Normal]´óÈË£¬Çë±£ÖØÉíÌå¡£");
-						Talk("ÌÕÖt","ÎÒ²¡ÒÑÎ£óÆ£¬³¯Ï¦ÄÑ±£¡£[n]ÍòÍû[Green]ÐþµÂ[Normal]¿ÉÁ¯ºº¼Ò³Ç³ØÎªÖØ£¬[n]½ÓÈÎÐìÖÝÄÁ£¬ÎÒËÀÒ²î¨Ä¿ÁË£¡¡£");
-						Talk("„¢‚ä","´óÈË»¹ÓÐÁ½¸ö¶ù×Ó£¬[n]ÎªºÎ²»´«Î»¸øÄãµÄ¶ù×Ó£¿");
-						Talk("ÌÕÖt","ÎÒ³¤×ÓÌÕÉÌ£¬´Î×ÓÌÕÓ¦£¬ËûÃÇµÄ²ÅÄÜ·ñ²»¹»¡£[n]ÎÒËÀÖ®ºó£¬Çë[Green]ÐþµÂ[Normal]ºÃºÃ½ÌÑµËûÃÇ¡£");
-						Talk("êPÓð","ÐÖ³¤£¬ÓÐÊ²Ã´¿ÉÓÌÔ¥µÄ£¬[n]Äã¾ÍÒªÓÐ×Ô¼ºµÄÁìµØÁË¡£");
-						Talk("ˆïw","´ó¸ç£¬¿ì¿ì¾ö¶¨°É¡£");
-						Talk("ŒOÇ¬","[Green]„¢‚ä[Normal]´óÈË£¬ÎÒÃÇÇóÄúÁË¡£");
-						Talk("ÃÓóÃ","ÐìÖÝÊ±ËÄÕ½Ö®µØ£¬[n]ÓëÆä±»µÐÈË¶á×ß£¬»¹²»ÈçÍÐ¸¶ÓÚ[Green]„¢‚ä[Normal]´óÈË¡£");
-						Talk("ÌÕÖt","Èç¹ûÄÜ½ÓÊÜÎÒµÄÇëÇó£¬[n]ÎÒÒ²¾ÍÃ»ÓÐÊ²Ã´¿ÉÇ£¹ÒµÄÁË£¬[n][Green]ÐþµÂ[Normal]ÇëÄãÒ»¶¨Òª½ÓÊÜ¡£");
-						Talk("„¢‚ä","Ã÷°×ÁË£¬„¢‚ä²»²Å£¬Ô¸½ÓÊÜ¡£");
-						Talk("ÌÕÖt","Äã½ÓÊÜÁË£¬Ð»Ð»£¬ÕâÑùÎÒÒ²Ã»ÓÐÇ£¹ÒÁË¡£[n]¸æ±ðÁË¡£");
-						DrawMulitStrBox("[Green]ÌÕÖt[Normal]È¥ÊÀÁË¡£");
-						LoadPic(77,"µ­³ö");
+						LoadPic(77,"æ·¡å…¥");
+						Talk("åŠ‰å‚™","[Green]é™¶è¬™[Normal]å¤§äººï¼Œè¯·ä¿é‡èº«ä½“ã€‚");
+						Talk("é™¶è¬™","æˆ‘ç—…å·²å±ç¬ƒï¼Œæœå¤•éš¾ä¿ã€‚[n]ä¸‡æœ›[Green]çŽ„å¾·[Normal]å¯æ€œæ±‰å®¶åŸŽæ± ä¸ºé‡ï¼Œ[n]æŽ¥ä»»å¾å·žç‰§ï¼Œæˆ‘æ­»ä¹Ÿçž‘ç›®äº†ï¼ã€‚");
+						Talk("åŠ‰å‚™","å¤§äººè¿˜æœ‰ä¸¤ä¸ªå„¿å­ï¼Œ[n]ä¸ºä½•ä¸ä¼ ä½ç»™ä½ çš„å„¿å­ï¼Ÿ");
+						Talk("é™¶è¬™","æˆ‘é•¿å­é™¶å•†ï¼Œæ¬¡å­é™¶åº”ï¼Œä»–ä»¬çš„æ‰èƒ½å¦ä¸å¤Ÿã€‚[n]æˆ‘æ­»ä¹‹åŽï¼Œè¯·[Green]çŽ„å¾·[Normal]å¥½å¥½æ•™è®­ä»–ä»¬ã€‚");
+						Talk("é—œç¾½","å…„é•¿ï¼Œæœ‰ä»€ä¹ˆå¯çŠ¹è±«çš„ï¼Œ[n]ä½ å°±è¦æœ‰è‡ªå·±çš„é¢†åœ°äº†ã€‚");
+						Talk("å¼µé£›","å¤§å“¥ï¼Œå¿«å¿«å†³å®šå§ã€‚");
+						Talk("å­«ä¹¾","[Green]åŠ‰å‚™[Normal]å¤§äººï¼Œæˆ‘ä»¬æ±‚æ‚¨äº†ã€‚");
+						Talk("ç³œç«º","å¾å·žæ—¶å››æˆ˜ä¹‹åœ°ï¼Œ[n]ä¸Žå…¶è¢«æ•Œäººå¤ºèµ°ï¼Œè¿˜ä¸å¦‚æ‰˜ä»˜äºŽ[Green]åŠ‰å‚™[Normal]å¤§äººã€‚");
+						Talk("é™¶è¬™","å¦‚æžœèƒ½æŽ¥å—æˆ‘çš„è¯·æ±‚ï¼Œ[n]æˆ‘ä¹Ÿå°±æ²¡æœ‰ä»€ä¹ˆå¯ç‰µæŒ‚çš„äº†ï¼Œ[n][Green]çŽ„å¾·[Normal]è¯·ä½ ä¸€å®šè¦æŽ¥å—ã€‚");
+						Talk("åŠ‰å‚™","æ˜Žç™½äº†ï¼ŒåŠ‰å‚™ä¸æ‰ï¼Œæ„¿æŽ¥å—ã€‚");
+						Talk("é™¶è¬™","ä½ æŽ¥å—äº†ï¼Œè°¢è°¢ï¼Œè¿™æ ·æˆ‘ä¹Ÿæ²¡æœ‰ç‰µæŒ‚äº†ã€‚[n]å‘Šåˆ«äº†ã€‚");
+						DrawMulitStrBox("[Green]é™¶è¬™[Normal]åŽ»ä¸–äº†ã€‚");
+						LoadPic(77,"æ·¡å‡º");
 					elseif JY.FID==3 then
 						SetSceneID(55);
-						DrawMulitStrBox("[Green]ŒO²ß[Normal]ÈÃ³ö[Red]Óñçô[Normal]½èµÃ±øÂíºó£¬[n]±ã×¤ÔúÔÚÂ®½­£¬ËÅ»ú¹¥´ò½­¶«¡£");
-						DrawMulitStrBox("´ËÊ±£¬Õý·ê½áÒåÐÖµÜ[Green]ÖÜè¤[Normal]À´¼û[Green]ŒO²ß[Normal]¡£");
-						Talk("ŒO²ß","[Green]¹«èª[Normal]£¬ÄãÀ´µÃÕýºÃ£¡[n]ÓÐÄãÔÚ£¬ÎÒÓÐÈçµÃ°ÙÍòÖ®¾ü¡£");
-						Talk("ÖÜè¤","[Green]²®·û[Normal]´óÈËºÎ±Ø¶àÀñ£¿[n][Green]²®·û[Normal]´óÈËÆð²½£¬ÎÒ±¾Ó¦È«Á¦Ö§Ô®²Å¶Ô¡£");
-						Talk("ÖÜè¤","ÎªÁË[Green]²®·û[Normal]´óÈËµÃ´óÒµ£¬[n]ÎÒÖÜè¤Ô¸Ð§È®ÂíÖ®ÀÍ¡£");
-						Talk("ŒO²ß","Èç´Ë¼«ºÃ£¬[n]ÄÇ¿ÉÈ«¿¿ÄãÁË¡£");
-						Talk("ÖÜè¤","ÊÇ¡£");
-						Talk("³ÌÆÕ","[Green]ŒO²ß[Normal]´óÈË£¬[n]Èç½ñÓÐÁË[Green]ÖÜè¤[Normal]´óÈËÏàÖú£¬[n]ÎÒÃÇÓ¦µ±Á¢¿Ì½ø¾ü½­¶«¡£");
-						Talk("³ÌÆÕ","ÇëÏÂ³öÕ÷ÃüÁî£¡");
-						Talk("ŒO²ß","àÅ£¬ºÃ£¡");
-						Talk("ŒO²ß","ÎªÁË¼Ì³Ð¸¸Ç×µÄÒÅÖ¾£¬[n]Ò²ÎªÁËÖØÕñ[Red]Ëï¼Ò[Normal]µÄÍþÃû£¬[n]ÎÒÐèÒªÖîÎ»¹²Í¬Ð­Öú¡£");
-						Talk("ŒO²ß","ÎÒÖªµÀ´ËÕ½ÊÇ³¡¿àÕ½£¬[n]µ«»¹ÊÇÇë¸÷Î»Í¬ÐÄÐ­Á¦£¬[n]Ò»ÆðÈ¡µÃÎÒ¾üµÄÊ¤Àû£¡");
+						DrawMulitStrBox("[Green]å­«ç­–[Normal]è®©å‡º[Red]çŽ‰çŽº[Normal]å€Ÿå¾—å…µé©¬åŽï¼Œ[n]ä¾¿é©»æ‰Žåœ¨åºæ±Ÿï¼Œä¼ºæœºæ”»æ‰“æ±Ÿä¸œã€‚");
+						DrawMulitStrBox("æ­¤æ—¶ï¼Œæ­£é€¢ç»“ä¹‰å…„å¼Ÿ[Green]å‘¨ç‘œ[Normal]æ¥è§[Green]å­«ç­–[Normal]ã€‚");
+						Talk("å­«ç­–","[Green]å…¬ç‘¾[Normal]ï¼Œä½ æ¥å¾—æ­£å¥½ï¼[n]æœ‰ä½ åœ¨ï¼Œæˆ‘æœ‰å¦‚å¾—ç™¾ä¸‡ä¹‹å†›ã€‚");
+						Talk("å‘¨ç‘œ","[Green]ä¼¯ç¬¦[Normal]å¤§äººä½•å¿…å¤šç¤¼ï¼Ÿ[n][Green]ä¼¯ç¬¦[Normal]å¤§äººèµ·æ­¥ï¼Œæˆ‘æœ¬åº”å…¨åŠ›æ”¯æ´æ‰å¯¹ã€‚");
+						Talk("å‘¨ç‘œ","ä¸ºäº†[Green]ä¼¯ç¬¦[Normal]å¤§äººå¾—å¤§ä¸šï¼Œ[n]æˆ‘å‘¨ç‘œæ„¿æ•ˆçŠ¬é©¬ä¹‹åŠ³ã€‚");
+						Talk("å­«ç­–","å¦‚æ­¤æžå¥½ï¼Œ[n]é‚£å¯å…¨é ä½ äº†ã€‚");
+						Talk("å‘¨ç‘œ","æ˜¯ã€‚");
+						Talk("ç¨‹æ™®","[Green]å­«ç­–[Normal]å¤§äººï¼Œ[n]å¦‚ä»Šæœ‰äº†[Green]å‘¨ç‘œ[Normal]å¤§äººç›¸åŠ©ï¼Œ[n]æˆ‘ä»¬åº”å½“ç«‹åˆ»è¿›å†›æ±Ÿä¸œã€‚");
+						Talk("ç¨‹æ™®","è¯·ä¸‹å‡ºå¾å‘½ä»¤ï¼");
+						Talk("å­«ç­–","å—¯ï¼Œå¥½ï¼");
+						Talk("å­«ç­–","ä¸ºäº†ç»§æ‰¿çˆ¶äº²çš„é—å¿—ï¼Œ[n]ä¹Ÿä¸ºäº†é‡æŒ¯[Red]å­™å®¶[Normal]çš„å¨åï¼Œ[n]æˆ‘éœ€è¦è¯¸ä½å…±åŒååŠ©ã€‚");
+						Talk("å­«ç­–","æˆ‘çŸ¥é“æ­¤æˆ˜æ˜¯åœºè‹¦æˆ˜ï¼Œ[n]ä½†è¿˜æ˜¯è¯·å„ä½åŒå¿ƒååŠ›ï¼Œ[n]ä¸€èµ·å–å¾—æˆ‘å†›çš„èƒœåˆ©ï¼");
 					elseif JY.FID==7 then
 						SetSceneID(54);
-						Talk("ˆåã","[Green]…Î²¼[Normal]½«¾ü£¬[n]¹§Ï²ÄãÕ¼ÁìµÄÙðÖÝ¡£");
-						Talk("…Î²¼","ÕâµÈÐ¡ÊÂ£¬[n]ÄÇ¶ÔÎÒÀ´½²Ëã²»ÁËÊ²Ã´¡£");
-						Talk("…Î²¼","[Green]²Ü²Ù[Normal]Æ¥·ò£¬[n]¸ù¾ÝµØ±»¶á£¬[n]Ïë±ØÁ³¶¼Æøµ½°×ÁË°É£¡");
-						Talk("êŒm","[Green]…Î²¼[Normal]´óÈË£¬¾ÝÌ½×Ó»Ø±¨£¬[n][Green]²Ü²Ù[Normal]ÒÑ¾­ºÍ„¢‚äÍ£Õ½£¬[n]Õý×¼±¸Îª¶á»ØÙðÖÝ¶øÀ´¡£");
-						Talk("êŒm","ÎÒ·½Ò²Ó¦¸Ã¼ÓÇ¿·ÀÊØ£¬[n]ÒÔ±ãÓ­»÷[Green]²Ü¾ü[Normal]¡£");
-						Talk("…Î²¼","[Green]²Ü²Ù[Normal]¡¢[Green]²Ü²Ù[Normal]£¬[n]ÄãÃÇ¾ÍÄÇÃ´ÅÂËûÂð£¿");
-						Talk("…Î²¼","[Green]²Ü²Ù[Normal]Èô¸ÒÀ´·¸£¬[n]ÎÒÒ»Âíµ±ÏÈ£¬Ò»êª±ãÈ¡ÆäÊ×¼¶¡£[n]¿´Ë­»¹¸Ò×èÈÅÎÒ£¿");
-						Talk("êŒm","[Green]²Ü²Ù[Normal]±øÇ¿Âí×³£¬[n]ÊÖÏÂÈË²Å¼Ã¼Ã£¬[n]Çë½«¾üÇ§Íò²»¿ÉÐ¡ÊÓ¡£");
-						Talk("…Î²¼","ÄãÌ«†ªàÂÁË£¡[Green]êŒm[Normal]£¡[n]ÎÒ×ÔÓÐÎÒµÄÏë·¨¡£");
-						Talk("…Î²¼","Ê×ÏÈÎÒÖ»Òª´òµ¹[Green]²Ü²Ù[Normal]£¬¹®¹ÌÖÐÔ­£¬[n]±ã¿É´Ó[Green]Àî‚à[Normal]ÊÖÖÐ¶á»Ø¶¼³Ç¡£");
-						Talk("…Î²¼","[Green]ˆß|[Normal]¡¢[Green]¸ßË³[Normal]£¬Á¢¿Ì±¸ÆëÈËÂí£¬[n]È¥È¡[Green]²Ü²Ù[Normal]µÄÊ×¼¶À´¼ûÎÒ¡£");
-						Talk("ˆß|","Ä©½«ÁìÃü¡£");
-						Talk("êŒm","¡­¡­");
+						Talk("å¼µé‚ˆ","[Green]å‘‚å¸ƒ[Normal]å°†å†›ï¼Œ[n]æ­å–œä½ å é¢†çš„å…–å·žã€‚");
+						Talk("å‘‚å¸ƒ","è¿™ç­‰å°äº‹ï¼Œ[n]é‚£å¯¹æˆ‘æ¥è®²ç®—ä¸äº†ä»€ä¹ˆã€‚");
+						Talk("å‘‚å¸ƒ","[Green]æ›¹æ“[Normal]åŒ¹å¤«ï¼Œ[n]æ ¹æ®åœ°è¢«å¤ºï¼Œ[n]æƒ³å¿…è„¸éƒ½æ°”åˆ°ç™½äº†å§ï¼");
+						Talk("é™³å®®","[Green]å‘‚å¸ƒ[Normal]å¤§äººï¼Œæ®æŽ¢å­å›žæŠ¥ï¼Œ[n][Green]æ›¹æ“[Normal]å·²ç»å’ŒåŠ‰å‚™åœæˆ˜ï¼Œ[n]æ­£å‡†å¤‡ä¸ºå¤ºå›žå…–å·žè€Œæ¥ã€‚");
+						Talk("é™³å®®","æˆ‘æ–¹ä¹Ÿåº”è¯¥åŠ å¼ºé˜²å®ˆï¼Œ[n]ä»¥ä¾¿è¿Žå‡»[Green]æ›¹å†›[Normal]ã€‚");
+						Talk("å‘‚å¸ƒ","[Green]æ›¹æ“[Normal]ã€[Green]æ›¹æ“[Normal]ï¼Œ[n]ä½ ä»¬å°±é‚£ä¹ˆæ€•ä»–å—ï¼Ÿ");
+						Talk("å‘‚å¸ƒ","[Green]æ›¹æ“[Normal]è‹¥æ•¢æ¥çŠ¯ï¼Œ[n]æˆ‘ä¸€é©¬å½“å…ˆï¼Œä¸€æˆŸä¾¿å–å…¶é¦–çº§ã€‚[n]çœ‹è°è¿˜æ•¢é˜»æ‰°æˆ‘ï¼Ÿ");
+						Talk("é™³å®®","[Green]æ›¹æ“[Normal]å…µå¼ºé©¬å£®ï¼Œ[n]æ‰‹ä¸‹äººæ‰æµŽæµŽï¼Œ[n]è¯·å°†å†›åƒä¸‡ä¸å¯å°è§†ã€‚");
+						Talk("å‘‚å¸ƒ","ä½ å¤ªå•°å—¦äº†ï¼[Green]é™³å®®[Normal]ï¼[n]æˆ‘è‡ªæœ‰æˆ‘çš„æƒ³æ³•ã€‚");
+						Talk("å‘‚å¸ƒ","é¦–å…ˆæˆ‘åªè¦æ‰“å€’[Green]æ›¹æ“[Normal]ï¼Œå·©å›ºä¸­åŽŸï¼Œ[n]ä¾¿å¯ä»Ž[Green]æŽå‚•[Normal]æ‰‹ä¸­å¤ºå›žéƒ½åŸŽã€‚");
+						Talk("å‘‚å¸ƒ","[Green]å¼µé¼[Normal]ã€[Green]é«˜é¡º[Normal]ï¼Œç«‹åˆ»å¤‡é½äººé©¬ï¼Œ[n]åŽ»å–[Green]æ›¹æ“[Normal]çš„é¦–çº§æ¥è§æˆ‘ã€‚");
+						Talk("å¼µé¼","æœ«å°†é¢†å‘½ã€‚");
+						Talk("é™³å®®","â€¦â€¦");
 					end
 				end,
 			[0104]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£´´ú»ÊµÛ¡¤[Green]Ï×µÛ[Normal]ÔÚÎ»ÆÚ¼ä¡£");
-					DrawMulitStrBox("ÂõÈë¶þÊÀ¼Í£¬Í³ÖÎ´óÂ½µÄÍõ³¯£¬[n]Ò²ÒòÎªÏà¼Ì±¬·¢µÄÅÑÂÒºÍÈºÐÛµÄáÈÆð£¬[n]¶ø¸üÏÔµÃË¥ÍË¡£");
-					DrawMulitStrBox("Í½ÓÐÆä±íµÄ³¯Í¢ÒÑÍþÐÅÉ¨µØ£¬[n]ÈºÐÛÎªÁË³ÉÎªÐÂ°ÔÖ÷¶øÏà»¥Õù¶·¡£");
-					DrawMulitStrBox("Íõ³¯±ÀÀ££¬µ¼ÖÂ¸÷µØÖîºî¸î¾Ý£¬[n]ÀúÊ·ÎèÌ¨×ß½øÁË×ÔÏà²ÐÉ±µÄÕ½¹úÂÒÊÀÄê´ú¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(12,"µ­Èë");
-					DrawMulitStrBox("½¨°²£³£¨£±£¹£¸£©Äê£±£²ÔÂ£¬[n]³¯Í¢µÄÓµ»¤ÕßµÄ[Green]²Ü²Ù[Normal]¹¥Ïò±»¹ÂÁ¢ÔÚÐìÖÝµÄ[Green]…Î²¼[Normal]¡£");
-					DrawMulitStrBox("¶ãÔÚÏÂÚü³ÇÍçÇ¿µÖ¿¹µÄ[Green]…Î²¼[Normal]£¬[n]×îºóÓÉÓÚÊôÏÂ±³ÅÑ¶ø±»ÇÜ£¬ËÀÓÚÐÌ³¡¡£");
-					DrawMulitStrBox("´Ë´ÎÊ¤Àû£¬[n]Ê¹[Green]²Ü²Ù[Normal]¿ØÖÆÁË´óÂ½ÖÐÑëµÄ¡¸[Red]ÖÐÔ­[Normal]¡¹´ó²¿·ÖµØÇø¡£");
-					LoadPic(12,"µ­³ö");
-					LoadPic(25,"µ­Èë");
-					DrawMulitStrBox("½¨°²£´£¨£±£¹£¹£©Äê£±ÔÂ£¬[n]ÔÚ´óÂ½±±²¿Õ¹¿ªµÄ¼½ÖÝ[Green]Ô¬½B[Normal]Óë±±Æ½[Green]¹«Ëïè¶[Normal]¹¥·ÀÕ½£¬[n]Ò²½Ó½üÎ²Éù¡£");
-					DrawMulitStrBox("ÔÚÒ×¾©½¨Á¢ÒªÈû£¬×èÖ¹[Green]Ô¬½B[Normal]±±ÉÏµÄ[Green]¹«Ëïè¶[Normal]£¬[n]×îºó±ø°Ü×ÔÉ±£¬±±·½´Ó´ËÎª[Green]Ô¬½B[Normal]Ëù¿ØÖÆ¡£");
-					LoadPic(25,"µ­³ö");
-					DrawMulitStrBox("ÔÚ»´ÄÏ½¨¹ú¡¸[Red]³É[Normal]¡¹£¬[n]È´±»[Green]²Ü²Ù[Normal]´ó°Ü¶øÌÓÍøµÄ[Green]Ô¬Êõ[Normal]£¬[n]Ô­±¾ÏëÍ¶¿¿ÆäÐÖ[Green]Ô¬½B[Normal]¡£");
-					DrawMulitStrBox("µ«[Green]²Ü²Ù[Normal]ÅÉ³ö[Green]„¢‚ä[Normal]×èÖ¹Æä±±ÉÏ£¬[n]¶øËÀÓÚ»ìÕ½Ö®ÖÐ¡£");
-					DrawMulitStrBox("ÁíÍâ£¬[Green]„¢‚ä[Normal]²ÎÓë°µÉ±[Green]²Ü²Ù[Normal]µÄ¼Æ»®Ò²¶«´°ÊÂ·¢£¬[n]ÊÜµ½ÁË[Green]²Ü²Ù[Normal]µÄ¹¥»÷¡£");
-					DrawMulitStrBox("´ó°ÜµÄ[Green]„¢‚ä¾ü[Normal]ËÄÉ¢ÌÓÃü£¬[n]ÊØÎÀÐìÖÝµÄ„¢‚äÖ®ÒåµÜ¡¤[Green]êPÓð[Normal]£¬[n]²»¾Ã±ãÍ¶½µÓÚ[Green]²Ü²Ù[Normal]¡£");
-					LoadPic(112,"µ­Èë");
-					DrawMulitStrBox("ÓÚÊÇ£¬»ª±±±»[Green]²Ü²Ù[Normal]ºÍ[Green]Ô¬½B[Normal]Ò»·ÖÎª¶þ£¬[n]Ë«·½µÄ¾öÕ½½«²»¿É±ÜÃâ¡£");
-					DrawMulitStrBox("[Green]²Ü²Ù[Normal]Îª·À±¸[Green]Ô¬½B[Normal]ÄÏÏÂ£¬[n]½µ·þÁËºó¹ËÖ®ÓÇ¡ª¡ªÍð³ÇµÄ[Green]ˆÀC[Normal]Ö®ºó£¬[n]Á¢¿Ì»Ó¾üÏò±±ÍÆ½ø¡£");
-					LoadPic(112,"µ­³ö");
-					DrawMulitStrBox("µ«ÊÇ£¬ÄÏ·½»¹ÓÐ¡¸[Red]½­¶«Ð¡°ÔÍõ[Normal]¡¹¡¤[Green]ŒO²ß[Normal]£¬[n][Green]ŒO²ß[Normal]Ò²¶ÔÖÐÔ­»¢ÊÓíñíñ¡£");
-					DrawMulitStrBox("[Green]²Ü²Ù[Normal]¡¢[Green]Ô¬½B[Normal]ÒÔ¼°[Green]ŒO²ß[Normal]ÈýÈË£¬[n]¹Ï·ÖÌìÏÂÖ®Õ½¼´½«¿ªÊ¼ÁË¡£");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼”ä»£çš‡å¸Â·[Green]çŒ®å¸[Normal]åœ¨ä½æœŸé—´ã€‚");
+					DrawMulitStrBox("è¿ˆå…¥äºŒä¸–çºªï¼Œç»Ÿæ²»å¤§é™†çš„çŽ‹æœï¼Œ[n]ä¹Ÿå› ä¸ºç›¸ç»§çˆ†å‘çš„å›ä¹±å’Œç¾¤é›„çš„å´›èµ·ï¼Œ[n]è€Œæ›´æ˜¾å¾—è¡°é€€ã€‚");
+					DrawMulitStrBox("å¾’æœ‰å…¶è¡¨çš„æœå»·å·²å¨ä¿¡æ‰«åœ°ï¼Œ[n]ç¾¤é›„ä¸ºäº†æˆä¸ºæ–°éœ¸ä¸»è€Œç›¸äº’äº‰æ–—ã€‚");
+					DrawMulitStrBox("çŽ‹æœå´©æºƒï¼Œå¯¼è‡´å„åœ°è¯¸ä¾¯å‰²æ®ï¼Œ[n]åŽ†å²èˆžå°èµ°è¿›äº†è‡ªç›¸æ®‹æ€çš„æˆ˜å›½ä¹±ä¸–å¹´ä»£ã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(12,"æ·¡å…¥");
+					DrawMulitStrBox("å»ºå®‰ï¼“ï¼ˆï¼‘ï¼™ï¼˜ï¼‰å¹´ï¼‘ï¼’æœˆï¼Œ[n]æœå»·çš„æ‹¥æŠ¤è€…çš„[Green]æ›¹æ“[Normal]æ”»å‘è¢«å­¤ç«‹åœ¨å¾å·žçš„[Green]å‘‚å¸ƒ[Normal]ã€‚");
+					DrawMulitStrBox("èº²åœ¨ä¸‹é‚³åŸŽé¡½å¼ºæŠµæŠ—çš„[Green]å‘‚å¸ƒ[Normal]ï¼Œ[n]æœ€åŽç”±äºŽå±žä¸‹èƒŒå›è€Œè¢«æ“’ï¼Œæ­»äºŽåˆ‘åœºã€‚");
+					DrawMulitStrBox("æ­¤æ¬¡èƒœåˆ©ï¼Œ[n]ä½¿[Green]æ›¹æ“[Normal]æŽ§åˆ¶äº†å¤§é™†ä¸­å¤®çš„ã€Œ[Red]ä¸­åŽŸ[Normal]ã€å¤§éƒ¨åˆ†åœ°åŒºã€‚");
+					LoadPic(12,"æ·¡å‡º");
+					LoadPic(25,"æ·¡å…¥");
+					DrawMulitStrBox("å»ºå®‰ï¼”ï¼ˆï¼‘ï¼™ï¼™ï¼‰å¹´ï¼‘æœˆï¼Œ[n]åœ¨å¤§é™†åŒ—éƒ¨å±•å¼€çš„å†€å·ž[Green]è¢ç´¹[Normal]ä¸ŽåŒ—å¹³[Green]å…¬å­™ç“’[Normal]æ”»é˜²æˆ˜ï¼Œ[n]ä¹ŸæŽ¥è¿‘å°¾å£°ã€‚");
+					DrawMulitStrBox("åœ¨æ˜“äº¬å»ºç«‹è¦å¡žï¼Œé˜»æ­¢[Green]è¢ç´¹[Normal]åŒ—ä¸Šçš„[Green]å…¬å­™ç“’[Normal]ï¼Œ[n]æœ€åŽå…µè´¥è‡ªæ€ï¼ŒåŒ—æ–¹ä»Žæ­¤ä¸º[Green]è¢ç´¹[Normal]æ‰€æŽ§åˆ¶ã€‚");
+					LoadPic(25,"æ·¡å‡º");
+					DrawMulitStrBox("åœ¨æ·®å—å»ºå›½ã€Œ[Red]æˆ[Normal]ã€ï¼Œ[n]å´è¢«[Green]æ›¹æ“[Normal]å¤§è´¥è€Œé€ƒç½‘çš„[Green]è¢æœ¯[Normal]ï¼Œ[n]åŽŸæœ¬æƒ³æŠ•é å…¶å…„[Green]è¢ç´¹[Normal]ã€‚");
+					DrawMulitStrBox("ä½†[Green]æ›¹æ“[Normal]æ´¾å‡º[Green]åŠ‰å‚™[Normal]é˜»æ­¢å…¶åŒ—ä¸Šï¼Œ[n]è€Œæ­»äºŽæ··æˆ˜ä¹‹ä¸­ã€‚");
+					DrawMulitStrBox("å¦å¤–ï¼Œ[Green]åŠ‰å‚™[Normal]å‚ä¸Žæš—æ€[Green]æ›¹æ“[Normal]çš„è®¡åˆ’ä¹Ÿä¸œçª—äº‹å‘ï¼Œ[n]å—åˆ°äº†[Green]æ›¹æ“[Normal]çš„æ”»å‡»ã€‚");
+					DrawMulitStrBox("å¤§è´¥çš„[Green]åŠ‰å‚™å†›[Normal]å››æ•£é€ƒå‘½ï¼Œ[n]å®ˆå«å¾å·žçš„åŠ‰å‚™ä¹‹ä¹‰å¼ŸÂ·[Green]é—œç¾½[Normal]ï¼Œ[n]ä¸ä¹…ä¾¿æŠ•é™äºŽ[Green]æ›¹æ“[Normal]ã€‚");
+					LoadPic(112,"æ·¡å…¥");
+					DrawMulitStrBox("äºŽæ˜¯ï¼ŒåŽåŒ—è¢«[Green]æ›¹æ“[Normal]å’Œ[Green]è¢ç´¹[Normal]ä¸€åˆ†ä¸ºäºŒï¼Œ[n]åŒæ–¹çš„å†³æˆ˜å°†ä¸å¯é¿å…ã€‚");
+					DrawMulitStrBox("[Green]æ›¹æ“[Normal]ä¸ºé˜²å¤‡[Green]è¢ç´¹[Normal]å—ä¸‹ï¼Œ[n]é™æœäº†åŽé¡¾ä¹‹å¿§â€”â€”å®›åŸŽçš„[Green]å¼µç¹¡[Normal]ä¹‹åŽï¼Œ[n]ç«‹åˆ»æŒ¥å†›å‘åŒ—æŽ¨è¿›ã€‚");
+					LoadPic(112,"æ·¡å‡º");
+					DrawMulitStrBox("ä½†æ˜¯ï¼Œå—æ–¹è¿˜æœ‰ã€Œ[Red]æ±Ÿä¸œå°éœ¸çŽ‹[Normal]ã€Â·[Green]å­«ç­–[Normal]ï¼Œ[n][Green]å­«ç­–[Normal]ä¹Ÿå¯¹ä¸­åŽŸè™Žè§†çœˆçœˆã€‚");
+					DrawMulitStrBox("[Green]æ›¹æ“[Normal]ã€[Green]è¢ç´¹[Normal]ä»¥åŠ[Green]å­«ç­–[Normal]ä¸‰äººï¼Œ[n]ç“œåˆ†å¤©ä¸‹ä¹‹æˆ˜å³å°†å¼€å§‹äº†ã€‚");
 					if JY.FID==1 then
 						SetSceneID(54);
-						Talk("²Ü²Ù","Å¶£¬[Green]ˆÀC[Normal]£¬[n]ÄãÀ´½µ¾ÍºÃ£¬À´½µ¾ÍºÃ¡£");
-						Talk("ˆÀC","ÎÒÊÇÊý´ÎÓë[Green]²Ü²Ù[Normal]´óÈË×÷¶ÔÖ®ÈË£¬[n]Ã»Ïëµ½´óÈË»¹»áÈç´Ë»¶Ó­ÎÒ¡£");
-						Talk("²Ü²Ù","²»²»²»£¬[n]¹ýÈ¥Ö®ÊÂ£¬±ã°ÑËüÍü¼Ç°É£¡[n]½ñºó»¹ÍûÄãÄÜºÃºÃ±íÏÖ¡£");
-						Talk("ˆÀC","ÊÇ¡£");
-						Talk("²Ü²Ù","¶ÔÁË£¬[Green]¹ù¼Î[Normal]£¬[n]³ýÁË[Green]ˆÀC[Normal]ÒÔÍâ£¬[n]ÆäËûÄÏ·½ÖîºòµÄ¶¯ÏòÈçºÎ£¿");
-						Talk("¹ù¼Î","½­¶«µÄ[Green]ŒO²ß[Normal]ËÆºõÒÑ´ðÓ¦Ð­Öú[Green]Ô¬½B[Normal]£¬[n]µ«ÉÐÎ´½á³ÉÍ¬ÃË¡£");
-						Talk("¹ù¼Î","ÁíÍâ£¬¾£ÖÝµÄ[Green]Áõ±í[Normal]£¬[n]ÎÞÊÓ[Green]Ô¬½B[Normal]µÄÇëÇó£¬[n]Ö»ÊÇÐäÊÖÅÔ¹Û¡£");
-						Talk("Ü÷ª","[Green]Áõ±í[Normal]ÔÝÇÒ²»ÂÛ£¬[n][Green]ŒO²ß[Normal]ÈôÊÇÕÒµ½»ú»á£¬[n]¾Í»áËæÊ±À´¹¥µÄ°É£¡");
-						Talk("Ü÷ª","ÎÒ¾ü±ØÐëÁôÏÂ×îµÍÏÞ¶ÈµÄ±øÁ¦£¬[n]ÒÔ·À[Green]ŒO²ß[Normal]À´·¸¡£");
-						Talk("²Ü²Ù","àÅ£¬[Green]Ü÷ª[Normal]ÁôÔÚÐí²ý£¬[n]ÓàÕß¶¯Ô±ÆäËû±øÁ¦£¬Ïò±±³ö·¢¡£");
-						Talk("êPÓð","[Green]²Ü²Ù[Normal]´óÈË£¬[n]ÎÒÔ¸¾¡¿ÉÄÜ±¨´ð´óÈËµÄ¶÷µÂ¡£");
-						Talk("êPÓð","ÔÚµÃÖª[Green]ÐÖ³¤[Normal]ÏûÏ¢Ö®Ç°£¬[n]¿É·ñÒ²ÈÃÎÒËæÐÐ£¿");
-						Talk("²Ü²Ù","àÅ£¬Èç¹ûÓÐ±ØÒª£¬ÎÒ»á½ÐÄãµÄ£¬[n]µ«ÏÖÔÚÇë½«¾üÁôÔÚ¶¼³Ç¡£");
-						Talk("êPÓð","¡­¡­ÊÇ¡£");
-						Talk("²Ü²Ù","ÖîÎ»£¬Óë[Green]Ô¬½B[Normal]Ö®Õ½£¬[n]½«ÊÇ¾ö¶¨ÌìÏÂÖ®Õ½£¬[n]Èç¹ûÕ½°Ü£¬ÎÒÃÇ½«Ç°Í¾ØÏ²â¡£");
-						Talk("²Ü²Ù","[Green]Ô¬½B[Normal]´ó¾üÈËÂíËä¶à£¬µ«ÎÒÃÇÈË²Å¼Ã¼Ã£¬[n]Ö»Òª´ó¼Ò¹²Í¬Å¬Á¦£¬ÎÒÃÇ±Ø¶¨²»»áÊ§°Ü¡£");
-						Talk("²Ü²Ù","ÔÚ[Green]ŒO²ß[Normal]´òÀ´Ö®Ç°£¬[n]ÎÒÃÇÒªÓë[Green]Ô¬½B[Normal]¾öÒ»ËÀÕ½£¬[n]È¡µÃ»ª±±£¡");
+						Talk("æ›¹æ“","å“¦ï¼Œ[Green]å¼µç¹¡[Normal]ï¼Œ[n]ä½ æ¥é™å°±å¥½ï¼Œæ¥é™å°±å¥½ã€‚");
+						Talk("å¼µç¹¡","æˆ‘æ˜¯æ•°æ¬¡ä¸Ž[Green]æ›¹æ“[Normal]å¤§äººä½œå¯¹ä¹‹äººï¼Œ[n]æ²¡æƒ³åˆ°å¤§äººè¿˜ä¼šå¦‚æ­¤æ¬¢è¿Žæˆ‘ã€‚");
+						Talk("æ›¹æ“","ä¸ä¸ä¸ï¼Œ[n]è¿‡åŽ»ä¹‹äº‹ï¼Œä¾¿æŠŠå®ƒå¿˜è®°å§ï¼[n]ä»ŠåŽè¿˜æœ›ä½ èƒ½å¥½å¥½è¡¨çŽ°ã€‚");
+						Talk("å¼µç¹¡","æ˜¯ã€‚");
+						Talk("æ›¹æ“","å¯¹äº†ï¼Œ[Green]éƒ­å˜‰[Normal]ï¼Œ[n]é™¤äº†[Green]å¼µç¹¡[Normal]ä»¥å¤–ï¼Œ[n]å…¶ä»–å—æ–¹è¯¸å€™çš„åŠ¨å‘å¦‚ä½•ï¼Ÿ");
+						Talk("éƒ­å˜‰","æ±Ÿä¸œçš„[Green]å­«ç­–[Normal]ä¼¼ä¹Žå·²ç­”åº”ååŠ©[Green]è¢ç´¹[Normal]ï¼Œ[n]ä½†å°šæœªç»“æˆåŒç›Ÿã€‚");
+						Talk("éƒ­å˜‰","å¦å¤–ï¼Œè†å·žçš„[Green]åˆ˜è¡¨[Normal]ï¼Œ[n]æ— è§†[Green]è¢ç´¹[Normal]çš„è¯·æ±‚ï¼Œ[n]åªæ˜¯è¢–æ‰‹æ—è§‚ã€‚");
+						Talk("è€å½§","[Green]åˆ˜è¡¨[Normal]æš‚ä¸”ä¸è®ºï¼Œ[n][Green]å­«ç­–[Normal]è‹¥æ˜¯æ‰¾åˆ°æœºä¼šï¼Œ[n]å°±ä¼šéšæ—¶æ¥æ”»çš„å§ï¼");
+						Talk("è€å½§","æˆ‘å†›å¿…é¡»ç•™ä¸‹æœ€ä½Žé™åº¦çš„å…µåŠ›ï¼Œ[n]ä»¥é˜²[Green]å­«ç­–[Normal]æ¥çŠ¯ã€‚");
+						Talk("æ›¹æ“","å—¯ï¼Œ[Green]è€å½§[Normal]ç•™åœ¨è®¸æ˜Œï¼Œ[n]ä½™è€…åŠ¨å‘˜å…¶ä»–å…µåŠ›ï¼Œå‘åŒ—å‡ºå‘ã€‚");
+						Talk("é—œç¾½","[Green]æ›¹æ“[Normal]å¤§äººï¼Œ[n]æˆ‘æ„¿å°½å¯èƒ½æŠ¥ç­”å¤§äººçš„æ©å¾·ã€‚");
+						Talk("é—œç¾½","åœ¨å¾—çŸ¥[Green]å…„é•¿[Normal]æ¶ˆæ¯ä¹‹å‰ï¼Œ[n]å¯å¦ä¹Ÿè®©æˆ‘éšè¡Œï¼Ÿ");
+						Talk("æ›¹æ“","å—¯ï¼Œå¦‚æžœæœ‰å¿…è¦ï¼Œæˆ‘ä¼šå«ä½ çš„ï¼Œ[n]ä½†çŽ°åœ¨è¯·å°†å†›ç•™åœ¨éƒ½åŸŽã€‚");
+						Talk("é—œç¾½","â€¦â€¦æ˜¯ã€‚");
+						Talk("æ›¹æ“","è¯¸ä½ï¼Œä¸Ž[Green]è¢ç´¹[Normal]ä¹‹æˆ˜ï¼Œ[n]å°†æ˜¯å†³å®šå¤©ä¸‹ä¹‹æˆ˜ï¼Œ[n]å¦‚æžœæˆ˜è´¥ï¼Œæˆ‘ä»¬å°†å‰é€”åµæµ‹ã€‚");
+						Talk("æ›¹æ“","[Green]è¢ç´¹[Normal]å¤§å†›äººé©¬è™½å¤šï¼Œä½†æˆ‘ä»¬äººæ‰æµŽæµŽï¼Œ[n]åªè¦å¤§å®¶å…±åŒåŠªåŠ›ï¼Œæˆ‘ä»¬å¿…å®šä¸ä¼šå¤±è´¥ã€‚");
+						Talk("æ›¹æ“","åœ¨[Green]å­«ç­–[Normal]æ‰“æ¥ä¹‹å‰ï¼Œ[n]æˆ‘ä»¬è¦ä¸Ž[Green]è¢ç´¹[Normal]å†³ä¸€æ­»æˆ˜ï¼Œ[n]å–å¾—åŽåŒ—ï¼");
 					elseif JY.FID==2 or JY.FID==4 then
 						SetSceneID(52);
-						DrawMulitStrBox("[Green]„¢‚ä[Normal]ÔÚÐìÖÝ±»[Green]²Ü²Ù¾ü[Normal]´ó°Ü£¬[n]ÌÓÖÁ[Green]Ô¬½B[Normal]Ö®´¦¡£");
-						Talk("Ô¬½B","Å¶£¬[Green]„¢‚ä[Normal]´óÈË£¬[n]ÄãÀ´µÃÕýºÃ£¡");
-						Talk("Ô¬½B","[Green]²Ü²Ù[Normal]¹¥´òÐìÖÝÖ®Ê±£¬[n]Î´È¥¾ÈÔ®£¬ÕæÊÇ±§Ç¸¡£");
-						Talk("„¢‚ä","ÄÄÀï£¬[n]ÄúÔ¸½ÓÄÉÎÒÕâÍöÃüÖ®ÈË¾Í×ãÒÓ¡£");
-						Talk("Ô¬½B","ÄÄÀïµÄ»°£¬[n]Äú×¨³ÌÇ°À´Í¶±¼ÓÚÎÒ£¬[n]ÎÒÔõ¿ÉÖÃÖ®²»Àí£¿");
-						Talk("Ô¬½B","Çë¹ó¾ýÈËÂíÔÚµ±µØÉÔ×÷ÐÝÏ¢£¬[n]ÎÒ¾üÓë[Green]²Ü²Ù[Normal]¿ªÕ½Ê±£¬[n]¸øÎÒ¾üÉùÔ®°É£¡");
-						Talk("„¢‚ä","ºÃµÄ¡£");
-						Talk("Ô¬½B","¶ÔÁË£¬[Green]ŒÅä[Normal]£¬[n]ÅÉÍù»ªÄÏÖîºîµÄÊ¹Õß£¬[n]ÓÐºÎÏûÏ¢»Ø±¨£¿");
-						Talk("ŒÅä","½­¶«µÄ[Green]ŒO²ß[Normal]ÒÑÍ¬ÒâÏàÖú£¬[n]½«»á´Óºó·À¹¥»÷²Ü²Ù¡£");
-						Talk("ŒÅä","ÍðµÄ[Green]ˆÀC[Normal]ÒÑ½µ·þÓÚ[Green]²Ü²Ù[Normal]£¬[n]¾£ÖÝµÄ[Green]Áõ±í[Normal]ÔòºÁÎÞÒôÑ¶¡£");
-						Talk("Ô¬½B","¿É¶ñµÄ[Green]Áõ±í[Normal]£¬[n]Ö»ÏëÐäÊÖÅÔ¹Û£¬[n]ÔçÍíÈÃËûÖªµÀÀ÷º¦¡£");
-						Talk("ÌïØS","[Green]Ô¬½B[Normal]´óÈË£¬[n]ÎÒÃÇ²Å¸Õ´ò°Ü[Green]¹«Ëïè¶[Normal]£¬[n]ÔçÍùºó»¹ÓÐÐí¶àÕ½ÊÂ¡£");
-						Talk("ÌïØS","ÎÒÈÏÎªÏÖÔÚÓ¦ÅÉÒ»Ê¹ÕßÈ¥¾£ÖÝ£¬[n]Ïò[Green]Áõ±í[Normal]±í´ïÓÑºÃÖ®Òâ£¬[n]ÔÙÏò[Green]²Ü²Ù[Normal]×÷Õ½ÎªºÃ¡£");
-						Talk("¾ÚÊÚ","ÎÒÒ²ÓÐÍ¬¸Ð£¬[n][Green]²Ü²Ù[Normal]µÄÕ½Á¦·Ç[Green]¹«Ëïè¶[Normal]ËùÄÜ±ÈÄâ¡£");
-						Talk("¾ÚÊÚ","¼ÈÈ»´ËÕ½²»¿É±ÜÃâ£¬[n]ÎÒÃÇÓ¦×öºÃÍòÎÞÒ»Ê§µÄ×¼±¸¡£");
-						Talk("¹ùˆD","·ÇÒ²£¬[n]ÏÖ½×¶Î£¬ÎÒ·½´ó¾üÒª±È[Green]²Ü²Ù[Normal]¾üÁ¦Ç¿´ó¡£");
-						Talk("¹ùˆD","Èô¸øËûÃÇÊ±¼ä£¬[n][Green]²Ü²Ù[Normal]¶¨»áÕÐ±øÂòÂí£¬Ëõ¶Ì±øÁ¦²î¾à¡£");
-						Talk("îÁ¼","[Green]Ô¬½B[Normal]´óÈË£¬ÎªºÎÓÌÔ¥£¿[n][Green]²Ü²Ù[Normal]µÄÈõ±ø²¢·ÇÎÒºÍ[Green]ÎÄáh[Normal]µÄ¶ÔÊÖ¡£");
-						Talk("ÎÄáh","ÇëÅÉ¸øÎÒµÈÒ»Ö§±øÂí£¬[n]ÎÒµÈ±Ø¿ÉÉ±¾¡[Green]²Ü²Ù¾ü[Normal]£¡");
-						Talk("Ô¬½B","à¸£¡ËµµÃ¼«ºÃ£¡[n]ÎÒ¾üµÄÊ¿ÆøÕýÊ¢£¬[n]¿ÉÒÔÁ¢¼´¿ªÊ¼×÷Õ½µÄ×¼±¸¡£");
-						Talk("Ô¬½B","ÔÙÌÖÂÛÊÇ¶àÓàµÄ£¬[n]ÏÈ°Ü[Green]²Ü²Ù[Normal]ÔÙÈ¡ÖÐÔ­£¬[n]ÌìÏÂ¾ÍÊÇÎÒÃÇµÄÁË£¡");
+						DrawMulitStrBox("[Green]åŠ‰å‚™[Normal]åœ¨å¾å·žè¢«[Green]æ›¹æ“å†›[Normal]å¤§è´¥ï¼Œ[n]é€ƒè‡³[Green]è¢ç´¹[Normal]ä¹‹å¤„ã€‚");
+						Talk("è¢ç´¹","å“¦ï¼Œ[Green]åŠ‰å‚™[Normal]å¤§äººï¼Œ[n]ä½ æ¥å¾—æ­£å¥½ï¼");
+						Talk("è¢ç´¹","[Green]æ›¹æ“[Normal]æ”»æ‰“å¾å·žä¹‹æ—¶ï¼Œ[n]æœªåŽ»æ•‘æ´ï¼ŒçœŸæ˜¯æŠ±æ­‰ã€‚");
+						Talk("åŠ‰å‚™","å“ªé‡Œï¼Œ[n]æ‚¨æ„¿æŽ¥çº³æˆ‘è¿™äº¡å‘½ä¹‹äººå°±è¶³çŸ£ã€‚");
+						Talk("è¢ç´¹","å“ªé‡Œçš„è¯ï¼Œ[n]æ‚¨ä¸“ç¨‹å‰æ¥æŠ•å¥”äºŽæˆ‘ï¼Œ[n]æˆ‘æ€Žå¯ç½®ä¹‹ä¸ç†ï¼Ÿ");
+						Talk("è¢ç´¹","è¯·è´µå›äººé©¬åœ¨å½“åœ°ç¨ä½œä¼‘æ¯ï¼Œ[n]æˆ‘å†›ä¸Ž[Green]æ›¹æ“[Normal]å¼€æˆ˜æ—¶ï¼Œ[n]ç»™æˆ‘å†›å£°æ´å§ï¼");
+						Talk("åŠ‰å‚™","å¥½çš„ã€‚");
+						Talk("è¢ç´¹","å¯¹äº†ï¼Œ[Green]å¯©é…[Normal]ï¼Œ[n]æ´¾å¾€åŽå—è¯¸ä¾¯çš„ä½¿è€…ï¼Œ[n]æœ‰ä½•æ¶ˆæ¯å›žæŠ¥ï¼Ÿ");
+						Talk("å¯©é…","æ±Ÿä¸œçš„[Green]å­«ç­–[Normal]å·²åŒæ„ç›¸åŠ©ï¼Œ[n]å°†ä¼šä»ŽåŽé˜²æ”»å‡»æ›¹æ“ã€‚");
+						Talk("å¯©é…","å®›çš„[Green]å¼µç¹¡[Normal]å·²é™æœäºŽ[Green]æ›¹æ“[Normal]ï¼Œ[n]è†å·žçš„[Green]åˆ˜è¡¨[Normal]åˆ™æ¯«æ— éŸ³è®¯ã€‚");
+						Talk("è¢ç´¹","å¯æ¶çš„[Green]åˆ˜è¡¨[Normal]ï¼Œ[n]åªæƒ³è¢–æ‰‹æ—è§‚ï¼Œ[n]æ—©æ™šè®©ä»–çŸ¥é“åŽ‰å®³ã€‚");
+						Talk("ç”°è±","[Green]è¢ç´¹[Normal]å¤§äººï¼Œ[n]æˆ‘ä»¬æ‰åˆšæ‰“è´¥[Green]å…¬å­™ç“’[Normal]ï¼Œ[n]æ—©å¾€åŽè¿˜æœ‰è®¸å¤šæˆ˜äº‹ã€‚");
+						Talk("ç”°è±","æˆ‘è®¤ä¸ºçŽ°åœ¨åº”æ´¾ä¸€ä½¿è€…åŽ»è†å·žï¼Œ[n]å‘[Green]åˆ˜è¡¨[Normal]è¡¨è¾¾å‹å¥½ä¹‹æ„ï¼Œ[n]å†å‘[Green]æ›¹æ“[Normal]ä½œæˆ˜ä¸ºå¥½ã€‚");
+						Talk("æ²®æŽˆ","æˆ‘ä¹Ÿæœ‰åŒæ„Ÿï¼Œ[n][Green]æ›¹æ“[Normal]çš„æˆ˜åŠ›éž[Green]å…¬å­™ç“’[Normal]æ‰€èƒ½æ¯”æ‹Ÿã€‚");
+						Talk("æ²®æŽˆ","æ—¢ç„¶æ­¤æˆ˜ä¸å¯é¿å…ï¼Œ[n]æˆ‘ä»¬åº”åšå¥½ä¸‡æ— ä¸€å¤±çš„å‡†å¤‡ã€‚");
+						Talk("éƒ­åœ–","éžä¹Ÿï¼Œ[n]çŽ°é˜¶æ®µï¼Œæˆ‘æ–¹å¤§å†›è¦æ¯”[Green]æ›¹æ“[Normal]å†›åŠ›å¼ºå¤§ã€‚");
+						Talk("éƒ­åœ–","è‹¥ç»™ä»–ä»¬æ—¶é—´ï¼Œ[n][Green]æ›¹æ“[Normal]å®šä¼šæ‹›å…µä¹°é©¬ï¼Œç¼©çŸ­å…µåŠ›å·®è·ã€‚");
+						Talk("é¡è‰¯","[Green]è¢ç´¹[Normal]å¤§äººï¼Œä¸ºä½•çŠ¹è±«ï¼Ÿ[n][Green]æ›¹æ“[Normal]çš„å¼±å…µå¹¶éžæˆ‘å’Œ[Green]æ–‡é†œ[Normal]çš„å¯¹æ‰‹ã€‚");
+						Talk("æ–‡é†œ","è¯·æ´¾ç»™æˆ‘ç­‰ä¸€æ”¯å…µé©¬ï¼Œ[n]æˆ‘ç­‰å¿…å¯æ€å°½[Green]æ›¹æ“å†›[Normal]ï¼");
+						Talk("è¢ç´¹","å–”ï¼è¯´å¾—æžå¥½ï¼[n]æˆ‘å†›çš„å£«æ°”æ­£ç››ï¼Œ[n]å¯ä»¥ç«‹å³å¼€å§‹ä½œæˆ˜çš„å‡†å¤‡ã€‚");
+						Talk("è¢ç´¹","å†è®¨è®ºæ˜¯å¤šä½™çš„ï¼Œ[n]å…ˆè´¥[Green]æ›¹æ“[Normal]å†å–ä¸­åŽŸï¼Œ[n]å¤©ä¸‹å°±æ˜¯æˆ‘ä»¬çš„äº†ï¼");
 					elseif JY.FID==3 then
 						SetSceneID(54);
-						Talk("ˆÕÑ","[Green]ŒO²ß[Normal]´óÈË£¬[n][Green]Ô¬½B[Normal]µÄÊ¹ÕßËµÐ©Ê²Ã´£¿");
-						Talk("ŒO²ß","Ê¹ÕßËµ£¬[Green]Ô¬½B[Normal]Ï£ÍûÎÒÃÇÏ®»÷[Green]²Ü²Ù[Normal]ºó·À£¬[n]µÈ´ò°Ü[Green]²Ü²Ù[Normal]ºó£¬´óÂ½µÄÄÏ·½±ã¹éÓÚÎÒ¡£");
-						Talk("ˆ¼‡","ÄÇÃ´£¬´óÈËÈçºÎ´ð¸´£¿");
-						Talk("ŒO²ß","ÎÒ´ðÓ¦ÏàÖú¡£");
-						Talk("ŒO²ß","¼ÈÈ»[Green]Ô¬½B[Normal]ÏëÀûÓÃÎÒ£¬[n]ÎÒÃÇ¾ÍÀûÓÃ»ØÈ¥°É£¡");
-						Talk("ÖÜè¤","Ö»Òª[Green]²Ü²Ù[Normal]ºÍ[Green]Ô¬½B[Normal]Ò»¿ªÕ½£¬[n]Ë«·½¶àÉÙ¶¼»áÓÐËùËðÉË¡£");
-						Talk("ÖÜè¤","³Ã´Ë»ú»á£¬[n]ÎÒÃÇ±ã¿ÉÈ¡µÃÓæÎÌÖ®Àû£¬ÊÇÂð£¿");
-						Talk("ŒO²ß","ÒòÎª£¬[n]ÎÒÒ²²»ÏëÖ»µ±¸ö¡¸[Red]½­¶«Ð¡°ÔÍõ[Normal]¡¹¡£");
-						Talk("³ÌÆÕ","µ«ÊÇ£¬¾£ÖÝÉÐÓÐ[Green]Áõ±í[Normal]£¬[n]Õâ¿É²»ÄÜ´óÒâ¡£");
-						Talk("ŒO²ß","àÅ£¬µ±È»ÒªÁôÏÂ·À±¸¾£ÖÝµÄÈËÂí¡£");
-						Talk("ŒO²ß","Õâ´ÎÊÇ¶áÈ¡ÖÐÔ­µÄ¾ø¼Ñ»ú»á£¬[n]ÎÒÃÇÔõÄÜ´í¹ý£¿");
-						Talk("ŒO²ß","·Ô¸ÀÏÂÈ¥£¬ÂíÉÏÖØÕû±øÂí£¬[n][Green]²Ü²Ù¾ü[Normal]Ò»ÓÐ¿ÕÏ¶£¬±ãÒ»¹Ä×÷Æø¹¥ÏòÐí²ý£¡");
+						Talk("å¼µæ˜­","[Green]å­«ç­–[Normal]å¤§äººï¼Œ[n][Green]è¢ç´¹[Normal]çš„ä½¿è€…è¯´äº›ä»€ä¹ˆï¼Ÿ");
+						Talk("å­«ç­–","ä½¿è€…è¯´ï¼Œ[Green]è¢ç´¹[Normal]å¸Œæœ›æˆ‘ä»¬è¢­å‡»[Green]æ›¹æ“[Normal]åŽé˜²ï¼Œ[n]ç­‰æ‰“è´¥[Green]æ›¹æ“[Normal]åŽï¼Œå¤§é™†çš„å—æ–¹ä¾¿å½’äºŽæˆ‘ã€‚");
+						Talk("å¼µç´˜","é‚£ä¹ˆï¼Œå¤§äººå¦‚ä½•ç­”å¤ï¼Ÿ");
+						Talk("å­«ç­–","æˆ‘ç­”åº”ç›¸åŠ©ã€‚");
+						Talk("å­«ç­–","æ—¢ç„¶[Green]è¢ç´¹[Normal]æƒ³åˆ©ç”¨æˆ‘ï¼Œ[n]æˆ‘ä»¬å°±åˆ©ç”¨å›žåŽ»å§ï¼");
+						Talk("å‘¨ç‘œ","åªè¦[Green]æ›¹æ“[Normal]å’Œ[Green]è¢ç´¹[Normal]ä¸€å¼€æˆ˜ï¼Œ[n]åŒæ–¹å¤šå°‘éƒ½ä¼šæœ‰æ‰€æŸä¼¤ã€‚");
+						Talk("å‘¨ç‘œ","è¶æ­¤æœºä¼šï¼Œ[n]æˆ‘ä»¬ä¾¿å¯å–å¾—æ¸”ç¿ä¹‹åˆ©ï¼Œæ˜¯å—ï¼Ÿ");
+						Talk("å­«ç­–","å› ä¸ºï¼Œ[n]æˆ‘ä¹Ÿä¸æƒ³åªå½“ä¸ªã€Œ[Red]æ±Ÿä¸œå°éœ¸çŽ‹[Normal]ã€ã€‚");
+						Talk("ç¨‹æ™®","ä½†æ˜¯ï¼Œè†å·žå°šæœ‰[Green]åˆ˜è¡¨[Normal]ï¼Œ[n]è¿™å¯ä¸èƒ½å¤§æ„ã€‚");
+						Talk("å­«ç­–","å—¯ï¼Œå½“ç„¶è¦ç•™ä¸‹é˜²å¤‡è†å·žçš„äººé©¬ã€‚");
+						Talk("å­«ç­–","è¿™æ¬¡æ˜¯å¤ºå–ä¸­åŽŸçš„ç»ä½³æœºä¼šï¼Œ[n]æˆ‘ä»¬æ€Žèƒ½é”™è¿‡ï¼Ÿ");
+						Talk("å­«ç­–","å©å’ä¸‹åŽ»ï¼Œé©¬ä¸Šé‡æ•´å…µé©¬ï¼Œ[n][Green]æ›¹æ“å†›[Normal]ä¸€æœ‰ç©ºéš™ï¼Œä¾¿ä¸€é¼“ä½œæ°”æ”»å‘è®¸æ˜Œï¼");
 					end
 				end,
 			[0105]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£´´ú»ÊµÛ¡¤[Green]Ï×µÛ[Normal]ÔÚÎ»ÆÚ¼ä¡£");
-					DrawMulitStrBox("ÂõÈë¶þÊÀ¼Í£¬Í³ÖÎ´óÂ½µÄÍõ³¯£¬[n]Ò²ÒòÎªÏà¼Ì±¬·¢µÄÅÑÂÒºÍÈºÐÛµÄáÈÆð£¬[n]¶ø¸üÏÔµÃË¥ÍË¡£");
-					DrawMulitStrBox("Í½ÓÐÆä±íµÄ³¯Í¢ÒÑÍþÐÅÉ¨µØ£¬[n]ÈºÐÛÎªÁË³ÉÎªÐÂ°ÔÖ÷¶øÏà»¥Õù¶·¡£");
-					DrawMulitStrBox("Íõ³¯±ÀÀ££¬µ¼ÖÂ¸÷µØÖîºî¸î¾Ý£¬[n]ÀúÊ·ÎèÌ¨×ß½øÁË×ÔÏà²ÐÉ±µÄÕ½¹úÂÒÊÀÄê´ú¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(79,"µ­Èë");
-					DrawMulitStrBox("½¨°²£·£¨£²£°£²£©Äê£µÔÂ£¬[n]¡¸[Red]¹Ù¶ÉÖ®Õ½[Normal]¡¹Ê§°ÜµÄµÄ[Green]Ô¬½B[Normal]£¬[n]ÔÚ×¼±¸·´»÷[Green]²Ü²Ù[Normal]µÄÍ¾ÖÐ²¡ÊÅ¡£");
-					DrawMulitStrBox("ÓÉÓÚ[Green]Ô¬½B[Normal]Ã»ÓÐÖ¸¶¨¼Ì³ÐÈË¶øâ§ËÀ£¬[n]Ô¬¼Ò·ÖÎªÈý×Ó[Green]Ô¬ÉÐ[Normal]ÅÉºÍ³¤×Ó[Green]Ô¬Ì·[Normal]ÅÉ£¬[n]¿ªÊ¼Ïà»¥¶·Õù¡£");
-					LoadPic(79,"µ­³ö");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼”ä»£çš‡å¸Â·[Green]çŒ®å¸[Normal]åœ¨ä½æœŸé—´ã€‚");
+					DrawMulitStrBox("è¿ˆå…¥äºŒä¸–çºªï¼Œç»Ÿæ²»å¤§é™†çš„çŽ‹æœï¼Œ[n]ä¹Ÿå› ä¸ºç›¸ç»§çˆ†å‘çš„å›ä¹±å’Œç¾¤é›„çš„å´›èµ·ï¼Œ[n]è€Œæ›´æ˜¾å¾—è¡°é€€ã€‚");
+					DrawMulitStrBox("å¾’æœ‰å…¶è¡¨çš„æœå»·å·²å¨ä¿¡æ‰«åœ°ï¼Œ[n]ç¾¤é›„ä¸ºäº†æˆä¸ºæ–°éœ¸ä¸»è€Œç›¸äº’äº‰æ–—ã€‚");
+					DrawMulitStrBox("çŽ‹æœå´©æºƒï¼Œå¯¼è‡´å„åœ°è¯¸ä¾¯å‰²æ®ï¼Œ[n]åŽ†å²èˆžå°èµ°è¿›äº†è‡ªç›¸æ®‹æ€çš„æˆ˜å›½ä¹±ä¸–å¹´ä»£ã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(79,"æ·¡å…¥");
+					DrawMulitStrBox("å»ºå®‰ï¼—ï¼ˆï¼’ï¼ï¼’ï¼‰å¹´ï¼•æœˆï¼Œ[n]ã€Œ[Red]å®˜æ¸¡ä¹‹æˆ˜[Normal]ã€å¤±è´¥çš„çš„[Green]è¢ç´¹[Normal]ï¼Œ[n]åœ¨å‡†å¤‡åå‡»[Green]æ›¹æ“[Normal]çš„é€”ä¸­ç—…é€ã€‚");
+					DrawMulitStrBox("ç”±äºŽ[Green]è¢ç´¹[Normal]æ²¡æœ‰æŒ‡å®šç»§æ‰¿äººè€ŒçŒæ­»ï¼Œ[n]è¢å®¶åˆ†ä¸ºä¸‰å­[Green]è¢å°š[Normal]æ´¾å’Œé•¿å­[Green]è¢è°­[Normal]æ´¾ï¼Œ[n]å¼€å§‹ç›¸äº’æ–—äº‰ã€‚");
+					LoadPic(79,"æ·¡å‡º");
 					SetSceneID(66);
-					DrawMulitStrBox("[Green]²Ü²Ù[Normal]Ã»ÓÐ·Å¹ýÕâÒ»Ê±»ú£¬¿ªÊ¼±±ÉÏ[n]½¨°²£¹£¨£²£°£´£©Äê£¹ÔÂ£¬[n]Ê×ÏÈ¹¥ÏÝÁË[Green]Ô¬ÉÐ[Normal]µÄ¸ù¾ÝµØÚþ¡£");
-					DrawMulitStrBox("½¨°²£±£°£¨£²£°£µ£©Äê£±ÔÂ£¬ÇàÖÝµÄ[Green]Ô¬Ì·[Normal]±»Ãð¡£");
-					DrawMulitStrBox("ÒîÄê£¬[Green]Ô¬ÉÐ[Normal]ÁôÔÚºø¹ØµÄ¸ß¸ÉÒ²Õ½°Ü¶ø±»ÇÜ¡£");
-					DrawMulitStrBox("[Green]Ô¬ÉÐ[Normal]ÑÛ¿´¾ÍÒª±»×·¸Ïµ½£¬[n]¾ÍÍ¶±¼ÁË±±·½µÄÓÎÄÁÃñ×å[Red]ÎÚÍè[Normal]¡£[n]Ô¬¼ÒÃüÔËÒÑÈç·çÖÐÖ®Öò¡£");
+					DrawMulitStrBox("[Green]æ›¹æ“[Normal]æ²¡æœ‰æ”¾è¿‡è¿™ä¸€æ—¶æœºï¼Œå¼€å§‹åŒ—ä¸Š[n]å»ºå®‰ï¼™ï¼ˆï¼’ï¼ï¼”ï¼‰å¹´ï¼™æœˆï¼Œ[n]é¦–å…ˆæ”»é™·äº†[Green]è¢å°š[Normal]çš„æ ¹æ®åœ°é‚ºã€‚");
+					DrawMulitStrBox("å»ºå®‰ï¼‘ï¼ï¼ˆï¼’ï¼ï¼•ï¼‰å¹´ï¼‘æœˆï¼Œé’å·žçš„[Green]è¢è°­[Normal]è¢«ç­ã€‚");
+					DrawMulitStrBox("ç¿Œå¹´ï¼Œ[Green]è¢å°š[Normal]ç•™åœ¨å£¶å…³çš„é«˜å¹²ä¹Ÿæˆ˜è´¥è€Œè¢«æ“’ã€‚");
+					DrawMulitStrBox("[Green]è¢å°š[Normal]çœ¼çœ‹å°±è¦è¢«è¿½èµ¶åˆ°ï¼Œ[n]å°±æŠ•å¥”äº†åŒ—æ–¹çš„æ¸¸ç‰§æ°‘æ—[Red]ä¹Œä¸¸[Normal]ã€‚[n]è¢å®¶å‘½è¿å·²å¦‚é£Žä¸­ä¹‹çƒ›ã€‚");
 					if JY.FID==1 then
 						SetSceneID(52);
-						Talk("ˆß|","[Green]²Ü²Ù[Normal]´óÈË£¬[n]¼½ÖÝµÄ¹¥ÂÔ½áÊøÁË£¬[n]ÏÖÔÚÖ»Ê£ÏÂ[Red]±±Æ½[Normal]ÁË¡£");
-						Talk("ˆß|","[Green]Ô¬ÉÐ[Normal]ÒÑÈçÎÍÖÐÖ®±î£¬[n]ÌÖ·¥µÄ×¼±¸Ò²ÒÑ×öºÃÁË¡£");
-						Talk("¹ù¼Î","[Green]Ô¬ÉÐ[Normal]²»ÖµÒ»Ìá£¬[n]ÔÚÁÉ¶«»¹²ÐÓÐ[Green]¹«Ëï[Normal]Ò»×å¡£");
-						Talk("¹ù¼Î","´Ë´Î£¬Ò»Æø´ò°ÜÁ½¼Ò£¬[n]ÍêÈ«¿ØÖÆÓÄÖÝ¡£");
-						Talk("¹ù¼Î","Èç¹ûËûÃÇÁôÏÂ£¬[n]±Ø³Éºó»¼¡£");
-						Talk("²Ü²Ù","àÅ£¬Ô¬¼ÒÌÖ·¥¾ü¼ÌÐø±±ÉÏ¡£");
-						Talk("²Ü²Ù","µ«ÊÇ£¬[n]²»ÄÜÒ»Ö±ºÍÒ»Ö»½ÅÒÑÈëÍÁµÄÔ¬¼ÒÓÐ¹Ï¸ð¡£");
-						Talk("²Ü²Ù","[Green]˜·ßM[Normal]£¬ÄãÁìÒ»Ö§ÈËÂí£¬[n]È¥Ö§Ô®[Green]²ÜÈÊ[Normal]¡¢[Green]ÏÄºîª[Normal]¡£");
-						Talk("˜·ßM","×ñÃü£¬[n]Á¢¿ÌÇ°ÍùÄÏ·½¡£");
-						Talk("²Ü²Ù","ÆäËûÈËÒ²¿ªÊ¼×öºÃÄÏÏÂ×¼±¸¡£");
-						Talk("²Ü²Ù","¶«ÎâµÄ[Green]ŒO™à[Normal]£¬¾£ÖÝµÄ[Green]Áõ±í[Normal]£¬[n]»¹ÓÐÐÂÒ°µÄ[Green]„¢‚ä[Normal]£¬[n]ÄÏ·½»¹ÓÐ²»ÉÙµÐÈË²ÐÁô¡£");
-						Talk("²Ü²Ù","µ«ÊÇ£¬[n]Ë­µÄÊÆÁ¦Ò²±È²»¹ýµ±ÄêµÄ[Green]Ô¬½B[Normal]¡£");
-						Talk("²Ü²Ù","ÌìÏÂÏñÒÑ»Øµ½ÎÒÃÇÊÖÖÐ£¬[n]ºÃºÃ´òÕÌ°É¡£");
+						Talk("å¼µé¼","[Green]æ›¹æ“[Normal]å¤§äººï¼Œ[n]å†€å·žçš„æ”»ç•¥ç»“æŸäº†ï¼Œ[n]çŽ°åœ¨åªå‰©ä¸‹[Red]åŒ—å¹³[Normal]äº†ã€‚");
+						Talk("å¼µé¼","[Green]è¢å°š[Normal]å·²å¦‚ç“®ä¸­ä¹‹é³–ï¼Œ[n]è®¨ä¼çš„å‡†å¤‡ä¹Ÿå·²åšå¥½äº†ã€‚");
+						Talk("éƒ­å˜‰","[Green]è¢å°š[Normal]ä¸å€¼ä¸€æï¼Œ[n]åœ¨è¾½ä¸œè¿˜æ®‹æœ‰[Green]å…¬å­™[Normal]ä¸€æ—ã€‚");
+						Talk("éƒ­å˜‰","æ­¤æ¬¡ï¼Œä¸€æ°”æ‰“è´¥ä¸¤å®¶ï¼Œ[n]å®Œå…¨æŽ§åˆ¶å¹½å·žã€‚");
+						Talk("éƒ­å˜‰","å¦‚æžœä»–ä»¬ç•™ä¸‹ï¼Œ[n]å¿…æˆåŽæ‚£ã€‚");
+						Talk("æ›¹æ“","å—¯ï¼Œè¢å®¶è®¨ä¼å†›ç»§ç»­åŒ—ä¸Šã€‚");
+						Talk("æ›¹æ“","ä½†æ˜¯ï¼Œ[n]ä¸èƒ½ä¸€ç›´å’Œä¸€åªè„šå·²å…¥åœŸçš„è¢å®¶æœ‰ç“œè‘›ã€‚");
+						Talk("æ›¹æ“","[Green]æ¨‚é€²[Normal]ï¼Œä½ é¢†ä¸€æ”¯äººé©¬ï¼Œ[n]åŽ»æ”¯æ´[Green]æ›¹ä»[Normal]ã€[Green]å¤ä¾¯æƒ‡[Normal]ã€‚");
+						Talk("æ¨‚é€²","éµå‘½ï¼Œ[n]ç«‹åˆ»å‰å¾€å—æ–¹ã€‚");
+						Talk("æ›¹æ“","å…¶ä»–äººä¹Ÿå¼€å§‹åšå¥½å—ä¸‹å‡†å¤‡ã€‚");
+						Talk("æ›¹æ“","ä¸œå´çš„[Green]å­«æ¬Š[Normal]ï¼Œè†å·žçš„[Green]åˆ˜è¡¨[Normal]ï¼Œ[n]è¿˜æœ‰æ–°é‡Žçš„[Green]åŠ‰å‚™[Normal]ï¼Œ[n]å—æ–¹è¿˜æœ‰ä¸å°‘æ•Œäººæ®‹ç•™ã€‚");
+						Talk("æ›¹æ“","ä½†æ˜¯ï¼Œ[n]è°çš„åŠ¿åŠ›ä¹Ÿæ¯”ä¸è¿‡å½“å¹´çš„[Green]è¢ç´¹[Normal]ã€‚");
+						Talk("æ›¹æ“","å¤©ä¸‹åƒå·²å›žåˆ°æˆ‘ä»¬æ‰‹ä¸­ï¼Œ[n]å¥½å¥½æ‰“ä»—å§ã€‚");
 					elseif JY.FID==2 then
 						SetSceneID(54);
-						Talk("„¢‚ä","[Green]²Ü²Ù[Normal]ºÍÔ¬ÊÏÒ»¼ÒÖ®Õ½¿ìÒª½áÊøÁË°É£¿");
-						Talk("„¢‚ä","[Green]²Ü²Ù[Normal]ÄÏÏÂÒÔ¾£ÖÝÎªÄ¿±êÊ±£¬[n]ÐÂÒ°±Ø½«³ÉÎªÕ½³¡¡£");
-						Talk("„¢‚ä","ÐÂÒ°Ð¡³Ç£¬±øÎ¢½«¹Ñ£¬[n][Green]²Ü²Ù[Normal]À´¹¥´òÊ±£¬ÈçºÎ·ÀÓùºÃÄØ£¿");
-						Talk("ˆïw","ÐÖ³¤£¬[n]Ã»ÓÐ±ØÒªµÈ´ý[Green]²Ü²Ù[Normal]ÄÏÏÂ¡£");
-						Talk("ˆïw","³Ã[Green]²Ü¾ü[Normal]±±ÉÏÆÚ¼ä£¬[n]¶áÈ¡Ðí²ý²»ÊÇ¸üºÃÂð£¿");
-						Talk("Úwë…","ÕýÈç[Green]ˆïw[Normal]´óÈËËùËµ£¬[n]Èç¹ûÒª¹¥´ò[Green]²Ü²Ù[Normal]£¬Ã»ÀíÓÉ´í¹ýÏÖÔÚ¡£");
-						Talk("Úwë…","ËäËµÕâÑù£¬[n]µ«[Green]²Ü²Ù[Normal]ÒÑÅÉ[Green]²ÜÈÊ[Normal]¹®¹Ì·ÀÊØ£¬[n]²»Ò×¹¥´òÑ½£¡");
-						Talk("„¢‚ä","àÅ£¡[Green]ÐìÊü[Normal]ÔõÃ´¿¼ÂÇ£¿");
-						Talk("ÐìÊü","µÄÈ·£¬[Green]²Ü¾ü[Normal]ÊÇ´ó¾ü£¬[n]µ«Õ½¶·µÄÊ¤¸º²»ÊÇÖ»¿¿±øÁ¦¾ö¶¨µÄ¡£");
-						Talk("ÐìÊü","´ó¾üÓÐ´ó¾ü£¬[n]ÉÙÊýÓÐÉÙÊý¸÷×ÔµÄ×÷Õ½·½·¨¡£");
-						Talk("ÐìÊü","¹¥´òµÐÈËµÄ¿ÕÏ¶ÊÇ×îºÃµÄ£¬[n]Èç¹û²»ÐÐ£¬Ö»ÓÐÏëÆäËû°ì·¨ÁË¡£");
-						Talk("ÐìÊü","µ±Ç°£¬ÕÙ¼¯Îä½«£¬[n]¼¯ºÏÊ¿±øÊÇµ±ÎñÖ®¼±¡£");
-						Talk("ÐìÊü","×¼±¸ÈËÂí£¬[Green]²Ü¾ü[Normal]ÈôÀ´¹¥´ò£¬[n]¾ÍºÍ[Green]Áõ±í[Normal]´óÈËÁªÊÖ»÷ÍË¡£");
-						Talk("ÐìÊü","µÐÈË·¢Éú»ìÂÒÖ®Ê±£¬[n]ÎÒ·½ÈçÓÐ×ã¹»µÄÕ½¶·Á¦¾Í×ªÎª·´¹¥°É£¡");
-						Talk("„¢‚ä","àÅ£¬µÄÈ·Èç´Ë¡£");
-						Talk("„¢‚ä","[Green]ÐìÊü[Normal]£¬[n]ÎÒÃÇÒÔÇ°¾ÍÊÇÃ»ÓÐÏñÄãÒ»ÑùµÄ¾üÊ¦²ÅÁ¬³Ô°ÜÕÌµÄ¡£");
-						Talk("„¢‚ä","[Green]²Ü²Ù[Normal]À´¹¥Ê±£¬Çë¶à°ïÃ¦¡£");
-						Talk("ÐìÊü","ÊÇ£¬ÎÒ½«¾¡ÎÒËùÄÜ¡£");
+						Talk("åŠ‰å‚™","[Green]æ›¹æ“[Normal]å’Œè¢æ°ä¸€å®¶ä¹‹æˆ˜å¿«è¦ç»“æŸäº†å§ï¼Ÿ");
+						Talk("åŠ‰å‚™","[Green]æ›¹æ“[Normal]å—ä¸‹ä»¥è†å·žä¸ºç›®æ ‡æ—¶ï¼Œ[n]æ–°é‡Žå¿…å°†æˆä¸ºæˆ˜åœºã€‚");
+						Talk("åŠ‰å‚™","æ–°é‡Žå°åŸŽï¼Œå…µå¾®å°†å¯¡ï¼Œ[n][Green]æ›¹æ“[Normal]æ¥æ”»æ‰“æ—¶ï¼Œå¦‚ä½•é˜²å¾¡å¥½å‘¢ï¼Ÿ");
+						Talk("å¼µé£›","å…„é•¿ï¼Œ[n]æ²¡æœ‰å¿…è¦ç­‰å¾…[Green]æ›¹æ“[Normal]å—ä¸‹ã€‚");
+						Talk("å¼µé£›","è¶[Green]æ›¹å†›[Normal]åŒ—ä¸ŠæœŸé—´ï¼Œ[n]å¤ºå–è®¸æ˜Œä¸æ˜¯æ›´å¥½å—ï¼Ÿ");
+						Talk("è¶™é›²","æ­£å¦‚[Green]å¼µé£›[Normal]å¤§äººæ‰€è¯´ï¼Œ[n]å¦‚æžœè¦æ”»æ‰“[Green]æ›¹æ“[Normal]ï¼Œæ²¡ç†ç”±é”™è¿‡çŽ°åœ¨ã€‚");
+						Talk("è¶™é›²","è™½è¯´è¿™æ ·ï¼Œ[n]ä½†[Green]æ›¹æ“[Normal]å·²æ´¾[Green]æ›¹ä»[Normal]å·©å›ºé˜²å®ˆï¼Œ[n]ä¸æ˜“æ”»æ‰“å‘€ï¼");
+						Talk("åŠ‰å‚™","å—¯ï¼[Green]å¾åº¶[Normal]æ€Žä¹ˆè€ƒè™‘ï¼Ÿ");
+						Talk("å¾åº¶","çš„ç¡®ï¼Œ[Green]æ›¹å†›[Normal]æ˜¯å¤§å†›ï¼Œ[n]ä½†æˆ˜æ–—çš„èƒœè´Ÿä¸æ˜¯åªé å…µåŠ›å†³å®šçš„ã€‚");
+						Talk("å¾åº¶","å¤§å†›æœ‰å¤§å†›ï¼Œ[n]å°‘æ•°æœ‰å°‘æ•°å„è‡ªçš„ä½œæˆ˜æ–¹æ³•ã€‚");
+						Talk("å¾åº¶","æ”»æ‰“æ•Œäººçš„ç©ºéš™æ˜¯æœ€å¥½çš„ï¼Œ[n]å¦‚æžœä¸è¡Œï¼Œåªæœ‰æƒ³å…¶ä»–åŠžæ³•äº†ã€‚");
+						Talk("å¾åº¶","å½“å‰ï¼Œå¬é›†æ­¦å°†ï¼Œ[n]é›†åˆå£«å…µæ˜¯å½“åŠ¡ä¹‹æ€¥ã€‚");
+						Talk("å¾åº¶","å‡†å¤‡äººé©¬ï¼Œ[Green]æ›¹å†›[Normal]è‹¥æ¥æ”»æ‰“ï¼Œ[n]å°±å’Œ[Green]åˆ˜è¡¨[Normal]å¤§äººè”æ‰‹å‡»é€€ã€‚");
+						Talk("å¾åº¶","æ•Œäººå‘ç”Ÿæ··ä¹±ä¹‹æ—¶ï¼Œ[n]æˆ‘æ–¹å¦‚æœ‰è¶³å¤Ÿçš„æˆ˜æ–—åŠ›å°±è½¬ä¸ºåæ”»å§ï¼");
+						Talk("åŠ‰å‚™","å—¯ï¼Œçš„ç¡®å¦‚æ­¤ã€‚");
+						Talk("åŠ‰å‚™","[Green]å¾åº¶[Normal]ï¼Œ[n]æˆ‘ä»¬ä»¥å‰å°±æ˜¯æ²¡æœ‰åƒä½ ä¸€æ ·çš„å†›å¸ˆæ‰è¿žåƒè´¥ä»—çš„ã€‚");
+						Talk("åŠ‰å‚™","[Green]æ›¹æ“[Normal]æ¥æ”»æ—¶ï¼Œè¯·å¤šå¸®å¿™ã€‚");
+						Talk("å¾åº¶","æ˜¯ï¼Œæˆ‘å°†å°½æˆ‘æ‰€èƒ½ã€‚");
 					elseif JY.FID==4 then
 						SetSceneID(54);
-						Talk("Ô¬Îõ","[Green]Ô¬ÉÐ[Normal]£¬[n]ÔÙµÖ¿¹ÎÒÃÇÒ²ÎÞÍûÈ¡Ê¤¡£");
-						Talk("Ô¬Îõ","Ë÷ÐÔ²»ÈçÍ¶½µ[Green]²Ü²Ù[Normal]°É£¿");
-						Talk("Ô¬ÉÐ","ËµÊ²Ã´ÄØ£¿[n]ÐÖ³¤£¬Ô¬¼ÒµÄÖ¾ÆøÎªÈËËù¿ä£¬[n]²»ÄÜÍ¶½µ[Green]²Ü²Ù[Normal]¡£");
-						Talk("Ô¬ÉÐ","Ê×ÏÈ£¬ÈôÍ¶½µµÄ»°£¬[n]ÊôÏÂÊÇ²»»áÔ­ÁÂÎÒÃÇÐÖµÜµÄ¡£");
-						Talk("Ô¬ÉÐ","[Green]Ô¬Ì·[Normal]ºÍ[Green]¸ß¸É[Normal]µÈ±»ÇÜµÄÔ¬¼ÒÈËÈ«²¿±»É±¡£");
-						Talk("Ô¬Îõ","µ½µ×ÈçºÎÊÇºÃÄØ£¿[n]Ãæ¶ÔÄÇÑùµÄ´ó¾üÈçºÎ×÷Õ½£¿");
-						Talk("Ô¬ÉÐ","Ö»ÓÐÇóÖúÁÉ¶«µÄ[Green]¹«Ëï¿µ[Normal]ÁË¡£");
-						Talk("Ô¬ÉÐ","Èç¹ûÎÒÃÇ±»Ãð£¬[n][Green]¹«Ëï¿µ[Normal]Ò²Òª±»ÃðÍö£¬[n]Ò»¶¨»á°ïÖúÎÒÃÇµÄ¡£");
-						Talk("Ô¬Îõ","ÎÒ²»ÈÏÎª[Green]¹«Ëï¿µ[Normal]»á´ðÓ¦¡£[n]Èç¹ûÎÒÃÇÁªÊÖ£¬¾Í¶ÏÁËÍ¬[Green]²Ü²Ù[Normal]½²ºÍÖ®µÀ¡£");
-						Talk("Ô¬ÉÐ","½»Õ½»ò½»Éæ£¬[n]²»È¥×ö¾ÍÎÞ·¨ÖªµÀ¡£");
-						Talk("Ô¬ÉÐ","[Green]¹«Ëï¿µ[Normal]Èô²»´ðÓ¦£¬[n]ÄÇ¾ÍÖ»ÓÐÍ¨¹ýÕ½ÕùÀ´´ò°Ü[Green]²Ü²Ù[Normal]¡£");
-						Talk("Ô¬ÉÐ","ÎÒÃÇ»¹ÓÐ[Red]ÎÚÍè[Normal]µÄÆï±ø£¬[n]Õ½µ½×îºó£¬ÈôÊ§°Ü¾ÍÈ¥ËÀ£¡");
+						Talk("è¢ç†™","[Green]è¢å°š[Normal]ï¼Œ[n]å†æŠµæŠ—æˆ‘ä»¬ä¹Ÿæ— æœ›å–èƒœã€‚");
+						Talk("è¢ç†™","ç´¢æ€§ä¸å¦‚æŠ•é™[Green]æ›¹æ“[Normal]å§ï¼Ÿ");
+						Talk("è¢å°š","è¯´ä»€ä¹ˆå‘¢ï¼Ÿ[n]å…„é•¿ï¼Œè¢å®¶çš„å¿—æ°”ä¸ºäººæ‰€å¤¸ï¼Œ[n]ä¸èƒ½æŠ•é™[Green]æ›¹æ“[Normal]ã€‚");
+						Talk("è¢å°š","é¦–å…ˆï¼Œè‹¥æŠ•é™çš„è¯ï¼Œ[n]å±žä¸‹æ˜¯ä¸ä¼šåŽŸè°…æˆ‘ä»¬å…„å¼Ÿçš„ã€‚");
+						Talk("è¢å°š","[Green]è¢è°­[Normal]å’Œ[Green]é«˜å¹²[Normal]ç­‰è¢«æ“’çš„è¢å®¶äººå…¨éƒ¨è¢«æ€ã€‚");
+						Talk("è¢ç†™","åˆ°åº•å¦‚ä½•æ˜¯å¥½å‘¢ï¼Ÿ[n]é¢å¯¹é‚£æ ·çš„å¤§å†›å¦‚ä½•ä½œæˆ˜ï¼Ÿ");
+						Talk("è¢å°š","åªæœ‰æ±‚åŠ©è¾½ä¸œçš„[Green]å…¬å­™åº·[Normal]äº†ã€‚");
+						Talk("è¢å°š","å¦‚æžœæˆ‘ä»¬è¢«ç­ï¼Œ[n][Green]å…¬å­™åº·[Normal]ä¹Ÿè¦è¢«ç­äº¡ï¼Œ[n]ä¸€å®šä¼šå¸®åŠ©æˆ‘ä»¬çš„ã€‚");
+						Talk("è¢ç†™","æˆ‘ä¸è®¤ä¸º[Green]å…¬å­™åº·[Normal]ä¼šç­”åº”ã€‚[n]å¦‚æžœæˆ‘ä»¬è”æ‰‹ï¼Œå°±æ–­äº†åŒ[Green]æ›¹æ“[Normal]è®²å’Œä¹‹é“ã€‚");
+						Talk("è¢å°š","äº¤æˆ˜æˆ–äº¤æ¶‰ï¼Œ[n]ä¸åŽ»åšå°±æ— æ³•çŸ¥é“ã€‚");
+						Talk("è¢å°š","[Green]å…¬å­™åº·[Normal]è‹¥ä¸ç­”åº”ï¼Œ[n]é‚£å°±åªæœ‰é€šè¿‡æˆ˜äº‰æ¥æ‰“è´¥[Green]æ›¹æ“[Normal]ã€‚");
+						Talk("è¢å°š","æˆ‘ä»¬è¿˜æœ‰[Red]ä¹Œä¸¸[Normal]çš„éª‘å…µï¼Œ[n]æˆ˜åˆ°æœ€åŽï¼Œè‹¥å¤±è´¥å°±åŽ»æ­»ï¼");
 					end
 				end,
 			[0106]=function()
 					SetSceneID(59);
-					LoadPic(103,"µ­Èë");
-					DrawMulitStrBox("Ê±Îª¶«ººÍõ³¯µÚ£±£´´ú»ÊµÛ¡¤[Green]Ï×µÛ[Normal]ÔÚÎ»ÆÚ¼ä¡£");
-					DrawMulitStrBox("Í³ÖÎ´óÂ½£²¸öÊÀ¼ÍµÄÍõ³¯ÓÉÓÚÅÑÂÒÆµ·¢£¬[n]ÈºÐÛËÄÆð£¬ÈÕ½¥Ë¥°ÜÁË¡£");
-					DrawMulitStrBox("Í½ÓÐÐéÃûµÄ³¯Í¢ÍþÐÅÉ¨µØ£¬[n]ÓÐÊµÁ¦µÄÈºÐÛÎªÁËÕù¶á°ÔÈ¨£¬[n]ÖðÂ¹ÖÐÔ­¶øÕ½ÊÂ²»¶Ï¡£");
-					LoadPic(103,"µ­³ö");
-					LoadPic(1,"µ­Èë");
-					DrawMulitStrBox("Î÷ÊñÖ®µØ¡¤¡¸[Red]ÒæÖÝ[Normal]¡¹¡£[n]Õâ¸öµØÇø±»´óÂ½Î÷ÄÏ²¿µÄÈºÉ½»·ÈÆ£¬[n]ÓëÖÐÔ­·¢ÉúµÄÕ½¶·±¾ÎÞ¹ØÏµ£¬¹Ê¶øÃâÓÚÕ½»ö¡£");
-					LoadPic(1,"µ­³ö");
+					LoadPic(103,"æ·¡å…¥");
+					DrawMulitStrBox("æ—¶ä¸ºä¸œæ±‰çŽ‹æœç¬¬ï¼‘ï¼”ä»£çš‡å¸Â·[Green]çŒ®å¸[Normal]åœ¨ä½æœŸé—´ã€‚");
+					DrawMulitStrBox("ç»Ÿæ²»å¤§é™†ï¼’ä¸ªä¸–çºªçš„çŽ‹æœç”±äºŽå›ä¹±é¢‘å‘ï¼Œ[n]ç¾¤é›„å››èµ·ï¼Œæ—¥æ¸è¡°è´¥äº†ã€‚");
+					DrawMulitStrBox("å¾’æœ‰è™šåçš„æœå»·å¨ä¿¡æ‰«åœ°ï¼Œ[n]æœ‰å®žåŠ›çš„ç¾¤é›„ä¸ºäº†äº‰å¤ºéœ¸æƒï¼Œ[n]é€é¹¿ä¸­åŽŸè€Œæˆ˜äº‹ä¸æ–­ã€‚");
+					LoadPic(103,"æ·¡å‡º");
+					LoadPic(1,"æ·¡å…¥");
+					DrawMulitStrBox("è¥¿èœ€ä¹‹åœ°Â·ã€Œ[Red]ç›Šå·ž[Normal]ã€ã€‚[n]è¿™ä¸ªåœ°åŒºè¢«å¤§é™†è¥¿å—éƒ¨çš„ç¾¤å±±çŽ¯ç»•ï¼Œ[n]ä¸Žä¸­åŽŸå‘ç”Ÿçš„æˆ˜æ–—æœ¬æ— å…³ç³»ï¼Œæ•…è€Œå…äºŽæˆ˜ç¥¸ã€‚");
+					LoadPic(1,"æ·¡å‡º");
 					SetSceneID(66);
-					DrawMulitStrBox("È»¶ø£¬×Ô´ÓººÖÐµÄ[Green]ˆô”[Normal]ÆóÍ¼¹¥´òÒæÖÝ£¬[n]ÒæÖÝµÄÐÎÊÆË²¼ä·¢ÉúÁË±ä»¯¡£");
-					DrawMulitStrBox("ÒæÖÝµÄ[Green]Áõè°[Normal]ÎªÁË¶Ô¿¹[Green]ˆô”[Normal]£¬[n]Ïò¾£ÖÝµÄ[Green]„¢‚ä[Normal]ÇóÔ®¡£");
-					DrawMulitStrBox("[Green]„¢‚ä[Normal]Ó¦ÑûÇ×ÈëÒæÖÝ¶Ô¿¹[Green]ˆô”[Normal]¡£[n]Òò´Ë£¬[Green]ˆô”[Normal]·ÅÆúÁË½ø¾ü£¬Ò»³¡Õ½ÂÒËÆºõ±ÜÃâÁË¡£");
-					DrawMulitStrBox("¿ÉÊÇ£¬ÊÂÌ¬ÓÖ¼±×ªÖ±ÏÂ¡£[n]Õâ´ÎÊÇ[Green]Áõè°[Normal]ºÍ[Green]„¢‚ä[Normal]µÄ¹ØÏµ¶ñ»¯£¬[n]×îÖÕË«·½½øÐÐ½»Õ½¡£");
-					LoadPic(93,"µ­Èë");
-					DrawMulitStrBox("[Green]„¢‚ä¾ü[Normal]¾­ÀúÁËÒ»·¬¿àÕ½£¬ËðÊ§ÁË¾üÊ¦[Green]ÅÓÍ³[Normal]£¬[n]µ«¾£ÖÝÔ®¾ü¸Ïµ½£¬µÃÒÔ·´°ÜÎªÊ¤£¬[n]Ö±±Æ[Green]Áõè°[Normal]ËùÔÚµÄ³É¶¼¡£");
-					DrawMulitStrBox("±»±ÆµÄ×ßÍ¶ÎÞÂ·µÄ[Green]Áõè°[Normal]£¬ÏòÔøÊÇµÐÈËµÄ[Green]ˆô”[Normal]ÇóÔ®£¬[n][Green]ˆô”[Normal]ÏìÓ¦£¬ÅÉ[Green]ñR³¬[Normal]Ç°Íù¡£");
-					DrawMulitStrBox("¿ÉÊÇ£¬ÓÉÓÚ[Green]ÖT¸ðÁÁ[Normal]µÄ¼ÆÄ±£¬[Green]ñR³¬[Normal]±»[Green]ˆô”[Normal]²ÂÒÉ£¬[n]´óÊ§ËùÍûµÄ[Green]ñR³¬[Normal]Í¶¿¿ÁË[Green]„¢‚ä[Normal]¡£");
-					LoadPic(93,"µ­³ö");
+					DrawMulitStrBox("ç„¶è€Œï¼Œè‡ªä»Žæ±‰ä¸­çš„[Green]å¼µé­¯[Normal]ä¼å›¾æ”»æ‰“ç›Šå·žï¼Œ[n]ç›Šå·žçš„å½¢åŠ¿çž¬é—´å‘ç”Ÿäº†å˜åŒ–ã€‚");
+					DrawMulitStrBox("ç›Šå·žçš„[Green]åˆ˜ç’‹[Normal]ä¸ºäº†å¯¹æŠ—[Green]å¼µé­¯[Normal]ï¼Œ[n]å‘è†å·žçš„[Green]åŠ‰å‚™[Normal]æ±‚æ´ã€‚");
+					DrawMulitStrBox("[Green]åŠ‰å‚™[Normal]åº”é‚€äº²å…¥ç›Šå·žå¯¹æŠ—[Green]å¼µé­¯[Normal]ã€‚[n]å› æ­¤ï¼Œ[Green]å¼µé­¯[Normal]æ”¾å¼ƒäº†è¿›å†›ï¼Œä¸€åœºæˆ˜ä¹±ä¼¼ä¹Žé¿å…äº†ã€‚");
+					DrawMulitStrBox("å¯æ˜¯ï¼Œäº‹æ€åˆæ€¥è½¬ç›´ä¸‹ã€‚[n]è¿™æ¬¡æ˜¯[Green]åˆ˜ç’‹[Normal]å’Œ[Green]åŠ‰å‚™[Normal]çš„å…³ç³»æ¶åŒ–ï¼Œ[n]æœ€ç»ˆåŒæ–¹è¿›è¡Œäº¤æˆ˜ã€‚");
+					LoadPic(93,"æ·¡å…¥");
+					DrawMulitStrBox("[Green]åŠ‰å‚™å†›[Normal]ç»åŽ†äº†ä¸€ç•ªè‹¦æˆ˜ï¼ŒæŸå¤±äº†å†›å¸ˆ[Green]åºžç»Ÿ[Normal]ï¼Œ[n]ä½†è†å·žæ´å†›èµ¶åˆ°ï¼Œå¾—ä»¥åè´¥ä¸ºèƒœï¼Œ[n]ç›´é€¼[Green]åˆ˜ç’‹[Normal]æ‰€åœ¨çš„æˆéƒ½ã€‚");
+					DrawMulitStrBox("è¢«é€¼çš„èµ°æŠ•æ— è·¯çš„[Green]åˆ˜ç’‹[Normal]ï¼Œå‘æ›¾æ˜¯æ•Œäººçš„[Green]å¼µé­¯[Normal]æ±‚æ´ï¼Œ[n][Green]å¼µé­¯[Normal]å“åº”ï¼Œæ´¾[Green]é¦¬è¶…[Normal]å‰å¾€ã€‚");
+					DrawMulitStrBox("å¯æ˜¯ï¼Œç”±äºŽ[Green]è«¸è‘›äº®[Normal]çš„è®¡è°‹ï¼Œ[Green]é¦¬è¶…[Normal]è¢«[Green]å¼µé­¯[Normal]çŒœç–‘ï¼Œ[n]å¤§å¤±æ‰€æœ›çš„[Green]é¦¬è¶…[Normal]æŠ•é äº†[Green]åŠ‰å‚™[Normal]ã€‚");
+					LoadPic(93,"æ·¡å‡º");
 					SetSceneID(59);
-					LoadPic(11,"µ­Èë");
-					DrawMulitStrBox("Á¬[Green]ñR³¬[Normal]Ò²Í¶¿¿ÁË[Green]„¢‚ä[Normal]£¬[n][Green]Áõè°[Normal]Ê§È¥ÁËµÖ¿¹Á¦£¬ËùÒÔÏò[Green]„¢‚ä[Normal]Í¶½µÁË¡£");
-					LoadPic(11,"µ­³ö");
-					LoadPic(114,"µ­Èë");
-					DrawMulitStrBox("ÓÚÊÇ£¬[Green]„¢‚ä[Normal]³É¹¦µØ½øÈëÊñµØ¡£[n]ÌìÏÂ½øÈëÁË[Green]²Ü²Ù[Normal]¡¢[Green]„¢‚ä[Normal]¡¢[Green]ŒO™à[Normal]»¥Ïà¶¦Á¢µÄÈý¹úÊ±´ú¡£");
-					LoadPic(114,"µ­³ö");
+					LoadPic(11,"æ·¡å…¥");
+					DrawMulitStrBox("è¿ž[Green]é¦¬è¶…[Normal]ä¹ŸæŠ•é äº†[Green]åŠ‰å‚™[Normal]ï¼Œ[n][Green]åˆ˜ç’‹[Normal]å¤±åŽ»äº†æŠµæŠ—åŠ›ï¼Œæ‰€ä»¥å‘[Green]åŠ‰å‚™[Normal]æŠ•é™äº†ã€‚");
+					LoadPic(11,"æ·¡å‡º");
+					LoadPic(114,"æ·¡å…¥");
+					DrawMulitStrBox("äºŽæ˜¯ï¼Œ[Green]åŠ‰å‚™[Normal]æˆåŠŸåœ°è¿›å…¥èœ€åœ°ã€‚[n]å¤©ä¸‹è¿›å…¥äº†[Green]æ›¹æ“[Normal]ã€[Green]åŠ‰å‚™[Normal]ã€[Green]å­«æ¬Š[Normal]äº’ç›¸é¼Žç«‹çš„ä¸‰å›½æ—¶ä»£ã€‚");
+					LoadPic(114,"æ·¡å‡º");
 					if JY.FID==1 then
 						SetSceneID(52);
-						Talk("²Ü²Ù","[Green]„¢‚ä[Normal]»¹ÊÇÈëÊñÁËÂð£¿");
-						Talk("²Ü²Ù","²»ÄÜ¶ÔÕâ¼Ò»ïÌýÖ®ÈÎÖ®ÁË¡£[n]ÓÐÊ²Ã´°ì·¨Âð£¿");
-						Talk("Ü÷Øü","[Green]²Ü²Ù[Normal]´óÈË£¬[n]ÌÖ·¥ÊñµØµÄ[Green]„¢‚ä[Normal]Ö»ÓÐÁ½ÌõÂ·Ïß¡£");
-						Talk("Ü÷Øü","Ò»ÌõÊÇ´Ó¾£ÖÝ£¬[n]ÁíÒ»ÌõÊÇ´ÓººÖÐ¡£");
-						Talk("²Ü²Ù","ËùÑÔ¼«ÊÇ£¬[n]µ«ººÖÐÓÐ[Green]ˆô”[Normal]¡£");
-						Talk("ÏÄºîª","[Green]ˆô”[Normal]ÏÖÔÚ¹ÂÁ¢ÎÞÔ®¡£[n]Èç¹ûÎÒ¾ü¹¥´ò£¬¿ÉÒ»»÷¼´°Ü¡£");
-						Talk("ÏÄºîª","ËùÒÔ½ñºó£¬¹¥´òÊñµØµÄ[Green]„¢‚ä[Normal]Ê±£¬[n]´ÓººÖÐ¿ªÊ¼¹¥´òÒª±È´Ó¾£ÖÝ¸üÓÐÀûÁË¡£");
-						Talk("²Ü²Ù","àÅ£¬µÄÈ·Èç´Ë¡£[n]¿ÉÊÇÈç¹ûººÖÐ±»[Green]„¢‚ä[Normal]¶áÈ¥£¬[n]³¤°²¾ÍÎ£ÏÕÁË¡£");
-						Talk("²Ü²Ù","±ØÐëÁ¢¿ÌÏòÎ÷¼ÓÇ¿±øÁ¦£¬[n]×¼±¸½ø¹¥ººÖÐ¡£");
-						Talk("²Ü²Ù","[Green]ÏÄºîœY[Normal]¡¢[Green]ÕÅàA[Normal]£¬[n]ÃüÄãµÈÎªÎ÷Õ÷¾üµÄÏÈ·æ¡£");
-						Talk("²Ü²Ù","¶áÈ¡ººÖÐ£¬[n]Îª½ø¹¥ÊñµØ´´ÔìÓÅÊÆ¡£");
-						Talk("ÏÄºîœY","×ñÃü£¡");
-						Talk("²Ü²Ù","ÆäËûÈËÒ²Òª×¼±¸Ö§Ô®Î÷Õ÷£¬[n]¼ÌÐø·À·¶ÄÏ·½¡£");
-						Talk("²ÜÈÊ","Ã÷°×ÁË£¡");
+						Talk("æ›¹æ“","[Green]åŠ‰å‚™[Normal]è¿˜æ˜¯å…¥èœ€äº†å—ï¼Ÿ");
+						Talk("æ›¹æ“","ä¸èƒ½å¯¹è¿™å®¶ä¼™å¬ä¹‹ä»»ä¹‹äº†ã€‚[n]æœ‰ä»€ä¹ˆåŠžæ³•å—ï¼Ÿ");
+						Talk("è€æ”¸","[Green]æ›¹æ“[Normal]å¤§äººï¼Œ[n]è®¨ä¼èœ€åœ°çš„[Green]åŠ‰å‚™[Normal]åªæœ‰ä¸¤æ¡è·¯çº¿ã€‚");
+						Talk("è€æ”¸","ä¸€æ¡æ˜¯ä»Žè†å·žï¼Œ[n]å¦ä¸€æ¡æ˜¯ä»Žæ±‰ä¸­ã€‚");
+						Talk("æ›¹æ“","æ‰€è¨€æžæ˜¯ï¼Œ[n]ä½†æ±‰ä¸­æœ‰[Green]å¼µé­¯[Normal]ã€‚");
+						Talk("å¤ä¾¯æƒ‡","[Green]å¼µé­¯[Normal]çŽ°åœ¨å­¤ç«‹æ— æ´ã€‚[n]å¦‚æžœæˆ‘å†›æ”»æ‰“ï¼Œå¯ä¸€å‡»å³è´¥ã€‚");
+						Talk("å¤ä¾¯æƒ‡","æ‰€ä»¥ä»ŠåŽï¼Œæ”»æ‰“èœ€åœ°çš„[Green]åŠ‰å‚™[Normal]æ—¶ï¼Œ[n]ä»Žæ±‰ä¸­å¼€å§‹æ”»æ‰“è¦æ¯”ä»Žè†å·žæ›´æœ‰åˆ©äº†ã€‚");
+						Talk("æ›¹æ“","å—¯ï¼Œçš„ç¡®å¦‚æ­¤ã€‚[n]å¯æ˜¯å¦‚æžœæ±‰ä¸­è¢«[Green]åŠ‰å‚™[Normal]å¤ºåŽ»ï¼Œ[n]é•¿å®‰å°±å±é™©äº†ã€‚");
+						Talk("æ›¹æ“","å¿…é¡»ç«‹åˆ»å‘è¥¿åŠ å¼ºå…µåŠ›ï¼Œ[n]å‡†å¤‡è¿›æ”»æ±‰ä¸­ã€‚");
+						Talk("æ›¹æ“","[Green]å¤ä¾¯æ·µ[Normal]ã€[Green]å¼ éƒƒ[Normal]ï¼Œ[n]å‘½ä½ ç­‰ä¸ºè¥¿å¾å†›çš„å…ˆé”‹ã€‚");
+						Talk("æ›¹æ“","å¤ºå–æ±‰ä¸­ï¼Œ[n]ä¸ºè¿›æ”»èœ€åœ°åˆ›é€ ä¼˜åŠ¿ã€‚");
+						Talk("å¤ä¾¯æ·µ","éµå‘½ï¼");
+						Talk("æ›¹æ“","å…¶ä»–äººä¹Ÿè¦å‡†å¤‡æ”¯æ´è¥¿å¾ï¼Œ[n]ç»§ç»­é˜²èŒƒå—æ–¹ã€‚");
+						Talk("æ›¹ä»","æ˜Žç™½äº†ï¼");
 					elseif JY.FID==2 then
 						SetSceneID(52);
-						Talk("„¢‚ä","[Green]ñR³¬[Normal]×öµÃºÃ°¡£¡[n]¶à¿÷ÁËÄã£¬²Å±ÜÃâÁËÎÞÎ½µÄÎþÉü¡£");
-						Talk("ñR³¬","ÄÜÎªÄúÐ§Á¦£¬ÕæÊÇÌ«ºÃÁË¡£");
-						Talk("„¢‚ä","ÖîÎ»£¬ÐÁ¿àÁË¡£[n]µ«ÊÇÊ§È¥ÁË¾üÊ¦[Green]ÅÓÍ³[Normal]£¬°¦£¡[n]ÕæÊÇÁîÈËÍò·ÖÍ´ÐÄ¡£");
-						Talk("„¢‚ä","²»¹ý£¬È·µÃµ½ÁËÊñµØ£¬[n]ÓÐÁËÓë[Green]²Ü²Ù[Normal]¡¢[Green]ŒO™à[Normal]Á½Ç¿¿¹ºâµÄÊÆÁ¦¡£");
-						Talk("·¨Õý","Ö÷¹«£¬ÎÒÃÇ¸Õ¸ÕÀ©´óÍêÁìÍÁ¡£[n]¹úÁ¦»¹²»¼°[Green]²Ü²Ù[Normal]ËûÃÇ¡£");
-						Talk("·¨Õý","ÏÖÔÚÊ×ÒªÇÚÓÚÄÚÕþ£¬°²¶¨ÃñÐÄ£¬[n]Öð½¥»ýÐîÄÜÓë[Green]²Ü²Ù[Normal]¿¹ºâµÄÁ¦Á¿¡£");
-						Talk("ÖT¸ðÁÁ","µ±Ç°ÓÐ¿ÉÄÜºÍ[Green]²Ü²Ù[Normal]½»Õ½µÄ£¬[n]ÊÇ[Green]êPÓð[Normal]½«¾üËùÔÚµÄ¾£ÖÝ¡£");
-						Talk("ÖT¸ðÁÁ","àÅ£¬×¼±¸Ö§Ô®¾£ÖÝ£¬[n]Í¬Ê±Å¬Á¦ÔöÇ¿¹úÁ¦¡£");
-						Talk("„¢‚ä","àÅ£¬Ã÷°×ÁË¡£[n][Green]êPÓð[Normal]£¬¾£ÖÝ°ÝÍÐÄãÁË¡£");
-						Talk("êPÓð","×ñÃü£¡[n]¼´Ê¹»íÉÏÐÔÃü[n]Ò²Ò»¶¨»áÊØ×¡¾£ÖÝ¡£");
+						Talk("åŠ‰å‚™","[Green]é¦¬è¶…[Normal]åšå¾—å¥½å•Šï¼[n]å¤šäºäº†ä½ ï¼Œæ‰é¿å…äº†æ— è°“çš„ç‰ºç‰²ã€‚");
+						Talk("é¦¬è¶…","èƒ½ä¸ºæ‚¨æ•ˆåŠ›ï¼ŒçœŸæ˜¯å¤ªå¥½äº†ã€‚");
+						Talk("åŠ‰å‚™","è¯¸ä½ï¼Œè¾›è‹¦äº†ã€‚[n]ä½†æ˜¯å¤±åŽ»äº†å†›å¸ˆ[Green]åºžç»Ÿ[Normal]ï¼Œå”‰ï¼[n]çœŸæ˜¯ä»¤äººä¸‡åˆ†ç—›å¿ƒã€‚");
+						Talk("åŠ‰å‚™","ä¸è¿‡ï¼Œç¡®å¾—åˆ°äº†èœ€åœ°ï¼Œ[n]æœ‰äº†ä¸Ž[Green]æ›¹æ“[Normal]ã€[Green]å­«æ¬Š[Normal]ä¸¤å¼ºæŠ—è¡¡çš„åŠ¿åŠ›ã€‚");
+						Talk("æ³•æ­£","ä¸»å…¬ï¼Œæˆ‘ä»¬åˆšåˆšæ‰©å¤§å®Œé¢†åœŸã€‚[n]å›½åŠ›è¿˜ä¸åŠ[Green]æ›¹æ“[Normal]ä»–ä»¬ã€‚");
+						Talk("æ³•æ­£","çŽ°åœ¨é¦–è¦å‹¤äºŽå†…æ”¿ï¼Œå®‰å®šæ°‘å¿ƒï¼Œ[n]é€æ¸ç§¯è“„èƒ½ä¸Ž[Green]æ›¹æ“[Normal]æŠ—è¡¡çš„åŠ›é‡ã€‚");
+						Talk("è«¸è‘›äº®","å½“å‰æœ‰å¯èƒ½å’Œ[Green]æ›¹æ“[Normal]äº¤æˆ˜çš„ï¼Œ[n]æ˜¯[Green]é—œç¾½[Normal]å°†å†›æ‰€åœ¨çš„è†å·žã€‚");
+						Talk("è«¸è‘›äº®","å—¯ï¼Œå‡†å¤‡æ”¯æ´è†å·žï¼Œ[n]åŒæ—¶åŠªåŠ›å¢žå¼ºå›½åŠ›ã€‚");
+						Talk("åŠ‰å‚™","å—¯ï¼Œæ˜Žç™½äº†ã€‚[n][Green]é—œç¾½[Normal]ï¼Œè†å·žæ‹œæ‰˜ä½ äº†ã€‚");
+						Talk("é—œç¾½","éµå‘½ï¼[n]å³ä½¿è±ä¸Šæ€§å‘½[n]ä¹Ÿä¸€å®šä¼šå®ˆä½è†å·žã€‚");
 					elseif JY.FID==3 then
 						SetSceneID(54);
-						Talk("ŒO™à","[Green]„¢‚ä[Normal]×îÖÕ»¹ÊÇÕ¼ÁìÁËÊñµØ£¬[n]Õâ¶ÔÓÚ[Green]²Ü²Ù[Normal]Ò²ÊÇ²»¿ÉÇáÊÓµÄ¡£");
-						Talk("ŒO™à","[Green]²Ü²Ù[Normal]»áÈçºÎ²ÉÈ¡ÐÐ¶¯ÄØ£¿");
-						Talk("…ÎÃÉ","[Green]„¢‚ä[Normal]¸ÕÈëÊñµØ£¬[n]¹úÁ¦ÉÐÎ´¼ÓÇ¿¡£");
-						Talk("…ÎÃÉ","[Green]²Ü²Ù[Normal]È»µÀ²»ÏëÔÚÊñ¹úÁ¦Á¿ÔöÇ¿Ç°¹¥´òººÖÐÂð£¿");
-						Talk("ín®”","àÞ£¬ÈôÊÇÈç´Ë£¬[n][Green]²Ü²Ù[Normal]¶ÔÎÒÃÇµÄ·À±¸Ò²Ðí»á¼õÇáà¸¡£");
-						Talk("ô”ÃC","²»£¬²»£¬[n][Green]²Ü²Ù[Normal]Ò²Ò»¶¨¶ÔÎÒÃÇ±£³Ö×Å×ã¹»µÄ·À±¸¡£");
-						Talk("ô”ÃC","µ«ÊÇ£¬Èç¹û³Ã[Green]²Ü²Ù[Normal]ÏòººÖÐÊñµØ½ø¾üÖ®¼Ê£¬[n]ÎÒÃÇ¹¥Æä±³ºó[n][Green]²Ü²Ù[Normal]¾ÍÒªÁ½Ãæ×÷Õ½£¬Õâ¶ÔÎÒÃÇÊÇÓÐÀûµÄ¡£");
-						Talk("ŒO™à","àÅ£¬ÄÇÃ´Ò»µ©[Green]²Ü²Ù¾ü[Normal]Î÷½øÓÐ»ú¿É³Ë£¬[n]ÎÒÃÇ¾Í¹¥´ò±±²¿¡£");
-						Talk("ÐìÊ¢","×ñÃü£¡[n]Á¢¿Ì×¼±¸ÈËÂí¡£");
+						Talk("å­«æ¬Š","[Green]åŠ‰å‚™[Normal]æœ€ç»ˆè¿˜æ˜¯å é¢†äº†èœ€åœ°ï¼Œ[n]è¿™å¯¹äºŽ[Green]æ›¹æ“[Normal]ä¹Ÿæ˜¯ä¸å¯è½»è§†çš„ã€‚");
+						Talk("å­«æ¬Š","[Green]æ›¹æ“[Normal]ä¼šå¦‚ä½•é‡‡å–è¡ŒåŠ¨å‘¢ï¼Ÿ");
+						Talk("å‘‚è’™","[Green]åŠ‰å‚™[Normal]åˆšå…¥èœ€åœ°ï¼Œ[n]å›½åŠ›å°šæœªåŠ å¼ºã€‚");
+						Talk("å‘‚è’™","[Green]æ›¹æ“[Normal]ç„¶é“ä¸æƒ³åœ¨èœ€å›½åŠ›é‡å¢žå¼ºå‰æ”»æ‰“æ±‰ä¸­å—ï¼Ÿ");
+						Talk("éŸ“ç•¶","å™¢ï¼Œè‹¥æ˜¯å¦‚æ­¤ï¼Œ[n][Green]æ›¹æ“[Normal]å¯¹æˆ‘ä»¬çš„é˜²å¤‡ä¹Ÿè®¸ä¼šå‡è½»å–”ã€‚");
+						Talk("é­¯è‚…","ä¸ï¼Œä¸ï¼Œ[n][Green]æ›¹æ“[Normal]ä¹Ÿä¸€å®šå¯¹æˆ‘ä»¬ä¿æŒç€è¶³å¤Ÿçš„é˜²å¤‡ã€‚");
+						Talk("é­¯è‚…","ä½†æ˜¯ï¼Œå¦‚æžœè¶[Green]æ›¹æ“[Normal]å‘æ±‰ä¸­èœ€åœ°è¿›å†›ä¹‹é™…ï¼Œ[n]æˆ‘ä»¬æ”»å…¶èƒŒåŽ[n][Green]æ›¹æ“[Normal]å°±è¦ä¸¤é¢ä½œæˆ˜ï¼Œè¿™å¯¹æˆ‘ä»¬æ˜¯æœ‰åˆ©çš„ã€‚");
+						Talk("å­«æ¬Š","å—¯ï¼Œé‚£ä¹ˆä¸€æ—¦[Green]æ›¹æ“å†›[Normal]è¥¿è¿›æœ‰æœºå¯ä¹˜ï¼Œ[n]æˆ‘ä»¬å°±æ”»æ‰“åŒ—éƒ¨ã€‚");
+						Talk("å¾ç››","éµå‘½ï¼[n]ç«‹åˆ»å‡†å¤‡äººé©¬ã€‚");
 					elseif JY.FID==16 then
 						SetSceneID(54);
-						Talk("ˆô”","°¥Ñ½Ñ½£¬Ã»Ïëµ½[Green]ñR³¬[Normal]¹éË³ÁË[Green]„¢‚ä[Normal]¡£");
-						Talk("ˆô”","ÎÒÃÇ±»[Green]²Ü²Ù[Normal]ºÍ[Green]„¢‚ä[Normal]¼ÐÔÚÖÐ¼ä£¬[n]Ó¦¸ÃÈçºÎÊÇºÃ°¡£¿");
-						Talk("—îËÉ","·ÅÐÄ£¬[Green]„¢‚ä[Normal]¸ÕµÃÊñµØ£¬²»»áÂíÉÏÀ´¹¥´ò£¬[n]µ«[Green]²Ü²Ù[Normal]Ò²ÐíºÜ¿ì¾ÍÀ´¹¥£¬ÐèÒª¾¯Ìè¡£");
-						Talk("—îÈÎ","Ö÷¹«£¬ººÖÐÓÐÒªÈû¡¤¡¸[Red]ÑôÆ½¹Ø[Normal]¡¹");
-						Talk("—îÈÎ","¼´Ê¹[Green]²Ü²Ù[Normal]ÔÙÇ¿´ó£¬[n]Ò²ÎÞ·¨ÇáÒ×¹¥ÆÆ¡£");
-						Talk("ý‹µÂ","[Green]ˆô”[Normal]´óÈËÓÐ¶÷ÓÚÎÒ£¬[n]ÈÃÎÒÉÏÕó°É£¡");
-						DrawMulitStrBox("[Green]ý‹µÂ[Normal]ÊÇ[Green]ñR³¬[Normal]µÄÊôÏÂ£¬[n]µ«Òò»¼²¡Ã»ÄÜÒ»Í¬³öÕ½£¬[n]ÁôÔÚÁËººÖÐ¡£");
-						Talk("ˆô”","àÞ£¬ÄãÒ²²ÎÕ½£¬[n]ÎÒ¾Í¸üÓÐÐÅÐÄÁË¡£");
-						Talk("ˆô”","ÊÂÒÑÖÁ´Ë£¬³ýÁËÔöÇ¿±øÁ¦£¬[n]»÷ÍË[Green]²Ü²Ù[Normal]±ðÎÞ°ì·¨¡£");
-						Talk("ˆô”","Á¢¿Ì×¼±¸ÈËÂí£¡");
-						Talk("ˆÐl","×ñÃü£¡");
+						Talk("å¼µé­¯","å“Žå‘€å‘€ï¼Œæ²¡æƒ³åˆ°[Green]é¦¬è¶…[Normal]å½’é¡ºäº†[Green]åŠ‰å‚™[Normal]ã€‚");
+						Talk("å¼µé­¯","æˆ‘ä»¬è¢«[Green]æ›¹æ“[Normal]å’Œ[Green]åŠ‰å‚™[Normal]å¤¹åœ¨ä¸­é—´ï¼Œ[n]åº”è¯¥å¦‚ä½•æ˜¯å¥½å•Šï¼Ÿ");
+						Talk("æ¥Šæ¾","æ”¾å¿ƒï¼Œ[Green]åŠ‰å‚™[Normal]åˆšå¾—èœ€åœ°ï¼Œä¸ä¼šé©¬ä¸Šæ¥æ”»æ‰“ï¼Œ[n]ä½†[Green]æ›¹æ“[Normal]ä¹Ÿè®¸å¾ˆå¿«å°±æ¥æ”»ï¼Œéœ€è¦è­¦æƒ•ã€‚");
+						Talk("æ¥Šä»»","ä¸»å…¬ï¼Œæ±‰ä¸­æœ‰è¦å¡žÂ·ã€Œ[Red]é˜³å¹³å…³[Normal]ã€");
+						Talk("æ¥Šä»»","å³ä½¿[Green]æ›¹æ“[Normal]å†å¼ºå¤§ï¼Œ[n]ä¹Ÿæ— æ³•è½»æ˜“æ”»ç ´ã€‚");
+						Talk("é¾å¾·","[Green]å¼µé­¯[Normal]å¤§äººæœ‰æ©äºŽæˆ‘ï¼Œ[n]è®©æˆ‘ä¸Šé˜µå§ï¼");
+						DrawMulitStrBox("[Green]é¾å¾·[Normal]æ˜¯[Green]é¦¬è¶…[Normal]çš„å±žä¸‹ï¼Œ[n]ä½†å› æ‚£ç—…æ²¡èƒ½ä¸€åŒå‡ºæˆ˜ï¼Œ[n]ç•™åœ¨äº†æ±‰ä¸­ã€‚");
+						Talk("å¼µé­¯","å™¢ï¼Œä½ ä¹Ÿå‚æˆ˜ï¼Œ[n]æˆ‘å°±æ›´æœ‰ä¿¡å¿ƒäº†ã€‚");
+						Talk("å¼µé­¯","äº‹å·²è‡³æ­¤ï¼Œé™¤äº†å¢žå¼ºå…µåŠ›ï¼Œ[n]å‡»é€€[Green]æ›¹æ“[Normal]åˆ«æ— åŠžæ³•ã€‚");
+						Talk("å¼µé­¯","ç«‹åˆ»å‡†å¤‡äººé©¬ï¼");
+						Talk("å¼µè¡›","éµå‘½ï¼");
 					end
 				end,
 			[0111]=function()
 					SetSceneID(61);
-					DrawMulitStrBox("ÔÚ¡ºÈý¹úÑÝÒå¡»µÇ³¡µÄÖÚ¶àÓ¢½ÜÃÇ¡£[n]ÔÚÕâÖ®ÖÐ£¬ÄÜ±»³ÆÎªÓ¢ÐÛµÄÈËÎï£¬[n]¾¿¾¹ÓÐ¶àÉÙÄØ£¿");
-					DrawMulitStrBox("ÓµÓÐÃñÖÚÉùÍûµÄÌ«Æ½µÀ½ÌÖ÷¡¤[Green]ÕÅ½Ç[Normal]¡¢[n]Îª´ïÄ¿µÄ²»ÕÛÊÖ¶ÎµÄÄæ³¼[Green]¶­×¿[Normal]¡¢[n]ÂÊÁì°×ÂíÒå´Ó³ÛÃû[Red]ÓÄÖÝ[Normal]µÄ[Green]¹«Ëïè¶[Normal]¡¢");
-					LoadPic(127,"µ­Èë");
-					DrawMulitStrBox("ÒÔÌìÏÂÎÞË«µÄÎäÁ¦£¬Ôì³ÉÖÐÔ­É§¶¯µÄ[Green]…Î²¼[Normal]¡¢[n]ÔÚ[Red]Á¹ÖÝ[Normal]¹á³¹¶Ôºº³¯Ö®ÖÒÒåµÄ[Green]ÂíÌÚ[Normal]¡¢[n]³Æ°ÔÄÏÂùÖ®µØµÄ[Green]ÃÏ»ñ[Normal]¡¢");
-					LoadPic(127,"µ­³ö");
-					LoadPic(25,"µ­Èë");
-					DrawMulitStrBox("³öÉúÓÚÃûÃÅ[Red]Ô¬[Normal]¼Ò£¬Ò»Æð¾ºÕù[n]Ó¦ÓµÓÐÇ¿´óÊÆÁ¦½«³Æ°ÔµÄ[Green]Ô¬½B[Normal]ºÍ[Green]Ô¬Êõ[Normal]¡¢[n]Æ½¶¨²¢¼áÊØ[Red]¾£ÖÝ[Normal]µÄ[Green]Áõ±í[Normal]¡¢");
-					LoadPic(25,"µ­³ö");
-					LoadPic(111,"µ­Èë");
-					DrawMulitStrBox("½­¶«Ö®»¢¡¤[Green]ŒOˆÔ[Normal]¡¢Ð¡°ÔÍõ¡¤[Green]ŒO²ß[Normal]¡¢[n]¼Ì³ÐÎ°´óµÄ¸¸Ç×ÓëÐÖ³¤µÄÒâÖ¾£¬[n]Æ½¶¨½­¶«µÄÎâÌ«×æ¡¤[Green]ŒO™à[Normal]¡¢");
-					LoadPic(111,"µ­³ö");
-					LoadPic(12,"µ­Èë");
-					DrawMulitStrBox("ÒÔ×¿Ô½µÄ²ÅÖÇÖÆºâÖÐÔ­µÄ[Green]²Ü²Ù[Normal]¡¢[n]¼Ì³ÐÆäµØÅÌÍ³Ò»ÌìÏÂ[n]µì¶¨½ú¹ú»ù´¡µÄ[Green]Ë¾ÂíÜ²[Normal]¡¢");
-					LoadPic(12,"µ­³ö");
-					LoadPic(13,"µ­Èë");
-					DrawMulitStrBox("ÒÔ¼°Á÷ÀËÓë¿àÄÑµÄÖÕµã£¬[n]ÔÚÌìÃüÖ®µØ¡¤Êñ¹ú³ÆÍõµÄ[Green]„¢‚ä[Normal]¡£");
-					LoadPic(13,"µ­³ö");
-					LoadPic(119,"µ­Èë");
-					DrawMulitStrBox("Ó¢ÐÛÊ®Èý½ÜÔÚ´Ë¼¯½áÏàÕù¡£[n]ÄÜ³ÆÍõµÄÕæÓ¢ÐÛ£¬¾¿¾¹ÊÇË­ÄØ£¿[n]¼¤ÁÒÕ½Õù¾Í´ËÕ¹¿ª¡£");
-					LoadPic(119,"µ­³ö");
+					DrawMulitStrBox("åœ¨ã€Žä¸‰å›½æ¼”ä¹‰ã€ç™»åœºçš„ä¼—å¤šè‹±æ°ä»¬ã€‚[n]åœ¨è¿™ä¹‹ä¸­ï¼Œèƒ½è¢«ç§°ä¸ºè‹±é›„çš„äººç‰©ï¼Œ[n]ç©¶ç«Ÿæœ‰å¤šå°‘å‘¢ï¼Ÿ");
+					DrawMulitStrBox("æ‹¥æœ‰æ°‘ä¼—å£°æœ›çš„å¤ªå¹³é“æ•™ä¸»Â·[Green]å¼ è§’[Normal]ã€[n]ä¸ºè¾¾ç›®çš„ä¸æŠ˜æ‰‹æ®µçš„é€†è‡£[Green]è‘£å“[Normal]ã€[n]çŽ‡é¢†ç™½é©¬ä¹‰ä»Žé©°å[Red]å¹½å·ž[Normal]çš„[Green]å…¬å­™ç“’[Normal]ã€");
+					LoadPic(127,"æ·¡å…¥");
+					DrawMulitStrBox("ä»¥å¤©ä¸‹æ— åŒçš„æ­¦åŠ›ï¼Œé€ æˆä¸­åŽŸéªšåŠ¨çš„[Green]å‘‚å¸ƒ[Normal]ã€[n]åœ¨[Red]å‡‰å·ž[Normal]è´¯å½»å¯¹æ±‰æœä¹‹å¿ ä¹‰çš„[Green]é©¬è…¾[Normal]ã€[n]ç§°éœ¸å—è›®ä¹‹åœ°çš„[Green]å­ŸèŽ·[Normal]ã€");
+					LoadPic(127,"æ·¡å‡º");
+					LoadPic(25,"æ·¡å…¥");
+					DrawMulitStrBox("å‡ºç”ŸäºŽåé—¨[Red]è¢[Normal]å®¶ï¼Œä¸€èµ·ç«žäº‰[n]åº”æ‹¥æœ‰å¼ºå¤§åŠ¿åŠ›å°†ç§°éœ¸çš„[Green]è¢ç´¹[Normal]å’Œ[Green]è¢æœ¯[Normal]ã€[n]å¹³å®šå¹¶åšå®ˆ[Red]è†å·ž[Normal]çš„[Green]åˆ˜è¡¨[Normal]ã€");
+					LoadPic(25,"æ·¡å‡º");
+					LoadPic(111,"æ·¡å…¥");
+					DrawMulitStrBox("æ±Ÿä¸œä¹‹è™ŽÂ·[Green]å­«å …[Normal]ã€å°éœ¸çŽ‹Â·[Green]å­«ç­–[Normal]ã€[n]ç»§æ‰¿ä¼Ÿå¤§çš„çˆ¶äº²ä¸Žå…„é•¿çš„æ„å¿—ï¼Œ[n]å¹³å®šæ±Ÿä¸œçš„å´å¤ªç¥–Â·[Green]å­«æ¬Š[Normal]ã€");
+					LoadPic(111,"æ·¡å‡º");
+					LoadPic(12,"æ·¡å…¥");
+					DrawMulitStrBox("ä»¥å“è¶Šçš„æ‰æ™ºåˆ¶è¡¡ä¸­åŽŸçš„[Green]æ›¹æ“[Normal]ã€[n]ç»§æ‰¿å…¶åœ°ç›˜ç»Ÿä¸€å¤©ä¸‹[n]å¥ å®šæ™‹å›½åŸºç¡€çš„[Green]å¸é©¬æ‡¿[Normal]ã€");
+					LoadPic(12,"æ·¡å‡º");
+					LoadPic(13,"æ·¡å…¥");
+					DrawMulitStrBox("ä»¥åŠæµæµªä¸Žè‹¦éš¾çš„ç»ˆç‚¹ï¼Œ[n]åœ¨å¤©å‘½ä¹‹åœ°Â·èœ€å›½ç§°çŽ‹çš„[Green]åŠ‰å‚™[Normal]ã€‚");
+					LoadPic(13,"æ·¡å‡º");
+					LoadPic(119,"æ·¡å…¥");
+					DrawMulitStrBox("è‹±é›„åä¸‰æ°åœ¨æ­¤é›†ç»“ç›¸äº‰ã€‚[n]èƒ½ç§°çŽ‹çš„çœŸè‹±é›„ï¼Œç©¶ç«Ÿæ˜¯è°å‘¢ï¼Ÿ[n]æ¿€çƒˆæˆ˜äº‰å°±æ­¤å±•å¼€ã€‚");
+					LoadPic(119,"æ·¡å‡º");
 				end,
 			[1001]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÎäÁ¦",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ­¦åŠ›",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","Í³ÂÊ",	"±£Áô",300);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","ç»ŸçŽ‡",	"ä¿ç•™",300);
 					p2=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(0,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",3,18,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	2,17,"ÓÒ",false,
-								2,19,"ÓÒ",false,
-								3,20,"ÓÒ",false,
-								1,18,"ÓÒ",false,
-								1,20,"ÓÒ",false,
-								4,19,"ÓÒ",false)
+					DefineWarMap(0,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",3,18,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	2,17,"å³",false,
+								2,19,"å³",false,
+								3,20,"å³",false,
+								1,18,"å³",false,
+								1,20,"å³",false,
+								4,19,"å³",false)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,			10,12,"ÏÂ",4,"ÓÑ",false,"¼áÊØ",-1,-1);
+					--å‹å†›
+					InsertWarPerson(1,p1,			10,12,"ä¸‹",4,"å‹",false,"åšå®ˆ",-1,-1);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(true,p1,"¹­±ø¶Ó"),	11,12,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	10,13,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	9,12,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",-1,-1);
+					InsertWarPerson(1,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	11,12,"ä¸‹",2,"å‹",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	10,13,"ä¸‹",2,"å‹",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	9,12,"ä¸‹",2,"å‹",false,"åšå®ˆ",-1,-1);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(2,p2,			16,2,"×ó",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(2,p2,			16,2,"å·¦",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(2,GenPerson(true,p2,"ÍòÄÜ"),	16,1,"×ó",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"²½±ø¶Ó"),	16,3,"×ó",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"Æï±ø¶Ó"),	17,2,"×ó",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"Æï±ø¶Ó"),	17,1,"×ó",2,"µÐ",false,"´ý»ú",-1,-1);
-						--µ×²¿²¿¶Ó£¬ºóÐø¹¥»÷ÎÒ¾ü
-					InsertWarPerson(3,GenPerson(true,p2,"²½±ø¶Ó"),	10,17,"ÉÏ",1,"µÐ",false,"³ö»÷",10,15);
-					InsertWarPerson(3,GenPerson(true,p2,"²½±ø¶Ó"),	11,18,"ÉÏ",0,"µÐ",false,"³ö»÷",11,16);
-					InsertWarPerson(3,GenPerson(true,p2,"¹­½«"),	12,18,"ÉÏ",0,"µÐ",false,"³ö»÷",10,16);
-						--×óÒí
-					InsertWarPerson(4,GenPerson(true,p2,"Ôô±ø"),		5,11,"ÓÒ",0,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	4,12,"ÓÒ",1,"µÐ",false,"³ö»÷",7,12);
-						--Ç°·æ
-					InsertWarPerson(5,GenPerson(true,p2,"²½½«"),		11,4,"ÏÂ",0,"µÐ",false,"³ö»÷",9,12);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	10,5,"ÏÂ",0,"µÐ",false,"³ö»÷",12,12);
-					InsertWarPerson(5,GenPerson(true,p2,"Ôô±ø"),		12,5,"ÏÂ",0,"µÐ",false,"³ö»÷",13,12);
+					InsertWarPerson(2,GenPerson(true,p2,"ä¸‡èƒ½"),	16,1,"å·¦",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	16,3,"å·¦",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	17,2,"å·¦",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	17,1,"å·¦",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+						--åº•éƒ¨éƒ¨é˜Ÿï¼ŒåŽç»­æ”»å‡»æˆ‘å†›
+					InsertWarPerson(3,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,17,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",10,15);
+					InsertWarPerson(3,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	11,18,"ä¸Š",0,"æ•Œ",false,"å‡ºå‡»",11,16);
+					InsertWarPerson(3,GenPerson(true,p2,"å¼“å°†"),	12,18,"ä¸Š",0,"æ•Œ",false,"å‡ºå‡»",10,16);
+						--å·¦ç¿¼
+					InsertWarPerson(4,GenPerson(true,p2,"è´¼å…µ"),		5,11,"å³",0,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	4,12,"å³",1,"æ•Œ",false,"å‡ºå‡»",7,12);
+						--å‰é”‹
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å°†"),		11,4,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",9,12);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,5,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",12,12);
+					InsertWarPerson(5,GenPerson(true,p2,"è´¼å…µ"),		12,5,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",13,12);
 					
 					--
 					JY.Status=GAME_WMAP;
@@ -558,253 +558,253 @@ Event=	{
 					NextEvent(1003);
 				end,
 			[1003]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						if (not WarCheckFlag(2)) and WarCheckArea(-1,8,1,20,6) then
-							WarSetFlag(2,2);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"µÐ¾üÒÑ¾­²»¿°Ò»»÷ÁË[n]È«¾ü³ö»÷£¡");
-							WarModifyTeamAI(2,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
+							WarSetFlag(2,2);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"æ•Œå†›å·²ç»ä¸å ªä¸€å‡»äº†[n]å…¨å†›å‡ºå‡»ï¼");
+							WarModifyTeamAI(2,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==2 and (not WarCheckFlag(1)) then
 							WarSetFlag(1,1);
-							WarModifyTeamAI(1,"³ö»÷",WarGetFlag(101),-1);
-							WarModifyAI(WarGetFlag(101),"¼áÊØ",-1,-1)
+							WarModifyTeamAI(1,"å‡ºå‡»",WarGetFlag(101),-1);
+							WarModifyAI(WarGetFlag(101),"åšå®ˆ",-1,-1)
 						end
-						--µÐ¾üÎ´×Ü¹¥£¬µÐ¾üÊýÁ¿ÉÙÓÚ7
+						--æ•Œå†›æœªæ€»æ”»ï¼Œæ•Œå†›æ•°é‡å°‘äºŽ7
 						if War.PersonNumEnemy<7 and (not WarCheckFlag(2)) then
-							WarSetFlag(2,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(101),"ÐÎÊÆÄæ×ªÁË[n]È«¾ü£¬·´»÷£¡");
-							WarModifyAI(WarGetFlag(101),"³ö»÷",-1,-1)
+							WarSetFlag(2,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(101),"å½¢åŠ¿é€†è½¬äº†[n]å…¨å†›ï¼Œåå‡»ï¼");
+							WarModifyAI(WarGetFlag(101),"å‡ºå‡»",-1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
-						--ÓÑ¾üÎ´·´¹¥£¬µÚ12»ØºÏ
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
+						--å‹å†›æœªåæ”»ï¼Œç¬¬12å›žåˆ
 						if War.Turn==12 and (not WarCheckFlag(2)) then
-							WarSetFlag(2,2);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"µÐ¾üÒÑ¾­²»¿°Ò»»÷ÁË[n]È«¾ü³ö»÷£¡");
-							WarModifyTeamAI(2,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
+							WarSetFlag(2,2);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"æ•Œå†›å·²ç»ä¸å ªä¸€å‡»äº†[n]å…¨å†›å‡ºå‡»ï¼");
+							WarModifyTeamAI(2,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
 						end
 					end
 					
 					--[[
-					Ê±»ú
-					»ØºÏ¿ªÊ¼Ç° ÎÒ/ÓÑ/µÐ
-					Îä½«ÐÐ¶¯ºó
+					æ—¶æœº
+					å›žåˆå¼€å§‹å‰ æˆ‘/å‹/æ•Œ
+					æ­¦å°†è¡ŒåŠ¨åŽ
 					
 					
-					Îä½«ÏàÁÚ²âÊÔ
-					Îä½«½øÈëÖ¸¶¨µØµã/ÇøÓò²âÊÔ
-					Îä½«µã»÷²âÊÔ £¿£¿ÎÞÓÃ
-					Îä½«¿ªÊ¼ÐÐ¶¯/½áÊøÐÐ¶¯²âÊÔ£¿£¿
-					Îä½«×´Ì¬²âÊÔ £¿£¿Ê±»ú
-					Õ½³¡ÈËÊý²âÊÔ £¿£¿Ê±»ú
-					ÐÐ¶¯·½²âÊÔ
-					»ØºÏ²âÊÔ
-					Ê¤Àû²âÊÔ
-					Ê§°Ü²âÊÔ
+					æ­¦å°†ç›¸é‚»æµ‹è¯•
+					æ­¦å°†è¿›å…¥æŒ‡å®šåœ°ç‚¹/åŒºåŸŸæµ‹è¯•
+					æ­¦å°†ç‚¹å‡»æµ‹è¯• ï¼Ÿï¼Ÿæ— ç”¨
+					æ­¦å°†å¼€å§‹è¡ŒåŠ¨/ç»“æŸè¡ŒåŠ¨æµ‹è¯•ï¼Ÿï¼Ÿ
+					æ­¦å°†çŠ¶æ€æµ‹è¯• ï¼Ÿï¼Ÿæ—¶æœº
+					æˆ˜åœºäººæ•°æµ‹è¯• ï¼Ÿï¼Ÿæ—¶æœº
+					è¡ŒåŠ¨æ–¹æµ‹è¯•
+					å›žåˆæµ‹è¯•
+					èƒœåˆ©æµ‹è¯•
+					å¤±è´¥æµ‹è¯•
 					]]--
 				end,
 			[1004]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÎäÁ¦",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ­¦åŠ›",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÖÇÄ±",	"±£Áô",300);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ™ºè°‹",	"ä¿ç•™",300);
 					p2=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(1,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",20,7,"×ó",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	20,6,"×ó",false,
-								19,7,"×ó",false,
-								20,8,"×ó",false,
-								19,6,"×ó",false,
-								19,8,"×ó",false,
-								20,5,"×ó",false,
-								20,9,"×ó",false,
-								18,7,"×ó",false)
+					DefineWarMap(1,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",20,7,"å·¦",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	20,6,"å·¦",false,
+								19,7,"å·¦",false,
+								20,8,"å·¦",false,
+								19,6,"å·¦",false,
+								19,8,"å·¦",false,
+								20,5,"å·¦",false,
+								20,9,"å·¦",false,
+								18,7,"å·¦",false)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,			11,11,"ÓÒ",4,"ÓÑ",false,"ÒÆ¶¯",16,11);
+					--å‹å†›
+					InsertWarPerson(1,p1,			11,11,"å³",4,"å‹",false,"ç§»åŠ¨",16,11);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(true,p1,"Æï±ø¶Ó"),	12,12,"ÓÒ",0,"ÓÑ",false,"ÒÆ¶¯",16,11);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	11,10,"ÓÒ",0,"ÓÑ",false,"ÒÆ¶¯",16,11);
-					InsertWarPerson(1,GenPerson(true,p1,"²½½«"),		11,12,"ÓÒ",1,"ÓÑ",false,"ÒÆ¶¯",16,11);
-					InsertWarPerson(1,GenPerson(true,p1,"¹­±ø¶Ó"),	10,11,"ÓÒ",1,"ÓÑ",false,"ÒÆ¶¯",16,11);
-					InsertWarPerson(1,GenPerson(true,p1,"¹­±ø¶Ó"),	10,12,"ÓÒ",0,"ÓÑ",false,"ÒÆ¶¯",16,11);
+					InsertWarPerson(1,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	12,12,"å³",0,"å‹",false,"ç§»åŠ¨",16,11);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	11,10,"å³",0,"å‹",false,"ç§»åŠ¨",16,11);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å°†"),		11,12,"å³",1,"å‹",false,"ç§»åŠ¨",16,11);
+					InsertWarPerson(1,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	10,11,"å³",1,"å‹",false,"ç§»åŠ¨",16,11);
+					InsertWarPerson(1,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	10,12,"å³",0,"å‹",false,"ç§»åŠ¨",16,11);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(2,p2,			3,9,"ÓÒ",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(2,p2,			3,9,"å³",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(2,GenPerson(true,p2,"²½±ø¶Ó"),	4,10,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"²½±ø¶Ó"),	4,11,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"¹­±ø¶Ó"),	4,9,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"¹­±ø¶Ó"),	4,12,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"Æï½«"),		3,10,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(2,GenPerson(true,p2,"Æï½«"),		3,11,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-						--·ü±ø ÉÏ
-					InsertWarPerson(3,GenPerson(true,p2,"²½½«"),		9,6,"ÏÂ",1,"µÐ",true,"³ö»÷",13,9);
-					InsertWarPerson(3,GenPerson(true,p2,"¹­±ø¶Ó"),	10,5,"ÏÂ",0,"µÐ",true,"³ö»÷",13,9);
-					InsertWarPerson(3,GenPerson(true,p2,"²½±ø¶Ó"),	11,6,"ÏÂ",1,"µÐ",true,"³ö»÷",13,9);
-					InsertWarPerson(3,GenPerson(true,p2,"¹­±ø¶Ó"),	12,5,"ÏÂ",0,"µÐ",true,"³ö»÷",13,9);
-					InsertWarPerson(3,GenPerson(true,p2,"²½±ø¶Ó"),	13,6,"ÏÂ",1,"µÐ",true,"³ö»÷",13,9);
-						--·ü±ø ÏÂ
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	9,15,"ÉÏ",0,"µÐ",true,"³ö»÷",13,13);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	10,16,"ÉÏ",1,"µÐ",true,"³ö»÷",13,13);
-					InsertWarPerson(4,GenPerson(true,p2,"Ôô±ø"),		11,15,"ÉÏ",0,"µÐ",true,"³ö»÷",13,13);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­½«"),		12,16,"ÉÏ",1,"µÐ",true,"³ö»÷",13,13);
-					InsertWarPerson(4,GenPerson(true,p2,"Ôô±ø"),		13,17,"ÉÏ",0,"µÐ",true,"³ö»÷",13,13);
+					InsertWarPerson(2,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	4,10,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	4,11,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	4,9,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	4,12,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"éª‘å°†"),		3,10,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(2,GenPerson(true,p2,"éª‘å°†"),		3,11,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+						--ä¼å…µ ä¸Š
+					InsertWarPerson(3,GenPerson(true,p2,"æ­¥å°†"),		9,6,"ä¸‹",1,"æ•Œ",true,"å‡ºå‡»",13,9);
+					InsertWarPerson(3,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	10,5,"ä¸‹",0,"æ•Œ",true,"å‡ºå‡»",13,9);
+					InsertWarPerson(3,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	11,6,"ä¸‹",1,"æ•Œ",true,"å‡ºå‡»",13,9);
+					InsertWarPerson(3,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	12,5,"ä¸‹",0,"æ•Œ",true,"å‡ºå‡»",13,9);
+					InsertWarPerson(3,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	13,6,"ä¸‹",1,"æ•Œ",true,"å‡ºå‡»",13,9);
+						--ä¼å…µ ä¸‹
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	9,15,"ä¸Š",0,"æ•Œ",true,"å‡ºå‡»",13,13);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,16,"ä¸Š",1,"æ•Œ",true,"å‡ºå‡»",13,13);
+					InsertWarPerson(4,GenPerson(true,p2,"è´¼å…µ"),		11,15,"ä¸Š",0,"æ•Œ",true,"å‡ºå‡»",13,13);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å°†"),		12,16,"ä¸Š",1,"æ•Œ",true,"å‡ºå‡»",13,13);
+					InsertWarPerson(4,GenPerson(true,p2,"è´¼å…µ"),		13,17,"ä¸Š",0,"æ•Œ",true,"å‡ºå‡»",13,13);
 					JY.Status=GAME_WMAP;
 					NextEvent(1005);
 				end,
 			[1005]=function()
 					PlayBGM(11);
-					WarTalk(WarGetFlag(101),"×ÜËãÌÓ³öÀ´[n]µ½ÁËÕâÀïÓ¦¸Ã°²È«ÁË°É£¿");
-					WarTalk(WarGetFlag(111),"ºß£¬ÄãÊÇÌÓ²»µôµÄ£¡[n]³öÀ´°É£¡");
+					WarTalk(WarGetFlag(101),"æ€»ç®—é€ƒå‡ºæ¥[n]åˆ°äº†è¿™é‡Œåº”è¯¥å®‰å…¨äº†å§ï¼Ÿ");
+					WarTalk(WarGetFlag(111),"å“¼ï¼Œä½ æ˜¯é€ƒä¸æŽ‰çš„ï¼[n]å‡ºæ¥å§ï¼");
 					WarTalk(WarGetFlag(101),31);
 					WarShowTeamArmy(3);
 					WarShowTeamArmy(4);
-					WarModifyTeamAI(3,"³ö»÷",WarGetFlag(101),-1);
-					WarModifyTeamAI(4,"³ö»÷",WarGetFlag(101),-1);
+					WarModifyTeamAI(3,"å‡ºå‡»",WarGetFlag(101),-1);
+					WarModifyTeamAI(4,"å‡ºå‡»",WarGetFlag(101),-1);
 					WarShowTarget(true);
 					PlayBGM(19);
 					NextEvent(1006);
 				end,
 			[1006]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==2 and (not WarCheckFlag(1)) then
 							WarSetFlag(1,1);
-							WarModifyTeamAI(1,"³ö»÷",WarGetFlag(101),-1);
-							WarModifyAI(WarGetFlag(101),"³ö»÷",1,-1)
+							WarModifyTeamAI(1,"å‡ºå‡»",WarGetFlag(101),-1);
+							WarModifyAI(WarGetFlag(101),"å‡ºå‡»",1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
-						--Ç°Ïß×÷Õ½²»Àû
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
+						--å‰çº¿ä½œæˆ˜ä¸åˆ©
 						if War.PersonNumEnemy<14 and (not WarCheckFlag(2)) then
-							WarSetFlag(2,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(111),"Ç°Ïß²¿¶Ó¾ÓÈ»ÏÝÈë¿àÕ½£¡[n]È«¾ü³ö»÷£¬²»ÄÜ¸øµÐÈË´­Ï¢Ö®»ú£¡");
-							WarModifyTeamAI(2,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
+							WarSetFlag(2,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(111),"å‰çº¿éƒ¨é˜Ÿå±…ç„¶é™·å…¥è‹¦æˆ˜ï¼[n]å…¨å†›å‡ºå‡»ï¼Œä¸èƒ½ç»™æ•Œäººå–˜æ¯ä¹‹æœºï¼");
+							WarModifyTeamAI(2,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
 						end
-						--ÓÑ¾üÎ´·´¹¥£¬µÚ10»ØºÏ
+						--å‹å†›æœªåæ”»ï¼Œç¬¬10å›žåˆ
 						if War.Turn==10 and (not WarCheckFlag(2)) then
-							WarSetFlag(2,2);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"µÐ¾üÒÑ¾­²»¿°Ò»»÷ÁË[n]È«¾ü³ö»÷£¡");
-							WarModifyTeamAI(2,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
+							WarSetFlag(2,2);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"æ•Œå†›å·²ç»ä¸å ªä¸€å‡»äº†[n]å…¨å†›å‡ºå‡»ï¼");
+							WarModifyTeamAI(2,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
 						end
 					end
 				end,
 			[1007]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","÷ÈÁ¦",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","é­…åŠ›",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","Í³ÂÊ",	"±£Áô",300);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","ç»ŸçŽ‡",	"ä¿ç•™",300);
 					p2=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§2
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÎäÁ¦",	"±£Áô",300);
+					--æ•Œå†›ä¸»å¸…2
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ­¦åŠ›",	"ä¿ç•™",300);
 					p3=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(3,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",2,3,"ÏÂ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	1,4,"ÏÂ",false,
-								3,4,"ÏÂ",false,
-								1,2,"ÏÂ",false,
-								3,2,"ÏÂ",false,
-								2,2,"ÏÂ",false,
-								1,3,"ÏÂ",false,
-								3,3,"ÏÂ",false,
-								2,4,"ÏÂ",false)
+					DefineWarMap(3,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",2,3,"ä¸‹",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	1,4,"ä¸‹",false,
+								3,4,"ä¸‹",false,
+								1,2,"ä¸‹",false,
+								3,2,"ä¸‹",false,
+								2,2,"ä¸‹",false,
+								1,3,"ä¸‹",false,
+								3,3,"ä¸‹",false,
+								2,4,"ä¸‹",false)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,			4,19,"ÉÏ",4,"ÓÑ",false,"¼áÊØ",0,0);
+					--å‹å†›
+					InsertWarPerson(1,p1,			4,19,"ä¸Š",4,"å‹",false,"åšå®ˆ",0,0);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),		3,18,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	4,18,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	5,18,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"¹­±ø¶Ó"),		3,19,"ÉÏ",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"¹­±ø¶Ó"),	5,19,"ÉÏ",1,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),		3,18,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	4,18,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	5,18,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),		3,19,"ä¸Š",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	5,19,"ä¸Š",1,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(2,GenPerson(true,p1,"ÎäÁ¦"),	4,15,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"Æï±ø¶Ó"),	4,14,"ÉÏ",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	3,15,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	5,15,"ÉÏ",-1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	4,16,"ÉÏ",-1,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¦åŠ›"),	4,15,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	4,14,"ä¸Š",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	3,15,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	5,15,"ä¸Š",-1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	4,16,"ä¸Š",-1,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(3,GenPerson(true,p1,"ÎäÁ¦"),	9,17,"ÉÏ",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	8,16,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	10,16,"ÉÏ",-1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"¹­±ø¶Ó"),	8,18,"ÉÏ",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"¹­±ø¶Ó"),	10,18,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"æ­¦åŠ›"),	9,17,"ä¸Š",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	8,16,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	10,16,"ä¸Š",-1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	8,18,"ä¸Š",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	10,18,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(4,p2,			27,11,"×ó",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(4,p2,			27,11,"å·¦",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(4,GenPerson(true,p2,"Ä±½«"),	26,10,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	26,12,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	27,10,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	27,12,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	28,11,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	28,10,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	28,12,"×ó",3,"µÐ",false,"´ý»ú",-1,-1);
-						--Ö÷Óª Ç°Õó
-					InsertWarPerson(5,GenPerson(true,p2,"²½½«"),	23,9,"×ó",2,"µÐ",false,"´ý»ú",13,9);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	24,9,"×ó",1,"µÐ",false,"´ý»ú",13,9);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	25,9,"×ó",1,"µÐ",false,"´ý»ú",13,9);
-					InsertWarPerson(5,GenPerson(true,p2,"²½½«"),	23,13,"×ó",2,"µÐ",false,"´ý»ú",13,9);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	24,13,"×ó",1,"µÐ",false,"´ý»ú",13,9);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	25,13,"×ó",1,"µÐ",false,"´ý»ú",13,9);
-						--Ç°·æ Ö÷Óª
-					InsertWarPerson(6,p3,			9,10,"ÏÂ",5,"µÐ",false,"¼áÊØ",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"è°‹å°†"),	26,10,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	26,12,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	27,10,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	27,12,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	28,11,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	28,10,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	28,12,"å·¦",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+						--ä¸»è¥ å‰é˜µ
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å°†"),	23,9,"å·¦",2,"æ•Œ",false,"å¾…æœº",13,9);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	24,9,"å·¦",1,"æ•Œ",false,"å¾…æœº",13,9);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	25,9,"å·¦",1,"æ•Œ",false,"å¾…æœº",13,9);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å°†"),	23,13,"å·¦",2,"æ•Œ",false,"å¾…æœº",13,9);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	24,13,"å·¦",1,"æ•Œ",false,"å¾…æœº",13,9);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	25,13,"å·¦",1,"æ•Œ",false,"å¾…æœº",13,9);
+						--å‰é”‹ ä¸»è¥
+					InsertWarPerson(6,p3,			9,10,"ä¸‹",5,"æ•Œ",false,"åšå®ˆ",-1,-1);
 					WarSetFlag(112,War.PersonNum);
-					InsertWarPerson(6,GenPerson(true,p3,"Ôô±ø"),		8,10,"ÏÂ",3,"µÐ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(6,GenPerson(true,p3,"²½±ø¶Ó"),	8,9,"ÏÂ",2,"µÐ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(6,GenPerson(true,p3,"Ôô±ø"),		9,11,"ÏÂ",3,"µÐ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(6,GenPerson(true,p3,"¹­±ø¶Ó"),	9,9,"ÏÂ",2,"µÐ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(6,GenPerson(true,p3,"²½±ø¶Ó"),	10,10,"ÏÂ",2,"µÐ",false,"¼áÊØ",-1,-1);
-					InsertWarPerson(6,GenPerson(true,p3,"Ôô±ø"),		10,11,"ÏÂ",3,"µÐ",false,"¼áÊØ",-1,-1);
-						--Ç°·æ ×ó
-					InsertWarPerson(4,GenPerson(true,p3,"¹­±ø¶Ó"),	5,10,"ÏÂ",0,"µÐ",false,"³ö»÷",4,15);
-					InsertWarPerson(4,GenPerson(true,p3,"¹­±ø¶Ó"),	4,9,"ÏÂ",1,"µÐ",false,"³ö»÷",4,15);
-					InsertWarPerson(4,GenPerson(true,p3,"²½±ø¶Ó"),	3,10,"ÏÂ",0,"µÐ",false,"³ö»÷",4,15);
-					InsertWarPerson(4,GenPerson(true,p3,"Ôô½«"),		2,11,"ÏÂ",2,"µÐ",false,"³ö»÷",4,15);
-					InsertWarPerson(4,GenPerson(true,p3,"Ôô±ø"),		1,12,"ÏÂ",2,"µÐ",false,"³ö»÷",4,15);
-						--Ç°·æ ÓÒ
-					InsertWarPerson(4,GenPerson(true,p3,"ÍòÄÜ"),	12,13,"×ó",1,"µÐ",false,"³ö»÷",9,17);
-					InsertWarPerson(4,GenPerson(true,p3,"Ôô±ø"),		13,14,"×ó",1,"µÐ",false,"³ö»÷",9,17);
-					InsertWarPerson(4,GenPerson(true,p3,"¹­±ø¶Ó"),	14,15,"×ó",0,"µÐ",false,"³ö»÷",9,17);
-					InsertWarPerson(4,GenPerson(true,p3,"²½±ø¶Ó"),	15,16,"×ó",0,"µÐ",false,"³ö»÷",9,17);
-					InsertWarPerson(4,GenPerson(true,p3,"¹­±ø¶Ó"),	15,17,"×ó",0,"µÐ",false,"³ö»÷",9,17);
+					InsertWarPerson(6,GenPerson(true,p3,"è´¼å…µ"),		8,10,"ä¸‹",3,"æ•Œ",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(6,GenPerson(true,p3,"æ­¥å…µé˜Ÿ"),	8,9,"ä¸‹",2,"æ•Œ",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(6,GenPerson(true,p3,"è´¼å…µ"),		9,11,"ä¸‹",3,"æ•Œ",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(6,GenPerson(true,p3,"å¼“å…µé˜Ÿ"),	9,9,"ä¸‹",2,"æ•Œ",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(6,GenPerson(true,p3,"æ­¥å…µé˜Ÿ"),	10,10,"ä¸‹",2,"æ•Œ",false,"åšå®ˆ",-1,-1);
+					InsertWarPerson(6,GenPerson(true,p3,"è´¼å…µ"),		10,11,"ä¸‹",3,"æ•Œ",false,"åšå®ˆ",-1,-1);
+						--å‰é”‹ å·¦
+					InsertWarPerson(4,GenPerson(true,p3,"å¼“å…µé˜Ÿ"),	5,10,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",4,15);
+					InsertWarPerson(4,GenPerson(true,p3,"å¼“å…µé˜Ÿ"),	4,9,"ä¸‹",1,"æ•Œ",false,"å‡ºå‡»",4,15);
+					InsertWarPerson(4,GenPerson(true,p3,"æ­¥å…µé˜Ÿ"),	3,10,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",4,15);
+					InsertWarPerson(4,GenPerson(true,p3,"è´¼å°†"),		2,11,"ä¸‹",2,"æ•Œ",false,"å‡ºå‡»",4,15);
+					InsertWarPerson(4,GenPerson(true,p3,"è´¼å…µ"),		1,12,"ä¸‹",2,"æ•Œ",false,"å‡ºå‡»",4,15);
+						--å‰é”‹ å³
+					InsertWarPerson(4,GenPerson(true,p3,"ä¸‡èƒ½"),	12,13,"å·¦",1,"æ•Œ",false,"å‡ºå‡»",9,17);
+					InsertWarPerson(4,GenPerson(true,p3,"è´¼å…µ"),		13,14,"å·¦",1,"æ•Œ",false,"å‡ºå‡»",9,17);
+					InsertWarPerson(4,GenPerson(true,p3,"å¼“å…µé˜Ÿ"),	14,15,"å·¦",0,"æ•Œ",false,"å‡ºå‡»",9,17);
+					InsertWarPerson(4,GenPerson(true,p3,"æ­¥å…µé˜Ÿ"),	15,16,"å·¦",0,"æ•Œ",false,"å‡ºå‡»",9,17);
+					InsertWarPerson(4,GenPerson(true,p3,"å¼“å…µé˜Ÿ"),	15,17,"å·¦",0,"æ•Œ",false,"å‡ºå‡»",9,17);
 					JY.Status=GAME_WMAP;
 					NextEvent(1008);
 				end,
@@ -812,151 +812,151 @@ Event=	{
 					PlayBGM(11);
 					WarTalk(WarGetFlag(111),30);
 					WarTalk(WarGetFlag(101),31);
-					WarTalk(WarGetFlag(112),"Ç°¾ü£¬³ö·¢£¡");
+					WarTalk(WarGetFlag(112),"å‰å†›ï¼Œå‡ºå‘ï¼");
 					WarShowTarget(true);
 					PlayBGM(19);
 					NextEvent(1009);
 				end,
 			[1009]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==2 and (not WarCheckFlag(1)) then
 							WarSetFlag(1,1);
-							WarModifyTeamAI(2,"´ý»ú",0,0);
-							WarModifyTeamAI(3,"´ý»ú",0,0);
+							WarModifyTeamAI(2,"å¾…æœº",0,0);
+							WarModifyTeamAI(3,"å¾…æœº",0,0);
 						end
-						--µÚ5»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+						--ç¬¬5å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==5 and (not WarCheckFlag(2)) then
 							WarSetFlag(2,1);
-							WarModifyTeamAI(1,"´ý»ú",0,0);
+							WarModifyTeamAI(1,"å¾…æœº",0,0);
 						end
-						--µÐ¾üÎ´×Ü¹¥£¬µÐ¾üÊýÁ¿ÉÙÓÚ7
+						--æ•Œå†›æœªæ€»æ”»ï¼Œæ•Œå†›æ•°é‡å°‘äºŽ7
 						if War.PersonNumEnemy<7 and (not WarCheckFlag(5)) then
-							WarSetFlag(5,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(101),"ÐÎÊÆÄæ×ªÁË[n]È«¾ü£¬·´»÷£¡");
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(2,"³ö»÷",0,0);
-							WarModifyTeamAI(3,"³ö»÷",0,0);
+							WarSetFlag(5,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(101),"å½¢åŠ¿é€†è½¬äº†[n]å…¨å†›ï¼Œåå‡»ï¼");
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
-						--Ç°Ïß×÷Õ½²»Àû
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
+						--å‰çº¿ä½œæˆ˜ä¸åˆ©
 						if War.PersonNumEnemy<18 and (not WarCheckFlag(4)) then
-							WarSetFlag(4,1);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"Ç°Ïß²¿¶Ó¾ÓÈ»ÏÝÈë¿àÕ½£¡[n]È«¾ü³ö»÷£¬²»ÄÜ¸øµÐÈË´­Ï¢Ö®»ú£¡");
-							WarModifyTeamAI(4,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarSetFlag(4,1);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"å‰çº¿éƒ¨é˜Ÿå±…ç„¶é™·å…¥è‹¦æˆ˜ï¼[n]å…¨å†›å‡ºå‡»ï¼Œä¸èƒ½ç»™æ•Œäººå–˜æ¯ä¹‹æœºï¼");
+							WarModifyTeamAI(4,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 						end
-						--ÓÑ¾üÎ´·´¹¥£¬µÚ8»ØºÏ
+						--å‹å†›æœªåæ”»ï¼Œç¬¬8å›žåˆ
 						if War.Turn==8 and (not WarCheckFlag(3)) then
-							WarSetFlag(3,1);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"¸øÎÒ¼ÌÐø¹¥»÷£¡");
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarSetFlag(3,1);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"ç»™æˆ‘ç»§ç»­æ”»å‡»ï¼");
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 						end
 						
 						if War.Turn==4 then
-							WarTalk(WarGetFlag(112),"ÊÇÊ±ºòÁË[n]È«¾ü³ö»÷£¡");
-							WarModifyTeamAI(6,"³ö»÷",WarGetFlag(112),-1);
-							WarModifyAI(WarGetFlag(112),"³ö»÷",-1,-1)
+							WarTalk(WarGetFlag(112),"æ˜¯æ—¶å€™äº†[n]å…¨å†›å‡ºå‡»ï¼");
+							WarModifyTeamAI(6,"å‡ºå‡»",WarGetFlag(112),-1);
+							WarModifyAI(WarGetFlag(112),"å‡ºå‡»",-1,-1)
 						end
 					end
 				end,
 			[1010]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÕþÎñ",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ”¿åŠ¡",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","÷ÈÁ¦",	"±£Áô",200);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","é­…åŠ›",	"ä¿ç•™",200);
 					p2=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(5,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",21,22,"ÉÏ",0,"ÎÒ",true,"´ý»ú",0,0);
-					SelectTeam(	22,21,"ÉÏ",true,
-								20,23,"ÉÏ",true,
-								22,23,"ÉÏ",true,
-								23,20,"ÉÏ",true,
-								19,24,"ÉÏ",true,
-								23,22,"ÉÏ",true,
-								21,24,"ÉÏ",true,
-								23,24,"ÉÏ",true)
+					DefineWarMap(5,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",21,22,"ä¸Š",0,"æˆ‘",true,"å¾…æœº",0,0);
+					SelectTeam(	22,21,"ä¸Š",true,
+								20,23,"ä¸Š",true,
+								22,23,"ä¸Š",true,
+								23,20,"ä¸Š",true,
+								19,24,"ä¸Š",true,
+								23,22,"ä¸Š",true,
+								21,24,"ä¸Š",true,
+								23,24,"ä¸Š",true)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,						20,13,"×ó",4,"ÓÑ",false,"¼áÊØ",0,0);
+					--å‹å†›
+					InsertWarPerson(1,p1,						20,13,"å·¦",4,"å‹",false,"åšå®ˆ",0,0);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(true,p1,"Ä±½«"),		20,14,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½½«"),		20,12,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,13,"×ó",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,14,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,12,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"è°‹å°†"),		20,14,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å°†"),		20,12,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,13,"å·¦",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,14,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,12,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(1,GenPerson(true,p1,"²½½«"),		16,13,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	16,12,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	16,14,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	17,13,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å°†"),		16,13,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	16,12,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	16,14,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	17,13,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	19,8,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	20,8,"ÉÏ",-1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	19,17,"ÏÂ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	20,17,"ÏÂ",-1,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,8,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	20,8,"ä¸Š",-1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,17,"ä¸‹",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	20,17,"ä¸‹",-1,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(3,GenPerson(true,p1,"Æï½«"),		16,10,"ÏÂ",3,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	16,11,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	17,11,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å°†"),		16,10,"ä¸‹",3,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	16,11,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	17,11,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(4,p2,						1,13,"ÓÒ",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(4,p2,						1,13,"å³",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(4,GenPerson(true,p2,"Ä±½«"),		1,14,"ÓÒ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"ÎäÁ¦"),		1,12,"ÓÒ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	1,15,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	1,11,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	2,13,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	2,14,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	2,12,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	2,15,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	2,11,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	3,13,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	3,14,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	3,12,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"è°‹å°†"),		1,14,"å³",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¦åŠ›"),		1,12,"å³",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	1,15,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	1,11,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	2,13,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	2,14,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	2,12,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	2,15,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	2,11,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	3,13,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	3,14,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	3,12,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
 					
-						--Ç°·æ ÖÐ
-					InsertWarPerson(5,GenPerson(true,p2,"ÍòÄÜ"),		8,13,"ÓÒ",3,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Í³ÂÊ"),		8,12,"ÓÒ",2,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"ÖÇÄ±"),		8,14,"ÓÒ",2,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	9,13,"ÓÒ",2,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	9,14,"ÓÒ",1,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	9,12,"ÓÒ",2,"µÐ",false,"¼áÊØ",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	10,11,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	11,10,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	10,15,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	11,16,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	9,11,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	10,10,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	9,15,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	10,16,"ÓÒ",1,"µÐ",false,"³ö»÷",17,13);
-						--Ç°·æ ÉÏ
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	18,3,"ÏÂ",2,"µÐ",false,"³ö»÷",21,10);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	17,4,"ÏÂ",0,"µÐ",false,"³ö»÷",21,10);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	19,2,"ÏÂ",0,"µÐ",false,"³ö»÷",21,10);
-						--Ç°·æ ÏÂ
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	17,22,"ÉÏ",2,"µÐ",false,"³ö»÷",21,16);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	16,21,"ÉÏ",1,"µÐ",false,"³ö»÷",21,16);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	18,23,"ÉÏ",0,"µÐ",false,"³ö»÷",21,16);
+						--å‰é”‹ ä¸­
+					InsertWarPerson(5,GenPerson(true,p2,"ä¸‡èƒ½"),		8,13,"å³",3,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"ç»ŸçŽ‡"),		8,12,"å³",2,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"æ™ºè°‹"),		8,14,"å³",2,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	9,13,"å³",2,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	9,14,"å³",1,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	9,12,"å³",2,"æ•Œ",false,"åšå®ˆ",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,11,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	11,10,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,15,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	11,16,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	9,11,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	10,10,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	9,15,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	10,16,"å³",1,"æ•Œ",false,"å‡ºå‡»",17,13);
+						--å‰é”‹ ä¸Š
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	18,3,"ä¸‹",2,"æ•Œ",false,"å‡ºå‡»",21,10);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	17,4,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",21,10);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	19,2,"ä¸‹",0,"æ•Œ",false,"å‡ºå‡»",21,10);
+						--å‰é”‹ ä¸‹
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	17,22,"ä¸Š",2,"æ•Œ",false,"å‡ºå‡»",21,16);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	16,21,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",21,16);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	18,23,"ä¸Š",0,"æ•Œ",false,"å‡ºå‡»",21,16);
 					JY.Status=GAME_WMAP;
 					NextEvent(1011);
 				end,
@@ -968,131 +968,131 @@ Event=	{
 					NextEvent(1012);
 				end,
 			[1012]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							WarShowTeamArmy(0);
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 							WarShowTarget(true);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==3 then
-							WarModifyTeamAI(2,"´ý»ú",0,0);
-							WarModifyTeamAI(3,"´ý»ú",0,0);
+							WarModifyTeamAI(2,"å¾…æœº",0,0);
+							WarModifyTeamAI(3,"å¾…æœº",0,0);
 						end
 						if War.Turn==6 then
-							WarModifyTeamAI(1,"´ý»ú",0,0);
-							WarModifyAI(WarGetFlag(101),"¼áÊØ",0,0);
+							WarModifyTeamAI(1,"å¾…æœº",0,0);
+							WarModifyAI(WarGetFlag(101),"åšå®ˆ",0,0);
 						end
-						--µÐ¾üÎ´×Ü¹¥£¬µÐ¾üÊýÁ¿ÉÙÓÚ7
+						--æ•Œå†›æœªæ€»æ”»ï¼Œæ•Œå†›æ•°é‡å°‘äºŽ7
 						if War.PersonNumEnemy<7 and (not WarCheckFlag(1)) then
-							WarSetFlag(1,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(101),"ÐÎÊÆÄæ×ªÁË[n]È«¾ü£¬·´»÷£¡");
-							WarModifyTeamAI(1,"³ö»÷",WarGetFlag(101),0);
-							WarModifyTeamAI(2,"³ö»÷",WarGetFlag(101),0);
-							WarModifyTeamAI(3,"³ö»÷",WarGetFlag(101),0);
-							WarModifyAI(WarGetFlag(101),"³ö»÷",-1,-1)
+							WarSetFlag(1,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(101),"å½¢åŠ¿é€†è½¬äº†[n]å…¨å†›ï¼Œåå‡»ï¼");
+							WarModifyTeamAI(1,"å‡ºå‡»",WarGetFlag(101),0);
+							WarModifyTeamAI(2,"å‡ºå‡»",WarGetFlag(101),0);
+							WarModifyTeamAI(3,"å‡ºå‡»",WarGetFlag(101),0);
+							WarModifyAI(WarGetFlag(101),"å‡ºå‡»",-1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
-						--Ç°Ïß×÷Õ½²»Àû
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
+						--å‰çº¿ä½œæˆ˜ä¸åˆ©
 						if War.PersonNumEnemy<20 and (not WarCheckFlag(2)) then
-							WarSetFlag(2,1);	--µÐ¾ü×Ü¹¥
-							WarTalk(WarGetFlag(111),"Ç°Ïß²¿¶Ó¾ÓÈ»ÏÝÈë¿àÕ½£¡[n]È«¾ü³ö»÷£¬²»ÄÜ¸øµÐÈË´­Ï¢Ö®»ú£¡");
-							WarModifyTeamAI(4,"³ö»÷",WarGetFlag(111),-1);
-							WarModifyAI(WarGetFlag(111),"³ö»÷",-1,-1)
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarSetFlag(2,1);	--æ•Œå†›æ€»æ”»
+							WarTalk(WarGetFlag(111),"å‰çº¿éƒ¨é˜Ÿå±…ç„¶é™·å…¥è‹¦æˆ˜ï¼[n]å…¨å†›å‡ºå‡»ï¼Œä¸èƒ½ç»™æ•Œäººå–˜æ¯ä¹‹æœºï¼");
+							WarModifyTeamAI(4,"å‡ºå‡»",WarGetFlag(111),-1);
+							WarModifyAI(WarGetFlag(111),"å‡ºå‡»",-1,-1)
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
 			[1013]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","ÕþÎñ",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","æ”¿åŠ¡",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","÷ÈÁ¦",	"±£Áô",200);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","é­…åŠ›",	"ä¿ç•™",200);
 					p2=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(9,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",3,2,"ÏÂ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	5,2,"ÏÂ",false,
-								4,3,"ÏÂ",false,
-								2,3,"ÏÂ",false,
-								6,3,"ÏÂ",false,
-								7,2,"ÏÂ",false,
-								5,4,"ÏÂ",false,
-								3,4,"ÏÂ",false,
-								7,4,"ÏÂ",false)
+					DefineWarMap(9,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",3,2,"ä¸‹",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	5,2,"ä¸‹",false,
+								4,3,"ä¸‹",false,
+								2,3,"ä¸‹",false,
+								6,3,"ä¸‹",false,
+								7,2,"ä¸‹",false,
+								5,4,"ä¸‹",false,
+								3,4,"ä¸‹",false,
+								7,4,"ä¸‹",false)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,						20,13,"×ó",4,"ÓÑ",false,"¼áÊØ",0,0);
+					--å‹å†›
+					InsertWarPerson(1,p1,						20,13,"å·¦",4,"å‹",false,"åšå®ˆ",0,0);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(true,p1,"Ä±½«"),		20,14,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½½«"),		20,12,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,13,"×ó",1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,14,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(true,p1,"²½±ø¶Ó"),	19,12,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"è°‹å°†"),		20,14,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å°†"),		20,12,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,13,"å·¦",1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,14,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,12,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(1,GenPerson(true,p1,"²½½«"),		16,13,"×ó",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	16,12,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	16,14,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"¹­±ø¶Ó"),	17,13,"×ó",0,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(true,p1,"æ­¥å°†"),		16,13,"å·¦",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	16,12,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	16,14,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"å¼“å…µé˜Ÿ"),	17,13,"å·¦",0,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	19,8,"ÉÏ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	20,8,"ÉÏ",-1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	19,17,"ÏÂ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(2,GenPerson(true,p1,"²½±ø¶Ó"),	20,17,"ÏÂ",-1,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,8,"ä¸Š",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	20,8,"ä¸Š",-1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	19,17,"ä¸‹",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(2,GenPerson(true,p1,"æ­¥å…µé˜Ÿ"),	20,17,"ä¸‹",-1,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(3,GenPerson(true,p1,"Æï½«"),		16,10,"ÏÂ",3,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	16,11,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(3,GenPerson(true,p1,"Æï±ø¶Ó"),	17,11,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å°†"),		16,10,"ä¸‹",3,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	16,11,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(3,GenPerson(true,p1,"éª‘å…µé˜Ÿ"),	17,11,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(4,p2,						8,14,"ÓÒ",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(4,p2,						8,14,"å³",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(4,GenPerson(true,p2,"Ä±½«"),		8,15,"ÓÒ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"ÎäÁ¦"),		8,13,"ÓÒ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	7,14,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	9,14,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	9,15,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	9,13,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	10,15,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	10,13,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	10,16,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	10,12,"ÓÒ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	11,16,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	11,12,"ÓÒ",2,"µÐ",false,"´ý»ú",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"è°‹å°†"),		8,15,"å³",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¦åŠ›"),		8,13,"å³",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	7,14,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	9,14,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	9,15,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	9,13,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,15,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,13,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,16,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	10,12,"å³",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	11,16,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	11,12,"å³",2,"æ•Œ",false,"å¾…æœº",-1,-1);
 					
-						--ÖÐ¾ü
-					InsertWarPerson(5,GenPerson(true,p2,"Æï½«"),		16,16,"ÉÏ",3,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	15,17,"ÉÏ",0,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	15,18,"ÉÏ",0,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	17,17,"ÉÏ",1,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"Æï±ø¶Ó"),	17,18,"ÉÏ",1,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­½«"),		16,15,"ÉÏ",2,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	15,15,"ÉÏ",1,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	17,15,"ÉÏ",1,"µÐ",false,"´ý»ú",17,13);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	16,14,"ÉÏ",1,"µÐ",false,"´ý»ú",17,13);
-						--Ç°·æ
-					InsertWarPerson(6,GenPerson(true,p2,"²½½«"),		19,7,"ÉÏ",3,"µÐ",false,"¼áÊØ",21,10);
-					InsertWarPerson(6,GenPerson(true,p2,"²½±ø¶Ó"),	17,5,"ÉÏ",1,"µÐ",false,"´ý»ú",21,10);
-					InsertWarPerson(6,GenPerson(true,p2,"²½±ø¶Ó"),	19,5,"ÉÏ",1,"µÐ",false,"´ý»ú",21,16);
-					InsertWarPerson(6,GenPerson(true,p2,"Ôô±ø"),		12,2,"ÓÒ",1,"µÐ",false,"¼áÊØ",21,16);
-					InsertWarPerson(6,GenPerson(true,p2,"Ôô±ø"),		13,4,"ÓÒ",1,"µÐ",false,"¼áÊØ",21,16);
-					InsertWarPerson(6,GenPerson(RND(0.5),p2,"¹­±ø¶Ó","²½±ø¶Ó"),	18,6,"ÉÏ",2,"µÐ",false,"´ý»ú",21,10);
-					InsertWarPerson(6,GenPerson(RND(0.5),p2,"¹­±ø¶Ó","²½±ø¶Ó"),	20,6,"ÉÏ",1,"µÐ",false,"´ý»ú",21,16);
+						--ä¸­å†›
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å°†"),		16,16,"ä¸Š",3,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	15,17,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	15,18,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	17,17,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	17,18,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å°†"),		16,15,"ä¸Š",2,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	15,15,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	17,15,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",17,13);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	16,14,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",17,13);
+						--å‰é”‹
+					InsertWarPerson(6,GenPerson(true,p2,"æ­¥å°†"),		19,7,"ä¸Š",3,"æ•Œ",false,"åšå®ˆ",21,10);
+					InsertWarPerson(6,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	17,5,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",21,10);
+					InsertWarPerson(6,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	19,5,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",21,16);
+					InsertWarPerson(6,GenPerson(true,p2,"è´¼å…µ"),		12,2,"å³",1,"æ•Œ",false,"åšå®ˆ",21,16);
+					InsertWarPerson(6,GenPerson(true,p2,"è´¼å…µ"),		13,4,"å³",1,"æ•Œ",false,"åšå®ˆ",21,16);
+					InsertWarPerson(6,GenPerson(RND(0.5),p2,"å¼“å…µé˜Ÿ","æ­¥å…µé˜Ÿ"),	18,6,"ä¸Š",2,"æ•Œ",false,"å¾…æœº",21,10);
+					InsertWarPerson(6,GenPerson(RND(0.5),p2,"å¼“å…µé˜Ÿ","æ­¥å…µé˜Ÿ"),	20,6,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",21,16);
 					JY.Status=GAME_WMAP;
 					NextEvent(1014);
 				end,
@@ -1104,143 +1104,143 @@ Event=	{
 					NextEvent(1015);
 				end,
 			[1015]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						if (not WarCheckFlag(2)) and WarCheckArea(-1,1,10,12,20) then
 							WarSetFlag(2,1);
-							WarTalk(WarGetFlag(111),"¿É¶ñ£¬¾ÓÈ»ÈÃµÐÈËÉ±µ½ÕâÀïÀ´ÁË£¡");
-							WarModifyTeamAI(4,"³ö»÷",0,0);
+							WarTalk(WarGetFlag(111),"å¯æ¶ï¼Œå±…ç„¶è®©æ•Œäººæ€åˆ°è¿™é‡Œæ¥äº†ï¼");
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==2 then
-							WarModifyTeamAI(1,"´ý»ú",0,0);
+							WarModifyTeamAI(1,"å¾…æœº",0,0);
 						end
-						--µÐ¾üÎ´×Ü¹¥£¬µÐ¾üÊýÁ¿ÉÙÓÚ7
+						--æ•Œå†›æœªæ€»æ”»ï¼Œæ•Œå†›æ•°é‡å°‘äºŽ7
 						if War.PersonNumEnemy<10 and (not WarCheckFlag(1)) then
-							WarSetFlag(1,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(101),"ÐÎÊÆÄæ×ªÁË[n]È«¾ü£¬·´»÷£¡");
-							WarModifyTeamAI(1,"³ö»÷",WarGetFlag(101),0);
-							WarModifyAI(WarGetFlag(101),"³ö»÷",-1,-1)
+							WarSetFlag(1,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(101),"å½¢åŠ¿é€†è½¬äº†[n]å…¨å†›ï¼Œåå‡»ï¼");
+							WarModifyTeamAI(1,"å‡ºå‡»",WarGetFlag(101),0);
+							WarModifyAI(WarGetFlag(101),"å‡ºå‡»",-1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==2 then
-							WarModifyTeamAI(6,"´ý»ú",0,0);
-							WarModifyTeamAI(5,"³ö»÷",19,7);
+							WarModifyTeamAI(6,"å¾…æœº",0,0);
+							WarModifyTeamAI(5,"å‡ºå‡»",19,7);
 						end
 						if War.Turn==5 then
-							WarModifyTeamAI(6,"³ö»÷",0,0);
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarModifyTeamAI(6,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 						end
 						if (not WarCheckFlag(2)) and War.Turn==8 then
 							WarSetFlag(2,2);
-							WarModifyTeamAI(4,"³ö»÷",0,0);
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
 			[1016]=function()
-					--XXX¾ÈÔ®Õ½
+					--XXXæ•‘æ´æˆ˜
 					local p1,p2,p3,p4,p5,p6,p7,p8,p9,p10;
 					local wid;
 					local plist={};
-					--±»¾ÈÔ®Õß
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","¸£Ô´",	"±£Áô",200);
+					--è¢«æ•‘æ´è€…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","ç¦æº",	"ä¿ç•™",200);
 					p1=TableRandom(plist);
-					--µÐ¾üÖ÷Ë§
-					plist=FilterPerson("¾ýÖ÷ÊÇ",-1,	"ÅÅÐò","Í³ÂÊ",	"±£Áô",200);
+					--æ•Œå†›ä¸»å¸…
+					plist=FilterPerson("å›ä¸»æ˜¯",-1,	"æŽ’åº","ç»ŸçŽ‡",	"ä¿ç•™",200);
 					p2=TableRandom(plist);
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(10,"XXX¾ÈÔ®Õ½","Ò»¡¢»÷°Ü£¿£¿£¿£®",20,"Ö÷½Ç",p2);
-					--ÎÒ¾ü
-					InsertWarPerson(0,"Ö÷½Ç",1,10,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	1,9,"ÓÒ",false,
-								1,11,"ÓÒ",false,
-								1,8,"ÓÒ",false,
-								1,12,"ÓÒ",false,
-								1,7,"ÓÒ",false,
-								1,13,"ÓÒ",false,
-								1,6,"ÓÒ",false,
-								1,14,"ÓÒ",false)
+					DefineWarMap(10,"XXXæ•‘æ´æˆ˜","ä¸€ã€å‡»è´¥ï¼Ÿï¼Ÿï¼Ÿï¼Ž",20,"ä¸»è§’",p2);
+					--æˆ‘å†›
+					InsertWarPerson(0,"ä¸»è§’",1,10,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	1,9,"å³",false,
+								1,11,"å³",false,
+								1,8,"å³",false,
+								1,12,"å³",false,
+								1,7,"å³",false,
+								1,13,"å³",false,
+								1,6,"å³",false,
+								1,14,"å³",false)
 					
-					--ÓÑ¾ü
-					InsertWarPerson(1,p1,								13,9,"ÏÂ",4,"ÓÑ",false,"¼áÊØ",0,0);
+					--å‹å†›
+					InsertWarPerson(1,p1,								13,9,"ä¸‹",4,"å‹",false,"åšå®ˆ",0,0);
 					WarSetFlag(101,War.PersonNum);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"¹­½«"),	12,9,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"ÎäÁ¦"),	13,10,"ÏÂ",2,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Æï±ø¶Ó"),		14,9,"ÏÂ",-1,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"²½±ø¶Ó","¹­±ø¶Ó"),	12,10,"ÏÂ",0,"ÓÑ",false,"¼áÊØ",0,0);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"²½±ø¶Ó"),	14,10,"ÏÂ",-1,"ÓÑ",false,"¼áÊØ",0,0);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"å¼“å°†"),	12,9,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¦åŠ›"),	13,10,"ä¸‹",2,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"éª‘å…µé˜Ÿ"),		14,9,"ä¸‹",-1,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¥å…µé˜Ÿ","å¼“å…µé˜Ÿ"),	12,10,"ä¸‹",0,"å‹",false,"åšå®ˆ",0,0);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¥å…µé˜Ÿ"),	14,10,"ä¸‹",-1,"å‹",false,"åšå®ˆ",0,0);
 					
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"ÎäÁ¦"),	11,9,"×ó",2,"ÓÑ",false,"³ö»÷",10,9);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Æï±ø¶Ó"),		11,8,"×ó",-1,"ÓÑ",false,"³ö»÷",10,8);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Æï±ø¶Ó","²½±ø¶Ó"),	11,10,"×ó",0,"ÓÑ",false,"³ö»÷",10,10);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¦åŠ›"),	11,9,"å·¦",2,"å‹",false,"å‡ºå‡»",10,9);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"éª‘å…µé˜Ÿ"),		11,8,"å·¦",-1,"å‹",false,"å‡ºå‡»",10,8);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"éª‘å…µé˜Ÿ","æ­¥å…µé˜Ÿ"),	11,10,"å·¦",0,"å‹",false,"å‡ºå‡»",10,10);
 					
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Í³ÂÊ"),	15,9,"ÓÒ",2,"ÓÑ",false,"³ö»÷",19,10);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"²½±ø¶Ó"),		15,8,"ÓÒ",-1,"ÓÑ",false,"³ö»÷",19,9);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"²½±ø¶Ó","¹­±ø¶Ó"),	15,10,"ÓÒ",0,"ÓÑ",false,"³ö»÷",19,11);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"ç»ŸçŽ‡"),	15,9,"å³",2,"å‹",false,"å‡ºå‡»",19,10);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¥å…µé˜Ÿ"),		15,8,"å³",-1,"å‹",false,"å‡ºå‡»",19,9);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"æ­¥å…µé˜Ÿ","å¼“å…µé˜Ÿ"),	15,10,"å³",0,"å‹",false,"å‡ºå‡»",19,11);
 					
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"ÍòÄÜ"),	13,11,"ÏÂ",2,"ÓÑ",false,"³ö»÷",15,12);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Ôô±ø"),		12,11,"ÏÂ",-1,"ÓÑ",false,"³ö»÷",14,12);
-					InsertWarPerson(1,GenPerson(RND(0.7),p1,"Ôô±ø","²½±ø¶Ó"),	14,11,"ÏÂ",0,"ÓÑ",false,"³ö»÷",16,12);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"ä¸‡èƒ½"),	13,11,"ä¸‹",2,"å‹",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"è´¼å…µ"),		12,11,"ä¸‹",-1,"å‹",false,"å‡ºå‡»",14,12);
+					InsertWarPerson(1,GenPerson(RND(0.7),p1,"è´¼å…µ","æ­¥å…µé˜Ÿ"),	14,11,"ä¸‹",0,"å‹",false,"å‡ºå‡»",16,12);
 					
-					--µÐ¾ü
-						--Ö÷½« & ±¾Óª
-					InsertWarPerson(4,p2,						15,20,"ÉÏ",5,"µÐ",false,"´ý»ú",-1,-1);
+					--æ•Œå†›
+						--ä¸»å°† & æœ¬è¥
+					InsertWarPerson(4,p2,						15,20,"ä¸Š",5,"æ•Œ",false,"å¾…æœº",-1,-1);
 					WarSetFlag(111,War.PersonNum);
-					InsertWarPerson(4,GenPerson(true,p2,"ÎäÁ¦"),		14,20,"ÉÏ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"ÎäÁ¦"),		16,20,"ÉÏ",3,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	13,18,"ÉÏ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	14,18,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	15,18,"ÉÏ",-1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	16,18,"ÉÏ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	17,18,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	13,20,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	17,20,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	13,19,"ÉÏ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	14,19,"ÉÏ",1,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï½«"),	15,19,"ÉÏ",2,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	16,19,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	17,19,"ÉÏ",0,"µÐ",false,"´ý»ú",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¦åŠ›"),		14,20,"ä¸Š",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¦åŠ›"),		16,20,"ä¸Š",3,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	13,18,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	14,18,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	15,18,"ä¸Š",-1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	16,18,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	17,18,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	13,20,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	17,20,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	13,19,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	14,19,"ä¸Š",1,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å°†"),	15,19,"ä¸Š",2,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	16,19,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	17,19,"ä¸Š",0,"æ•Œ",false,"å¾…æœº",-1,-1);
 					
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	11,15,"ÓÒ",2,"µÐ",false,"³ö»÷",15,12);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	11,16,"ÓÒ",0,"µÐ",false,"³ö»÷",15,12);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	11,17,"ÓÒ",1,"µÐ",false,"³ö»÷",15,12);
-					InsertWarPerson(4,GenPerson(true,p2,"Æï±ø¶Ó"),	18,15,"×ó",2,"µÐ",false,"³ö»÷",15,12);
-					InsertWarPerson(4,GenPerson(true,p2,"²½±ø¶Ó"),	18,16,"×ó",0,"µÐ",false,"³ö»÷",15,12);
-					InsertWarPerson(4,GenPerson(true,p2,"¹­±ø¶Ó"),	18,17,"×ó",1,"µÐ",false,"³ö»÷",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	11,15,"å³",2,"æ•Œ",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	11,16,"å³",0,"æ•Œ",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	11,17,"å³",1,"æ•Œ",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"éª‘å…µé˜Ÿ"),	18,15,"å·¦",2,"æ•Œ",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	18,16,"å·¦",0,"æ•Œ",false,"å‡ºå‡»",15,12);
+					InsertWarPerson(4,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	18,17,"å·¦",1,"æ•Œ",false,"å‡ºå‡»",15,12);
 					
-						--×ó
-					InsertWarPerson(5,GenPerson(true,p2,"Ôô½«"),	8,19,"ÉÏ",3,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"Ôô±ø"),	8,18,"ÉÏ",2,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"Ôô±ø"),	7,19,"ÉÏ",1,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"Ôô±ø"),	9,19,"ÉÏ",1,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(0.5,p2,"¹­±ø¶Ó"),	6,20,"ÉÏ",1,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(0.7,p2,"¹­±ø¶Ó"),	7,20,"ÉÏ",0,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	8,20,"ÉÏ",1,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"²½±ø¶Ó"),	9,20,"ÉÏ",-1,"µÐ",false,"³ö»÷",8,10);
-					InsertWarPerson(5,GenPerson(true,p2,"¹­±ø¶Ó"),	10,20,"ÉÏ",-1,"µÐ",false,"³ö»÷",8,10);
-						--ÓÒ
-					InsertWarPerson(6,GenPerson(true,p2,"ÍòÄÜ"),		22,18,"ÉÏ",3,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(true,p2,"²½±ø¶Ó"),		21,18,"ÉÏ",2,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(true,p2,"²½±ø¶Ó"),		21,19,"ÉÏ",-1,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(true,p2,"Ôô±ø"),		20,19,"ÉÏ",1,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(true,p2,"Ôô±ø"),		20,20,"ÉÏ",-1,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(RND(0.5),p2,"¹­±ø¶Ó","²½±ø¶Ó"),	19,20,"ÉÏ",0,"µÐ",false,"³ö»÷",22,9);
-					InsertWarPerson(6,GenPerson(RND(0.5),p2,"¹­±ø¶Ó","²½±ø¶Ó"),	21,20,"ÉÏ",1,"µÐ",false,"³ö»÷",22,9);
-						--Ô®¾ü
-					InsertWarPerson(7,GenPerson(true,p2,"ÖÇÄ±"),		21,2,"×ó",3,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(true,p2,"²½±ø¶Ó"),		19,1,"×ó",1,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(true,p2,"²½±ø¶Ó"),		20,2,"×ó",0,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(true,p2,"Ôô±ø"),		21,3,"×ó",0,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(true,p2,"Ôô±ø"),		20,1,"×ó",1,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(RND(0.5),p2,"Æï±ø¶Ó","¹­±ø¶Ó"),	22,3,"×ó",1,"µÐ",true,"³ö»÷",14,7);
-					InsertWarPerson(7,GenPerson(RND(0.5),p2,"Æï±ø¶Ó","¹­±ø¶Ó"),	22,4,"×ó",1,"µÐ",true,"³ö»÷",14,7);
+						--å·¦
+					InsertWarPerson(5,GenPerson(true,p2,"è´¼å°†"),	8,19,"ä¸Š",3,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"è´¼å…µ"),	8,18,"ä¸Š",2,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"è´¼å…µ"),	7,19,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"è´¼å…µ"),	9,19,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(0.5,p2,"å¼“å…µé˜Ÿ"),	6,20,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(0.7,p2,"å¼“å…µé˜Ÿ"),	7,20,"ä¸Š",0,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	8,20,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),	9,20,"ä¸Š",-1,"æ•Œ",false,"å‡ºå‡»",8,10);
+					InsertWarPerson(5,GenPerson(true,p2,"å¼“å…µé˜Ÿ"),	10,20,"ä¸Š",-1,"æ•Œ",false,"å‡ºå‡»",8,10);
+						--å³
+					InsertWarPerson(6,GenPerson(true,p2,"ä¸‡èƒ½"),		22,18,"ä¸Š",3,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),		21,18,"ä¸Š",2,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),		21,19,"ä¸Š",-1,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(true,p2,"è´¼å…µ"),		20,19,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(true,p2,"è´¼å…µ"),		20,20,"ä¸Š",-1,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(RND(0.5),p2,"å¼“å…µé˜Ÿ","æ­¥å…µé˜Ÿ"),	19,20,"ä¸Š",0,"æ•Œ",false,"å‡ºå‡»",22,9);
+					InsertWarPerson(6,GenPerson(RND(0.5),p2,"å¼“å…µé˜Ÿ","æ­¥å…µé˜Ÿ"),	21,20,"ä¸Š",1,"æ•Œ",false,"å‡ºå‡»",22,9);
+						--æ´å†›
+					InsertWarPerson(7,GenPerson(true,p2,"æ™ºè°‹"),		21,2,"å·¦",3,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),		19,1,"å·¦",1,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(true,p2,"æ­¥å…µé˜Ÿ"),		20,2,"å·¦",0,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(true,p2,"è´¼å…µ"),		21,3,"å·¦",0,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(true,p2,"è´¼å…µ"),		20,1,"å·¦",1,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(RND(0.5),p2,"éª‘å…µé˜Ÿ","å¼“å…µé˜Ÿ"),	22,3,"å·¦",1,"æ•Œ",true,"å‡ºå‡»",14,7);
+					InsertWarPerson(7,GenPerson(RND(0.5),p2,"éª‘å…µé˜Ÿ","å¼“å…µé˜Ÿ"),	22,4,"å·¦",1,"æ•Œ",true,"å‡ºå‡»",14,7);
 					JY.Status=GAME_WMAP;
 					NextEvent(1017);
 				end,
@@ -1252,39 +1252,39 @@ Event=	{
 					NextEvent(1018);
 				end,
 			[1018]=function()
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						if (not WarCheckFlag(2)) and WarCheckArea(-1,8,17,21,20) then
 							WarSetFlag(2,1);
-							WarTalk(WarGetFlag(111),"¿É¶ñ£¬¾ÓÈ»ÈÃµÐÈËÉ±µ½ÕâÀïÀ´ÁË£¡");
-							WarModifyTeamAI(4,"³ö»÷",0,0);
+							WarTalk(WarGetFlag(111),"å¯æ¶ï¼Œå±…ç„¶è®©æ•Œäººæ€åˆ°è¿™é‡Œæ¥äº†ï¼");
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
-						--µÚ2»ØºÏ ÓÑ¾üAIÐÞ¸Ä£¬ÔÊÐí¹¥»÷
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
+						--ç¬¬2å›žåˆ å‹å†›AIä¿®æ”¹ï¼Œå…è®¸æ”»å‡»
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"´ý»ú",0,0);
+							WarModifyTeamAI(1,"å¾…æœº",0,0);
 						end
-						--µÐ¾üÎ´×Ü¹¥£¬µÐ¾üÊýÁ¿ÉÙÓÚ7
+						--æ•Œå†›æœªæ€»æ”»ï¼Œæ•Œå†›æ•°é‡å°‘äºŽ7
 						if War.PersonNumEnemy<10 and (not WarCheckFlag(1)) then
-							WarSetFlag(1,1);	--ÓÑ¾ü·´¹¥
-							WarTalk(WarGetFlag(101),"ÐÎÊÆÄæ×ªÁË[n]È«¾ü£¬·´»÷£¡");
-							WarModifyTeamAI(1,"³ö»÷",WarGetFlag(101),0);
-							WarModifyAI(WarGetFlag(101),"³ö»÷",-1,-1)
+							WarSetFlag(1,1);	--å‹å†›åæ”»
+							WarTalk(WarGetFlag(101),"å½¢åŠ¿é€†è½¬äº†[n]å…¨å†›ï¼Œåå‡»ï¼");
+							WarModifyTeamAI(1,"å‡ºå‡»",WarGetFlag(101),0);
+							WarModifyAI(WarGetFlag(101),"å‡ºå‡»",-1,-1)
 						end
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
-							WarTalk(WarGetFlag(111),"¹þ¹þ£¬Ô®¾üÀ´À²£¡");
+							WarTalk(WarGetFlag(111),"å“ˆå“ˆï¼Œæ´å†›æ¥å•¦ï¼");
 							WarShowTeamArmy(7);
 							WarTeamAI(7);
 						end
 						if (not WarCheckFlag(2)) and War.Turn==7 then
 							WarSetFlag(2,2);
-							WarTalk(WarGetFlag(111),"È«¾ü£¬³ö»÷£¡");
-							WarModifyTeamAI(4,"³ö»÷",0,0);
+							WarTalk(WarGetFlag(111),"å…¨å†›ï¼Œå‡ºå‡»ï¼");
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -1534,15 +1534,15 @@ Event=	{
 			[2050]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -1550,52 +1550,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(5,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					--InsertWarPerson(0,0,1,13,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	1,13,"ÓÒ",false,
-								2,14,"ÓÒ",false,
-								2,12,"ÓÒ",false,
-								1,11,"ÓÒ",false,
-								1,15,"ÓÒ",false,
-								2,16,"ÓÒ",false,
-								2,10,"ÓÒ",false,
-								1,9,"ÓÒ",false,
-								1,17,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(5,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					--InsertWarPerson(0,0,1,13,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	1,13,"å³",false,
+								2,14,"å³",false,
+								2,12,"å³",false,
+								1,11,"å³",false,
+								1,15,"å³",false,
+								2,16,"å³",false,
+								2,10,"å³",false,
+								1,9,"å³",false,
+								1,17,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,20,13,"×ó","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,16,13,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,19,8,"ÉÏ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(4,p,20,17,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,17,10,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,17,15,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(7,p,22,10,"×ó","µÐ",false,"ÎÄ",1,"¼áÊØ",0,0);
-						InsertWarTeam(8,p,22,15,"×ó","µÐ",false,"ÎÄ",1,"¼áÊØ",0,0);
-						InsertWarTeam(9,p,18,12,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(10,p,21,5,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(11,p,21,20,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,20,13,"å·¦","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,16,13,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,19,8,"ä¸Š","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(4,p,20,17,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,17,10,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,17,15,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(7,p,22,10,"å·¦","æ•Œ",false,"æ–‡",1,"åšå®ˆ",0,0);
+						InsertWarTeam(8,p,22,15,"å·¦","æ•Œ",false,"æ–‡",1,"åšå®ˆ",0,0);
+						InsertWarTeam(9,p,18,12,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(10,p,21,5,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(11,p,21,20,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,20,13,"×ó","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,16,13,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(3,p,19,8,"ÉÏ","µÐ",false,"ÎÄ",1,"³ö»÷",13,6);
-						InsertWarTeam(4,p,20,17,"ÏÂ","µÐ",false,"ÎÄ",1,"³ö»÷",13,19);
-						InsertWarTeam(5,p,14,13,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,18,3,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,17,22,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,13,9,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,13,16,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,18,11,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,18,15,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,20,13,"å·¦","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,16,13,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(3,p,19,8,"ä¸Š","æ•Œ",false,"æ–‡",1,"å‡ºå‡»",13,6);
+						InsertWarTeam(4,p,20,17,"ä¸‹","æ•Œ",false,"æ–‡",1,"å‡ºå‡»",13,19);
+						InsertWarTeam(5,p,14,13,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,18,3,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,17,22,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,13,9,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,13,16,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,18,11,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,18,15,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2051);
@@ -1608,7 +1608,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -1619,71 +1619,71 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2053);
 					end
 				end,
-			[2052]=function()	--µÐÈËËÀÊØ
+			[2052]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,13,10,16,15) then	--µÐÈË½øÈëÇ°·½ÇøÓò
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,13,10,16,15) then	--æ•Œäººè¿›å…¥å‰æ–¹åŒºåŸŸ
 							WarSetFlag(51,1);
-							WarModifyTeamAI(2,"³ö»÷",16,13);
-							WarModifyTeamAI(5,"³ö»÷",16,13);
-							WarModifyTeamAI(6,"³ö»÷",16,13);
-							WarModifyTeamAI(9,"³ö»÷",16,13);
+							WarModifyTeamAI(2,"å‡ºå‡»",16,13);
+							WarModifyTeamAI(5,"å‡ºå‡»",16,13);
+							WarModifyTeamAI(6,"å‡ºå‡»",16,13);
+							WarModifyTeamAI(9,"å‡ºå‡»",16,13);
 						end
-						if (not WarCheckFlag(52)) and WarCheckArea(-1,17,3,24,7) then	--µÐÈË½øÈëÉÏ·½ÇøÓò
+						if (not WarCheckFlag(52)) and WarCheckArea(-1,17,3,24,7) then	--æ•Œäººè¿›å…¥ä¸Šæ–¹åŒºåŸŸ
 							WarSetFlag(52,1);
-							WarModifyTeamAI(3,"³ö»÷",19,8);
-							WarModifyTeamAI(7,"³ö»÷",19,8);
-							WarModifyTeamAI(10,"³ö»÷",19,8);
+							WarModifyTeamAI(3,"å‡ºå‡»",19,8);
+							WarModifyTeamAI(7,"å‡ºå‡»",19,8);
+							WarModifyTeamAI(10,"å‡ºå‡»",19,8);
 						end
-						if (not WarCheckFlag(53)) and WarCheckArea(-1,17,18,24,22) then	--µÐÈË½øÈëÏÂ·½ÇøÓò
+						if (not WarCheckFlag(53)) and WarCheckArea(-1,17,18,24,22) then	--æ•Œäººè¿›å…¥ä¸‹æ–¹åŒºåŸŸ
 							WarSetFlag(53,1);
-							WarModifyTeamAI(4,"³ö»÷",19,17);
-							WarModifyTeamAI(8,"³ö»÷",19,17);
-							WarModifyTeamAI(11,"³ö»÷",19,17);
+							WarModifyTeamAI(4,"å‡ºå‡»",19,17);
+							WarModifyTeamAI(8,"å‡ºå‡»",19,17);
+							WarModifyTeamAI(11,"å‡ºå‡»",19,17);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,16,8,22,17) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,16,8,22,17) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);WarSetFlag(51,1);WarSetFlag(52,1);WarSetFlag(53,1);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2053]=function()	--µÐÈË³ö»÷
+			[2053]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -1692,16 +1692,16 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==2 then
-							WarModifyTeamAI(3,"³ö»÷",0,0);
-							WarModifyTeamAI(4,"³ö»÷",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
 						end
 						if War.Turn==3 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -1709,15 +1709,15 @@ Event=	{
 			[2060]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -1725,52 +1725,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(6,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					--InsertWarPerson(0,0,1,13,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	4,2,"ÓÒ",false,
-								3,3,"ÓÒ",false,
-								6,2,"ÓÒ",false,
-								5,3,"ÓÒ",false,
-								4,4,"ÓÒ",false,
-								7,3,"ÓÒ",false,
-								6,4,"ÓÒ",false,
-								5,5,"ÓÒ",false,
-								4,6,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(6,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					--InsertWarPerson(0,0,1,13,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	4,2,"å³",false,
+								3,3,"å³",false,
+								6,2,"å³",false,
+								5,3,"å³",false,
+								4,4,"å³",false,
+								7,3,"å³",false,
+								6,4,"å³",false,
+								5,5,"å³",false,
+								4,6,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,20,18,"ÉÏ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,22,18,"ÉÏ","µÐ",false,"ÎÄ",1,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,16,18,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(4,p,21,14,"ÉÏ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,12,20,"ÉÏ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,23,10,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(7,p,12,15,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(8,p,18,10,"ÓÒ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(9,p,20,21,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(10,p,25,18,"ÓÒ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(11,p,5,17,"ÉÏ","µÐ",false,"Îä",1,"ÒÆ¶¯",14,19);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,20,18,"ä¸Š","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,22,18,"ä¸Š","æ•Œ",false,"æ–‡",1,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,16,18,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(4,p,21,14,"ä¸Š","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,12,20,"ä¸Š","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,23,10,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(7,p,12,15,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(8,p,18,10,"å³","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(9,p,20,21,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(10,p,25,18,"å³","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(11,p,5,17,"ä¸Š","æ•Œ",false,"æ­¦",1,"ç§»åŠ¨",14,19);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,20,18,"ÉÏ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,22,18,"ÉÏ","µÐ",false,"ÎÄ",1,"´ý»ú",0,0);
-						InsertWarTeam(3,p,15,18,"×ó","µÐ",false,"ÎÄ",1,"³ö»÷",0,0);
-						InsertWarTeam(4,p,21,13,"ÉÏ","µÐ",false,"ÎÄ",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,13,16,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,19,11,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,13,19,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,22,11,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,11,18,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,21,9,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,5,17,"ÉÏ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,20,18,"ä¸Š","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,22,18,"ä¸Š","æ•Œ",false,"æ–‡",1,"å¾…æœº",0,0);
+						InsertWarTeam(3,p,15,18,"å·¦","æ•Œ",false,"æ–‡",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,21,13,"ä¸Š","æ•Œ",false,"æ–‡",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,13,16,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,19,11,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,13,19,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,22,11,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,11,18,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,21,9,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,5,17,"ä¸Š","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2061);
@@ -1783,7 +1783,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -1794,69 +1794,69 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2063);
 					end
 				end,
-			[2062]=function()	--µÐÈËËÀÊØ
+			[2062]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,14,8,28,13) then	--µÐÈË½øÈëÉÏ·½ÇøÓò
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,14,8,28,13) then	--æ•Œäººè¿›å…¥ä¸Šæ–¹åŒºåŸŸ
 							WarSetFlag(51,1);
-							WarModifyTeamAI(4,"³ö»÷",20,12);
-							WarModifyTeamAI(6,"³ö»÷",21,10);
-							WarModifyTeamAI(8,"³ö»÷",20,11);
-							WarModifyTeamAI(10,"³ö»÷",21,14);
+							WarModifyTeamAI(4,"å‡ºå‡»",20,12);
+							WarModifyTeamAI(6,"å‡ºå‡»",21,10);
+							WarModifyTeamAI(8,"å‡ºå‡»",20,11);
+							WarModifyTeamAI(10,"å‡ºå‡»",21,14);
 						end
-						if (not WarCheckFlag(52)) and WarCheckArea(-1,10,12,15,24) then	--µÐÈË½øÈëÏÂ·½ÇøÓò
+						if (not WarCheckFlag(52)) and WarCheckArea(-1,10,12,15,24) then	--æ•Œäººè¿›å…¥ä¸‹æ–¹åŒºåŸŸ
 							WarSetFlag(52,1);
-							WarModifyTeamAI(3,"³ö»÷",14,18);
-							WarModifyTeamAI(5,"³ö»÷",12,18);
-							WarModifyTeamAI(7,"³ö»÷",13,17);
-							WarModifyTeamAI(9,"³ö»÷",16,18);
-							WarModifyTeamAI(11,"³ö»÷",14,19);
+							WarModifyTeamAI(3,"å‡ºå‡»",14,18);
+							WarModifyTeamAI(5,"å‡ºå‡»",12,18);
+							WarModifyTeamAI(7,"å‡ºå‡»",13,17);
+							WarModifyTeamAI(9,"å‡ºå‡»",16,18);
+							WarModifyTeamAI(11,"å‡ºå‡»",14,19);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,14,12,28,24) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,14,12,28,24) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);WarSetFlag(51,1);WarSetFlag(52,1);
-							WarModifyTeamAI(1,"³ö»÷",20,18);
-							WarModifyTeamAI(2,"³ö»÷",20,18);
+							WarModifyTeamAI(1,"å‡ºå‡»",20,18);
+							WarModifyTeamAI(2,"å‡ºå‡»",20,18);
 							for i=3,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2063]=function()	--µÐÈË³ö»÷
+			[2063]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -1865,16 +1865,16 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==2 then
-							WarModifyTeamAI(11,"³ö»÷",0,0);
+							WarModifyTeamAI(11,"å‡ºå‡»",0,0);
 						end
 						if War.Turn==3 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(2,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -1882,15 +1882,15 @@ Event=	{
 			[2080]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -1898,52 +1898,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(8,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					--InsertWarPerson(0,0,1,13,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	2,22,"ÓÒ",false,
-								3,23,"ÓÒ",false,
-								2,20,"ÓÒ",false,
-								3,21,"ÓÒ",false,
-								4,22,"ÓÒ",false,
-								5,23,"ÓÒ",false,
-								4,20,"ÓÒ",false,
-								5,21,"ÓÒ",false,
-								6,22,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(8,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					--InsertWarPerson(0,0,1,13,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	2,22,"å³",false,
+								3,23,"å³",false,
+								2,20,"å³",false,
+								3,21,"å³",false,
+								4,22,"å³",false,
+								5,23,"å³",false,
+								4,20,"å³",false,
+								5,21,"å³",false,
+								6,22,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,20,4,"ÏÂ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,21,3,"ÏÂ","µÐ",false,"ÎÄ",1,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,17,3,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(4,p,21,6,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,15,5,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,19,8,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(7,p,13,2,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(8,p,22,9,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(9,p,12,5,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(10,p,21,11,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(11,p,15,8,"ÏÂ","µÐ",false,"Îä",1,"´ý»ú",0,0);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,20,4,"ä¸‹","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,21,3,"ä¸‹","æ•Œ",false,"æ–‡",1,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,17,3,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(4,p,21,6,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,15,5,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,19,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(7,p,13,2,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(8,p,22,9,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(9,p,12,5,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(10,p,21,11,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(11,p,15,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"å¾…æœº",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,20,4,"ÏÂ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,21,3,"ÏÂ","µÐ",false,"ÎÄ",1,"´ý»ú",0,0);
-						InsertWarTeam(3,p,5,3,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(4,p,4,5,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,6,5,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,19,8,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,22,8,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,20,11,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,21,13,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,4,2,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,6,2,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,20,4,"ä¸‹","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,21,3,"ä¸‹","æ•Œ",false,"æ–‡",1,"å¾…æœº",0,0);
+						InsertWarTeam(3,p,5,3,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,4,5,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,6,5,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,19,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,22,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,20,11,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,21,13,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,4,2,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,6,2,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2081);
@@ -1956,7 +1956,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -1967,68 +1967,68 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2083);
 					end
 				end,
-			[2082]=function()	--µÐÈËËÀÊØ
+			[2082]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,9,1,15,9) then	--µÐÈË½øÈëÉÏ·½ÇøÓò
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,9,1,15,9) then	--æ•Œäººè¿›å…¥ä¸Šæ–¹åŒºåŸŸ
 							WarSetFlag(51,1);
-							WarModifyTeamAI(3,"³ö»÷",14,3);
-							WarModifyTeamAI(5,"³ö»÷",13,5);
-							WarModifyTeamAI(7,"³ö»÷",13,3);
-							WarModifyTeamAI(9,"³ö»÷",12,4);
+							WarModifyTeamAI(3,"å‡ºå‡»",14,3);
+							WarModifyTeamAI(5,"å‡ºå‡»",13,5);
+							WarModifyTeamAI(7,"å‡ºå‡»",13,3);
+							WarModifyTeamAI(9,"å‡ºå‡»",12,4);
 						end
-						if (not WarCheckFlag(52)) and WarCheckArea(-1,9,8,24,14) then	--µÐÈË½øÈëÏÂ·½ÇøÓò
+						if (not WarCheckFlag(52)) and WarCheckArea(-1,9,8,24,14) then	--æ•Œäººè¿›å…¥ä¸‹æ–¹åŒºåŸŸ
 							WarSetFlag(52,1);
-							WarModifyTeamAI(4,"³ö»÷",21,9);
-							WarModifyTeamAI(6,"³ö»÷",20,10);
-							WarModifyTeamAI(8,"³ö»÷",21,11);
-							WarModifyTeamAI(10,"³ö»÷",20,11);
+							WarModifyTeamAI(4,"å‡ºå‡»",21,9);
+							WarModifyTeamAI(6,"å‡ºå‡»",20,10);
+							WarModifyTeamAI(8,"å‡ºå‡»",21,11);
+							WarModifyTeamAI(10,"å‡ºå‡»",20,11);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,14,1,14,9) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,14,1,14,9) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);WarSetFlag(51,1);WarSetFlag(52,1);
-							WarModifyTeamAI(1,"³ö»÷",20,18);
-							WarModifyTeamAI(2,"³ö»÷",20,18);
+							WarModifyTeamAI(1,"å‡ºå‡»",20,18);
+							WarModifyTeamAI(2,"å‡ºå‡»",20,18);
 							for i=3,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2083]=function()	--µÐÈË³ö»÷
+			[2083]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2037,13 +2037,13 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(2,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2051,15 +2051,15 @@ Event=	{
 			[2100]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2067,51 +2067,51 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(10,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	14,19,"ÉÏ",false,
-								16,19,"ÉÏ",false,
-								15,20,"ÉÏ",false,
-								13,20,"ÉÏ",false,
-								17,20,"ÉÏ",false,
-								12,19,"ÉÏ",false,
-								11,20,"ÉÏ",false,
-								18,19,"ÉÏ",false,
-								19,20,"ÉÏ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(10,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	14,19,"ä¸Š",false,
+								16,19,"ä¸Š",false,
+								15,20,"ä¸Š",false,
+								13,20,"ä¸Š",false,
+								17,20,"ä¸Š",false,
+								12,19,"ä¸Š",false,
+								11,20,"ä¸Š",false,
+								18,19,"ä¸Š",false,
+								19,20,"ä¸Š",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,13,9,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,14,13,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,16,9,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,10,9,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,19,9,"ÓÒ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,13,11,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,16,11,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,12,7,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,17,7,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,11,12,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,18,12,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,13,9,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,14,13,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,16,9,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,10,9,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,19,9,"å³","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,13,11,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,16,11,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,12,7,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,17,7,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,11,12,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,18,12,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,13,9,"ÏÂ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,14,13,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(3,p,16,9,"ÏÂ","µÐ",false,"ÎÄ",2,"´ý»ú",0,0);
-						InsertWarTeam(4,p,7,9,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,22,9,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,12,15,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,17,15,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,11,10,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,19,10,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,11,12,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,18,12,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,13,9,"ä¸‹","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,14,13,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(3,p,16,9,"ä¸‹","æ•Œ",false,"æ–‡",2,"å¾…æœº",0,0);
+						InsertWarTeam(4,p,7,9,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,22,9,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,12,15,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,17,15,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,11,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,19,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,11,12,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,18,12,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2101);
@@ -2124,7 +2124,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2135,53 +2135,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2103);
 					end
 				end,
-			[2102]=function()	--µÐÈËËÀÊØ
+			[2102]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,6,20,13) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,6,20,13) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2103]=function()	--µÐÈË³ö»÷
+			[2103]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2190,13 +2190,13 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(3,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2204,15 +2204,15 @@ Event=	{
 			[2110]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid)*100;
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2220,52 +2220,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(11,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	13,2,"ÏÂ",false,
-								15,2,"ÏÂ",false,
-								11,2,"ÏÂ",false,
-								17,2,"ÏÂ",false,
-								14,1,"ÏÂ",false,
-								12,1,"ÏÂ",false,
-								16,1,"ÏÂ",false,
-								18,1,"ÏÂ",false,
-								10,1,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(11,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	13,2,"ä¸‹",false,
+								15,2,"ä¸‹",false,
+								11,2,"ä¸‹",false,
+								17,2,"ä¸‹",false,
+								14,1,"ä¸‹",false,
+								12,1,"ä¸‹",false,
+								16,1,"ä¸‹",false,
+								18,1,"ä¸‹",false,
+								10,1,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
+					--æ•Œå†›
 					enpcnum=1110;
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,13,13,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,11,9,"ÉÏ","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,11,13,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,13,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,9,9,"ÉÏ","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,17,9,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,9,11,"ÉÏ","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,9,15,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,17,12,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,12,17,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,17,16,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,13,13,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,11,9,"ä¸Š","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,11,13,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,13,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,9,9,"ä¸Š","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,17,9,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,9,11,"ä¸Š","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,9,15,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,17,12,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,12,17,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,17,16,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,13,13,"ÉÏ","µÐ",false,"Ë§",1,"´ý»ú",0,0);
-						InsertWarTeam(2,p,11,9,"ÉÏ","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,11,13,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,13,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,9,9,"ÉÏ","µÐ",false,"Îä",3,"³ö»÷",0,0);
-						InsertWarTeam(6,p,17,9,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,17,13,"ÓÒ","µÐ",false,"Îä",3,"³ö»÷",0,0);
-						InsertWarTeam(8,p,19,14,"ÓÒ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(9,p,22,13,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(10,p,8,13,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(11,p,16,17,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,13,13,"ä¸Š","æ•Œ",false,"å¸…",1,"å¾…æœº",0,0);
+						InsertWarTeam(2,p,11,9,"ä¸Š","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,11,13,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,13,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,9,9,"ä¸Š","æ•Œ",false,"æ­¦",3,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,17,9,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,17,13,"å³","æ•Œ",false,"æ­¦",3,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,19,14,"å³","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,22,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,8,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,16,17,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2111);
@@ -2278,7 +2278,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2289,53 +2289,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2113);
 					end
 				end,
-			[2112]=function()	--µÐÈËËÀÊØ
+			[2112]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,9,17,17) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,9,17,17) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2113]=function()	--µÐÈË³ö»÷
+			[2113]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2344,14 +2344,14 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(2,"³ö»÷",0,0);
-							WarModifyTeamAI(3,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2359,15 +2359,15 @@ Event=	{
 			[2120]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2375,52 +2375,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(12,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	27,3,"×ó",false,
-								27,5,"×ó",false,
-								26,4,"×ó",false,
-								25,5,"×ó",false,
-								24,4,"×ó",false,
-								24,6,"×ó",false,
-								23,5,"×ó",false,
-								23,7,"×ó",false,
-								22,6,"×ó",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(12,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	27,3,"å·¦",false,
+								27,5,"å·¦",false,
+								26,4,"å·¦",false,
+								25,5,"å·¦",false,
+								24,4,"å·¦",false,
+								24,6,"å·¦",false,
+								23,5,"å·¦",false,
+								23,7,"å·¦",false,
+								22,6,"å·¦",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,1,10,"ÓÒ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,3,10,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,7,11,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,6,4,"ÓÒ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,6,17,"ÓÒ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,5,4,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,5,17,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,17,5,"ÏÂ","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,16,12,"ÉÏ","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,14,3,"ÏÂ","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(11,p,15,14,"ÉÏ","µÐ",true,"Îä",4,"³ö»÷",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,1,10,"å³","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,3,10,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,7,11,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,6,4,"å³","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,6,17,"å³","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,5,4,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,5,17,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,17,5,"ä¸‹","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,16,12,"ä¸Š","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,14,3,"ä¸‹","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,15,14,"ä¸Š","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,1,10,"ÓÒ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,3,10,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,7,11,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(4,p,6,4,"ÓÒ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,6,17,"ÓÒ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,5,4,"ÓÒ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,5,17,"ÓÒ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,2,7,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(9,p,2,14,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(10,p,3,8,"ÓÒ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(11,p,3,12,"ÓÒ","µÐ",false,"Îä",4,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,1,10,"å³","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,3,10,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,7,11,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,6,4,"å³","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,6,17,"å³","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,5,4,"å³","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,5,17,"å³","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,2,7,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,2,14,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,3,8,"å³","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,3,12,"å³","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2121);
@@ -2433,7 +2433,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2444,39 +2444,39 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2123);
 					end
 				end,
-			[2122]=function()	--µÐÈËËÀÊØ
+			[2122]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,1,1,11,20) then	--µÐÈË½Ó½ü³ÇÃÅ£¬·ü±ø³öÏÖ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,1,1,11,20) then	--æ•ŒäººæŽ¥è¿‘åŸŽé—¨ï¼Œä¼å…µå‡ºçŽ°
 							WarSetFlag(51,1);
 							WarSetFlag(52,1);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,7,20) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,7,20) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if WarCheckFlag(52) then
 							WarSetFlag(52,0);
 							if WarGetFlag(11)>=8 then
@@ -2487,7 +2487,7 @@ Event=	{
 								WarTalk(WarGetFlag(110+8),29);
 								for i=9,11 do
 									local pid=WarGetFlag(110+i);
-									if pid>0 and JY.Person[pid]["Ì¨´Ê"]>=0 then
+									if pid>0 and JY.Person[pid]["å°è¯"]>=0 then
 										WarTalk(pid,29);
 									end
 								end
@@ -2498,19 +2498,19 @@ Event=	{
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2123]=function()	--µÐÈË³ö»÷
+			[2123]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2519,17 +2519,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2537,15 +2537,15 @@ Event=	{
 			[2130]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2553,51 +2553,51 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(13,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	3,3,"ÓÒ",false,
-								4,2,"ÓÒ",false,
-								2,4,"ÓÒ",false,
-								2,2,"ÓÒ",false,
-								5,3,"ÓÒ",false,
-								4,4,"ÓÒ",false,
-								3,5,"ÓÒ",false,
-								2,6,"ÓÒ",false,
-								6,2,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(13,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	3,3,"å³",false,
+								4,2,"å³",false,
+								2,4,"å³",false,
+								2,2,"å³",false,
+								5,3,"å³",false,
+								4,4,"å³",false,
+								3,5,"å³",false,
+								2,6,"å³",false,
+								6,2,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,20,26,"×ó","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,11,26,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,20,23,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,27,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,12,6,"ÉÏ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,12,8,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,11,15,"×ó","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,13,20,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,5,23,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,7,19,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,17,11,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,20,26,"å·¦","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,11,26,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,20,23,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,27,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,12,6,"ä¸Š","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,12,8,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,11,15,"å·¦","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,13,20,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,5,23,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,7,19,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,17,11,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,20,26,"×ó","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,11,26,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,20,23,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,27,"ÉÏ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(5,p,12,6,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,12,8,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,11,15,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(8,p,13,20,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,5,23,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,7,19,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,17,11,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,20,26,"å·¦","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,11,26,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,20,23,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,27,"ä¸Š","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,12,6,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,12,8,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,11,15,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,13,20,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,5,23,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,7,19,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,17,11,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2131);
@@ -2610,7 +2610,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2621,53 +2621,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2133);
 					end
 				end,
-			[2132]=function()	--µÐÈËËÀÊØ
+			[2132]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,8,22,20,28) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,8,22,20,28) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2133]=function()	--µÐÈË³ö»÷
+			[2133]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2676,20 +2676,20 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==2 then
-							WarModifyTeamAI(2,"³ö»÷",0,0);
-							WarModifyTeamAI(3,"³ö»÷",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
 						end
 						if War.Turn==3 then
-							WarModifyTeamAI(6,"³ö»÷",0,0);
+							WarModifyTeamAI(6,"å‡ºå‡»",0,0);
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
-							WarModifyTeamAI(5,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2697,15 +2697,15 @@ Event=	{
 			[2140]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2713,51 +2713,51 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(14,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	27,3,"×ó",false,
-								26,2,"×ó",false,
-								28,4,"×ó",false,
-								25,3,"×ó",false,
-								26,4,"×ó",false,
-								24,2,"×ó",false,
-								27,5,"×ó",false,
-								28,6,"×ó",false,
-								25,1,"×ó",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(14,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	27,3,"å·¦",false,
+								26,2,"å·¦",false,
+								28,4,"å·¦",false,
+								25,3,"å·¦",false,
+								26,4,"å·¦",false,
+								24,2,"å·¦",false,
+								27,5,"å·¦",false,
+								28,6,"å·¦",false,
+								25,1,"å·¦",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,14,17,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,14,12,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,20,17,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,16,17,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,14,15,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,9,17,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,14,21,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,17,13,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,19,14,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,11,13,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,19,19,"ÓÒ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,14,17,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,14,12,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,20,17,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,16,17,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,14,15,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,9,17,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,14,21,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,17,13,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,19,14,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,11,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,19,19,"å³","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,14,17,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,14,12,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",19,3);
-						InsertWarTeam(3,p,20,17,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",27,9);
-						InsertWarTeam(4,p,16,17,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,14,15,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,9,17,"×ó","µÐ",false,"Îä",1,"³ö»÷",19,3);
-						InsertWarTeam(7,p,14,21,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",27,9);
-						InsertWarTeam(8,p,17,13,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",19,3);
-						InsertWarTeam(9,p,19,14,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",27,9);
-						InsertWarTeam(10,p,11,13,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",19,3);
-						InsertWarTeam(11,p,19,19,"ÓÒ","µÐ",false,"Îä",2,"³ö»÷",27,9);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,14,17,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,14,12,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",19,3);
+						InsertWarTeam(3,p,20,17,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",27,9);
+						InsertWarTeam(4,p,16,17,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,14,15,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,9,17,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",19,3);
+						InsertWarTeam(7,p,14,21,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",27,9);
+						InsertWarTeam(8,p,17,13,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",19,3);
+						InsertWarTeam(9,p,19,14,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",27,9);
+						InsertWarTeam(10,p,11,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",19,3);
+						InsertWarTeam(11,p,19,19,"å³","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",27,9);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2141);
@@ -2770,7 +2770,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2781,53 +2781,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2143);
 					end
 				end,
-			[2142]=function()	--µÐÈËËÀÊØ
+			[2142]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,12,20,21) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,9,12,20,21) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2143]=function()	--µÐÈË³ö»÷
+			[2143]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2836,17 +2836,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -2854,15 +2854,15 @@ Event=	{
 			[2160]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -2870,52 +2870,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(16,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	5,5,"ÓÒ",false,
-								6,4,"ÓÒ",false,
-								4,6,"ÓÒ",false,
-								6,6,"ÓÒ",false,
-								7,5,"ÓÒ",false,
-								5,7,"ÓÒ",false,
-								8,4,"ÓÒ",false,
-								4,8,"ÓÒ",false,
-								7,3,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(16,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	5,5,"å³",false,
+								6,4,"å³",false,
+								4,6,"å³",false,
+								6,6,"å³",false,
+								7,5,"å³",false,
+								5,7,"å³",false,
+								8,4,"å³",false,
+								4,8,"å³",false,
+								7,3,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,18,19,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,10,15,"×ó","µÐ",false,"Îä",5,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,17,10,"ÉÏ","µÐ",false,"Îä",5,"¼áÊØ",0,0);
-						InsertWarTeam(4,p,17,17,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,16,20,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,10,17,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,15,10,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,11,13,"×ó","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,19,11,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,13,16,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,17,13,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,18,19,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,10,15,"å·¦","æ•Œ",false,"æ­¦",5,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,17,10,"ä¸Š","æ•Œ",false,"æ­¦",5,"åšå®ˆ",0,0);
+						InsertWarTeam(4,p,17,17,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,16,20,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,10,17,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,15,10,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,11,13,"å·¦","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,19,11,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,13,16,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,17,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,18,19,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,10,15,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,17,10,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,17,17,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,16,20,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,10,17,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,15,10,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,11,13,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,19,11,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(10,p,13,16,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,17,13,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,18,19,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,10,15,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,17,10,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,17,17,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,16,20,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,10,17,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,15,10,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,11,13,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,19,11,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,13,16,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,17,13,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2161);
@@ -2928,7 +2928,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -2939,53 +2939,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2163);
 					end
 				end,
-			[2162]=function()	--µÐÈËËÀÊØ
+			[2162]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,12,11,20,20) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,12,11,20,20) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2163]=function()	--µÐÈË³ö»÷
+			[2163]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -2994,17 +2994,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3012,15 +3012,15 @@ Event=	{
 			[2170]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3028,52 +3028,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(17,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	7,3,"ÏÂ",false,
-								5,3,"ÏÂ",false,
-								9,3,"ÏÂ",false,
-								6,4,"ÏÂ",false,
-								8,4,"ÏÂ",false,
-								4,4,"ÏÂ",false,
-								10,4,"ÏÂ",false,
-								6,2,"ÏÂ",false,
-								8,2,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(17,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	7,3,"ä¸‹",false,
+								5,3,"ä¸‹",false,
+								9,3,"ä¸‹",false,
+								6,4,"ä¸‹",false,
+								8,4,"ä¸‹",false,
+								4,4,"ä¸‹",false,
+								10,4,"ä¸‹",false,
+								6,2,"ä¸‹",false,
+								8,2,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,12,22,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,5,17,"ÉÏ","µÐ",false,"Îä",5,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,18,11,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,12,23,"ÉÏ","µÐ",false,"ÎÄ",5,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,15,12,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,21,13,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,3,19,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,5,21,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,12,18,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,10,21,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,14,21,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,12,22,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,5,17,"ä¸Š","æ•Œ",false,"æ­¦",5,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,18,11,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,12,23,"ä¸Š","æ•Œ",false,"æ–‡",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,15,12,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,21,13,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,3,19,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,5,21,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,12,18,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,10,21,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,14,21,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,12,22,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,5,17,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,18,11,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,12,23,"ÉÏ","µÐ",false,"ÎÄ",5,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,15,12,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(6,p,21,13,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(7,p,3,19,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,5,21,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(9,p,12,18,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,10,21,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,14,21,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,12,22,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,5,17,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,18,11,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,12,23,"ä¸Š","æ•Œ",false,"æ–‡",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,15,12,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,21,13,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,3,19,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,5,21,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,12,18,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,10,21,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,14,21,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2171);
@@ -3086,7 +3086,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3097,53 +3097,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2173);
 					end
 				end,
-			[2172]=function()	--µÐÈËËÀÊØ
+			[2172]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,6,17,18,24) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,6,17,18,24) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2173]=function()	--µÐÈË³ö»÷
+			[2173]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3152,17 +3152,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3170,15 +3170,15 @@ Event=	{
 			[2200]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3186,52 +3186,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(20,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	13,2,"ÏÂ",false,
-								12,1,"ÏÂ",false,
-								14,1,"ÏÂ",false,
-								12,3,"ÏÂ",false,
-								14,3,"ÏÂ",false,
-								11,2,"ÏÂ",false,
-								15,2,"ÏÂ",false,
-								10,1,"ÏÂ",false,
-								16,1,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(20,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	13,2,"ä¸‹",false,
+								12,1,"ä¸‹",false,
+								14,1,"ä¸‹",false,
+								12,3,"ä¸‹",false,
+								14,3,"ä¸‹",false,
+								11,2,"ä¸‹",false,
+								15,2,"ä¸‹",false,
+								10,1,"ä¸‹",false,
+								16,1,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,2,25,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,3,26,"ÓÒ","µÐ",false,"ÎÄ",2,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,3,23,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,5,25,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,14,14,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,9,16,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,10,12,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,18,14,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,5,20,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,2,16,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,12,22,"ÓÒ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,2,25,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,3,26,"å³","æ•Œ",false,"æ–‡",2,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,3,23,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,5,25,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,14,14,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,9,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,10,12,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,18,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,5,20,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,2,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,12,22,"å³","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,2,25,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,3,26,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,3,23,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(4,p,5,25,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(5,p,14,14,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,9,16,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(7,p,10,12,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(8,p,18,14,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,5,20,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(10,p,2,16,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(11,p,12,22,"ÓÒ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,2,25,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,3,26,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,3,23,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,5,25,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,14,14,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,9,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,10,12,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,18,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,5,20,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,2,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,12,22,"å³","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2201);
@@ -3244,7 +3244,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3255,53 +3255,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2203);
 					end
 				end,
-			[2202]=function()	--µÐÈËËÀÊØ
+			[2202]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,16,13,28) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,16,13,28) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2203]=function()	--µÐÈË³ö»÷
+			[2203]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3310,17 +3310,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3328,15 +3328,15 @@ Event=	{
 			[2220]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3344,52 +3344,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(22,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	31,10,"ÏÂ",false,
-								30,9,"ÏÂ",false,
-								32,9,"ÏÂ",false,
-								31,8,"ÏÂ",false,
-								30,7,"ÏÂ",false,
-								32,7,"ÏÂ",false,
-								31,6,"ÏÂ",false,
-								30,5,"ÏÂ",false,
-								32,5,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(22,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	31,10,"ä¸‹",false,
+								30,9,"ä¸‹",false,
+								32,9,"ä¸‹",false,
+								31,8,"ä¸‹",false,
+								30,7,"ä¸‹",false,
+								32,7,"ä¸‹",false,
+								31,6,"ä¸‹",false,
+								30,5,"ä¸‹",false,
+								32,5,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,1,3,"ÓÒ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,4,10,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(3,p,8,7,"ÓÒ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(4,p,5,7,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,7,9,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,2,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,3,3,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,12,10,"×ó","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,13,11,"×ó","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,11,13,"×ó","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(11,p,13,14,"×ó","µÐ",true,"Îä",4,"³ö»÷",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,1,3,"å³","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,4,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(3,p,8,7,"å³","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(4,p,5,7,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,7,9,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,2,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,3,3,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,12,10,"å·¦","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,13,11,"å·¦","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,11,13,"å·¦","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,13,14,"å·¦","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,1,3,"ÓÒ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,4,10,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(3,p,8,7,"ÓÒ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(4,p,5,7,"ÏÂ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(5,p,7,9,"ÓÒ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(6,p,2,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,3,3,"ÓÒ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,21,2,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,22,5,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,19,4,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,24,4,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,1,3,"å³","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,4,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(3,p,8,7,"å³","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,5,7,"ä¸‹","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,7,9,"å³","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,2,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,3,3,"å³","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,21,2,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,22,5,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,19,4,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,24,4,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2221);
@@ -3402,7 +3402,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3413,39 +3413,39 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2223);
 					end
 				end,
-			[2222]=function()	--µÐÈËËÀÊØ
+			[2222]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and (WarCheckArea(-1,1,4,11,9) or WarCheckArea(-1,1,1,8,13)) then	--µÐÈË½Ó½ü³ÇÃÅ£¬·ü±ø³öÏÖ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and (WarCheckArea(-1,1,4,11,9) or WarCheckArea(-1,1,1,8,13)) then	--æ•ŒäººæŽ¥è¿‘åŸŽé—¨ï¼Œä¼å…µå‡ºçŽ°
 							WarSetFlag(51,1);
 							WarSetFlag(52,1);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,8,10) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,8,10) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if WarCheckFlag(52) then
 							WarSetFlag(52,0);
 							if WarGetFlag(11)>=8 then
@@ -3456,7 +3456,7 @@ Event=	{
 								WarTalk(WarGetFlag(110+8),29);
 								for i=9,11 do
 									local pid=WarGetFlag(110+i);
-									if pid>0 and JY.Person[pid]["Ì¨´Ê"]>=0 then
+									if pid>0 and JY.Person[pid]["å°è¯"]>=0 then
 										WarTalk(pid,29);
 									end
 								end
@@ -3467,19 +3467,19 @@ Event=	{
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2223]=function()	--µÐÈË³ö»÷
+			[2223]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3488,17 +3488,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3506,15 +3506,15 @@ Event=	{
 			[2230]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3522,53 +3522,53 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(23,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					--InsertWarPerson(0,0,1,13,"ÓÒ",0,"ÎÒ",false,"´ý»ú",0,0);
-					SelectTeam(	2,18,"ÓÒ",false,
-								3,19,"ÓÒ",false,
-								2,16,"ÓÒ",false,
-								3,17,"ÓÒ",false,
-								4,18,"ÓÒ",false,
-								5,19,"ÓÒ",false,
-								4,16,"ÓÒ",false,
-								5,17,"ÓÒ",false,
-								6,18,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(23,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					--InsertWarPerson(0,0,1,13,"å³",0,"æˆ‘",false,"å¾…æœº",0,0);
+					SelectTeam(	2,18,"å³",false,
+								3,19,"å³",false,
+								2,16,"å³",false,
+								3,17,"å³",false,
+								4,18,"å³",false,
+								5,19,"å³",false,
+								4,16,"å³",false,
+								5,17,"å³",false,
+								6,18,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,19,2,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,18,4,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,17,3,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,10,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,11,6,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,17,9,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,12,5,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,13,9,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,13,6,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,15,8,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,15,5,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,19,2,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,18,4,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,17,3,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,11,6,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,17,9,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,12,5,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,13,9,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,13,6,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,15,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,15,5,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,19,2,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,18,4,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,17,3,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,10,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,11,6,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,17,9,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,12,5,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,13,9,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(9,p,13,6,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(10,p,15,8,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,15,5,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,19,2,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,18,4,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,17,3,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,11,6,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,17,9,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,12,5,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,13,9,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,13,6,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,15,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,15,5,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2231);
@@ -3581,7 +3581,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3592,53 +3592,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2233);
 					end
 				end,
-			[2232]=function()	--µÐÈËËÀÊØ
+			[2232]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,20,10) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,20,10) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2233]=function()	--µÐÈË³ö»÷
+			[2233]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3647,17 +3647,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3665,15 +3665,15 @@ Event=	{
 			[2240]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3681,52 +3681,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(24,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	18,21,"×ó",false,
-								19,20,"×ó",false,
-								19,22,"×ó",false,
-								20,21,"×ó",false,
-								20,23,"×ó",false,
-								21,22,"×ó",false,
-								22,21,"×ó",false,
-								22,23,"×ó",false,
-								23,22,"×ó",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(24,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	18,21,"å·¦",false,
+								19,20,"å·¦",false,
+								19,22,"å·¦",false,
+								20,21,"å·¦",false,
+								20,23,"å·¦",false,
+								21,22,"å·¦",false,
+								22,21,"å·¦",false,
+								22,23,"å·¦",false,
+								23,22,"å·¦",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,23,2,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,11,9,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,23,4,"ÏÂ","µÐ",false,"ÎÄ",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,17,3,"×ó","µÐ",false,"ÎÄ",5,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,16,10,"×ó","µÐ",false,"ÎÄ",4,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,6,8,"ÏÂ","µÐ",false,"ÎÄ",4,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,10,7,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,13,14,"×ó","µÐ",true,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,3,15,"ÓÒ","µÐ",true,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(10,p,10,21,"ÉÏ","µÐ",true,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(11,p,14,22,"ÉÏ","µÐ",true,"Îä",4,"³ö»÷",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,23,2,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,11,9,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,23,4,"ä¸‹","æ•Œ",false,"æ–‡",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,17,3,"å·¦","æ•Œ",false,"æ–‡",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,16,10,"å·¦","æ•Œ",false,"æ–‡",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,6,8,"ä¸‹","æ•Œ",false,"æ–‡",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,10,7,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,13,14,"å·¦","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,3,15,"å³","æ•Œ",true,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,10,21,"ä¸Š","æ•Œ",true,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,14,22,"ä¸Š","æ•Œ",true,"æ­¦",4,"å‡ºå‡»",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,23,2,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,11,9,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(3,p,23,4,"ÏÂ","µÐ",false,"ÎÄ",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,17,3,"×ó","µÐ",false,"ÎÄ",5,"³ö»÷",0,0);
-						InsertWarTeam(5,p,16,10,"×ó","µÐ",false,"ÎÄ",4,"³ö»÷",0,0);
-						InsertWarTeam(6,p,6,8,"ÏÂ","µÐ",false,"ÎÄ",4,"³ö»÷",0,0);
-						InsertWarTeam(7,p,10,7,"ÏÂ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,13,11,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,4,15,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,18,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,8,17,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,23,2,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,11,9,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(3,p,23,4,"ä¸‹","æ•Œ",false,"æ–‡",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,17,3,"å·¦","æ•Œ",false,"æ–‡",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,16,10,"å·¦","æ•Œ",false,"æ–‡",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,6,8,"ä¸‹","æ•Œ",false,"æ–‡",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,10,7,"ä¸‹","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,13,11,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,4,15,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,18,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,8,17,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2241);
@@ -3739,7 +3739,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3750,39 +3750,39 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2243);
 					end
 				end,
-			[2242]=function()	--µÐÈËËÀÊØ
+			[2242]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,4,6,16,13) then	--µÐÈË½Ó½ü³ÇÃÅ£¬·ü±ø³öÏÖ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,4,6,16,13) then	--æ•ŒäººæŽ¥è¿‘åŸŽé—¨ï¼Œä¼å…µå‡ºçŽ°
 							WarSetFlag(51,1);
 							WarSetFlag(52,1);
 						end
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,17,1,24,8) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,17,1,24,8) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if WarCheckFlag(52) then
 							WarSetFlag(52,0);
 							if WarGetFlag(11)>=8 then
@@ -3793,7 +3793,7 @@ Event=	{
 								WarTalk(WarGetFlag(110+8),29);
 								for i=9,11 do
 									local pid=WarGetFlag(110+i);
-									if pid>0 and JY.Person[pid]["Ì¨´Ê"]>=0 then
+									if pid>0 and JY.Person[pid]["å°è¯"]>=0 then
 										WarTalk(pid,29);
 									end
 								end
@@ -3804,19 +3804,19 @@ Event=	{
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2243]=function()	--µÐÈË³ö»÷
+			[2243]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3825,17 +3825,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -3843,15 +3843,15 @@ Event=	{
 			[2250]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -3859,52 +3859,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(25,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü;
-					SelectTeam(	8,1,"ÏÂ",false,
-								9,2,"ÏÂ",false,
-								10,1,"ÏÂ",false,
-								11,2,"ÏÂ",false,
-								12,1,"ÏÂ",false,
-								13,2,"ÏÂ",false,
-								14,1,"ÏÂ",false,
-								15,2,"ÏÂ",false,
-								16,1,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(25,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›;
+					SelectTeam(	8,1,"ä¸‹",false,
+								9,2,"ä¸‹",false,
+								10,1,"ä¸‹",false,
+								11,2,"ä¸‹",false,
+								12,1,"ä¸‹",false,
+								13,2,"ä¸‹",false,
+								14,1,"ä¸‹",false,
+								15,2,"ä¸‹",false,
+								16,1,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,14,29,"×ó","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,16,24,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,7,30,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,9,25,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,13,20,"×ó","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,2,18,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,14,15,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,5,13,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,15,10,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,8,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,12,9,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,14,29,"å·¦","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,16,24,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,7,30,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,9,25,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,13,20,"å·¦","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,2,18,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,14,15,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,5,13,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,15,10,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,8,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,12,9,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,14,29,"×ó","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,16,24,"×ó","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(3,p,7,30,"ÉÏ","µÐ",false,"ÎÄ",2,"³ö»÷",0,0);
-						InsertWarTeam(4,p,9,25,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,13,20,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(6,p,2,18,"ÓÒ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(7,p,14,15,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,5,13,"ÓÒ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,15,10,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,8,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,12,9,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,14,29,"å·¦","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,16,24,"å·¦","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(3,p,7,30,"ä¸Š","æ•Œ",false,"æ–‡",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,9,25,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,13,20,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,2,18,"å³","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,14,15,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,5,13,"å³","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,15,10,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,8,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,12,9,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2251);
@@ -3917,7 +3917,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -3928,53 +3928,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2253);
 					end
 				end,
-			[2252]=function()	--µÐÈËËÀÊØ
+			[2252]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,24,20,32) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,24,20,32) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2253]=function()	--µÐÈË³ö»÷
+			[2253]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -3983,17 +3983,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4001,15 +4001,15 @@ Event=	{
 			[2300]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4017,52 +4017,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(30,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	16,19,"ÉÏ",false,
-								15,18,"ÉÏ",false,
-								17,18,"ÉÏ",false,
-								15,20,"ÉÏ",false,
-								17,20,"ÉÏ",false,
-								14,19,"ÉÏ",false,
-								18,19,"ÉÏ",false,
-								13,20,"ÉÏ",false,
-								19,20,"ÉÏ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(30,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	16,19,"ä¸Š",false,
+								15,18,"ä¸Š",false,
+								17,18,"ä¸Š",false,
+								15,20,"ä¸Š",false,
+								17,20,"ä¸Š",false,
+								14,19,"ä¸Š",false,
+								18,19,"ä¸Š",false,
+								13,20,"ä¸Š",false,
+								19,20,"ä¸Š",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,15,6,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,16,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,13,6,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,12,"ÏÂ","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,9,6,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(6,p,13,11,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,10,8,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,17,11,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,10,4,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,15,8,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,11,6,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,15,6,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,16,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,13,6,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,12,"ä¸‹","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,9,6,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(6,p,13,11,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,10,8,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,17,11,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,10,4,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,15,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,11,6,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,15,6,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,16,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,13,6,"×ó","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,12,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,9,6,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,13,11,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,10,8,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,17,11,"ÏÂ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(9,p,10,4,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(10,p,15,8,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(11,p,11,6,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,15,6,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,16,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,13,6,"å·¦","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,12,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,9,6,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,13,11,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,10,8,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,17,11,"ä¸‹","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,10,4,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,15,8,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,11,6,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2301);
@@ -4075,7 +4075,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4086,53 +4086,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2303);
 					end
 				end,
-			[2302]=function()	--µÐÈËËÀÊØ
+			[2302]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,10,1,20,11) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,10,1,20,11) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2303]=function()	--µÐÈË³ö»÷
+			[2303]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4141,17 +4141,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4159,15 +4159,15 @@ Event=	{
 			[2310]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4175,52 +4175,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(31,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	9,2,"ÏÂ",false,
-								10,2,"ÏÂ",false,
-								8,1,"ÏÂ",false,
-								11,1,"ÏÂ",false,
-								8,3,"ÏÂ",false,
-								11,3,"ÏÂ",false,
-								7,2,"ÏÂ",false,
-								12,2,"ÏÂ",false,
-								9,4,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(31,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	9,2,"ä¸‹",false,
+								10,2,"ä¸‹",false,
+								8,1,"ä¸‹",false,
+								11,1,"ä¸‹",false,
+								8,3,"ä¸‹",false,
+								11,3,"ä¸‹",false,
+								7,2,"ä¸‹",false,
+								12,2,"ä¸‹",false,
+								9,4,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,8,23,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,9,24,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,8,26,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,21,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,10,22,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,6,24,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,11,24,"ÓÒ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,2,18,"ÓÒ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,15,18,"×ó","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,3,22,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,14,22,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,8,23,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,9,24,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,8,26,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,21,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,10,22,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,6,24,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,11,24,"å³","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,2,18,"å³","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,15,18,"å·¦","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,3,22,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,14,22,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,8,23,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,9,24,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,8,26,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,21,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,10,22,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,6,24,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(7,p,11,24,"ÓÒ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(8,p,2,18,"ÓÒ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,15,18,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,3,22,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(11,p,14,22,"ÉÏ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,8,23,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,9,24,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,8,26,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,21,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,10,22,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,6,24,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,11,24,"å³","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,2,18,"å³","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,15,18,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,3,22,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,14,22,"ä¸Š","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2311);
@@ -4233,7 +4233,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4244,53 +4244,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2313);
 					end
 				end,
-			[2312]=function()	--µÐÈËËÀÊØ
+			[2312]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,6,21,11,26) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,6,21,11,26) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2313]=function()	--µÐÈË³ö»÷
+			[2313]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4299,17 +4299,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4317,15 +4317,15 @@ Event=	{
 			[2320]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4333,52 +4333,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(32,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	2,5,"ÓÒ",false,
-								3,6,"ÓÒ",false,
-								3,4,"ÓÒ",false,
-								1,4,"ÓÒ",false,
-								1,6,"ÓÒ",false,
-								4,5,"ÓÒ",false,
-								4,7,"ÓÒ",false,
-								3,8,"ÓÒ",false,
-								4,9,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(32,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	2,5,"å³",false,
+								3,6,"å³",false,
+								3,4,"å³",false,
+								1,4,"å³",false,
+								1,6,"å³",false,
+								4,5,"å³",false,
+								4,7,"å³",false,
+								3,8,"å³",false,
+								4,9,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,27,19,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,24,19,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,26,16,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,9,10,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,16,12,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,10,10,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,13,14,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,19,9,"×ó","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,17,13,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,21,17,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,25,12,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,27,19,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,24,19,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,26,16,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,9,10,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,16,12,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,10,10,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,13,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,19,9,"å·¦","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,17,13,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,21,17,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,25,12,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,27,19,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,24,19,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,26,16,"ÉÏ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,9,10,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,16,12,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,10,10,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(7,p,13,14,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(8,p,19,9,"×ó","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,17,13,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(10,p,21,17,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(11,p,25,12,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,27,19,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,24,19,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,26,16,"ä¸Š","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,9,10,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,16,12,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,10,10,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,13,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,19,9,"å·¦","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,17,13,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,21,17,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,25,12,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2321);
@@ -4391,7 +4391,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4402,53 +4402,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2323);
 					end
 				end,
-			[2322]=function()	--µÐÈËËÀÊØ
+			[2322]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,20,14,28,20) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,20,14,28,20) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2323]=function()	--µÐÈË³ö»÷
+			[2323]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4457,17 +4457,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4475,15 +4475,15 @@ Event=	{
 			[2330]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid)*99;
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4491,53 +4491,53 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(33,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	3,31,"ÓÒ",false,
-								2,30,"ÓÒ",false,
-								5,31,"ÓÒ",false,
-								4,30,"ÓÒ",false,
-								3,29,"ÓÒ",false,
-								2,28,"ÓÒ",false,
-								6,30,"ÓÒ",false,
-								5,29,"ÓÒ",false,
-								7,31,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(33,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	3,31,"å³",false,
+								2,30,"å³",false,
+								5,31,"å³",false,
+								4,30,"å³",false,
+								3,29,"å³",false,
+								2,28,"å³",false,
+								6,30,"å³",false,
+								5,29,"å³",false,
+								7,31,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
+					--æ•Œå†›
 					enpcnum=1
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,16,1,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,13,1,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,15,3,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,4,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,16,11,"×ó","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,11,9,"ÏÂ","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,17,13,"×ó","µÐ",false,"Îä",3,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,12,21,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,11,20,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,10,25,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,11,23,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,16,1,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,13,1,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,15,3,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,4,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,16,11,"å·¦","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,11,9,"ä¸‹","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,17,13,"å·¦","æ•Œ",false,"æ­¦",3,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,12,21,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,11,20,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,10,25,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,11,23,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,16,1,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,13,1,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,15,3,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,4,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,16,11,"×ó","µÐ",false,"Îä",3,"³ö»÷",0,0);
-						InsertWarTeam(6,p,11,9,"ÏÂ","µÐ",false,"Îä",3,"³ö»÷",0,0);
-						InsertWarTeam(7,p,17,13,"×ó","µÐ",false,"Îä",3,"³ö»÷",0,0);
-						InsertWarTeam(8,p,12,21,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,11,20,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,10,25,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,11,23,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,16,1,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,13,1,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,15,3,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,4,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,16,11,"å·¦","æ•Œ",false,"æ­¦",3,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,11,9,"ä¸‹","æ•Œ",false,"æ­¦",3,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,17,13,"å·¦","æ•Œ",false,"æ­¦",3,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,12,21,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,11,20,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,10,25,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,11,23,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2331);
@@ -4550,7 +4550,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4561,53 +4561,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2333);
 					end
 				end,
-			[2332]=function()	--µÐÈËËÀÊØ
+			[2332]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,20,10) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,1,1,20,10) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*22 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2333]=function()	--µÐÈË³ö»÷
+			[2333]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4616,17 +4616,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4634,15 +4634,15 @@ Event=	{
 			[2380]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4650,52 +4650,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(38,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	2,11,"ÓÒ",false,
-								1,10,"ÓÒ",false,
-								1,12,"ÓÒ",false,
-								2,9,"ÓÒ",false,
-								2,13,"ÓÒ",false,
-								1,8,"ÓÒ",false,
-								1,14,"ÓÒ",false,
-								2,7,"ÓÒ",false,
-								2,15,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(38,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	2,11,"å³",false,
+								1,10,"å³",false,
+								1,12,"å³",false,
+								2,9,"å³",false,
+								2,13,"å³",false,
+								1,8,"å³",false,
+								1,14,"å³",false,
+								2,7,"å³",false,
+								2,15,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,18,14,"×ó","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,18,17,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,16,15,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,14,"×ó","µÐ",false,"Îä",1,"¼áÊØ",0,0);
-						InsertWarTeam(5,p,8,17,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,8,11,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,10,16,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,10,13,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,2,21,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,24,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,15,30,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",8,14);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,18,14,"å·¦","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,18,17,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,16,15,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,14,"å·¦","æ•Œ",false,"æ­¦",1,"åšå®ˆ",0,0);
+						InsertWarTeam(5,p,8,17,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,8,11,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,10,16,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,10,13,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,2,21,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,24,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,15,30,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",8,14);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,18,14,"×ó","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,18,17,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,16,15,"×ó","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,14,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,8,17,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(6,p,8,11,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(7,p,10,16,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(8,p,10,13,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(9,p,2,21,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,6,24,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(11,p,15,30,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,18,14,"å·¦","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,18,17,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,16,15,"å·¦","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,14,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,8,17,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,8,11,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,10,16,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,10,13,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,2,21,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,6,24,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,15,30,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2381);
@@ -4708,7 +4708,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4719,53 +4719,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2383);
 					end
 				end,
-			[2382]=function()	--µÐÈËËÀÊØ
+			[2382]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,16,12,20,17) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,16,12,20,17) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2383]=function()	--µÐÈË³ö»÷
+			[2383]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4774,17 +4774,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4792,15 +4792,15 @@ Event=	{
 			[2470]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4808,52 +4808,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(47,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	1,4,"ÓÒ",false,
-								1,6,"ÓÒ",false,
-								1,2,"ÓÒ",false,
-								2,5,"ÓÒ",false,
-								2,7,"ÓÒ",false,
-								3,6,"ÓÒ",false,
-								3,8,"ÓÒ",false,
-								4,7,"ÓÒ",false,
-								4,9,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(47,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	1,4,"å³",false,
+								1,6,"å³",false,
+								1,2,"å³",false,
+								2,5,"å³",false,
+								2,7,"å³",false,
+								3,6,"å³",false,
+								3,8,"å³",false,
+								4,7,"å³",false,
+								4,9,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,17,17,"×ó","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,17,19,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,14,17,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,17,14,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,12,10,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,9,14,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,14,5,"ÏÂ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,3,14,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,4,19,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,18,9,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,9,20,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,17,17,"å·¦","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,17,19,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,14,17,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,17,14,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,12,10,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,9,14,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,14,5,"ä¸‹","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,3,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,4,19,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,18,9,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,9,20,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,17,17,"×ó","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,17,19,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,14,17,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(4,p,17,14,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(5,p,12,10,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,9,14,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,14,5,"ÏÂ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(8,p,3,14,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(9,p,4,19,"ÉÏ","µÐ",false,"Îä",4,"³ö»÷",0,0);
-						InsertWarTeam(10,p,18,9,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(11,p,9,20,"ÉÏ","µÐ",false,"Îä",5,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,17,17,"å·¦","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,17,19,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,14,17,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,17,14,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,12,10,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,9,14,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,14,5,"ä¸‹","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,3,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(9,p,4,19,"ä¸Š","æ•Œ",false,"æ­¦",4,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,18,9,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,9,20,"ä¸Š","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2471);
@@ -4866,7 +4866,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -4877,53 +4877,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2473);
 					end
 				end,
-			[2472]=function()	--µÐÈËËÀÊØ
+			[2472]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,10,10,24,24) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,10,10,24,24) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2473]=function()	--µÐÈË³ö»÷
+			[2473]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -4932,17 +4932,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -4950,15 +4950,15 @@ Event=	{
 			[2410]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -4966,71 +4966,71 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(41,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	20,2,"ÏÂ",false,
-								18,2,"ÏÂ",false,
-								22,2,"ÏÂ",false,
-								19,3,"ÏÂ",false,
-								21,3,"ÏÂ",false,
-								23,3,"ÏÂ",false,
-								17,3,"ÏÂ",false,
-								18,4,"ÏÂ",false,
-								22,4,"ÏÂ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(41,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	20,2,"ä¸‹",false,
+								18,2,"ä¸‹",false,
+								22,2,"ä¸‹",false,
+								19,3,"ä¸‹",false,
+								21,3,"ä¸‹",false,
+								23,3,"ä¸‹",false,
+								17,3,"ä¸‹",false,
+								18,4,"ä¸‹",false,
+								22,4,"ä¸‹",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,21,26,"ÉÏ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,20,26,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,21,23,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,15,10,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,26,10,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,12,26,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,29,26,"ÓÒ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,16,11,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,25,11,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,13,25,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,28,25,"ÓÒ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,21,26,"ä¸Š","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,20,26,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,21,23,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,15,10,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,26,10,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,12,26,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,29,26,"å³","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,16,11,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,25,11,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,13,25,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,28,25,"å³","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,21,26,"ÉÏ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,20,26,"ÉÏ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,21,23,"ÉÏ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(4,p,15,10,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,26,10,"ÉÏ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,12,26,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,29,26,"ÓÒ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,16,11,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,25,11,"ÉÏ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,13,25,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(11,p,28,25,"ÓÒ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,21,26,"ä¸Š","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,20,26,"ä¸Š","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,21,23,"ä¸Š","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,15,10,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,26,10,"ä¸Š","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,12,26,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,29,26,"å³","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,16,11,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,25,11,"ä¸Š","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,13,25,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,28,25,"å³","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 						---
-						InsertWarPerson(6,GenPerson(true,0,"²½±ø¶Ó"),7,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(6,GenPerson(true,0,"²½±ø¶Ó"),8,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(6,GenPerson(true,0,"¹­±ø¶Ó"),9,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(6,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),7,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(6,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),8,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(6,GenPerson(true,0,"å¼“å…µé˜Ÿ"),9,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(7,GenPerson(true,0,"²½±ø¶Ó"),33,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(7,GenPerson(true,0,"²½±ø¶Ó"),34,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(7,GenPerson(true,0,"¹­±ø¶Ó"),32,21,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(7,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),33,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(7,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),34,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(7,GenPerson(true,0,"å¼“å…µé˜Ÿ"),32,21,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),20,19,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),21,19,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),15,17,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),26,17,"ÉÏ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),20,19,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),21,19,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),15,17,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),26,17,"ä¸Š",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(4,GenPerson(true,0,"²½±ø¶Ó"),7,12,"ÓÒ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(4,GenPerson(true,0,"¹­±ø¶Ó"),9,14,"ÓÒ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(5,GenPerson(true,0,"²½±ø¶Ó"),34,12,"×ó",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(5,GenPerson(true,0,"¹­±ø¶Ó"),32,14,"×ó",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(4,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),7,12,"å³",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(4,GenPerson(true,0,"å¼“å…µé˜Ÿ"),9,14,"å³",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(5,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),34,12,"å·¦",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(5,GenPerson(true,0,"å¼“å…µé˜Ÿ"),32,14,"å·¦",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 					JY.Status=GAME_WMAP;
 					NextEvent(2411);
 				end,
@@ -5042,7 +5042,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -5053,66 +5053,66 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2413);
 					end
 				end,
-			[2412]=function()	--µÐÈËËÀÊØ
+			[2412]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(51)) and WarCheckArea(-1,5,11,36,16) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(51)) and WarCheckArea(-1,5,11,36,16) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(51,1);
-							WarModifyTeamAI(4,"³ö»÷",0,0);
-							WarModifyTeamAI(5,"³ö»÷",0,0);
-							WarModifyTeamAI(8,"³ö»÷",0,0);
-							WarModifyTeamAI(9,"³ö»÷",0,0);
+							WarModifyTeamAI(4,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(5,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(8,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(9,"å‡ºå‡»",0,0);
 						end
-						if (not WarCheckFlag(52)) and WarCheckArea(-1,12,17,29,22) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(52)) and WarCheckArea(-1,12,17,29,22) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(52,1);
-							WarModifyTeamAI(6,"³ö»÷",0,0);
-							WarModifyTeamAI(7,"³ö»÷",0,0);
-							WarModifyTeamAI(10,"³ö»÷",0,0);
-							WarModifyTeamAI(11,"³ö»÷",0,0);
+							WarModifyTeamAI(6,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(7,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(10,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(11,"å‡ºå‡»",0,0);
 						end
-						if (not WarCheckFlag(53)) and WarCheckArea(-1,18,23,23,28) then	--µÐÈË½øÈë³ÇÄÚ
+						if (not WarCheckFlag(53)) and WarCheckArea(-1,18,23,23,28) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(53,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
-							WarModifyTeamAI(2,"³ö»÷",0,0);
-							WarModifyTeamAI(3,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
+							WarModifyTeamAI(2,"å‡ºå‡»",0,0);
+							WarModifyTeamAI(3,"å‡ºå‡»",0,0);
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2413]=function()	--µÐÈË³ö»÷
+			[2413]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -5121,17 +5121,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -5139,15 +5139,15 @@ Event=	{
 			[2420]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid)*99;
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -5155,72 +5155,72 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(42,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	13,23,"ÉÏ",false,
-								12,24,"ÉÏ",false,
-								14,24,"ÉÏ",false,
-								11,23,"ÉÏ",false,
-								15,23,"ÉÏ",false,
-								10,24,"ÉÏ",false,
-								16,24,"ÉÏ",false,
-								9,23,"ÉÏ",false,
-								17,23,"ÉÏ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(42,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	13,23,"ä¸Š",false,
+								12,24,"ä¸Š",false,
+								14,24,"ä¸Š",false,
+								11,23,"ä¸Š",false,
+								15,23,"ä¸Š",false,
+								10,24,"ä¸Š",false,
+								16,24,"ä¸Š",false,
+								9,23,"ä¸Š",false,
+								17,23,"ä¸Š",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
+					--æ•Œå†›
 					enpcnum=0;
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,14,5,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,14,4,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,14,15,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,5,"×ó","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,14,7,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,7,14,"ÓÒ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,5,10,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,15,14,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,9,4,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,20,7,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,5,8,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,14,5,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,14,4,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,14,15,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,5,"å·¦","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,14,7,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,7,14,"å³","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,5,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,15,14,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,9,4,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,20,7,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,5,8,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,14,5,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,14,4,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,14,15,"ÏÂ","µÐ",false,"Îä",1,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,8,5,"×ó","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(5,p,14,7,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,7,14,"ÓÒ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(7,p,5,10,"ÏÂ","µÐ",false,"Îä",1,"³ö»÷",0,0);
-						InsertWarTeam(8,p,15,14,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,9,4,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(10,p,20,7,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(11,p,5,8,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,14,5,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,14,4,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,14,15,"ä¸‹","æ•Œ",false,"æ­¦",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,8,5,"å·¦","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,14,7,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,7,14,"å³","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,5,10,"ä¸‹","æ•Œ",false,"æ­¦",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,15,14,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,9,4,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(10,p,20,7,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(11,p,5,8,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 						---
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),16,5,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),16,4,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),16,5,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),16,4,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),14,13,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),15,13,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),14,13,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),15,13,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),7,14,"ÓÒ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),6,14,"ÓÒ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),7,14,"å³",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),6,14,"å³",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(3,GenPerson(true,0,"²½±ø¶Ó"),5,10,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(3,GenPerson(true,0,"¹­±ø¶Ó"),5,9,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"æ­¥å…µé˜Ÿ"),5,10,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(3,GenPerson(true,0,"å¼“å…µé˜Ÿ"),5,9,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 						
-						InsertWarPerson(2,GenPerson(true,0,"¹­±ø¶Ó"),12,11,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(2,GenPerson(true,0,"¹­±ø¶Ó"),17,11,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(2,GenPerson(true,0,"¹­±ø¶Ó"),8,11,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(2,GenPerson(true,0,"¹­±ø¶Ó"),12,7,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
-						InsertWarPerson(2,GenPerson(true,0,"¹­±ø¶Ó"),17,7,"ÏÂ",1+math.random(0,1)-math.random(0,1),"µÐ",false,"¾¯½ä",0,0);
+						InsertWarPerson(2,GenPerson(true,0,"å¼“å…µé˜Ÿ"),12,11,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(2,GenPerson(true,0,"å¼“å…µé˜Ÿ"),17,11,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(2,GenPerson(true,0,"å¼“å…µé˜Ÿ"),8,11,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(2,GenPerson(true,0,"å¼“å…µé˜Ÿ"),12,7,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
+						InsertWarPerson(2,GenPerson(true,0,"å¼“å…µé˜Ÿ"),17,7,"ä¸‹",1+math.random(0,1)-math.random(0,1),"æ•Œ",false,"è­¦æˆ’",0,0);
 					JY.Status=GAME_WMAP;
 					NextEvent(2421);
 				end,
@@ -5232,7 +5232,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -5243,53 +5243,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2423);
 					end
 				end,
-			[2422]=function()	--µÐÈËËÀÊØ
+			[2422]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,18,8) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,18,8) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*22 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2423]=function()	--µÐÈË³ö»÷
+			[2423]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -5298,17 +5298,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,
@@ -5316,15 +5316,15 @@ Event=	{
 			[2480]=function()
 					local wid;
 					local p={};
-					--µÐ¾üÊÆÁ¦ÆÀ¹À
-					local cid=JY.Base["¹¥´ò³Ç³Ø"];
+					--æ•Œå†›åŠ¿åŠ›è¯„ä¼°
+					local cid=JY.Base["æ”»æ‰“åŸŽæ± "];
 					local pt=GetCityPT(cid);
-					local fid=JY.City[cid]["ÊÆÁ¦"];
+					local fid=JY.City[cid]["åŠ¿åŠ›"];
 					if fid==0 then
-						fid=52;	--ÔôÊÆÁ¦
+						fid=52;	--è´¼åŠ¿åŠ›
 					end
 					local bc_flag=false;
-					if cid==JY.Force[fid]["±¾³Ç"] then
+					if cid==JY.Force[fid]["æœ¬åŸŽ"] then
 						bc_flag=true;
 					end
 					p=FilterPerson(fid,pt,bc_flag);
@@ -5332,52 +5332,52 @@ Event=	{
 					local enpcnum=0;
 					for i=1,enum do
 						local pid=p[i];
-						enpcnum=enpcnum+1+JY.Person[pid]["Æ·¼¶"];
+						enpcnum=enpcnum+1+JY.Person[pid]["å“çº§"];
 					end
 					
-					--Õ½³¡¶¨Òå
+					--æˆ˜åœºå®šä¹‰
 					WarIni();
-					DefineWarMap(48,JY.City[cid]["Ãû³Æ"].."¹¥ÂÔÕ½","Ò»¡¢È«ÃðµÐ¾ü£®",20,"Ö÷½Ç",p[1]);
-					--ÎÒ¾ü
-					SelectTeam(	1,4,"ÓÒ",false,
-								1,2,"ÓÒ",false,
-								2,3,"ÓÒ",false,
-								2,5,"ÓÒ",false,
-								3,2,"ÓÒ",false,
-								3,4,"ÓÒ",false,
-								3,6,"ÓÒ",false,
-								4,3,"ÓÒ",false,
-								4,5,"ÓÒ",false)
-					WarSetFlag(101,War.Person[1].id);	--ÎÒ·½Ö÷Ë§ID
+					DefineWarMap(48,JY.City[cid]["åç§°"].."æ”»ç•¥æˆ˜","ä¸€ã€å…¨ç­æ•Œå†›ï¼Ž",20,"ä¸»è§’",p[1]);
+					--æˆ‘å†›
+					SelectTeam(	1,4,"å³",false,
+								1,2,"å³",false,
+								2,3,"å³",false,
+								2,5,"å³",false,
+								3,2,"å³",false,
+								3,4,"å³",false,
+								3,6,"å³",false,
+								4,3,"å³",false,
+								4,5,"å³",false)
+					WarSetFlag(101,War.Person[1].id);	--æˆ‘æ–¹ä¸»å¸…ID
 					local mnum=War.PersonNum;
-					--µÐ¾ü
-					-- 1 normal; 2¹­¼ý; 3 Ë®Õ½; 4 Ôô±ø; 5 Æï±ø
-					if mnum*1.5>enpcnum then	--¼áÊØ³Ç³Ø
-						WarSetFlag(1,1);--ÎÒ·½¹¥»÷£¬µÐ·½·ÀÊØ
-						InsertWarTeam(1,p,17,3,"ÏÂ","µÐ",false,"Ë§",1,"¼áÊØ",0,0);
-						InsertWarTeam(2,p,14,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,16,12,"ÏÂ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(4,p,14,11,"ÏÂ","µÐ",false,"Îä",2,"¾¯½ä",0,0);
-						InsertWarTeam(5,p,17,6,"ÏÂ","µÐ",false,"ÎÄ",1,"¾¯½ä",0,0);
-						InsertWarTeam(6,p,16,16,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(7,p,13,17,"×ó","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(8,p,9,15,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,5,16,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,14,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,19,15,"×ó","µÐ",false,"Îä",2,"¾¯½ä",0,0);
+					--æ•Œå†›
+					-- 1 normal; 2å¼“ç®­; 3 æ°´æˆ˜; 4 è´¼å…µ; 5 éª‘å…µ
+					if mnum*1.5>enpcnum then	--åšå®ˆåŸŽæ± 
+						WarSetFlag(1,1);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹é˜²å®ˆ
+						InsertWarTeam(1,p,17,3,"ä¸‹","æ•Œ",false,"å¸…",1,"åšå®ˆ",0,0);
+						InsertWarTeam(2,p,14,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,16,12,"ä¸‹","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(4,p,14,11,"ä¸‹","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(5,p,17,6,"ä¸‹","æ•Œ",false,"æ–‡",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(6,p,16,16,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(7,p,13,17,"å·¦","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(8,p,9,15,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,5,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,19,15,"å·¦","æ•Œ",false,"æ­¦",2,"è­¦æˆ’",0,0);
 					else
-						WarSetFlag(1,2);--ÎÒ·½¹¥»÷£¬µÐ·½³ö»÷
-						InsertWarTeam(1,p,17,3,"ÏÂ","µÐ",false,"Ë§",1,"¾¯½ä",0,0);
-						InsertWarTeam(2,p,14,5,"ÏÂ","µÐ",false,"ÎÄ",2,"¾¯½ä",0,0);
-						InsertWarTeam(3,p,16,12,"ÏÂ","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(4,p,14,11,"ÏÂ","µÐ",false,"Îä",2,"³ö»÷",0,0);
-						InsertWarTeam(5,p,17,6,"ÏÂ","µÐ",false,"ÎÄ",1,"³ö»÷",0,0);
-						InsertWarTeam(6,p,16,16,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(7,p,13,17,"×ó","µÐ",false,"Îä",5,"³ö»÷",0,0);
-						InsertWarTeam(8,p,9,15,"ÉÏ","µÐ",false,"Îä",5,"¾¯½ä",0,0);
-						InsertWarTeam(9,p,5,16,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(10,p,6,14,"ÉÏ","µÐ",false,"Îä",4,"¾¯½ä",0,0);
-						InsertWarTeam(11,p,19,15,"×ó","µÐ",false,"Îä",2,"³ö»÷",0,0);
+						WarSetFlag(1,2);--æˆ‘æ–¹æ”»å‡»ï¼Œæ•Œæ–¹å‡ºå‡»
+						InsertWarTeam(1,p,17,3,"ä¸‹","æ•Œ",false,"å¸…",1,"è­¦æˆ’",0,0);
+						InsertWarTeam(2,p,14,5,"ä¸‹","æ•Œ",false,"æ–‡",2,"è­¦æˆ’",0,0);
+						InsertWarTeam(3,p,16,12,"ä¸‹","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(4,p,14,11,"ä¸‹","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
+						InsertWarTeam(5,p,17,6,"ä¸‹","æ•Œ",false,"æ–‡",1,"å‡ºå‡»",0,0);
+						InsertWarTeam(6,p,16,16,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(7,p,13,17,"å·¦","æ•Œ",false,"æ­¦",5,"å‡ºå‡»",0,0);
+						InsertWarTeam(8,p,9,15,"ä¸Š","æ•Œ",false,"æ­¦",5,"è­¦æˆ’",0,0);
+						InsertWarTeam(9,p,5,16,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(10,p,6,14,"ä¸Š","æ•Œ",false,"æ­¦",4,"è­¦æˆ’",0,0);
+						InsertWarTeam(11,p,19,15,"å·¦","æ•Œ",false,"æ­¦",2,"å‡ºå‡»",0,0);
 					end
 					JY.Status=GAME_WMAP;
 					NextEvent(2481);
@@ -5390,7 +5390,7 @@ Event=	{
 						WarTalk(WarGetFlag(111),21);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,21);
 							end
 						end
@@ -5401,53 +5401,53 @@ Event=	{
 						WarTalk(WarGetFlag(111),20);
 						for i=2,WarGetFlag(11) do
 							local pid=WarGetFlag(110+i);
-							if JY.Person[pid]["Ì¨´Ê"]>=0 then
+							if JY.Person[pid]["å°è¯"]>=0 then
 								WarTalk(pid,20);
 							end
 						end
 						NextEvent(2483);
 					end
 				end,
-			[2482]=function()	--µÐÈËËÀÊØ
+			[2482]=function()	--æ•Œäººæ­»å®ˆ
 					if JY.Status==GAME_WARWIN then
-						--Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						--Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
-						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,20,13) then	--µÐÈË½øÈë³ÇÄÚ
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
+						if (not WarCheckFlag(54)) and WarCheckArea(-1,11,1,20,13) then	--æ•Œäººè¿›å…¥åŸŽå†…
 							WarSetFlag(54,1);
-							WarModifyTeamAI(1,"¾¯½ä",0,0);
+							WarModifyTeamAI(1,"è­¦æˆ’",0,0);
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if (not WarCheckFlag(55)) and War.PersonNumEnemy>War.PersonNumWe*2 then
 							PlayBGM(12);
 							WarSetFlag(55,1);
 							WarTalk(WarGetFlag(111),14);
 							for i=1,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 					end
 				end,
-			[2483]=function()	--µÐÈË³ö»÷
+			[2483]=function()	--æ•Œäººå‡ºå‡»
 					if JY.Status==GAME_WARWIN then
-						Talk(WarGetFlag(101),"¿É¡¢¿É¶ñ¡­¡­„¢‚äÐ¡¶ù£¡ÍÛ£¡£¡");
+						Talk(WarGetFlag(101),"å¯ã€å¯æ¶â€¦â€¦åŠ‰å‚™å°å„¿ï¼å“‡ï¼ï¼");
 					end
-					if JY.EventType==War_Event_Action then	--ÐÐ¶¯ºó
+					if JY.EventType==War_Event_Action then	--è¡ŒåŠ¨åŽ
 						
 					end
-					if JY.EventType==War_Event_TurnM then	--ÎÒ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnM then	--æˆ‘å†›å›žåˆå¼€å§‹
 						--War.PersonNumWe=0;
 						--War.PersonNumFriend=0;
 						--War.PersonNumEnemy=0;
@@ -5456,17 +5456,17 @@ Event=	{
 							WarTalk(WarGetFlag(101),14);
 						end
 					end
-					if JY.EventType==War_Event_TurnF then	--ÓÑ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnF then	--å‹å†›å›žåˆå¼€å§‹
 						
 					end
-					if JY.EventType==War_Event_TurnE then	--µÐ¾ü»ØºÏ¿ªÊ¼
+					if JY.EventType==War_Event_TurnE then	--æ•Œå†›å›žåˆå¼€å§‹
 						if War.Turn==3 then
 							for i=2,WarGetFlag(11) do
-								WarModifyTeamAI(i,"³ö»÷",0,0);
+								WarModifyTeamAI(i,"å‡ºå‡»",0,0);
 							end
 						end
 						if War.Turn==4 then
-							WarModifyTeamAI(1,"³ö»÷",0,0);
+							WarModifyTeamAI(1,"å‡ºå‡»",0,0);
 						end
 					end
 				end,

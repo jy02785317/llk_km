@@ -1,12 +1,12 @@
 --[[
-ÊÆÁ¦AI  - ¾ö¶¨³ÇÊĞAIÀàĞÍ
-  - ÊÆÁ¦AI·ÖÎª ´ı¶¨ ÕşÂÔ ¾ü±¸  ¹¥»÷³ÇÊĞ  Í³Ò»Öİ »÷°ÜÊÆÁ¦  µÈ
-³ÇÊĞAI  - ¾ö¶¨ ÄÚÕş / Õ½Õù
-  - ¸ù¾İ³¤ÆÚÄ¿±ê, ¾ö¶¨µ±ÔÂAI
-    - ³¤ÆÚÄ¿±ê·ÖÎª: Î¯ÈÎ  ÕşÂÔ  ¾ü±¸  ¹¥»÷XX
-  - µ±ÔÂAI, Ê×ÏÈÅĞ¶ÏÊÇ·ñ½øĞĞÕ½Õù
-    - Õ½Õù  ¾ö¶¨¹¥»÷Ä¿±ê
-    - ÄÚÕş  ×Ô¶¯·ÖÅäÊôÏÂÈÎÎñ
+åŠ¿åŠ›AI  - å†³å®šåŸå¸‚AIç±»å‹
+  - åŠ¿åŠ›AIåˆ†ä¸º å¾…å®š æ”¿ç•¥ å†›å¤‡  æ”»å‡»åŸå¸‚  ç»Ÿä¸€å· å‡»è´¥åŠ¿åŠ›  ç­‰
+åŸå¸‚AI  - å†³å®š å†…æ”¿ / æˆ˜äº‰
+  - æ ¹æ®é•¿æœŸç›®æ ‡, å†³å®šå½“æœˆAI
+    - é•¿æœŸç›®æ ‡åˆ†ä¸º: å§”ä»»  æ”¿ç•¥  å†›å¤‡  æ”»å‡»XX
+  - å½“æœˆAI, é¦–å…ˆåˆ¤æ–­æ˜¯å¦è¿›è¡Œæˆ˜äº‰
+    - æˆ˜äº‰  å†³å®šæ”»å‡»ç›®æ ‡
+    - å†…æ”¿  è‡ªåŠ¨åˆ†é…å±ä¸‹ä»»åŠ¡
 
 
 
@@ -15,30 +15,30 @@
 ]]--
 function AI_Force()
 	for fid, v in pairs(JY.Force) do
-		if v["×´Ì¬"] > 0 then
-      if v["Õ½ÂÔ"] == 0 then  --Õ½ÂÔÍê³É »òÕß ÎŞ·¨´ï³É
-        --Éú³ÉĞÂÕ½ÂÔ
-        local capital = JY.City[v["±¾³Ç"]];
-        local leader = v["¾ıÖ÷"];
-        --Õ½ÂÔcode: 0,´ı¶¨  1,Í³Ò»ÖĞÔ­  2,Í³Ò»µØ·½  3,Í³Ò»Öİ   4,Î¬³ÖÏÖ×´  5,»÷ÆÆÊÆÁ¦  6,ÓµÁ¢ººµÛ
+		if v["çŠ¶æ€"] > 0 then
+      if v["æˆ˜ç•¥"] == 0 then  --æˆ˜ç•¥å®Œæˆ æˆ–è€… æ— æ³•è¾¾æˆ
+        --ç”Ÿæˆæ–°æˆ˜ç•¥
+        local capital = JY.City[v["æœ¬åŸ"]];
+        local leader = v["å›ä¸»"];
+        --æˆ˜ç•¥code: 0,å¾…å®š  1,ç»Ÿä¸€ä¸­åŸ  2,ç»Ÿä¸€åœ°æ–¹  3,ç»Ÿä¸€å·   4,ç»´æŒç°çŠ¶  5,å‡»ç ´åŠ¿åŠ›  6,æ‹¥ç«‹æ±‰å¸
         local cityNum = 0;
         local atkCity = {};
-        local atkZhou = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; --ÓÄÖİ ¼½Öİ ÇàÖİ ²¢Öİ ĞìÖİ ÙğÖİ Ô¥Öİ Ë¾Á¥ »´ÄÏ ÓºÖİ Á¹Öİ ÒæÖİ ÄÏÖĞ ¾£±± ¾£ÄÏ ÑïÖİ
-        local atkArea = {0, 0, 0, 0, 0, 0, 0, 0}; --ºÓ±± ÖĞÔ­ Î÷±± °ÍÊñ ÇG³ş ÎâÔ½
-        for i = 1, JY.ConnectionNum - 1 do  --»ñÈ¡¿É¹¥»÷³ÇÊĞÁĞ±í, Õâ¸ö·½·¨ÏÔÈ»²»¹»ºÃ
-          local cid, eid = JY.Connection[i]["¶¼ÊĞ1"], JY.Connection[i]["¶¼ÊĞ2"];
-          if JY.City[cid]["ÊÆÁ¦"] == fid and JY.City[eid]["ÊÆÁ¦"] ~= fid and (not atkCity[eid]) then
+        local atkZhou = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; --å¹½å· å†€å· é’å· å¹¶å· å¾å· å…–å· è±«å· å¸éš¶ æ·®å— é›å· å‡‰å· ç›Šå· å—ä¸­ è†åŒ— è†å— æ‰¬å·
+        local atkArea = {0, 0, 0, 0, 0, 0, 0, 0}; --æ²³åŒ— ä¸­åŸ è¥¿åŒ— å·´èœ€ èŠæ¥š å´è¶Š
+        for i = 1, JY.ConnectionNum - 1 do  --è·å–å¯æ”»å‡»åŸå¸‚åˆ—è¡¨, è¿™ä¸ªæ–¹æ³•æ˜¾ç„¶ä¸å¤Ÿå¥½
+          local cid, eid = JY.Connection[i]["éƒ½å¸‚1"], JY.Connection[i]["éƒ½å¸‚2"];
+          if JY.City[cid]["åŠ¿åŠ›"] == fid and JY.City[eid]["åŠ¿åŠ›"] ~= fid and (not atkCity[eid]) then
             atkCity[eid] = true;
             local c = JY.City[eid];
-            local zhou = c["Öİ"];
-            local area = c["µØ·½"];
+            local zhou = c["å·"];
+            local area = c["åœ°æ–¹"];
             local pt = 100;
-            pt = pt + limitX(c["ÈË¿Ú"], 500, 10000) / 100 + c["¹æÄ£"] * 10;    --ÈË¿Ú 500-10000 => 5-100 ¹æÄ£ 1-4 => 10-40
-            if c["ÊÆÁ¦"] == 0 then  --¿Õ³Ç
+            pt = pt + limitX(c["äººå£"], 500, 10000) / 100 + c["è§„æ¨¡"] * 10;    --äººå£ 500-10000 => 5-100 è§„æ¨¡ 1-4 => 10-40
+            if c["åŠ¿åŠ›"] == 0 then  --ç©ºåŸ
               pt = pt + 100;
             else
-              pt = pt * limitX(1 - c["·ÀÓù"] / 10000 - c["±øÁ¦"] / 200000, 0.1, 1); --·ÀÓù 0-2000 => 0-0.2 ±øÁ¦ 0-200000 => 0-1
-              --Íâ½»
+              pt = pt * limitX(1 - c["é˜²å¾¡"] / 10000 - c["å…µåŠ›"] / 200000, 0.1, 1); --é˜²å¾¡ 0-2000 => 0-0.2 å…µåŠ› 0-200000 => 0-1
+              --å¤–äº¤
               if false then
                 pt = pt * 1;
               end
@@ -51,14 +51,14 @@ function AI_Force()
             end
           end
         end
-        --×ÔÊÆÁ¦¶¼³ÇËùÔÚÖİ/µØ·½, ptÉÏÉı
-        if atkZhou[capital["Öİ"]] > 0 then
-          atkZhou[capital["Öİ"]] = atkZhou[capital["Öİ"]] + 50;
-          atkArea[capital["µØ·½"]] = atkArea[capital["µØ·½"]] + 50;
+        --è‡ªåŠ¿åŠ›éƒ½åŸæ‰€åœ¨å·/åœ°æ–¹, ptä¸Šå‡
+        if atkZhou[capital["å·"]] > 0 then
+          atkZhou[capital["å·"]] = atkZhou[capital["å·"]] + 50;
+          atkArea[capital["åœ°æ–¹"]] = atkArea[capital["åœ°æ–¹"]] + 50;
         end
-        --ÒÀ¾İÊÆÁ¦¹ØÏµµ÷Õûpt
-        if fid == 1 or leader == 334 then --²Ü²Ù
-          --ÙğÖİ ĞìÖİ Ô¥Öİ ÖĞÔ­ > ºÓ±± > ¾£³ş > ÎâÔ½ > Î÷±± > °ÍÊñ
+        --ä¾æ®åŠ¿åŠ›å…³ç³»è°ƒæ•´pt
+        if fid == 1 or leader == 334 then --æ›¹æ“
+          --å…–å· å¾å· è±«å· ä¸­åŸ > æ²³åŒ— > è†æ¥š > å´è¶Š > è¥¿åŒ— > å·´èœ€
           if atkZhou[6] > 0 then atkZhou[6] = atkZhou[6] + 100 end
           if atkZhou[5] > 0 then atkZhou[5] = atkZhou[5] + 50 end
           if atkZhou[7] > 0 then atkZhou[7] = atkZhou[7] + 30 end
@@ -66,26 +66,26 @@ function AI_Force()
           if atkArea[1] > 0 then atkArea[1] = atkArea[1] + 80 end
           if atkArea[6] > 0 then atkArea[6] = atkArea[6] + 50 end
           if atkArea[3] > 0 then atkArea[3] = atkArea[3] + 30 end
-        elseif fid == 2 or leader == 611 then --Áõ±¸
-          --°ÍÊñ > ¾£³ş > ÖĞÔ­
+        elseif fid == 2 or leader == 611 then --åˆ˜å¤‡
+          --å·´èœ€ > è†æ¥š > ä¸­åŸ
           if atkArea[4] > 0 then atkArea[4] = atkArea[4] + 100 end
           if atkArea[5] > 0 then atkArea[5] = atkArea[5] + 80 end
           if atkArea[2] > 0 then atkArea[2] = atkArea[2] + 50 end
-        elseif leader == 356 or leader == 360 then --Ëï¼á/²ß
-          --ÑïÖİ »´ÄÏ   ÎâÔ½ > ÖĞÔ­ > ¾£³ş
+        elseif leader == 356 or leader == 360 then --å­™åš/ç­–
+          --æ‰¬å· æ·®å—   å´è¶Š > ä¸­åŸ > è†æ¥š
           if atkZhou[16] > 0 then atkZhou[16] = atkZhou[16] + 100 end
           if atkZhou[9] > 0 then atkZhou[9] = atkZhou[9] + 80 end
           if atkArea[6] > 0 then atkArea[6] = atkArea[6] + 100 end
           if atkArea[2] > 0 then atkArea[2] = atkArea[2] + 80 end
           if atkArea[5] > 0 then atkArea[5] = atkArea[5] + 50 end
-        elseif fid == 3 or leader == 357 then --ËïÈ¨
-          --ÑïÖİ »´ÄÏ   ÎâÔ½ > ¾£³ş
+        elseif fid == 3 or leader == 357 then --å­™æƒ
+          --æ‰¬å· æ·®å—   å´è¶Š > è†æ¥š
           if atkZhou[16] > 0 then atkZhou[16] = atkZhou[16] + 100 end
           if atkZhou[9] > 0 then atkZhou[9] = atkZhou[9] + 50 end
           if atkArea[6] > 0 then atkArea[6] = atkArea[6] + 100 end
           if atkArea[5] > 0 then atkArea[5] = atkArea[5] + 50 end
-        elseif fid == 4 or leader == 19 then --Ô¬ÉÜ
-          --¼½ÖİÇàÖİÓÄÖİ²¢Öİ ºÓ±± > ÖĞÔ­ > Î÷±± > ¾£³ş
+        elseif fid == 4 or leader == 19 then --è¢ç»
+          --å†€å·é’å·å¹½å·å¹¶å· æ²³åŒ— > ä¸­åŸ > è¥¿åŒ— > è†æ¥š
           if atkZhou[2] > 0 then atkZhou[2] = atkZhou[2] + 80 end
           if atkZhou[3] > 0 then atkZhou[3] = atkZhou[3] + 80 end
           if atkZhou[1] > 0 then atkZhou[1] = atkZhou[1] + 80 end
@@ -93,56 +93,56 @@ function AI_Force()
           if atkArea[1] > 0 then atkArea[1] = atkArea[1] + 80 end
           if atkArea[2] > 0 then atkArea[2] = atkArea[2] + 50 end
           if atkArea[3] > 0 then atkArea[3] = atkArea[3] + 30 end
-        elseif fid == 5 or leader == 17 then --Ô¬Êõ
-          --»´ÄÏ Ô¥Öİ ÑïÖİ
+        elseif fid == 5 or leader == 17 then --è¢æœ¯
+          --æ·®å— è±«å· æ‰¬å·
           if atkZhou[9] > 0 then atkZhou[9] = atkZhou[9] + 80 end
           if atkZhou[7] > 0 then atkZhou[7] = atkZhou[7] + 50 end
           if atkZhou[16] > 0 then atkZhou[16] = atkZhou[16] + 30 end
-        elseif fid == 6 or leader == 481 then --¶­×¿
-          --ÓºÖİ Ë¾Á¥ Á¹Öİ
+        elseif fid == 6 or leader == 481 then --è‘£å“
+          --é›å· å¸éš¶ å‡‰å·
           if atkZhou[10] > 0 then atkZhou[10] = atkZhou[10] + 100 end
           if atkZhou[8] > 0 then atkZhou[8] = atkZhou[8] + 50 end
           if atkZhou[11] > 0 then atkZhou[11] = atkZhou[11] + 30 end
-        elseif fid == 7 or leader == 636 then --ÂÀ²¼
-          --ÓºÖİ ²¢Öİ ĞìÖİ ÙğÖİ
+        elseif fid == 7 or leader == 636 then --å•å¸ƒ
+          --é›å· å¹¶å· å¾å· å…–å·
           if atkZhou[10] > 0 then atkZhou[10] = atkZhou[10] + 80 end
           if atkZhou[4] > 0 then atkZhou[4] = atkZhou[4] + 80 end
           if atkZhou[5] > 0 then atkZhou[5] = atkZhou[5] + 80 end
           if atkZhou[6] > 0 then atkZhou[6] = atkZhou[6] + 80 end
-        elseif fid == 8 or leader == 612 then --Áõ±í
-          --¾£±± ¾£ÄÏ ÑïÖİ
+        elseif fid == 8 or leader == 612 then --åˆ˜è¡¨
+          --è†åŒ— è†å— æ‰¬å·
           if atkZhou[14] > 0 then atkZhou[14] = atkZhou[14] + 80 end
           if atkZhou[15] > 0 then atkZhou[15] = atkZhou[15] + 50 end
           if atkZhou[16] > 0 then atkZhou[16] = atkZhou[16] + 30 end
-        elseif fid == 9 or leader == 601 then --Áõè°
-          --ÒæÖİ
+        elseif fid == 9 or leader == 601 then --åˆ˜ç’‹
+          --ç›Šå·
           if atkZhou[12] > 0 then atkZhou[12] = atkZhou[12] + 30 end
-        elseif fid == 10 or leader == 175 then --¹«Ëïè¶
-          --ÓÄÖİ ¼½Öİ
+        elseif fid == 10 or leader == 175 then --å…¬å­™ç“’
+          --å¹½å· å†€å·
           if atkZhou[1] > 0 then atkZhou[1] = atkZhou[1] + 100 end
           if atkZhou[2] > 0 then atkZhou[2] = atkZhou[2] + 50 end
           if atkArea[1] > 0 then atkArea[1] = atkArea[1] + 80 end
-        elseif fid == 13 or leader == 501 or leader == 499 then --ÂíÌÚ/Âí³¬
-          --Á¹Öİ ÓºÖİ
+        elseif fid == 13 or leader == 501 or leader == 499 then --é©¬è…¾/é©¬è¶…
+          --å‡‰å· é›å·
           if atkZhou[11] > 0 then atkZhou[11] = atkZhou[11] + 100 end
           if atkZhou[10] > 0 then atkZhou[10] = atkZhou[10] + 50 end
           if atkArea[3] > 0 then atkArea[3] = atkArea[3] + 80 end
-        elseif fid == 16 or leader == 429 then --ÕÅÂ³
-          --ÒæÖİ
+        elseif fid == 16 or leader == 429 then --å¼ é²
+          --ç›Šå·
           if atkZhou[12] > 0 then atkZhou[12] = atkZhou[12] + 30 end
-        elseif fid == 32 or leader == 549 then --ÃÏ»ñ
-          --ÄÏÖĞ ÒæÖİ
+        elseif fid == 32 or leader == 549 then --å­Ÿè·
+          --å—ä¸­ ç›Šå·
           if atkZhou[13] > 0 then atkZhou[13] = atkZhou[13] + 100 end
           if atkZhou[12] > 0 then atkZhou[12] = atkZhou[12] + 50 end
           if atkArea[4] > 0 then atkArea[4] = atkArea[4] + 80 end
-        elseif fid == 33 or leader == 389 then --ÕÅ½Ç
-          --Ë¾Á¥ ¼½Öİ ÇàÖİ ÙğÖİ
+        elseif fid == 33 or leader == 389 then --å¼ è§’
+          --å¸éš¶ å†€å· é’å· å…–å·
           if atkZhou[8] > 0 then atkZhou[8] = atkZhou[8] + 50 end
           if atkZhou[1] > 0 then atkZhou[1] = atkZhou[1] + 50 end
           if atkZhou[3] > 0 then atkZhou[3] = atkZhou[3] + 50 end
           if atkZhou[6] > 0 then atkZhou[6] = atkZhou[6] + 50 end
-        elseif fid == 35 or leader == 221 then --Ë¾ÂíÜ²
-          --Ë¾Á¥ ÖĞÔ­ ºÓ±± °ÍÊñ ÎâÔ½
+        elseif fid == 35 or leader == 221 then --å¸é©¬æ‡¿
+          --å¸éš¶ ä¸­åŸ æ²³åŒ— å·´èœ€ å´è¶Š
           if atkZhou[8] > 0 then atkZhou[8] = atkZhou[8] + 50 end
           if atkArea[2] > 0 then atkArea[2] = atkArea[2] + 100 end
           if atkArea[1] > 0 then atkArea[1] = atkArea[1] + 80 end
@@ -150,16 +150,16 @@ function AI_Force()
           if atkArea[6] > 0 then atkArea[6] = atkArea[6] + 30 end
         end
         
-        v["Õ½ÂÔ"] = 4;  --Î¬³ÖÏÖ×´
-        if false then --ÓÎÏ·¿ªÊ¼Áù¸öÔÂÄÚ
-          v["Õ½ÂÔ"] = 4;  --Î¬³ÖÏÖ×´
-        elseif v["³Ç³Ø"] > 24 then --ÊÆÁ¦×ã¹»Ç¿´ó
-          v["Õ½ÂÔ"] = 1;  --Í³Ò»ÖĞÔ­
+        v["æˆ˜ç•¥"] = 4;  --ç»´æŒç°çŠ¶
+        if false then --æ¸¸æˆå¼€å§‹å…­ä¸ªæœˆå†…
+          v["æˆ˜ç•¥"] = 4;  --ç»´æŒç°çŠ¶
+        elseif v["åŸæ± "] > 24 then --åŠ¿åŠ›è¶³å¤Ÿå¼ºå¤§
+          v["æˆ˜ç•¥"] = 1;  --ç»Ÿä¸€ä¸­åŸ
         elseif false then --
-          v["Õ½ÂÔ"] = 6;  --ÓµÁ¢ººµÛ
-        elseif v["³Ç³Ø"] > 9 then --ÊÆÁ¦Ç¿´ó
-          v["Õ½ÂÔ"] = 2;  --Í³Ò»µØ·½
-        elseif true then --ÊÆÁ¦Ç¿´ó
+          v["æˆ˜ç•¥"] = 6;  --æ‹¥ç«‹æ±‰å¸
+        elseif v["åŸæ± "] > 9 then --åŠ¿åŠ›å¼ºå¤§
+          v["æˆ˜ç•¥"] = 2;  --ç»Ÿä¸€åœ°æ–¹
+        elseif true then --åŠ¿åŠ›å¼ºå¤§
           local target = 0;
           local ptMax = 0;
           for i, v in ipairs(atkZhou) do
@@ -169,13 +169,13 @@ function AI_Force()
             end
           end
           if target > 0 then
-            v["Õ½ÂÔ"] = 3;  --Í³Ò»Öİ
-            v["Ä¿±ê"] = target;
+            v["æˆ˜ç•¥"] = 3;  --ç»Ÿä¸€å·
+            v["ç›®æ ‡"] = target;
           end
         elseif false then --
-          v["Õ½ÂÔ"] = 5;  --»÷ÆÆÏÕ¶ñÊÆÁ¦
+          v["æˆ˜ç•¥"] = 5;  --å‡»ç ´é™©æ¶åŠ¿åŠ›
         else
-          v["Õ½ÂÔ"] = 4;  --Î¬³ÖÏÖ×´
+          v["æˆ˜ç•¥"] = 4;  --ç»´æŒç°çŠ¶
         end
       else
         
@@ -188,10 +188,10 @@ end
 function AI_ForceChief(fid)
   --[[fid = 2;
 	for pid = 0, 750 do
-		if JY.Person[pid]["ÊÆÁ¦"] == fid and JY.Person[pid]["ËùÔÚ"] ~= 47 then
-			JY.Person[pid]["ËùÔÚ"] = 47;
-      if JY.Person[pid]["Éí·İ"] == 2 then
-        JY.Person[pid]["Éí·İ"] = 1;
+		if JY.Person[pid]["åŠ¿åŠ›"] == fid and JY.Person[pid]["æ‰€åœ¨"] ~= 47 then
+			JY.Person[pid]["æ‰€åœ¨"] = 47;
+      if JY.Person[pid]["èº«ä»½"] == 2 then
+        JY.Person[pid]["èº«ä»½"] = 1;
       end
 		end
 	end]]--
@@ -202,12 +202,12 @@ function AI_ForceChief(fid)
     local ptMax = 0;
     for i = 0, 750 do
       local p = JY.Person[i];
-      if p["ÊÆÁ¦"] == fid and p["Éí·İ"] == 1 then
-        --local pt = p["÷ÈÁ¦"] + (p["Í³ÂÊ"] * c["Õ½ÂÔ¼ÛÖµ"] + p["ÕşÎñ"] * c["ÕşÂÔ¼ÛÖµ"]) / (c["Õ½ÂÔ¼ÛÖµ"] + c["ÕşÂÔ¼ÛÖµ"]);
-        local pt = (p["Í³ÂÊ"] * c["Õ½ÂÔ¼ÛÖµ"] + p["÷ÈÁ¦"] * c["ÕşÂÔ¼ÛÖµ"]) / (c["Õ½ÂÔ¼ÛÖµ"] + c["ÕşÂÔ¼ÛÖµ"]);
-        if p["ÖÒ³Ï"] < 90 then
+      if p["åŠ¿åŠ›"] == fid and p["èº«ä»½"] == 1 then
+        --local pt = p["é­…åŠ›"] + (p["ç»Ÿç‡"] * c["æˆ˜ç•¥ä»·å€¼"] + p["æ”¿åŠ¡"] * c["æ”¿ç•¥ä»·å€¼"]) / (c["æˆ˜ç•¥ä»·å€¼"] + c["æ”¿ç•¥ä»·å€¼"]);
+        local pt = (p["ç»Ÿç‡"] * c["æˆ˜ç•¥ä»·å€¼"] + p["é­…åŠ›"] * c["æ”¿ç•¥ä»·å€¼"]) / (c["æˆ˜ç•¥ä»·å€¼"] + c["æ”¿ç•¥ä»·å€¼"]);
+        if p["å¿ è¯š"] < 90 then
           pt = pt / 4;
-        elseif p["ÖÒ³Ï"] < 95 then
+        elseif p["å¿ è¯š"] < 95 then
           pt = pt / 2;
         end
         
@@ -218,9 +218,9 @@ function AI_ForceChief(fid)
       end
     end
     if pid > 0 then
-      JY.Person[pid]["ËùÔÚ"] = cid;
-      JY.Person[pid]["Éí·İ"] = 2;
-      JY.City[cid]["Ì«ÊØ"] = pid;
+      JY.Person[pid]["æ‰€åœ¨"] = cid;
+      JY.Person[pid]["èº«ä»½"] = 2;
+      JY.City[cid]["å¤ªå®ˆ"] = pid;
       return true;
     else
       return false;
@@ -231,19 +231,19 @@ function AI_ForceChief(fid)
     local cityGeneralsNum = {};
     local plist = {};
     for i = 1, JY.CityNum - 1 do
-      if JY.City[i]["ÊÆÁ¦"] == fid then
+      if JY.City[i]["åŠ¿åŠ›"] == fid then
         table.insert(clist, i);
         cityGeneralsNum[i] = 2;
       end
     end
     for i = 0, 750 do
       local p = JY.Person[i];
-      if p["ÊÆÁ¦"] == fid and p["Éí·İ"] == 1 then
+      if p["åŠ¿åŠ›"] == fid and p["èº«ä»½"] == 1 then
         table.insert(plist, i);
       end
     end
     table.sort(plist, function(a, b)
-      if JY.Person[a]["Æ·¼¶"] > JY.Person[b]["Æ·¼¶"] then
+      if JY.Person[a]["å“çº§"] > JY.Person[b]["å“çº§"] then
         return true;
       end
     end)
@@ -253,13 +253,13 @@ function AI_ForceChief(fid)
       local p = JY.Person[pid];
       for j, cid in ipairs(clist) do
         local c = JY.City[cid];
-        local pt = (p["ÎäÁ¦"] * c["Õ½ÂÔ¼ÛÖµ"] + p["ÕşÎñ"] * c["ÕşÂÔ¼ÛÖµ"]) / (c["Õ½ÂÔ¼ÛÖµ"] + c["ÕşÂÔ¼ÛÖµ"]) / cityGeneralsNum[cid];   -- / (c["Õ½ÂÔ¼ÛÖµ"] + c["ÕşÂÔ¼ÛÖµ"]);
-        if c["Ç°Ïß"] > 0 then
+        local pt = (p["æ­¦åŠ›"] * c["æˆ˜ç•¥ä»·å€¼"] + p["æ”¿åŠ¡"] * c["æ”¿ç•¥ä»·å€¼"]) / (c["æˆ˜ç•¥ä»·å€¼"] + c["æ”¿ç•¥ä»·å€¼"]) / cityGeneralsNum[cid];   -- / (c["æˆ˜ç•¥ä»·å€¼"] + c["æ”¿ç•¥ä»·å€¼"]);
+        if c["å‰çº¿"] > 0 then
           pt = pt * 2;
         end
-        if isHate(c["Ì«ÊØ"], pid) then
+        if isHate(c["å¤ªå®ˆ"], pid) then
           pt = pt / 2;
-        elseif isLike(c["Ì«ÊØ"], pid) then
+        elseif isLike(c["å¤ªå®ˆ"], pid) then
           pt = pt * 2;
         end
         if pt > ptMax then
@@ -268,49 +268,49 @@ function AI_ForceChief(fid)
         end
       end
       if id > 0 then
-        JY.Person[pid]["ËùÔÚ"] = id;
+        JY.Person[pid]["æ‰€åœ¨"] = id;
         cityGeneralsNum[id] = cityGeneralsNum[id] + 1;
       end
     end
   end
   for i = 1, JY.CityNum - 1 do
-    if JY.City[i]["ÊÆÁ¦"] == fid and JY.City[i]["Ì«ÊØ"] == 0 then
+    if JY.City[i]["åŠ¿åŠ›"] == fid and JY.City[i]["å¤ªå®ˆ"] == 0 then
       setCityChief(i);
     end
   end
   adjustForceGenerals(fid);
   
   --[[
-    --ÈÎÃüÌ«ÊØ
-      ¶ÔÓÚ¿Õ³Ç
-        ÅĞ¶ÏÀàĞÍ,Õ½ÂÔ »òÕß ÕşÂÔ
-        ÕÒ³öËùÓĞµÄ·ÇÌ«ÊØÎä½«, ÆÀ·Ö(¸ù¾İÕ½ÂÔ»òÕßÕşÂÔ)
-        Ñ¡ÔñÆÀ·Ö×î¸ßµÄ×÷ÎªÌ«ÊØ
-    --·ÖÅäÈËÊÂ
-      ¸øËù¹ÜÏ½µÄ³ÇÊĞ½øĞĞÆÀ·Ö, Õ½ÂÔ¼ÛÖµ ºÍ ÕşÂÔ¼ÛÖµ
-      ÅÅĞò,ÓÅÏÈÕ½ÂÔ¼ÛÖµ,Æä´ÎÕşÂÔ¼ÛÖµ
-      ¸ù¾İÊÆÁ¦Îä½«Êı, ³ÇÊĞÊı, ¼ÛÖµ, ÅĞ¶Ï¸÷¸ö³ÇÊĞµÄÎä½«ÊıÁ¿
-      É¸Ñ¡³öÌ«ÊØÒÔÍâµÄÎä½«, ÓÃÓÚ·ÖÅä
-      µÚÒ»ÓÅÏÈ¼¶, ·ÖÅäÉÙÁ¿µÄ, ÓëÌ«ÊØ×îÆõºÏµÄÎä½«, ÑªÔµ/ÏàĞÔ/Ö¾È¤
-      µÚ¶şÓÅÏÈ¼¶, °´ÕÕÄÜÁ¦Óë³ÇÊĞµÄÕ½ÂÔ/ÕşÂÔ¼ÛÖµ,°´´ÎĞò·ÖÅä
-    --Ò»°ãÓĞÕâÃ´¼¸ÖÖÇé¿ö
-      ¹¥´òÏÂÁËĞÂ³Ç³Ø => ÅĞ¶ÏĞÂ¾É³ÇÊĞµÄÕ½ÂÔ¼ÛÖµ, Ñ¡Ôñ¸ßµÄ½ø×¤; ÓÚÊÇ¶à³öÁË¿Õ³Ç
-      ³Ç³Ø±»¶á => »Øµ½¾ıÖ÷´¦; Èç¹ûÊÇ¾ıÖ÷³ÇÊĞ±»¶á, ÒÆ¶¯µ½ÄÄ? Ã»¿¼ÂÇºÃ
-      ³Ç³ØÕ½ÂÔ/ÕşÂÔ¼ÛÖµ±ä¶¯, ĞèÒªÖØĞÂ·ÖÅäÌ«ÊØµÄ => ¶¨ÆÚreviewÊÇ·ñÓĞ¸üºÃµÄ·ÇÌ«ÊØÎä½«, ÆäÆÀ·Ö±ØĞë¸ßÓÚÏÖÓĞÌ«ÊØ120%
+    --ä»»å‘½å¤ªå®ˆ
+      å¯¹äºç©ºåŸ
+        åˆ¤æ–­ç±»å‹,æˆ˜ç•¥ æˆ–è€… æ”¿ç•¥
+        æ‰¾å‡ºæ‰€æœ‰çš„éå¤ªå®ˆæ­¦å°†, è¯„åˆ†(æ ¹æ®æˆ˜ç•¥æˆ–è€…æ”¿ç•¥)
+        é€‰æ‹©è¯„åˆ†æœ€é«˜çš„ä½œä¸ºå¤ªå®ˆ
+    --åˆ†é…äººäº‹
+      ç»™æ‰€ç®¡è¾–çš„åŸå¸‚è¿›è¡Œè¯„åˆ†, æˆ˜ç•¥ä»·å€¼ å’Œ æ”¿ç•¥ä»·å€¼
+      æ’åº,ä¼˜å…ˆæˆ˜ç•¥ä»·å€¼,å…¶æ¬¡æ”¿ç•¥ä»·å€¼
+      æ ¹æ®åŠ¿åŠ›æ­¦å°†æ•°, åŸå¸‚æ•°, ä»·å€¼, åˆ¤æ–­å„ä¸ªåŸå¸‚çš„æ­¦å°†æ•°é‡
+      ç­›é€‰å‡ºå¤ªå®ˆä»¥å¤–çš„æ­¦å°†, ç”¨äºåˆ†é…
+      ç¬¬ä¸€ä¼˜å…ˆçº§, åˆ†é…å°‘é‡çš„, ä¸å¤ªå®ˆæœ€å¥‘åˆçš„æ­¦å°†, è¡€ç¼˜/ç›¸æ€§/å¿—è¶£
+      ç¬¬äºŒä¼˜å…ˆçº§, æŒ‰ç…§èƒ½åŠ›ä¸åŸå¸‚çš„æˆ˜ç•¥/æ”¿ç•¥ä»·å€¼,æŒ‰æ¬¡åºåˆ†é…
+    --ä¸€èˆ¬æœ‰è¿™ä¹ˆå‡ ç§æƒ…å†µ
+      æ”»æ‰“ä¸‹äº†æ–°åŸæ±  => åˆ¤æ–­æ–°æ—§åŸå¸‚çš„æˆ˜ç•¥ä»·å€¼, é€‰æ‹©é«˜çš„è¿›é©»; äºæ˜¯å¤šå‡ºäº†ç©ºåŸ
+      åŸæ± è¢«å¤º => å›åˆ°å›ä¸»å¤„; å¦‚æœæ˜¯å›ä¸»åŸå¸‚è¢«å¤º, ç§»åŠ¨åˆ°å“ª? æ²¡è€ƒè™‘å¥½
+      åŸæ± æˆ˜ç•¥/æ”¿ç•¥ä»·å€¼å˜åŠ¨, éœ€è¦é‡æ–°åˆ†é…å¤ªå®ˆçš„ => å®šæœŸreviewæ˜¯å¦æœ‰æ›´å¥½çš„éå¤ªå®ˆæ­¦å°†, å…¶è¯„åˆ†å¿…é¡»é«˜äºç°æœ‰å¤ªå®ˆ120%
   ]]
 end 
 function AI_City()
   AI_Force();
 	for cid = 1, JY.CityNum - 1 do
-		if JY.City[cid]["Ì«ÊØ"] > 0 then
-      local fid = JY.City[cid]["ÊÆÁ¦"]
+		if JY.City[cid]["å¤ªå®ˆ"] > 0 then
+      local fid = JY.City[cid]["åŠ¿åŠ›"]
       local clist = {cid};
       local prob = {100};
       for i, v in pairs(JY.CityToCity[cid]) do
         local c = JY.City[i];
-        if c["ÊÆÁ¦"] ~= fid then
+        if c["åŠ¿åŠ›"] ~= fid then
           table.insert(clist, i);
-          local pt = (JY.City[cid]["±øÁ¦"] + 5000) / (c["±øÁ¦"] + 5000);
+          local pt = (JY.City[cid]["å…µåŠ›"] + 5000) / (c["å…µåŠ›"] + 5000);
           table.insert(prob, pt);
         end
       end
@@ -319,8 +319,8 @@ function AI_City()
         AI_City_Sub(cid);
       else
         local eid = clist[r];
-				Talk("‚÷Áî",string.format("[Green]%s[Normal]´óÈË£¬[Red]%s[Normal]µÄ[Red]%s[Normal]¶Ô[Red]%s[Normal]·¢ÆğÁË½ø¹¥¡£",JY.Person[JY.PID]["Ãû³Æ"], JY.Force[fid]["Ãû³Æ"], JY.City[cid]["Ãû³Æ"], JY.City[eid]["Ãû³Æ"]));
-        local eForce = JY.City[eid]["ÊÆÁ¦"];
+				Talk("å‚³ä»¤",string.format("[Green]%s[Normal]å¤§äººï¼Œ[Red]%s[Normal]çš„[Red]%s[Normal]å¯¹[Red]%s[Normal]å‘èµ·äº†è¿›æ”»ã€‚",JY.Person[JY.PID]["åç§°"], JY.Force[fid]["åç§°"], JY.City[cid]["åç§°"], JY.City[eid]["åç§°"]));
+        local eForce = JY.City[eid]["åŠ¿åŠ›"];
         if eForce > 0 then
           WarIni();
           War.ArmyA1 = AutoSelectArmy(cid);
@@ -335,98 +335,98 @@ function AI_City()
 		end
 	end
 end
---Ìá¸ßÖÒ³Ï¶È=sqrt(¾ıÖ÷÷ÈÁ¦)*sqrt(½ğÇ®)/sqrt(0x11-|0x4B-ÏàĞÔ²îÖµ|/5)
+--æé«˜å¿ è¯šåº¦=sqrt(å›ä¸»é­…åŠ›)*sqrt(é‡‘é’±)/sqrt(0x11-|0x4B-ç›¸æ€§å·®å€¼|/5)
 function AI_City_Sub(cid)
   local c = JY.City[cid];
 	local plist=GetCityWujiang(cid);--,{JY.PID});
-	local costs={	20, 0, 5, 0, 0,	0, 0, 0, 0, 0,	--	1 Ä¼±ø;	2 ÑµÁ·;	3 ĞŞÖş;	
-					5, 5, 5, 5, 0,	0, 0, 0, 0, 0,	--	11 ¿ª¿Ñ;	12 ÉÌÒµ;	13 ¼¼Êõ;	14 ÖÎ°²;
+	local costs={	20, 0, 5, 0, 0,	0, 0, 0, 0, 0,	--	1 å‹Ÿå…µ;	2 è®­ç»ƒ;	3 ä¿®ç­‘;	
+					5, 5, 5, 5, 0,	0, 0, 0, 0, 0,	--	11 å¼€å¦;	12 å•†ä¸š;	13 æŠ€æœ¯;	14 æ²»å®‰;
 					0, 0, 0, 0, 0,		0, 0, 0, 0, 0,
 					0, 0, 0, 0, 0,		0, 0, 0, 0, 0,}
 	local tasks={};
 	local task=0;
 	local function QueryTasks()
-		tasks={	100, 0, 100, 0, 0,	0, 0, 0, 0, 0,	--	1 Ä¼±ø;	2 ÑµÁ·;	3 ĞŞÖş;	
-            100, 100, 100, 100, 0,	0, 0, 0, 0, 0,	--	11 ¿ª¿Ñ;	12 ÉÌÒµ;	13 ¼¼Êõ;	14 ÖÎ°²;
+		tasks={	100, 0, 100, 0, 0,	0, 0, 0, 0, 0,	--	1 å‹Ÿå…µ;	2 è®­ç»ƒ;	3 ä¿®ç­‘;	
+            100, 100, 100, 100, 0,	0, 0, 0, 0, 0,	--	11 å¼€å¦;	12 å•†ä¸š;	13 æŠ€æœ¯;	14 æ²»å®‰;
             0, 0, 0, 0, 0,	0, 0, 0, 0, 0,
             0, 0, 0, 0, 0,	0, 0, 0, 0, 0,}
-    --Ä¼±øÏà¹Ø ³ÇÊĞ¹æÄ£/Ç°Ïß/Îï×Ê/µ±Ç°±øÁ¦
-    if c["±øÁ¦"] >= 50000 * c["¹æÄ£"] then
+    --å‹Ÿå…µç›¸å…³ åŸå¸‚è§„æ¨¡/å‰çº¿/ç‰©èµ„/å½“å‰å…µåŠ›
+    if c["å…µåŠ›"] >= 50000 * c["è§„æ¨¡"] then
       tasks[1] = 0;
     else
-      tasks[1] = tasks[1] * limitX(c["Îï×Ê"] / (24 * math.ceil(c["±øÁ¦"] / 500)) - 0.5, 0, 5);  --Îï×Ê
-      tasks[1] = tasks[1] * limitX(c["ÈË¿Ú"] / 2000, 0, 1); --ÈË¿Ú
+      tasks[1] = tasks[1] * limitX(c["ç‰©èµ„"] / (24 * math.ceil(c["å…µåŠ›"] / 500)) - 0.5, 0, 5);  --ç‰©èµ„
+      tasks[1] = tasks[1] * limitX(c["äººå£"] / 2000, 0, 1); --äººå£
     end
-    --ĞŞÖşÏà¹Ø Ç°Ïß/µ±Ç°³Ç·À
-    tasks[3] = math.floor(tasks[3] * limitX((c["×î´ó·ÀÓù"] - c["·ÀÓù"]) / c["×î´ó·ÀÓù"], 0.1, 1));
-    if false then --Ç°Ïß
+    --ä¿®ç­‘ç›¸å…³ å‰çº¿/å½“å‰åŸé˜²
+    tasks[3] = math.floor(tasks[3] * limitX((c["æœ€å¤§é˜²å¾¡"] - c["é˜²å¾¡"]) / c["æœ€å¤§é˜²å¾¡"], 0.1, 1));
+    if false then --å‰çº¿
       tasks[3] = tasks[3] * 10;
     end
-    --¿ª¿ÑÏà¹Ø Îï×ÊÊÕÖ§/µ±Ç°¿ª¿Ñ
-    if between(JY.Base["µ±Ç°ÔÂ"], 1, 6) then
+    --å¼€å¦ç›¸å…³ ç‰©èµ„æ”¶æ”¯/å½“å‰å¼€å¦
+    if between(JY.Base["å½“å‰æœˆ"], 1, 6) then
       tasks[11] = tasks[11] * 2;
     end
-    if c["×î´ó¿ª¿Ñ"] > c["¿ª¿Ñ"] then
-      tasks[11] = math.floor(tasks[11] * limitX((c["×î´ó¿ª¿Ñ"] - c["¿ª¿Ñ"]) / c["×î´ó¿ª¿Ñ"], 0.1, 1));
+    if c["æœ€å¤§å¼€å¦"] > c["å¼€å¦"] then
+      tasks[11] = math.floor(tasks[11] * limitX((c["æœ€å¤§å¼€å¦"] - c["å¼€å¦"]) / c["æœ€å¤§å¼€å¦"], 0.1, 1));
     else
       tasks[11] = 0;
     end
-    --ÉÌÒµÏà¹Ø ×Ê½ğÊÕÖ§/µ±Ç°ÉÌÒµ
-    if between(JY.Base["µ±Ç°ÔÂ"], 7, 12) then
+    --å•†ä¸šç›¸å…³ èµ„é‡‘æ”¶æ”¯/å½“å‰å•†ä¸š
+    if between(JY.Base["å½“å‰æœˆ"], 7, 12) then
       tasks[12] = tasks[12] * 2;
     end
-    if c["×î´óÉÌÒµ"] > c["ÉÌÒµ"] then
-      tasks[12] = math.floor(tasks[12] * limitX((c["×î´óÉÌÒµ"] - c["ÉÌÒµ"]) / c["×î´óÉÌÒµ"], 0.1, 1));
+    if c["æœ€å¤§å•†ä¸š"] > c["å•†ä¸š"] then
+      tasks[12] = math.floor(tasks[12] * limitX((c["æœ€å¤§å•†ä¸š"] - c["å•†ä¸š"]) / c["æœ€å¤§å•†ä¸š"], 0.1, 1));
     else
       tasks[12] = 0;
     end
-    --¼¼ÊõÏà¹Ø 
-    if c["×î´ó¼¼Êõ"] > c["¼¼Êõ"] then
-      tasks[13] = math.floor(tasks[12] * limitX((c["×î´ó¼¼Êõ"] - c["¼¼Êõ"]) / c["×î´ó¼¼Êõ"], 0.1, 1));
+    --æŠ€æœ¯ç›¸å…³ 
+    if c["æœ€å¤§æŠ€æœ¯"] > c["æŠ€æœ¯"] then
+      tasks[13] = math.floor(tasks[12] * limitX((c["æœ€å¤§æŠ€æœ¯"] - c["æŠ€æœ¯"]) / c["æœ€å¤§æŠ€æœ¯"], 0.1, 1));
     else
       tasks[13] = 0;
     end
-    --ÖÎ°²Ïà¹Ø µ±Ç°ÖÎ°²
-    if 1000 > c["ÖÎ°²"] then
-      tasks[14] = math.floor(tasks[14] * limitX((1000 - c["ÖÎ°²"]) / 100, 0.1, 10));
+    --æ²»å®‰ç›¸å…³ å½“å‰æ²»å®‰
+    if 1000 > c["æ²»å®‰"] then
+      tasks[14] = math.floor(tasks[14] * limitX((1000 - c["æ²»å®‰"]) / 100, 0.1, 10));
     else
       tasks[14] = 0;
     end
     
-		for i=1, #tasks do  --×Ê½ğ²»×ãµÄ£¬¸ÅÂÊÎª0
-			if c["×Ê½ğ"] < costs[i] then
+		for i=1, #tasks do  --èµ„é‡‘ä¸è¶³çš„ï¼Œæ¦‚ç‡ä¸º0
+			if c["èµ„é‡‘"] < costs[i] then
 				tasks[i] = 0;
 			end
 		end
 		task=PercentRandom(tasks);
 		if task>0 and #plist>1 then
-			if task==1 then			--Ä¼±ø
+			if task==1 then			--å‹Ÿå…µ
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["÷ÈÁ¦"]>JY.Person[b]["÷ÈÁ¦"];
+										return JY.Person[a]["é­…åŠ›"]>JY.Person[b]["é­…åŠ›"];
 									end)
-			elseif task==2 then		--ÑµÁ·
+			elseif task==2 then		--è®­ç»ƒ
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["Í³ÂÊ"]>JY.Person[b]["Í³ÂÊ"];
+										return JY.Person[a]["ç»Ÿç‡"]>JY.Person[b]["ç»Ÿç‡"];
 									end)
-			elseif task==3 then		--ĞŞ²¹
+			elseif task==3 then		--ä¿®è¡¥
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["ÎäÁ¦"]+JY.Person[a]["Í³ÂÊ"]>JY.Person[b]["ÎäÁ¦"]+JY.Person[b]["Í³ÂÊ"];
+										return JY.Person[a]["æ­¦åŠ›"]+JY.Person[a]["ç»Ÿç‡"]>JY.Person[b]["æ­¦åŠ›"]+JY.Person[b]["ç»Ÿç‡"];
 									end)
-			elseif task==11 then	--¿ª¿Ñ
+			elseif task==11 then	--å¼€å¦
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["ÕşÎñ"]>JY.Person[b]["ÕşÎñ"];
+										return JY.Person[a]["æ”¿åŠ¡"]>JY.Person[b]["æ”¿åŠ¡"];
 									end)
-			elseif task==12 then	--ÉÌÒµ
+			elseif task==12 then	--å•†ä¸š
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["ÕşÎñ"]>JY.Person[b]["ÕşÎñ"];
+										return JY.Person[a]["æ”¿åŠ¡"]>JY.Person[b]["æ”¿åŠ¡"];
 									end)
-			elseif task==13 then	--¼¼Êõ
+			elseif task==13 then	--æŠ€æœ¯
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["ÖÇÄ±"]>JY.Person[b]["ÖÇÄ±"];
+										return JY.Person[a]["æ™ºè°‹"]>JY.Person[b]["æ™ºè°‹"];
 									end)
-			elseif task==14 then	--ÖÎ°²
+			elseif task==14 then	--æ²»å®‰
 				table.sort(plist,	function(a,b)
-										return JY.Person[a]["ÎäÁ¦"]>JY.Person[b]["ÎäÁ¦"];
+										return JY.Person[a]["æ­¦åŠ›"]>JY.Person[b]["æ­¦åŠ›"];
 									end)
 			else
 			
@@ -437,44 +437,44 @@ function AI_City_Sub(cid)
 		if task>0 and #plist>0 then
 			local pid=plist[1];
 			table.remove(plist,1);
-			if c["×Ê½ğ"]>=costs[task] then
+			if c["èµ„é‡‘"]>=costs[task] then
 				if pid~=JY.PID then
-					c["×Ê½ğ"]=c["×Ê½ğ"]-costs[task];
+					c["èµ„é‡‘"]=c["èµ„é‡‘"]-costs[task];
 					CityDevelop(cid,pid,task);
 				else
-					local pid2=c["Ì«ÊØ"];
+					local pid2=c["å¤ªå®ˆ"];
 					local str;
-					if task==1 then			--Ä¼±ø
+					if task==1 then			--å‹Ÿå…µ
 						str=JY.Str[15300];
-					elseif task==3 then		--ĞŞ²¹
+					elseif task==3 then		--ä¿®è¡¥
 						str=JY.Str[math.random(15310,15311)];
-					elseif task==11 then	--¿ª¿Ñ
+					elseif task==11 then	--å¼€å¦
 						str=JY.Str[math.random(15350,15351)];
-					elseif task==12 then	--ÉÌÒµ
+					elseif task==12 then	--å•†ä¸š
 						str=JY.Str[math.random(15355,15356)];
-					elseif task==13 then	--¼¼Êõ
+					elseif task==13 then	--æŠ€æœ¯
 						str=JY.Str[15360];
-					elseif task==14 then	--ÖÎ°²
+					elseif task==14 then	--æ²»å®‰
 						str=JY.Str[15365];
 					else
 						str="";
 					end
-					str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
+					str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
 					Talk(pid2,str);
 					str=JY.Str[15499];
-					str=string.gsub(str,"s1","[Green]"..JY.Person[pid2]["Ãû³Æ"].."[Normal]");
+					str=string.gsub(str,"s1","[Green]"..JY.Person[pid2]["åç§°"].."[Normal]");
 					if task==1 then
-						str=string.gsub(str,"s2","[Green]Ä¼±ø[Normal]");
+						str=string.gsub(str,"s2","[Green]å‹Ÿå…µ[Normal]");
 					elseif task==3 then
-						str=string.gsub(str,"s2","[Green]ĞŞ²¹[Normal]");
+						str=string.gsub(str,"s2","[Green]ä¿®è¡¥[Normal]");
 					elseif task==11 then
-						str=string.gsub(str,"s2","[Green]¿ª¿Ñ[Normal]");
+						str=string.gsub(str,"s2","[Green]å¼€å¦[Normal]");
 					elseif task==12 then
-						str=string.gsub(str,"s2","[Green]ÉÌÒµ[Normal]");
+						str=string.gsub(str,"s2","[Green]å•†ä¸š[Normal]");
 					elseif task==13 then
-						str=string.gsub(str,"s2","[Green]¼¼Êõ[Normal]");
+						str=string.gsub(str,"s2","[Green]æŠ€æœ¯[Normal]");
 					elseif task==14 then
-						str=string.gsub(str,"s2","[Green]ÖÎ°²[Normal]");
+						str=string.gsub(str,"s2","[Green]æ²»å®‰[Normal]");
 					end
 					if TalkYesNo(JY.PID,str) then
 						DrawGame();
@@ -497,20 +497,20 @@ function AI_City_Sub(cid)
 			end
 		end
 	end
-	--¸ù¾İÈÎÎñÌ¬¶È£¬¹ıÂËµôÒ»²¿·ÖÎä½«
+	--æ ¹æ®ä»»åŠ¡æ€åº¦ï¼Œè¿‡æ»¤æ‰ä¸€éƒ¨åˆ†æ­¦å°†
 	local pnum=#plist;
 	for i=pnum,1,-1 do
 		local pid=plist[i];
 		local ratio=0.50;
-		if JY.Person[pid]["ÀíÏë"]>10 then			--Òş¶İ
+		if JY.Person[pid]["ç†æƒ³"]>10 then			--éšé
 			ratio=0.90;
-		elseif JY.Person[pid]["ÈÎÎñÌ¬¶È"]==1 then	--ÎŞÊÓ
+		elseif JY.Person[pid]["ä»»åŠ¡æ€åº¦"]==1 then	--æ— è§†
 			ratio=0.50;
-		elseif JY.Person[pid]["ÈÎÎñÌ¬¶È"]==2 then	--ÊÊµ±
+		elseif JY.Person[pid]["ä»»åŠ¡æ€åº¦"]==2 then	--é€‚å½“
 			ratio=0.30;
-		elseif JY.Person[pid]["ÈÎÎñÌ¬¶È"]==3 then	--ÆÕÍ¨
+		elseif JY.Person[pid]["ä»»åŠ¡æ€åº¦"]==3 then	--æ™®é€š
 			ratio=0.15;
-		elseif JY.Person[pid]["ÈÎÎñÌ¬¶È"]==4 then	--Å¬Á¦
+		elseif JY.Person[pid]["ä»»åŠ¡æ€åº¦"]==4 then	--åŠªåŠ›
 			ratio=0.05;
 		end
 		if math.random()<ratio then
@@ -518,64 +518,64 @@ function AI_City_Sub(cid)
 		end
 	end
 	pnum=#plist;
-	if pnum==0 then		--¹ıÂËºó£¬ÈôÃ»ÈËÁË...
+	if pnum==0 then		--è¿‡æ»¤åï¼Œè‹¥æ²¡äººäº†...
 		return false;
 	end
-	for i=1,math.min(pnum,10) do	--ÏŞÖÆÁË×öÈÎÎñµÄ×î´óÈËÊı
-		QueryTasks();	--»ñÈ¡ÈÎÎñ
-		ExecuteTask();	--Ö´ĞĞÈÎÎñ
+	for i=1,math.min(pnum,10) do	--é™åˆ¶äº†åšä»»åŠ¡çš„æœ€å¤§äººæ•°
+		QueryTasks();	--è·å–ä»»åŠ¡
+		ExecuteTask();	--æ‰§è¡Œä»»åŠ¡
 	end
 end
 function CityDevelop(cid,pid,task)
 	local c=JY.City[cid];
 	local p=JY.Person[pid];
 	local old,new,str,str2;
-	if task==1 then			--Ä¼±ø
-		old=math.floor(c["±øÁ¦"]);
+	if task==1 then			--å‹Ÿå…µ
+		old=math.floor(c["å…µåŠ›"]);
     local value = 1;
-    if c["ÈË¿Ú"] > 1000 then
-      value = 1 + limitX((c["ÈË¿Ú"] - 1000) / 10000, 0, 1);
+    if c["äººå£"] > 1000 then
+      value = 1 + limitX((c["äººå£"] - 1000) / 10000, 0, 1);
     else
-      value = limitX((c["ÈË¿Ú"] - 400) / 600, 0, 1);
+      value = limitX((c["äººå£"] - 400) / 600, 0, 1);
     end
-    value = math.floor(20 * ValueAdjust(p["÷ÈÁ¦"], 100) * value);
-		c["±øÁ¦"]=limitX(c["±øÁ¦"] + value, 0, c["¹æÄ£"] * 50000);
-    c["ÈË¿Ú"] = limitX(c["ÈË¿Ú"] - math.ceil(value / 100), 400, 30000);
-    c["ÖÎ°²"] = limitX(c["ÖÎ°²"] - 100 - math.random(50), 0, 1000);
-		new=math.floor(c["±øÁ¦"]);
-		str2="±øÁ¦";
-	elseif task==2 then		--ÑµÁ·
+    value = math.floor(20 * ValueAdjust(p["é­…åŠ›"], 100) * value);
+		c["å…µåŠ›"]=limitX(c["å…µåŠ›"] + value, 0, c["è§„æ¨¡"] * 50000);
+    c["äººå£"] = limitX(c["äººå£"] - math.ceil(value / 100), 400, 30000);
+    c["æ²»å®‰"] = limitX(c["æ²»å®‰"] - 100 - math.random(50), 0, 1000);
+		new=math.floor(c["å…µåŠ›"]);
+		str2="å…µåŠ›";
+	elseif task==2 then		--è®­ç»ƒ
 		old,new=0,0;
-		str2="±øÁ¦";
-	elseif task==3 then		--ĞŞ²¹
-		old=math.floor(c["·ÀÓù"]/2);
-		c["·ÀÓù"]=limitX(c["·ÀÓù"]+ValueAdjust(p["Í³ÂÊ"]*0.5+p["ÎäÁ¦"]*0.5,100)/10,0,c["×î´ó·ÀÓù"]);
-    c["ÖÎ°²"] = limitX(c["ÖÎ°²"] - 1 - math.random(10), 0, 1000);
-		new=math.floor(c["·ÀÓù"]/2);
-		str2="·ÀÓù";
-	elseif task==11 then	--¿ª¿Ñ
-		old=math.floor(c["¿ª¿Ñ"]/2);
-		c["¿ª¿Ñ"]=limitX(c["¿ª¿Ñ"]+ValueAdjust(p["ÕşÎñ"]*0.7+p["÷ÈÁ¦"]*0.3,100)/10,0,c["×î´ó¿ª¿Ñ"]);
-    c["ÖÎ°²"] = limitX(c["ÖÎ°²"] - 1 - math.random(10), 0, 1000);
-		new=math.floor(c["¿ª¿Ñ"]/2);
-		str2="¿ª¿Ñ";
-	elseif task==12 then	--ÉÌÒµ
-		old=math.floor(c["ÉÌÒµ"]/2);
-		c["ÉÌÒµ"]=limitX(c["ÉÌÒµ"]+ValueAdjust(p["ÕşÎñ"]*0.7+p["ÖÇÄ±"]*0.3,100)/10,0,c["×î´óÉÌÒµ"]);
-    c["ÖÎ°²"] = limitX(c["ÖÎ°²"] - 1 - math.random(10), 0, 1000);
-		new=math.floor(c["ÉÌÒµ"]/2);
-		str2="ÉÌÒµ";
-	elseif task==13 then	--¼¼Êõ
-		old=math.floor(c["¼¼Êõ"]/2);
-		c["¼¼Êõ"]=limitX(c["¼¼Êõ"]+ValueAdjust(p["ÖÇÄ±"]*0.7+p["ÕşÎñ"]*0.3,100)/10,0,c["×î´ó¼¼Êõ"]);
-    c["ÖÎ°²"] = limitX(c["ÖÎ°²"] - 1 - math.random(10), 0, 1000);
-		new=math.floor(c["¼¼Êõ"]/2);
-		str2="¼¼Êõ";
-	elseif task==14 then	--ÖÎ°²
-		old=math.floor(c["ÖÎ°²"]/10);
-		c["ÖÎ°²"]=limitX(c["ÖÎ°²"]+ValueAdjust(p["ÎäÁ¦"]*0.7+p["ÖÇÄ±"]*0.3,100)/5,0,1000);
-		new=math.floor(c["ÖÎ°²"]/10);
-		str2="ÖÎ°²";
+		str2="å…µåŠ›";
+	elseif task==3 then		--ä¿®è¡¥
+		old=math.floor(c["é˜²å¾¡"]/2);
+		c["é˜²å¾¡"]=limitX(c["é˜²å¾¡"]+ValueAdjust(p["ç»Ÿç‡"]*0.5+p["æ­¦åŠ›"]*0.5,100)/10,0,c["æœ€å¤§é˜²å¾¡"]);
+    c["æ²»å®‰"] = limitX(c["æ²»å®‰"] - 1 - math.random(10), 0, 1000);
+		new=math.floor(c["é˜²å¾¡"]/2);
+		str2="é˜²å¾¡";
+	elseif task==11 then	--å¼€å¦
+		old=math.floor(c["å¼€å¦"]/2);
+		c["å¼€å¦"]=limitX(c["å¼€å¦"]+ValueAdjust(p["æ”¿åŠ¡"]*0.7+p["é­…åŠ›"]*0.3,100)/10,0,c["æœ€å¤§å¼€å¦"]);
+    c["æ²»å®‰"] = limitX(c["æ²»å®‰"] - 1 - math.random(10), 0, 1000);
+		new=math.floor(c["å¼€å¦"]/2);
+		str2="å¼€å¦";
+	elseif task==12 then	--å•†ä¸š
+		old=math.floor(c["å•†ä¸š"]/2);
+		c["å•†ä¸š"]=limitX(c["å•†ä¸š"]+ValueAdjust(p["æ”¿åŠ¡"]*0.7+p["æ™ºè°‹"]*0.3,100)/10,0,c["æœ€å¤§å•†ä¸š"]);
+    c["æ²»å®‰"] = limitX(c["æ²»å®‰"] - 1 - math.random(10), 0, 1000);
+		new=math.floor(c["å•†ä¸š"]/2);
+		str2="å•†ä¸š";
+	elseif task==13 then	--æŠ€æœ¯
+		old=math.floor(c["æŠ€æœ¯"]/2);
+		c["æŠ€æœ¯"]=limitX(c["æŠ€æœ¯"]+ValueAdjust(p["æ™ºè°‹"]*0.7+p["æ”¿åŠ¡"]*0.3,100)/10,0,c["æœ€å¤§æŠ€æœ¯"]);
+    c["æ²»å®‰"] = limitX(c["æ²»å®‰"] - 1 - math.random(10), 0, 1000);
+		new=math.floor(c["æŠ€æœ¯"]/2);
+		str2="æŠ€æœ¯";
+	elseif task==14 then	--æ²»å®‰
+		old=math.floor(c["æ²»å®‰"]/10);
+		c["æ²»å®‰"]=limitX(c["æ²»å®‰"]+ValueAdjust(p["æ­¦åŠ›"]*0.7+p["æ™ºè°‹"]*0.3,100)/5,0,1000);
+		new=math.floor(c["æ²»å®‰"]/10);
+		str2="æ²»å®‰";
 	else
 		old,new=0,0;
 	end
@@ -611,6 +611,6 @@ function CityDevelop(cid,pid,task)
 		DrawGame();
 		Talk(pid,str);
 		--LoadPic(pic,2);
-		DrawMulitStrBox(string.format("[name]%s[normal]£º %3d  ¡ú %3d (%+d)",str2,old,new,new-old));
+		DrawMulitStrBox(string.format("[name]%s[normal]ï¼š %3d  â†’ %3d (%+d)",str2,old,new,new-old));
 	end
 end

@@ -6,7 +6,7 @@ MOUSE=	{
 			rx=0,
 			ry=0,
 			status='IDLE',
-			Holdtime=0;	--用于计算长按
+			Holdtime=0;	--鐢ㄤ簬璁＄畻闀挎寜
 			enableclick=true;
 			EXIT=	function()
 						if MOUSE.status=='EXIT' then

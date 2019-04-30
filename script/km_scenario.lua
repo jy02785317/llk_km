@@ -1,7 +1,7 @@
 ------ Scenario ------
 function km_loadScenario(chapter, act)
-	-- chapter ÕÂ, act Ä»
-	-- scene ³¡, section ½Ú, event ÊÂ¼ş, instruct Ö¸Áî
+	-- chapter ç« , act å¹•
+	-- scene åœº, section èŠ‚, event äº‹ä»¶, instruct æŒ‡ä»¤
 	local file = string.format(CC.SnrFilename, chapter, act)
 	local fp = io.open(file, 'r')
 	if fp == nil then
@@ -43,19 +43,19 @@ function km_loadScenario(chapter, act)
 					end
 				end
 			end
-			if '³¡' == inst then
+			if 'åœº' == inst then
 				scene = {}
 				section, event = nil, nil
 				table.insert(snr, scene)
-			elseif '½Ú' == inst then
+			elseif 'èŠ‚' == inst then
 				if type(scene) == 'table' then
 					section = {}
 					event = nil
 					table.insert(scene, section)
 				else
-					log(string.format('¾ç±¾´íÎóÓÚ%sµÄµÚ%dĞĞ, ½Ú¶¨ÒåÓÚ³¡Ö®Ç°', file, rowNo))
+					log(string.format('å‰§æœ¬é”™è¯¯äº%sçš„ç¬¬%dè¡Œ, èŠ‚å®šä¹‰äºåœºä¹‹å‰', file, rowNo))
 				end
-			elseif 'ÊÂ¼ş' == inst then
+			elseif 'äº‹ä»¶' == inst then
 				if type(section) == 'table' then
 					for i = 2, #parms do
 						parms[i] = tonumber(parms[i]) or 0
@@ -66,7 +66,7 @@ function km_loadScenario(chapter, act)
 					}
 					table.insert(section, event)
 				else
-					log(string.format('¾ç±¾´íÎóÓÚ%sµÄµÚ%dĞĞ, ÊÂ¼ş¶¨ÒåÓÚ½ÚÖ®Ç°', file, rowNo))
+					log(string.format('å‰§æœ¬é”™è¯¯äº%sçš„ç¬¬%dè¡Œ, äº‹ä»¶å®šä¹‰äºèŠ‚ä¹‹å‰', file, rowNo))
 				end
 			else
 				if type(event) == 'table' then
@@ -76,7 +76,7 @@ function km_loadScenario(chapter, act)
 						tabPos = tabPos,
 					})
 				else
-					log(string.format('¾ç±¾´íÎóÓÚ%sµÄµÚ%dĞĞ, Ö¸Áî³öÏÖÓÚÊÂ¼şÖ®Ç°', file, rowNo))
+					log(string.format('å‰§æœ¬é”™è¯¯äº%sçš„ç¬¬%dè¡Œ, æŒ‡ä»¤å‡ºç°äºäº‹ä»¶ä¹‹å‰', file, rowNo))
 				end
 			end
 		end
@@ -98,12 +98,12 @@ function km_playScenarioSub(...)
 	local ssid = idx.section
 	local scene = snr[sid]
 	if type(scene) ~= 'table' then
-		log('¾ç±¾´íÎó, µÚ' .. sid .. '³¡Îª¿Õ')
+		log('å‰§æœ¬é”™è¯¯, ç¬¬' .. sid .. 'åœºä¸ºç©º')
 		return
 	end
 	local section = scene[ssid]
 	if type(section) ~= 'table' then
-		log('¾ç±¾´íÎó, µÚ' .. ssid .. '½ÚÎª¿Õ')
+		log('å‰§æœ¬é”™è¯¯, ç¬¬' .. ssid .. 'èŠ‚ä¸ºç©º')
 		return
 	end
 	local maxEvent = #section
@@ -112,9 +112,9 @@ function km_playScenarioSub(...)
 		if km_checkTrigger(event.trig, {...}) then
 			km_executeInstruct(event.content)
 			if idx.event == 1 then
-				if event.trig[1] == '·ÖÖ§Ñ¡Ôñ' then
+				if event.trig[1] == 'åˆ†æ”¯é€‰æ‹©' then
 					idx.event = idx.event + KM.event.selection
-				elseif event.trig[1] == '×Ô¶¯' then
+				elseif event.trig[1] == 'è‡ªåŠ¨' then
 					idx.nextSection = true
 					break
 				else
@@ -147,48 +147,48 @@ function km_playScenarioSub(...)
 end
 function km_checkTrigger(trig, e)
 	local ev = KM.event
-	if trig[1] == '×Ô¶¯' then
+	if trig[1] == 'è‡ªåŠ¨' then
 		return true
-	elseif trig[1] == '·ÖÖ§Ñ¡Ôñ' then
+	elseif trig[1] == 'åˆ†æ”¯é€‰æ‹©' then
 		return true
-	elseif trig[1] == 'Ñ¡ÔñÈËÎïÊ±' then
-		if e[1] == 'Ñ¡ÔñÈËÎï¿¨Æ¬' and e[2] == trig[2]  then
+	elseif trig[1] == 'é€‰æ‹©äººç‰©æ—¶' then
+		if e[1] == 'é€‰æ‹©äººç‰©å¡ç‰‡' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '½øÈë½¨ÖşÊ±' then
-		if e[1] == '½øÈë½¨Öş' and e[2] == trig[2]  then
+	elseif trig[1] == 'è¿›å…¥å»ºç­‘æ—¶' then
+		if e[1] == 'è¿›å…¥å»ºç­‘' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '½øÈë³ÇÊĞÊ±' then
-		if e[1] == '½øÈë³ÇÊĞ' and e[2] == trig[2]  then
+	elseif trig[1] == 'è¿›å…¥åŸå¸‚æ—¶' then
+		if e[1] == 'è¿›å…¥åŸå¸‚' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '»ØºÏ¿ªÊ¼Ê±' then
-		if e[1] == '»ØºÏ¿ªÊ¼' and ev.turnNum == trig[2]  then
+	elseif trig[1] == 'å›åˆå¼€å§‹æ—¶' then
+		if e[1] == 'å›åˆå¼€å§‹' and ev.turnNum == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '²¿¶ÓÏàÁÚÊ±' then
-		if e[1] == '½øÈëÇøÓò' and e[2] == trig[2]  then
+	elseif trig[1] == 'éƒ¨é˜Ÿç›¸é‚»æ—¶' then
+		if e[1] == 'è¿›å…¥åŒºåŸŸ' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '½øÈë×ø±êÊ±' then
-		if e[1] == '½øÈëÇøÓò' and e[2] == trig[2]  then
+	elseif trig[1] == 'è¿›å…¥åæ ‡æ—¶' then
+		if e[1] == 'è¿›å…¥åŒºåŸŸ' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '½øÈëÇøÓòÊ±' then
-		if e[1] == '½øÈëÇøÓò' and e[2] == trig[2]  then
+	elseif trig[1] == 'è¿›å…¥åŒºåŸŸæ—¶' then
+		if e[1] == 'è¿›å…¥åŒºåŸŸ' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == '²¿¶Ó³·ÍËÊ±' then
-		if e[1] == '²¿¶Ó³·ÍË' and e[2] == trig[2]  then
+	elseif trig[1] == 'éƒ¨é˜Ÿæ’¤é€€æ—¶' then
+		if e[1] == 'éƒ¨é˜Ÿæ’¤é€€' and e[2] == trig[2]  then
 			return true
 		end
-	elseif trig[1] == 'Õ½¶·Ê¤ÀûÊ±' then
-		if e[1] == 'Õ½¶·Ê¤Àû' then
+	elseif trig[1] == 'æˆ˜æ–—èƒœåˆ©æ—¶' then
+		if e[1] == 'æˆ˜æ–—èƒœåˆ©' then
 			return true
 		end
-	elseif trig[1] == 'Õ½¶·Ê§°ÜÊ±' then
-		if e[1] == 'Õ½¶·Ê§°Ü' then
+	elseif trig[1] == 'æˆ˜æ–—å¤±è´¥æ—¶' then
+		if e[1] == 'æˆ˜æ–—å¤±è´¥' then
 			return true
 		end
 	end
@@ -214,7 +214,7 @@ function km_executeInstruct(content)
 					break
 				end
 			else
-				log('Ö¸Áî´íÎó, "' .. v.inst .. '"²»´æÔÚ')
+				log('æŒ‡ä»¤é”™è¯¯, "' .. v.inst .. '"ä¸å­˜åœ¨')
 			end
 		end
 	end
@@ -229,7 +229,7 @@ function km_assert(parms, ...)
 		elseif v == 'int' then
 			par = tonumber(par)
 			if par == nil then
-				return 'Ö¸Áî²ÎÊı´íÎó, ²ÎÊı' .. k .. 'ĞèÒªÎªÕûÊı'
+				return 'æŒ‡ä»¤å‚æ•°é”™è¯¯, å‚æ•°' .. k .. 'éœ€è¦ä¸ºæ•´æ•°'
 			end
 		else
 			par = par or ''
@@ -242,11 +242,11 @@ function km_assertInt(parms)
 	local rv = {}
 	for k, v in ipairs(parms) do
 		if v == nil then
-			return 'Ö¸Áî²ÎÊı´íÎó, ²ÎÊı' .. k .. '²»ÄÜÎª¿ÕÖµ'
+			return 'æŒ‡ä»¤å‚æ•°é”™è¯¯, å‚æ•°' .. k .. 'ä¸èƒ½ä¸ºç©ºå€¼'
 		else
 			v = tonumber(v)
 			if v == nil then
-				return 'Ö¸Áî²ÎÊı´íÎó, ²ÎÊı' .. k .. 'ĞèÒªÎªÕûÊı'
+				return 'æŒ‡ä»¤å‚æ•°é”™è¯¯, å‚æ•°' .. k .. 'éœ€è¦ä¸ºæ•´æ•°'
 			end
 		end
 		table.insert(rv, v)
@@ -254,14 +254,14 @@ function km_assertInt(parms)
 	return false, table.unpack(rv)
 end
 Instruct = {}
-Instruct['ÉèÖÃÄ£Ê½'] = function(parms)
+Instruct['è®¾ç½®æ¨¡å¼'] = function(parms)
 	local err, mode = km_assert(parms, 'int')
 	if err then
 		return err
 	end
 	KM.gameMode = mode
 end
-Instruct['ÉèÖÃÕÂ½ÚÃû'] = function(parms)
+Instruct['è®¾ç½®ç« èŠ‚å'] = function(parms)
 	local err, text = km_assert(parms, 'string')
 	if err then
 		return err
@@ -269,7 +269,7 @@ Instruct['ÉèÖÃÕÂ½ÚÃû'] = function(parms)
 	-- wait fulfill
 	KM.misc.cheaperName = text
 end
-Instruct['ÉèÖÃÈÎÎñÄ¿±ê'] = function(parms)
+Instruct['è®¾ç½®ä»»åŠ¡ç›®æ ‡'] = function(parms)
 	local err, text = km_assert(parms, 'string')
 	if err then
 		return err
@@ -277,11 +277,11 @@ Instruct['ÉèÖÃÈÎÎñÄ¿±ê'] = function(parms)
 	-- wait fulfill
 	KM.misc.mission = text
 end
-Instruct['½áÊø±¾½Ú'] = function(parms)
+Instruct['ç»“æŸæœ¬èŠ‚'] = function(parms)
 	-- KM.snrIdx.section = KM.snrIdx.section + 1
 	KM.snrIdx.nextSection = true
 end
-Instruct['³¡Ìø×ª'] = function(parms)
+Instruct['åœºè·³è½¬'] = function(parms)
 	local err, scene = km_assert(parms, 'int')
 	if err then
 		return err
@@ -289,38 +289,38 @@ Instruct['³¡Ìø×ª'] = function(parms)
 	-- KM.snrIdx.scene = scene
 	KM.snrIdx.jmpScene = scene
 end
-Instruct['½áÊø±¾ÕÂ'] = function(parms)
+Instruct['ç»“æŸæœ¬ç« '] = function(parms)
 	-- wait fulfill
 end
-Instruct['²¥·ÅÒôÀÖ'] = function(parms)
+Instruct['æ’­æ”¾éŸ³ä¹'] = function(parms)
 	local err, music = km_assert(parms, 'int')
 	if err then
 		return err
 	end
 	PlayBGM(music)
 end
-Instruct['¿ªÆô³ÇÊĞ'] = function(parms)
+Instruct['å¼€å¯åŸå¸‚'] = function(parms)
 	local err, city = km_assertInt(parms)
 	if err then
 		return err
 	end
 	-- wait fulfill
 end
-Instruct['ĞŞ¸ÄÕóÓª'] = function(parms)
+Instruct['ä¿®æ”¹é˜µè¥'] = function(parms)
 	local err, role, force = km_assert(parms, 'int', 'int')
 	if err then
 		return err
 	end
 	-- wait fulfill
 end
-Instruct['ÇĞ»»³ÇÊĞ'] = function(parms)
+Instruct['åˆ‡æ¢åŸå¸‚'] = function(parms)
 	local err, city = km_assert(parms, 'int')
 	if err then
 		return err
 	end
 	-- wait fulfill
 end
-Instruct['Ö¸¶¨µØÍ¼'] = function(parms)
+Instruct['æŒ‡å®šåœ°å›¾'] = function(parms)
 	local err, category, id = km_assert(parms, 'int', 0)
 	if err then
 		return err
@@ -329,27 +329,27 @@ Instruct['Ö¸¶¨µØÍ¼'] = function(parms)
 	km_waitFrame(4)
 	Dark()
 	KM.UI.scene.role = {}
-	if category == 0 then	-- ´óµØÍ¼
+	if category == 0 then	-- å¤§åœ°å›¾
 		km_setScene(201)
-	elseif category == 1 then	-- ³ÇÊĞ
+	elseif category == 1 then	-- åŸå¸‚
 		local city = KM.city[id]
 		if city ~= nil then
-			km_setScene(city['µØÍ¼'])
+			km_setScene(city['åœ°å›¾'])
 		end
 	elseif category == 2 then
-		if id == 0 then -- ÒéÊÂÌü
+		if id == 0 then -- è®®äº‹å…
 			km_setScene(54)
-		elseif id == 1 then -- ¼¯»áËù
+		elseif id == 1 then -- é›†ä¼šæ‰€
 			km_setScene(67)
-		elseif id == 2 then -- ¾Æ¹İ
+		elseif id == 2 then -- é…’é¦†
 			km_setScene(68)
-		elseif id == 5 then -- ¹¬µî
+		elseif id == 5 then -- å®«æ®¿
 			km_setScene(53)
-		elseif id == 6 then -- ¹ÙÛ¡
+		elseif id == 6 then -- å®˜é‚¸
 			km_setScene(69)
-		elseif id == 7 then -- ÃñÕ¬
+		elseif id == 7 then -- æ°‘å®…
 			km_setScene(69)
-		elseif id == 8 then -- ÓªÕÊ
+		elseif id == 8 then -- è¥å¸
 			km_setScene(55)
 		elseif id == 9 then -- ??
 			km_setScene(52)
@@ -357,17 +357,17 @@ Instruct['Ö¸¶¨µØÍ¼'] = function(parms)
 			km_setScene(55)
 		elseif id == 11 then -- ??
 			km_setScene(55)
-		elseif id == 15 then -- ½¼Íâ
+		elseif id == 15 then -- éƒŠå¤–
 			km_setScene(62)
 		elseif id == 18 then -- ??
 			km_setScene(70)
 		end
 	elseif category == 3 then
-		KM.war.name = CC.WarName[id] or 'Î´Ö¸¶¨µÄÕ½ÒÛÃû'
+		KM.war.name = CC.WarName[id] or 'æœªæŒ‡å®šçš„æˆ˜å½¹å'
 		km_loadTMX(id)
 	end
 end
-Instruct['ÏÔÊ¾Ñ¡µ¥'] = function(parms)
+Instruct['æ˜¾ç¤ºé€‰å•'] = function(parms)
 	local err, text = km_assert(parms, 'string')
 	if err then
 		return err
@@ -376,14 +376,14 @@ Instruct['ÏÔÊ¾Ñ¡µ¥'] = function(parms)
 	local r = km_select(text, CC.ScreenW2, CC.ScreenH2)
 	-- KM.snrIdx.event = KM.snrIdx.event + r
 end
-Instruct['ÏÔÊ¾ĞÅÏ¢'] = function(parms)
+Instruct['æ˜¾ç¤ºä¿¡æ¯'] = function(parms)
 	local err, text = km_assert(parms, 'string')
 	if err then
 		return err
 	end
 	km_notice(text)
 end
-Instruct['ÏÔÊ¾¶àĞĞĞÅÏ¢'] = function(parms)
+Instruct['æ˜¾ç¤ºå¤šè¡Œä¿¡æ¯'] = function(parms)
 	local err, text = km_assert(parms, 'string')
 	if err then
 		return err
@@ -391,7 +391,7 @@ Instruct['ÏÔÊ¾¶àĞĞĞÅÏ¢'] = function(parms)
 	text = string.gsub(text, '\\n', '[n]')
 	km_mutliText(text)
 end
-Instruct['¶Ô»°'] = function(parms)
+Instruct['å¯¹è¯'] = function(parms)
 	local err, role, text = km_assert(parms, 'int', 'string')
 	if err then
 		return err
@@ -401,7 +401,7 @@ Instruct['¶Ô»°'] = function(parms)
 		km_talk(role, table.concat(talkArrary, '[n]', i, math.min(i + 2, num)))
 	end
 end
-Instruct['ÈËÎï³öÏÖ'] = function(parms)
+Instruct['äººç‰©å‡ºç°'] = function(parms)
 	local err, role, x, y = km_assert(parms, 'int', 'int', 'int')
 	if err then
 		return err
@@ -410,40 +410,40 @@ Instruct['ÈËÎï³öÏÖ'] = function(parms)
 		km_insertRole(role, x, y)
 	end
 end
-Instruct['ÈËÎïÒÆ¶¯'] = function(parms)
+Instruct['äººç‰©ç§»åŠ¨'] = function(parms)
 	-- wait fulfill
 end
-Instruct['ÈËÎïÏûÊ§'] = function(parms)
+Instruct['äººç‰©æ¶ˆå¤±'] = function(parms)
 	local err, role = km_assert(parms, 'int')
 	if err then
 		return err
 	end
 	km_removeRole(role)
 end
-Instruct['ÈËÎï¶¯×÷'] = function(parms)
+Instruct['äººç‰©åŠ¨ä½œ'] = function(parms)
 	-- wait fulfill
 end
-Instruct['ÈËÎï±íÇé'] = function(parms)
+Instruct['äººç‰©è¡¨æƒ…'] = function(parms)
 	-- wait fulfill
 end
-Instruct['ÏÔÊ¾³¡¾°'] = function(parms)
+Instruct['æ˜¾ç¤ºåœºæ™¯'] = function(parms)
 	-- wait fulfill
 end
-Instruct['ÉèÖÃ±ê¼Ç'] = function(parms)
+Instruct['è®¾ç½®æ ‡è®°'] = function(parms)
 	local err, id, v = km_assert(parms, 'int', 'string')
 	if err then
 		return err
 	end
-	KM.flag[id] = v == 'Õæ'
+	KM.flag[id] = v == 'çœŸ'
 end
-Instruct['ÅĞ¶Ï±ê¼Ç'] = function(parms, tabPos)
+Instruct['åˆ¤æ–­æ ‡è®°'] = function(parms, tabPos)
 	local flags = {}
 	for k, v in ipairs(parms) do
 		local id = tonumber(v)
 		if id ~= nil then
 			table.insert(flags, id)
 		else
-			local cond = v == 'Õæ'
+			local cond = v == 'çœŸ'
 			for kk, id in ipairs(flags) do
 				if KM.flag[id] ~= cond then
 					KM.skipTab = tabPos
@@ -457,43 +457,43 @@ Instruct['ÅĞ¶Ï±ê¼Ç'] = function(parms, tabPos)
 		KM.skipTab = tabPos
 	end
 end
-Instruct['Ñ¯ÎÊÊÇ·ñ'] = function(parms, tabPos)
+Instruct['è¯¢é—®æ˜¯å¦'] = function(parms, tabPos)
 	local err, cond = km_assert(parms, 0)
 	if cond ~= km_confirm() then
 		KM.skipTab = tabPos
 	end
 end
-Instruct['Éı¼¶'] = function(parms)
+Instruct['å‡çº§'] = function(parms)
 	local err, pid, num = km_assert(parms, 'int', 'int')
 	if err then
 		return err
 	end
 	local role = KM.role[pid]
-	role['µÈ¼¶'] = limitX(role['µÈ¼¶'] + num, 1, CC.MaxLv)
+	role['ç­‰çº§'] = limitX(role['ç­‰çº§'] + num, 1, CC.MaxLv)
 end
-Instruct['×ªÖ°'] = function(parms)
+Instruct['è½¬èŒ'] = function(parms)
 	local err, pid, uid = km_assert(parms, 'int', 'int')
 	if err then
 		return err
 	end
 	local role = KM.role[pid]
 	if role == nil or KM.unit[uid] == nil then
-		return string.format('Ö¸Áî[×ªÖ°]²ÎÊı´íÎó, ÈËÎï = %d »ò ±øÖÖ = %d ²»´æÔÚ', pid, uid)
+		return string.format('æŒ‡ä»¤[è½¬èŒ]å‚æ•°é”™è¯¯, äººç‰© = %d æˆ– å…µç§ = %d ä¸å­˜åœ¨', pid, uid)
 	end
-	role['±øÖÖ'] = uid
+	role['å…µç§'] = uid
 end
-Instruct['ĞŞ¸ÄÕóÓª'] = function(parms)
+Instruct['ä¿®æ”¹é˜µè¥'] = function(parms)
 	local err, pid, fid = km_assert(parms, 'int', 'int')
 	if err then
 		return err
 	end
 	local role = KM.role[pid]
 	if role == nil then
-		return string.format('Ö¸Áî[ĞŞ¸ÄÕóÓª]²ÎÊı´íÎó, ÈËÎï = %d »ò ÕóÓª = %d ²»´æÔÚ', pid, fid)
+		return string.format('æŒ‡ä»¤[ä¿®æ”¹é˜µè¥]å‚æ•°é”™è¯¯, äººç‰© = %d æˆ– é˜µè¥ = %d ä¸å­˜åœ¨', pid, fid)
 	end
-	role['ÕóÓª'] = fid
+	role['é˜µè¥'] = fid
 end
-Instruct['»ñµÃµÀ¾ß'] = function(parms)
+Instruct['è·å¾—é“å…·'] = function(parms)
 	local err, iid = km_assert(parms, 'int')
 	if err then
 		return err
@@ -501,16 +501,16 @@ Instruct['»ñµÃµÀ¾ß'] = function(parms)
 	local pid = 1
 	local role = KM.role[pid]
 	if role == nil or false then
-		return string.format('Ö¸Áî[»ñµÃµÀ¾ß]²ÎÊı´íÎó, µÀ¾ß = %d ²»´æÔÚ', iid)
+		return string.format('æŒ‡ä»¤[è·å¾—é“å…·]å‚æ•°é”™è¯¯, é“å…· = %d ä¸å­˜åœ¨', iid)
 	end
 	for i = 1, CC.MaxItemNum do
-		if role['µÀ¾ß' .. i] == -1 then
-			role['µÀ¾ß' .. i] = iid
+		if role['é“å…·' .. i] == -1 then
+			role['é“å…·' .. i] = iid
 		end
 	end
 end
 ------ War ------
-Instruct['Õ½¶·³õÊ¼»¯'] = function(parms)
+Instruct['æˆ˜æ–—åˆå§‹åŒ–'] = function(parms)
 	local err, isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal = km_assert(parms, 0, 0, 0, 0, 0)
 	if err then
 		return err
@@ -520,7 +520,7 @@ Instruct['Õ½¶·³õÊ¼»¯'] = function(parms)
 	end
 	km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
 end
-Instruct['²¿ÊğÎÒ¾ü'] = function(parms)
+Instruct['éƒ¨ç½²æˆ‘å†›'] = function(parms)
 	local err, pid, x, y, isCheckFlag, flag, d, isHide = km_assert(parms, 0, 0, 0, 0, 0, 0, 0)
 	if err then
 		return err
@@ -529,7 +529,7 @@ Instruct['²¿ÊğÎÒ¾ü'] = function(parms)
 		return
 	end
 	if pid > 0 and KM.role[pid] == nil then
-		return string.format('Ö¸Áî[²¿ÊğÎÒ¾ü]²ÎÊı´íÎó, ÈËÎï = %d ²»´æÔÚ', pid)
+		return string.format('æŒ‡ä»¤[éƒ¨ç½²æˆ‘å†›]å‚æ•°é”™è¯¯, äººç‰© = %d ä¸å­˜åœ¨', pid)
 	end
 	table.insert(KM.war.candidate, {
 		pid = pid,
@@ -540,7 +540,7 @@ Instruct['²¿ÊğÎÒ¾ü'] = function(parms)
 	})
 	
 end
-Instruct['Ñ¡Ôñ²¿¶Ó'] = function(parms)
+Instruct['é€‰æ‹©éƒ¨é˜Ÿ'] = function(parms)
 	local err = km_assert(parms)
 	if err then
 		return err
@@ -552,7 +552,7 @@ Instruct['Ñ¡Ôñ²¿¶Ó'] = function(parms)
 	end
 	KM.war.candidate = {}
 end
-Instruct['²¿ÊğµĞ¾ü'] = function(parms)
+Instruct['éƒ¨ç½²æ•Œå†›'] = function(parms)
 	local err, pid, x, y, isCheckFlag, flag, d, isHide, uid, lv, ai, ai_x, ai_y = km_assert(parms, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 	if err then
 		return err
@@ -562,23 +562,23 @@ Instruct['²¿ÊğµĞ¾ü'] = function(parms)
 	end
 	local role = KM.role[pid]
 	if role == nil then
-		return string.format('Ö¸Áî[²¿ÊğµĞ¾ü]²ÎÊı´íÎó, ÈËÎï = %d ²»´æÔÚ', pid)
+		return string.format('æŒ‡ä»¤[éƒ¨ç½²æ•Œå†›]å‚æ•°é”™è¯¯, äººç‰© = %d ä¸å­˜åœ¨', pid)
 	end
 	if KM.unit[uid] == nil then
-		log(string.format('Ö¸Áî[²¿ÊğµĞ¾ü]²ÎÊı´íÎó, ±øÖÖ = %d ²»´æÔÚ', uid))
+		log(string.format('æŒ‡ä»¤[éƒ¨ç½²æ•Œå†›]å‚æ•°é”™è¯¯, å…µç§ = %d ä¸å­˜åœ¨', uid))
 		uid = 1
 	end
-	role['±øÖÖ'] = uid
-	role['µÈ¼¶'] = limitX(lv, 1, CC.MaxLv)
+	role['å…µç§'] = uid
+	role['ç­‰çº§'] = limitX(lv, 1, CC.MaxLv)
 	km_insertRoleToWar(pid, x, y, limitX(d, 1, 4), isHide == 1, true, limitX(ai, 1, 7), ai_x, ai_y)
 end
-Instruct['½øÈëÕ½¶·'] = function(parms)
+Instruct['è¿›å…¥æˆ˜æ–—'] = function(parms)
 	local err = km_assert(parms)
 	if err then
 		return err
 	end
 	if #KM.war.gridMap <= 0 then
-		return 'Ö¸Áî[½øÈëÕ½¶·]Ê§°Ü, Õ½³¡µØÍ¼Î´Ö¸¶¨'
+		return 'æŒ‡ä»¤[è¿›å…¥æˆ˜æ–—]å¤±è´¥, æˆ˜åœºåœ°å›¾æœªæŒ‡å®š'
 	end
 	if KM.war.gridW < KM.war.screenW then
 		KM.war.gridX = math.floor((KM.war.gridW - KM.war.screenW) / 2)
@@ -595,8 +595,8 @@ Instruct['½øÈëÕ½¶·'] = function(parms)
 	KM.gameMode = 2
 end
 
--- ²¿ÊğÎÒ¾ü: 1<Öî¸ğÁÁ>, <×ø±ê>6, 22, <ÅĞ¶Ï±ê¼Ç³ö³¡>0<·ñ>, <±ê¼Ç>0, <·½Ïò>1<ÓÒ>, <·ü±ø>0<·ñ>
--- ²¿ÊğÎÒ¾ü: 3<¹ØÓğ>, <×ø±ê>5, 10, <ÅĞ¶Ï±ê¼Ç³ö³¡>0<·ñ>, <±ê¼Ç>0, <·½Ïò>3<×ó>, <·ü±ø>1<ÊÇ>
--- ²¿ÊğÎÒ¾ü: 4<ÕÅ·É>, <×ø±ê>6, 10, <ÅĞ¶Ï±ê¼Ç³ö³¡>0<·ñ>, <±ê¼Ç>0, <·½Ïò>3<×ó>, <·ü±ø>1<ÊÇ>
--- ²¿ÊğÎÒ¾ü: 7<ÕÔÔÆ>, <×ø±ê>6, 9, <ÅĞ¶Ï±ê¼Ç³ö³¡>0<·ñ>, <±ê¼Ç>0, <·½Ïò>3<×ó>, <·ü±ø>0<·ñ>
--- ²¿ÊğÎÒ¾ü: 0<×ÔÑ¡>, <×ø±ê>2, 22, <ÅĞ¶Ï±ê¼Ç³ö³¡>0<·ñ>, <±ê¼Ç>0, <·½Ïò>1<ÓÒ>, <·ü±ø>0<·ñ>
+-- éƒ¨ç½²æˆ‘å†›: 1<è¯¸è‘›äº®>, <åæ ‡>6, 22, <åˆ¤æ–­æ ‡è®°å‡ºåœº>0<å¦>, <æ ‡è®°>0, <æ–¹å‘>1<å³>, <ä¼å…µ>0<å¦>
+-- éƒ¨ç½²æˆ‘å†›: 3<å…³ç¾½>, <åæ ‡>5, 10, <åˆ¤æ–­æ ‡è®°å‡ºåœº>0<å¦>, <æ ‡è®°>0, <æ–¹å‘>3<å·¦>, <ä¼å…µ>1<æ˜¯>
+-- éƒ¨ç½²æˆ‘å†›: 4<å¼ é£>, <åæ ‡>6, 10, <åˆ¤æ–­æ ‡è®°å‡ºåœº>0<å¦>, <æ ‡è®°>0, <æ–¹å‘>3<å·¦>, <ä¼å…µ>1<æ˜¯>
+-- éƒ¨ç½²æˆ‘å†›: 7<èµµäº‘>, <åæ ‡>6, 9, <åˆ¤æ–­æ ‡è®°å‡ºåœº>0<å¦>, <æ ‡è®°>0, <æ–¹å‘>3<å·¦>, <ä¼å…µ>0<å¦>
+-- éƒ¨ç½²æˆ‘å†›: 0<è‡ªé€‰>, <åæ ‡>2, 22, <åˆ¤æ–­æ ‡è®°å‡ºåœº>0<å¦>, <æ ‡è®°>0, <æ–¹å‘>1<å³>, <ä¼å…µ>0<å¦>

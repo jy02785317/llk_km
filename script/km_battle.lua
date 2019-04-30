@@ -36,7 +36,7 @@ function km_drawWar(isActive)
 		end
 		-- move path
 		local role = KM.role[war.pid]
-		if isActive and curGrid and curGrid.s == 2 and role.isEnemy == false and (role['ÕóÓª'] == 1 or role['ÕóÓª'] == 7) then
+		if isActive and curGrid and curGrid.s == 2 and role.isEnemy == false and (role['é˜µè¥'] == 1 or role['é˜µè¥'] == 7) then
 			local grid = curGrid
 			local x1, y1 = km_gridToScreen(grid.x, grid.y)
 			grid = grid.parent
@@ -135,62 +135,62 @@ function km_drawWar(isActive)
 		-- 	if curGrid and MOUSE.CLICK(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
 		-- 		if war.isShowMoveArea then
 		-- 			KM.event.category = 3
-		-- 			KM.event.name = 'Ñ¡ÔñÒÆ¶¯Ä¿±ê'
+		-- 			KM.event.name = 'é€‰æ‹©ç§»åŠ¨ç›®æ ‡'
 		-- 			KM.event.grid = curGrid
 		-- 		elseif curGrid.pid > 0 then
 		-- 			KM.event.category = 3
-		-- 			KM.event.name = 'Ñ¡Ôñ²¿¶Ó'
+		-- 			KM.event.name = 'é€‰æ‹©éƒ¨é˜Ÿ'
 		-- 			KM.event.pid = curGrid.pid
 		-- 		end
 		-- 	end
 		-- end
 		if curGrid and MOUSE.CLICK(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
 			-- if war.opStep == 0 then
-			-- 	KM.event.name = 'Ñ¡Ôñ²¿¶Ó'
+			-- 	KM.event.name = 'é€‰æ‹©éƒ¨é˜Ÿ'
 			-- 	KM.event.pid = curGrid.pid
 			-- elseif war.opStep == 1 then
-			-- 	KM.event.name = 'Ñ¡ÔñÒÆ¶¯Ä¿±ê'
+			-- 	KM.event.name = 'é€‰æ‹©ç§»åŠ¨ç›®æ ‡'
 			-- 	KM.event.grid = curGrid
 			-- elseif war.opStep == 2 then
-			-- 	KM.event.name = 'Ñ¡Ôñ×÷ÓÃÄ¿±ê'
+			-- 	KM.event.name = 'é€‰æ‹©ä½œç”¨ç›®æ ‡'
 			-- 	KM.event.grid = curGrid
 			-- end
-			KM.event.name = 'Ñ¡ÔñµØÍ¼Íø¸ñ'
+			KM.event.name = 'é€‰æ‹©åœ°å›¾ç½‘æ ¼'
 			KM.event.grid = curGrid
 
 			-- if war.isShowMoveArea then
 			-- 	KM.event.category = 3
-			-- 	KM.event.name = 'Ñ¡ÔñÒÆ¶¯Ä¿±ê'
+			-- 	KM.event.name = 'é€‰æ‹©ç§»åŠ¨ç›®æ ‡'
 			-- 	KM.event.grid = curGrid
 			-- elseif war.isShowSelectArea then
 			-- 	KM.event.category = 3
-			-- 	KM.event.name = 'Ñ¡Ôñ×÷ÓÃÄ¿±ê'
+			-- 	KM.event.name = 'é€‰æ‹©ä½œç”¨ç›®æ ‡'
 			-- 	KM.event.grid = curGrid
 			-- elseif curGrid.pid > 0 then
 			-- 	KM.event.category = 3
-			-- 	KM.event.name = 'Ñ¡Ôñ²¿¶Ó'
+			-- 	KM.event.name = 'é€‰æ‹©éƒ¨é˜Ÿ'
 			-- 	KM.event.pid = curGrid.pid
 			-- end
 		elseif MOUSE.HOLD(0, 0, CC.ScreenW, CC.ScreenH) then
-			KM.event.name = 'µØÍ¼ÍÏ¶¯'
+			KM.event.name = 'åœ°å›¾æ‹–åŠ¨'
 			KM.event.x = MOUSE.x
 			KM.event.y = MOUSE.y
-			-- log('µØÍ¼ÍÏ¶¯', KM.event.x, KM.event.y)
+			-- log('åœ°å›¾æ‹–åŠ¨', KM.event.x, KM.event.y)
 		else
 			KM.event.dx = 0
 			KM.event.dy = 0
 			if war.gridX > 1 and MOUSE.x < 48 then
-				KM.event.name = 'µØÍ¼¾í¶¯'
+				KM.event.name = 'åœ°å›¾å·åŠ¨'
 				KM.event.dx = -1
 			elseif war.gridX < war.gridW - war.screenW + 1 and MOUSE.x > CC.ScreenW - 48 then
-				KM.event.name = 'µØÍ¼¾í¶¯'
+				KM.event.name = 'åœ°å›¾å·åŠ¨'
 				KM.event.dx = 1
 			end
 			if war.gridY > 1 and MOUSE.y < 48 then
-				KM.event.name = 'µØÍ¼¾í¶¯'
+				KM.event.name = 'åœ°å›¾å·åŠ¨'
 				KM.event.dy = -1
 			elseif war.gridY < war.gridH - war.screenH + 1 and MOUSE.y > CC.ScreenH - 48 then
-				KM.event.name = 'µØÍ¼¾í¶¯'
+				KM.event.name = 'åœ°å›¾å·åŠ¨'
 				KM.event.dy = 1
 			end
 		end
@@ -266,24 +266,24 @@ function km_drawUnit(pid, isActive)
 	end
 	local pic = role.pic or 0
 	local frame = role.frame or KM.UI.frame
-	if role.anim == 0 then	-- ¾²Ö¹
+	if role.anim == 0 then	-- é™æ­¢
 		pic = pic + 16 + (d - 1)
-	elseif role.anim == 1 then	-- ÒÆ¶¯ / Õı³£
+	elseif role.anim == 1 then	-- ç§»åŠ¨ / æ­£å¸¸
 		pic = pic + 4 * (d - 1) + frame % 2
-	elseif role.anim == 2 then	-- ¹¥»÷
+	elseif role.anim == 2 then	-- æ”»å‡»
 		pic = pic + 30 + 4 * (d - 1) + frame
-	elseif role.anim == 3 then	-- ·ÀÓù
+	elseif role.anim == 3 then	-- é˜²å¾¡
 		pic = pic + 22 + (d - 1)
-	elseif role.anim == 4 then	-- ±»¹¥»÷
+	elseif role.anim == 4 then	-- è¢«æ”»å‡»
 		pic = pic + 26 + (d - 1) % 2
-	elseif role.anim == 5 then	-- ´­Æø
+	elseif role.anim == 5 then	-- å–˜æ°”
 		pic = pic + 20 + frame % 2
-	elseif role.anim == 6 then	-- Éı¼¶
+	elseif role.anim == 6 then	-- å‡çº§
 		pic = pic + 28
-	elseif role.anim == 7 then	-- »ìÂÒ
+	elseif role.anim == 7 then	-- æ··ä¹±
 		if role.isEnemy then
 			pic = 5012
-		elseif role['ÕóÓª'] == 1 or role['ÕóÓª'] == 7 then
+		elseif role['é˜µè¥'] == 1 or role['é˜µè¥'] == 7 then
 			pic = 5010
 		else
 			pic = 5014
@@ -295,7 +295,7 @@ function km_drawUnit(pid, isActive)
 	end
 	if false then
 		lib.PicLoadCache(4, 260 * 2, x, y - 32, 0, nil, nil, 64)
-		lib.PicLoadCache(2, (role['Í·Ïñ'] + 6000) * 2, x - 20, y - 32, 0, nil, nil, 24)
+		lib.PicLoadCache(2, (role['å¤´åƒ'] + 6000) * 2, x - 20, y - 32, 0, nil, nil, 24)
 		DrawStringEnhance(x + 8, y - 33, '[B]' .. tostring(role.HP), M_White, CC.FontSizeS, 0.5, 0.5)
 	end
 	if not isActive then
@@ -307,44 +307,44 @@ function km_drawUnitBrief(pid, isActive)
 	if role == nil then
 		return
 	end
-	local uid = role['±øÖÖ']
+	local uid = role['å…µç§']
 	local x, y = 8, CC.ScreenH - 128
 	if role.x - KM.war.gridX < KM.war.screenW / 2 then
 		x = CC.ScreenW - 288 - 8
-		lib.PicLoadCache(2, (role['Í·Ïñ2']) * 2, x + 108 - 32, y - 192, 1, nil, nil, 180, 256);
+		lib.PicLoadCache(2, (role['å¤´åƒ2']) * 2, x + 108 - 32, y - 192, 1, nil, nil, 180, 256);
 	else
-		lib.PicLoadCache(2, (role['Í·Ïñ2']) * 2, x + 32, y - 192, 1, nil, nil, 180, 256);
+		lib.PicLoadCache(2, (role['å¤´åƒ2']) * 2, x + 32, y - 192, 1, nil, nil, 180, 256);
 	end
 	LoadPicEnhance(115, x, y, 288, 128);
 	x = x + 8
 	y = y + 8
-	DrawStringEnhance(x + CC.FontSize * 2, y, '[B]' .. role['Ãû³Æ'] .. '', M_White, CC.FontSize, 0.5, 0)
-	DrawStringEnhance(x + 140, y + 4, '[B]¼¶', M_White, CC.FontSizeM, 1, 0)
-	DrawStringEnhance(x + 120, y, '[B]' .. role['µÈ¼¶'], M_White, CC.FontSize, 1, 0)
-	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[uid]['Ãû³Æ'], M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x + CC.FontSize * 2, y, '[B]' .. role['åç§°'] .. '', M_White, CC.FontSize, 0.5, 0)
+	DrawStringEnhance(x + 140, y + 4, '[B]çº§', M_White, CC.FontSizeM, 1, 0)
+	DrawStringEnhance(x + 120, y, '[B]' .. role['ç­‰çº§'], M_White, CC.FontSize, 1, 0)
+	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[uid]['åç§°'], M_White, CC.FontSizeM, 0, 0)
 	-- if role.isEnemy then
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Red]µĞ¾ü', M_White, CC.FontSizeM, 0, 0)
-	-- elseif role['ÕóÓª'] == 1 or role['ÕóÓª'] == 7 then
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, string.format('[B]¾­Ñé %3d', 108), M_White, CC.FontSizeM, 0, 0)
+	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Red]æ•Œå†›', M_White, CC.FontSizeM, 0, 0)
+	-- elseif role['é˜µè¥'] == 1 or role['é˜µè¥'] == 7 then
+	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, string.format('[B]ç»éªŒ %3d', 108), M_White, CC.FontSizeM, 0, 0)
 	-- 	DrawStringEnhance(x + 152 + CC.FontSizeM * 4, y + CC.FontSize - CC.FontSizeS, string.format('[B]/%d', 120), M_White, CC.FontSizeS, 0, 0)
 	-- else
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Orange]ÓÑ¾ü', M_White, CC.FontSizeM, 0, 0)
+	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Orange]å‹å†›', M_White, CC.FontSizeM, 0, 0)
 	-- end
 	y = y + CC.FontSize + 4
 	lib.Background(x, y + CC.FontSizeM, x + 140, y + CC.FontSizeM + 12, 128);
 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, math.floor(140 * role.HP / role.maxHP), 12);
-	DrawStringEnhance(x, y, string.format('±øÁ¦[B]%6d', role.HP), M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x, y, string.format('å…µåŠ›[B]%6d', role.HP), M_White, CC.FontSizeM, 0, 0)
 	DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
 	x = x + 152
 	lib.Background(x, y + CC.FontSizeM, x + 112, y + CC.FontSizeM + 12, 128);
 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, 118 * math.floor(role.SP / role.maxSP), 12);
-	DrawStringEnhance(x, y, string.format('²ßÂÔ[B]%4d', role.SP), M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x, y, string.format('ç­–ç•¥[B]%4d', role.SP), M_White, CC.FontSizeM, 0, 0)
 	DrawStringEnhance(x + CC.FontSizeM * 4, y + 4, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
 	x = x - 152
 	y = y + CC.FontSizeM + 12 + 4
 	DrawStringEnhance(x + CC.FontSizeM * 9, y + CC.FontSizeM + 4 + 2, string.format('/%d', role.nextExp), M_White, CC.FontSizeS, 0, 0)
-	DrawStringEnhance(x, y, "¹¥»÷      ·ÀÓù      ÒÆ¶¯[n]¾«Éñ      ¾­Ñé", M_White, CC.FontSizeM, 0, 0)
-	DrawStringEnhance(x + CC.FontSizeM * 2.5, y, string.format("[B]%-10d%-10d%d[n]%-10d%3d", role.atk, role.def, role.mov, role.mag, role['¾­Ñé']), M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x, y, "æ”»å‡»      é˜²å¾¡      ç§»åŠ¨[n]ç²¾ç¥      ç»éªŒ", M_White, CC.FontSizeM, 0, 0)
+	DrawStringEnhance(x + CC.FontSizeM * 2.5, y, string.format("[B]%-10d%-10d%d[n]%-10d%3d", role.atk, role.def, role.mov, role.mag, role['ç»éªŒ']), M_White, CC.FontSizeM, 0, 0)
 	if not isActive then
 		return
 	end
@@ -353,24 +353,24 @@ function km_drawUnitBrief(pid, isActive)
 	if MOUSE.CLICK(x, y, x + 48, y + 28) then
 		lib.PicLoadCache(4, 81 * 2, x, y, 1)
 		PlayWavE(0)
-		KM.event.name = 'ÏÔÊ¾ÈËÎïÏêÇé'
+		KM.event.name = 'æ˜¾ç¤ºäººç‰©è¯¦æƒ…'
 	elseif MOUSE.IN(x, y, x + 48, y + 28) then
 		lib.PicLoadCache(4, 81 * 2, x, y, 1)
 	else
 		lib.PicLoadCache(4, 80 * 2, x, y, 1)
 	end
-	DrawStringEnhance(x + 24, y + 14, "ÏêÇé", M_White, CC.FontSizeM, 0.5, 0.5)
+	DrawStringEnhance(x + 24, y + 14, "è¯¦æƒ…", M_White, CC.FontSizeM, 0.5, 0.5)
 	-- if MOUSE.CLICK()
 	-- x = x + 204
 	-- lib.PicLoadCache(4, 87 * 2, x, y, 1, nil, nil, 88, 60);
-	-- DrawStringEnhance(x, y, '[B]¾­Ñé', M_White, CC.FontSizeS, 0, 0)
+	-- DrawStringEnhance(x, y, '[B]ç»éªŒ', M_White, CC.FontSizeS, 0, 0)
 	-- DrawStringEnhance(x + 64, y + 52, string.format('[B]/%3d', 120), M_White, CC.FontSizeS, 1, 1)
 	-- DrawStringEnhance(x + 30, y + 25, string.format('[B]%3d', 108), M_White, CC.FontSize, 0.5, 0.5)
-	-- DrawStringEnhance(x + 2, y + 2, string.format('[B]¾­Ñé[n] [n]    /%3d', 140), M_White, CC.FontSizeS, 0, 0)
+	-- DrawStringEnhance(x + 2, y + 2, string.format('[B]ç»éªŒ[n] [n]    /%3d', 140), M_White, CC.FontSizeS, 0, 0)
 	-- DrawStringEnhance(x + 32, y + 24, '[B]' .. 108, M_White, CC.FontSize, 0.5, 0.5)
-	-- DrawStringEnhance(x, y, string.format('[B]²ßÂÔ%4d', 500), M_White, CC.FontSizeM, 0, 0)
+	-- DrawStringEnhance(x, y, string.format('[B]ç­–ç•¥%4d', 500), M_White, CC.FontSizeM, 0, 0)
 	-- DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('[B]/%d', 800), M_White, CC.FontSizeS, 0, 0)
-	-- DrawStringEnhance(x, y, '[B]' .. '±øÁ¦[n]²ßÂÔ', M_White, FontSizeS, 0, 0)
+	-- DrawStringEnhance(x, y, '[B]' .. 'å…µåŠ›[n]ç­–ç•¥', M_White, FontSizeS, 0, 0)
 	-- x = x + FontSizeS * 2 + 8
 	-- lib.Background(x, y, x + 128, y + 16, 128);
 	-- lib.PicLoadCache(4, 216 * 2, x, y, 1, nil, nil, 100, 16);
@@ -381,7 +381,7 @@ function km_drawUnitBrief(pid, isActive)
 	-- DrawStringEnhance(x + 54, y, '[B]500/500', M_White, FontSizeS, 0.5, 0)
 	-- y = CC.ScreenH - 128
 	-- x = x + 128
-	-- DrawStringEnhance(x, y, "¹¥»÷ 200 ·ÀÓù 200 [n]¾«Éñ 100 ÒÆ¶¯ 5 [n]¾­Ñé 50/150", M_White, FontSizeS, 0, 0)
+	-- DrawStringEnhance(x, y, "æ”»å‡» 200 é˜²å¾¡ 200 [n]ç²¾ç¥ 100 ç§»åŠ¨ 5 [n]ç»éªŒ 50/150", M_White, FontSizeS, 0, 0)
 end
 --logic
 function km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
@@ -393,7 +393,7 @@ function km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
 		foeMarshal = foeMarshal,
 		ourMarshal = ourMarshal,
 		role = {},
-		candidate = {},	-- ²¿ÊğÎÒ¾ü²¿¶Ó
+		candidate = {},	-- éƒ¨ç½²æˆ‘å†›éƒ¨é˜Ÿ
 		-- map related
 		screenW = 21,
 		screenH = 12,
@@ -419,12 +419,12 @@ function km_handleWarUI()
 	local war = KM.war
 	if ev.name == 'XXXXX' then
 
-	elseif ev.name == 'µØÍ¼ÍÏ¶¯' then
+	elseif ev.name == 'åœ°å›¾æ‹–åŠ¨' then
 		local gridX, gridY = war.gridX, war.gridY
 		local ox, oy = ev.x, ev.y
 		while true do
 			km_waitFrame(1)
-			if ev.name == 'µØÍ¼ÍÏ¶¯' then
+			if ev.name == 'åœ°å›¾æ‹–åŠ¨' then
 				if gridX > 0 then
 					war.gridX = limitX(gridX + math.floor((ox - ev.x) / 48), 1, war.gridW - war.screenW + 1) 
 				end
@@ -433,7 +433,7 @@ function km_handleWarUI()
 				break
 			end
 		end
-	elseif ev.name == 'µØÍ¼¾í¶¯' then
+	elseif ev.name == 'åœ°å›¾å·åŠ¨' then
 		war.gridX = war.gridX + ev.dx
 		war.gridY = war.gridY + ev.dy
 	end
@@ -441,33 +441,33 @@ end
 function km_warOperate()
 	local ev = KM.event
 	local war = KM.war
-	if ev.name == 'Ñ¡ÔñµØÍ¼Íø¸ñ' then
+	if ev.name == 'é€‰æ‹©åœ°å›¾ç½‘æ ¼' then
 		local grid = ev.grid
 		local pid = war.pid
 		if war.isShowSelectArea then
 			if not km_isXYInSelectArea(grid.x, grid.y, war.selectArea) then
-				km_alert('²»ÔÚ¹¥»÷·¶Î§ÄÚ£®')
+				km_alert('ä¸åœ¨æ”»å‡»èŒƒå›´å†…ï¼')
 				war.isShowSelectArea = false
 				km_warMenu(pid)
-			elseif war.action == '¹¥»÷' then
+			elseif war.action == 'æ”»å‡»' then
 				if grid.pid == 0 or KM.role[grid.pid].status ~= 1 then
-					km_alert('Ã»ÓĞµĞÈË£®')
+					km_alert('æ²¡æœ‰æ•Œäººï¼')
 				elseif not KM.role[grid.pid].isEnemy then
-					km_alert('²»ÄÜ¹¥»÷ÎÒ·½£®')
+					km_alert('ä¸èƒ½æ”»å‡»æˆ‘æ–¹ï¼')
 				else
 					war.isShowSelectArea = false
 					war.isActive = false
 					km_atk(pid, grid.pid)
 					war.isActive = true
 				end
-			elseif war.action == '¼¼ÄÜ' then
-			elseif war.action == '²ßÂÔ' then
+			elseif war.action == 'æŠ€èƒ½' then
+			elseif war.action == 'ç­–ç•¥' then
 			end
 		elseif war.isShowMoveArea then
 			if grid.pid > 0 then
 				if grid.pid == pid then
 					local role = KM.role[pid]
-					if role.isEnemy or (role['ÕóÓª'] ~= 1 and role['ÕóÓª'] ~= 7) then
+					if role.isEnemy or (role['é˜µè¥'] ~= 1 and role['é˜µè¥'] ~= 7) then
 						km_showRoleStatus(pid)
 					else
 						war.isShowMoveArea = false
@@ -477,14 +477,14 @@ function km_warOperate()
 					km_selectRole(grid.pid)
 				end
 			elseif grid.s ~= 2 then
-				km_alert('²»ÊÇÔÚÒÆ¶¯·¶Î§Àï£®')
+				km_alert('ä¸æ˜¯åœ¨ç§»åŠ¨èŒƒå›´é‡Œï¼')
 				war.isShowMoveArea = false
 			else
 				local role = KM.role[pid]
 				if role.isEnemy then
-					km_alert('²»ÊÇÎÒ¾ü²¿¶Ó£®')
-				elseif (role['ÕóÓª'] ~= 1 and role['ÕóÓª'] ~= 7) then
-					km_alert('²»ÄÜ²Ù×÷µÄ²¿¶Ó£®')
+					km_alert('ä¸æ˜¯æˆ‘å†›éƒ¨é˜Ÿï¼')
+				elseif (role['é˜µè¥'] ~= 1 and role['é˜µè¥'] ~= 7) then
+					km_alert('ä¸èƒ½æ“ä½œçš„éƒ¨é˜Ÿï¼')
 				else
 					war.isShowMoveArea = false
 					war.isActive = false
@@ -498,46 +498,46 @@ function km_warOperate()
 				km_selectRole(grid.pid)
 			end
 		end
-	elseif ev.name == 'Ñ¡Ôñ²¿¶Ó' then
+	elseif ev.name == 'é€‰æ‹©éƒ¨é˜Ÿ' then
 		local pid = ev.pid
 		war.pid = pid
 		local role = KM.role[pid]
 		km_calMoveArea(pid)
 		war.selectArea = km_calRoleAtkArea(pid)
 		war.isShowMoveArea = true
-		if role.isEnemy == false and (role['ÕóÓª'] == 1 or role['ÕóÓª'] == 7) then
+		if role.isEnemy == false and (role['é˜µè¥'] == 1 or role['é˜µè¥'] == 7) then
 			war.opStep = 1
 		end
-	elseif ev.name == 'Õ½¶·²Ëµ¥_¹¥»÷' then
+	elseif ev.name == 'æˆ˜æ–—èœå•_æ”»å‡»' then
 		local pid = war.pid
 		war.selectArea = km_calRoleAtkArea(pid)
 		if #war.selectArea >0 then
 			km_hideWarMenu()
-			war.action = '¹¥»÷'
+			war.action = 'æ”»å‡»'
 			war.isShowSelectArea = true
 		end
-	elseif ev.name == 'Õ½¶·²Ëµ¥_ĞİÏ¢' then
+	elseif ev.name == 'æˆ˜æ–—èœå•_ä¼‘æ¯' then
 		km_hideWarMenu()
-	elseif ev.name == 'Ñ¡Ôñ×÷ÓÃÄ¿±ê' then
+	elseif ev.name == 'é€‰æ‹©ä½œç”¨ç›®æ ‡' then
 		local pid = war.pid
 		local grid = ev.grid
 		if not km_isXYInSelectArea(grid.x, grid.y, war.selectArea) then
-			km_alert('²»ÔÚ¹¥»÷·¶Î§ÄÚ£®')
+			km_alert('ä¸åœ¨æ”»å‡»èŒƒå›´å†…ï¼')
 			war.isShowSelectArea = false
 			km_warMenu(pid)
-		elseif war.action == '¹¥»÷' then
+		elseif war.action == 'æ”»å‡»' then
 			if grid.pid == 0 or KM.role[grid.pid].status ~= 1 then
-				km_alert('Ã»ÓĞµĞÈË£®')
+				km_alert('æ²¡æœ‰æ•Œäººï¼')
 			elseif not KM.role[grid.pid].isEnemy then
-				km_alert('²»ÄÜ¹¥»÷ÎÒ·½£®')
+				km_alert('ä¸èƒ½æ”»å‡»æˆ‘æ–¹ï¼')
 			else
 				war.isShowSelectArea = false
 				war.isActive = false
 				km_atk(pid, grid.pid)
 				war.isActive = true
 			end
-		elseif war.action == '¼¼ÄÜ' then
-		elseif war.action == '²ßÂÔ' then
+		elseif war.action == 'æŠ€èƒ½' then
+		elseif war.action == 'ç­–ç•¥' then
 		end
 	end
 	-- while true do
@@ -557,12 +557,12 @@ function km_warMenu(pid)
 		return
 	end
 	local menu = {
-		{ text = '¹¥»÷', show = true, enable = true, name = 'Õ½¶·²Ëµ¥_¹¥»÷', },
-		{ text = '¼¼ÄÜ', show = false, enable = true, name = 'Õ½¶·²Ëµ¥_¼¼ÄÜ', },
-		{ text = '²ßÂÔ', show = true, enable = false, name = 'Õ½¶·²Ëµ¥_²ßÂÔ', },
-		{ text = 'µÀ¾ß', show = true, enable = false, name = 'Õ½¶·²Ëµ¥_µÀ¾ß', },
-		{ text = 'Çé±¨', show = true, enable = false, name = 'Õ½¶·²Ëµ¥_Çé±¨', },
-		{ text = 'ĞİÏ¢', show = true, enable = true, name = 'Õ½¶·²Ëµ¥_ĞİÏ¢', },
+		{ text = 'æ”»å‡»', show = true, enable = true, name = 'æˆ˜æ–—èœå•_æ”»å‡»', },
+		{ text = 'æŠ€èƒ½', show = false, enable = true, name = 'æˆ˜æ–—èœå•_æŠ€èƒ½', },
+		{ text = 'ç­–ç•¥', show = true, enable = false, name = 'æˆ˜æ–—èœå•_ç­–ç•¥', },
+		{ text = 'é“å…·', show = true, enable = false, name = 'æˆ˜æ–—èœå•_é“å…·', },
+		{ text = 'æƒ…æŠ¥', show = true, enable = false, name = 'æˆ˜æ–—èœå•_æƒ…æŠ¥', },
+		{ text = 'ä¼‘æ¯', show = true, enable = true, name = 'æˆ˜æ–—èœå•_ä¼‘æ¯', },
 	}
 	km_createMenu2(menu)
 	local menu2 = KM.UI.menu2
@@ -578,7 +578,7 @@ function km_warMenu(pid)
 		menu2.y = y - menu2.height + 48
 	end
 	menu2.show = true
-	-- km_waitEvent('Ñ¡Ôñ½áÊø')
+	-- km_waitEvent('é€‰æ‹©ç»“æŸ')
 	-- menu2.show = false
 	-- km_waitFrame()
 	-- return KM.event.selection
@@ -666,38 +666,38 @@ function km_insertRoleToWar(pid, x, y, d, isHide, isEnemy, ai, ai_x, ai_y)
 end
 function km_calRoleWarAttribute(pid)
 	local role = KM.role[pid]
-	local uid = role['±øÖÖ']
+	local uid = role['å…µç§']
 	local unit = KM.unit[uid]
-	local lv = role['µÈ¼¶']
-	local str = role['ÎäÁ¦']
-	local int = role['ÖÇÁ¦']
-	local con = role['Í³Óù']
+	local lv = role['ç­‰çº§']
+	local str = role['æ­¦åŠ›']
+	local int = role['æ™ºåŠ›']
+	local con = role['ç»Ÿå¾¡']
 	role.nextExp = CC.Exp[lv]
-	role.maxHP = unit['»ù´¡±øÁ¦'] + unit['±øÁ¦'] * (lv - 1)
+	role.maxHP = unit['åŸºç¡€å…µåŠ›'] + unit['å…µåŠ›'] * (lv - 1)
 	if role.HP == nil then role.HP = role.maxHP end
 	role.maxSP = math.floor( int / 40 * (lv + 10) )
 	if role.SP == nil then role.SP = role.maxSP end
-	role.spd = unit['ËÙ¶È']
-	role.mov = unit['ÒÆ¶¯']
-	role.atkRange = unit['¹¥»÷·¶Î§']
-	role.atk = math.floor( (unit['¹¥»÷'] + 300 / math.max(130 - str, 20) - 1) * (lv + 10) )
-	role.def = math.floor( (unit['·ÀÓù'] + 300 / math.max(130 - con, 20) - 1) * (lv + 10) )
-	role.mag = math.floor( (unit['¾«Éñ'] + 300 / math.max(130 - int, 20) - 1) * (lv + 10) )
+	role.spd = unit['é€Ÿåº¦']
+	role.mov = unit['ç§»åŠ¨']
+	role.atkRange = unit['æ”»å‡»èŒƒå›´']
+	role.atk = math.floor( (unit['æ”»å‡»'] + 300 / math.max(130 - str, 20) - 1) * (lv + 10) )
+	role.def = math.floor( (unit['é˜²å¾¡'] + 300 / math.max(130 - con, 20) - 1) * (lv + 10) )
+	role.mag = math.floor( (unit['ç²¾ç¥'] + 300 / math.max(130 - int, 20) - 1) * (lv + 10) )
 
-	role.movWav = unit['ÒÆ¶¯ÒôĞ§']
-	role.atkWav = unit['¹¥»÷ÒôĞ§']
+	role.movWav = unit['ç§»åŠ¨éŸ³æ•ˆ']
+	role.atkWav = unit['æ”»å‡»éŸ³æ•ˆ']
 end
 function km_calRoleUnitPic(pid)
 	local role = KM.role[pid]
-	local uid = role['±øÖÖ']
+	local uid = role['å…µç§']
 	local unit = KM.unit[uid]
 	local pic = 0
 	if role.isEnemy then
-		pic = unit['µĞ¾üĞÎÏó']
-	elseif role['ÕóÓª'] == 1 or role['ÕóÓª'] == 7 then
-		pic = unit['ÎÒ¾üĞÎÏó']
+		pic = unit['æ•Œå†›å½¢è±¡']
+	elseif role['é˜µè¥'] == 1 or role['é˜µè¥'] == 7 then
+		pic = unit['æˆ‘å†›å½¢è±¡']
 	else
-		pic = unit['ÓÑ¾üĞÎÏó']
+		pic = unit['å‹å†›å½¢è±¡']
 	end
 	pic = pic or 0
 	role.pic = pic * 50
@@ -735,7 +735,7 @@ function km_calRoleAtkArea(pid)
 end
 function km_calMoveArea(pid)
 	local role = KM.role[pid]
-	local uid = role['±øÖÖ']
+	local uid = role['å…µç§']
 	local unit = KM.unit[uid]
 	-- local x, y, step = role.x, role.y, 5
 	local step = role.mov
@@ -761,12 +761,12 @@ function km_calMoveArea(pid)
 		end
 		km_getGrid(role.x, role.y).zoc = false
 	end
-	local function MinHeapInsert(t, v)	--×îĞ¡¶Ñ£¬ĞÂÔöÔªËØ
+	local function MinHeapInsert(t, v)	--æœ€å°å †ï¼Œæ–°å¢å…ƒç´ 
 		table.insert(t,v);
 		local n=#t;
 		local f;
 		while n>1 do
-			f=math.floor(n/2);	--¸¸½Úµã
+			f=math.floor(n/2);	--çˆ¶èŠ‚ç‚¹
 			if v.g < t[f].g then
 				t[n],t[f]=t[f],t[n];
 				n=f;
@@ -775,7 +775,7 @@ function km_calMoveArea(pid)
 			end
 		end
 	end
-	local function MinHeapRemove(t)	--×îĞ¡¶Ñ£¬ÒÆ³ıµÚÒ»Î»
+	local function MinHeapRemove(t)	--æœ€å°å †ï¼Œç§»é™¤ç¬¬ä¸€ä½
 		t[1], t[#t] = t[#t], t[1]
 		table.remove(t)
 		-- table.remove(t,1);
@@ -857,7 +857,7 @@ function km_moveRoleToGrid(pid, grid)
 			table.insert(t, p)
 			tGrid = p
 		else
-			log('ÈËÎïÒÆ¶¯´íÎó, ÎŞ·¨ÕÒµ½ÕıÈ·µÄÂ·¾¶')
+			log('äººç‰©ç§»åŠ¨é”™è¯¯, æ— æ³•æ‰¾åˆ°æ­£ç¡®çš„è·¯å¾„')
 			break
 		end
 	end
@@ -890,7 +890,7 @@ function km_moveRoleToGrid(pid, grid)
 	role.frame = nil
 end
 function km_calDirection(dx, dy)
-	-- CC.Direction = {'ÉÏ','ÓÒ','ÏÂ','×ó'}
+	-- CC.Direction = {'ä¸Š','å³','ä¸‹','å·¦'}
 	if math.abs(dx) < math.abs(dy) then
 		if dy > 0 then
 			return 3
@@ -917,17 +917,17 @@ function km_atk(pid, eid)
 	if math.random() < (pRole.spd - eRole.spd + 1) / 15 then
 		isDouble = true
 	end
-	-- Á¬»÷Ëã·¨ÒªÇó
-	-- 	¹¥»÷ËÙ¶È¼ûÉÏ±ß5-AÌõ (¹¥»÷·½ËÙ¶È-·ÀÓù·½ËÙ¶È+1)>Random%15 ¿É¼ûÍ¬µÈËÙ¶ÈµÄ»°£¬ÓĞ1/15µÄ¸ÅÂÊÁ¬»÷ ÎäÊõ¼ÒËÙ¶ÈA£¬ÓĞºÃ¼¸¸ö±øÖÖËÙ¶ÈÖ»ÓĞ2£¬Á¬»÷¸ÅÂÊ£º(10-2+1)/15=60%£¬ÓĞµã¿äÕÅ
-	-- Á¬»÷ÅĞ¶¨³É¹¦µÄ»°£¬Ğ´ÈëÁ¬»÷±êÊ¶£¬ÏÂ´Î²»ÄÜÁ¬»÷ ¿ÉÒÔ¸Ä³É0£¬ÎŞÏŞËæ»úÁ¬»÷àŞ£¬²»±Øµ£ĞÄ²»ÄÜ½áÊø£¬Ò»ÊÇÓĞ¸ÅÂÊ£¬¶şÊÇ¿´ÏÂÒ»Ìõ
-	-- 	¼´±ãÁ¬»÷ÅĞ¶¨³É¹¦£¬Èç¹û¶Ô·½ÄÍ¾ÃÁ¦Îª0£¬Ôò²»»á·¢ÉúÁ¬»÷
+	-- è¿å‡»ç®—æ³•è¦æ±‚
+	-- 	æ”»å‡»é€Ÿåº¦è§ä¸Šè¾¹5-Aæ¡ (æ”»å‡»æ–¹é€Ÿåº¦-é˜²å¾¡æ–¹é€Ÿåº¦+1)>Random%15 å¯è§åŒç­‰é€Ÿåº¦çš„è¯ï¼Œæœ‰1/15çš„æ¦‚ç‡è¿å‡» æ­¦æœ¯å®¶é€Ÿåº¦Aï¼Œæœ‰å¥½å‡ ä¸ªå…µç§é€Ÿåº¦åªæœ‰2ï¼Œè¿å‡»æ¦‚ç‡ï¼š(10-2+1)/15=60%ï¼Œæœ‰ç‚¹å¤¸å¼ 
+	-- è¿å‡»åˆ¤å®šæˆåŠŸçš„è¯ï¼Œå†™å…¥è¿å‡»æ ‡è¯†ï¼Œä¸‹æ¬¡ä¸èƒ½è¿å‡» å¯ä»¥æ”¹æˆ0ï¼Œæ— é™éšæœºè¿å‡»å™¢ï¼Œä¸å¿…æ‹…å¿ƒä¸èƒ½ç»“æŸï¼Œä¸€æ˜¯æœ‰æ¦‚ç‡ï¼ŒäºŒæ˜¯çœ‹ä¸‹ä¸€æ¡
+	-- 	å³ä¾¿è¿å‡»åˆ¤å®šæˆåŠŸï¼Œå¦‚æœå¯¹æ–¹è€ä¹…åŠ›ä¸º0ï¼Œåˆ™ä¸ä¼šå‘ç”Ÿè¿å‡»
 	km_atkSub(pid, eid, 1)
 	km_atkSub(eid, pid, 2)
 	if isDouble and eRole.HP > 0 then
 		km_atkSub(pid, eid, 2)
 	end
 end
--- category 1 ÆÕÍ¨ 2 ·´»÷/´©´ÌµÈ¸½´ø¹¥»÷
+-- category 1 æ™®é€š 2 åå‡»/ç©¿åˆºç­‰é™„å¸¦æ”»å‡»
 function km_atkSub(pid, eid, category)
 	if pid == 0 or eid == 0 then
 		return
@@ -938,21 +938,21 @@ function km_atkSub(pid, eid, category)
 	end
 	local isMiss, isBlow, hurt = km_calAtkHurt(pid, eid, category)
 	local dx, dy = eRole.x - pRole.x, eRole.y - pRole.y
-	-- Ô¤±¸ ×ªÏò
+	-- é¢„å¤‡ è½¬å‘
 	pRole.d = km_calDirection(dx, dy)
 	pRole.anim = 0
 	PlayWavE(6)
 	km_waitFrame(4)
-	-- ¹¥»÷
+	-- æ”»å‡»
 	pRole.anim = 2
 	pRole.frame = 0
-	if isBlow then	-- ±©»÷
+	if isBlow then	-- æš´å‡»
 		PlayWavE(6)
 		-- WarAtkWords(pid)
 	end
-	PlayWavE(pRole.atkWav);	-- ¹¥»÷ÒôĞ§
+	PlayWavE(pRole.atkWav);	-- æ”»å‡»éŸ³æ•ˆ
 	km_waitFrame(16)
-	if isBlow then	-- ±©»÷
+	if isBlow then	-- æš´å‡»
 		PlayWavE(33)
 		for highlight = 8, 192, 6 do
 			pRole.highlight = highlight
@@ -964,7 +964,7 @@ function km_atkSub(pid, eid, category)
 		km_waitFrame(5)
 		pRole.frame = i
 	end
-	--µĞÈË
+	--æ•Œäºº
 	eRole.d = km_calDirection(-dx, -dy)
 	if isMiss then
 		eRole.anim = 3
@@ -974,7 +974,7 @@ function km_atkSub(pid, eid, category)
 		else
 			PlayWavE(30)
 		end
-	elseif false then	-- »ìÂÒ
+	elseif false then	-- æ··ä¹±
 		PlayWavE(35)
 	else
 		eRole.anim = 4
@@ -991,7 +991,7 @@ function km_atkSub(pid, eid, category)
 		km_showRoleEffect(eid, '[B]MISS')
 	end
 	km_waitFrame(16)
-	-- »¹Ô­
+	-- è¿˜åŸ
 	pRole.anim = 0
 	pRole.highlight = 0
 	pRole.frame = nil
@@ -1001,15 +1001,15 @@ function km_atkSub(pid, eid, category)
 end
 function km_calAtkHurt(pid, eid, category)
 	local pRole, eRole = KM.role[pid], KM.role[eid]
-	local pUid = pRole['±øÖÖ']
-	local eUid = eRole['±øÖÖ']
+	local pUid = pRole['å…µç§']
+	local eUid = eRole['å…µç§']
 	local grid = km_getGrid(eRole.x, eRole.y)
 	local defBuff = KM.unit[eUid].terrain[grid.tid].def
 	local atk = pRole.atk
 	local def = eRole.def * defBuff / 100
 	local isMiss, isBlow = false, false
 	local hurt = 0
-	if false or math.random() < def / atk / 10 then	-- µĞ¾ü»ìÂÒÊ± ±Ø¶¨ÃüÖĞ
+	if false or math.random() < def / atk / 10 then	-- æ•Œå†›æ··ä¹±æ—¶ å¿…å®šå‘½ä¸­
 		isMiss = true
 	end
 	if pRole.spd > math.random(100) then
@@ -1017,25 +1017,25 @@ function km_calAtkHurt(pid, eid, category)
 	end
 	if not isMiss then
 		hurt = math.max(atk * 2 - def, 1)
-		-- ÅĞ¶Ï·ÀÓù·½±øÖÖ
-		-- 	Èç¹û±øÖÖ´úºÅÎª09£¬0A¡¢0BÊ±£¬ÉËº¦A=Ax75% Õ½³µÏµ, Ïó±øÍÅ
-		-- 	Èç¹û±øÖÖ´úºÅÎª1B¡¢1C¡¢1DÊ±£¬ÉËº¦A=Ax150% ÔËÁ¸¶Ó Îï×Ê¶Ó ¾üÀÖ¶Ó
-		-- 	Èç¹û±øÖÖ´úºÅ1E¡¢1FÊ±£¬ÉËº¦A=Ax50% ÄÏÂù±ø ÄÏÂùÆï±ø Ç¼×å±ø ±±µÒ±ø
-		-- 	Èç¹û±øÖÖ´úºÅÎª22Ê±£¬ÉËº¦A=1 ÌÙ¼×±ø
-		--	ÅĞ¶ÏÊÇ·¶Î§¹¥»÷ÀàµÚÒ»´Î¹¥»÷ÉËº¦»¹ÊÇ·´»÷£¬Èç¹û·ÇµÚÒ»´Î¹¥»÷£¬»òÕßÎª·´»÷£¬ÔòÉÏ±ß¼ÆËãµÄA=A/2
+		-- åˆ¤æ–­é˜²å¾¡æ–¹å…µç§
+		-- 	å¦‚æœå…µç§ä»£å·ä¸º09ï¼Œ0Aã€0Bæ—¶ï¼Œä¼¤å®³A=Ax75% æˆ˜è½¦ç³», è±¡å…µå›¢
+		-- 	å¦‚æœå…µç§ä»£å·ä¸º1Bã€1Cã€1Dæ—¶ï¼Œä¼¤å®³A=Ax150% è¿ç²®é˜Ÿ ç‰©èµ„é˜Ÿ å†›ä¹é˜Ÿ
+		-- 	å¦‚æœå…µç§ä»£å·1Eã€1Fæ—¶ï¼Œä¼¤å®³A=Ax50% å—è›®å…µ å—è›®éª‘å…µ ç¾Œæ—å…µ åŒ—ç‹„å…µ
+		-- 	å¦‚æœå…µç§ä»£å·ä¸º22æ—¶ï¼Œä¼¤å®³A=1 è—¤ç”²å…µ
+		--	åˆ¤æ–­æ˜¯èŒƒå›´æ”»å‡»ç±»ç¬¬ä¸€æ¬¡æ”»å‡»ä¼¤å®³è¿˜æ˜¯åå‡»ï¼Œå¦‚æœéç¬¬ä¸€æ¬¡æ”»å‡»ï¼Œæˆ–è€…ä¸ºåå‡»ï¼Œåˆ™ä¸Šè¾¹è®¡ç®—çš„A=A/2
 		if category ~= 1 then
 			hurt = hurt / 2
 		end
 		if isBlow then
 			hurt = hurt * 3 / 2
 		end
-		-- µÈ¼¶Ïà¹ØµÄËæ»úÒòËØÔì³ÉÉËº¦±ä¶¯
-		if isBlow or math.random() < pRole['µÈ¼¶'] / (pRole['µÈ¼¶'] + eRole['µÈ¼¶']) then
-			hurt = hurt + math.random( 1 + pRole['µÈ¼¶'] * 10 ) % 60
+		-- ç­‰çº§ç›¸å…³çš„éšæœºå› ç´ é€ æˆä¼¤å®³å˜åŠ¨
+		if isBlow or math.random() < pRole['ç­‰çº§'] / (pRole['ç­‰çº§'] + eRole['ç­‰çº§']) then
+			hurt = hurt + math.random( 1 + pRole['ç­‰çº§'] * 10 ) % 60
 		else
-			hurt = hurt - math.random( 1 + eRole['µÈ¼¶'] * 10 ) % 60
+			hurt = hurt - math.random( 1 + eRole['ç­‰çº§'] * 10 ) % 60
 		end
-		--ÄÑ¶È
+		--éš¾åº¦
 		if false then
 			hurt = hurt * 0.8
 		elseif false then
@@ -1045,43 +1045,43 @@ function km_calAtkHurt(pid, eid, category)
 	end
 	return isMiss, isBlow, hurt
 	--[[
-		Èç¹ûRandom%(¹¥·½¹¥»÷Á¦x¹¥·½ËùÔÚµØĞÎÒòËØ/10)<·ÀÓù·½·ÀÓùÁ¦x·ÀÓù·½µØĞÎÒòËØ/10/10 ²¢ÇÒ·ÀÓù·½Ã»ÓĞ»ìÂÒ£¬ÄÇÃ´ÉËº¦A=0
-		Èç¹ûRandom%(¹¥·½¹¥»÷Á¦x¹¥·½ËùÔÚµØĞÎÒòËØ/10)>=·ÀÓù·½·ÀÓùÁ¦x·ÀÓù·½µØĞÎÒòËØ/10/10 ÄÇÃ´ÓÖ·ÖÎª£º 
-			Èç¹û(·ÀÓùÁ¦xµØĞÎÒòËØ/10+1)/2>¹¥»÷·½¹¥»÷Á¦x¹¥»÷·½ËùÔÚµØĞÎÒòËØ/10 ÄÇÃ´ÉËº¦A=1
-			Èç¹û(·ÀÓùÁ¦xµØĞÎÒòËØ/10+1)/2<¹¥»÷·½¹¥»÷Á¦x¹¥»÷·½ËùÔÚµØĞÎÒòËØ/10 ÄÇÃ´ÉËº¦A=¹¥»÷Á¦xµØĞÎÒòËØ/10-·ÀÓùÁ¦xµØĞÎÒòËØ/10/2
-		ÅĞ¶Ï·ÀÓù·½±øÖÖ
-			Èç¹û±øÖÖ´úºÅÎª09£¬0A¡¢0BÊ±£¬ÉËº¦A=Ax75%
-			Èç¹û±øÖÖ´úºÅÎª1B¡¢1C¡¢1DÊ±£¬ÉËº¦A=Ax150%
-			Èç¹û±øÖÖ´úºÅ1E¡¢1FÊ±£¬ÉËº¦A=Ax50%
-			Èç¹û±øÖÖ´úºÅÎª22Ê±£¬ÉËº¦A=1
-		ÅĞ¶ÏÊÇ·¶Î§¹¥»÷ÀàµÚÒ»´Î¹¥»÷ÉËº¦»¹ÊÇ·´»÷£¬Èç¹û·ÇµÚÒ»´Î¹¥»÷£¬»òÕßÎª·´»÷£¬ÔòÉÏ±ß¼ÆËãµÄA=A/2£» 
-		×¢£ºÈç¹ûµ½Ä¿Ç°ÎªÖ¹£¬ÉËº¦¼ÆËãÎª0£¬ÔòÌø¹ıÏÂ±ß5¡¢6Ìõ¹ı³Ì
-		ÎŞÂÛÇ°±ß¹¥»÷¼ÆËãÊÇ·ñÔì³ÉÉËº¦£¬ÌØĞ§¶¼»á½øĞĞÅĞ¶Ï£» Ïó±øºÍÉß±øµÄ±øÖÖ¹¥»÷ÌØĞ§£¨¸½¼ÓÒì³£×´Ì¬¸ú²ßÂÔ¸½¼ÓÒì³£×´Ì¬µ÷ÓÃµÄ¼ÆËãº¯ÊıÒ»Ñù£©ÈçÏÂ£º A¡¢·´»÷²»»á´øÌØĞ§
-		ÒÑ¾­»ìÂÒµÄ²»ÄÜ±»Ïó±øÔÙ´Î»ìÂÒ£¬ÒÑ¾­ÓĞ¼õÑª×´Ì¬µÄ²»ÄÜ±»Éß±øÔÙ´Î¸½¼Ó¼õÑª×´Ì¬
-		ÓĞ¼õÇá²ßÂÔÉËº¦µÄbufferÔÚµÄ»°£¬±»¸½¼ÓÒì³£×´Ì¬bufferµÄ¼¸ÂÊ¼õÉÙ£¬Ëã·¨ÊÇ½ö½öÔö¼Ó¸úËæ»úÊı±È½ÏµÄ¡°¶Ä²©¡±»ú»á¶øÒÑ 2´Î¶¼³É¹¦²Å¿É¸½¼Ó×´Ì¬£¬ÒâË¼¾ÍÊÇËµ£¬µÚÒ»´Î¼ÆËãÈç¹û¸½¼ÓÁË×´Ì¬£¬Ã»ÓĞbufferµÄ»°¾ÍËãÊÇ¸½¼ÓÒì³£×´Ì¬ÁË£¬µ«Èç¹ûÓĞ¼õÇá²ßÂÔËğÉËµÄbufferÔÚ£¬»áÔÙ¼ÆËãÒ»´Î Èç¹û³É¹¦²ÅÄÜ¸½¼ÓÒì³£×´Ì¬£¬Èç¹ûÊ§°Ü½«²»¸½¼ÓÒì³£×´Ì¬
-		×´Ì¬ÊÇ·ñ³É¹¦¸úË«·½ÖÇÁ¦ºÍËæ»úÊıÓĞ¹Ø£º µ±Random%¹¥»÷·½ÖÇÁ¦>=·ÀÓù·½ÖÇÁ¦/²ßÂÔ³É¹¦ÂÊ»ùÊıÊ±ÌØĞ§²ÅÄÜ¸½¼ÓÉÏ ±¾´Î²ßÂÔ³É¹¦ÂÊ»ùÊı=2
-		ÅĞ¶ÏÊÇ·ñ»áÈ«Á¦Ò»»÷ A¡¢È¡µÃ±øÖÖ¹¥»÷ËÙ¶ÈGSPD
-		È·ÈÏÊÇ·ñÈ«Á¦Ò»»÷ µ±GSPD>Random%100ÊÇÈ«Á¦Ò»»÷£» È«Á¦Ò»»÷ÉËº¦A=Ax3/2=Ax150%
-		µÈ¼¶Ïà¹ØµÄËæ»úÒòËØÔì³ÉÉËº¦±ä¶¯£º
-			Ç°±ß¼ÆËã³ö»ù´¡ÉËº¦Abase
-			È¡µÃ·ÀÓù·½µÈ¼¶Flevel£¬È»ºóÈ¡µÃ0~FLevel-1µÄËæ»úÖµFrnd1
-			È¡µÃ¹¥»÷·½µÈ¼¶Glevel£¬È»ºóÈ¡µÃ0~Glelev-1µÄËæ»úÖµGrnd1
-			±È½ÏFrnd1ÓëGrnd1µÄ´óĞ¡
-				Èç¹ûFrnd1<Grnd1£¬»òÕß²úÉúÁËÈ«Á¦Ò»»÷£» ÄÇÃ´ÉËº¦»áËæ»úÔö¼Ó£¨0~Glevel-1£©%6Ö®¼äµÄËæ»úÖµGrnd2£¬½á¹ûÎªAbase=Abase+Grnd2
-				Èç¹ûFrnd1>=Grnd1£¬ ÄÇÃ´ÉËº¦Ëæ»ú¼õÉÙ£¨0~Flevel-1£©%6µÄËæ»úÖµFrnd2£¬Èç¹ûÉËº¦Îª1£¬¼õÉÙÁË2£¬ÄÇÖ»ÄÜÈ¡0ºÍ1-2µÄ×î´óÖµ£¬¼´±£Ö¤ÉËº¦²»ÄÜÎª¸ºÊı£¬½á¹ûÎªAbase=Max(Abase-Frnd2,0)
-		È·ÈÏ·ÀÓù·½ÊÇÎÒ¾ü£¨15¸ö²¿¶Ó£©»¹ÊÇµĞ¾ü£» Èç¹ûÊÇÎÒ¾ü£¬ÄÇ¸ö»áÈ¥È·ÈÏÓÎÏ·ÄÑ¶È
-			ÄÑ¶ÈÎª³õ¼¶µÄ»°£¬ÎÒ¾üÊÜÉËº¦ÎªAbase=Abasex80%
-			ÄÑ¶ÈÎª¸ß¼¶µÄ»°£¬ÎÒ¾üÊÜÉËº¦ÎªAbase=Abasex120%
-			Ã»ÓĞÖĞ¼¶ÄÑ¶È¼ÆËã£¬ÄÇÃ÷ÏÔÉËº¦ÎªAbase=Abasex100%
-		È¡µÃ·ÀÓù·½µ±Ç°ÄÍ¾ÃÁ¦£¬Èç¹û×îÖÕµÄABase>=ÄÍ¾ÃÁ¦µÄ»°£¬ÉËº¦Abase=ÄÍ¾ÃÁ¦£» Èç¹ûÉËº¦<ÄÍ¾ÃÁ¦µÄ¹ş£¬Abase²»±ä£¬Õâ¸öÊÇÎªÁË·ÀÖ¹´ò³ö±Èµ±Ç°ÄÍ¾ÃÁ¦»¹´óµÄÊı
-		¹ØÓÚÁ¬»÷
-			Ö÷¶¯¹¥»÷µÄÁ¬»÷£¬»¹ÊÇÖ÷¶¯¹¥»÷£¬·´»÷µÄÁ¬»÷£¬»¹ÊÇ·´»÷£¬ÉËº¦°´ÕÕÉÏ±ßµÄÔÙ´ÎÌ×ÓÃ¾ÍĞĞ
-			ËÙ¶ÈµÍÓÚ·ÀÓù·½µÄ±øÖÖ£¬²»»áÁ¬»÷£¬ÖÁÉÙ¸ú·ÀÓù·½ËÙ¶ÈÏàµÈ
-			ÒÑ¾­Á¬»÷¹ıµÄ»°£¬²»ÄÜÔÙÁ¬»÷
-		Á¬»÷Ëã·¨ÒªÇó
-			¹¥»÷ËÙ¶È¼ûÉÏ±ß5-AÌõ (¹¥»÷·½ËÙ¶È-·ÀÓù·½ËÙ¶È+1)>Random%15 ¿É¼ûÍ¬µÈËÙ¶ÈµÄ»°£¬ÓĞ1/15µÄ¸ÅÂÊÁ¬»÷ ÎäÊõ¼ÒËÙ¶ÈA£¬ÓĞºÃ¼¸¸ö±øÖÖËÙ¶ÈÖ»ÓĞ2£¬Á¬»÷¸ÅÂÊ£º(10-2+1)/15=60%£¬ÓĞµã¿äÕÅ
-		Á¬»÷ÅĞ¶¨³É¹¦µÄ»°£¬Ğ´ÈëÁ¬»÷±êÊ¶£¬ÏÂ´Î²»ÄÜÁ¬»÷ ¿ÉÒÔ¸Ä³É0£¬ÎŞÏŞËæ»úÁ¬»÷àŞ£¬²»±Øµ£ĞÄ²»ÄÜ½áÊø£¬Ò»ÊÇÓĞ¸ÅÂÊ£¬¶şÊÇ¿´ÏÂÒ»Ìõ
-			¼´±ãÁ¬»÷ÅĞ¶¨³É¹¦£¬Èç¹û¶Ô·½ÄÍ¾ÃÁ¦Îª0£¬Ôò²»»á·¢ÉúÁ¬»÷
+		å¦‚æœRandom%(æ”»æ–¹æ”»å‡»åŠ›xæ”»æ–¹æ‰€åœ¨åœ°å½¢å› ç´ /10)<é˜²å¾¡æ–¹é˜²å¾¡åŠ›xé˜²å¾¡æ–¹åœ°å½¢å› ç´ /10/10 å¹¶ä¸”é˜²å¾¡æ–¹æ²¡æœ‰æ··ä¹±ï¼Œé‚£ä¹ˆä¼¤å®³A=0
+		å¦‚æœRandom%(æ”»æ–¹æ”»å‡»åŠ›xæ”»æ–¹æ‰€åœ¨åœ°å½¢å› ç´ /10)>=é˜²å¾¡æ–¹é˜²å¾¡åŠ›xé˜²å¾¡æ–¹åœ°å½¢å› ç´ /10/10 é‚£ä¹ˆåˆåˆ†ä¸ºï¼š 
+			å¦‚æœ(é˜²å¾¡åŠ›xåœ°å½¢å› ç´ /10+1)/2>æ”»å‡»æ–¹æ”»å‡»åŠ›xæ”»å‡»æ–¹æ‰€åœ¨åœ°å½¢å› ç´ /10 é‚£ä¹ˆä¼¤å®³A=1
+			å¦‚æœ(é˜²å¾¡åŠ›xåœ°å½¢å› ç´ /10+1)/2<æ”»å‡»æ–¹æ”»å‡»åŠ›xæ”»å‡»æ–¹æ‰€åœ¨åœ°å½¢å› ç´ /10 é‚£ä¹ˆä¼¤å®³A=æ”»å‡»åŠ›xåœ°å½¢å› ç´ /10-é˜²å¾¡åŠ›xåœ°å½¢å› ç´ /10/2
+		åˆ¤æ–­é˜²å¾¡æ–¹å…µç§
+			å¦‚æœå…µç§ä»£å·ä¸º09ï¼Œ0Aã€0Bæ—¶ï¼Œä¼¤å®³A=Ax75%
+			å¦‚æœå…µç§ä»£å·ä¸º1Bã€1Cã€1Dæ—¶ï¼Œä¼¤å®³A=Ax150%
+			å¦‚æœå…µç§ä»£å·1Eã€1Fæ—¶ï¼Œä¼¤å®³A=Ax50%
+			å¦‚æœå…µç§ä»£å·ä¸º22æ—¶ï¼Œä¼¤å®³A=1
+		åˆ¤æ–­æ˜¯èŒƒå›´æ”»å‡»ç±»ç¬¬ä¸€æ¬¡æ”»å‡»ä¼¤å®³è¿˜æ˜¯åå‡»ï¼Œå¦‚æœéç¬¬ä¸€æ¬¡æ”»å‡»ï¼Œæˆ–è€…ä¸ºåå‡»ï¼Œåˆ™ä¸Šè¾¹è®¡ç®—çš„A=A/2ï¼› 
+		æ³¨ï¼šå¦‚æœåˆ°ç›®å‰ä¸ºæ­¢ï¼Œä¼¤å®³è®¡ç®—ä¸º0ï¼Œåˆ™è·³è¿‡ä¸‹è¾¹5ã€6æ¡è¿‡ç¨‹
+		æ— è®ºå‰è¾¹æ”»å‡»è®¡ç®—æ˜¯å¦é€ æˆä¼¤å®³ï¼Œç‰¹æ•ˆéƒ½ä¼šè¿›è¡Œåˆ¤æ–­ï¼› è±¡å…µå’Œè›‡å…µçš„å…µç§æ”»å‡»ç‰¹æ•ˆï¼ˆé™„åŠ å¼‚å¸¸çŠ¶æ€è·Ÿç­–ç•¥é™„åŠ å¼‚å¸¸çŠ¶æ€è°ƒç”¨çš„è®¡ç®—å‡½æ•°ä¸€æ ·ï¼‰å¦‚ä¸‹ï¼š Aã€åå‡»ä¸ä¼šå¸¦ç‰¹æ•ˆ
+		å·²ç»æ··ä¹±çš„ä¸èƒ½è¢«è±¡å…µå†æ¬¡æ··ä¹±ï¼Œå·²ç»æœ‰å‡è¡€çŠ¶æ€çš„ä¸èƒ½è¢«è›‡å…µå†æ¬¡é™„åŠ å‡è¡€çŠ¶æ€
+		æœ‰å‡è½»ç­–ç•¥ä¼¤å®³çš„bufferåœ¨çš„è¯ï¼Œè¢«é™„åŠ å¼‚å¸¸çŠ¶æ€bufferçš„å‡ ç‡å‡å°‘ï¼Œç®—æ³•æ˜¯ä»…ä»…å¢åŠ è·Ÿéšæœºæ•°æ¯”è¾ƒçš„â€œèµŒåšâ€æœºä¼šè€Œå·² 2æ¬¡éƒ½æˆåŠŸæ‰å¯é™„åŠ çŠ¶æ€ï¼Œæ„æ€å°±æ˜¯è¯´ï¼Œç¬¬ä¸€æ¬¡è®¡ç®—å¦‚æœé™„åŠ äº†çŠ¶æ€ï¼Œæ²¡æœ‰bufferçš„è¯å°±ç®—æ˜¯é™„åŠ å¼‚å¸¸çŠ¶æ€äº†ï¼Œä½†å¦‚æœæœ‰å‡è½»ç­–ç•¥æŸä¼¤çš„bufferåœ¨ï¼Œä¼šå†è®¡ç®—ä¸€æ¬¡ å¦‚æœæˆåŠŸæ‰èƒ½é™„åŠ å¼‚å¸¸çŠ¶æ€ï¼Œå¦‚æœå¤±è´¥å°†ä¸é™„åŠ å¼‚å¸¸çŠ¶æ€
+		çŠ¶æ€æ˜¯å¦æˆåŠŸè·ŸåŒæ–¹æ™ºåŠ›å’Œéšæœºæ•°æœ‰å…³ï¼š å½“Random%æ”»å‡»æ–¹æ™ºåŠ›>=é˜²å¾¡æ–¹æ™ºåŠ›/ç­–ç•¥æˆåŠŸç‡åŸºæ•°æ—¶ç‰¹æ•ˆæ‰èƒ½é™„åŠ ä¸Š æœ¬æ¬¡ç­–ç•¥æˆåŠŸç‡åŸºæ•°=2
+		åˆ¤æ–­æ˜¯å¦ä¼šå…¨åŠ›ä¸€å‡» Aã€å–å¾—å…µç§æ”»å‡»é€Ÿåº¦GSPD
+		ç¡®è®¤æ˜¯å¦å…¨åŠ›ä¸€å‡» å½“GSPD>Random%100æ˜¯å…¨åŠ›ä¸€å‡»ï¼› å…¨åŠ›ä¸€å‡»ä¼¤å®³A=Ax3/2=Ax150%
+		ç­‰çº§ç›¸å…³çš„éšæœºå› ç´ é€ æˆä¼¤å®³å˜åŠ¨ï¼š
+			å‰è¾¹è®¡ç®—å‡ºåŸºç¡€ä¼¤å®³Abase
+			å–å¾—é˜²å¾¡æ–¹ç­‰çº§Flevelï¼Œç„¶åå–å¾—0~FLevel-1çš„éšæœºå€¼Frnd1
+			å–å¾—æ”»å‡»æ–¹ç­‰çº§Glevelï¼Œç„¶åå–å¾—0~Glelev-1çš„éšæœºå€¼Grnd1
+			æ¯”è¾ƒFrnd1ä¸Grnd1çš„å¤§å°
+				å¦‚æœFrnd1<Grnd1ï¼Œæˆ–è€…äº§ç”Ÿäº†å…¨åŠ›ä¸€å‡»ï¼› é‚£ä¹ˆä¼¤å®³ä¼šéšæœºå¢åŠ ï¼ˆ0~Glevel-1ï¼‰%6ä¹‹é—´çš„éšæœºå€¼Grnd2ï¼Œç»“æœä¸ºAbase=Abase+Grnd2
+				å¦‚æœFrnd1>=Grnd1ï¼Œ é‚£ä¹ˆä¼¤å®³éšæœºå‡å°‘ï¼ˆ0~Flevel-1ï¼‰%6çš„éšæœºå€¼Frnd2ï¼Œå¦‚æœä¼¤å®³ä¸º1ï¼Œå‡å°‘äº†2ï¼Œé‚£åªèƒ½å–0å’Œ1-2çš„æœ€å¤§å€¼ï¼Œå³ä¿è¯ä¼¤å®³ä¸èƒ½ä¸ºè´Ÿæ•°ï¼Œç»“æœä¸ºAbase=Max(Abase-Frnd2,0)
+		ç¡®è®¤é˜²å¾¡æ–¹æ˜¯æˆ‘å†›ï¼ˆ15ä¸ªéƒ¨é˜Ÿï¼‰è¿˜æ˜¯æ•Œå†›ï¼› å¦‚æœæ˜¯æˆ‘å†›ï¼Œé‚£ä¸ªä¼šå»ç¡®è®¤æ¸¸æˆéš¾åº¦
+			éš¾åº¦ä¸ºåˆçº§çš„è¯ï¼Œæˆ‘å†›å—ä¼¤å®³ä¸ºAbase=Abasex80%
+			éš¾åº¦ä¸ºé«˜çº§çš„è¯ï¼Œæˆ‘å†›å—ä¼¤å®³ä¸ºAbase=Abasex120%
+			æ²¡æœ‰ä¸­çº§éš¾åº¦è®¡ç®—ï¼Œé‚£æ˜æ˜¾ä¼¤å®³ä¸ºAbase=Abasex100%
+		å–å¾—é˜²å¾¡æ–¹å½“å‰è€ä¹…åŠ›ï¼Œå¦‚æœæœ€ç»ˆçš„ABase>=è€ä¹…åŠ›çš„è¯ï¼Œä¼¤å®³Abase=è€ä¹…åŠ›ï¼› å¦‚æœä¼¤å®³<è€ä¹…åŠ›çš„å“ˆï¼ŒAbaseä¸å˜ï¼Œè¿™ä¸ªæ˜¯ä¸ºäº†é˜²æ­¢æ‰“å‡ºæ¯”å½“å‰è€ä¹…åŠ›è¿˜å¤§çš„æ•°
+		å…³äºè¿å‡»
+			ä¸»åŠ¨æ”»å‡»çš„è¿å‡»ï¼Œè¿˜æ˜¯ä¸»åŠ¨æ”»å‡»ï¼Œåå‡»çš„è¿å‡»ï¼Œè¿˜æ˜¯åå‡»ï¼Œä¼¤å®³æŒ‰ç…§ä¸Šè¾¹çš„å†æ¬¡å¥—ç”¨å°±è¡Œ
+			é€Ÿåº¦ä½äºé˜²å¾¡æ–¹çš„å…µç§ï¼Œä¸ä¼šè¿å‡»ï¼Œè‡³å°‘è·Ÿé˜²å¾¡æ–¹é€Ÿåº¦ç›¸ç­‰
+			å·²ç»è¿å‡»è¿‡çš„è¯ï¼Œä¸èƒ½å†è¿å‡»
+		è¿å‡»ç®—æ³•è¦æ±‚
+			æ”»å‡»é€Ÿåº¦è§ä¸Šè¾¹5-Aæ¡ (æ”»å‡»æ–¹é€Ÿåº¦-é˜²å¾¡æ–¹é€Ÿåº¦+1)>Random%15 å¯è§åŒç­‰é€Ÿåº¦çš„è¯ï¼Œæœ‰1/15çš„æ¦‚ç‡è¿å‡» æ­¦æœ¯å®¶é€Ÿåº¦Aï¼Œæœ‰å¥½å‡ ä¸ªå…µç§é€Ÿåº¦åªæœ‰2ï¼Œè¿å‡»æ¦‚ç‡ï¼š(10-2+1)/15=60%ï¼Œæœ‰ç‚¹å¤¸å¼ 
+		è¿å‡»åˆ¤å®šæˆåŠŸçš„è¯ï¼Œå†™å…¥è¿å‡»æ ‡è¯†ï¼Œä¸‹æ¬¡ä¸èƒ½è¿å‡» å¯ä»¥æ”¹æˆ0ï¼Œæ— é™éšæœºè¿å‡»å™¢ï¼Œä¸å¿…æ‹…å¿ƒä¸èƒ½ç»“æŸï¼Œä¸€æ˜¯æœ‰æ¦‚ç‡ï¼ŒäºŒæ˜¯çœ‹ä¸‹ä¸€æ¡
+			å³ä¾¿è¿å‡»åˆ¤å®šæˆåŠŸï¼Œå¦‚æœå¯¹æ–¹è€ä¹…åŠ›ä¸º0ï¼Œåˆ™ä¸ä¼šå‘ç”Ÿè¿å‡»
 	]]
 end
 function km_showRoleEffect(pid, text)

@@ -13,18 +13,18 @@ function SystemMenu()
 	--PlayWavE(0);
 	--lib.PicLoadCache(4,58*2,)
 	local menu={
-					{"½áÊøÓÎÏ·",nil,1,true},
-					{"ÔØÈë",nil,1,true},
-					{"´¢´æ",nil,1,true},
-					{"¹¦ÄÜÉè¶¨",nil,1,true},
-					{"ÖØÔØLua",nil,1,true},
+					{"ç»“æŸæ¸¸æˆ",nil,1,true},
+					{"è½½å…¥",nil,1,true},
+					{"å‚¨å­˜",nil,1,true},
+					{"åŠŸèƒ½è®¾å®š",nil,1,true},
+					{"é‡è½½Lua",nil,1,true},
 				}
 	local r=ShowNewMenu(menu,0,0,1);
 	lib.Delay(100);
 	if r==1 then
-		if TalkYesNo("",'½áÊøÓÎÏ·Âğ£¿',C_WHITE,true) then
+		if TalkYesNo("",'ç»“æŸæ¸¸æˆå—ï¼Ÿ',C_WHITE,true) then
 			lib.Delay(100);
-			if TalkYesNo("",'ÔÙÍæÒ»´ÎÂğ£¿',C_WHITE,true) then
+			if TalkYesNo("",'å†ç©ä¸€æ¬¡å—ï¼Ÿ',C_WHITE,true) then
 				lib.Delay(100);
 				JY.Status=GAME_START;
 			else
@@ -38,7 +38,7 @@ function SystemMenu()
 		ShowRecordMenu(1);
 	elseif r==4 then
 		--SettingMenu();
-		NewPerson(JY.PID);	--³õÊ¼»¯Ö÷½Ç
+		NewPerson(JY.PID);	--åˆå§‹åŒ–ä¸»è§’
 	elseif r==5 then
 		dofile(CONFIG.ScriptPath .. "S.RPG.lua");
 		dofile(CONFIG.ScriptPath .. "S.lua");
@@ -58,15 +58,15 @@ end
 function InfoMenu()
 	--PlayWavE(0);
 	local menu={
-					{"Ö÷½Ç",nil,1,true},
-					{"¶¼ÊĞ",nil,1,true},
-					{"ÊÆÁ¦",nil,1,false},
-					{"È«²¿ÊÆÁ¦",nil,1,true},
-					{"È«²¿¶¼ÊĞ",nil,1,true},
-					{"È«²¿Îä½«",nil,1,true},
-          {"µØÍ¼", nil, 1, true},
+					{"ä¸»è§’",nil,1,true},
+					{"éƒ½å¸‚",nil,1,true},
+					{"åŠ¿åŠ›",nil,1,false},
+					{"å…¨éƒ¨åŠ¿åŠ›",nil,1,true},
+					{"å…¨éƒ¨éƒ½å¸‚",nil,1,true},
+					{"å…¨éƒ¨æ­¦å°†",nil,1,true},
+          {"åœ°å›¾", nil, 1, true},
 				}
-	local fid = JY.Person[JY.PID]["ÊÆÁ¦"];
+	local fid = JY.Person[JY.PID]["åŠ¿åŠ›"];
   if fid > 0 then
     menu[3][4] = true;
   end
@@ -76,7 +76,7 @@ function InfoMenu()
 		ReSetAttrib(JY.PID,true);
 		PersonStatus({JY.PID},1);
 	elseif r==2 then
-		DrawCityStatus({JY.Person[JY.PID]["ËùÔÚ"]},1)
+		DrawCityStatus({JY.Person[JY.PID]["æ‰€åœ¨"]},1)
 	elseif r==3 then
 		DrawForceStatus({fid}, 1);
 	elseif r==4 then
@@ -91,18 +91,18 @@ function InfoMenu()
 	return false;
 end
 function GetRecordInfo(id)
-	local offset=CC.Base_S["ÕÂ½ÚÃû"][1]+100;
-	local len=CC.Base_S["ÕÂ½ÚÃû"][3]+CC.Base_S["Ê±¼ä"][3];
+	local offset=CC.Base_S["ç« èŠ‚å"][1]+100;
+	local len=CC.Base_S["ç« èŠ‚å"][3]+CC.Base_S["æ—¶é—´"][3];
 	local data=Byte.create(8*len);
 	Byte.loadfile(data,CC.R_GRPFilename[id],offset,len);
 	local SectionName,SaveTime;
 	SectionName=Byte.getstr(data,0,28);
 	SaveTime=Byte.getstr(data,28,14);
 					
-	offset=CC.Base_S["Õ½³¡´æµµ"][1]+100;
+	offset=CC.Base_S["æˆ˜åœºå­˜æ¡£"][1]+100;
 	Byte.loadfile(data,CC.R_GRPFilename[id],offset,len);
 	if Byte.get16(data,0)==1 then
-		offset=CC.Base_S["Õ½³¡Ãû³Æ"][1]+100;
+		offset=CC.Base_S["æˆ˜åœºåç§°"][1]+100;
 		Byte.loadfile(data,CC.R_GRPFilename[id],offset,len);
 		SectionName=Byte.getstr(data,0,28);
 		
@@ -112,7 +112,7 @@ function GetRecordInfo(id)
 		local maxturn=Byte.get8(data,1);
 		SectionName=string.gsub(SectionName,"    ","  ");
 		if string.len(SectionName)<14 then
-			SectionName=string.format(string.format("%%s%%%ds",14-string.len(SectionName)),SectionName,"")..string.format("µÚ%02d»ØºÏ",turn,maxturn);
+			SectionName=string.format(string.format("%%s%%%ds",14-string.len(SectionName)),SectionName,"")..string.format("ç¬¬%02då›åˆ",turn,maxturn);
 		end
 	end
 					
@@ -122,13 +122,13 @@ function GetRecordInfo(id)
 	
 	return id.."."..SectionName,SaveTime;
 end
-function ShowRecordMenu(kind)	--kind 0¶ÁÈ¡  1±£´æ
+function ShowRecordMenu(kind)	--kind 0è¯»å–  1ä¿å­˜
 	local num=8;
 	local menu={};
 	for id=1,num do
 		menu[id]={"",nil,1,true};
 		if not fileexist(CC.R_GRPFilename[id]) then
-			menu[id][1],menu[id][2]=id..".".."Î´Ê¹ÓÃµµ°¸","";
+			menu[id][1],menu[id][2]=id..".".."æœªä½¿ç”¨æ¡£æ¡ˆ","";
 			if kind==0 then
 				menu[id][4]=false;
 			end
@@ -139,15 +139,15 @@ function ShowRecordMenu(kind)	--kind 0¶ÁÈ¡  1±£´æ
 	local r=ShowNewMenu(menu,0,0,1);
 	if r>0 then
 		if kind==0 then
-			if string.sub(menu[r][1],5)~="Î´Ê¹ÓÃµµ°¸" then
-				if WarDrawStrBoxYesNo(string.format("ÔØÈëÔÚÓ²µúµÄµÚ%d½ø¶È£¬¿ÉÒÔÂğ£¿",r),C_WHITE) then
+			if string.sub(menu[r][1],5)~="æœªä½¿ç”¨æ¡£æ¡ˆ" then
+				if WarDrawStrBoxYesNo(string.format("è½½å…¥åœ¨ç¡¬ç¢Ÿçš„ç¬¬%dè¿›åº¦ï¼Œå¯ä»¥å—ï¼Ÿ",r),C_WHITE) then
 					LoadRecord(r);
 				end
 			else
-				WarDrawStrBoxConfirm("Ã»ÓĞÊı¾İ",C_WHITE,true);
+				WarDrawStrBoxConfirm("æ²¡æœ‰æ•°æ®",C_WHITE,true);
 			end
 		elseif kind==1 then
-			if WarDrawStrBoxYesNo(string.format("´¢´æÔÚÓ²µúµÄµÚ%dºÅ£¬¿ÉÒÔÂğ£¿",r),C_WHITE) then
+			if WarDrawStrBoxYesNo(string.format("å‚¨å­˜åœ¨ç¡¬ç¢Ÿçš„ç¬¬%då·ï¼Œå¯ä»¥å—ï¼Ÿ",r),C_WHITE) then
 				if JY.Status==GAME_WMAP then
 					--WarSave(r);
 				else
@@ -203,16 +203,16 @@ function SMapEvent()
 		DrawSMap();
 		DrawGameStatus();
 		for i,v in pairs(JY.Scene) do
-			if v["ÈËÎï"]>=0 then
-				local x,y=v["×ø±êX"],v["×ø±êY"];
-				local str=JY.Person[v["ÈËÎï"]]["Ãû³Æ"];
-				if JY.Tid==v["ÈËÎï"] then
-					lib.PicLoadCache(2,(JY.Person[v["ÈËÎï"]]["ÈİÃ²"]+4000)*2,x+4,y+4,1);
+			if v["äººç‰©"]>=0 then
+				local x,y=v["åæ ‡X"],v["åæ ‡Y"];
+				local str=JY.Person[v["äººç‰©"]]["åç§°"];
+				if JY.Tid==v["äººç‰©"] then
+					lib.PicLoadCache(2,(JY.Person[v["äººç‰©"]]["å®¹è²Œ"]+4000)*2,x+4,y+4,1);
 					lib.PicLoadCache(4,2*2,x,y,1);
 					DrawStringEnhance(x+49-size*#str/4+1,y+141-size/2+1,str,C_Name,size);
 					--DrawYJZBox(-1,12,str,C_WHITE);
 				else
-					lib.PicLoadCache(2,(JY.Person[v["ÈËÎï"]]["ÈİÃ²"]+4000)*2,x+3,y+3,1);
+					lib.PicLoadCache(2,(JY.Person[v["äººç‰©"]]["å®¹è²Œ"]+4000)*2,x+3,y+3,1);
 					lib.PicLoadCache(4,1*2,x,y,1);
 					DrawStringEnhance(x+49-size*#str/4,y+141-size/2,str,C_WHITE,size);
 				end
@@ -226,9 +226,9 @@ function SMapEvent()
 					lib.PicLoadCache(4,(v.pic+1)*2,v.x1,v.y1,1);
 				end
 				if i==1 then
-					DrawYJZBox(-1,12,"Çé±¨",C_WHITE);
+					DrawYJZBox(-1,12,"æƒ…æŠ¥",C_WHITE);
 				elseif i==2 then
-					DrawYJZBox(-1,12,"¹¦ÄÜ",C_WHITE);
+					DrawYJZBox(-1,12,"åŠŸèƒ½",C_WHITE);
 				end
 			else
 				lib.PicLoadCache(4,v.pic*2,v.x1,v.y1,1);
@@ -248,10 +248,10 @@ function SMapEvent()
 		hold=false;
 		JY.Tid=0;
 		for i,v in pairs(JY.Scene) do
-			if v["ÈËÎï"]>=0 then
-				local px,py=v["×ø±êX"],v["×ø±êY"];
+			if v["äººç‰©"]>=0 then
+				local px,py=v["åæ ‡X"],v["åæ ‡Y"];
 				if MOUSE.CLICK(px+4,py+4,px+93,py+150) then
-					JY.Tid=v["ÈËÎï"];
+					JY.Tid=v["äººç‰©"];
 					PlayWavE(0);
 					DoEvent(JY.EventID);
 					if JY.Tid==-1 then
@@ -261,7 +261,7 @@ function SMapEvent()
 					JY.Tid=0;
 					break;
 				elseif MOUSE.IN(px+4,py+4,px+93,py+150) then
-					JY.Tid=v["ÈËÎï"];
+					JY.Tid=v["äººç‰©"];
 				end
 			end
 		end
@@ -319,7 +319,7 @@ function SMapEvent()
 			JY.LLK_N=JY.LLK_N+1;
 			if JY.LLK_N>99 then
 				PlayWavE(0);
-				if WarDrawStrBoxYesNo("½ûÖ¹µÄÒşº¬ÃüÁîÄ£Ê½*¶ÔÖ´ĞĞ½á¹û²»¸ºÈÎºÎÔğÈÎ£®*¶øÇÒ¶Ô´ËµÄÑ¯ÎÊÒ²²»½â´ğ£®¿ÉÒÔÂğ£¿",C_WHITE,true) then--¿ÉÒÔ½øÈëÃüÁî¼üÈëÒ°£é×´Ì¬Âğ£¿
+				if WarDrawStrBoxYesNo("ç¦æ­¢çš„éšå«å‘½ä»¤æ¨¡å¼*å¯¹æ‰§è¡Œç»“æœä¸è´Ÿä»»ä½•è´£ä»»ï¼*è€Œä¸”å¯¹æ­¤çš„è¯¢é—®ä¹Ÿä¸è§£ç­”ï¼å¯ä»¥å—ï¼Ÿ",C_WHITE,true) then--å¯ä»¥è¿›å…¥å‘½ä»¤é”®å…¥é‡ï½‰çŠ¶æ€å—ï¼Ÿ
 					Game_Cycle();
 				else
 					JY.LLK_N=0;
@@ -356,7 +356,7 @@ function PicCacheIni()
 	lib.PicLoadFile(CC.MMAPPicFile[1],CC.MMAPPicFile[2],0);
 	lib.PicLoadFile(CC.WMAPPicFile[1],CC.WMAPPicFile[2],1);
 	lib.PicLoadFile(CC.HeadPicFile[1],CC.HeadPicFile[2],2);
-	--3²»ÄÜÊ¹ÓÃ
+	--3ä¸èƒ½ä½¿ç”¨
 	lib.PicLoadFile(CC.UIPicFile[1],CC.UIPicFile[2],4);
 	lib.PicLoadFile(CC.SMAPPicFile[1],CC.SMAPPicFile[2],5);
 	lib.PicLoadFile(CC.EFT[1],CC.EFT[2],6);
@@ -393,7 +393,7 @@ function Password()
 				CC.FPS=true;
 			elseif str=='exit' then
 				os.exit();
-			elseif str=='824826abab' then--¡ü¡ı¡û¡ü¡ı¡ú£Á£Â£Á£Â
+			elseif str=='824826abab' then--â†‘â†“â†â†‘â†“â†’ï¼¡ï¼¢ï¼¡ï¼¢
 				Game_Cycle();
 				os.exit();
 			elseif str=="fight" then
@@ -421,8 +421,8 @@ function Password()
 	Dark();
 end
 function YJZMain()
-	local saveflag=false;	--Õ½ºóÌáÊ¾±£´æ±ê¼Ç
-	JY.Status=GAME_START;  --ÓÎÏ·µ±Ç°×´Ì¬
+	local saveflag=false;	--æˆ˜åæç¤ºä¿å­˜æ ‡è®°
+	JY.Status=GAME_START;  --æ¸¸æˆå½“å‰çŠ¶æ€
 	PicCacheIni();
 	
 	--
@@ -456,7 +456,7 @@ function YJZMain()
 			if JY.Status==GAME_SMAP_AUTO or JY.Status==GAME_SMAP_MANUAL then
 				saveflag=true;
 			end
-		elseif JY.Status==GAME_WMAP2 then	--Á¬ĞøÕ½¶·
+		elseif JY.Status==GAME_WMAP2 then	--è¿ç»­æˆ˜æ–—
 			JY.Status=GAME_WMAP;
 			DoEvent(JY.EventID);
 		elseif JY.Status==GAME_WARWIN then
@@ -474,13 +474,13 @@ function YJZMain()
 end
 function YJZMain_sub()
 	local menu={
-				{"¿ªÊ¼ĞÂÓÎÏ·",nil,1,true},
-				{"¶ÁÈ¡´æµµ",nil,1,true},
-				{"¹¦ÄÜÉè¶¨",nil,1,true},
-				{"Õ½³¡ÖØÏÖ",nil,0,true},
-				{"±ÈÎä´ó»á",nil,1,true},
-				{"¹Û¿´¾çÇé¼ò½é",nil,1,true},
-				{"ÍË³öÓÎÏ·",nil,1,true},
+				{"å¼€å§‹æ–°æ¸¸æˆ",nil,1,true},
+				{"è¯»å–å­˜æ¡£",nil,1,true},
+				{"åŠŸèƒ½è®¾å®š",nil,1,true},
+				{"æˆ˜åœºé‡ç°",nil,0,true},
+				{"æ¯”æ­¦å¤§ä¼š",nil,1,true},
+				{"è§‚çœ‹å‰§æƒ…ç®€ä»‹",nil,1,true},
+				{"é€€å‡ºæ¸¸æˆ",nil,1,true},
 			}
 		if CC.Debug==1 then
 			menu[4][3]=1;
@@ -489,13 +489,13 @@ function YJZMain_sub()
 		local s=ShowNewMenu(menu,0,0,0);
 		if s==1 then
 			LoadRecord(0);
-			JY.Person[1]["µÈ¼¶"]=3;
-			JY.Person[2]["µÈ¼¶"]=3;
-			JY.Person[3]["µÈ¼¶"]=3;
+			JY.Person[1]["ç­‰çº§"]=3;
+			JY.Person[2]["ç­‰çº§"]=3;
+			JY.Person[3]["ç­‰çº§"]=3;
 			for i=1,JY.PersonNum-1 do
 				GetPic(i);
 			end
-			JY.Status=GAME_SMAP_AUTO;  --ÓÎÏ·µ±Ç°×´Ì¬
+			JY.Status=GAME_SMAP_AUTO;  --æ¸¸æˆå½“å‰çŠ¶æ€
 			JY.EventID=1;
 		elseif s==2 then
 			ShowRecordMenu(0);
@@ -506,8 +506,8 @@ function YJZMain_sub()
 			for i=1,JY.PersonNum-1 do
 				GetPic(i);
 			end
-			JY.Status=GAME_SMAP_AUTO;  --ÓÎÏ·µ±Ç°×´Ì¬
-			NewPerson();	--³õÊ¼»¯Ö÷½Ç
+			JY.Status=GAME_SMAP_AUTO;  --æ¸¸æˆå½“å‰çŠ¶æ€
+			NewPerson();	--åˆå§‹åŒ–ä¸»è§’
 			JY.EventID=12;
 		elseif s==5 then
 			PlayBGM(18);
@@ -562,9 +562,9 @@ function YJZMain_sub()
 			end
 			PicCacheIni();
 		elseif s==7 then
-			if TalkYesNo("",'½áÊøÓÎÏ·Âğ£¿',C_WHITE,true) then
+			if TalkYesNo("",'ç»“æŸæ¸¸æˆå—ï¼Ÿ',C_WHITE,true) then
 				lib.Delay(100);
-				if TalkYesNo("",'ÔÙÍæÒ»´ÎÂğ£¿',C_WHITE,true) then
+				if TalkYesNo("",'å†ç©ä¸€æ¬¡å—ï¼Ÿ',C_WHITE,true) then
 					lib.Delay(100);
 					JY.Status=GAME_START;
 				else
@@ -595,7 +595,7 @@ function DrawStrBoxCenter(str)
 		end
 	end
 end
-function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
+function GenTalkString(str,n)              --äº§ç”Ÿå¯¹è¯æ˜¾ç¤ºéœ€è¦çš„å­—ç¬¦ä¸²
     local tmpstr=str;
 	local num=0;
 	local v,vv;
@@ -604,7 +604,7 @@ function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
 		num=num+1;
 		local w=0;
 		while w<#tmpstr do
-		    v=string.byte(tmpstr,w+1);          --µ±Ç°×Ö·ûµÄÖµ
+		    v=string.byte(tmpstr,w+1);          --å½“å‰å­—ç¬¦çš„å€¼
 			vv=string.sub(tmpstr,w+1,w+2);
 			if vv=="\\n" then
 				break;
@@ -613,7 +613,7 @@ function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
 			else
 			    w=w+1;
 			end
-			if w >= 2*n-1 then     --ÎªÁË±ÜÃâ¿ç¶ÎÖĞÎÄ×Ö·û
+			if w >= 2*n-1 then     --ä¸ºäº†é¿å…è·¨æ®µä¸­æ–‡å­—ç¬¦
 			    break;
 			end
 		end
@@ -640,36 +640,36 @@ function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
 end
 ----------------------------------------------------------------
 --	SetFlag(eid,flag)
---	ÉèÖÃÊÂ¼ş
---	eid ÊÂ¼şid
---	flag ÊÂ¼ş×´Ì¬
+--	è®¾ç½®äº‹ä»¶
+--	eid äº‹ä»¶id
+--	flag äº‹ä»¶çŠ¶æ€
 ----------------------------------------------------------------
 function SetFlag(eid,flag)
-	JY.Base["ÊÂ¼ş"..eid]=flag;
+	JY.Base["äº‹ä»¶"..eid]=flag;
 end
 function WarSetFlag(eid,flag)
-	JY.Base["Õ½³¡ÊÂ¼ş"..eid]=flag;
+	JY.Base["æˆ˜åœºäº‹ä»¶"..eid]=flag;
 end
 ----------------------------------------------------------------
 --	GetFlag(eid)
---	¼ì²éÊÂ¼ş
---	eid ÊÂ¼şid
---	>0·µ»ØÕæ£¬·ñÔò·µ»Ø¼Ù
+--	æ£€æŸ¥äº‹ä»¶
+--	eid äº‹ä»¶id
+--	>0è¿”å›çœŸï¼Œå¦åˆ™è¿”å›å‡
 ----------------------------------------------------------------
 function GetFlag(eid,flag)
 	if flag then
-		return JY.Base["ÊÂ¼ş"..eid];
-	elseif JY.Base["ÊÂ¼ş"..eid]>0 then
+		return JY.Base["äº‹ä»¶"..eid];
+	elseif JY.Base["äº‹ä»¶"..eid]>0 then
 		return true;
 	else
 		return false;
 	end
 end
 function WarGetFlag(eid,flag)
-	return JY.Base["Õ½³¡ÊÂ¼ş"..eid];
+	return JY.Base["æˆ˜åœºäº‹ä»¶"..eid];
 end
 function WarCheckFlag(eid,flag)
-	if JY.Base["Õ½³¡ÊÂ¼ş"..eid]>0 then
+	if JY.Base["æˆ˜åœºäº‹ä»¶"..eid]>0 then
 		return true;
 	else
 		return false;
@@ -677,13 +677,13 @@ function WarCheckFlag(eid,flag)
 end
 ----------------------------------------------------------------
 --	WarModifyTeamAI(tid,ai)
---	ĞŞ¸Ä¾üÍÅÎä½«AI
---	tid ¾üÍÅid
+--	ä¿®æ”¹å†›å›¢æ­¦å°†AI
+--	tid å†›å›¢id
 --	ai 
 ----------------------------------------------------------------
 function WarModifyTeamAI(tid,ai,ai_x,ai_y)
 	for i,v in ipairs(War.Person) do
-		--??ÓĞÃ»ÓĞ±ØÒªÏŞÖÆ²¿¶Ó±ØĞë³ö³¡??
+		--??æœ‰æ²¡æœ‰å¿…è¦é™åˆ¶éƒ¨é˜Ÿå¿…é¡»å‡ºåœº??
 		if v.tid==tid and v.live and (not v.hide) then
 			WarModifyAI(i,ai,ai_x,ai_y)
 		end
@@ -691,7 +691,7 @@ function WarModifyTeamAI(tid,ai,ai_x,ai_y)
 end
 function WarModifyTeamLeaderAI(tid,ai,ai_x,ai_y)
 	for i,v in ipairs(War.Person) do
-		--??ÓĞÃ»ÓĞ±ØÒªÏŞÖÆ²¿¶Ó±ØĞë³ö³¡??
+		--??æœ‰æ²¡æœ‰å¿…è¦é™åˆ¶éƒ¨é˜Ÿå¿…é¡»å‡ºåœº??
 		if v.tid==tid and v.live and (not v.hide) then
 			WarModifyAI(i,ai,ai_x,ai_y);
 			return;
@@ -700,8 +700,8 @@ function WarModifyTeamLeaderAI(tid,ai,ai_x,ai_y)
 end
 ----------------------------------------------------------------
 --	WarModifyAI(pid,ai)
---	ĞŞ¸ÄÎä½«AI
---	pid Îä½«id
+--	ä¿®æ”¹æ­¦å°†AI
+--	pid æ­¦å°†id
 --	ai 
 ----------------------------------------------------------------
 function WarModifyAI(wid,ai,ai_x,ai_y)
@@ -709,9 +709,9 @@ function WarModifyAI(wid,ai,ai_x,ai_y)
 		lib.Debug("WarModifyAI wid="..wid.." not exist.")
 		return;
 	end
-	if ai=="´ı»ú" then
+	if ai=="å¾…æœº" then
 		ai=0;
-	elseif ai=="³ö»÷" then
+	elseif ai=="å‡ºå‡»" then
 		if ai_y>0 then
 			ai=4;
 		elseif ai_x>0 then
@@ -719,13 +719,13 @@ function WarModifyAI(wid,ai,ai_x,ai_y)
 		else
 			ai=1;
 		end
-	elseif ai=="¼áÊØ" then
+	elseif ai=="åšå®ˆ" then
 		ai=2;
-	elseif ai=="¾¯½ä" then
+	elseif ai=="è­¦æˆ’" then
 		ai=4;
 		ai_x=War.Person[wid].x;
 		ai_y=War.Person[wid].y;
-	elseif ai=="ÒÆ¶¯" then
+	elseif ai=="ç§»åŠ¨" then
 		if ai_y>0 then
 			ai=6;
 		elseif ai_x>0 then
@@ -751,30 +751,30 @@ function WarModifyAI(wid,ai,ai_x,ai_y)
 end
 ----------------------------------------------------------------
 --	ModifyForce(pid,fid)
---	ĞŞ¸ÄÎä½«ÕóÓª
---	pid Îä½«id
---	fid ÕóÓªid£¬Ä¬ÈÏÎª1
+--	ä¿®æ”¹æ­¦å°†é˜µè¥
+--	pid æ­¦å°†id
+--	fid é˜µè¥idï¼Œé»˜è®¤ä¸º1
 ----------------------------------------------------------------
 function ModifyForce(pid,fid)
 	if pid==nil then
 		return;
 	end
 	fid=fid or 1;
-	--ĞŞ¸ÄÎä½«ÊıÁ¿Í³¼Æ
-	if JY.Person[pid]["ÊÆÁ¦"]==1 and fid~=1 then
-		--JY.Base["Îä½«ÊıÁ¿"]=JY.Base["Îä½«ÊıÁ¿"]-1;
+	--ä¿®æ”¹æ­¦å°†æ•°é‡ç»Ÿè®¡
+	if JY.Person[pid]["åŠ¿åŠ›"]==1 and fid~=1 then
+		--JY.Base["æ­¦å°†æ•°é‡"]=JY.Base["æ­¦å°†æ•°é‡"]-1;
 	end
-	if JY.Person[pid]["ÊÆÁ¦"]~=1 and fid==1 then
-		--JY.Base["Îä½«ÊıÁ¿"]=JY.Base["Îä½«ÊıÁ¿"]+1;
+	if JY.Person[pid]["åŠ¿åŠ›"]~=1 and fid==1 then
+		--JY.Base["æ­¦å°†æ•°é‡"]=JY.Base["æ­¦å°†æ•°é‡"]+1;
 	end
-	--Èç¹û¼ÓÈëÎÒ·½£¬¶îÍâÈ·ÈÏµÈ¼¶
+	--å¦‚æœåŠ å…¥æˆ‘æ–¹ï¼Œé¢å¤–ç¡®è®¤ç­‰çº§
 	if fid==1 then
-		JY.Person[pid]["µÈ¼¶"]=limitX(JY.Person[pid]["µÈ¼¶"],1,99);
+		JY.Person[pid]["ç­‰çº§"]=limitX(JY.Person[pid]["ç­‰çº§"],1,99);
 	end
 	
-	JY.Person[pid]["ÊÆÁ¦"]=fid;
+	JY.Person[pid]["åŠ¿åŠ›"]=fid;
 	local picid=GetPic(pid);
-	if fid==1 and type(War.Person)=="table" then--Õ½¶·Ê±Èç¹ûÊÆÁ¦¸ÄÎªÁõ±¸£¬»¹ĞèÒª¶îÍâĞŞ¸ÄÕ½¶·²¿·ÖÊôĞÔ
+	if fid==1 and type(War.Person)=="table" then--æˆ˜æ–—æ—¶å¦‚æœåŠ¿åŠ›æ”¹ä¸ºåˆ˜å¤‡ï¼Œè¿˜éœ€è¦é¢å¤–ä¿®æ”¹æˆ˜æ–—éƒ¨åˆ†å±æ€§
 		for i,v in pairs(War.Person) do
 			if v.id==pid then
 				v.enemy=false;
@@ -787,21 +787,21 @@ function ModifyForce(pid,fid)
 end
 ----------------------------------------------------------------
 --	ModifyBZ(pid,bzid)
---	ĞŞ¸ÄÎä½«±øÖÖ
---	pid Îä½«id
---	bzid ±øÖÖid£¬Ä¬ÈÏÎª1
+--	ä¿®æ”¹æ­¦å°†å…µç§
+--	pid æ­¦å°†id
+--	bzid å…µç§idï¼Œé»˜è®¤ä¸º1
 ----------------------------------------------------------------
 function ModifyBZ(pid,bzid)
 	if pid==nil then
 		return;
 	end
 	bzid=bzid or 1;
-	JY.Person[pid]["±øÖÖ"]=bzid;
+	JY.Person[pid]["å…µç§"]=bzid;
 end
 ----------------------------------------------------------------
 --	LoadPic(id,flag)
---	ÏÔÊ¾¹ı³¡Í¼Æ¬£¨´ø±ß¿ò£©£¬´øµ­Èëµ­³öĞ§¹û
---	flag 0.ÎŞĞ§¹û 1.µ­Èë 2.µ­³ö
+--	æ˜¾ç¤ºè¿‡åœºå›¾ç‰‡ï¼ˆå¸¦è¾¹æ¡†ï¼‰ï¼Œå¸¦æ·¡å…¥æ·¡å‡ºæ•ˆæœ
+--	flag 0.æ— æ•ˆæœ 1.æ·¡å…¥ 2.æ·¡å‡º
 ----------------------------------------------------------------
 function LoadPic(id,flag)
 	local w,h=lib.PicGetXY(5,id*2);
@@ -809,9 +809,9 @@ function LoadPic(id,flag)
 	local y=(CC.ScreenH-h)/2-56;
 	flag=flag or 0;
 	if type(flag)=="string" then
-		if flag=="µ­Èë" then
+		if flag=="æ·¡å…¥" then
 			flag=1;
-		elseif flag=="µ­³ö" then
+		elseif flag=="æ·¡å‡º" then
 			flag=2;
 		else
 			flag=0;
@@ -824,7 +824,7 @@ function LoadPic(id,flag)
 		local sid=lib.SaveSur(x,y,x+w,y+h);
 		if flag==0 then
 			lib.PicLoadCache(5,id*2,x,y,1);
-		elseif flag==1 then	--µ­Èë
+		elseif flag==1 then	--æ·¡å…¥
 			for i=0,256,16 do
 				JY.ReFreshTime=lib.GetTime();
 				lib.LoadSur(sid,x,y);
@@ -833,7 +833,7 @@ function LoadPic(id,flag)
 				ReFresh();
 				JY.SubPic=id;
 			end
-		elseif flag==2 then	--µ­³ö
+		elseif flag==2 then	--æ·¡å‡º
 			for i=0,256,16 do
 				JY.ReFreshTime=lib.GetTime();
 				lib.LoadSur(sid,x,y);
@@ -854,13 +854,13 @@ function Talk(p,str)
 	local name="";
 	local headid=-1;
 	if type(p)=='number' then
-		headid=JY.Person[p]["ÈİÃ²"];
-		name=JY.Person[p]["Ãû³Æ"];
+		headid=JY.Person[p]["å®¹è²Œ"];
+		name=JY.Person[p]["åç§°"];
 	elseif type(name)=='string' then
 		local pid=JY.NameList[p];
 		if pid~=nil then
-			headid=JY.Person[pid]["ÈİÃ²"];
-			name=JY.Person[pid]["Ãû³Æ"];
+			headid=JY.Person[pid]["å®¹è²Œ"];
+			name=JY.Person[pid]["åç§°"];
 		else
 			name=p;
 		end
@@ -877,8 +877,8 @@ function WarDrawStrBoxYesNo(str)
 	return TalkYesNo("",str);
 end
 function Msgbox(s)
-	local x1=CC.ScreenW/2-84;	--±³¾°À¸x
-	local y1=CC.ScreenH-81;		--±³¾°À¸y
+	local x1=CC.ScreenW/2-84;	--èƒŒæ™¯æ x
+	local y1=CC.ScreenH-81;		--èƒŒæ™¯æ y
 	local x2=x1+50;
 	local y2=y1+8;
 	talk_sub("",-1,s);
@@ -917,8 +917,8 @@ function Msgbox(s)
 	end
 end
 function TalkYesNo(p,str)
-	local x1=CC.ScreenW/2-108;	--±³¾°À¸x	276
-	local y1=CC.ScreenH-81;		--±³¾°À¸y	351
+	local x1=CC.ScreenW/2-108;	--èƒŒæ™¯æ x	276
+	local y1=CC.ScreenH-81;		--èƒŒæ™¯æ y	351
 	local x2=x1+40;				--316
 	local y2=y1+8;				--359
 	local x3=x1+110;			--386
@@ -926,13 +926,13 @@ function TalkYesNo(p,str)
 	local name="";
 	local headid=-1;
 	if type(p)=='number' then
-		headid=JY.Person[p]["ÈİÃ²"];
-		name=JY.Person[p]["Ãû³Æ"];
+		headid=JY.Person[p]["å®¹è²Œ"];
+		name=JY.Person[p]["åç§°"];
 	elseif type(name)=='string' then
 		local pid=JY.NameList[p];
 		if pid~=nil then
-			headid=JY.Person[pid]["ÈİÃ²"];
-			name=JY.Person[pid]["Ãû³Æ"];
+			headid=JY.Person[pid]["å®¹è²Œ"];
+			name=JY.Person[pid]["åç§°"];
 		else
 			name=p;
 		end
@@ -998,17 +998,17 @@ function TalkYesNo(p,str)
 		end
 	end
 end
-function DrawMulitStrBox(str)         --ÏÔÊ¾¶àĞĞ¾çÇé
+function DrawMulitStrBox(str)         --æ˜¾ç¤ºå¤šè¡Œå‰§æƒ…
 	talk_sub("",-1,str)
 	WaitKey();
 	DrawGame();
 end
 function talk_sub(name,headid,str)
-	local talkxnum=20;         --¶Ô»°Ò»ĞĞ×ÖÊı
-	local talkynum=3;          --¶Ô»°ĞĞÊı
+	local talkxnum=20;         --å¯¹è¯ä¸€è¡Œå­—æ•°
+	local talkynum=3;          --å¯¹è¯è¡Œæ•°
 	local strarray={}
 	local num;
-	--ÏÔÊ¾Í·ÏñºÍ¶Ô»°µÄ×ø±ê
+	--æ˜¾ç¤ºå¤´åƒå’Œå¯¹è¯çš„åæ ‡
 	local w,h=lib.PicGetXY(4,0*2);
 	w,h=640,140;
 	local mx,my=(CC.ScreenW-w)/2,CC.ScreenH-h;
@@ -1066,10 +1066,10 @@ function WarTalk(pid,str)
 		return;
 	end
 	local oldcy=War.CY;
-	local name=JY.Person[pid]["Ãû³Æ"];
-	local headid=JY.Person[pid]["ÈİÃ²"]+2000;
+	local name=JY.Person[pid]["åç§°"];
+	local headid=JY.Person[pid]["å®¹è²Œ"]+2000;
 	WarPersonCenter(wid);
-	--ÏÔÊ¾Í·ÏñºÍ¶Ô»°µÄ×ø±ê
+	--æ˜¾ç¤ºå¤´åƒå’Œå¯¹è¯çš„åæ ‡
 	local mx,my=139,240;
 	if wid>0 then
 		if War.CY>oldcy or War.Person[wid].y-War.CY>4 then
@@ -1117,11 +1117,11 @@ end
 
 function Person_Menu()
 	local menu={
-					{" Îä½«Çé±¨",nil,1},
-					{" ½»»»µÀ¾ß",nil,1},
-					{"   ĞŞÁ¶",nil,1},
+					{" æ­¦å°†æƒ…æŠ¥",nil,1},
+					{" äº¤æ¢é“å…·",nil,1},
+					{"   ä¿®ç‚¼",nil,1},
 				}
-	DrawYJZBox(32,32,"Îä½«",C_WHITE,true)
+	DrawYJZBox(32,32,"æ­¦å°†",C_WHITE,true)
 	local r=ShowMenu(menu,3,0,546,264,0,0,3,1,16,C_WHITE,C_WHITE);
 	if r==1 then
 		PersonStatus_Menu(1);
@@ -1135,14 +1135,14 @@ function PersonStatus_Menu(fid)
 	local menu={};
 	local n=0;
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["ÊÆÁ¦"]==fid then
-			menu[i]={fillblank(JY.Person[i]["Ãû³Æ"],11),PersonStatus,1};
+		if JY.Person[i]["åŠ¿åŠ›"]==fid then
+			menu[i]={fillblank(JY.Person[i]["åç§°"],11),PersonStatus,1};
 			n=n+1;
 		else
 			menu[i]={"",nil,0};
 		end
 	end
-	DrawYJZBox(32,32,"Îä½«Çé±¨",C_WHITE,true)
+	DrawYJZBox(32,32,"æ­¦å°†æƒ…æŠ¥",C_WHITE,true)
 	if n<=8 then
 		ShowMenu(menu,JY.PersonNum-1,8,546,224,0,0,5,1,16,C_WHITE,C_WHITE);
 	else
@@ -1152,7 +1152,7 @@ end
 
 ----------------------------------------------------------------
 --	Maidan(fid)
---	Á·Îä³¡
+--	ç»ƒæ­¦åœº
 ----------------------------------------------------------------
 function Maidan(fid)
 	fid=fid or 1;
@@ -1160,12 +1160,12 @@ function Maidan(fid)
 	local m_pid={};
 	local m_eid={};
 	local num_pid,num_eid=0,0;
-	local lv_max=math.floor((JY.Person[1]["µÈ¼¶"]+JY.Person[2]["µÈ¼¶"]+JY.Person[3]["µÈ¼¶"]+JY.Person[54]["µÈ¼¶"]+JY.Person[126]["µÈ¼¶"])/6)-5;
+	local lv_max=math.floor((JY.Person[1]["ç­‰çº§"]+JY.Person[2]["ç­‰çº§"]+JY.Person[3]["ç­‰çº§"]+JY.Person[54]["ç­‰çº§"]+JY.Person[126]["ç­‰çº§"])/6)-5;
 	lv_max=limitX(lv_max,3,60);
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["ÌØ¼¼1"]>0 then
-			if JY.Person[i]["ÊÆÁ¦"]==fid then
-				if JY.Person[i]["µÈ¼¶"]<lv_max then
+		if JY.Person[i]["ç‰¹æŠ€1"]>0 then
+			if JY.Person[i]["åŠ¿åŠ›"]==fid then
+				if JY.Person[i]["ç­‰çº§"]<lv_max then
 					num_pid=num_pid+1;
 					m_pid[num_pid]=i;
 				end
@@ -1176,14 +1176,14 @@ function Maidan(fid)
 		end
 	end
 	if num_pid>0 and num_eid>10 then
-		Talk(369,"ÇëÎÊË­ÒªÁ·Îä£¿");
+		Talk(369,"è¯·é—®è°è¦ç»ƒæ­¦ï¼Ÿ");
 		local pid=FightSelectMenu(m_pid);
 		if pid<=0 then
-			Talk(369,"ÄÇÃ´£¬ÏÂ´ÎÔÙËµ°É£®");
+			Talk(369,"é‚£ä¹ˆï¼Œä¸‹æ¬¡å†è¯´å§ï¼");
 			return;
 		end
 		local eid=m_eid[math.random(num_eid)];
-		Talk(369,"ÄÇÃ´£¬¿ªÊ¼°É£®");
+		Talk(369,"é‚£ä¹ˆï¼Œå¼€å§‹å§ï¼");
 			local magic={};
 			for mid=1,JY.MagicNum-1 do
 				magic[mid]=false;
@@ -1193,30 +1193,30 @@ function Maidan(fid)
 			end
 		local s={0,1,2,4,6};
 		if fight(pid,eid,s[math.random(5)])==1 then
-			Talk(369,"Õæ¾«²Ê£¡");
+			Talk(369,"çœŸç²¾å½©ï¼");
 			PlayWavE(11);
 			LvUp(pid);
-			JY.Person[pid]["¾­Ñé"]=0;
-			DrawStrBoxCenter(JY.Person[pid]["Ãû³Æ"].."µÄµÈ¼¶ÉÏÉıÁË£¡");
+			JY.Person[pid]["ç»éªŒ"]=0;
+			DrawStrBoxCenter(JY.Person[pid]["åç§°"].."çš„ç­‰çº§ä¸Šå‡äº†ï¼");
 			lvup_flag=true;
 		else
-			Talk(369,"Ì«¿ÉÏ§ÁË£®");
-			DrawStrBoxCenter(JY.Person[pid]["Ãû³Æ"].."µÃµ½ÁËÉÙĞí¾­Ñé£®");
-			JY.Person[pid]["¾­Ñé"]=JY.Person[pid]["¾­Ñé"]+24;
-			if JY.Person[pid]["¾­Ñé"]>=100 then
+			Talk(369,"å¤ªå¯æƒœäº†ï¼");
+			DrawStrBoxCenter(JY.Person[pid]["åç§°"].."å¾—åˆ°äº†å°‘è®¸ç»éªŒï¼");
+			JY.Person[pid]["ç»éªŒ"]=JY.Person[pid]["ç»éªŒ"]+24;
+			if JY.Person[pid]["ç»éªŒ"]>=100 then
 				PlayWavE(11);
 				LvUp(pid);
-				JY.Person[pid]["¾­Ñé"]=0;
-				DrawStrBoxCenter(JY.Person[pid]["Ãû³Æ"].."µÄµÈ¼¶ÉÏÉıÁË£¡");
+				JY.Person[pid]["ç»éªŒ"]=0;
+				DrawStrBoxCenter(JY.Person[pid]["åç§°"].."çš„ç­‰çº§ä¸Šå‡äº†ï¼");
 				lvup_flag=true;
 			end
 		end
 		if lvup_flag then
-			--ÌáÊ¾¼¼ÄÜ²ßÂÔÏ°µÃ
+			--æç¤ºæŠ€èƒ½ç­–ç•¥ä¹ å¾—
 			for i=1,6 do
-				if JY.Person[pid]["µÈ¼¶"]==CC.SkillExp[JY.Person[pid]["³É³¤"]][i] then
+				if JY.Person[pid]["ç­‰çº§"]==CC.SkillExp[JY.Person[pid]["æˆé•¿"]][i] then
 					PlayWavE(11);
-					DrawStrBoxCenter(JY.Person[pid]["Ãû³Æ"].."Ï°µÃ¼¼ÄÜ"..JY.Skill[JY.Person[pid]["¼¼ÄÜ"..i]]["Ãû³Æ"].."£¡");
+					DrawStrBoxCenter(JY.Person[pid]["åç§°"].."ä¹ å¾—æŠ€èƒ½"..JY.Skill[JY.Person[pid]["æŠ€èƒ½"..i]]["åç§°"].."ï¼");
 					break;
 				end
 			end
@@ -1225,133 +1225,133 @@ function Maidan(fid)
 				if not magic[mid] then
 					if HaveMagic(pid,mid) then
 						if str=="" then
-							str=JY.Magic[mid]["Ãû³Æ"];
+							str=JY.Magic[mid]["åç§°"];
 						else
-							str=str.."¡¢"..JY.Magic[mid]["Ãû³Æ"];
+							str=str.."ã€"..JY.Magic[mid]["åç§°"];
 						end
 					end
 				end
 			end
 			if #str>0 then
 				PlayWavE(11);
-				DrawStrBoxCenter(JY.Person[pid]["Ãû³Æ"].."Ï°µÃ²ßÂÔ"..str.."£¡");
+				DrawStrBoxCenter(JY.Person[pid]["åç§°"].."ä¹ å¾—ç­–ç•¥"..str.."ï¼");
 			end
 		end
 	else
-		Talk(369,"Ã»ÓĞÈËĞèÒªÁ·ÎäÁË£®");
+		Talk(369,"æ²¡æœ‰äººéœ€è¦ç»ƒæ­¦äº†ï¼");
 	end
 end
 
 function Shop()
-	local sid=JY.Base["µÀ¾ßÎİ"];
+	local sid=JY.Base["é“å…·å±‹"];
 	if sid<=0 then
 		PlayWavE(2);
-		WarDrawStrBoxConfirm("´ËµØÃ»ÓĞµÀ¾ßÎİ£®",C_WHITE,true);
+		WarDrawStrBoxConfirm("æ­¤åœ°æ²¡æœ‰é“å…·å±‹ï¼",C_WHITE,true);
 		return
 	end
 	local shopitem=	{
-					[1]={41,28,31},			--ãáË®¹ØÖ®Õ½Ç°,³ÂÁô
-					[2]={28,31,44},			--»¢ÀÎ¹ØÖ®Õ½ºó,±±Æ½
-					[3]={28,31,53,41,38,35},--ĞÅ¶¼³ÇÖ®Õ½ºó,ĞÅ¶¼
-					[4]={28,31,53},			--¹ã´¨Ö®Õ½ºó,¹ã´¨
-					--±±º£Ö®Õ½Ç°,±±Æ½/ĞÅ¶¼
-					[5]={28,31,53,41,38,35,34},		--±±º£Ö®Õ½ºó,±±Æ½/ĞÅ¶¼/±±º£,ÕâÀïÖ»ÁĞÁË±±º£µÄ
-					[6]={28,31,53,50,47},			--ĞìÖİIÖ®Õ½ºó,±±Æ½/ĞÅ¶¼/±±º£/ĞìÖİ/ÏÂÚü£¬ÕâÀïÖ»ÁĞµÄĞìÖİµÄ
-					--ÏÂÚüµÄ 31,32,50,47,34
-					[7]={20,22,24,26,41,38,35},			--Ğ¡Åæ
-					[8]={20,22,24,26,28,29,31,53},			--Ğí²ıI
-					[9]={31,32,50,47,34},			--ÏÂÚü
-					[10]={20,22,24,26,29,31,32,53},			--Úş
-					[11]={41,38,39,35,44},			--°×Âí
-					[12]={41,42,38,39,35,36},			--ÈêÄÏ
-					[13]={20,22,24,26,29,32,53,34},				--ÏåÑôI
-					[14]={42,39,36,44,45},				--½­ÏÄI
-					--[15]={29,32,54,50,51,47},				--½­ÁêI
-					[15]={21,23,25,27,29,32,54,50,51,47},				--½­ÁêI,¿¼ÂÇµ½ÓÎÏ·Êµ¼Ê,Ö÷ÒªÔÚ½­Áê,¶ø²»ÔÙÏåÑôII,½«ÏåÑôIIµÄ²¿·ÖµÀ¾ßÒ²¼Ó½øÀ´
-					[16]={42,39,36,44,45,20,22,24},				--½­ÏÄII
-					[17]={50,51,47,48,38,39},				--³¤É³
-					[18]={21,23,25,27,29,42,39,36,34},				--ÏåÑôII
-					[19]={21,23,25,27,29,30,32,54},				--³É¶¼I
-					[20]={29,32,54,42,20,22,24,34},				--¸¢
-					[21]={21,23,25,27,29,30,32,33},				--³É¶¼II
-					[22]={42,39,36,29,32,54,48,51},				--Î÷Áê
-					[23]={42,39,40,36,37,48,51,52},				--½­ÁêII
-					[24]={21,23,25,27,43,30,33,55},				--ÏåÑôIII
-					[25]={30,33,55,43,40,37,45,46},				--Íğ
-					[26]={30,33,55,49,20,22,24,26},			--Ğí²ıII
+					[1]={41,28,31},			--æ±œæ°´å…³ä¹‹æˆ˜å‰,é™ˆç•™
+					[2]={28,31,44},			--è™ç‰¢å…³ä¹‹æˆ˜å,åŒ—å¹³
+					[3]={28,31,53,41,38,35},--ä¿¡éƒ½åŸä¹‹æˆ˜å,ä¿¡éƒ½
+					[4]={28,31,53},			--å¹¿å·ä¹‹æˆ˜å,å¹¿å·
+					--åŒ—æµ·ä¹‹æˆ˜å‰,åŒ—å¹³/ä¿¡éƒ½
+					[5]={28,31,53,41,38,35,34},		--åŒ—æµ·ä¹‹æˆ˜å,åŒ—å¹³/ä¿¡éƒ½/åŒ—æµ·,è¿™é‡Œåªåˆ—äº†åŒ—æµ·çš„
+					[6]={28,31,53,50,47},			--å¾å·Iä¹‹æˆ˜å,åŒ—å¹³/ä¿¡éƒ½/åŒ—æµ·/å¾å·/ä¸‹é‚³ï¼Œè¿™é‡Œåªåˆ—çš„å¾å·çš„
+					--ä¸‹é‚³çš„ 31,32,50,47,34
+					[7]={20,22,24,26,41,38,35},			--å°æ²›
+					[8]={20,22,24,26,28,29,31,53},			--è®¸æ˜ŒI
+					[9]={31,32,50,47,34},			--ä¸‹é‚³
+					[10]={20,22,24,26,29,31,32,53},			--é‚º
+					[11]={41,38,39,35,44},			--ç™½é©¬
+					[12]={41,42,38,39,35,36},			--æ±å—
+					[13]={20,22,24,26,29,32,53,34},				--è¥„é˜³I
+					[14]={42,39,36,44,45},				--æ±Ÿå¤I
+					--[15]={29,32,54,50,51,47},				--æ±Ÿé™µI
+					[15]={21,23,25,27,29,32,54,50,51,47},				--æ±Ÿé™µI,è€ƒè™‘åˆ°æ¸¸æˆå®é™…,ä¸»è¦åœ¨æ±Ÿé™µ,è€Œä¸å†è¥„é˜³II,å°†è¥„é˜³IIçš„éƒ¨åˆ†é“å…·ä¹ŸåŠ è¿›æ¥
+					[16]={42,39,36,44,45,20,22,24},				--æ±Ÿå¤II
+					[17]={50,51,47,48,38,39},				--é•¿æ²™
+					[18]={21,23,25,27,29,42,39,36,34},				--è¥„é˜³II
+					[19]={21,23,25,27,29,30,32,54},				--æˆéƒ½I
+					[20]={29,32,54,42,20,22,24,34},				--æ¶ª
+					[21]={21,23,25,27,29,30,32,33},				--æˆéƒ½II
+					[22]={42,39,36,29,32,54,48,51},				--è¥¿é™µ
+					[23]={42,39,40,36,37,48,51,52},				--æ±Ÿé™µII
+					[24]={21,23,25,27,43,30,33,55},				--è¥„é˜³III
+					[25]={30,33,55,43,40,37,45,46},				--å®›
+					[26]={30,33,55,49,20,22,24,26},			--è®¸æ˜ŒII
 --[[
-¸÷µØËùÄÜ¹ºÂòµÀ¾ß£º
-³ÂÁô£º½¹ÈÈÊé£¬¾Æ£¬¶¹¡£
-±±Æ½£º¾Æ£¬¶¹£¬Å¨ÎíÊé¡£
-ĞÅ¶¼£º¾Æ£¬¶¹£¬ÉËÒ©£¬½¹ÈÈÊé£¬äöÎĞÊé£¬ÂäÊ¯Êé¡£
-¹ã´¨£º¾Æ£¬¶¹£¬ÉËÒ©¡£
-±±º££º¾Æ£¬¶¹£¬ÉËÒ©£¬½¹ÈÈÊé£¬äöÎĞÊé£¬ÂäÊ¯Êé£¬Õ¨µ¯¡£
-ĞìÖİ£º¾Æ£¬¶¹£¬ÉËÒ©£¬Æ½ÆøÊé£¬Ô®¶ÓÊé¡£
-ÏÂÚü£º¶¹£¬Âó£¬Æ½ÆøÊé£¬Ô®¶ÓÊé£¬Õ¨µ¯¡£
-Ğ¡Åæ£º³¤Ç¹£¬Á¬åó£¬Âíîø£¬ÎŞÀµ¾«Éñ£¬½¹ÈÈÊé£¬äöÎĞÊé£¬ÂäÊ¯Êé¡£
-Ğí²ıI£º³¤Ç¹£¬Á¬åó£¬Âíîø£¬ÎŞÀµ¾«Éñ£¬¾Æ£¬ÌØ¼¶¾Æ£¬¶¹£¬ÉËÒ©¡£
-Ğí²ıII£ºÀÏ¾Æ£¬Ã×£¬²è£¬Ô®¾üÊé£¬³¤Ç¹£¬Á¬åó£¬Âíîø£¬ÎŞÀµ¾«Éñ¡£	µÚËÄÊ®°Ë¹Ø£¬Ğí²ıIIÖ®Õ½ºó
-Úş£º³¤Ç¹£¬Á¬åó£¬Âíîø£¬ÎŞÀµ¾«Éñ£¬ÌØ¼¶¾Æ£¬¶¹£¬Âó£¬ÉËÒ©¡£
-°×Âí£º½¹ÈÈÊé£¬äöÎĞÊé£¬×ÇÁ÷Êé£¬ÂäÊ¯Êé£¬Å¨ÎíÊé¡£
-ÈêÄÏ£º½¹ÈÈÊé£¬»ğÁúÊé£¬äöÎĞÊé£¬×ÇÁ÷Êé£¬ÂäÊ¯Êé£¬É½±ÀÊé¡£
-ÏåÑôI£º³¤Ç¹£¬Á¬åó£¬Âíîø£¬ÎŞÀµ¾«Éñ£¬ÌØ¼¶¾Æ£¬Âó£¬ÉËÒ©£¬Õ¨µ¯¡£
-ÏåÑôII£º²½±ø³µ£¬·¢Ê¯³µ£¬½üÎÀîø£¬ÏÀÒå¾«Éñ£¬»ğÁúÊé£¬×ÇÁ÷Êé£¬É½±ÀÊé£¬Õ¨µ¯¡£	µÚ¶şÊ®Áù¹Ø£¬½­ÁêÖ®Õ½ºó
-ÏåÑôIII£º²½±ø³µ£¬·¢Ê¯³µ£¬½üÎÀîø£¬ÏÀÒå¾«Éñ£¬ÃÍ»ğÊé£¬ÀÏ¾Æ£¬Ã×£¬²è¡£	µÚËÄÊ®¶ş¹Ø£¬ÏåÑôIIÖ®Õ½ºó
-½­ÏÄI£º»ğÁúÊé£¬×ÇÁ÷Êé£¬É½±ÀÊé£¬Å¨ÎíÊé£¬À×ÕóÓêÊé¡£
-½­ÏÄII£º»ğÁúÊé£¬×ÇÁ÷Êé£¬É½±ÀÊé£¬Å¨ÎíÊé£¬À×ÕóÓêÊé£¬³¤Ç¹£¬Á¬åó£¬Âíîø¡£	µÚ¶şÊ®Îå¹Ø£¬³¤ÚæÆÂÖ®Õ½ºó
-½­ÁêI£ºÌØ¼¶¾Æ£¬Âó£¬ÖĞÒ©£¬Æ½ÆøÊé£¬»îÆøÊé£¬Ô®¶ÓÊé¡£
-½­ÁêII£º»ğÁúÊé£¬×ÇÁ÷Êé£¬º£Ğ¥Êé£¬É½±ÀÊé£¬É½ºéÊé£¬Ô®²¿Êé£¬»îÆøÊé£¬ÓÂÆøÊé¡£	µÚÈıÊ®¾Å¹Ø£¬ÂóÖ®Õ½ºó
-³¤É³£ºÆ½ÆøÊé£¬»îÆøÊé£¬Ô®¶ÓÊé£¬Ô®²¿Êé£¬äöÎĞÊé£¬×ÇÁ÷Êé¡£
-¸¢£ºÌØ¼¶¾Æ£¬Âó£¬ÖĞÒ©£¬»ğÁúÊé£¬³¤Ç¹£¬Á¬åó£¬Âíîø£¬Õ¨µ¯¡£
-³É¶¼I£º²½±ø³µ£¬·¢Ê¯³µ£¬½üÎÀîø£¬ÏÀÒå¾«Éñ£¬ÌØ¼¶¾Æ£¬ÀÏ¾Æ£¬Âó£¬ÖĞÒ©¡£
-³É¶¼II£º²½±ø³µ£¬·¢Ê¯³µ£¬½üÎÀîø£¬ÏÀÒå¾«Éñ£¬ÌØ¼¶¾Æ£¬ÀÏ¾Æ£¬Âó£¬Ã×¡£		µÚÈıÊ®¾Å¹Ø£¬ÂóÖ®Õ½ºó
-Î÷Áê£º»ğÁúÊé£¬×ÇÁ÷Êé£¬É½±ÀÊé£¬ÌØ¼¶¾Æ£¬Âó£¬ÖĞÒ©£¬Ô®²¿Êé£¬»îÆøÊé¡£
-Íğ£ºÀÏ¾Æ£¬Ã×£¬²è£¬ÃÍ»ğÊé£¬º£Ğ¥Êé£¬É½ºéÊé£¬À×ÕóÓêÊé£¬ºÀÓêÊé¡£
+å„åœ°æ‰€èƒ½è´­ä¹°é“å…·ï¼š
+é™ˆç•™ï¼šç„¦çƒ­ä¹¦ï¼Œé…’ï¼Œè±†ã€‚
+åŒ—å¹³ï¼šé…’ï¼Œè±†ï¼Œæµ“é›¾ä¹¦ã€‚
+ä¿¡éƒ½ï¼šé…’ï¼Œè±†ï¼Œä¼¤è¯ï¼Œç„¦çƒ­ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼Œè½çŸ³ä¹¦ã€‚
+å¹¿å·ï¼šé…’ï¼Œè±†ï¼Œä¼¤è¯ã€‚
+åŒ—æµ·ï¼šé…’ï¼Œè±†ï¼Œä¼¤è¯ï¼Œç„¦çƒ­ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼Œè½çŸ³ä¹¦ï¼Œç‚¸å¼¹ã€‚
+å¾å·ï¼šé…’ï¼Œè±†ï¼Œä¼¤è¯ï¼Œå¹³æ°”ä¹¦ï¼Œæ´é˜Ÿä¹¦ã€‚
+ä¸‹é‚³ï¼šè±†ï¼Œéº¦ï¼Œå¹³æ°”ä¹¦ï¼Œæ´é˜Ÿä¹¦ï¼Œç‚¸å¼¹ã€‚
+å°æ²›ï¼šé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œæ— èµ–ç²¾ç¥ï¼Œç„¦çƒ­ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼Œè½çŸ³ä¹¦ã€‚
+è®¸æ˜ŒIï¼šé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œæ— èµ–ç²¾ç¥ï¼Œé…’ï¼Œç‰¹çº§é…’ï¼Œè±†ï¼Œä¼¤è¯ã€‚
+è®¸æ˜ŒIIï¼šè€é…’ï¼Œç±³ï¼ŒèŒ¶ï¼Œæ´å†›ä¹¦ï¼Œé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œæ— èµ–ç²¾ç¥ã€‚	ç¬¬å››åå…«å…³ï¼Œè®¸æ˜ŒIIä¹‹æˆ˜å
+é‚ºï¼šé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œæ— èµ–ç²¾ç¥ï¼Œç‰¹çº§é…’ï¼Œè±†ï¼Œéº¦ï¼Œä¼¤è¯ã€‚
+ç™½é©¬ï¼šç„¦çƒ­ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œè½çŸ³ä¹¦ï¼Œæµ“é›¾ä¹¦ã€‚
+æ±å—ï¼šç„¦çƒ­ä¹¦ï¼Œç«é¾™ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œè½çŸ³ä¹¦ï¼Œå±±å´©ä¹¦ã€‚
+è¥„é˜³Iï¼šé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œæ— èµ–ç²¾ç¥ï¼Œç‰¹çº§é…’ï¼Œéº¦ï¼Œä¼¤è¯ï¼Œç‚¸å¼¹ã€‚
+è¥„é˜³IIï¼šæ­¥å…µè½¦ï¼Œå‘çŸ³è½¦ï¼Œè¿‘å«é“ ï¼Œä¾ ä¹‰ç²¾ç¥ï¼Œç«é¾™ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œå±±å´©ä¹¦ï¼Œç‚¸å¼¹ã€‚	ç¬¬äºŒåå…­å…³ï¼Œæ±Ÿé™µä¹‹æˆ˜å
+è¥„é˜³IIIï¼šæ­¥å…µè½¦ï¼Œå‘çŸ³è½¦ï¼Œè¿‘å«é“ ï¼Œä¾ ä¹‰ç²¾ç¥ï¼ŒçŒ›ç«ä¹¦ï¼Œè€é…’ï¼Œç±³ï¼ŒèŒ¶ã€‚	ç¬¬å››åäºŒå…³ï¼Œè¥„é˜³IIä¹‹æˆ˜å
+æ±Ÿå¤Iï¼šç«é¾™ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œå±±å´©ä¹¦ï¼Œæµ“é›¾ä¹¦ï¼Œé›·é˜µé›¨ä¹¦ã€‚
+æ±Ÿå¤IIï¼šç«é¾™ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œå±±å´©ä¹¦ï¼Œæµ“é›¾ä¹¦ï¼Œé›·é˜µé›¨ä¹¦ï¼Œé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ã€‚	ç¬¬äºŒåäº”å…³ï¼Œé•¿é˜ªå¡ä¹‹æˆ˜å
+æ±Ÿé™µIï¼šç‰¹çº§é…’ï¼Œéº¦ï¼Œä¸­è¯ï¼Œå¹³æ°”ä¹¦ï¼Œæ´»æ°”ä¹¦ï¼Œæ´é˜Ÿä¹¦ã€‚
+æ±Ÿé™µIIï¼šç«é¾™ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œæµ·å•¸ä¹¦ï¼Œå±±å´©ä¹¦ï¼Œå±±æ´ªä¹¦ï¼Œæ´éƒ¨ä¹¦ï¼Œæ´»æ°”ä¹¦ï¼Œå‹‡æ°”ä¹¦ã€‚	ç¬¬ä¸‰åä¹å…³ï¼Œéº¦ä¹‹æˆ˜å
+é•¿æ²™ï¼šå¹³æ°”ä¹¦ï¼Œæ´»æ°”ä¹¦ï¼Œæ´é˜Ÿä¹¦ï¼Œæ´éƒ¨ä¹¦ï¼Œæ¼©æ¶¡ä¹¦ï¼ŒæµŠæµä¹¦ã€‚
+æ¶ªï¼šç‰¹çº§é…’ï¼Œéº¦ï¼Œä¸­è¯ï¼Œç«é¾™ä¹¦ï¼Œé•¿æªï¼Œè¿å¼©ï¼Œé©¬é“ ï¼Œç‚¸å¼¹ã€‚
+æˆéƒ½Iï¼šæ­¥å…µè½¦ï¼Œå‘çŸ³è½¦ï¼Œè¿‘å«é“ ï¼Œä¾ ä¹‰ç²¾ç¥ï¼Œç‰¹çº§é…’ï¼Œè€é…’ï¼Œéº¦ï¼Œä¸­è¯ã€‚
+æˆéƒ½IIï¼šæ­¥å…µè½¦ï¼Œå‘çŸ³è½¦ï¼Œè¿‘å«é“ ï¼Œä¾ ä¹‰ç²¾ç¥ï¼Œç‰¹çº§é…’ï¼Œè€é…’ï¼Œéº¦ï¼Œç±³ã€‚		ç¬¬ä¸‰åä¹å…³ï¼Œéº¦ä¹‹æˆ˜å
+è¥¿é™µï¼šç«é¾™ä¹¦ï¼ŒæµŠæµä¹¦ï¼Œå±±å´©ä¹¦ï¼Œç‰¹çº§é…’ï¼Œéº¦ï¼Œä¸­è¯ï¼Œæ´éƒ¨ä¹¦ï¼Œæ´»æ°”ä¹¦ã€‚
+å®›ï¼šè€é…’ï¼Œç±³ï¼ŒèŒ¶ï¼ŒçŒ›ç«ä¹¦ï¼Œæµ·å•¸ä¹¦ï¼Œå±±æ´ªä¹¦ï¼Œé›·é˜µé›¨ä¹¦ï¼Œè±ªé›¨ä¹¦ã€‚
 ]]--
 					}
-	local shopitem2={	--ÎäÆ÷µê
-					[1]={74,80,89,140,147},			--ãáË®¹ØÖ®Õ½Ç°,³ÂÁô
-					[2]={74,75,80,89,99,140,141,147},			--»¢ÀÎ¹ØÖ®Õ½ºó,±±Æ½
-					[3]={80,81,85,89,95,117,120,141,148},--ĞÅ¶¼³ÇÖ®Õ½ºó,ĞÅ¶¼
-					[4]={75,90,141,148},			--¹ã´¨Ö®Õ½ºó,¹ã´¨
-					--±±º£Ö®Õ½Ç°,±±Æ½/ĞÅ¶¼
-					[5]={80,81,85,89,95,117,120,141,148},		--±±º£Ö®Õ½ºó,±±Æ½/ĞÅ¶¼/±±º£,ÕâÀïÖ»ÁĞÁËĞÅ¶¼µÄ
-					[6]={90,96,120,125,126,131,142,148},			--ĞìÖİIÖ®Õ½ºó,±±Æ½/ĞÅ¶¼/±±º£/ĞìÖİ/ÏÂÚü£¬ÕâÀïÖ»ÁĞµÄĞìÖİµÄ
-					--ÏÂÚüµÄ 31,32,50,47,34
-					[7]={81,85,100,117,135,142,152},			--Ğ¡Åæ
-					[8]={86,90,101,104,105,117,135,142,152,148},			--Ğí²ıI
-					[9]={86,90,101,105,142,152,148},			--ÏÂÚü,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[10]={76,82,91,102,106,118,136,131,130},			--Úş
-					[11]={140,141,142,147,148},			--°×Âí,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[12]={76,82,91,102,106,142},			--ÈêÄÏ,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[13]={91,97,127,131,141,143,152,149,150},				--ÏåÑôI
-					[14]={76,82,86,106,109,110,118,121,123},				--½­ÏÄI
-					[15]={103,107,111,114,132,133,142,144,153},				--½­ÁêI
-					[16]={76,82,86,106,109,110,118,121,123},				--½­ÏÄII
-					[17]={76,82,86,103,107,110},				--³¤É³,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[18]={77,90,92,96,97,128},				--ÏåÑôII
-					[19]={78,83,87,111,115,128,145,153,150},				--³É¶¼I
-					[20]={92,97,102,106,139},				--¸¢,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[21]={78,83,87,111,115,128,145,153,150},				--³É¶¼II
-					[22]={78,83,87,92,97,102,106,111,115,139},				--Î÷Áê,ÆäÊµÃ»ÓĞ£¬Ëæ±ã±à¼¸¸ö
-					[23]={93,97,103,108,112,137,119,122,129},				--½­ÁêII
-					[24]={84,88,98,116,124,138,134,146,151},				--ÏåÑôIII
-					[25]={84,88,98,103,108},				--Íğ
-					[26]={79,94,113,139,132,154},			--Ğí²ıII
+	local shopitem2={	--æ­¦å™¨åº—
+					[1]={74,80,89,140,147},			--æ±œæ°´å…³ä¹‹æˆ˜å‰,é™ˆç•™
+					[2]={74,75,80,89,99,140,141,147},			--è™ç‰¢å…³ä¹‹æˆ˜å,åŒ—å¹³
+					[3]={80,81,85,89,95,117,120,141,148},--ä¿¡éƒ½åŸä¹‹æˆ˜å,ä¿¡éƒ½
+					[4]={75,90,141,148},			--å¹¿å·ä¹‹æˆ˜å,å¹¿å·
+					--åŒ—æµ·ä¹‹æˆ˜å‰,åŒ—å¹³/ä¿¡éƒ½
+					[5]={80,81,85,89,95,117,120,141,148},		--åŒ—æµ·ä¹‹æˆ˜å,åŒ—å¹³/ä¿¡éƒ½/åŒ—æµ·,è¿™é‡Œåªåˆ—äº†ä¿¡éƒ½çš„
+					[6]={90,96,120,125,126,131,142,148},			--å¾å·Iä¹‹æˆ˜å,åŒ—å¹³/ä¿¡éƒ½/åŒ—æµ·/å¾å·/ä¸‹é‚³ï¼Œè¿™é‡Œåªåˆ—çš„å¾å·çš„
+					--ä¸‹é‚³çš„ 31,32,50,47,34
+					[7]={81,85,100,117,135,142,152},			--å°æ²›
+					[8]={86,90,101,104,105,117,135,142,152,148},			--è®¸æ˜ŒI
+					[9]={86,90,101,105,142,152,148},			--ä¸‹é‚³,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[10]={76,82,91,102,106,118,136,131,130},			--é‚º
+					[11]={140,141,142,147,148},			--ç™½é©¬,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[12]={76,82,91,102,106,142},			--æ±å—,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[13]={91,97,127,131,141,143,152,149,150},				--è¥„é˜³I
+					[14]={76,82,86,106,109,110,118,121,123},				--æ±Ÿå¤I
+					[15]={103,107,111,114,132,133,142,144,153},				--æ±Ÿé™µI
+					[16]={76,82,86,106,109,110,118,121,123},				--æ±Ÿå¤II
+					[17]={76,82,86,103,107,110},				--é•¿æ²™,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[18]={77,90,92,96,97,128},				--è¥„é˜³II
+					[19]={78,83,87,111,115,128,145,153,150},				--æˆéƒ½I
+					[20]={92,97,102,106,139},				--æ¶ª,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[21]={78,83,87,111,115,128,145,153,150},				--æˆéƒ½II
+					[22]={78,83,87,92,97,102,106,111,115,139},				--è¥¿é™µ,å…¶å®æ²¡æœ‰ï¼Œéšä¾¿ç¼–å‡ ä¸ª
+					[23]={93,97,103,108,112,137,119,122,129},				--æ±Ÿé™µII
+					[24]={84,88,98,116,124,138,134,146,151},				--è¥„é˜³III
+					[25]={84,88,98,103,108},				--å®›
+					[26]={79,94,113,139,132,154},			--è®¸æ˜ŒII
 					}
-	local shopid=1;	--1µÀ¾ß 2ÎäÆ÷
+	local shopid=1;	--1é“å…· 2æ­¦å™¨
 	local buysellmenu={
-						{"  ÂòµÀ¾ß ",nil,1},
-						{"  ÂòÎäÆ÷ ",nil,1},
-						{"    Âô   ",nil,1},
+						{"  ä¹°é“å…· ",nil,1},
+						{"  ä¹°æ­¦å™¨ ",nil,1},
+						{"    å–   ",nil,1},
 					};
 	local itemmenu={};
 	local itemnum=0;
 	local personmenu={};
 	local personnum=0;
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["ÊÆÁ¦"]==1 then
-			personmenu[i]={fillblank(JY.Person[i]["Ãû³Æ"],11),nil,1};
+		if JY.Person[i]["åŠ¿åŠ›"]==1 then
+			personmenu[i]={fillblank(JY.Person[i]["åç§°"],11),nil,1};
 			personnum=personnum+1;
 		else
 			personmenu[i]={"",nil,0};
@@ -1362,7 +1362,7 @@ function Shop()
 	local status="SelectBuySell";
 	local iid,pid;
 	local function showbuysellmenu()
-		talk_sub(375,"ÓĞÊ²Ã´ÊÂÇé£¿");
+		talk_sub(375,"æœ‰ä»€ä¹ˆäº‹æƒ…ï¼Ÿ");
 		local r=ShowMenu(buysellmenu,3,0,0,156,0,0,3,1,16,C_WHITE,C_WHITE);
 		if r==1 then
 			status="SelectItem";
@@ -1371,7 +1371,7 @@ function Shop()
 			itemnum=0;
 			for i,v in pairs(shopitem[sid]) do
 				itemnum=itemnum+1;
-				itemmenu[itemnum]={fillblank(JY.Item[v]["Ãû³Æ"],11),nil,1};
+				itemmenu[itemnum]={fillblank(JY.Item[v]["åç§°"],11),nil,1};
 			end
 		elseif r==2 then
 			status="SelectItem";
@@ -1380,7 +1380,7 @@ function Shop()
 			itemnum=0;
 			for i,v in pairs(shopitem2[sid]) do
 				itemnum=itemnum+1;
-				itemmenu[itemnum]={fillblank(JY.Item[v]["Ãû³Æ"],11),nil,1};
+				itemmenu[itemnum]={fillblank(JY.Item[v]["åç§°"],11),nil,1};
 			end
 		elseif r==3 then
 			status="SelectPersonSell";
@@ -1390,7 +1390,7 @@ function Shop()
 		end
 	end
 	local function showitemmenu()
-		talk_sub(375,"ÂòÊ²Ã´£¿");
+		talk_sub(375,"ä¹°ä»€ä¹ˆï¼Ÿ");
 		local r=ShowMenu(itemmenu,itemnum,0,0,156,0,0,3,1,16,C_WHITE,C_WHITE);
 		if r>0 then
 			if shopid==1 then
@@ -1405,15 +1405,15 @@ function Shop()
 			local y=CC.ScreenH/2;
 			local size=16;
 			lib.PicLoadCache(4,50*2,x,y,1);
-			DrawStringEnhance(x+16,y+16,JY.Item[iid]["Ãû³Æ"],C_Name,size);
-			DrawStr(x+16,y+36,GenTalkString(JY.Item[iid]["ËµÃ÷"],18),C_WHITE,size);
+			DrawStringEnhance(x+16,y+16,JY.Item[iid]["åç§°"],C_Name,size);
+			DrawStr(x+16,y+36,GenTalkString(JY.Item[iid]["è¯´æ˜"],18),C_WHITE,size);
 			
-			if TalkYesNo(375,JY.Item[iid]["Ãû³Æ"].."»Æ½ğ"..JY.Item[iid]["¼ÛÖµ"].."0£¬*¿ÉÒÔÂğ£¿") then
-				--Èç¹û»Æ½ğ²»¹»
-				if JY.Item[iid]["¼ÛÖµ"]*10>JY.Base["»Æ½ğ"] then
+			if TalkYesNo(375,JY.Item[iid]["åç§°"].."é»„é‡‘"..JY.Item[iid]["ä»·å€¼"].."0ï¼Œ*å¯ä»¥å—ï¼Ÿ") then
+				--å¦‚æœé»„é‡‘ä¸å¤Ÿ
+				if JY.Item[iid]["ä»·å€¼"]*10>JY.Base["é»„é‡‘"] then
 					DrawSMap();
 					PlayWavE(2);
-					Talk(375,"¿´À´»Æ½ğ²»¹»ÁË£®");
+					Talk(375,"çœ‹æ¥é»„é‡‘ä¸å¤Ÿäº†ï¼");
 					status="SelectItem";
 				else
 					status="SelectPerson";
@@ -1425,7 +1425,7 @@ function Shop()
 		end
 	end
 	local function showpersonnum()
-		talk_sub(375,JY.Item[iid]["Ãû³Æ"].."ÄÄÎ»Òª£¿");
+		talk_sub(375,JY.Item[iid]["åç§°"].."å“ªä½è¦ï¼Ÿ");
 		local r;
 		if personnum<=10 then
 			r=ShowMenu(personmenu,JY.PersonNum-1,10,0,156,0,0,5,1,16,C_WHITE,C_WHITE);
@@ -1434,26 +1434,26 @@ function Shop()
 		end
 		if r>0 then
 			pid=r;
-			if JY.Person[pid]["µÀ¾ß8"]>0 then
+			if JY.Person[pid]["é“å…·8"]>0 then
 				PlayWavE(2);
-				if TalkYesNo(375,"ÄÇÎ»²»ÄÜÔÙ*´ø¶«Î÷ÁË£¬±ğÈË°É£¿") then
+				if TalkYesNo(375,"é‚£ä½ä¸èƒ½å†*å¸¦ä¸œè¥¿äº†ï¼Œåˆ«äººå§ï¼Ÿ") then
 					status="SelectPerson";
 				else
 					status="SelectItem";
 				end
 			else
 				PersonStatus_sub(pid,108,156);
-				if TalkYesNo(375,"¿ÉÒÔ½»¸ø"..JY.Person[pid]["Ãû³Æ"].."Âğ£¿") then
-					GetMoney(-10*JY.Item[iid]["¼ÛÖµ"]);
+				if TalkYesNo(375,"å¯ä»¥äº¤ç»™"..JY.Person[pid]["åç§°"].."å—ï¼Ÿ") then
+					GetMoney(-10*JY.Item[iid]["ä»·å€¼"]);
 					for i=1,8 do
-						if JY.Person[pid]["µÀ¾ß"..i]==0 then
-							JY.Person[pid]["µÀ¾ß"..i]=iid;
+						if JY.Person[pid]["é“å…·"..i]==0 then
+							JY.Person[pid]["é“å…·"..i]=iid;
 							break;
 						end
 					end
 					DrawSMap();
-					DrawYJZBox(32,32,"µÀ¾ßÂòÂô",C_WHITE,true);
-					if TalkYesNo(375,"¶àĞ»ÁË£¬»¹Òª¡­¡­ÔÙÂòµãÂğ£¿") then
+					DrawYJZBox(32,32,"é“å…·ä¹°å–",C_WHITE,true);
+					if TalkYesNo(375,"å¤šè°¢äº†ï¼Œè¿˜è¦â€¦â€¦å†ä¹°ç‚¹å—ï¼Ÿ") then
 						status="SelectItem";
 					else
 						status="SelectBuySell";
@@ -1468,7 +1468,7 @@ function Shop()
 		end
 	end
 	local function showpersonnumsell()
-		talk_sub(375,"ÏëÂôÄÄÎ»µÄ¶«Î÷£¿");
+		talk_sub(375,"æƒ³å–å“ªä½çš„ä¸œè¥¿ï¼Ÿ");
 		local r;
 		if personnum<=10 then
 			r=ShowMenu(personmenu,JY.PersonNum-1,10,0,156,0,0,5,1,16,C_WHITE,C_WHITE);
@@ -1484,33 +1484,33 @@ function Shop()
 		end
 	end
 	local function showitemmenusell()
-		if JY.Person[pid]["µÀ¾ß1"]==0 then
+		if JY.Person[pid]["é“å…·1"]==0 then
 			PlayWavE(2);
-			Talk(375,"ÄúÃ»ÓĞÊ²Ã´¶«Î÷¿ÉÂô¡£");
+			Talk(375,"æ‚¨æ²¡æœ‰ä»€ä¹ˆä¸œè¥¿å¯å–ã€‚");
 			status="SelectPersonSell";
 		else
 			local sellmenu={};
 			for i=1,8 do
-				iid=JY.Person[pid]["µÀ¾ß"..i];
+				iid=JY.Person[pid]["é“å…·"..i];
 				if iid>0 then
-					sellmenu[i]={fillblank(JY.Item[iid]["Ãû³Æ"],11),nil,1};
+					sellmenu[i]={fillblank(JY.Item[iid]["åç§°"],11),nil,1};
 				else
 					sellmenu[i]={"",nil,0};
 				end
 			end
-			talk_sub(375,"ÂôÊ²Ã´£¿");
+			talk_sub(375,"å–ä»€ä¹ˆï¼Ÿ");
 			local rr=ShowMenu(sellmenu,8,0,0,156,0,0,3,1,16,C_WHITE,C_WHITE);
 			if rr>0 then
-				iid=JY.Person[pid]["µÀ¾ß"..rr];
-				if TalkYesNo(375,"ÓÃ"..(10*math.floor(JY.Item[iid]["¼ÛÖµ"]*0.75)).."»Æ½ğÊÕ¹º"..JY.Item[iid]["Ãû³Æ"].."£¬¿ÉÒÔÂğ£¿") then
+				iid=JY.Person[pid]["é“å…·"..rr];
+				if TalkYesNo(375,"ç”¨"..(10*math.floor(JY.Item[iid]["ä»·å€¼"]*0.75)).."é»„é‡‘æ”¶è´­"..JY.Item[iid]["åç§°"].."ï¼Œå¯ä»¥å—ï¼Ÿ") then
 					for i=rr,7 do
-						JY.Person[pid]["µÀ¾ß"..i]=JY.Person[pid]["µÀ¾ß"..(i+1)]
+						JY.Person[pid]["é“å…·"..i]=JY.Person[pid]["é“å…·"..(i+1)]
 					end
-					JY.Person[pid]["µÀ¾ß8"]=0;
-					GetMoney(10*math.floor(JY.Item[iid]["¼ÛÖµ"]*0.75));
+					JY.Person[pid]["é“å…·8"]=0;
+					GetMoney(10*math.floor(JY.Item[iid]["ä»·å€¼"]*0.75));
 					DrawSMap();
-					DrawYJZBox(32,32,"µÀ¾ßÂòÂô",C_WHITE,true);
-					if TalkYesNo(375,"¶àĞ»ÁË£¬»¹Òª¡­¡­ÏëÂôµãÊ²Ã´Âğ£¿") then
+					DrawYJZBox(32,32,"é“å…·ä¹°å–",C_WHITE,true);
+					if TalkYesNo(375,"å¤šè°¢äº†ï¼Œè¿˜è¦â€¦â€¦æƒ³å–ç‚¹ä»€ä¹ˆå—ï¼Ÿ") then
 						status="SelectPersonSell";--?
 						status="SelectItemSell";--?
 					else
@@ -1525,11 +1525,11 @@ function Shop()
 			end
 		end
 	end
-	Talk(375,"ÎÒÊÇÉÌÈË£®");
+	Talk(375,"æˆ‘æ˜¯å•†äººï¼");
 	while true do
 		JY.Tid=375;
 		DrawSMap();
-		DrawYJZBox(32,32,"µÀ¾ßÂòÂô",C_WHITE,true);
+		DrawYJZBox(32,32,"é“å…·ä¹°å–",C_WHITE,true);
 		if status=="SelectBuySell" then
 			showbuysellmenu();
 		elseif status=="SelectItem" then
@@ -1541,7 +1541,7 @@ function Shop()
 		elseif status=="SelectItemSell" then
 			showitemmenusell();
 		else
-			Talk(375,"»¶Ó­ÔÙÀ´£®");
+			Talk(375,"æ¬¢è¿å†æ¥ï¼");
 			break;
 		end
 	end
@@ -1552,7 +1552,7 @@ function WarIni()
 	SetWarConst();
 end
 function SetWarConst()
-	War.tBrush={[0]="ÎŞ",[1]="µÀÂ·",[2]="Æ½µØ",[3]="»ÄµØ",[4]="²İµØ",[5]="É­ÁÖ",[6]="ÊªµØ",[7]="É½",[8]="¸ßÉ½",[9]="¶ÏÑÂ",[10]="Ç³Ì²",[11]="´¨",[12]="ºş",[13]="íÎ",[14]="³Ç"}
+	War.tBrush={[0]="æ— ",[1]="é“è·¯",[2]="å¹³åœ°",[3]="è’åœ°",[4]="è‰åœ°",[5]="æ£®æ—",[6]="æ¹¿åœ°",[7]="å±±",[8]="é«˜å±±",[9]="æ–­å´–",[10]="æµ…æ»©",[11]="å·",[12]="æ¹–",[13]="ç ¦",[14]="åŸ"}
 	War.Frame=0;
 	War.FrameT=0;
 	War.x_off=0;
@@ -1560,8 +1560,8 @@ function SetWarConst()
 	War.mx=-1;
 	War.my=-1;
 	War.WavTimer=0;
-	War.MAP={};	--²¿¶ÓËù´¦×ø±ê£¬µØĞÎµÈ£¬Õâ¸ö±íĞèÒª±£´æ
-	War.Asmap={};	--A*Ê¹ÓÃµÄmapÊı¾İ
+	War.MAP={};	--éƒ¨é˜Ÿæ‰€å¤„åæ ‡ï¼Œåœ°å½¢ç­‰ï¼Œè¿™ä¸ªè¡¨éœ€è¦ä¿å­˜
+	War.Asmap={};	--A*ä½¿ç”¨çš„mapæ•°æ®
 	War.ArmyA1={};
 	War.ArmyA2={};
 	War.ArmyA3={};
@@ -1572,7 +1572,7 @@ function SetWarConst()
 	War.PersonNum=0;
   War.Building = {};
 end
---ÓÃÓÚÁ¬Õ½£¬ÆäÊµ¾ÍÊÇ°ÑµĞ¾üÉ¾µô
+--ç”¨äºè¿æˆ˜ï¼Œå…¶å®å°±æ˜¯æŠŠæ•Œå†›åˆ æ‰
 function WarIni2()
 	for i=War.PersonNum,1,-1 do
 		if War.Person[i].enemy then
@@ -1582,9 +1582,9 @@ function WarIni2()
 	end
 end
 function WarCleanEvent()
-	--Çå¿ÕÕ½³¡ÊÂ¼ş
+	--æ¸…ç©ºæˆ˜åœºäº‹ä»¶
 	for i=1,200 do
-		JY.Base["Õ½³¡ÊÂ¼ş"..i]=0;
+		JY.Base["æˆ˜åœºäº‹ä»¶"..i]=0;
 	end
 end
 
@@ -1596,17 +1596,17 @@ function SelectTeam(...)
 	local num=math.floor(#arg/4);
 	local t_team=SelectArmy(num);
 	for i=0,math.min(num,#t_team)-1 do
-		InsertWarPerson(0,t_team[i+1],arg[4*i+1],arg[4*i+2],arg[4*i+3],0,"ÎÒ",arg[4*i+4],"³ö»÷",-1,-1)
+		InsertWarPerson(0,t_team[i+1],arg[4*i+1],arg[4*i+2],arg[4*i+3],0,"æˆ‘",arg[4*i+4],"å‡ºå‡»",-1,-1)
 	end
 end
 function GeyBaselineLv()
-	return JY.Person[JY.PID]["µÈ¼¶"];
+	return JY.Person[JY.PID]["ç­‰çº§"];
 end
 function Follower(pid,fid,n)
 	--Pri.1
 	
 	--Pri.2
-	if JY.Person[pid]["Æ·¼¶"]>=4 and n<1 then
+	if JY.Person[pid]["å“çº§"]>=4 and n<1 then
 		return GenClassC(pid,fid);
 	end
 	--Pri.3
@@ -1615,38 +1615,38 @@ function Follower(pid,fid,n)
 	return fid;
 end
 function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
-	--new x y,   x ÔÚÁ½±ß yÔÚÉÏÏÂ
-	--b 0 ½üÕ½ 1Ô¶³Ì
+	--new x y,   x åœ¨ä¸¤è¾¹ yåœ¨ä¸Šä¸‹
+	--b 0 è¿‘æˆ˜ 1è¿œç¨‹
 	local n=#plist;
 	if n==0 then
 		return;
 	end
 	local pid;
-	if order=="ÎÄ" then
+	if order=="æ–‡" then
 		pid=plist[n];
 		table.remove(plist,n);
 	else
 		pid=plist[1];
 		table.remove(plist,1);
 	end
-	if force=="µĞ" then
+	if force=="æ•Œ" then
 		local jtnum=WarGetFlag(11)+1;
-		WarSetFlag(11,jtnum);	--µĞ¾ü¾üÍÅÊıÁ¿
-		WarSetFlag(110+jtnum,pid);	--µĞ·½¾üÍÅ³¤ID
+		WarSetFlag(11,jtnum);	--æ•Œå†›å†›å›¢æ•°é‡
+		WarSetFlag(110+jtnum,pid);	--æ•Œæ–¹å†›å›¢é•¿ID
 	end
 	local team={};
 	local tmp_t={};
-	local npcnum=JY.Person[pid]["Æ·¼¶"];
+	local npcnum=JY.Person[pid]["å“çº§"];
 	local lv=1;
 	local npclv=0;
-	if JY.Person[pid]["Æ·¼¶"]<4 then
+	if JY.Person[pid]["å“çº§"]<4 then
 		npclv=npclv-1;
 	end
-	if order=="Ë§" then
+	if order=="å¸…" then
 		npcnum=npcnum+2;
 		lv,npclv=lv+2,npclv+2;
 	end
-	if kind==1 then			--²½±øÊØÎÀ
+	if kind==1 then			--æ­¥å…µå®ˆå«
 		if npcnum>6 then
 			npcnum=6;
 		end
@@ -1724,7 +1724,7 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 				table.insert(team,TableRandom(tmp_t));
 			end
 		end
-	elseif kind==2 then		--¹­±øÔ¶Éä
+	elseif kind==2 then		--å¼“å…µè¿œå°„
 		if npcnum>6 then
 			npcnum=6;
 		end
@@ -1770,7 +1770,7 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 			table.insert(team,TableRandom(tmp_t));
 			table.insert(team,TableRandom(tmp_t));
 		end
-	elseif kind==3 then		--Ë®Õ½ÃÜ¼¯
+	elseif kind==3 then		--æ°´æˆ˜å¯†é›†
 		if npcnum>6 then
 			npcnum=6;
 		end
@@ -1819,7 +1819,7 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 			table.insert(team,TableRandom(tmp_t));
 			table.insert(team,TableRandom(tmp_t));
 		end
-	elseif kind==4 then		--É½ÁÖÃÜ¼¯
+	elseif kind==4 then		--å±±æ—å¯†é›†
 		if npcnum>6 then
 			npcnum=6;
 		end
@@ -1868,7 +1868,7 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 			table.insert(team,TableRandom(tmp_t));
 			table.insert(team,TableRandom(tmp_t));
 		end
-	elseif kind==5 then		--Æï±øÃÜ¼¯
+	elseif kind==5 then		--éª‘å…µå¯†é›†
 		if npcnum>6 then
 			npcnum=6;
 		end
@@ -1920,7 +1920,7 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 	end
 	x0,y0=WarGetExistXY(x0,y0);
 	InsertWarPerson(team_id,pid,x0,y0,d,lv,force,hide,ai,ai_x,ai_y);
-	if CheckSkill(pid,4) then	--Á·±ø
+	if CheckSkill(pid,4) then	--ç»ƒå…µ
 		npclv=npclv+1;
 	end
 	local fg=0;
@@ -1930,38 +1930,38 @@ function InsertWarTeam(team_id,plist,x0,y0,d,force,hide,order,kind,ai,ai_x,ai_y)
 	for i,v in ipairs(team) do
 		local nid;
 		if v.b==0 then
-			nid=GenPerson(RND(0.8),pid,"²½±ø¶Ó","Æï±ø¶Ó");
+			nid=GenPerson(RND(0.8),pid,"æ­¥å…µé˜Ÿ","éª‘å…µé˜Ÿ");
 		elseif v.b==1 then
-			nid=GenPerson(RND(0.9),pid,"¹­±ø¶Ó","Æï±ø¶Ó");
+			nid=GenPerson(RND(0.9),pid,"å¼“å…µé˜Ÿ","éª‘å…µé˜Ÿ");
 		elseif v.b==2 then
-			nid=GenPerson(true,pid,"¹­±ø¶Ó");
+			nid=GenPerson(true,pid,"å¼“å…µé˜Ÿ");
 		elseif v.b==3 then
-			nid=GenPerson(RND(0.5),pid,"ÎäÊõ¼Ò","²½±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"æ­¦æœ¯å®¶","æ­¥å…µé˜Ÿ");
 		elseif v.b==4 then
-			nid=GenPerson(RND(0.5),pid,"ÎäÊõ¼Ò","¹­±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"æ­¦æœ¯å®¶","å¼“å…µé˜Ÿ");
 		elseif v.b==5 then
-			nid=GenPerson(RND(0.5),pid,"Ôô±ø","²½±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"è´¼å…µ","æ­¥å…µé˜Ÿ");
 		elseif v.b==6 then
-			nid=GenPerson(RND(0.5),pid,"Ôô±ø","¹­±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"è´¼å…µ","å¼“å…µé˜Ÿ");
 		elseif v.b==7 then
-			nid=GenPerson(RND(0.5),pid,"Æï±ø¶Ó","²½±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"éª‘å…µé˜Ÿ","æ­¥å…µé˜Ÿ");
 		elseif v.b==8 then
-			nid=GenPerson(RND(0.5),pid,"Æï±ø¶Ó","¹­±ø¶Ó");
+			nid=GenPerson(RND(0.5),pid,"éª‘å…µé˜Ÿ","å¼“å…µé˜Ÿ");
 		end
 		if i==fg then
 			nid=GenClassC(pid,nid);
 		end
-		if JY.Person[pid]["Í³±ø"]>0 then
+		if JY.Person[pid]["ç»Ÿå…µ"]>0 then
 			nid=BodyGuard(pid,nid);
 		end
 		local nx,ny;
-		if d=="ÉÏ" then
+		if d=="ä¸Š" then
 			nx,ny=x0+v.x,y0-v.y;
-		elseif d=="ÏÂ" then
+		elseif d=="ä¸‹" then
 			nx,ny=x0+v.x,y0+v.y;
-		elseif d=="×ó" then
+		elseif d=="å·¦" then
 			nx,ny=x0-v.y,y0+v.x;
-		elseif d=="ÓÒ" then
+		elseif d=="å³" then
 			nx,ny=x0+v.y,y0+v.x;
 		end
 		nx,ny=WarGetExistXY(nx,ny,x0,y0);
@@ -1974,67 +1974,67 @@ function InsertWarPerson(team_id,pid,x,y,d,lv,force,hide,ai,ai_x,ai_y)
 end
 function InsertWarPerson_sub(team_id,pid,x,y,d,lv,force,hide,ai,ai_x,ai_y)
 	local direction=0;
-	if d=="ÉÏ" then
+	if d=="ä¸Š" then
 		direction=2;
-	elseif d=="ÏÂ" then
+	elseif d=="ä¸‹" then
 		direction=1;
-	elseif d=="×ó" then
+	elseif d=="å·¦" then
 		direction=3;
-	elseif d=="ÓÒ" then
+	elseif d=="å³" then
 		direction=4;
 	end
-	if force~="ÎÒ" then
-		JY.Person[pid]["µÈ¼¶"]=limitX(GeyBaselineLv()+JY.Person[pid]["Æ·¼¶"]+lv,1,60);
-		JY.Person[pid]["¹¦¼¨"]=CC.Exp[JY.Person[pid]["µÈ¼¶"]];
+	if force~="æˆ‘" then
+		JY.Person[pid]["ç­‰çº§"]=limitX(GeyBaselineLv()+JY.Person[pid]["å“çº§"]+lv,1,60);
+		JY.Person[pid]["åŠŸç»©"]=CC.Exp[JY.Person[pid]["ç­‰çº§"]];
 		--for i=4,1,-1 do
-		--	if JY.Person[pid]["µÈ¼¶"]>=20*(i-1) and JY.Person[pid]["±øÖÖ"..i]>0 then
-		--		JY.Person[pid]["±øÖÖ"]=JY.Person[pid]["±øÖÖ"..i];
+		--	if JY.Person[pid]["ç­‰çº§"]>=20*(i-1) and JY.Person[pid]["å…µç§"..i]>0 then
+		--		JY.Person[pid]["å…µç§"]=JY.Person[pid]["å…µç§"..i];
 		--		break;
 		--	end
 		--end
 	end
-	JY.Person[pid]["³öÕ½"]=1;
+	JY.Person[pid]["å‡ºæˆ˜"]=1;
 	War.PersonNum=War.PersonNum+1;
 	table.insert(War.Person,	{
-									id=pid,				--ÈËÎïID
-									tid=team_id,		--¾üÍÅID
-									x=x,					--×ø±êX
-									y=y,					--×ø±êY
-									--pic=JY.Person[T[idx+1]]["Õ½¶·¶¯×÷"],	--ĞÎÏóID
-									action=1,				--¶¯×÷ 0¾²Ö¹£¬1×ßÂ·...
-									effect=0,				--¸ßÁÁÏÔÊ¾
-									hurt=-1,				--ÏÔÊ¾ÉËº¦ÊıÖµ
-									bz=JY.Person[pid]["±øÖÖ"],
-									movewav=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒôĞ§"],	--ÒÆ¶¯ÒôĞ§
-									atkwav=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["¹¥»÷ÒôĞ§"],	--¹¥»÷ÒôĞ§
-									movestep=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒÆ¶¯"],	--ÒÆ¶¯·¶Î§
-									movespeed=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒÆ¶¯ËÙ¶È"],	--ÒÆ¶¯ËÙ¶È
-									atkfw=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["¹¥»÷·¶Î§"],	--¹¥»÷·¶Î§
+									id=pid,				--äººç‰©ID
+									tid=team_id,		--å†›å›¢ID
+									x=x,					--åæ ‡X
+									y=y,					--åæ ‡Y
+									--pic=JY.Person[T[idx+1]]["æˆ˜æ–—åŠ¨ä½œ"],	--å½¢è±¡ID
+									action=1,				--åŠ¨ä½œ 0é™æ­¢ï¼Œ1èµ°è·¯...
+									effect=0,				--é«˜äº®æ˜¾ç¤º
+									hurt=-1,				--æ˜¾ç¤ºä¼¤å®³æ•°å€¼
+									bz=JY.Person[pid]["å…µç§"],
+									movewav=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["éŸ³æ•ˆ"],	--ç§»åŠ¨éŸ³æ•ˆ
+									atkwav=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["æ”»å‡»éŸ³æ•ˆ"],	--æ”»å‡»éŸ³æ•ˆ
+									movestep=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["ç§»åŠ¨"],	--ç§»åŠ¨èŒƒå›´
+									movespeed=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["ç§»åŠ¨é€Ÿåº¦"],	--ç§»åŠ¨é€Ÿåº¦
+									atkfw=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["æ”»å‡»èŒƒå›´"],	--æ”»å‡»èŒƒå›´
 									sq=0,
 									atk_buff=0,
 									int_buff=0,
 									def_buff=0,
 									dex_buff=0,
 									shi_buff=0,
-									frame=-1,				--ÏÔÊ¾Ö¡Êı
-									d=direction,					--·½Ïò
-									active=true,			--¿É·ñĞĞ¶¯
-									enemy=false,			--µĞ¾üÎÒ¾ü
-									friend=false,			--ÓÑ¾ü£¿
-									ai=0,					--AIÀàĞÍ
-									live=true,				--´æ»î
-									hide=hide,				--·ü±ø
-									was_hide=hide,				--·ü±ø
-									troubled=false,			--»ìÂÒ
+									frame=-1,				--æ˜¾ç¤ºå¸§æ•°
+									d=direction,					--æ–¹å‘
+									active=true,			--å¯å¦è¡ŒåŠ¨
+									enemy=false,			--æ•Œå†›æˆ‘å†›
+									friend=false,			--å‹å†›ï¼Ÿ
+									ai=0,					--AIç±»å‹
+									live=true,				--å­˜æ´»
+									hide=hide,				--ä¼å…µ
+									was_hide=hide,				--ä¼å…µ
+									troubled=false,			--æ··ä¹±
 									leader=false,
 								})
 	WarModifyAI(War.PersonNum,ai,ai_x,ai_y);
-	if force=="µĞ" then
+	if force=="æ•Œ" then
 		War.Person[War.PersonNum].enemy=true;
 		if War.Leader2==pid then
 			War.Person[War.PersonNum].leader=true;
 		end
-	elseif force=="ÓÑ" then
+	elseif force=="å‹" then
 		War.Person[War.PersonNum].friend=true;
 	else
 		if War.Leader1==pid then
@@ -2064,16 +2064,16 @@ function DefineWarMap(id,warname,wartarget,maxturn,leader1,leader2)
 	LoadWarMap(War.MapID);
 end
 function WarStart()
-	CC.Person_S["ÈİÃ²"]=CC.Person_S["Õ½¶·ÈİÃ²"];
+	CC.Person_S["å®¹è²Œ"]=CC.Person_S["æˆ˜æ–—å®¹è²Œ"];
 	for i,v in ipairs(JY.Person) do
-		v["³öÕ½"]=0;
+		v["å‡ºæˆ˜"]=0;
 	end
 	SRPG();
-	CC.Person_S["ÈİÃ²"]=CC.Person_S["ÄÚÕşÈİÃ²"];
+	CC.Person_S["å®¹è²Œ"]=CC.Person_S["å†…æ”¿å®¹è²Œ"];
 end
 ----------------------------------------------------------------
 --	WarSave()
---	±£´æÕ½³¡
+--	ä¿å­˜æˆ˜åœº
 ----------------------------------------------------------------
 function WarSave(id)
 	
@@ -2090,8 +2090,8 @@ function WarSave(id)
 	Byte.set16(JY.Data_Base,138,War.Leader1);
 	Byte.set16(JY.Data_Base,140,War.Leader2);
 	Byte.set8(JY.Data_Base,142,War.EnemyNum);
-	JY.Base["Õ½³¡Ãû³Æ"]=War.WarName;
-	JY.Base["Õ½³¡Ä¿±ê"]=War.WarTarget;
+	JY.Base["æˆ˜åœºåç§°"]=War.WarName;
+	JY.Base["æˆ˜åœºç›®æ ‡"]=War.WarTarget;
 	--[[
 	if CC.SrcCharSet==1 then
 		Byte.setstr(JY.Data_Base,150,50,lib.CharSet(War.WarName,1));
@@ -2149,7 +2149,7 @@ function WarSave(id)
 end
 ----------------------------------------------------------------
 --	WarLoad()
---	¶ÁÈ¡Õ½³¡
+--	è¯»å–æˆ˜åœº
 ----------------------------------------------------------------
 function WarLoad(id)
 	--Load
@@ -2168,8 +2168,8 @@ function WarLoad(id)
 	War.Leader1=Byte.get16(JY.Data_Base,138);
 	War.Leader2=Byte.get16(JY.Data_Base,140);
 	War.EnemyNum=Byte.get8(JY.Data_Base,142);
-	War.WarName=JY.Base["Õ½³¡Ãû³Æ"];
-	War.WarTarget=JY.Base["Õ½³¡Ä¿±ê"];
+	War.WarName=JY.Base["æˆ˜åœºåç§°"];
+	War.WarTarget=JY.Base["æˆ˜åœºç›®æ ‡"];
 	--[[
 	if CC.SrcCharSet==1 then
 		War.WarName=lib.CharSet(Byte.getstr(JY.Data_Base,150,50),0);
@@ -2183,16 +2183,16 @@ function WarLoad(id)
 	War.MiniMapCX=888-War.Width*2;
 	War.MiniMapCY=460+24-War.Depth*2;
 	War.Map={};
-	CleanWarMap(1,0);	--µØĞÎ
+	CleanWarMap(1,0);	--åœ°å½¢
 	CleanWarMap(2,0);	--wid
 	CleanWarMap(3,0);	--
-	CleanWarMap(4,1);	--Ñ¡Ôñ·¶Î§
-	CleanWarMap(5,-1);	--¹¥»÷¼ÛÖµ
-	CleanWarMap(6,-1);	--²ßÂÔ¼ÛÖµ
-	CleanWarMap(7,0);	--Ñ¡ÔñµÄ²ßÂÔ
-	CleanWarMap(8,0);	--AIÇ¿»¯ÓÃ£¬ÎÒ¾üµÄ¹¥»÷·¶Î§
-	CleanWarMap(9,0);	--Ë®»ğ¿ØÖÆ
-	CleanWarMap(10,0);	--¹¥»÷·¶Î§£¬ÏÔÊ¾ÓÃ
+	CleanWarMap(4,1);	--é€‰æ‹©èŒƒå›´
+	CleanWarMap(5,-1);	--æ”»å‡»ä»·å€¼
+	CleanWarMap(6,-1);	--ç­–ç•¥ä»·å€¼
+	CleanWarMap(7,0);	--é€‰æ‹©çš„ç­–ç•¥
+	CleanWarMap(8,0);	--AIå¼ºåŒ–ç”¨ï¼Œæˆ‘å†›çš„æ”»å‡»èŒƒå›´
+	CleanWarMap(9,0);	--æ°´ç«æ§åˆ¶
+	CleanWarMap(10,0);	--æ”»å‡»èŒƒå›´ï¼Œæ˜¾ç¤ºç”¨
 	local offset=10000;
 	for i=0,War.Width*War.Depth-1 do
 		local v=Byte.get8(JY.Data_Base,offset+i);
@@ -2252,21 +2252,21 @@ function WarLoad(id)
 			War.Person[i].troubled=false;
 		end
 		local pid=War.Person[i].id;
-		War.Person[i].action=1;				--¶¯×÷ 0¾²Ö¹£¬1×ßÂ·...
-		War.Person[i].effect=0;				--¸ßÁÁÏÔÊ¾
-		War.Person[i].hurt=-1;				--ÏÔÊ¾ÉËº¦ÊıÖµ
-		War.Person[i].bz=JY.Person[pid]["±øÖÖ"];
-		War.Person[i].movewav=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒôĞ§"];	--ÒÆ¶¯ÒôĞ§
-		War.Person[i].atkwav=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["¹¥»÷ÒôĞ§"];	--¹¥»÷ÒôĞ§
-		War.Person[i].movestep=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒÆ¶¯"];	--ÒÆ¶¯·¶Î§
-		War.Person[i].movespeed=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["ÒÆ¶¯ËÙ¶È"];	--ÒÆ¶¯ËÙ¶È
-		War.Person[i].atkfw=JY.Bingzhong[JY.Person[pid]["±øÖÖ"]]["¹¥»÷·¶Î§"];	--¹¥»÷·¶Î§
+		War.Person[i].action=1;				--åŠ¨ä½œ 0é™æ­¢ï¼Œ1èµ°è·¯...
+		War.Person[i].effect=0;				--é«˜äº®æ˜¾ç¤º
+		War.Person[i].hurt=-1;				--æ˜¾ç¤ºä¼¤å®³æ•°å€¼
+		War.Person[i].bz=JY.Person[pid]["å…µç§"];
+		War.Person[i].movewav=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["éŸ³æ•ˆ"];	--ç§»åŠ¨éŸ³æ•ˆ
+		War.Person[i].atkwav=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["æ”»å‡»éŸ³æ•ˆ"];	--æ”»å‡»éŸ³æ•ˆ
+		War.Person[i].movestep=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["ç§»åŠ¨"];	--ç§»åŠ¨èŒƒå›´
+		War.Person[i].movespeed=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["ç§»åŠ¨é€Ÿåº¦"];	--ç§»åŠ¨é€Ÿåº¦
+		War.Person[i].atkfw=JY.Bingzhong[JY.Person[pid]["å…µç§"]]["æ”»å‡»èŒƒå›´"];	--æ”»å‡»èŒƒå›´
 		War.Person[i].atk_buff=0;
 		War.Person[i].int_buff=0;
 		War.Person[i].def_buff=0;
 		War.Person[i].dex_buff=0;
 		War.Person[i].shi_buff=0;
-		War.Person[i].frame=-1;				--ÏÔÊ¾Ö¡Êı
+		War.Person[i].frame=-1;				--æ˜¾ç¤ºå¸§æ•°
 		if pid==War.Leader1 or pid==War.Leader2 then
 			War.Person[i].leader=true;
 		else
@@ -2283,17 +2283,17 @@ function WarLoad(id)
 end
 ----------------------------------------------------------------
 --	RemindSave()
---	ÌáÊ¾ÊÇ·ñ±£´æ
---	flag, Ä¬ÈÏÎª1	1Õ½Ç°ÌáÊ¾ 2Õ½ºóÌáÊ¾
+--	æç¤ºæ˜¯å¦ä¿å­˜
+--	flag, é»˜è®¤ä¸º1	1æˆ˜å‰æç¤º 2æˆ˜åæç¤º
 ----------------------------------------------------------------
 function RemindSave(flag)
 	flag=flag or 1;
 	if flag==1 then
 		DrawSMap();
 	elseif flag==2 then
-		JY.Status=GAME_START;	--½ö½öÊÇÎªÁË·½±ã×Ô¶¯¼ÆËã×ø±ê
+		JY.Status=GAME_START;	--ä»…ä»…æ˜¯ä¸ºäº†æ–¹ä¾¿è‡ªåŠ¨è®¡ç®—åæ ‡
 	end
-	if WarDrawStrBoxYesNo("ÏÖÔÚ´¢´æÂğ£¿",C_WHITE,true) then
+	if WarDrawStrBoxYesNo("ç°åœ¨å‚¨å­˜å—ï¼Ÿ",C_WHITE,true) then
 			local menu2={
 						{" 1. ",nil,1},
 						{" 2. ",nil,1},
@@ -2303,17 +2303,17 @@ function RemindSave(flag)
 					}
 			for id=1,5 do
 				if not fileexist(CC.R_GRPFilename[id]) then
-					menu2[id][1]=menu2[id][1].."Î´Ê¹ÓÃµµ°¸";
+					menu2[id][1]=menu2[id][1].."æœªä½¿ç”¨æ¡£æ¡ˆ";
 				else
 					menu2[id][1]=menu2[id][1]..GetRecordInfo(id);
 				end
 			end
-			DrawYJZBox(-1,100,"½«µµ°¸´¢´æÔÚÄÄÀï£¿",C_WHITE);
+			DrawYJZBox(-1,100,"å°†æ¡£æ¡ˆå‚¨å­˜åœ¨å“ªé‡Œï¼Ÿ",C_WHITE);
 			local s2=ShowMenu(menu2,5,0,0,0,0,0,20,1,16,C_WHITE,C_WHITE);
 			if between(s2,1,5) then
-				if WarDrawStrBoxYesNo(string.format("´¢´æÔÚÓ²µúµÄµÚ%dºÅ£¬¿ÉÒÔÂğ£¿",s2),C_WHITE,true) then
+				if WarDrawStrBoxYesNo(string.format("å‚¨å­˜åœ¨ç¡¬ç¢Ÿçš„ç¬¬%då·ï¼Œå¯ä»¥å—ï¼Ÿ",s2),C_WHITE,true) then
 					if flag==2 then
-						JY.Status=GAME_SMAP_AUTO;	--ÓëÇ°Ãæ¶ÔÓ¦£¬¸Ä»ØÀ´
+						JY.Status=GAME_SMAP_AUTO;	--ä¸å‰é¢å¯¹åº”ï¼Œæ”¹å›æ¥
 					end
 					SaveRecord(s2);
 				end
@@ -2322,13 +2322,13 @@ function RemindSave(flag)
 	if flag==1 then
 		DrawSMap();
 	elseif flag==2 then
-		JY.Status=GAME_SMAP_AUTO;	--ÓëÇ°Ãæ¶ÔÓ¦£¬¸Ä»ØÀ´
+		JY.Status=GAME_SMAP_AUTO;	--ä¸å‰é¢å¯¹åº”ï¼Œæ”¹å›æ¥
 	end
 end
 
 ----------------------------------------------------------------
 --	WarTeamAI(tid)
---	Ö¸¶¨¶ÓÎé¿ªÊ¼ĞĞ¶¯
+--	æŒ‡å®šé˜Ÿä¼å¼€å§‹è¡ŒåŠ¨
 --	tid team id
 ----------------------------------------------------------------
 function WarTeamAI(tid)
@@ -2343,25 +2343,25 @@ function WarTeamAI(tid)
 end
 ----------------------------------------------------------------
 --	LvUp(pid,n)
---	µÈ¼¶ÉÏÉı
---	pid ÈËÎïid, n Ä¬ÈÏÎª1
+--	ç­‰çº§ä¸Šå‡
+--	pid äººç‰©id, n é»˜è®¤ä¸º1
 ----------------------------------------------------------------
 function LvUp(pid,n)
 	n=n or 1;
 	if pid>=0 then
-		JY.Person[pid]["µÈ¼¶"]=limitX(JY.Person[pid]["µÈ¼¶"]+n,1,60);
+		JY.Person[pid]["ç­‰çº§"]=limitX(JY.Person[pid]["ç­‰çº§"]+n,1,60);
 	end
 end
 ----------------------------------------------------------------
 --	WarCheckLocation(pid,x,y)
---	²âÊÔµ½´ïÕ½³¡×ø±ê
---	pid ÈËÎïid, -1Ê±ÎªÈÎÒâÎÒ·½Îä½«
+--	æµ‹è¯•åˆ°è¾¾æˆ˜åœºåæ ‡
+--	pid äººç‰©id, -1æ—¶ä¸ºä»»æ„æˆ‘æ–¹æ­¦å°†
 ----------------------------------------------------------------
 function WarCheckLocation(name,x,y)
 	if War.SelID==0 then
 		return false;
 	end
-	--pid=-1´ú±íÈÎÒâÎÒ·½ÎÒ½«
+	--pid=-1ä»£è¡¨ä»»æ„æˆ‘æ–¹æˆ‘å°†
 	if JY.NameList[name]~=nil then
 		pid=JY.NameList[name];
 	else
@@ -2375,8 +2375,8 @@ function WarCheckLocation(name,x,y)
 end
 ----------------------------------------------------------------
 --	WarLocationItem(x,y,item,event)
---	²âÊÔµ½´ïÕ½³¡×ø±êµÃµ½ÎïÆ·
---	x,y ×ø±ê, item ÎïÆ·id, event ¼ì²éÊÂ¼şid
+--	æµ‹è¯•åˆ°è¾¾æˆ˜åœºåæ ‡å¾—åˆ°ç‰©å“
+--	x,y åæ ‡, item ç‰©å“id, event æ£€æŸ¥äº‹ä»¶id
 ----------------------------------------------------------------
 function WarLocationItem(x,y,event,item,num)
 	if War.SelID==0 then
@@ -2395,14 +2395,14 @@ function WarLocationItem(x,y,event,item,num)
 end
 ----------------------------------------------------------------
 --	WarCheckArea(wid,x1,y1,x2,y2)
---	²âÊÔµ½´ïÕ½³¡×ø±ê
---	wid war_id, -1Ê±ÎªÈÎÒâÎÒ·½Îä½«
+--	æµ‹è¯•åˆ°è¾¾æˆ˜åœºåæ ‡
+--	wid war_id, -1æ—¶ä¸ºä»»æ„æˆ‘æ–¹æ­¦å°†
 ----------------------------------------------------------------
 function WarCheckArea(wid,x1,y1,x2,y2)
 	if War.SelID==0 then
 		return false;
 	end
-	--wid=-1´ú±íÈÎÒâÎÒ·½ÎÒ½«
+	--wid=-1ä»£è¡¨ä»»æ„æˆ‘æ–¹æˆ‘å°†
 	local v=War.Person[War.SelID];
 	--for i,v in pairs(War.Person) do
 	if v.live and (not v.hide) and ((wid==-1 and (not v.enemy)) or wid==War.SelID) and between(v.x,x1,x2) and between(v.y,y1,y2) then
@@ -2438,14 +2438,14 @@ function WarMeet(name1,name2)
 		lib.Debug("WarMeet: "..name2.." not exist");
 		return false;
 	end
-	if pid1==-1 then	--²»ÏŞ¶¨ÌØµãÈËÎï
-		if War.Person[War.SelID].enemy then	--±ØĞë²»ÎªµĞ¾ü
+	if pid1==-1 then	--ä¸é™å®šç‰¹ç‚¹äººç‰©
+		if War.Person[War.SelID].enemy then	--å¿…é¡»ä¸ä¸ºæ•Œå†›
 			return false;
 		else
 			id1=War.SelID;
 			pid1=War.Person[War.SelID].id;
 		end
-	elseif War.Person[War.SelID].id==pid1 then	--Ö¸¶¨ÈËÎï ±ØĞëÎªµ±Ç°ĞĞ¶¯ÈËÎï
+	elseif War.Person[War.SelID].id==pid1 then	--æŒ‡å®šäººç‰© å¿…é¡»ä¸ºå½“å‰è¡ŒåŠ¨äººç‰©
 		id1=War.SelID;
 	else
 		return false;
@@ -2454,7 +2454,7 @@ function WarMeet(name1,name2)
 	if id1>0 and id2>0 and
 		War.Person[id1].live and War.Person[id2].live and 
 		(not War.Person[id1].hide) and (not War.Person[id2].hide) and 
-		JY.Person[pid1]["±øÁ¦"]>0 and JY.Person[pid2]["±øÁ¦"]>0 then
+		JY.Person[pid1]["å…µåŠ›"]>0 and JY.Person[pid2]["å…µåŠ›"]>0 then
 		if math.abs(War.Person[id1].x-War.Person[id2].x)+math.abs(War.Person[id1].y-War.Person[id2].y)==1 then
 			return true;
 		end
@@ -2463,8 +2463,8 @@ function WarMeet(name1,name2)
 end
 ----------------------------------------------------------------
 --	WarMoveTo(pid,x,y)
---	ÈËÎïÒÆ¶¯µ½Ö¸¶¨×ø±ê
---	pid ÈËÎïid
+--	äººç‰©ç§»åŠ¨åˆ°æŒ‡å®šåæ ‡
+--	pid äººç‰©id
 ----------------------------------------------------------------
 function WarMoveTo(name,x,y)
 	local pid=-1;
@@ -2487,8 +2487,8 @@ function WarMoveTo(name,x,y)
 end
 ----------------------------------------------------------------
 --	WarShowArmy(name)
---	·ü±ø³öÏÖ
---	wid ÈËÎïÕ½³¡id
+--	ä¼å…µå‡ºç°
+--	wid äººç‰©æˆ˜åœºid
 ----------------------------------------------------------------
 function WarShowTeamArmy(tid)
 	for i,v in ipairs(War.Person) do
@@ -2541,8 +2541,8 @@ function WarShowArmy(wid)
 end
 ----------------------------------------------------------------
 --	WarGetExistXY(x,y)
---	Ñ°ÕÒ×î½üµÄ¿ÉÒÔ³öÏÖµÄµØµã
---	x,yÄ¿±êµØµã
+--	å¯»æ‰¾æœ€è¿‘çš„å¯ä»¥å‡ºç°çš„åœ°ç‚¹
+--	x,yç›®æ ‡åœ°ç‚¹
 ----------------------------------------------------------------
 function WarGetExistXY(x,y,sx,sy)
 	local DX={0,0,-1,1};
@@ -2575,10 +2575,10 @@ function WarGetExistXY(x,y,sx,sy)
 	return x,y;
 end
 function WarCheckTurn(turn,kind,event)
-	kind=kind or "ÎÒ";
+	kind=kind or "æˆ‘";
 	if (not WarGetFlag(event)) then
 		if turn==War.Turn then
-			if (kind=="ÎÒ" and JY.EventType==3) or (kind=="ÓÑ" and JY.EventType==4) or (kind=="µĞ" and JY.EventType==5) then
+			if (kind=="æˆ‘" and JY.EventType==3) or (kind=="å‹" and JY.EventType==4) or (kind=="æ•Œ" and JY.EventType==5) then
 				WarSetFlag(event,1);
 				return true;
 			end
@@ -2588,36 +2588,36 @@ function WarCheckTurn(turn,kind,event)
 end
 ----------------------------------------------------------------
 --	GetMoney(money)
---	»ñµÃ»Æ½ğ
---	money »Æ½ğÊıÁ¿,Îª¸ºÊıÊ±Ê§È¥»Æ½ğ£¬ÎŞÌáÊ¾
+--	è·å¾—é»„é‡‘
+--	money é»„é‡‘æ•°é‡,ä¸ºè´Ÿæ•°æ—¶å¤±å»é»„é‡‘ï¼Œæ— æç¤º
 ----------------------------------------------------------------
 function GetMoney(money)
-	JY.Base["»Æ½ğ"]=limitX(JY.Base["»Æ½ğ"]+money,0,50000);
+	JY.Base["é»„é‡‘"]=limitX(JY.Base["é»„é‡‘"]+money,0,50000);
 end
 ----------------------------------------------------------------
 --	GetItem(pid,item)
---	»ñµÃµÀ¾ß
---	pid ÈËÎïid
+--	è·å¾—é“å…·
+--	pid äººç‰©id
 ----------------------------------------------------------------
 function GetItem(item,num)
 	PlayWavE(11);
 	if item==0 then
-		DrawStrBoxWaitKey(string.format("»ñµÃ×Ê½ğ X %d",num),C_WHITE);
+		DrawStrBoxWaitKey(string.format("è·å¾—èµ„é‡‘ X %d",num),C_WHITE);
 		GetMoney(num);
 	elseif item>0 then
-		DrawStrBoxWaitKey(string.format("»ñµÃ%s X %d",JY.Item[item]["Ãû³Æ"],num),C_WHITE);
-		if between(JY.Item[item]["ÀàĞÍ"],1,10) then
-			JY.Base["ÎïÆ·ÊıÁ¿"..item]=limitX(JY.Base["ÎïÆ·ÊıÁ¿"..item]+num,0,99);
+		DrawStrBoxWaitKey(string.format("è·å¾—%s X %d",JY.Item[item]["åç§°"],num),C_WHITE);
+		if between(JY.Item[item]["ç±»å‹"],1,10) then
+			JY.Base["ç‰©å“æ•°é‡"..item]=limitX(JY.Base["ç‰©å“æ•°é‡"..item]+num,0,99);
 		else
-			JY.Base["ÎïÆ·ÊıÁ¿"..item]=limitX(num,0,1);
+			JY.Base["ç‰©å“æ•°é‡"..item]=limitX(num,0,1);
 		end
 	end
 	return true;
 end
 ----------------------------------------------------------------
 --	WarGetItem(wid,item)
---	»ñµÃµÀ¾ß
---	wid ÈËÎïwid
+--	è·å¾—é“å…·
+--	wid äººç‰©wid
 ----------------------------------------------------------------
 function WarGetItem(name,item,num)
 	local wid=0;
@@ -2643,8 +2643,8 @@ function WarGetItem(name,item,num)
 end
 ----------------------------------------------------------------
 --	WarGetExp(Exp)
---	²Ğ´æ²¿¶ÓµÃµ½50µã¾­ÑéÖµ£®
---	Exp ¾­ÑéÖµ,ÎŞÓÃ
+--	æ®‹å­˜éƒ¨é˜Ÿå¾—åˆ°50ç‚¹ç»éªŒå€¼ï¼
+--	Exp ç»éªŒå€¼,æ— ç”¨
 ----------------------------------------------------------------
 function WarGetExp(Exp)
 	Exp=50;
@@ -2690,9 +2690,9 @@ function WarGetExp(Exp)
 		if v.live and (not v.hide) then
 			if (not v.enemy) and (not v.friend) then
 				local pid=v.id;
-				JY.Person[pid]["¾­Ñé"]=JY.Person[pid]["¾­Ñé"]+Exp;
-				if JY.Person[pid]["¾­Ñé"]>=100 then
-					JY.Person[pid]["¾­Ñé"]=JY.Person[pid]["¾­Ñé"]-100;
+				JY.Person[pid]["ç»éªŒ"]=JY.Person[pid]["ç»éªŒ"]+Exp;
+				if JY.Person[pid]["ç»éªŒ"]>=100 then
+					JY.Person[pid]["ç»éªŒ"]=JY.Person[pid]["ç»éªŒ"]-100;
 					WarLvUp(i);
 				end
 			end
@@ -2701,58 +2701,58 @@ function WarGetExp(Exp)
 end
 ----------------------------------------------------------------
 --	WarGetTrouble(wid)
---	ÅĞ¶ÏÊÇ·ñ½øÈë»ìÂÒ×´Ì¬
+--	åˆ¤æ–­æ˜¯å¦è¿›å…¥æ··ä¹±çŠ¶æ€
 --	wid war_id
---4.·ÀÓù·½ÊÇ·ñ»áÏİÈë»ìÂÒ
---Èç¹ûÇ£ÖÆºó£¬·ÀÓù·½µÄÊ¿ÆøÏÂ½µµ½30ÒÔÏÂ£¬Ôò°´ÒÔÏÂËã·¨ÅĞ¶ÏÊÇ·ñ»áÏİÈë»ìÂÒ¡£
---¼ÆËã³öÒ»¸ö0£­4Ö®¼äµÄËæ»úÊı£¬Èç¹ûËæ»úÊıĞ¡ÓÚ3£¬Ôò·ÀÓù·½²¿¶ÓÏİÈë»ìÂÒ¡£
---¡ºËµÃ÷¡»·ÀÓù·½ÓĞ60£¥µÄ¿ÉÄÜĞÔÏİÈë»ìÂÒ¡£
+--4.é˜²å¾¡æ–¹æ˜¯å¦ä¼šé™·å…¥æ··ä¹±
+--å¦‚æœç‰µåˆ¶åï¼Œé˜²å¾¡æ–¹çš„å£«æ°”ä¸‹é™åˆ°30ä»¥ä¸‹ï¼Œåˆ™æŒ‰ä»¥ä¸‹ç®—æ³•åˆ¤æ–­æ˜¯å¦ä¼šé™·å…¥æ··ä¹±ã€‚
+--è®¡ç®—å‡ºä¸€ä¸ª0ï¼4ä¹‹é—´çš„éšæœºæ•°ï¼Œå¦‚æœéšæœºæ•°å°äº3ï¼Œåˆ™é˜²å¾¡æ–¹éƒ¨é˜Ÿé™·å…¥æ··ä¹±ã€‚
+--ã€è¯´æ˜ã€é˜²å¾¡æ–¹æœ‰60ï¼…çš„å¯èƒ½æ€§é™·å…¥æ··ä¹±ã€‚
 ----------------------------------------------------------------
 function WarGetTrouble(wid)
 	local pid=War.Person[wid].id;
-	if JY.Person[pid]["Ê¿Æø"]<30 and JY.Person[pid]["±øÁ¦"]>0 then
+	if JY.Person[pid]["å£«æ°”"]<30 and JY.Person[pid]["å…µåŠ›"]>0 then
 		if math.random(5)-1<3 then
 			if War.Person[wid].troubled then
-				WarDrawStrBoxDelay(JY.Person[pid]["Ãû³Æ"].."¸ü¼Ó»ìÂÒÁË£¡",C_WHITE);
+				WarDrawStrBoxDelay(JY.Person[pid]["åç§°"].."æ›´åŠ æ··ä¹±äº†ï¼",C_WHITE);
 			else
 				War.Person[wid].troubled=true
 				War.Person[wid].action=7;
 				WarDelay(2);
-				WarDrawStrBoxDelay(JY.Person[pid]["Ãû³Æ"].."»ìÂÒÁË£¡",C_WHITE);
+				WarDrawStrBoxDelay(JY.Person[pid]["åç§°"].."æ··ä¹±äº†ï¼",C_WHITE);
 			end
 		end
 	end
 end
 ----------------------------------------------------------------
 --	WarTroubleShooting(wid)
---	»½ĞÑ»ìÂÒÖĞµÄ²¿¶Ó
+--	å”¤é†’æ··ä¹±ä¸­çš„éƒ¨é˜Ÿ
 --	wid war_id
---	»Ö¸´Òò×Ó£½0¡«99µÄËæ»úÊı£¬Èç¹û»Ö¸´Òò×ÓĞ¡ÓÚ£¨Í³ÓùÁ¦£«Ê¿Æø£©¡Â3£¬ÄÇÃ´²¿¶Ó±»»½ĞÑ£®ÓÉ´Ë¿´³ö£¬Í³ÓùÔ½¸ß£¬Ê¿ÆøÔ½¸ß£¬Ô½ÈİÒ×´Ó»ìÂÒÖĞËÕĞÑ£®
+--	æ¢å¤å› å­ï¼0ï½99çš„éšæœºæ•°ï¼Œå¦‚æœæ¢å¤å› å­å°äºï¼ˆç»Ÿå¾¡åŠ›ï¼‹å£«æ°”ï¼‰Ã·3ï¼Œé‚£ä¹ˆéƒ¨é˜Ÿè¢«å”¤é†’ï¼ç”±æ­¤çœ‹å‡ºï¼Œç»Ÿå¾¡è¶Šé«˜ï¼Œå£«æ°”è¶Šé«˜ï¼Œè¶Šå®¹æ˜“ä»æ··ä¹±ä¸­è‹é†’ï¼
 ----------------------------------------------------------------
 function WarTroubleShooting(wid)
 	local pid=War.Person[wid].id;
 	if War.Person[wid].troubled then
 		local flag=false;
-		if math.random(100)-1<(JY.Person[pid]["Í³ÂÊ"]+JY.Person[pid]["Ê¿Æø"])/3 then
+		if math.random(100)-1<(JY.Person[pid]["ç»Ÿç‡"]+JY.Person[pid]["å£«æ°”"])/3 then
 			flag=true;
 		end
 		if CC.Enhancement then
-			if WarCheckSkill(wid,20) then	--³Á×Å
+			if WarCheckSkill(wid,20) then	--æ²‰ç€
 				flag=true;
 			end
 		end
 		if flag then
 			WarPersonCenter(wid);
 			War.Person[wid].troubled=false;
-			WarDrawStrBoxDelay(JY.Person[pid]["Ãû³Æ"].."´Ó»ìÂÒÖĞ»Ö¸´£¡",C_WHITE);
+			WarDrawStrBoxDelay(JY.Person[pid]["åç§°"].."ä»æ··ä¹±ä¸­æ¢å¤ï¼",C_WHITE);
 		end
 	end
 end
 ----------------------------------------------------------------
 --	WarEnemyWeak(id,kind)
---	±øÁ¦Ê¿Æø¼õ°ë
---	id	1ÎÒ¾ü 2µĞ¾ü
---	kind 1±øÁ¦ 2Ê¿Æø
+--	å…µåŠ›å£«æ°”å‡åŠ
+--	id	1æˆ‘å†› 2æ•Œå†›
+--	kind 1å…µåŠ› 2å£«æ°”
 ----------------------------------------------------------------
 function WarEnemyWeak(id,kind)
 	for i,v in pairs(War.Person) do
@@ -2760,9 +2760,9 @@ function WarEnemyWeak(id,kind)
 			if (id==1 and (not v.enemy)) or (id==2 and v.enemy) then
 				local pid=v.id;
 				if kind==1 then
-					JY.Person[pid]["±øÁ¦"]=limitX(JY.Person[pid]["±øÁ¦"]/2,1,JY.Person[pid]["×î´ó±øÁ¦"]);
+					JY.Person[pid]["å…µåŠ›"]=limitX(JY.Person[pid]["å…µåŠ›"]/2,1,JY.Person[pid]["æœ€å¤§å…µåŠ›"]);
 				elseif kind==2 then
-					JY.Person[pid]["Ê¿Æø"]=limitX(JY.Person[pid]["Ê¿Æø"]/2,1,v.sq);
+					JY.Person[pid]["å£«æ°”"]=limitX(JY.Person[pid]["å£«æ°”"]/2,1,v.sq);
 					ReSetAttrib(pid,false);
 					WarGetTrouble(i);
 				end
@@ -2772,9 +2772,9 @@ function WarEnemyWeak(id,kind)
 end
 ----------------------------------------------------------------
 --	WarFireWater(x,y,kind)
---	Ë®»ğ¿ØÖÆ
---	x,y×ø±ê,ÊäÈëÎªdos°æ×ø±ê£¬Êµ¼ÊĞèÒª+1ĞŞÕı
---	kind 1·Å»ğ 2·ÅË® 3È¡Ïû·ÅË®
+--	æ°´ç«æ§åˆ¶
+--	x,yåæ ‡,è¾“å…¥ä¸ºdosç‰ˆåæ ‡ï¼Œå®é™…éœ€è¦+1ä¿®æ­£
+--	kind 1æ”¾ç« 2æ”¾æ°´ 3å–æ¶ˆæ”¾æ°´
 ----------------------------------------------------------------
 function WarFireWater(x,y,kind)
 	if kind==3 then
@@ -2796,13 +2796,13 @@ end
 
 ----------------------------------------------------------------
 --	WarCheckSkill(wid,skillid)
---	¼ì²éÊÇ·ñ¾ßÓĞÄ³Ïî¼¼ÄÜ
+--	æ£€æŸ¥æ˜¯å¦å…·æœ‰æŸé¡¹æŠ€èƒ½
 ----------------------------------------------------------------
 function WarCheckSkill(wid,skillid)
 	local pid=War.Person[wid].id;
 	for i=1,6 do
-		if JY.Person[pid]["¼¼ÄÜ"..i]==skillid then
-			if JY.Person[pid]["µÈ¼¶"]>=CC.SkillExp[JY.Person[pid]["³É³¤"]][i] then
+		if JY.Person[pid]["æŠ€èƒ½"..i]==skillid then
+			if JY.Person[pid]["ç­‰çº§"]>=CC.SkillExp[JY.Person[pid]["æˆé•¿"]][i] then
 				return true;
 			end
 		end
@@ -2814,8 +2814,8 @@ function CheckSkill(pid,skillid)
 		return false;
 	end
 	for i=1,6 do
-		if JY.Person[pid]["¼¼ÄÜ"..i]==skillid then
-			if JY.Person[pid]["µÈ¼¶"]>=CC.SkillExp[JY.Person[pid]["³É³¤"]][i] then
+		if JY.Person[pid]["æŠ€èƒ½"..i]==skillid then
+			if JY.Person[pid]["ç­‰çº§"]>=CC.SkillExp[JY.Person[pid]["æˆé•¿"]][i] then
 				return true;
 			end
 		end
@@ -2823,7 +2823,7 @@ function CheckSkill(pid,skillid)
 	return false;
 end
 function JoinUs(name,flag)
-	flag=flag or "¼ÓÈë";
+	flag=flag or "åŠ å…¥";
 	local pid=-1;
 	if type(name)=="number" then
 		pid=name;
@@ -2835,11 +2835,11 @@ function JoinUs(name,flag)
 			return false;
 		end
 	end
-	if flag=="¼ÓÈë" then
-		JY.Person[pid]["¼ÓÈë"]=1;
-		--JY.Base["Îä½«ÊıÁ¿"]=JY.Base["Îä½«ÊıÁ¿"]+1;
-		JY.Person[pid]["µÈ¼¶"]=limitX(JY.Person[pid]["µÈ¼¶"],1,99);
-		if type(War.Person)=="table" then--Õ½¶·Ê±Èç¹ûÊÆÁ¦¸ÄÎªÁõ±¸£¬»¹ĞèÒª¶îÍâĞŞ¸ÄÕ½¶·²¿·ÖÊôĞÔ
+	if flag=="åŠ å…¥" then
+		JY.Person[pid]["åŠ å…¥"]=1;
+		--JY.Base["æ­¦å°†æ•°é‡"]=JY.Base["æ­¦å°†æ•°é‡"]+1;
+		JY.Person[pid]["ç­‰çº§"]=limitX(JY.Person[pid]["ç­‰çº§"],1,99);
+		if type(War.Person)=="table" then--æˆ˜æ–—æ—¶å¦‚æœåŠ¿åŠ›æ”¹ä¸ºåˆ˜å¤‡ï¼Œè¿˜éœ€è¦é¢å¤–ä¿®æ”¹æˆ˜æ–—éƒ¨åˆ†å±æ€§
 			for i,v in pairs(War.Person) do
 				if v.id==pid then
 					v.enemy=false;
@@ -2849,9 +2849,9 @@ function JoinUs(name,flag)
 				end
 			end
 		end
-	elseif flag=="Àë¿ª" then
-		JY.Person[pid]["¼ÓÈë"]=0;
-		--JY.Base["Îä½«ÊıÁ¿"]=JY.Base["Îä½«ÊıÁ¿"]-1;
+	elseif flag=="ç¦»å¼€" then
+		JY.Person[pid]["åŠ å…¥"]=0;
+		--JY.Base["æ­¦å°†æ•°é‡"]=JY.Base["æ­¦å°†æ•°é‡"]-1;
 	end
 end
 function SetEqp(name,tid)
@@ -2866,18 +2866,18 @@ function SetEqp(name,tid)
 			return false;
 		end
 	end
-	if between(JY.Item[tid]["ÀàĞÍ"],11,20) then
-		JY.Person[pid]["ÎäÆ÷"]=tid;
-	elseif between(JY.Item[tid]["ÀàĞÍ"],21,30) then
-		JY.Person[pid]["·À¾ß"]=tid;
-	elseif between(JY.Item[tid]["ÀàĞÍ"],31,40) then
-		JY.Person[pid]["¸¨Öú"]=tid;
+	if between(JY.Item[tid]["ç±»å‹"],11,20) then
+		JY.Person[pid]["æ­¦å™¨"]=tid;
+	elseif between(JY.Item[tid]["ç±»å‹"],21,30) then
+		JY.Person[pid]["é˜²å…·"]=tid;
+	elseif between(JY.Item[tid]["ç±»å‹"],31,40) then
+		JY.Person[pid]["è¾…åŠ©"]=tid;
 	end
 	ReSetAttrib(pid,false);
 end
 function RemoveEqp(name,kind)
 	local pid=-1;
-	kind=kind or "È«²¿";
+	kind=kind or "å…¨éƒ¨";
 	if type(name)=="number" then
 		pid=name;
 	elseif type(name)=="string" then
@@ -2888,16 +2888,16 @@ function RemoveEqp(name,kind)
 			return false;
 		end
 	end
-	if kind=="È«²¿" then
-		JY.Person[pid]["ÎäÆ÷"]=0;
-		JY.Person[pid]["·À¾ß"]=0;
-		JY.Person[pid]["¸¨Öú"]=0;
-	elseif kind=="ÎäÆ÷" then
-		JY.Person[pid]["ÎäÆ÷"]=0;
-	elseif kind=="·À¾ß" then
-		JY.Person[pid]["·À¾ß"]=0;
-	elseif kind=="¸¨Öú" then
-		JY.Person[pid]["¸¨Öú"]=0;
+	if kind=="å…¨éƒ¨" then
+		JY.Person[pid]["æ­¦å™¨"]=0;
+		JY.Person[pid]["é˜²å…·"]=0;
+		JY.Person[pid]["è¾…åŠ©"]=0;
+	elseif kind=="æ­¦å™¨" then
+		JY.Person[pid]["æ­¦å™¨"]=0;
+	elseif kind=="é˜²å…·" then
+		JY.Person[pid]["é˜²å…·"]=0;
+	elseif kind=="è¾…åŠ©" then
+		JY.Person[pid]["è¾…åŠ©"]=0;
 	end
 	ReSetAttrib(pid,false);
 end
@@ -2908,14 +2908,14 @@ function Selection(...)
 	end
 	return ShowNewMenu(menu,0,0,0)
 end
-function ShowNewMenu(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
+function ShowNewMenu(menuItem,x,y,isEsc)     --é€šç”¨èœå•å‡½æ•°
 	
 	local newMenu={};
 	local newNumItem=0;
 	for i,v in pairs(menuItem) do
 		if menuItem[i][3]>0 then
 			newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],menuItem[i][4],i};   --ĞÂÊı×é¶àÁË[5],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],menuItem[i][4],i};   --æ–°æ•°ç»„å¤šäº†[5],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
 		end
 	end
 	local self={};
@@ -2923,10 +2923,10 @@ function ShowNewMenu(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
 	self.h=80;	-- +40*newNumItem
 	self.position=0;
 	for i,v in pairs(newMenu) do
-		if v[3]==1 then	--³¤Ìõ
+		if v[3]==1 then	--é•¿æ¡
 			self.position=0;
 			self.h=self.h+40;
-		elseif v[3]==2 then	--¶Ì
+		elseif v[3]==2 then	--çŸ­
 			if self.position==1 then
 				self.position=0;
 			else
@@ -2938,7 +2938,7 @@ function ShowNewMenu(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
 	end
 	if isEsc>0 then
 		newNumItem=newNumItem+1;
-        newMenu[newNumItem]={"[b]·µ»Ø",nil,1,true,0};
+        newMenu[newNumItem]={"[b]è¿”å›",nil,1,true,0};
 		self.h=self.h+24;
 	end
 	if x==0 then
@@ -3089,7 +3089,7 @@ function ShowNewMenu(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
 	end
 	lib.FreeSur(sid);
 end
-function ShowNewMenuBig(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
+function ShowNewMenuBig(menuItem,x,y,isEsc)     --é€šç”¨èœå•å‡½æ•°
 	local size=24;
 	local RowPixel=8;
 	local newMenu={};
@@ -3097,22 +3097,22 @@ function ShowNewMenuBig(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
 	for i,v in pairs(menuItem) do
 		if menuItem[i][3]>0 then
 			newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],menuItem[i][4],i};   --ĞÂÊı×é¶àÁË[5],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],menuItem[i][4],i};   --æ–°æ•°ç»„å¤šäº†[5],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
 		end
 	end
 	if isEsc>0 then
 		newNumItem=newNumItem+1;
-        newMenu[newNumItem]={"·µ»Ø",nil,1,true,0};
+        newMenu[newNumItem]={"è¿”å›",nil,1,true,0};
 	end
 	local self={};
 	self.w=288;
 	self.h=80;	-- +40*newNumItem
 	self.position=0;
 	for i,v in pairs(newMenu) do
-		if v[3]==1 then	--³¤Ìõ
+		if v[3]==1 then	--é•¿æ¡
 			self.position=0;
 			self.h=self.h+size+RowPixel*2;
-		elseif v[3]==2 then	--¶Ì
+		elseif v[3]==2 then	--çŸ­
 			if self.position==1 then
 				self.position=0;
 			else
@@ -3280,14 +3280,14 @@ function ShowNewMenuBig(menuItem,x,y,isEsc)     --Í¨ÓÃ²Ëµ¥º¯Êı
 	end
 	lib.FreeSur(sid);
 end
-function ShowNewMenu2(menuItem,x,y)     --Í¨ÓÃ²Ëµ¥º¯Êı2
+function ShowNewMenu2(menuItem,x,y)     --é€šç”¨èœå•å‡½æ•°2
 	
 	local newMenu={};
 	local newNumItem=0;
 	for i,v in pairs(menuItem) do
 		if menuItem[i][2]>0 then
 			newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],i};   --ĞÂÊı×é¶àÁË[3],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],i};   --æ–°æ•°ç»„å¤šäº†[3],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
 		end
 	end
 	local self={};
@@ -3393,8 +3393,8 @@ end
 
 function Equip(pid)
 	--local pid=War.Person[wid].id;
-	--local bz=JY.Person[pid]["±øÖÖ"];
-	--local lv=JY.Person[pid]["µÈ¼¶"];
+	--local bz=JY.Person[pid]["å…µç§"];
+	--local lv=JY.Person[pid]["ç­‰çº§"];
 	local p=JY.Person[pid];
 	local s={};
 	local m={};
@@ -3402,10 +3402,10 @@ function Equip(pid)
 	local size=20;
 	local size2=18;
 	local w={}
-	w[7]={str="ÎäÆ÷",pic=203,x1=294+size*2.5,y1=112,x2=294+size*7.5,y2=132};
-	w[8]={str="·À¾ß",pic=203,x1=294+size*2.5,y1=134,x2=294+size*7.5,y2=154};
-	w[9]={str="¸¨Öú",pic=203,x1=294+size*2.5,y1=156,x2=294+size*7.5,y2=176};
-	s[4]={	str="ÉÏÒ»Ò³",
+	w[7]={str="æ­¦å™¨",pic=203,x1=294+size*2.5,y1=112,x2=294+size*7.5,y2=132};
+	w[8]={str="é˜²å…·",pic=203,x1=294+size*2.5,y1=134,x2=294+size*7.5,y2=154};
+	w[9]={str="è¾…åŠ©",pic=203,x1=294+size*2.5,y1=156,x2=294+size*7.5,y2=176};
+	s[4]={	str="ä¸Šä¸€é¡µ",
 			txtdx=20,
 			pic=30,
 			x1=484,
@@ -3413,7 +3413,7 @@ function Equip(pid)
 			enable=false;
 			x2=484+98,
 			y2=380+32}
-	s[5]={	str="ÏÂÒ»Ò³",
+	s[5]={	str="ä¸‹ä¸€é¡µ",
 			txtdx=20,
 			pic=30,
 			x1=588,
@@ -3430,8 +3430,8 @@ function Equip(pid)
 			x2=CC.ScreenW/2-84+50+66,
 			y2=CC.ScreenH-81+8+46}
 	local st={};
-	local sheet=3;	--1 ¸¨Öú 2 ·À¾ß 3 ÎäÆ÷ 4 µÀ¾ß
-		st[3]={	str="ÎäÆ÷",
+	local sheet=3;	--1 è¾…åŠ© 2 é˜²å…· 3 æ­¦å™¨ 4 é“å…·
+		st[3]={	str="æ­¦å™¨",
 				kind=3,
 				txtdx=32,
 				pic=75,
@@ -3439,7 +3439,7 @@ function Equip(pid)
 				y1=8,
 				x2=460+92,
 				y2=8+28}
-		st[2]={	str="·À¾ß",
+		st[2]={	str="é˜²å…·",
 				kind=2,
 				txtdx=32,
 				pic=75,
@@ -3447,7 +3447,7 @@ function Equip(pid)
 				y1=8,
 				x2=552+92,
 				y2=8+28}
-		st[1]={	str="¸¨Öú",
+		st[1]={	str="è¾…åŠ©",
 				kind=1,
 				txtdx=32,
 				pic=75,
@@ -3482,14 +3482,14 @@ function Equip(pid)
 		n=0;
 		local dx,dy=472,56;
 		for i=1,JY.ItemNum-1 do
-			if 	(st[sheet].kind==4 and between(JY.Item[i]["ÀàĞÍ"],1,10)) or
-				(st[sheet].kind==3 and between(JY.Item[i]["ÀàĞÍ"],11,20)) or
-				(st[sheet].kind==2 and between(JY.Item[i]["ÀàĞÍ"],21,30)) or
-				(st[sheet].kind==1 and between(JY.Item[i]["ÀàĞÍ"],31,40)) then
-				if JY.Base["ÎïÆ·ÊıÁ¿"..i]>0 then
+			if 	(st[sheet].kind==4 and between(JY.Item[i]["ç±»å‹"],1,10)) or
+				(st[sheet].kind==3 and between(JY.Item[i]["ç±»å‹"],11,20)) or
+				(st[sheet].kind==2 and between(JY.Item[i]["ç±»å‹"],21,30)) or
+				(st[sheet].kind==1 and between(JY.Item[i]["ç±»å‹"],31,40)) then
+				if JY.Base["ç‰©å“æ•°é‡"..i]>0 then
 					n=n+1;
 					m[n]={};
-					m[n].str=JY.Item[i]["Ãû³Æ"];
+					m[n].str=JY.Item[i]["åç§°"];
 					m[n].mid=i;
 					if true then
 						m[n].enable=true;
@@ -3523,11 +3523,11 @@ function Equip(pid)
 		lib.PicLoadCache(5,200*2,0,0,1);
 			
 		local cx,cy=24,24;
-		lib.PicLoadCache(2,p["ÈİÃ²"]*2,cx,cy,1);
+		lib.PicLoadCache(2,p["å®¹è²Œ"]*2,cx,cy,1);
 		cx=cx+270;
-		DrawStringEnhance(cx,cy,p["Ãû³Æ"],C_BLACK,size);
+		DrawStringEnhance(cx,cy,p["åç§°"],C_BLACK,size);
 		cy=cy+size+2;
-		for i,v in pairs({"ÎäÁ¦","ÖÇÁ¦","Í³ÂÊ"}) do
+		for i,v in pairs({"æ­¦åŠ›","æ™ºåŠ›","ç»Ÿç‡"}) do
 			DrawStringEnhance(cx,cy,v,C_BLACK,size);
 			local str;
 			if p[v]==p[v.."2"] then
@@ -3545,12 +3545,12 @@ function Equip(pid)
 				color=C_WHITE;
 			end
 			if p[v.str]>0 then
-				DrawStringEnhance(v.x1,v.y1,JY.Item[p[v.str]]["Ãû³Æ"],color,size);
+				DrawStringEnhance(v.x1,v.y1,JY.Item[p[v.str]]["åç§°"],color,size);
 			else
-				DrawStringEnhance(v.x1,v.y1,"ÎŞ",color,size);
+				DrawStringEnhance(v.x1,v.y1,"æ— ",color,size);
 			end
 		end
-		for i,v in pairs({"ÎäÆ÷","·À¾ß","¸¨Öú"}) do
+		for i,v in pairs({"æ­¦å™¨","é˜²å…·","è¾…åŠ©"}) do
 			DrawStringEnhance(cx,cy,v,C_BLACK,size);
 			local color=C_BLACK;
 			--if MOUSE.IN(cx+size*2,cy,cx+size*7.5,cy+size) then
@@ -3559,29 +3559,29 @@ function Equip(pid)
 			--end
 			cy=cy+size+2;
 		end
-		for i,v in pairs({"±øÁ¦","²ßÂÔ"}) do
+		for i,v in pairs({"å…µåŠ›","ç­–ç•¥"}) do
 			DrawStringEnhance(cx,cy,v,C_BLACK,size);
-			--DrawStringEnhance(cx+size*3,cy,p[v].."/"..p["×î´ó"..v],C_BLACK,size);
+			--DrawStringEnhance(cx+size*3,cy,p[v].."/"..p["æœ€å¤§"..v],C_BLACK,size);
 			local pic=213;
-			if p[v]/p["×î´ó"..v]>=0.7 then
+			if p[v]/p["æœ€å¤§"..v]>=0.7 then
 				pic=215;
-			elseif p[v]/p["×î´ó"..v]>=0.3 then
+			elseif p[v]/p["æœ€å¤§"..v]>=0.3 then
 				pic=214;
 			end
 			local len=80;
 			if i==1 then
-				len=len+math.floor(p["×î´ó"..v]/80);
+				len=len+math.floor(p["æœ€å¤§"..v]/80);
 			elseif i==2 then
-				len=len+math.floor(p["×î´ó"..v]/4);
+				len=len+math.floor(p["æœ€å¤§"..v]/4);
 			end
 			lib.Background(cx+size*2.5,cy+2,cx+size*2.5+len,cy+18,128);
-			lib.SetClip(cx+size*2.5,cy,cx+size*2.5+len*p[v]/p["×î´ó"..v],cy+24);
+			lib.SetClip(cx+size*2.5,cy,cx+size*2.5+len*p[v]/p["æœ€å¤§"..v],cy+24);
 			lib.PicLoadCache(4,pic*2,cx+size*2.5,cy+2,1);
 			lib.SetClip(0,0,0,0);
-			DrawNumPic(cx+size*2.5+40,cy+4,p[v],p["×î´ó"..v]);
+			DrawNumPic(cx+size*2.5+40,cy+4,p[v],p["æœ€å¤§"..v]);
 			cy=cy+size+2;
 		end
-		for i,v in pairs({"¹¥»÷","¾«Éñ","·ÀÓù","Ãô½İ","ÔËÆø"}) do
+		for i,v in pairs({"æ”»å‡»","ç²¾ç¥","é˜²å¾¡","æ•æ·","è¿æ°”"}) do
 			DrawStringEnhance(cx,cy,v,C_BLACK,size);
 			--DrawStringEnhance(cx+size*3,cy,p[v],C_BLACK,size);
 			local pic=213;
@@ -3621,7 +3621,7 @@ function Equip(pid)
 		lib.PicLoadCache(4,77*2,448,48,1);
 		if current>10 then
 			local mid=m[current-10].mid;
-			DrawYJZBox(480,355,JY.Item[mid]["ËµÃ÷"],C_WHITE,size2);
+			DrawYJZBox(480,355,JY.Item[mid]["è¯´æ˜"],C_WHITE,size2);
 		end
 		for i,v in pairs(m) do
 			if v.show then
@@ -3684,17 +3684,17 @@ function Equip(pid)
 				PlayWavE(1);
 				local oid=0;
 				if i==7 then
-					oid=p["ÎäÆ÷"];
-					p["ÎäÆ÷"]=0;
+					oid=p["æ­¦å™¨"];
+					p["æ­¦å™¨"]=0;
 				elseif i==8 then
-					oid=p["·À¾ß"];
-					p["·À¾ß"]=0;
+					oid=p["é˜²å…·"];
+					p["é˜²å…·"]=0;
 				elseif i==9 then
-					oid=p["¸¨Öú"];
-					p["¸¨Öú"]=0;
+					oid=p["è¾…åŠ©"];
+					p["è¾…åŠ©"]=0;
 				end
 				if oid>0 then
-					JY.Base["ÎïÆ·ÊıÁ¿"..oid]=1;
+					JY.Base["ç‰©å“æ•°é‡"..oid]=1;
 				end
 				GetItemByType();
 				ReSetAttrib(pid);
@@ -3715,20 +3715,20 @@ function Equip(pid)
 						PlayWavE(0);
 						local mid=m[i].mid;
 						local oid=0;
-						if JY.Item[mid]["ÀàĞÍ"]==11 then
-							oid=p["ÎäÆ÷"];
-							p["ÎäÆ÷"]=mid;
-						elseif JY.Item[mid]["ÀàĞÍ"]==21 then
-							oid=p["·À¾ß"];
-							p["·À¾ß"]=mid;
-						elseif JY.Item[mid]["ÀàĞÍ"]==31 then
-							oid=p["¸¨Öú"];
-							p["¸¨Öú"]=mid;
+						if JY.Item[mid]["ç±»å‹"]==11 then
+							oid=p["æ­¦å™¨"];
+							p["æ­¦å™¨"]=mid;
+						elseif JY.Item[mid]["ç±»å‹"]==21 then
+							oid=p["é˜²å…·"];
+							p["é˜²å…·"]=mid;
+						elseif JY.Item[mid]["ç±»å‹"]==31 then
+							oid=p["è¾…åŠ©"];
+							p["è¾…åŠ©"]=mid;
 						end
 						if oid>0 then
-							JY.Base["ÎïÆ·ÊıÁ¿"..oid]=1;
+							JY.Base["ç‰©å“æ•°é‡"..oid]=1;
 						end
-						JY.Base["ÎïÆ·ÊıÁ¿"..mid]=0;
+						JY.Base["ç‰©å“æ•°é‡"..mid]=0;
 						GetItemByType();
 						ReSetAttrib(pid);
 					elseif MOUSE.HOLD(v.x1,v.y1,v.x2,v.y2) then
@@ -3746,7 +3746,7 @@ function Equip(pid)
 						while true do
 							local t2=lib.GetTime();
 							redraw();
-							DrawYJZBox(-1,-1,"ÎŞ·¨Ê¹ÓÃ£®",C_WHITE);
+							DrawYJZBox(-1,-1,"æ— æ³•ä½¿ç”¨ï¼",C_WHITE);
 							ShowScreen();
 							local delay=CC.FrameNum-lib.GetTime()+t2;
 							if delay>0 then
@@ -3810,25 +3810,25 @@ function Equip(pid)
 	return false;
 end
 function chinese_year_month()
-	local c_num = {[0]="Áã","Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®","Ê®Ò»","Ê®¶ş"};
-	local year=JY.Base["µ±Ç°Äê"];
-	local month=JY.Base["µ±Ç°ÔÂ"];
+	local c_num = {[0]="é›¶","ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å","åä¸€","åäºŒ"};
+	local year=JY.Base["å½“å‰å¹´"];
+	local month=JY.Base["å½“å‰æœˆ"];
 	local str="";
 	if year>999 then
-		str="£­£­£­";
+		str="ï¼ï¼ï¼";
 	else
 		str=c_num[math.floor(year/100)]..c_num[math.floor((year%100)/10)]..c_num[year%10]
 	end
-	str=str.."Äê "..c_num[month].."ÔÂ"
+	str=str.."å¹´ "..c_num[month].."æœˆ"
 	return str;
 end
 function chinese_number(i)
-	local c_digit = { [0]="Áã","Ê®","°Ù","Ç§","Íò","ÒÚ","Õ×" };
-	local c_num = {[0]="Áã","Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®"};
-	local sym_tian = { [0]="¼×","ÒÒ","±û","¶¡","Îì","¼º","¸ı","ĞÁ","ÈÉ","¹ï" };
-	local sym_di = { [0]="×Ó","³ó","Òú","Ã®","³½","ËÈ","Îç","Î´","Éê","ÓÏ","Ğç","º¥" };
+	local c_digit = { [0]="é›¶","å","ç™¾","åƒ","ä¸‡","äº¿","å…†" };
+	local c_num = {[0]="é›¶","ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ","å…«","ä¹","å"};
+	local sym_tian = { [0]="ç”²","ä¹™","ä¸™","ä¸","æˆŠ","å·±","åºš","è¾›","å£¬","ç™¸" };
+	local sym_di = { [0]="å­","ä¸‘","å¯…","å¯","è¾°","å·³","åˆ","æœª","ç”³","é…‰","æˆŒ","äº¥" };
 	if (i < 0) then
-		return "¸º" .. chinese_number(-i);
+		return "è´Ÿ" .. chinese_number(-i);
 	elseif (i < 11) then
 		return c_num[i];
 	elseif (i < 20) then
@@ -3886,16 +3886,16 @@ function ConnectCity_sub(cid,fid)
 		return;
 	end
 	for i=1,JY.ConnectionNum-1 do
-		local id1,id2=JY.Connection[i]["¶¼ÊĞ1"],JY.Connection[i]["¶¼ÊĞ2"];
+		local id1,id2=JY.Connection[i]["éƒ½å¸‚1"],JY.Connection[i]["éƒ½å¸‚2"];
 		local ncid=0;
 		if id1==cid then
 			ncid=id2;
 		elseif id2==cid then
 			ncid=id1;
 		end
-		if ncid>0 and JY.City[ncid]["½ÓÈÀ"]==0 then
-			JY.City[ncid]["½ÓÈÀ"]=1;
-			local nfid=JY.City[ncid]["ÊÆÁ¦"];
+		if ncid>0 and JY.City[ncid]["æ¥å£¤"]==0 then
+			JY.City[ncid]["æ¥å£¤"]=1;
+			local nfid=JY.City[ncid]["åŠ¿åŠ›"];
 			if nfid==fid then
 				ConnectCity_sub(ncid,fid);
 			end
@@ -3904,16 +3904,16 @@ function ConnectCity_sub(cid,fid)
 end
 function ConnectCity()
 	local fid=JY.FID;
-	local cid=JY.Base["µ±Ç°³Ç³Ø"];
+	local cid=JY.Base["å½“å‰åŸæ± "];
 	for i=1,JY.CityNum-1 do
-		JY.City[i]["½ÓÈÀ"]=0;
+		JY.City[i]["æ¥å£¤"]=0;
 	end
-	JY.City[cid]["½ÓÈÀ"]=1;
+	JY.City[cid]["æ¥å£¤"]=1;
 	ConnectCity_sub(cid,fid);
 end
 function GetPath(cid_atk,cid_def)
 	for i=1,JY.ConnectionNum-1 do
-		if JY.Connection[i]["¶¼ÊĞ1"]==cid_atk and JY.Connection[i]["¶¼ÊĞ2"]==cid_def then
+		if JY.Connection[i]["éƒ½å¸‚1"]==cid_atk and JY.Connection[i]["éƒ½å¸‚2"]==cid_def then
 			return i;
 		end
 	end

@@ -1,5 +1,5 @@
 function AsuraMain()
-	JY.Status=GAME_START;  --ÓÎÏ·µ±Ç°×´Ì¬
+	JY.Status=GAME_START;  --æ¸¸æˆå½“å‰çŠ¶æ€
 	PicCacheIni();
 	LoadRecord(0);
 	while true do
@@ -20,7 +20,7 @@ function AsuraMain()
 			JY.Status=GAME_SMAP_MANUAL;
 		elseif JY.Status==GAME_WMAP then
 			WarStart();
-		elseif JY.Status==GAME_WMAP2 then	--Á¬ĞøÕ½¶·
+		elseif JY.Status==GAME_WMAP2 then	--è¿ç»­æˆ˜æ–—
 			JY.Status=GAME_WMAP;
 			ShowScreen();
 			DoEvent(JY.EventID);
@@ -41,19 +41,19 @@ end
 function Asura_MainMenu()
 	--CC.Debug=1
 	local menu={
-				{"¿ªÊ¼ÓÎÏ·",nil,1,true},
-				{"¶ÁÈ¡´æµµ",nil,1,true},
-				{"¹¦ÄÜÉè¶¨",nil,0,true},
-				{"Õ½³¡ÖØÏÖ",nil,1,true},
-				{"È«Îä½«",nil,1,true},
-				{"±ÈÎä´ó»á",nil,1,true},
-				{"Îå×ÓÁ¬Öé",nil,1,true},
-				{"Èı¹úÎÊ´ğ",nil,1,true},
-				{"»ªÈİµÀ",nil,1,true},
-				{"Á¬Á¬¿´",nil,1,true},
-				{"Èı¹úÉ±",nil,1,true},
-				{"ÍË³öÓÎÏ·",nil,1,true},
-				{"ÖØÔØLua",nil,0,true},
+				{"å¼€å§‹æ¸¸æˆ",nil,1,true},
+				{"è¯»å–å­˜æ¡£",nil,1,true},
+				{"åŠŸèƒ½è®¾å®š",nil,0,true},
+				{"æˆ˜åœºé‡ç°",nil,1,true},
+				{"å…¨æ­¦å°†",nil,1,true},
+				{"æ¯”æ­¦å¤§ä¼š",nil,1,true},
+				{"äº”å­è¿ç ",nil,1,true},
+				{"ä¸‰å›½é—®ç­”",nil,1,true},
+				{"åå®¹é“",nil,1,true},
+				{"è¿è¿çœ‹",nil,1,true},
+				{"ä¸‰å›½æ€",nil,1,true},
+				{"é€€å‡ºæ¸¸æˆ",nil,1,true},
+				{"é‡è½½Lua",nil,0,true},
 			}
 		if CC.Debug==1 then
 			menu[4][3]=1;
@@ -91,9 +91,9 @@ function Asura_MainMenu()
 		elseif s==11 then
 			ShaMain();
 		elseif s==12 then
-			if WarDrawStrBoxYesNo('½áÊøÓÎÏ·Âğ£¿',C_WHITE,true) then
+			if WarDrawStrBoxYesNo('ç»“æŸæ¸¸æˆå—ï¼Ÿ',C_WHITE,true) then
 				lib.Delay(100);
-				if WarDrawStrBoxYesNo('ÔÙÍæÒ»´ÎÂğ£¿',C_WHITE,true) then
+				if WarDrawStrBoxYesNo('å†ç©ä¸€æ¬¡å—ï¼Ÿ',C_WHITE,true) then
 					lib.Delay(100);
 					JY.Status=GAME_START;
 				else
@@ -115,42 +115,42 @@ end
 function Asura_Start()
 	LoadRecord(0);
 	local gid=TableRandom({1194,1195,1196,1197,1198,1199,1200,1201,1202,1203,1204,1205,1224,1225,1226,1227,1228,1258,1259,1260,1261,1262,1263,1264});
-	local Scenario={	{"184Äê  "..JY.Str[9121],			nil,1,true};	--01
-						{"190Äê  "..JY.Str[9122],			nil,1,true};	--02
-						{"195Äê  "..JY.Str[9123],			nil,1,true};	--03
-						{"200Äê  "..JY.Str[9124],			nil,1,true};	--04
-						{"207Äê  "..JY.Str[9125],			nil,1,true};	--05
-						{"214Äê  "..JY.Str[9126],			nil,1,true};	--06
-						{"???Äê  "..JY.Str[9127],			nil,0,true};	--07
-						{"???Äê  "..JY.Str[9128],			nil,0,true};	--08
-						{"???Äê  "..JY.Str[9129],			nil,0,true};	--09
-						{"???Äê  "..JY.Str[9130],			nil,0,true};	--10
-						{"252Äê  "..JY.Str[9131],			nil,1,true};	--11
-						{"???Äê  "..JY.Str[9132],			nil,0,true};	--12
-						{"???Äê  "..JY.Str[9133],			nil,0,true};	--13
-						{"???Äê  "..JY.Str[9134],			nil,0,true};	--14
-						{"???Äê  "..JY.Str[9135],			nil,0,true};	--15
-						{"???Äê  "..JY.Str[9136],			nil,0,true};	--16
-						{"???Äê  "..JY.Str[9137],			nil,0,true};	--17
-						{"???Äê  "..JY.Str[9138],			nil,0,true};	--18
-						{"???Äê  "..JY.Str[9139],			nil,0,true};	--19
-						{"???Äê  "..JY.Str[9140],			nil,0,true};	}	--20
-	local gtype={		{"Ê¹ÓÃĞÂÊÆÁ¦",						nil,1,true};
-						{"Ê¹ÓÃÊ·ÊµÊÆÁ¦",					nil,1,true};	}
+	local Scenario={	{"184å¹´  "..JY.Str[9121],			nil,1,true};	--01
+						{"190å¹´  "..JY.Str[9122],			nil,1,true};	--02
+						{"195å¹´  "..JY.Str[9123],			nil,1,true};	--03
+						{"200å¹´  "..JY.Str[9124],			nil,1,true};	--04
+						{"207å¹´  "..JY.Str[9125],			nil,1,true};	--05
+						{"214å¹´  "..JY.Str[9126],			nil,1,true};	--06
+						{"???å¹´  "..JY.Str[9127],			nil,0,true};	--07
+						{"???å¹´  "..JY.Str[9128],			nil,0,true};	--08
+						{"???å¹´  "..JY.Str[9129],			nil,0,true};	--09
+						{"???å¹´  "..JY.Str[9130],			nil,0,true};	--10
+						{"252å¹´  "..JY.Str[9131],			nil,1,true};	--11
+						{"???å¹´  "..JY.Str[9132],			nil,0,true};	--12
+						{"???å¹´  "..JY.Str[9133],			nil,0,true};	--13
+						{"???å¹´  "..JY.Str[9134],			nil,0,true};	--14
+						{"???å¹´  "..JY.Str[9135],			nil,0,true};	--15
+						{"???å¹´  "..JY.Str[9136],			nil,0,true};	--16
+						{"???å¹´  "..JY.Str[9137],			nil,0,true};	--17
+						{"???å¹´  "..JY.Str[9138],			nil,0,true};	--18
+						{"???å¹´  "..JY.Str[9139],			nil,0,true};	--19
+						{"???å¹´  "..JY.Str[9140],			nil,0,true};	}	--20
+	local gtype={		{"ä½¿ç”¨æ–°åŠ¿åŠ›",						nil,1,true};
+						{"ä½¿ç”¨å²å®åŠ¿åŠ›",					nil,1,true};	}
 	local step=1;
 	
 	SetSceneID(201);
 	while step<6 do
-		if step==1 then	--¾ç±¾
-			local r=TalkMenuEx("¹ÃÄï",gid,"»¶Ó­¡£[n]ÇëÑ¡ÔñÒ»¸ö¾ç±¾¡£",Scenario);
+		if step==1 then	--å‰§æœ¬
+			local r=TalkMenuEx("å§‘å¨˜",gid,"æ¬¢è¿ã€‚[n]è¯·é€‰æ‹©ä¸€ä¸ªå‰§æœ¬ã€‚",Scenario);
 			if r>0 then
-				JY.Base["µ±Ç°¾ç±¾"]=r;
+				JY.Base["å½“å‰å‰§æœ¬"]=r;
 				Confirm("[Orange][b]"..JY.Str[9120+r],JY.Str[9140+r])
 				step=2;
 			else
 				step=9;
 			end
-		elseif step==2 then	--½ÇÉ«
+		elseif step==2 then	--è§’è‰²
 			ScenarioInit();
 			local pid=ShowPersonList(GetAllList(),nil,2);
 			if pid>0 then
@@ -160,8 +160,8 @@ function Asura_Start()
 				step=1;
 			end
 			--[[
-		elseif step==2 then	--½ÅÉ«
-			local r=TalkMenuEx("¹ÃÄï",gid,"ÇëÑ¡ÔñÊÇÊ¹ÓÃĞÂÊÆÁ¦£¬[n]»¹ÊÇÊ¹ÓÃÊ·ÊµÊÆÁ¦",gtype);
+		elseif step==2 then	--è„šè‰²
+			local r=TalkMenuEx("å§‘å¨˜",gid,"è¯·é€‰æ‹©æ˜¯ä½¿ç”¨æ–°åŠ¿åŠ›ï¼Œ[n]è¿˜æ˜¯ä½¿ç”¨å²å®åŠ¿åŠ›",gtype);
 			if r==1 then
 				step=3;
 			elseif r==2 then
@@ -173,10 +173,10 @@ function Asura_Start()
 			ScenarioInit();
 			local npid=901;
 			local nfid=50;
-			JY.Person[npid]["Ãû³Æ"]=IniName();
-			JY.Person[npid]["µÈ¼¶"]=4;
-			--JY.Person[npid]["¹¦¼¨"]=CC.Exp[4];
-			NewPerson(npid);	--³õÊ¼»¯Ö÷½Ç
+			JY.Person[npid]["åç§°"]=IniName();
+			JY.Person[npid]["ç­‰çº§"]=4;
+			--JY.Person[npid]["åŠŸç»©"]=CC.Exp[4];
+			NewPerson(npid);	--åˆå§‹åŒ–ä¸»è§’
 			local cid=SelectCity(1,1);
 			if cid>0 then
 				NewForce(nfid,npid,cid)
@@ -197,8 +197,8 @@ function Asura_Start()
 		elseif step==5 then
 			JY.SubScene=-1;
 			JY.EventID=1;
-			JY.Status=GAME_SMAP_MANUAL;  --ÓÎÏ·µ±Ç°×´Ì¬
-			DoEvent(0100+JY.Base["µ±Ç°¾ç±¾"]);
+			JY.Status=GAME_SMAP_MANUAL;  --æ¸¸æˆå½“å‰çŠ¶æ€
+			DoEvent(0100+JY.Base["å½“å‰å‰§æœ¬"]);
 			SetSceneID(0);
 			--Asura_Build();
 			step=9;
@@ -214,7 +214,7 @@ function Asura_Build()
 	--local pl={};
 	--[[
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["ÊÆÁ¦"]==JY.FID and i~=JY.PID then
+		if JY.Person[i]["åŠ¿åŠ›"]==JY.FID and i~=JY.PID then
 			table.insert(pl,i);
 		end
 	end
@@ -267,15 +267,15 @@ function Asura_Manual()
 		drawCityMenu(JY.CityMenu);
 		drawGameStatus(JY.GameStatus);
 		--for i,v in pairs(JY.Scene) do
-		--	if v["ÈËÎï"]>0 then
-		--		local x,y=v["×ø±êX"],v["×ø±êY"];
-		--		local str=JY.Person[v["ÈËÎï"]]["Ãû³Æ"];
-		--		if JY.Tid==v["ÈËÎï"] then
-		--			lib.PicLoadCache(2,(JY.Person[v["ÈËÎï"]]["ÈİÃ²"]+4000)*2,x+4,y+4,1);
+		--	if v["äººç‰©"]>0 then
+		--		local x,y=v["åæ ‡X"],v["åæ ‡Y"];
+		--		local str=JY.Person[v["äººç‰©"]]["åç§°"];
+		--		if JY.Tid==v["äººç‰©"] then
+		--			lib.PicLoadCache(2,(JY.Person[v["äººç‰©"]]["å®¹è²Œ"]+4000)*2,x+4,y+4,1);
 		--			lib.PicLoadCache(4,2*2,x,y,1);
 		--			DrawStringEnhance(x+49-size*#str/4+1,y+141-size/2+1,str,C_Name,size);
 		--		else
-		--			lib.PicLoadCache(2,(JY.Person[v["ÈËÎï"]]["ÈİÃ²"]+4000)*2,x+3,y+3,1);
+		--			lib.PicLoadCache(2,(JY.Person[v["äººç‰©"]]["å®¹è²Œ"]+4000)*2,x+3,y+3,1);
 		--			lib.PicLoadCache(4,1*2,x,y,1);
 		--			DrawStringEnhance(x+49-size*#str/4,y+141-size/2,str,C_WHITE,size);
 		--		end
@@ -289,11 +289,11 @@ function Asura_Manual()
 					lib.PicLoadCache(4,(v.pic+1)*2,v.x1,v.y1,1);
 				end
 				if i==1 then
-					DrawYJZBox(-1,12,"Çé±¨",C_WHITE);
+					DrawYJZBox(-1,12,"æƒ…æŠ¥",C_WHITE);
 				elseif i==2 then
-					DrawYJZBox(-1,12,"¹¦ÄÜ",C_WHITE);
+					DrawYJZBox(-1,12,"åŠŸèƒ½",C_WHITE);
 				elseif i==3 then
-					DrawYJZBox(-1,12,"µØÍ¼",C_WHITE);
+					DrawYJZBox(-1,12,"åœ°å›¾",C_WHITE);
 				end
 			else
 				lib.PicLoadCache(4,v.pic*2,v.x1,v.y1,1);
@@ -301,7 +301,7 @@ function Asura_Manual()
 		end
 	end
 	DrawGame();
-	PlayCityBGM(JY.Person[JY.PID]["ËùÔÚ"], false);
+	PlayCityBGM(JY.Person[JY.PID]["æ‰€åœ¨"], false);
 	ShowScreen();
 	UpdateForce();
 	while JY.Status==GAME_SMAP_MANUAL do
@@ -316,12 +316,12 @@ function Asura_Manual()
 		--[[
 		JY.Tid=-1;
 		for i,v in pairs(JY.Scene) do
-			if v["ÈËÎï"]>0 then
-				local px,py=v["×ø±êX"],v["×ø±êY"];
+			if v["äººç‰©"]>0 then
+				local px,py=v["åæ ‡X"],v["åæ ‡Y"];
 				if MOUSE.CLICK(px+4,py+4,px+93,py+150) then
-					JY.Tid=v["ÈËÎï"];
+					JY.Tid=v["äººç‰©"];
 					PlayWavE(0);
-					Asura_Manual_ActionMenu(JY.Tid,v["ÀàĞÍ"]);
+					Asura_Manual_ActionMenu(JY.Tid,v["ç±»å‹"]);
 					if JY.Tid==-1 then
 						JY.Tid=0;
 						return;
@@ -329,7 +329,7 @@ function Asura_Manual()
 					JY.Tid=-1;
 					break;
 				elseif MOUSE.IN(px+4,py+4,px+93,py+150) then
-					JY.Tid=v["ÈËÎï"];
+					JY.Tid=v["äººç‰©"];
 				end
 			end
 		end]]--
@@ -369,53 +369,53 @@ function Asura_Manual()
 end
 function Asura_Command(command,par1,par2,par3,par4)
 	local pid=JY.PID;
-	local cid=JY.Person[pid]["ËùÔÚ"];
-	local fid=JY.City[cid]["ÊÆÁ¦"];
+	local cid=JY.Person[pid]["æ‰€åœ¨"];
+	local fid=JY.City[cid]["åŠ¿åŠ›"];
 	if false then
 	
   elseif command == 105 then
     AI_ForceChief(1)
-  elseif command == 101 then  --ÕşÌü
+  elseif command == 101 then  --æ”¿å…
     Assignment();
-	elseif command==102 then	--ÊË¹Ù
+	elseif command==102 then	--ä»•å®˜
 		local str=JY.Str[15000];	
-		str=string.gsub(str,"s1","[Green]"..JY.Force[fid]["Ãû³Æ"].."[Normal]");
+		str=string.gsub(str,"s1","[Green]"..JY.Force[fid]["åç§°"].."[Normal]");
 		if TalkYesNo(JY.PID,str) then
       Asura_ApplyOffer(pid, fid);
 		end
-	elseif command==103 then	--·ÃÎÊ
-		local tstr="[name]¶ÔÏó[normal]£º[Green]%s[Normal][n][name]Ğ§¹û[normal]£º¶ÔÏóÎä½«ºÃ¸ĞÉÏÉı[n][name]ÏûºÄ[normal]£ºÎï×Ê -100[n][name]Ïà¹Ø[normal]£º[wheat]ÎäÁ¦[normal]¡¢[wheat]Í³ÂÊ[normal]¸ßÓĞÀû[n]¡¡¡¡¡¡³ÖÓĞ[wheat]Á·±ø[normal]¼¼ÄÜÕß£¬Ğ§¹ûÉÏÉı"
-		local eid=ShowPersonList(GetCityXianyi(JY.Person[JY.PID]["ËùÔÚ"],{JY.PID}));
-		if eid>0 and ConfirmYesNo("[B][wheat]·ÃÎÊ",string.format(tstr,JY.Person[eid]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command==103 then	--è®¿é—®
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Green]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šå¯¹è±¡æ­¦å°†å¥½æ„Ÿä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -100[n][name]ç›¸å…³[normal]ï¼š[wheat]æ­¦åŠ›[normal]ã€[wheat]ç»Ÿç‡[normal]é«˜æœ‰åˆ©[n]ã€€ã€€ã€€æŒæœ‰[wheat]ç»ƒå…µ[normal]æŠ€èƒ½è€…ï¼Œæ•ˆæœä¸Šå‡"
+		local eid=ShowPersonList(GetCityXianyi(JY.Person[JY.PID]["æ‰€åœ¨"],{JY.PID}));
+		if eid>0 and ConfirmYesNo("[B][wheat]è®¿é—®",string.format(tstr,JY.Person[eid]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			DrawGame();
 			Visit(eid);
 			return;
 		end
-	elseif command==104 then	--¹Ù¾ô
+	elseif command==104 then	--å®˜çˆµ
 		TitleManual(fid);
-	elseif command==111 then	--³öÕ÷
-						local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Ğ§¹û[normal]£º³öÕ÷ÒÔÕ¼Áì³Ç³Ø[n][name]ÏûºÄ[normal]£ºÎï×Ê -%d[n][name]µÀÂ·[normal]£º%s[n][name]¾àÀë[normal]£º%s"
-						local cid2=ShowCityList(GetAtkCity(JY.Person[JY.PID]["ËùÔÚ"]),1);
+	elseif command==111 then	--å‡ºå¾
+						local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šå‡ºå¾ä»¥å é¢†åŸæ± [n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -%d[n][name]é“è·¯[normal]ï¼š%s[n][name]è·ç¦»[normal]ï¼š%s"
+						local cid2=ShowCityList(GetAtkCity(JY.Person[JY.PID]["æ‰€åœ¨"]),1);
 						if cid2>0 then
-							--if TalkYesNo(pid,"¹¥´ò[Red]"..JY.City[cid2]["Ãû³Æ"].."[Normal]£¬ĞèÒª¾­¹ı[Orange]"..GetPath(cid2,JY.FID).."[Normal]\\n¿ÉÒÔÂğ£¿") then
-							local wid=GetPath(JY.Person[JY.PID]["ËùÔÚ"],cid2);
+							--if TalkYesNo(pid,"æ”»æ‰“[Red]"..JY.City[cid2]["åç§°"].."[Normal]ï¼Œéœ€è¦ç»è¿‡[Orange]"..GetPath(cid2,JY.FID).."[Normal]\\nå¯ä»¥å—ï¼Ÿ") then
+							local wid=GetPath(JY.Person[JY.PID]["æ‰€åœ¨"],cid2);
 							local jl,dl=1,1;
 							local cost=500;
 							WarIni();
-							War.ArmyA1=SelectArmy(JY.Person[JY.PID]["ËùÔÚ"]);
+							War.ArmyA1=SelectArmy(JY.Person[JY.PID]["æ‰€åœ¨"]);
 							War.ArmyB1=AutoSelectArmy(cid2);
 							if #War.ArmyA1>0 then
-								JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
-								JY.Base["¹¥´ò³Ç³Ø"]=cid2;
+								JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
+								JY.Base["æ”»æ‰“åŸæ± "]=cid2;
 								LLK_III_Main(wid);
 								return;
 							end
 						end
-	elseif command==201 then	--¿ª¿Ñ
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÖ¸¶¨¶¼ÊĞ¿ª¿ÑÉÏÉı[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		if cid>0 and ConfirmYesNo("[B][wheat]¿ª¿Ñ",string.format(tstr,JY.City[cid]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command==201 then	--å¼€å¦
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šæŒ‡å®šéƒ½å¸‚å¼€å¦ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		if cid>0 and ConfirmYesNo("[B][wheat]å¼€å¦",string.format(tstr,JY.City[cid]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
 			--local add,str=
@@ -425,10 +425,10 @@ function Asura_Command(command,par1,par2,par3,par4)
 			--end
 			return;
 		end
-	elseif command==301 then	--ÉÌÒµ
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÖ¸¶¨¶¼ÊĞÉÌÒµÉÏÉı[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		if cid>0 and ConfirmYesNo("[B][wheat]ÉÌÒµ",string.format(tstr,JY.City[cid]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command==301 then	--å•†ä¸š
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šæŒ‡å®šéƒ½å¸‚å•†ä¸šä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		if cid>0 and ConfirmYesNo("[B][wheat]å•†ä¸š",string.format(tstr,JY.City[cid]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
 			--local add,str=
@@ -438,10 +438,10 @@ function Asura_Command(command,par1,par2,par3,par4)
 			--end
 			return;
 		end
-	elseif command == 401 then	--¼¼Êõ
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÖ¸¶¨¶¼ÊĞ¼¼ÊõÉÏÉı[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		if cid>0 and ConfirmYesNo("[B][wheat]¼¼Êõ",string.format(tstr,JY.City[cid]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command == 401 then	--æŠ€æœ¯
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šæŒ‡å®šéƒ½å¸‚æŠ€æœ¯ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		if cid>0 and ConfirmYesNo("[B][wheat]æŠ€æœ¯",string.format(tstr,JY.City[cid]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
 			--local add,str=
@@ -451,10 +451,10 @@ function Asura_Command(command,par1,par2,par3,par4)
 			--end
 			return;
 		end
-	elseif command == 501 then	--ÖÎ°²
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÖ¸¶¨¶¼ÊĞÖÎ°²ÉÏÉı[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		if cid>0 and ConfirmYesNo("[B][wheat]ÖÎ°²",string.format(tstr,JY.City[cid]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command == 501 then	--æ²»å®‰
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šæŒ‡å®šéƒ½å¸‚æ²»å®‰ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		if cid>0 and ConfirmYesNo("[B][wheat]æ²»å®‰",string.format(tstr,JY.City[cid]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
 			--local add,str=
@@ -464,10 +464,10 @@ function Asura_Command(command,par1,par2,par3,par4)
 			--end
 			return;
 		end
-	elseif command==601 then	--ĞŞ²¹
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÖ¸¶¨¶¼ÊĞ·ÀÓùÉÏÉı[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		if cid>0 and ConfirmYesNo("[B][wheat]ĞŞ²¹",string.format(tstr,JY.City[cid]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command==601 then	--ä¿®è¡¥
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šæŒ‡å®šéƒ½å¸‚é˜²å¾¡ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		if cid>0 and ConfirmYesNo("[B][wheat]ä¿®è¡¥",string.format(tstr,JY.City[cid]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
 			--local add,str=
@@ -477,56 +477,56 @@ function Asura_Command(command,par1,par2,par3,par4)
 			--end
 			return;
 		end
-	elseif command==703 then	--·ÃÎÊ
-		local tstr="[name]¶ÔÏó[normal]£º[Green]%s[Normal][n][name]Ğ§¹û[normal]£º¶ÔÏóÎä½«ºÃ¸ĞÉÏÉı[n][name]ÏûºÄ[normal]£ºÎï×Ê -100[n][name]Ïà¹Ø[normal]£º[wheat]ÎäÁ¦[normal]¡¢[wheat]Í³ÂÊ[normal]¸ßÓĞÀû[n]¡¡¡¡¡¡³ÖÓĞ[wheat]Á·±ø[normal]¼¼ÄÜÕß£¬Ğ§¹ûÉÏÉı"
-		local eid=ShowPersonList(GetCityZaiye(JY.Person[JY.PID]["ËùÔÚ"],{JY.PID}));
-		if eid>0 and ConfirmYesNo("[B][wheat]·ÃÎÊ",string.format(tstr,JY.Person[eid]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+	elseif command==703 then	--è®¿é—®
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Green]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šå¯¹è±¡æ­¦å°†å¥½æ„Ÿä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -100[n][name]ç›¸å…³[normal]ï¼š[wheat]æ­¦åŠ›[normal]ã€[wheat]ç»Ÿç‡[normal]é«˜æœ‰åˆ©[n]ã€€ã€€ã€€æŒæœ‰[wheat]ç»ƒå…µ[normal]æŠ€èƒ½è€…ï¼Œæ•ˆæœä¸Šå‡"
+		local eid=ShowPersonList(GetCityZaiye(JY.Person[JY.PID]["æ‰€åœ¨"],{JY.PID}));
+		if eid>0 and ConfirmYesNo("[B][wheat]è®¿é—®",string.format(tstr,JY.Person[eid]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 			PlayWavE(3);
 			DrawGame();
-			Talk(eid,"½øĞĞÁË»á»°");
+			Talk(eid,"è¿›è¡Œäº†ä¼šè¯");
 			return;
 		end
-  elseif command == 209 then -- ¼ûÎÅ, Å©Ìï
+  elseif command == 209 then -- è§é—», å†œç”°
     Asura_Survey(2);
-  elseif command == 309 then -- ¼ûÎÅ, ÊĞ³¡
+  elseif command == 309 then -- è§é—», å¸‚åœº
     Asura_Survey(3);
-  elseif command == 409 then -- ¼ûÎÅ, ¼¼Êõ
+  elseif command == 409 then -- è§é—», æŠ€æœ¯
     Asura_Survey(4);
-  elseif command == 509 then -- ¼ûÎÅ, ×¤Ëù
+  elseif command == 509 then -- è§é—», é©»æ‰€
     Asura_Survey(5);
-  elseif command == 609 then -- ¼ûÎÅ, ³ÇÃÅ
+  elseif command == 609 then -- è§é—», åŸé—¨
     Asura_Survey(6);
-  elseif command == 709 then -- ¼ûÎÅ, ¾Æ¼Ò
+  elseif command == 709 then -- è§é—», é…’å®¶
     Asura_Survey(7);
-  elseif command == 809 then -- ¼ûÎÅ, ±øÓª
+  elseif command == 809 then -- è§é—», å…µè¥
     Asura_Survey(8);
-	elseif command==901 then	--¶ÍÁ¶
+	elseif command==901 then	--é”»ç‚¼
 		Train();
-	elseif command==903 then	--Ç¨¾Ó
-		local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Îä½«[normal]£º%s[n][name]Ğ§¹û[normal]£ºÒÆ¶¯µ½Ö¸¶¨¶¼ÊĞ[n][name]ÏûºÄ[normal]£ºĞĞ¶¯Á¦ -1"
-		--local cid2=ShowCityList(GetMoveCity(JY.Person[JY.PID]["ËùÔÚ"]),1);
+	elseif command==903 then	--è¿å±…
+		local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ­¦å°†[normal]ï¼š%s[n][name]æ•ˆæœ[normal]ï¼šç§»åŠ¨åˆ°æŒ‡å®šéƒ½å¸‚[n][name]æ¶ˆè€—[normal]ï¼šè¡ŒåŠ¨åŠ› -1"
+		--local cid2=ShowCityList(GetMoveCity(JY.Person[JY.PID]["æ‰€åœ¨"]),1);
     local cid2 = CityMap:selectNearbyCity() or 0;
-		if cid2>0 and ConfirmYesNo("[B][wheat]Ç¨¾Ó",string.format(tstr,JY.City[cid2]["Ãû³Æ"],JY.Person[JY.PID]["Ãû³Æ"])) then
-			JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
-			JY.Person[JY.PID]["ËùÔÚ"]=cid2;
+		if cid2>0 and ConfirmYesNo("[B][wheat]è¿å±…",string.format(tstr,JY.City[cid2]["åç§°"],JY.Person[JY.PID]["åç§°"])) then
+			JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
+			JY.Person[JY.PID]["æ‰€åœ¨"]=cid2;
 			Dark();
 			DrawGame();
 			PlayWavE(3);
-      PlayCityBGM(JY.Person[JY.PID]["ËùÔÚ"], false);
+      PlayCityBGM(JY.Person[JY.PID]["æ‰€åœ¨"], false);
 			Light();
-			DrawMulitStrBox(string.format("[Green]%s[Normal]Ïò[Red]%s[Normal]ÒÆ¶¯µ½ÁË", JY.Person[JY.PID]["Ãû³Æ"], JY.City[cid2]["Ãû³Æ"]));
+			DrawMulitStrBox(string.format("[Green]%s[Normal]å‘[Red]%s[Normal]ç§»åŠ¨åˆ°äº†", JY.Person[JY.PID]["åç§°"], JY.City[cid2]["åç§°"]));
 			return;
 		end
-	elseif command==909 then	--ĞİÏ¢
-		if TalkYesNo(JY.PID,"½áÊøµ±Ç°»ØºÏ£¬È·¶¨Âğ£¿") then
+	elseif command==909 then	--ä¼‘æ¯
+		if TalkYesNo(JY.PID,"ç»“æŸå½“å‰å›åˆï¼Œç¡®å®šå—ï¼Ÿ") then
 			Dark();
-			JY.Base["µ±Ç°ÔÂ"]=JY.Base["µ±Ç°ÔÂ"]+1;
-			if JY.Base["µ±Ç°ÔÂ"]>12 then
-				JY.Base["µ±Ç°ÔÂ"]=1;
-				JY.Base["µ±Ç°Äê"]=JY.Base["µ±Ç°Äê"]+1;
+			JY.Base["å½“å‰æœˆ"]=JY.Base["å½“å‰æœˆ"]+1;
+			if JY.Base["å½“å‰æœˆ"]>12 then
+				JY.Base["å½“å‰æœˆ"]=1;
+				JY.Base["å½“å‰å¹´"]=JY.Base["å½“å‰å¹´"]+1;
 			end
-      JY.Base["ĞĞ¶¯Á¦"] = 3 + JY.Force[JY.FID]["¹Ù¾ô"];
+      JY.Base["è¡ŒåŠ¨åŠ›"] = 3 + JY.Force[JY.FID]["å®˜çˆµ"];
 			--Asura_Build();
 			DrawGame();
 			Light();
@@ -538,7 +538,7 @@ function Asura_Command(command,par1,par2,par3,par4)
 	end
 end
 function Asura_ApplyOffer(pid, fid)
-  local eid = JY.Force[fid]["¾ıÖ÷"];
+  local eid = JY.Force[fid]["å›ä¸»"];
   local pass = false;
   if hireRate(eid, pid) > 75 + math.random(10) then
     pass = true;
@@ -546,242 +546,242 @@ function Asura_ApplyOffer(pid, fid)
   if JY.PID == pid or JY.PID == eid then
   local t_str = {0, 0, 0, 0, 0, 10}
     local str = "";
-    for i,v in ipairs({"Í³ÂÊ", "ÎäÁ¦", "ÖÇÄ±", "ÕşÎñ", "÷ÈÁ¦"}) do
+    for i,v in ipairs({"ç»Ÿç‡", "æ­¦åŠ›", "æ™ºè°‹", "æ”¿åŠ¡", "é­…åŠ›"}) do
       t_str[i] = math.max(JY.Person[pid][v]-70, 0);
     end
     local r = PercentRandom(t_str);
     if r == 1 then
-      str = TableRandom({ "ÎÒ¶ÔÖ¸»Ó¾ü¶ÓÂÔÓĞ×ÔĞÅ£¬[n]ÇëÔÊĞíÎÒÎª¸óÏÂĞ§Á¦°É£¡",
-                          "ÎÒÊì¶Á¡¶Ëï×Ó¡·±ø·¨£¬[n]ÉÃÓÚÓÃ±øÖ®µÀ¡£"});
+      str = TableRandom({ "æˆ‘å¯¹æŒ‡æŒ¥å†›é˜Ÿç•¥æœ‰è‡ªä¿¡ï¼Œ[n]è¯·å…è®¸æˆ‘ä¸ºé˜ä¸‹æ•ˆåŠ›å§ï¼",
+                          "æˆ‘ç†Ÿè¯»ã€Šå­™å­ã€‹å…µæ³•ï¼Œ[n]æ“…äºç”¨å…µä¹‹é“ã€‚"});
     elseif r == 2 then
-      str = TableRandom({ "ÎÒ¶ÔÎäÒÕÂÔÓĞ×ÔĞÅ£¬[n]ÇëÔÊĞíÎÒÎª¸óÏÂĞ§Á¦°É£¡",
-                          "°ÑµĞÈË´òµÃÂä»¨Á÷Ë®£¬[n]ÈÃÎÒÖ÷¼ûÊ¶¼ûÊ¶ÎÒÕâ[n]ÃÍ»¢°ãµÄ¾ø¼¼¡£",
-                          "ÎÒÁ¦ÄÜËéÊ¯£¬[n]Ô¸Îª[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]´óÈËĞ§Á¦¡£"});
+      str = TableRandom({ "æˆ‘å¯¹æ­¦è‰ºç•¥æœ‰è‡ªä¿¡ï¼Œ[n]è¯·å…è®¸æˆ‘ä¸ºé˜ä¸‹æ•ˆåŠ›å§ï¼",
+                          "æŠŠæ•Œäººæ‰“å¾—è½èŠ±æµæ°´ï¼Œ[n]è®©æˆ‘ä¸»è§è¯†è§è¯†æˆ‘è¿™[n]çŒ›è™èˆ¬çš„ç»æŠ€ã€‚",
+                          "æˆ‘åŠ›èƒ½ç¢çŸ³ï¼Œ[n]æ„¿ä¸º[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]å¤§äººæ•ˆåŠ›ã€‚"});
     elseif r == 3 then
-      str = TableRandom({ "ÎÒ¶ÔÖÇÂÔÂÔÓĞ×ÔĞÅ£¬[n]ÇëÔÊĞíÎÒÎª¸óÏÂ³öÊË°É£¡",
-                          "ÓÃÎÒµÄ»úÖÇºÍÄ±ÂÔ£¬[n]ÖúÎÒÖ÷Ò»±ÛÖ®Á¦¡£"});
+      str = TableRandom({ "æˆ‘å¯¹æ™ºç•¥ç•¥æœ‰è‡ªä¿¡ï¼Œ[n]è¯·å…è®¸æˆ‘ä¸ºé˜ä¸‹å‡ºä»•å§ï¼",
+                          "ç”¨æˆ‘çš„æœºæ™ºå’Œè°‹ç•¥ï¼Œ[n]åŠ©æˆ‘ä¸»ä¸€è‡‚ä¹‹åŠ›ã€‚"});
     elseif r == 4 then
-      str = TableRandom({ "ÎÒ¶ÔÕşÂÔÂÔÓĞ×ÔĞÅ£¬[n]ÇëÔÊĞíÎÒÎª¸óÏÂ³öÊË°É£¡",
-                          "¾¡ÎÒËùÄÜÖÎ¹ú°²°î¡¢Ôì¸£ÓÚÃñ[n]Å¬Á¦½¨ÉèÎÈÈçÅÍÊ¯µÄ¹ú¼Ò¡£"});
+      str = TableRandom({ "æˆ‘å¯¹æ”¿ç•¥ç•¥æœ‰è‡ªä¿¡ï¼Œ[n]è¯·å…è®¸æˆ‘ä¸ºé˜ä¸‹å‡ºä»•å§ï¼",
+                          "å°½æˆ‘æ‰€èƒ½æ²»å›½å®‰é‚¦ã€é€ ç¦äºæ°‘[n]åŠªåŠ›å»ºè®¾ç¨³å¦‚ç£çŸ³çš„å›½å®¶ã€‚"});
     elseif r == 5 then
-      str = TableRandom({ "ÎÒ¶Ô½»ÉæÖ®ÊõÂÔÓĞ×ÔĞÅ£¬[n]ÇëÔÊĞíÎÒÎª¸óÏÂ³öÊË°É£¡",
-                          "ÎÒÔÆÓÎÖî¹ú£¬ÊìÏ¤¸÷µØ·çÍÁÈËÇé¡£[n]Ô¸ÎªÄúĞ§Á¦¡£"});
+      str = TableRandom({ "æˆ‘å¯¹äº¤æ¶‰ä¹‹æœ¯ç•¥æœ‰è‡ªä¿¡ï¼Œ[n]è¯·å…è®¸æˆ‘ä¸ºé˜ä¸‹å‡ºä»•å§ï¼",
+                          "æˆ‘äº‘æ¸¸è¯¸å›½ï¼Œç†Ÿæ‚‰å„åœ°é£åœŸäººæƒ…ã€‚[n]æ„¿ä¸ºæ‚¨æ•ˆåŠ›ã€‚"});
     else
-      str = TableRandom({ "ËäÈ»ÊÇÎ¢²©Ö®Á¦£¬µ«²»Ï§Ğ§È®ÂíÖ®ÀÍ£¬[n]ÇëÈÃÎÒÔÚ´óÈËÆìÏÂĞ§Á¦°É¡£",
-                          "ÌıÎÅÄú¹ãÇóÌìÏÂÖ®²Å£¬[n]»¹ÇëÄúÍ¬ÒâÈÃÎÒÊË¹Ù¡£",
-                          "¸ÏÀ´ÊÔÊÔÉíÊÖ£¬[n]Ô¸ÎªÄúĞ§Á¦¡£",
-                          "Ôç¾ÍÏëÕÒÏñ[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]´óÈËÕâÑùµÄÃ÷Ö÷£¬[n]ÇëÊÕÎÒ×ö²¿ÏÂ°É¡£"});
+      str = TableRandom({ "è™½ç„¶æ˜¯å¾®åšä¹‹åŠ›ï¼Œä½†ä¸æƒœæ•ˆçŠ¬é©¬ä¹‹åŠ³ï¼Œ[n]è¯·è®©æˆ‘åœ¨å¤§äººæ——ä¸‹æ•ˆåŠ›å§ã€‚",
+                          "å¬é—»æ‚¨å¹¿æ±‚å¤©ä¸‹ä¹‹æ‰ï¼Œ[n]è¿˜è¯·æ‚¨åŒæ„è®©æˆ‘ä»•å®˜ã€‚",
+                          "èµ¶æ¥è¯•è¯•èº«æ‰‹ï¼Œ[n]æ„¿ä¸ºæ‚¨æ•ˆåŠ›ã€‚",
+                          "æ—©å°±æƒ³æ‰¾åƒ[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]å¤§äººè¿™æ ·çš„æ˜ä¸»ï¼Œ[n]è¯·æ”¶æˆ‘åšéƒ¨ä¸‹å§ã€‚"});
     end
     SetSceneID(54);
     DrawGame();
     Talk(pid, str);
     if JY.PID == eid then
-      pass = TalkYesNo(eid, "ÒªÂ¼ÓÃ[Green]" .. JY.Person[pid]["Ãû³Æ"] .. "[Normal]Âğ£¿");
+      pass = TalkYesNo(eid, "è¦å½•ç”¨[Green]" .. JY.Person[pid]["åç§°"] .. "[Normal]å—ï¼Ÿ");
       DrawGame();
     end
     if pass then
-      str = TableRandom({ "ÎÒ¾ÍÊÇÔÚµÈ¸óÏÂ£¡[n]ÆÚ´ı×ÅÄãµÄ»îÔ¾Ó´¡£",
-                          "ÄÇÕæÊÇÇóÖ®²»µÃÖ®ÊÂ£¬ÎÒ½«ĞÀÈ»½ÓÊÜ¡£",
-                          "¸ĞĞ»ÄãÕâÃ´ÓĞĞÄ³öÈÎ¡£[n]Ï£Íû½ñºóºÃºÃÅ¬Á¦¹¤×÷¡£",
-                          "¸ĞÄîÄãÈç´ËÓĞĞÄ³öÈÎ¡£[n]ÇìĞÒµÄÊÇÓÖ¶àÁËÒ»Î»¿ÉĞÅÀµµÄÈË¡£"});
+      str = TableRandom({ "æˆ‘å°±æ˜¯åœ¨ç­‰é˜ä¸‹ï¼[n]æœŸå¾…ç€ä½ çš„æ´»è·ƒå“Ÿã€‚",
+                          "é‚£çœŸæ˜¯æ±‚ä¹‹ä¸å¾—ä¹‹äº‹ï¼Œæˆ‘å°†æ¬£ç„¶æ¥å—ã€‚",
+                          "æ„Ÿè°¢ä½ è¿™ä¹ˆæœ‰å¿ƒå‡ºä»»ã€‚[n]å¸Œæœ›ä»Šåå¥½å¥½åŠªåŠ›å·¥ä½œã€‚",
+                          "æ„Ÿå¿µä½ å¦‚æ­¤æœ‰å¿ƒå‡ºä»»ã€‚[n]åº†å¹¸çš„æ˜¯åˆå¤šäº†ä¸€ä½å¯ä¿¡èµ–çš„äººã€‚"});
     else
-      str = TableRandom({ "ÔÚÕâ¸ö½Ú¹ÇÑÛÉÏ£¬ÎÒ¾ÍÃ÷°×µØ¸úÄãËµ°É¡£[n]¸óÏÂÒª³ÉÎªÎÒ¾üÖ®½«µÄ»°£¬ÄÜÁ¦»¹²»×ãÑ½¡£",
-                          "Õâ·İÒâÆøÎÒºÜĞÀÉÍ¡£[n]µ«ÊÇ£¬¸óÏÂµÄÄÜÁ¦¶ÔÎÒ¾üºÁÎŞÓÃ´¦¡£",
-                          "ºÜÒÅº¶£¬Ä¿Ç°ÎÒ¾üÃ»ÓĞ¸óÏÂµÄÎ»ÖÃ¡£"});
+      str = TableRandom({ "åœ¨è¿™ä¸ªèŠ‚éª¨çœ¼ä¸Šï¼Œæˆ‘å°±æ˜ç™½åœ°è·Ÿä½ è¯´å§ã€‚[n]é˜ä¸‹è¦æˆä¸ºæˆ‘å†›ä¹‹å°†çš„è¯ï¼Œèƒ½åŠ›è¿˜ä¸è¶³å‘€ã€‚",
+                          "è¿™ä»½æ„æ°”æˆ‘å¾ˆæ¬£èµã€‚[n]ä½†æ˜¯ï¼Œé˜ä¸‹çš„èƒ½åŠ›å¯¹æˆ‘å†›æ¯«æ— ç”¨å¤„ã€‚",
+                          "å¾ˆé—æ†¾ï¼Œç›®å‰æˆ‘å†›æ²¡æœ‰é˜ä¸‹çš„ä½ç½®ã€‚"});
     end
     Talk(eid, str);
     if pass then
-      str = TableRandom({ "ÕæÊÇÍò·ÖÈÙĞÒ£¬[n]ÎÒ»á½ß¾¡ËùÄÜÀ´Ğ§Á¦µÄ¡£",
-                          "·Ç³£¸ĞĞ»¡£[n]´Ó½ñÒÔºó£¬½«ÒÔ[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]´óÈË²¿ÏÂµÄÉí·İ£¬[n]¶ÄÉÏĞÔÃüÀ´Ğ§Á¦¡£",
-                          "ÄúµÄĞÀÈ»ÔÊÅµÕæÊÇÁîÈË¸Ğ¼¤²»¾¡¡£[n]ÎªÁË²»¹¼¸ºÄúµÄÆÚ´ı£¬·ÛÉíËé¹ÇÔÚËù²»Ï§£¡",
-                          "àÅ£¡[n]ÄÇ¾ÍÆÚ´ıÎÒµÄ±íÏÖ°É£¡",
-                          "ÊÇµÄ£¡[n]»áÒÔÃà±¡Ö®Á¦¾¡ĞÄÅ¬Á¦µÄ¡£"});
+      str = TableRandom({ "çœŸæ˜¯ä¸‡åˆ†è£å¹¸ï¼Œ[n]æˆ‘ä¼šç«­å°½æ‰€èƒ½æ¥æ•ˆåŠ›çš„ã€‚",
+                          "éå¸¸æ„Ÿè°¢ã€‚[n]ä»ä»Šä»¥åï¼Œå°†ä»¥[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]å¤§äººéƒ¨ä¸‹çš„èº«ä»½ï¼Œ[n]èµŒä¸Šæ€§å‘½æ¥æ•ˆåŠ›ã€‚",
+                          "æ‚¨çš„æ¬£ç„¶å…è¯ºçœŸæ˜¯ä»¤äººæ„Ÿæ¿€ä¸å°½ã€‚[n]ä¸ºäº†ä¸è¾œè´Ÿæ‚¨çš„æœŸå¾…ï¼Œç²‰èº«ç¢éª¨åœ¨æ‰€ä¸æƒœï¼",
+                          "å—¯ï¼[n]é‚£å°±æœŸå¾…æˆ‘çš„è¡¨ç°å§ï¼",
+                          "æ˜¯çš„ï¼[n]ä¼šä»¥ç»µè–„ä¹‹åŠ›å°½å¿ƒåŠªåŠ›çš„ã€‚"});
     else
-      str = TableRandom({ "Ô­À´ÌıÎÅµ½µÄÕĞÏÍÒ»ÊÂ£¬ÊÇ¼ÙµÄ°¡¡­¡­",
-                          "¾ÓÈ»¾Ü¾øÁËÎÒ¡£[n]Ã»ÓĞÉÍÊ¶ÈË²ÅµÄÑÛ¹âÒ²¸ÃÓĞ¸öÏŞ¶È¡£",
-                          "ÕâÑù°¡¡­¡­ÕæÊÇÒÅº¶¡£"});
+      str = TableRandom({ "åŸæ¥å¬é—»åˆ°çš„æ‹›è´¤ä¸€äº‹ï¼Œæ˜¯å‡çš„å•Šâ€¦â€¦",
+                          "å±…ç„¶æ‹’ç»äº†æˆ‘ã€‚[n]æ²¡æœ‰èµè¯†äººæ‰çš„çœ¼å…‰ä¹Ÿè¯¥æœ‰ä¸ªé™åº¦ã€‚",
+                          "è¿™æ ·å•Šâ€¦â€¦çœŸæ˜¯é—æ†¾ã€‚"});
     end
     Talk(pid, str);
     if JY.PID == eid then
       if pass then
-        DrawMulitStrBox("Â¼ÓÃ[Green]" .. JY.Person[pid]["Ãû³Æ"] .. "[Normal]ÁË.");
+        DrawMulitStrBox("å½•ç”¨[Green]" .. JY.Person[pid]["åç§°"] .. "[Normal]äº†.");
       else
-        DrawMulitStrBox("¾Ü¾øÁË[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]µÄÍ¶±¼.");
+        DrawMulitStrBox("æ‹’ç»äº†[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]çš„æŠ•å¥”.");
       end
     else
       if pass then
-        DrawMulitStrBox("Í¶±¼[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]³É¹¦ÁË.");
+        DrawMulitStrBox("æŠ•å¥”[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]æˆåŠŸäº†.");
       else
-        DrawMulitStrBox("±»[Green]" .. JY.Person[eid]["Ãû³Æ"] .. "[Normal]¾Ü¾øÂ¼ÓÃ.");
+        DrawMulitStrBox("è¢«[Green]" .. JY.Person[eid]["åç§°"] .. "[Normal]æ‹’ç»å½•ç”¨.");
       end
     end
     SetSceneID(0);
   end
   if pass then
-    JY.Person[pid]["ÊÆÁ¦"] = fid;
-    JY.Person[pid]["Éí·İ"] = 1;
+    JY.Person[pid]["åŠ¿åŠ›"] = fid;
+    JY.Person[pid]["èº«ä»½"] = 1;
   end
 end
 function Asura_Survey()
   local p = JY.Person[JY.PID];
-  local name = p["Ãû³Æ"];
+  local name = p["åç§°"];
   local t_actions = {0, 0, 0, 0, 0, 10};
   local r = PercentRandom(t_actions);
   DrawGame();
-  if r == 1 then  --µÁÔô
+  if r == 1 then  --ç›—è´¼
     local headID = TableRandom({1072, 1073, 1074, 1075});
-    TalkEx("±øÊ¿", headID, "×î½ü£¬[n]½ÖµÀÉÏ¾­³£ÓĞµÁÔô³öÃ»¡£");
-    if TalkYesNo(JY.PID, "ÒªÇ××Ô³öÂíÏûÃğÔô¿ÜÂğ£¿") then
-      Talk(JY.PID, "ÖªµÀÁË£¬[n]ÎÒÂíÉÏÈ¥ÏûÃğËûÃÇ¡£");
-      --Í¼Æ¬
-      DrawMulitStrBox("ÏûÃğÁËÔô¿Ü£¬[n]µ«Ò²ÎªÔô¿ÜËùÉË¡£");
+    TalkEx("å…µå£«", headID, "æœ€è¿‘ï¼Œ[n]è¡—é“ä¸Šç»å¸¸æœ‰ç›—è´¼å‡ºæ²¡ã€‚");
+    if TalkYesNo(JY.PID, "è¦äº²è‡ªå‡ºé©¬æ¶ˆç­è´¼å¯‡å—ï¼Ÿ") then
+      Talk(JY.PID, "çŸ¥é“äº†ï¼Œ[n]æˆ‘é©¬ä¸Šå»æ¶ˆç­ä»–ä»¬ã€‚");
+      --å›¾ç‰‡
+      DrawMulitStrBox("æ¶ˆç­äº†è´¼å¯‡ï¼Œ[n]ä½†ä¹Ÿä¸ºè´¼å¯‡æ‰€ä¼¤ã€‚");
     else
-      Talk(JY.PID, TableRandom({"¶Ô²»Æğ£¬È¥ÕÒÆäËûÈË°É¡£", "ÎÒÏÖÔÚºÜÃ¦£¬[n]È¥ÕÒ±ğÈË°É¡£"}));
+      Talk(JY.PID, TableRandom({"å¯¹ä¸èµ·ï¼Œå»æ‰¾å…¶ä»–äººå§ã€‚", "æˆ‘ç°åœ¨å¾ˆå¿™ï¼Œ[n]å»æ‰¾åˆ«äººå§ã€‚"}));
     end
-  elseif r == 2 then  --Ê©Éá
+  elseif r == 2 then  --æ–½èˆ
     local headID = TableRandom({1077, 1081});
     local money = 92;
-    TalkEx("°ÙĞÕ", headID, TableRandom({ "º¢×ÓÃÇ¼¢³¦ê¤ê¤£¬à»à»´ı²¸£¬[n]ÎÒÈ´Ã»Ç®ÂòÃ×¡£",
-                              "ÒòÎªÕÉ·òÔ¶¸°É³³¡£¬[n]¼ÒÖĞÎŞÈËÀÍ¶¯¹¤×÷£¬[n]ÎÒÏÖÔÚÉíÎŞ·ÖÎÄ£¬Éú»îÀ§¿à¡£"}));
-    TalkEx("°ÙĞÕ", headID, TableRandom({ "[Green]" .. name .. "[Normal]´óÈË£¬[n]ÄúÄÜÊ©ÉáÎÒ" .. money .."»Æ½ğÂğ£¿",
-                              "[Green]" .. name .. "[Normal]´óÈË£¬[n]ÎŞÂÛÈçºÎ,ÇëÄúÊ©ÉáÎÒ" .. money .."»Æ½ğ°É¡£"}));
-    if TalkYesNo(JY.PID, "ÒªÊ©Éá»Æ½ğ" .. money .. "Âğ£¿") then
-      Talk(JY.PID, "ÎÒ²»ÄÜ²»ÎÅ²»ÎÊ£¬[n]ÄãÄÃÈ¥ÓÃ°É¡£");
+    TalkEx("ç™¾å§“", headID, TableRandom({ "å­©å­ä»¬é¥¥è‚ è¾˜è¾˜ï¼Œå—·å—·å¾…å“ºï¼Œ[n]æˆ‘å´æ²¡é’±ä¹°ç±³ã€‚",
+                              "å› ä¸ºä¸ˆå¤«è¿œèµ´æ²™åœºï¼Œ[n]å®¶ä¸­æ— äººåŠ³åŠ¨å·¥ä½œï¼Œ[n]æˆ‘ç°åœ¨èº«æ— åˆ†æ–‡ï¼Œç”Ÿæ´»å›°è‹¦ã€‚"}));
+    TalkEx("ç™¾å§“", headID, TableRandom({ "[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æ‚¨èƒ½æ–½èˆæˆ‘" .. money .."é»„é‡‘å—ï¼Ÿ",
+                              "[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æ— è®ºå¦‚ä½•,è¯·æ‚¨æ–½èˆæˆ‘" .. money .."é»„é‡‘å§ã€‚"}));
+    if TalkYesNo(JY.PID, "è¦æ–½èˆé»„é‡‘" .. money .. "å—ï¼Ÿ") then
+      Talk(JY.PID, "æˆ‘ä¸èƒ½ä¸é—»ä¸é—®ï¼Œ[n]ä½ æ‹¿å»ç”¨å§ã€‚");
     else
-      Talk(JY.PID, TableRandom({"Õæ²»´ÕÇÉ£¬ÎÒÃ»´øÏÖ½ğ£¬[n]È¥ÕÒ±ğÈË°É¡£",
-                                "¶Ô²»Æğ£¬[n]ÎÒÊÖÍ·Ò²²¼¿íÔ£¡£",
-                                "Èç¹ûÎÒÖ»¾È¼ÃÄãÒ»¸öÈË£¬[n]¶ÔÆäËûÈË¾ÍºÜ²»¹«Æ½£¬[n]Õâ¿É²»ĞĞ¡£"}));
+      Talk(JY.PID, TableRandom({"çœŸä¸å‡‘å·§ï¼Œæˆ‘æ²¡å¸¦ç°é‡‘ï¼Œ[n]å»æ‰¾åˆ«äººå§ã€‚",
+                                "å¯¹ä¸èµ·ï¼Œ[n]æˆ‘æ‰‹å¤´ä¹Ÿå¸ƒå®½è£•ã€‚",
+                                "å¦‚æœæˆ‘åªæ•‘æµä½ ä¸€ä¸ªäººï¼Œ[n]å¯¹å…¶ä»–äººå°±å¾ˆä¸å…¬å¹³ï¼Œ[n]è¿™å¯ä¸è¡Œã€‚"}));
     end
-  elseif r == 3 then --½²¿Î
+  elseif r == 3 then --è®²è¯¾
     local headID = TableRandom({1076, 1080});
-    TalkEx("´åÃñ", headID, TableRandom({"[Green]" .. name .. "[Normal]´óÈË£¬[n]Çë½ÌÎÒÃÇ¶ÁÊéÊ¶×Ö°É£¡",
-                              "¹Ù¸®µÄ¸æÊ¾ÓĞĞí¶àÈË¿´²»¶®£¬[n]Çë½ÌÎÒÃÇ¶ÁÊéÊ¶×Ö°É£¡"}));
-    if TalkYesNo(JY.PID, "Òª¿ª°ì½²Òå¿Î³ÌÂğ£¿") then
-      Talk(JY.PID, TableRandom({"ÄãÃÇµÄÏë·¨ºÜºÃ£¬[n]ÈÃÎÒÃÇ¸Ï¿ì¿ªÊ¼°É¡£[n]°ÑÏëÑ§Ï°µÄÈËÕÙ¼¯ÆğÀ´¡£",
-                                "ºÃ£¬ÎÒÁ¢¼´¸øÄãÃÇ½²½â¡£"}));
+    TalkEx("æ‘æ°‘", headID, TableRandom({"[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]è¯·æ•™æˆ‘ä»¬è¯»ä¹¦è¯†å­—å§ï¼",
+                              "å®˜åºœçš„å‘Šç¤ºæœ‰è®¸å¤šäººçœ‹ä¸æ‡‚ï¼Œ[n]è¯·æ•™æˆ‘ä»¬è¯»ä¹¦è¯†å­—å§ï¼"}));
+    if TalkYesNo(JY.PID, "è¦å¼€åŠè®²ä¹‰è¯¾ç¨‹å—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"ä½ ä»¬çš„æƒ³æ³•å¾ˆå¥½ï¼Œ[n]è®©æˆ‘ä»¬èµ¶å¿«å¼€å§‹å§ã€‚[n]æŠŠæƒ³å­¦ä¹ çš„äººå¬é›†èµ·æ¥ã€‚",
+                                "å¥½ï¼Œæˆ‘ç«‹å³ç»™ä½ ä»¬è®²è§£ã€‚"}));
       --show pic
-      DrawMulitStrBox("½²ÒåÊÜµ½ºÃÆÀ£¬[n]´åÃñÂúÒâ¶ø¹é¡£");
+      DrawMulitStrBox("è®²ä¹‰å—åˆ°å¥½è¯„ï¼Œ[n]æ‘æ°‘æ»¡æ„è€Œå½’ã€‚");
     else
-      Talk(JY.PID, TableRandom({"ßíàÅ£¬¶Ô²»Æğ¡£ÎÒÏÖÔÚ¹«ÊÂ·±Ã¦£¬[n]Èç¹ûÒÔºóÓĞ»ú»á£¬ÔÙÎªÄãÃÇÊÚ¿Î°É¡£",
-                                "ÄãÃÇµÄÏë·¨ºÜºÃ£¬[n]Ö»ÊÇºÜ²»´ÕÇÉ£¬[n]ÎÒÏÖÔÚÃ»Ê±¼ä£¬¶Ô²»Æğ¡£",
-                                "¶Ô²»Æğ£¬[n]È¥ÕÒÆäËûÈË°É¡£"}));
+      Talk(JY.PID, TableRandom({"å””å—¯ï¼Œå¯¹ä¸èµ·ã€‚æˆ‘ç°åœ¨å…¬äº‹ç¹å¿™ï¼Œ[n]å¦‚æœä»¥åæœ‰æœºä¼šï¼Œå†ä¸ºä½ ä»¬æˆè¯¾å§ã€‚",
+                                "ä½ ä»¬çš„æƒ³æ³•å¾ˆå¥½ï¼Œ[n]åªæ˜¯å¾ˆä¸å‡‘å·§ï¼Œ[n]æˆ‘ç°åœ¨æ²¡æ—¶é—´ï¼Œå¯¹ä¸èµ·ã€‚",
+                                "å¯¹ä¸èµ·ï¼Œ[n]å»æ‰¾å…¶ä»–äººå§ã€‚"}));
     end
-  elseif r == 4 then --Ñç»á
-    Talk("°ÙĞÕ", "[Green]" .. name .. "[Normal]´óÈË£¬[n]´åÖĞµÄÑç»á¾ÍÒª¿ªÊ¼ÁË£¬[n]ÄúÒ²Ò»ÆğÀ´²Î¼Ó°É£¿");
-    if TalkYesNo(JY.PID, "Òª²Î¼ÓÑç»áÂğ£¿") then
-      Talk(JY.PID, TableRandom({"Å¶£¬ÄÇÃ´ÎÒ¾Í´òÈÅÁË¡£",
-                                "ÕıºÃÓĞ¿Õ£¬[n]ÇëÎªÎÒ´øÂ·°É¡£"}));
+  elseif r == 4 then --å®´ä¼š
+    Talk("ç™¾å§“", "[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æ‘ä¸­çš„å®´ä¼šå°±è¦å¼€å§‹äº†ï¼Œ[n]æ‚¨ä¹Ÿä¸€èµ·æ¥å‚åŠ å§ï¼Ÿ");
+    if TalkYesNo(JY.PID, "è¦å‚åŠ å®´ä¼šå—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"å“¦ï¼Œé‚£ä¹ˆæˆ‘å°±æ‰“æ‰°äº†ã€‚",
+                                "æ­£å¥½æœ‰ç©ºï¼Œ[n]è¯·ä¸ºæˆ‘å¸¦è·¯å§ã€‚"}));
       --show pic
-      DrawMulitStrBox(name .. "Óë´åÃñÒ»Æğ[n]ÔÚÑç»áÉÏ¾¡Çé³©Òû¡£");
+      DrawMulitStrBox(name .. "ä¸æ‘æ°‘ä¸€èµ·[n]åœ¨å®´ä¼šä¸Šå°½æƒ…ç•…é¥®ã€‚");
     else
-      Talk(JY.PID, TableRandom({"·Ç³£¸ĞĞ»ÄãÃÇµÄÑûÇë£¬[n]Ö»ÊÇÎÒÏÖÔÚÃ»ÓĞÊ±¼ä£¬[n]ÏÂ´ÎÓĞ»ú»áÔÙÑûÇëÎÒ°É¡£",
-                                "·Ç³£¸ĞĞ»ÄãÃÇµÄÑûÇë£¬[n]Ö»ÊÇÎÒÏÖÔÚÓĞÊÂÔÚÉí¡£",
-                                "Èç¹ûÎÒÈ¥µÄ»°£¬´ó¼ÒÒ»¶¨Ã¦×ÅÕĞºôÎÒ¡£[n]Èç´ËÒ»À´£¬´ó¼Ò¾Í¶¼ÎŞ·¨¾¡ĞËÁË£¬[n]Õâ´ÎÎÒ¾Í²»È¥ÁË¡£",
-                                "²»ÄÜ²Î¼ÓÄãÃÇµÄÑç»á£¬[n]ÄãÃÇ¾¡Çé³©Òû°É¡£"}));
+      Talk(JY.PID, TableRandom({"éå¸¸æ„Ÿè°¢ä½ ä»¬çš„é‚€è¯·ï¼Œ[n]åªæ˜¯æˆ‘ç°åœ¨æ²¡æœ‰æ—¶é—´ï¼Œ[n]ä¸‹æ¬¡æœ‰æœºä¼šå†é‚€è¯·æˆ‘å§ã€‚",
+                                "éå¸¸æ„Ÿè°¢ä½ ä»¬çš„é‚€è¯·ï¼Œ[n]åªæ˜¯æˆ‘ç°åœ¨æœ‰äº‹åœ¨èº«ã€‚",
+                                "å¦‚æœæˆ‘å»çš„è¯ï¼Œå¤§å®¶ä¸€å®šå¿™ç€æ‹›å‘¼æˆ‘ã€‚[n]å¦‚æ­¤ä¸€æ¥ï¼Œå¤§å®¶å°±éƒ½æ— æ³•å°½å…´äº†ï¼Œ[n]è¿™æ¬¡æˆ‘å°±ä¸å»äº†ã€‚",
+                                "ä¸èƒ½å‚åŠ ä½ ä»¬çš„å®´ä¼šï¼Œ[n]ä½ ä»¬å°½æƒ…ç•…é¥®å§ã€‚"}));
     end
-  elseif r == 5 then --·áÊÕ¼Àµä
-    Talk("Í¯×Ó", "[Green]" .. name .. "[Normal]´óÈË£¬½ñÌì´ó¼ÒÒª¾ÙĞĞ¼Àµä£¬[n]Æíµ»½ñÄêµÄÊÕ³ÉºÍÃ÷ÄêµÄ·áÊÕ£¬[n]ÄúÒ²Ò»ÆğÀ´²Î¼ÓÂğ£¿");
-    --²Î¼Ó¼Àµä / È¡Ïû¼Àµä
-    if TalkYesNo(JY.PID, "Òª²Î¼ÓÑç»áÂğ£¿") then
-      Talk(JY.PID, TableRandom({"ÄãÃÇ×¨³ÌÇ°À´ÑûÔ¼£¬[n]ÎÒ²»ÄÜ¹¼¸ºÄãÃÇµÄÊ¢Çé¡£",
-                                "ÕâÃ´ÄÑµÃµÄ·áÊÕÇìµä£¬[n]ÇëÎñ±ØÈÃÎÒ²Î¼Ó¡£"}));
+  elseif r == 5 then --ä¸°æ”¶ç¥­å…¸
+    Talk("ç«¥å­", "[Green]" .. name .. "[Normal]å¤§äººï¼Œä»Šå¤©å¤§å®¶è¦ä¸¾è¡Œç¥­å…¸ï¼Œ[n]ç¥ˆç¥·ä»Šå¹´çš„æ”¶æˆå’Œæ˜å¹´çš„ä¸°æ”¶ï¼Œ[n]æ‚¨ä¹Ÿä¸€èµ·æ¥å‚åŠ å—ï¼Ÿ");
+    --å‚åŠ ç¥­å…¸ / å–æ¶ˆç¥­å…¸
+    if TalkYesNo(JY.PID, "è¦å‚åŠ å®´ä¼šå—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"ä½ ä»¬ä¸“ç¨‹å‰æ¥é‚€çº¦ï¼Œ[n]æˆ‘ä¸èƒ½è¾œè´Ÿä½ ä»¬çš„ç››æƒ…ã€‚",
+                                "è¿™ä¹ˆéš¾å¾—çš„ä¸°æ”¶åº†å…¸ï¼Œ[n]è¯·åŠ¡å¿…è®©æˆ‘å‚åŠ ã€‚"}));
       --show pic
-      DrawMulitStrBox(name .. "Óë´åÃñÒ»Æğ[n]ĞË¸ß²ÊÁÒµØ¾ÙĞĞÁË¼Àµä¡£");
+      DrawMulitStrBox(name .. "ä¸æ‘æ°‘ä¸€èµ·[n]å…´é«˜å½©çƒˆåœ°ä¸¾è¡Œäº†ç¥­å…¸ã€‚");
     else
-      Talk(JY.PID, "ÏÖÔÚ¾üÁ¸²»×ã£¬[n]¶Ô²»Æğ£¬[n]Çë½«¶àÓàµÄÁ¸Ê³½»³öÀ´¡£");
-      --XXµÄ¾üÁ¸ÉÏÉıÁËXX
+      Talk(JY.PID, "ç°åœ¨å†›ç²®ä¸è¶³ï¼Œ[n]å¯¹ä¸èµ·ï¼Œ[n]è¯·å°†å¤šä½™çš„ç²®é£Ÿäº¤å‡ºæ¥ã€‚");
+      --XXçš„å†›ç²®ä¸Šå‡äº†XX
     end
-  elseif r == 6 then  --³Í´¦²»·¨
-    Talk("°ÙĞÕ", "[Green]" .. name .. "[Normal]´óÈË£¬[n]¾İËµÓĞÒ»Ğ©²»Ğ¤¹ÙÔ±£¬[n]ÇÖÍÌÁ¸²İ£¬ÖĞ±¥Ë½ÄÒ¡­¡­");
-    if TalkYesNo(JY.PID, "Òªµ÷²é¹ÙÔ±µÄ²»·¨ĞĞÎªÂğ£¿") then
-      Talk(JY.PID, TableRandom({"ÄãÄÜ½«´ËÊÂÙ÷±¨¸øÎÒ£¬×öµÃºÜºÃ¡£[n]ÎÒÁ¢¼´È¥µ÷²éÊµÇé¡£",
-                                "Èç¹ûÈ·ÓĞÆäÊÂ£¬[n]¿ÉÊÇ¼ş´óÊÂ£¬[n]ÎÒÁ¢¼´È¥½øĞĞµ÷²é¡£"}));
+  elseif r == 6 then  --æƒ©å¤„ä¸æ³•
+    Talk("ç™¾å§“", "[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æ®è¯´æœ‰ä¸€äº›ä¸è‚–å®˜å‘˜ï¼Œ[n]ä¾µåç²®è‰ï¼Œä¸­é¥±ç§å›Šâ€¦â€¦");
+    if TalkYesNo(JY.PID, "è¦è°ƒæŸ¥å®˜å‘˜çš„ä¸æ³•è¡Œä¸ºå—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"ä½ èƒ½å°†æ­¤äº‹ç¦€æŠ¥ç»™æˆ‘ï¼Œåšå¾—å¾ˆå¥½ã€‚[n]æˆ‘ç«‹å³å»è°ƒæŸ¥å®æƒ…ã€‚",
+                                "å¦‚æœç¡®æœ‰å…¶äº‹ï¼Œ[n]å¯æ˜¯ä»¶å¤§äº‹ï¼Œ[n]æˆ‘ç«‹å³å»è¿›è¡Œè°ƒæŸ¥ã€‚"}));
       -- load pic
-      DrawMulitStrBox(name .. "½Ò·¢ÁË[n]áßË½Í÷·¨µÄ¹ÙÔ±¡£");
+      DrawMulitStrBox(name .. "æ­å‘äº†[n]å¾‡ç§æ‰æ³•çš„å®˜å‘˜ã€‚");
     else
-      Talk(JY.PID, TableRandom({"ÎÒÃ»ÌıËµ¹ıÕâ¼şÊÂ£¬[n]ÊÇ·ñ¸ã´íÁË£¿",
-                                "Õâ¼şÊÂÎÒÏëÊÇÄã¶àÂÇÁË¡£",
-                                "ÎÒºÜÃ¦£¬ÄãÕÒÆäËûÈË°É¡£"}));
+      Talk(JY.PID, TableRandom({"æˆ‘æ²¡å¬è¯´è¿‡è¿™ä»¶äº‹ï¼Œ[n]æ˜¯å¦æé”™äº†ï¼Ÿ",
+                                "è¿™ä»¶äº‹æˆ‘æƒ³æ˜¯ä½ å¤šè™‘äº†ã€‚",
+                                "æˆ‘å¾ˆå¿™ï¼Œä½ æ‰¾å…¶ä»–äººå§ã€‚"}));
     end
-  elseif r == 7 then  --ÒåÓÂ±ø
-    Talk("°ÙĞÕ", TableRandom({"[Green]" .. name .. "[Normal]´óÈË£¬[n]ÎÒÃÇÄ¼¼¯ÁËÖ¾Í¬µÀºÏÖ®ÈË£¬[n]½á³ÉÁËÒåÓÂ¾ü¡£[n]ÇëÈÃÎÒÃÇ³ÉÎªÄúµÄÊôÏÂ¡££¡",
-                              "ÎÒÃÇ¶¼ºÜÑöÄ½[Green]" .. name .. "[Normal]´óÈË£¬[n]ÎŞÂÛÈçºÎÇëÈÃÎÒÃÇÎªÄúĞ§Á¦¡£"}));
-    if TalkYesNo(JY.PID, "Òª½ÓÄÉÒåÓÂ±øÎªÊôÏÂÂğ£¿") then
-      Talk(JY.PID, TableRandom({"²»ÄÜ¹¼¸ºÄãÃÇµÄºÃÒâ£¬[n]¾ÍÇë¼ÓÈëÎÒµÄ¾ü¶Ó°É¡£",
-                                "ÕâÕıÊÇÇóÖ®²»µÃÄØ¡£[n]Ç°ÃæµÄÂ·Ç§ĞÁÍò¿à£¬[n]¾Í°İÍĞ¸÷Î»ÁË¡£"}));
+  elseif r == 7 then  --ä¹‰å‹‡å…µ
+    Talk("ç™¾å§“", TableRandom({"[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æˆ‘ä»¬å‹Ÿé›†äº†å¿—åŒé“åˆä¹‹äººï¼Œ[n]ç»“æˆäº†ä¹‰å‹‡å†›ã€‚[n]è¯·è®©æˆ‘ä»¬æˆä¸ºæ‚¨çš„å±ä¸‹ã€‚ï¼",
+                              "æˆ‘ä»¬éƒ½å¾ˆä»°æ…•[Green]" .. name .. "[Normal]å¤§äººï¼Œ[n]æ— è®ºå¦‚ä½•è¯·è®©æˆ‘ä»¬ä¸ºæ‚¨æ•ˆåŠ›ã€‚"}));
+    if TalkYesNo(JY.PID, "è¦æ¥çº³ä¹‰å‹‡å…µä¸ºå±ä¸‹å—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"ä¸èƒ½è¾œè´Ÿä½ ä»¬çš„å¥½æ„ï¼Œ[n]å°±è¯·åŠ å…¥æˆ‘çš„å†›é˜Ÿå§ã€‚",
+                                "è¿™æ­£æ˜¯æ±‚ä¹‹ä¸å¾—å‘¢ã€‚[n]å‰é¢çš„è·¯åƒè¾›ä¸‡è‹¦ï¼Œ[n]å°±æ‹œæ‰˜å„ä½äº†ã€‚"}));
       -- load pic
-      DrawMulitStrBox(name .. "½ÓÄÉÒåÓÂ±øÎªÊôÏÂ¡£");
+      DrawMulitStrBox(name .. "æ¥çº³ä¹‰å‹‡å…µä¸ºå±ä¸‹ã€‚");
     else
-      Talk(JY.PID, TableRandom({"ÏÖÔÚ²»ĞèÒªÔö¼ÓÊ¿±ø£¬[n]ÄãÃÇµÄĞÄÒâ£¬ÎÒĞÄÁìÁË¡£",
-                                "ÄãÃÇµÄĞÄÒâÎÒ½ÓÊÜÁË¡£[n]µÈÕ½¶·½µÖÁ£¬[n]ÒªÕ÷ÕÙÊ¿±øÔÙ°İÍĞ¸÷Î»°É¡£"}));
+      Talk(JY.PID, TableRandom({"ç°åœ¨ä¸éœ€è¦å¢åŠ å£«å…µï¼Œ[n]ä½ ä»¬çš„å¿ƒæ„ï¼Œæˆ‘å¿ƒé¢†äº†ã€‚",
+                                "ä½ ä»¬çš„å¿ƒæ„æˆ‘æ¥å—äº†ã€‚[n]ç­‰æˆ˜æ–—é™è‡³ï¼Œ[n]è¦å¾å¬å£«å…µå†æ‹œæ‰˜å„ä½å§ã€‚"}));
     end
-  elseif r == 8 then --Ğ»Àñ - ½ğ
-    Talk("°ÙĞÕ", "ÕâÊÇÎÒÃÇ´åÃñÎªÁË¸ĞÄî[n][Green]" .. name .. "[Normal]´óÈËÆ½ÈÕÀ´µÄÕÕ¹Ë£¬[n]¶ø´Õ³öÀ´µÄÒ»µã»Æ½ğ£¬");
-    --"xx´óÈË£¬[n]ÎÒÔÚÌïÀï¸û×÷Ê±·¢ÏÖÁËÕâ¸ö¶«Î÷£¬[n]ÎÒÄÃ×ÅÒ²Ã»ÓĞÊ²Ã´ÓÃ´¦£¬"   "xx´óÈË£¬[n]ÕâÊÇÎÒ¼ÒÊÀ´úÏà´«µØ±¦Îï£¬[n]ÎªÁË¸ĞĞ»ÄúÆ½ÈÕ¶ÔÎÒÃÇµØÕÕ¹Ë£¬"
-    --"ÎÒÔ¸½«ËüÏ×¸øxx´óÈË¡£"   ¡±xx´óÈË£¬[n]Çë½«ËüÒÔ×÷ÎªĞ»ÀñÊÕÏÂ°É¡£¡°
-    Talk("°ÙĞÕ", "ÒÔ×÷ÎªĞ»Àñ¡£[n]ÇëÄúÎŞÂÛÈçºÎÒ»¶¨ÒªÊÕÏÂ¡£");
-    if TalkYesNo(JY.PID, "½ÓÊÜ´åÃñÏ×ÉÏµÄÀñÎïÂğ£¿") then
-      Talk(JY.PID, TableRandom({"ÄÇÎÒ¾Í¹§¾´²»Èç´ÓÃüÁË£¬[n]ÎÒ»áºÃºÃÕäÏ§ËüµÄ",
-                                "Å¶£¬ÕâÕæÊÇÇóÖ®²»µÃ£¬[n]ÄÇÃ´ÎÒ¾Í²»¿ÍÆøµØÊÕÏÂÁË¡£"}));
+  elseif r == 8 then --è°¢ç¤¼ - é‡‘
+    Talk("ç™¾å§“", "è¿™æ˜¯æˆ‘ä»¬æ‘æ°‘ä¸ºäº†æ„Ÿå¿µ[n][Green]" .. name .. "[Normal]å¤§äººå¹³æ—¥æ¥çš„ç…§é¡¾ï¼Œ[n]è€Œå‡‘å‡ºæ¥çš„ä¸€ç‚¹é»„é‡‘ï¼Œ");
+    --"xxå¤§äººï¼Œ[n]æˆ‘åœ¨ç”°é‡Œè€•ä½œæ—¶å‘ç°äº†è¿™ä¸ªä¸œè¥¿ï¼Œ[n]æˆ‘æ‹¿ç€ä¹Ÿæ²¡æœ‰ä»€ä¹ˆç”¨å¤„ï¼Œ"   "xxå¤§äººï¼Œ[n]è¿™æ˜¯æˆ‘å®¶ä¸–ä»£ç›¸ä¼ åœ°å®ç‰©ï¼Œ[n]ä¸ºäº†æ„Ÿè°¢æ‚¨å¹³æ—¥å¯¹æˆ‘ä»¬åœ°ç…§é¡¾ï¼Œ"
+    --"æˆ‘æ„¿å°†å®ƒçŒ®ç»™xxå¤§äººã€‚"   â€xxå¤§äººï¼Œ[n]è¯·å°†å®ƒä»¥ä½œä¸ºè°¢ç¤¼æ”¶ä¸‹å§ã€‚â€œ
+    Talk("ç™¾å§“", "ä»¥ä½œä¸ºè°¢ç¤¼ã€‚[n]è¯·æ‚¨æ— è®ºå¦‚ä½•ä¸€å®šè¦æ”¶ä¸‹ã€‚");
+    if TalkYesNo(JY.PID, "æ¥å—æ‘æ°‘çŒ®ä¸Šçš„ç¤¼ç‰©å—ï¼Ÿ") then
+      Talk(JY.PID, TableRandom({"é‚£æˆ‘å°±æ­æ•¬ä¸å¦‚ä»å‘½äº†ï¼Œ[n]æˆ‘ä¼šå¥½å¥½çæƒœå®ƒçš„",
+                                "å“¦ï¼Œè¿™çœŸæ˜¯æ±‚ä¹‹ä¸å¾—ï¼Œ[n]é‚£ä¹ˆæˆ‘å°±ä¸å®¢æ°”åœ°æ”¶ä¸‹äº†ã€‚"}));
       -- load pic
-      DrawMulitStrBox(name .. "½ÓÊÜÁË[n]»Æ½ğXXX¡£");
-      --½ÓÊÜ´åÃñÏ×ÉÏµØÀñÎï
+      DrawMulitStrBox(name .. "æ¥å—äº†[n]é»„é‡‘XXXã€‚");
+      --æ¥å—æ‘æ°‘çŒ®ä¸Šåœ°ç¤¼ç‰©
     else
-      Talk(JY.PID, TableRandom({"ºÜ¸ĞĞ»ÄãÃÇÓĞÈç´ËĞÄÒâ£¬[n]¿ÉÊÇÎÒ²»ÄÜ½ÓÊÜÕâ·İÀñÎï¡£",
-                                "ÕâÌ«¹óÖØÁË£¬ÎÒ²»ÄÜ½ÓÊÜ¡£"}));
+      Talk(JY.PID, TableRandom({"å¾ˆæ„Ÿè°¢ä½ ä»¬æœ‰å¦‚æ­¤å¿ƒæ„ï¼Œ[n]å¯æ˜¯æˆ‘ä¸èƒ½æ¥å—è¿™ä»½ç¤¼ç‰©ã€‚",
+                                "è¿™å¤ªè´µé‡äº†ï¼Œæˆ‘ä¸èƒ½æ¥å—ã€‚"}));
     end
-  else  --ĞÅÏ¢
-    local str = TableRandom({ "Ã¿ÄêÒ»¡¢ËÄ¡¢Æß¡¢Ê®ÔÂ»áÓĞ×Ê½ğÊÕÈë¡£[n]¶øÎïÖÊÖ»ÓĞÃ¿ÄêÆßÔÂ²Å»áÓĞÊÕÈë¡£",
-                              "³ÇÇ½ÔÙ¸ß£¬[n]Ò²ÎŞ·¨Ô¤·ÀÔÖº¦µÄ·¢Éú¡£",
-                              "Èç¹û¹¤×÷¹ı¶ÈÍµÀÁµÄ»°£¬[n]Ò²Ğí»¹»á±»±áÖ°¡£",
-                              "ÆßÔÂÊÇÒ»ÄêÖĞ×î¿ìÀÖµÄÔÂ·İ¡£[n]ÊÕ»õÖ®ºó£¬¿ìÀÖµØÇì×£·áÊÕ¡£",
-                              "¼á³Ö²»Ğ¸µÄ¶ÍÁ¶£¬[n]¾ÍÄÜÌá¸ßÄÜÁ¦Å¶¡£",
-                              "ÓĞÑ§ÕßÕıÔÚ½«ÌØ²úÆ·×éºÏÆğÀ´£¬[n]ÒÔÖÆ×÷¸ü¼ÓÇ¿Á¦µÄÎäÆ÷¡£"})
+  else  --ä¿¡æ¯
+    local str = TableRandom({ "æ¯å¹´ä¸€ã€å››ã€ä¸ƒã€åæœˆä¼šæœ‰èµ„é‡‘æ”¶å…¥ã€‚[n]è€Œç‰©è´¨åªæœ‰æ¯å¹´ä¸ƒæœˆæ‰ä¼šæœ‰æ”¶å…¥ã€‚",
+                              "åŸå¢™å†é«˜ï¼Œ[n]ä¹Ÿæ— æ³•é¢„é˜²ç¾å®³çš„å‘ç”Ÿã€‚",
+                              "å¦‚æœå·¥ä½œè¿‡åº¦å·æ‡’çš„è¯ï¼Œ[n]ä¹Ÿè®¸è¿˜ä¼šè¢«è´¬èŒã€‚",
+                              "ä¸ƒæœˆæ˜¯ä¸€å¹´ä¸­æœ€å¿«ä¹çš„æœˆä»½ã€‚[n]æ”¶è´§ä¹‹åï¼Œå¿«ä¹åœ°åº†ç¥ä¸°æ”¶ã€‚",
+                              "åšæŒä¸æ‡ˆçš„é”»ç‚¼ï¼Œ[n]å°±èƒ½æé«˜èƒ½åŠ›å“¦ã€‚",
+                              "æœ‰å­¦è€…æ­£åœ¨å°†ç‰¹äº§å“ç»„åˆèµ·æ¥ï¼Œ[n]ä»¥åˆ¶ä½œæ›´åŠ å¼ºåŠ›çš„æ­¦å™¨ã€‚"})
   end
 end
 function Asura_Manual_ActionMenu(pid,kind)
 	--[[
-		ÃüÁî
-			·½Õë
-			µ÷¶¯
-			³öÕ÷
-			Õ÷±ø
-			ÈÎÃü		//ÕşÎñµ£µ±for current city	½«¾üÎ»	Ì«ÊØ	¾üÊ¦	Á÷·Å
-			ÑÓÀ¿
-			Íâ½»
-			µı±¨
-		ÈÎÎñ
-			Ö÷ÃüÈÎÎñ
-			ÉÌ¼Ò
-			ÆäËûÖ§ÏßÈÎÎñ
-		°İ·Ã
-		¼ûÎÅ
+		å‘½ä»¤
+			æ–¹é’ˆ
+			è°ƒåŠ¨
+			å‡ºå¾
+			å¾å…µ
+			ä»»å‘½		//æ”¿åŠ¡æ‹…å½“for current city	å°†å†›ä½	å¤ªå®ˆ	å†›å¸ˆ	æµæ”¾
+			å»¶æ½
+			å¤–äº¤
+			è°æŠ¥
+		ä»»åŠ¡
+			ä¸»å‘½ä»»åŠ¡
+			å•†å®¶
+			å…¶ä»–æ”¯çº¿ä»»åŠ¡
+		æ‹œè®¿
+		è§é—»
 	]]
 	if kind==0 then
 		local m={
-					{"ÃüÁî",nil,1,JY.Base["ĞĞ¶¯Á¦"]>0};
-					{"ÈÎÎñ",nil,1,JY.Base["ĞĞ¶¯Á¦"]>0};
-					{"¼ûÎÅ",nil,1,JY.Base["ĞĞ¶¯Á¦"]>0};
-					{"°İ·Ã",nil,1,JY.Base["ĞĞ¶¯Á¦"]>0};
-					{"×Ô¼º",nil,1,JY.Base["ĞĞ¶¯Á¦"]>0};
-					{"ĞİÏ¢",nil,1,true};
+					{"å‘½ä»¤",nil,1,JY.Base["è¡ŒåŠ¨åŠ›"]>0};
+					{"ä»»åŠ¡",nil,1,JY.Base["è¡ŒåŠ¨åŠ›"]>0};
+					{"è§é—»",nil,1,JY.Base["è¡ŒåŠ¨åŠ›"]>0};
+					{"æ‹œè®¿",nil,1,JY.Base["è¡ŒåŠ¨åŠ›"]>0};
+					{"è‡ªå·±",nil,1,JY.Base["è¡ŒåŠ¨åŠ›"]>0};
+					{"ä¼‘æ¯",nil,1,true};
 				}
 		while true do
-			local r=TalkMenu(pid,"ÏÂÒ»²½ÒªÔõÃ´°ì£¿",m);
+			local r=TalkMenu(pid,"ä¸‹ä¸€æ­¥è¦æ€ä¹ˆåŠï¼Ÿ",m);
 			if r==0 then
 				return;
 			elseif r==4 then
-				local tstr="[name]¶ÔÏó[normal]£º[Green]%s[Normal][n][name]Ğ§¹û[normal]£ºÖ´ĞĞÎä½«µÈ¼¶ÉÏÉı[n][name]ÏûºÄ[normal]£ºÎï×Ê -100[n][name]Ïà¹Ø[normal]£º[wheat]ÎäÁ¦[normal]¡¢[wheat]Í³ÂÊ[normal]¸ßÓĞÀû[n]¡¡¡¡¡¡³ÖÓĞ[wheat]Á·±ø[normal]¼¼ÄÜÕß£¬Ğ§¹ûÉÏÉı"
-				local eid=ShowPersonList(GetCityWujiang(JY.Person[JY.PID]["ËùÔÚ"],{JY.PID}));
-				if eid>0 and ConfirmYesNo("[B][wheat]°İ·Ã",string.format(tstr,JY.Person[eid]["Ãû³Æ"])) then
-					JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+				local tstr="[name]å¯¹è±¡[normal]ï¼š[Green]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šæ‰§è¡Œæ­¦å°†ç­‰çº§ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -100[n][name]ç›¸å…³[normal]ï¼š[wheat]æ­¦åŠ›[normal]ã€[wheat]ç»Ÿç‡[normal]é«˜æœ‰åˆ©[n]ã€€ã€€ã€€æŒæœ‰[wheat]ç»ƒå…µ[normal]æŠ€èƒ½è€…ï¼Œæ•ˆæœä¸Šå‡"
+				local eid=ShowPersonList(GetCityWujiang(JY.Person[JY.PID]["æ‰€åœ¨"],{JY.PID}));
+				if eid>0 and ConfirmYesNo("[B][wheat]æ‹œè®¿",string.format(tstr,JY.Person[eid]["åç§°"])) then
+					JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 					PlayWavE(3);
 					DrawGame();
-					Talk(eid,"½øĞĞÁËÑµÁ·");
+					Talk(eid,"è¿›è¡Œäº†è®­ç»ƒ");
 					return;
 				end
 			elseif r==6 then
-				if TalkYesNo(pid,"½áÊøµ±Ç°»ØºÏ£¬È·¶¨Âğ£¿") then
+				if TalkYesNo(pid,"ç»“æŸå½“å‰å›åˆï¼Œç¡®å®šå—ï¼Ÿ") then
 					--Asura_Build();
 					Asura_Report();
 					return;
@@ -792,13 +792,13 @@ function Asura_Manual_ActionMenu(pid,kind)
 				local str2="";
 				if  r==1 then
 					m2={
-								{"³öÕ÷",nil,1,true};
-								{"µ÷¶¯",nil,1,true};
-								{"ÈÎÃü",nil,1,true};
-								{"Íâ½»",nil,1,true};
-								{"Õ÷±ø",nil,1,true};
+								{"å‡ºå¾",nil,1,true};
+								{"è°ƒåŠ¨",nil,1,true};
+								{"ä»»å‘½",nil,1,true};
+								{"å¤–äº¤",nil,1,true};
+								{"å¾å…µ",nil,1,true};
 							}
-					str2="¶Ô²¿ÏÂ´«´ïÃüÁî¡£";
+					str2="å¯¹éƒ¨ä¸‹ä¼ è¾¾å‘½ä»¤ã€‚";
 				elseif r==2 then
 					m2={
 								{"N/A",nil,1,true};
@@ -808,75 +808,75 @@ function Asura_Manual_ActionMenu(pid,kind)
 								{"N/A",nil,0,true};
 								{"N/A",nil,1,true};
 							}
-					str2="Ö´ĞĞ¾ıÖ÷ÏÂ´ïµÄÈÎÎñ¡£";
+					str2="æ‰§è¡Œå›ä¸»ä¸‹è¾¾çš„ä»»åŠ¡ã€‚";
 				elseif r==3 then
 					m2={
-							{"Å©µØ",nil,1,true};
-							{"ÊĞ³¡",nil,1,true};
-							{"¹¤·¿",nil,1,true};
-							{"±øÓª",nil,1,true};
-							{"×¤Ëù",nil,1,true};
-							{"³ÇÇ½",nil,1,true};
-							{"¾Æ¼Ò",nil,1,true};
+							{"å†œåœ°",nil,1,true};
+							{"å¸‚åœº",nil,1,true};
+							{"å·¥æˆ¿",nil,1,true};
+							{"å…µè¥",nil,1,true};
+							{"é©»æ‰€",nil,1,true};
+							{"åŸå¢™",nil,1,true};
+							{"é…’å®¶",nil,1,true};
 							}
-					str2="¼ûÎÅ¡£";
+					str2="è§é—»ã€‚";
 				elseif r==5 then
 					m2={
-							{"ÒıÍË",nil,1,true};
-							{"ÏÂÒ°",nil,1,true};
-							{"ÊË¹Ù",nil,1,true};
-							{"¹ºÂò",nil,1,true};
-							{"¶ÍÁ¶",nil,1,true};
-							{"ÒÆ¶¯",nil,1,true};
+							{"å¼•é€€",nil,1,true};
+							{"ä¸‹é‡",nil,1,true};
+							{"ä»•å®˜",nil,1,true};
+							{"è´­ä¹°",nil,1,true};
+							{"é”»ç‚¼",nil,1,true};
+							{"ç§»åŠ¨",nil,1,true};
 							}
-					str2="¼ûÎÅ¡£";
+					str2="è§é—»ã€‚";
 				end
 				while true do
 					r2=TalkMenu(pid,str2,m2);
 					if r2==0 then
 						break;
-					elseif 10*r+r2==11 then	--³öÕ÷
-						local tstr="[name]¶ÔÏó[normal]£º[Red]%s[Normal][n][name]Ğ§¹û[normal]£º³öÕ÷ÒÔÕ¼Áì³Ç³Ø[n][name]ÏûºÄ[normal]£ºÎï×Ê -%d[n][name]µÀÂ·[normal]£º%s[n][name]¾àÀë[normal]£º%s"
-						local cid=ShowCityList(GetAtkCity(JY.Person[JY.PID]["ËùÔÚ"]),1);
+					elseif 10*r+r2==11 then	--å‡ºå¾
+						local tstr="[name]å¯¹è±¡[normal]ï¼š[Red]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šå‡ºå¾ä»¥å é¢†åŸæ± [n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -%d[n][name]é“è·¯[normal]ï¼š%s[n][name]è·ç¦»[normal]ï¼š%s"
+						local cid=ShowCityList(GetAtkCity(JY.Person[JY.PID]["æ‰€åœ¨"]),1);
 						if cid>0 then
-							--if TalkYesNo(pid,"¹¥´ò[Red]"..JY.City[cid]["Ãû³Æ"].."[Normal]£¬ĞèÒª¾­¹ı[Orange]"..GetPath(cid,JY.FID).."[Normal]\\n¿ÉÒÔÂğ£¿") then
-							local wid=GetPath(JY.Person[JY.PID]["ËùÔÚ"],cid);
+							--if TalkYesNo(pid,"æ”»æ‰“[Red]"..JY.City[cid]["åç§°"].."[Normal]ï¼Œéœ€è¦ç»è¿‡[Orange]"..GetPath(cid,JY.FID).."[Normal]\\nå¯ä»¥å—ï¼Ÿ") then
+							local wid=GetPath(JY.Person[JY.PID]["æ‰€åœ¨"],cid);
 							local jl,dl=1,1;
 							local cost=500;
 							WarIni();
-							War.ArmyA1=SelectArmy(JY.Person[JY.PID]["ËùÔÚ"]);
+							War.ArmyA1=SelectArmy(JY.Person[JY.PID]["æ‰€åœ¨"]);
 							War.ArmyB1=AutoSelectArmy(cid);
 							if #War.ArmyA1>0 then
-								JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
-								JY.Base["¹¥´ò³Ç³Ø"]=cid;
+								JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
+								JY.Base["æ”»æ‰“åŸæ± "]=cid;
 								LLK_III_Main(wid);
 								return;
 							end
 						end
-					elseif 10*r+r2==12 then	--µ÷¶¯
+					elseif 10*r+r2==12 then	--è°ƒåŠ¨
 						
-					elseif 10*r+r2==13 then	--ÈÎÃü
-						local cid=JY.Person[JY.PID]["ËùÔÚ"];
+					elseif 10*r+r2==13 then	--ä»»å‘½
+						local cid=JY.Person[JY.PID]["æ‰€åœ¨"];
 						if Assign(cid) then
-							JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+							JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 							return;
 						end
-					elseif 10*r+r2==15 then	--Õ÷±ø
-						local tstr="[name]¶ÔÏó[normal]£º[Green]%s[Normal][n][name]Ğ§¹û[normal]£ºËùÊô¶¼ÊĞ±øÁ¦ÉÏÉı[n][name]ÏûºÄ[normal]£ºÎï×Ê -100[n][name]Ïà¹Ø[normal]£º[wheat]ÎäÁ¦[normal]¡¢[wheat]Í³ÂÊ[normal]¸ßÓĞÀû[n]¡¡¡¡¡¡³ÖÓĞ[wheat]Á·±ø[normal]¼¼ÄÜÕß£¬Ğ§¹ûÉÏÉı"
-						local eid=ShowPersonList(GetCityWujiang(JY.Person[JY.PID]["ËùÔÚ"],{JY.PID}));
-						if eid>0 and ConfirmYesNo("[B][wheat]Õ÷±ø",string.format(tstr,JY.Person[eid]["Ãû³Æ"])) then
-							JY.Base["ĞĞ¶¯Á¦"]=limitX(JY.Base["ĞĞ¶¯Á¦"]-1,0,9);
+					elseif 10*r+r2==15 then	--å¾å…µ
+						local tstr="[name]å¯¹è±¡[normal]ï¼š[Green]%s[Normal][n][name]æ•ˆæœ[normal]ï¼šæ‰€å±éƒ½å¸‚å…µåŠ›ä¸Šå‡[n][name]æ¶ˆè€—[normal]ï¼šç‰©èµ„ -100[n][name]ç›¸å…³[normal]ï¼š[wheat]æ­¦åŠ›[normal]ã€[wheat]ç»Ÿç‡[normal]é«˜æœ‰åˆ©[n]ã€€ã€€ã€€æŒæœ‰[wheat]ç»ƒå…µ[normal]æŠ€èƒ½è€…ï¼Œæ•ˆæœä¸Šå‡"
+						local eid=ShowPersonList(GetCityWujiang(JY.Person[JY.PID]["æ‰€åœ¨"],{JY.PID}));
+						if eid>0 and ConfirmYesNo("[B][wheat]å¾å…µ",string.format(tstr,JY.Person[eid]["åç§°"])) then
+							JY.Base["è¡ŒåŠ¨åŠ›"]=limitX(JY.Base["è¡ŒåŠ¨åŠ›"]-1,0,9);
 							PlayWavE(3);
 							DrawGame();
 							Talk(eid,JY.Str[math.random(6271,6274)]);
-							local cid=JY.Person[JY.PID]["ËùÔÚ"];
-							local old=JY.City[cid]["±øÁ¦"];
-							JY.City[cid]["±øÁ¦"]=limitX(JY.City[cid]["±øÁ¦"]+20*ValueAdjust(JY.Person[eid]["Í³ÂÊ"],100),0,500000);
-							local new=JY.City[cid]["±øÁ¦"];
-							Talk(eid,string.format("[name]Ê¿±øÊı[normal]£º %5d  ¡ú %5d (%+d)",old,new,new-old));
+							local cid=JY.Person[JY.PID]["æ‰€åœ¨"];
+							local old=JY.City[cid]["å…µåŠ›"];
+							JY.City[cid]["å…µåŠ›"]=limitX(JY.City[cid]["å…µåŠ›"]+20*ValueAdjust(JY.Person[eid]["ç»Ÿç‡"],100),0,500000);
+							local new=JY.City[cid]["å…µåŠ›"];
+							Talk(eid,string.format("[name]å£«å…µæ•°[normal]ï¼š %5d  â†’ %5d (%+d)",old,new,new-old));
 							return;
 						end
-					elseif 10*r+r2==56 then	--ÒÆ¶¯
+					elseif 10*r+r2==56 then	--ç§»åŠ¨
 					elseif r==3 then
 						
 					end
@@ -887,15 +887,15 @@ function Asura_Manual_ActionMenu(pid,kind)
 		DrawGame()
 		Talk(pid,AsuraGenTalkString(kind,pid,JY.PID));
 	else
-		Talk(pid,"ÄãºÃ£¬ÎÒÊÇ"..JY.Person[pid]["Ãû³Æ"]);
+		Talk(pid,"ä½ å¥½ï¼Œæˆ‘æ˜¯"..JY.Person[pid]["åç§°"]);
 	end
 end
 function Asura_Manual_Action(pid,kind)
 	local str={	"1","2","3","4","5","6","7","8","9","10",
-				"¹¥´òÖÆ¶¨³Ç³Ø","ÑµÁ·Ö¸¶¨Îä½«£¬Ìá¸ßÆä¾­Ñé¡£","ÌØÑµÖ¸¶¨Îä½«£¬´ó·ùÌá¸ßÆä¾­Ñé¡£","ÑµÁ·È«¾üÎä½«£¬Ìá¸ßÆä¾­Ñé¡£","ÌØÑµÈ«¾üÎä½«£¬´ó·ùÌá¸ßÆä¾­Ñé¡£","5","6","7","8","9","10",
-				"Ì½Ë÷ÔÚÒ°Îä½«£¬Ò²¿ÉÄÜÓĞÆäËü·¢ÏÖ¡£","ÇóÏÍ£¬¿ÉÄÜ·¢ÏÖ¶àÎ»Îä½«¡£","ÖÎÓúÖ¸¶¨Îä½«£¬²¿·Ö»Ö¸´ÆäÆ£ÀÍ¶È¡£","È¬ÓúÖ¸¶¨Îä½«£¬ÍêÈ«»Ö¸´ÆäÆ£ÀÍ¶È¡£","ÖÎÓúÈ«¾üÎä½«£¬²¿·Ö»Ö¸´ÆäÆ£ÀÍ¶È¡£","15","16","17","18","19","20",
-				"Ö¸ÅÉÄÚÕş¸ºÔğÈË¡£","½øĞĞ½»Ò×£¬ÒÔ»ñÈ¡½ğÇ®ÒÔ¼°Îï×Ê¡£","··ÂôÎï×Ê£¬ÒÔ»ñÈ¡´óÁ¿½ğÇ®¡£","ºáÕ÷±©Á²£¬ÒÔ»ñÈ¡´óÁ¿½ğÇ®ÒÔ¼°Îï×Ê¡£","²¼Ê©Îï×Ê£¬ÒÔÌá¸ßÃñĞÄ¡£","²¼Ê©½ğÇ®ÒÔ¼°Îï×Ê£¬ÒÔ´ó·ùÌá¸ßÃñĞÄ¡£","26","27","28","29","30",
-				"ÈÎÃüÎä½«¸ºÔğµÄÖ°Îñ¡£","ÃüÁîÖ¸¶¨Îä½«Íâ³öĞŞĞĞÒ»Äê¡£","·ÅÖğÖ¸¶¨Îä½«¡£","34","35","36","37","38","39","40",
+				"æ”»æ‰“åˆ¶å®šåŸæ± ","è®­ç»ƒæŒ‡å®šæ­¦å°†ï¼Œæé«˜å…¶ç»éªŒã€‚","ç‰¹è®­æŒ‡å®šæ­¦å°†ï¼Œå¤§å¹…æé«˜å…¶ç»éªŒã€‚","è®­ç»ƒå…¨å†›æ­¦å°†ï¼Œæé«˜å…¶ç»éªŒã€‚","ç‰¹è®­å…¨å†›æ­¦å°†ï¼Œå¤§å¹…æé«˜å…¶ç»éªŒã€‚","5","6","7","8","9","10",
+				"æ¢ç´¢åœ¨é‡æ­¦å°†ï¼Œä¹Ÿå¯èƒ½æœ‰å…¶å®ƒå‘ç°ã€‚","æ±‚è´¤ï¼Œå¯èƒ½å‘ç°å¤šä½æ­¦å°†ã€‚","æ²»æ„ˆæŒ‡å®šæ­¦å°†ï¼Œéƒ¨åˆ†æ¢å¤å…¶ç–²åŠ³åº¦ã€‚","ç—Šæ„ˆæŒ‡å®šæ­¦å°†ï¼Œå®Œå…¨æ¢å¤å…¶ç–²åŠ³åº¦ã€‚","æ²»æ„ˆå…¨å†›æ­¦å°†ï¼Œéƒ¨åˆ†æ¢å¤å…¶ç–²åŠ³åº¦ã€‚","15","16","17","18","19","20",
+				"æŒ‡æ´¾å†…æ”¿è´Ÿè´£äººã€‚","è¿›è¡Œäº¤æ˜“ï¼Œä»¥è·å–é‡‘é’±ä»¥åŠç‰©èµ„ã€‚","è´©å–ç‰©èµ„ï¼Œä»¥è·å–å¤§é‡é‡‘é’±ã€‚","æ¨ªå¾æš´æ•›ï¼Œä»¥è·å–å¤§é‡é‡‘é’±ä»¥åŠç‰©èµ„ã€‚","å¸ƒæ–½ç‰©èµ„ï¼Œä»¥æé«˜æ°‘å¿ƒã€‚","å¸ƒæ–½é‡‘é’±ä»¥åŠç‰©èµ„ï¼Œä»¥å¤§å¹…æé«˜æ°‘å¿ƒã€‚","26","27","28","29","30",
+				"ä»»å‘½æ­¦å°†è´Ÿè´£çš„èŒåŠ¡ã€‚","å‘½ä»¤æŒ‡å®šæ­¦å°†å¤–å‡ºä¿®è¡Œä¸€å¹´ã€‚","æ”¾é€æŒ‡å®šæ­¦å°†ã€‚","34","35","36","37","38","39","40",
 				"41","42","43","44","45","46","47","48","49","50"}
 	if TalkYesNo(pid,str[kind]) then
 		
@@ -908,13 +908,13 @@ function TalkMenu(p,str,m)
 	local name="";
 	local headid=0;
 	if type(p)=='number' then
-		headid=JY.Person[p]["ÈİÃ²"];
-		name=JY.Person[p]["Ãû³Æ"];
+		headid=JY.Person[p]["å®¹è²Œ"];
+		name=JY.Person[p]["åç§°"];
 	elseif type(name)=='string' then
 		local pid=JY.NameList[p];
 		if pid~=nil then
-			headid=JY.Person[pid]["ÈİÃ²"];
-			name=JY.Person[pid]["Ãû³Æ"];
+			headid=JY.Person[pid]["å®¹è²Œ"];
+			name=JY.Person[pid]["åç§°"];
 		else
 			name=p;
 		end
@@ -931,7 +931,7 @@ end
 
 function CleanSmap()
 	for i,v in pairs(JY.Scene) do
-		v["ÈËÎï"]=-1;
+		v["äººç‰©"]=-1;
 	end
 end
 function AddPerson(name,row,column,event)
@@ -945,11 +945,11 @@ function AddPerson(name,row,column,event)
 		return false;
 	end
 	for i=0,100 do
-		if JY.Scene[i]["ÈËÎï"]==-1 then
-			JY.Scene[i]["ÈËÎï"]=pid;
-			JY.Scene[i]["×ø±êX"]=36+110*(column-1);
-			JY.Scene[i]["×ø±êY"]=36+172*(row-1);
-			JY.Scene[i]["ÀàĞÍ"]=event;
+		if JY.Scene[i]["äººç‰©"]==-1 then
+			JY.Scene[i]["äººç‰©"]=pid;
+			JY.Scene[i]["åæ ‡X"]=36+110*(column-1);
+			JY.Scene[i]["åæ ‡Y"]=36+172*(row-1);
+			JY.Scene[i]["ç±»å‹"]=event;
 			break;
 		end
 	end
@@ -965,16 +965,16 @@ function DecPerson(name)
 		return false;
 	end
 	for i,v in pairs(JY.Scene) do
-		if v["ÈËÎï"]==pid then
-			v["ÈËÎï"]=-1;
+		if v["äººç‰©"]==pid then
+			v["äººç‰©"]=-1;
 			break;
 		end
 	end
 	for i=1,20 do
-		if JY.Scene[i]["ÈËÎï"]<=0 then
-			JY.Scene[i]["ÈËÎï"]=JY.Scene[i+1]["ÈËÎï"];
-			JY.Scene[i]["ÀàĞÍ"]=JY.Scene[i+1]["ÀàĞÍ"];
-			JY.Scene[i+1]["ÈËÎï"]=-1;
+		if JY.Scene[i]["äººç‰©"]<=0 then
+			JY.Scene[i]["äººç‰©"]=JY.Scene[i+1]["äººç‰©"];
+			JY.Scene[i]["ç±»å‹"]=JY.Scene[i+1]["ç±»å‹"];
+			JY.Scene[i+1]["äººç‰©"]=-1;
 		end
 	end
 end
@@ -982,8 +982,8 @@ function Search(pid,t)
 	for i=1,t do
 		local p={};
 		for i=1,JY.PersonNum-1 do
-			if JY.Person[i]["µÇ³¡"]==1 and JY.Person[i]["ÊÆÁ¦"]==0 then
-				if math.random(2,5)>JY.Person[i]["Æ·¼¶"] then
+			if JY.Person[i]["ç™»åœº"]==1 and JY.Person[i]["åŠ¿åŠ›"]==0 then
+				if math.random(2,5)>JY.Person[i]["å“çº§"] then
 					table.insert(p,i);
 				end
 			end
@@ -995,19 +995,19 @@ function Search(pid,t)
 			PlayWavE(2);
 			Talk(pid,AsuraGenTalkString(41,0,0));
 		elseif r<0.45 then
-			Talk(pid,"ÕÒµ½ÁËÒ»µãÎï×Ê¡£");
+			Talk(pid,"æ‰¾åˆ°äº†ä¸€ç‚¹ç‰©èµ„ã€‚");
 		else
 			PlayWavE(3);
-			JY.Person[eid]["µÇ³¡"]=2;
+			JY.Person[eid]["ç™»åœº"]=2;
 			Talk(pid,AsuraGenTalkString(42,pid,eid));
 			JY.DG.pid=eid;
-			local zm=TalkYesNo(pid,"ÒªÕĞÄ¼[Green]"..JY.Person[eid]["Ãû³Æ"].."[Normal]Âğ£¿")
+			local zm=TalkYesNo(pid,"è¦æ‹›å‹Ÿ[Green]"..JY.Person[eid]["åç§°"].."[Normal]å—ï¼Ÿ")
 			JY.DG.pid=-1;
 			DrawGame();
 			if zm then
 				Hire(pid,eid);
 			else
-				Talk(pid,"ÄãºÃ£¬ÔÙ¼û¡£");
+				Talk(pid,"ä½ å¥½ï¼Œå†è§ã€‚");
 			end
 		end
 	end
@@ -1021,8 +1021,8 @@ function Hire(pid,eid)
 	if RND(sucess_ratio) then
 		PlayWavE(3);
 		Talk(eid,AsuraGenTalkString(44,eid,pid));
-		JY.Person[eid]["ÊÆÁ¦"]=JY.FID;
-		JY.Person[eid]["µÇ³¡"]=3;
+		JY.Person[eid]["åŠ¿åŠ›"]=JY.FID;
+		JY.Person[eid]["ç™»åœº"]=3;
 		UpdateForcePersonNum(JY.FID);
 	else
 		PlayWavE(2);
@@ -1030,81 +1030,81 @@ function Hire(pid,eid)
 	end
 end
 function GetXX(id1,id2)
-	local xx=math.abs(JY.Person[id1]["ÏàĞÔ"]-JY.Person[id2]["ÏàĞÔ"]);
+	local xx=math.abs(JY.Person[id1]["ç›¸æ€§"]-JY.Person[id2]["ç›¸æ€§"]);
 	xx=math.min(xx,149-xx);	--So, the range is 0~74;
 	return xx;
 end
 function hireRate(pid, eid)
-  --pid¶ÔeidµÄhire rate
-  --ÓÃÓÚÅĞ¶Ï: 1.pidÊÇ·ñÈ¥ÕĞÀ¿eid; 2.pidÊÇ·ñÍ³Ò»eidµÄÊË¹ÙÉêÇë; 3.pidÊÇ·ñ½ÓÊÜeidµÄÕĞÀ¿
-  --ËùÒÔ, AÕĞÄ¼B, Ñ¡Ó´ÏÈhireRate(A,B)(ÊÇ·ñÈ¥ÕĞÀ¿),È»ºó»¹ĞèÒªhireRate(B,A)(ÊÇ·ñ½ÓÊÜ)
+  --pidå¯¹eidçš„hire rate
+  --ç”¨äºåˆ¤æ–­: 1.pidæ˜¯å¦å»æ‹›æ½eid; 2.pidæ˜¯å¦ç»Ÿä¸€eidçš„ä»•å®˜ç”³è¯·; 3.pidæ˜¯å¦æ¥å—eidçš„æ‹›æ½
+  --æ‰€ä»¥, Aæ‹›å‹ŸB, é€‰å“Ÿå…ˆhireRate(A,B)(æ˜¯å¦å»æ‹›æ½),ç„¶åè¿˜éœ€è¦hireRate(B,A)(æ˜¯å¦æ¥å—)
   local v1, v2, v3, v4 = 0, 0, 0, 0;
   v1 = getRelationship(pid, eid);
   if v1 < 0 then
     return 0;
   end
-  if JY.Person[pid]["ÒåÀí"] > 0 then
-    v2 = (75 - GetXX(pid, eid)) * 4 / 3 * (0.6 + JY.Person[pid]["ÒåÀí"] / 5);
+  if JY.Person[pid]["ä¹‰ç†"] > 0 then
+    v2 = (75 - GetXX(pid, eid)) * 4 / 3 * (0.6 + JY.Person[pid]["ä¹‰ç†"] / 5);
   end
-  if JY.Person[pid]["°®ÓÂ"] > 0 then
-    v3 = (JY.Person[eid]["ÎäÁ¦"] + JY.Person[eid]["Í³ÂÊ"]) / 2 * (0.6 + JY.Person[pid]["°®ÓÂ"] / 5);
+  if JY.Person[pid]["çˆ±å‹‡"] > 0 then
+    v3 = (JY.Person[eid]["æ­¦åŠ›"] + JY.Person[eid]["ç»Ÿç‡"]) / 2 * (0.6 + JY.Person[pid]["çˆ±å‹‡"] / 5);
   end
-  if JY.Person[pid]["°®²Å"] > 0 then
-    v4 = (JY.Person[eid]["ÖÇÄ±"] + JY.Person[eid]["ÕşÎñ"]) / 2 * (0.6 + JY.Person[pid]["°®²Å"] / 5);
+  if JY.Person[pid]["çˆ±æ‰"] > 0 then
+    v4 = (JY.Person[eid]["æ™ºè°‹"] + JY.Person[eid]["æ”¿åŠ¡"]) / 2 * (0.6 + JY.Person[pid]["çˆ±æ‰"] / 5);
   end
       lib.Debug("hire " .. v1 .. ", " .. v2 .. ", " .. v3 .. ", " .. v4)
   return math.max(v1, v2, v3, v4);
 end
 function getRelationship(pid, eid)
-  --pid¶ÔeidµÄ¹ØÏµ/³Æºô/Ç×ÃÜµÈ
-  --return pid¶ÔeidµÄ Ç×ÃÜ¶È,³ÆÎ½
+  --pidå¯¹eidçš„å…³ç³»/ç§°å‘¼/äº²å¯†ç­‰
+  --return pidå¯¹eidçš„ äº²å¯†åº¦,ç§°è°“
   local title = "";
   local feeling = 0;
   local p = JY.Person[pid];
   local e = JY.Person[eid];
   
-  if p["³ğµĞ"] > 0 and eid == p["³ğµĞ"] then  --³ğµĞ
+  if p["ä»‡æ•Œ"] > 0 and eid == p["ä»‡æ•Œ"] then  --ä»‡æ•Œ
     feeling = -100;
-    title = e["Ãû³Æ"];
-  elseif p["ÒåĞÖ"] > 0 and e["ÒåĞÖ"] == p["ÒåĞÖ"] then  --ÒåĞÖµÜ
+    title = e["åç§°"];
+  elseif p["ä¹‰å…„"] > 0 and e["ä¹‰å…„"] == p["ä¹‰å…„"] then  --ä¹‰å…„å¼Ÿ
     feeling = 100;
-    if eid == p["ÒåĞÖ"] then
-      if e["ĞÔ±ğ"] == 0 then
-        title = "´ó¸ç";
+    if eid == p["ä¹‰å…„"] then
+      if e["æ€§åˆ«"] == 0 then
+        title = "å¤§å“¥";
       else
-        title = "½ã½ã";
+        title = "å§å§";
       end
     else
-      title = e["×Ö"];
+      title = e["å­—"];
     end
-  elseif (p["ÅäÅ¼"] > 0 and eid == p["ÅäÅ¼"]) or (e["ÅäÅ¼"] > 0 and pid == e["ÅäÅ¼"]) then --ÅäÅ¼
+  elseif (p["é…å¶"] > 0 and eid == p["é…å¶"]) or (e["é…å¶"] > 0 and pid == e["é…å¶"]) then --é…å¶
     feeling = 80;
-    if e["ĞÔ±ğ"] == 0 then
-      title = "·ò¾ı";
+    if e["æ€§åˆ«"] == 0 then
+      title = "å¤«å›";
     else
-      title = "Äï×Ó";
+      title = "å¨˜å­";
     end
-  elseif p["¸¸Ç×"] > 0 and eid == p["¸¸Ç×"] then  --¸¸Ç×
+  elseif p["çˆ¶äº²"] > 0 and eid == p["çˆ¶äº²"] then  --çˆ¶äº²
     feeling = 70;
-    title = "¸¸Ç×";
-  elseif p["Ä¸Ç×"] > 0 and eid == p["Ä¸Ç×"] then --Ä¸Ç×
+    title = "çˆ¶äº²";
+  elseif p["æ¯äº²"] > 0 and eid == p["æ¯äº²"] then --æ¯äº²
     feeling = 70;
-    title = "Ä¸Ç×";
-  elseif (p["¸¸Ç×"] > 0 and p["¸¸Ç×"] == e["¸¸Ç×"]) or (p["Ä¸Ç×"] > 0 and p["Ä¸Ç×"] == e["Ä¸Ç×"]) then  --ĞÖµÜ
+    title = "æ¯äº²";
+  elseif (p["çˆ¶äº²"] > 0 and p["çˆ¶äº²"] == e["çˆ¶äº²"]) or (p["æ¯äº²"] > 0 and p["æ¯äº²"] == e["æ¯äº²"]) then  --å…„å¼Ÿ
     feeling = 60;
-    if e["ÉúÄê"] == p["ÉúÄê"] then
-      if e["ĞÔ±ğ"] == 0 then
-        title = "ĞÖ³¤";
+    if e["ç”Ÿå¹´"] == p["ç”Ÿå¹´"] then
+      if e["æ€§åˆ«"] == 0 then
+        title = "å…„é•¿";
       else
-        title = "½ã½ã";
+        title = "å§å§";
       end
     else
-      title = e["×Ö"];
+      title = e["å­—"];
     end
   else
-    feeling = e["ºÃ¸Ğ"] / 2;
+    feeling = e["å¥½æ„Ÿ"] / 2;
     feeling = 0;
-    title = e["Ãû³Æ"];
+    title = e["åç§°"];
   end
   return feeling, title;
 end
@@ -1115,7 +1115,7 @@ function Assignment()
 	local y0=(CC.ScreenH-height)/2;
 	local p=JY.Person[JY.PID];
 	local add=50;
-	local attr={"Í³ÂÊ","ÎäÁ¦","ÖÇÄ±","ÕşÎñ","÷ÈÁ¦"};
+	local attr={"ç»Ÿç‡","æ­¦åŠ›","æ™ºè°‹","æ”¿åŠ¡","é­…åŠ›"};
 	local expmax={};
 	for i=1,#attr do
 		local par=attr[i];
@@ -1128,15 +1128,15 @@ function Assignment()
 	end
 	local sel=0;
 	local bt={};
-	button_mainbt_2(bt, "¾ö¶¨", "·µ»Ø", 1, 2, CC.ScreenH - y0 - 58);
-  table.insert(bt, button_creat(1, 10, x0 + 40, y0 + 10, "×Ô¶¯", true, true));
-  table.insert(bt, button_creat(1, 11, x0 + 40, y0 + 50, "¿ª·¢", true, true));
-  table.insert(bt, button_creat(1, 12, x0 + 40, y0 + 90, "ÉÌÒµ", true, true));
-  table.insert(bt, button_creat(1, 13, x0 + 40, y0 + 130, "¼¼Êõ", true, true));
-  table.insert(bt, button_creat(1, 14, x0 + 40, y0 + 170, "ÖÎ°²", true, true));
-  table.insert(bt, button_creat(1, 15, x0 + 40, y0 + 210, "ĞŞ²¹", true, true));
-  table.insert(bt, button_creat(1, 16, x0 + 40, y0 + 250, "Ä¼±ø", true, true));
-  table.insert(bt, button_creat(1, 17, x0 + 40, y0 + 290, "ÑµÁ·", true, true));
+	button_mainbt_2(bt, "å†³å®š", "è¿”å›", 1, 2, CC.ScreenH - y0 - 58);
+  table.insert(bt, button_creat(1, 10, x0 + 40, y0 + 10, "è‡ªåŠ¨", true, true));
+  table.insert(bt, button_creat(1, 11, x0 + 40, y0 + 50, "å¼€å‘", true, true));
+  table.insert(bt, button_creat(1, 12, x0 + 40, y0 + 90, "å•†ä¸š", true, true));
+  table.insert(bt, button_creat(1, 13, x0 + 40, y0 + 130, "æŠ€æœ¯", true, true));
+  table.insert(bt, button_creat(1, 14, x0 + 40, y0 + 170, "æ²»å®‰", true, true));
+  table.insert(bt, button_creat(1, 15, x0 + 40, y0 + 210, "ä¿®è¡¥", true, true));
+  table.insert(bt, button_creat(1, 16, x0 + 40, y0 + 250, "å‹Ÿå…µ", true, true));
+  table.insert(bt, button_creat(1, 17, x0 + 40, y0 + 290, "è®­ç»ƒ", true, true));
 	local function redraw()
 		DrawGame();
 		LoadPicEnhance(73,x0,y0,width,height);
@@ -1145,18 +1145,18 @@ function Assignment()
 		for i=1,#attr do
 			local par=attr[i];
 			DrawStringEnhance(x,y+60*i,"[B]"..p[par],C_WHITE,24);
-			DrawStringEnhance(x+40,y+60*i,par.."¾­Ñé",C_Name,24);
+			DrawStringEnhance(x+40,y+60*i,par.."ç»éªŒ",C_Name,24);
 			local expstr;
 			if expmax[i]>0 then
-				expstr=string.format("%3d",math.floor(100*JY.Base[par.."¾­Ñé"]/expmax[i]));
+				expstr=string.format("%3d",math.floor(100*JY.Base[par.."ç»éªŒ"]/expmax[i]));
 				if i==sel then
-					expstr=expstr.."[green]+"..(math.floor(100*(JY.Base[par.."¾­Ñé"]+add)/expmax[i])-math.floor(100*JY.Base[par.."¾­Ñé"]/expmax[i]));
+					expstr=expstr.."[green]+"..(math.floor(100*(JY.Base[par.."ç»éªŒ"]+add)/expmax[i])-math.floor(100*JY.Base[par.."ç»éªŒ"]/expmax[i]));
 				end
 			else
 				expstr="--"
 			end
 			DrawStringEnhance(x+200,y+60*i,expstr,C_WHITE,24);
-			drawbar(x+40,y+24+60*i,1000*JY.Base[par.."¾­Ñé"]/expmax[i]);
+			drawbar(x+40,y+24+60*i,1000*JY.Base[par.."ç»éªŒ"]/expmax[i]);
 		end
 		if sel>0 then
 			bt[3+sel].on=2;
@@ -1177,16 +1177,16 @@ function Assignment()
 		if event==3 then
 			if btid==1 then
 				local par=attr[sel];
-				local old=math.floor(100*JY.Base[par.."¾­Ñé"]/expmax[sel]);
-				JY.Base[par.."¾­Ñé"]=JY.Base[par.."¾­Ñé"]+add;
-				local new=math.floor(100*JY.Base[par.."¾­Ñé"]/expmax[sel]);
+				local old=math.floor(100*JY.Base[par.."ç»éªŒ"]/expmax[sel]);
+				JY.Base[par.."ç»éªŒ"]=JY.Base[par.."ç»éªŒ"]+add;
+				local new=math.floor(100*JY.Base[par.."ç»éªŒ"]/expmax[sel]);
 				DrawGame();
 				if new>=100 then
-					JY.Base[par.."¾­Ñé"]=JY.Base[par.."¾­Ñé"]-expmax[sel];
+					JY.Base[par.."ç»éªŒ"]=JY.Base[par.."ç»éªŒ"]-expmax[sel];
 					p[par]=p[par]+1;
-					Talk(JY.PID,par.."ÉÏÉıÎª"..(p[par]).."¡£");
+					Talk(JY.PID,par.."ä¸Šå‡ä¸º"..(p[par]).."ã€‚");
 				else
-					Talk(JY.PID,par.."¾­ÑéÉÏÉıÁË"..(new-old).."¡£");
+					Talk(JY.PID,par.."ç»éªŒä¸Šå‡äº†"..(new-old).."ã€‚");
 				end
 				return true;
 			elseif btid==2 then
@@ -1201,35 +1201,35 @@ end
 function Visit(pid)
 	local ratio;
 	local str;
-	if JY.Person[pid]["ºÃ¸Ğ"]==0 then
+	if JY.Person[pid]["å¥½æ„Ÿ"]==0 then
 		ratio=0.7;
 	else
 		ratio=1;
 	end
 	if math.random()<ratio then
 		SetSceneID(69);
-		local old=JY.Person[pid]["ºÃ¸Ğ"];
+		local old=JY.Person[pid]["å¥½æ„Ÿ"];
 		local xx=GetXX(JY.PID,pid)+math.floor(old/2);
-		if JY.Person[pid]["ºÃ¸Ğ"]==0 then
+		if JY.Person[pid]["å¥½æ„Ÿ"]==0 then
 			str=JY.Str[math.random(15110,15111)];
-			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["Ãû³Æ"].."[Normal]");
+			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["åç§°"].."[Normal]");
 			Talk(JY.PID,str);
 			str=JY.Str[math.random(15115,15116)];
-			str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
-			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["Ãû³Æ"].."[Normal]");
+			str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
+			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["åç§°"].."[Normal]");
 			Talk(pid,str);
 			str=JY.Str[math.random(15120,15122)];
 			Talk(JY.PID,str);
-			JY.Person[pid]["ºÃ¸Ğ"]=limitX(JY.Person[pid]["ºÃ¸Ğ"]+math.max(1,math.floor(10-10*xx/100)+math.random(5)-math.random(5)),1,100);
+			JY.Person[pid]["å¥½æ„Ÿ"]=limitX(JY.Person[pid]["å¥½æ„Ÿ"]+math.max(1,math.floor(10-10*xx/100)+math.random(5)-math.random(5)),1,100);
 		else
 			str=JY.Str[math.random(15125,15127)];
-			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["Ãû³Æ"].."[Normal]");
+			str=string.gsub(str,"s2","[Green]"..JY.Person[JY.PID]["åç§°"].."[Normal]");
 			Talk(pid,str);
 			str=JY.Str[math.random(15130,15134)];
-			str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
+			str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
 			Talk(JY.PID,str);
 			local t_str={0,0,0,0,0,30}
-			for i,v in ipairs({"Í³ÂÊ","ÎäÁ¦","ÖÇÄ±","ÕşÎñ","÷ÈÁ¦"}) do
+			for i,v in ipairs({"ç»Ÿç‡","æ­¦åŠ›","æ™ºè°‹","æ”¿åŠ¡","é­…åŠ›"}) do
 				t_str[i]=math.max(JY.Person[pid][v]-70,0);
 			end
 			local kind=PercentRandom(t_str);
@@ -1239,20 +1239,20 @@ function Visit(pid)
 				str=JY.Str[15135+8*kind+math.random(1,8)];
 			end
 			Talk(pid,str);
-			JY.Person[pid]["ºÃ¸Ğ"]=limitX(JY.Person[pid]["ºÃ¸Ğ"]+math.max(1,math.floor(20-20*xx/100)+math.random(3)-math.random(3)),1,100);
+			JY.Person[pid]["å¥½æ„Ÿ"]=limitX(JY.Person[pid]["å¥½æ„Ÿ"]+math.max(1,math.floor(20-20*xx/100)+math.random(3)-math.random(3)),1,100);
 		end
-		local new=JY.Person[pid]["ºÃ¸Ğ"];
+		local new=JY.Person[pid]["å¥½æ„Ÿ"];
 		if new>old then
 			PlayWavE(3);
-			DrawMulitStrBox(string.format("[green]%s [name]ºÃ¸Ğ [white]%3d -> %3d",JY.Person[pid]["Ãû³Æ"],old,new))
+			DrawMulitStrBox(string.format("[green]%s [name]å¥½æ„Ÿ [white]%3d -> %3d",JY.Person[pid]["åç§°"],old,new))
 		end
 		SetSceneID(0);
 	else
 		str=JY.Str[math.random(15100,15103)];
-		str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
+		str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
 		Talk(800,str);
 		str=JY.Str[math.random(15105,15108)];
-		str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
+		str=string.gsub(str,"s1","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
 		Talk(JY.PID,str);
 	end
 end
@@ -1263,7 +1263,7 @@ function Train()
 	local y0=(CC.ScreenH-height)/2;
 	local p=JY.Person[JY.PID];
 	local add=50;
-	local attr={"Í³ÂÊ","ÎäÁ¦","ÖÇÄ±","ÕşÎñ","÷ÈÁ¦"};
+	local attr={"ç»Ÿç‡","æ­¦åŠ›","æ™ºè°‹","æ”¿åŠ¡","é­…åŠ›"};
   local function getNextExp(val)
     return 20 + math.ceil(10000 / (110 - val));
   end
@@ -1277,7 +1277,7 @@ function Train()
   end
 	local sel=0;
 	local bt={};
-	button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2,CC.ScreenH-y0-58);
+	button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2,CC.ScreenH-y0-58);
 	for i=1,#attr do
 		table.insert(bt,button_creat(1,10+i,x0+280,y0-32+60*i,attr[i],true,p[attr[i]] < 100));
 	end
@@ -1285,23 +1285,23 @@ function Train()
 		DrawGame();
 		LoadPicEnhance(73,x0,y0,width,height);
 		local x,y=x0+40,y0-30;
-		lib.PicLoadCache(2,(p["ÈİÃ²"])*2,x,y+50,1,0,nil,nil,320);
+		lib.PicLoadCache(2,(p["å®¹è²Œ"])*2,x,y+50,1,0,nil,nil,320);
 		x=x+360;
 		for i=1,#attr do
 			local par=attr[i];
 			DrawStringEnhance(x,y+60*i,"[B]"..p[par],C_WHITE,24);
-			DrawStringEnhance(x+40,y+60*i,par.."¾­Ñé",C_Name,24);
+			DrawStringEnhance(x+40,y+60*i,par.."ç»éªŒ",C_Name,24);
 			local expstr;
       if p[par] < 100 then
-        expstr = string.format("%3d", getExpPercent(p[par], JY.Base[par .. "¾­Ñé"]));
+        expstr = string.format("%3d", getExpPercent(p[par], JY.Base[par .. "ç»éªŒ"]));
         if i == sel  then
-          expstr = expstr .. "[green]+" .. (getExpPercent(p[par], JY.Base[par .. "¾­Ñé"] + add) - getExpPercent(p[par], JY.Base[par .. "¾­Ñé"]))
+          expstr = expstr .. "[green]+" .. (getExpPercent(p[par], JY.Base[par .. "ç»éªŒ"] + add) - getExpPercent(p[par], JY.Base[par .. "ç»éªŒ"]))
         end
       else
         expstr = "--";
       end
 			DrawStringEnhance(x+200,y+60*i,expstr,C_WHITE,24);
-			drawbar(x+40,y+24+60*i, 10 * getExpPercent(p[par], JY.Base[par.."¾­Ñé"]));
+			drawbar(x+40,y+24+60*i, 10 * getExpPercent(p[par], JY.Base[par.."ç»éªŒ"]));
 		end
 		if sel>0 then
 			bt[3+sel].on=2;
@@ -1322,23 +1322,23 @@ function Train()
 		if event==3 then
 			if btid==1 then
 				local par = attr[sel];
-				local old = getExpPercent(p[par], JY.Base[par.."¾­Ñé"]);
-				JY.Base[par.."¾­Ñé"]=JY.Base[par.."¾­Ñé"]+add;
-				local new = getExpPercent(p[par], JY.Base[par.."¾­Ñé"]);
+				local old = getExpPercent(p[par], JY.Base[par.."ç»éªŒ"]);
+				JY.Base[par.."ç»éªŒ"]=JY.Base[par.."ç»éªŒ"]+add;
+				local new = getExpPercent(p[par], JY.Base[par.."ç»éªŒ"]);
 				DrawGame();
-        local str = TableRandom({ "Æ½ÈÕµÄ¿àÁ·ÊÇ·Ç³£ÖØÒªµÄ¡£",
-                                  "ÎªÁË²»¸ºÖÚÍûÍê³ÉÎÒµÄÊ¹Ãü£¬[n]±ØĞë¼Ó±¶Å¬Á¦¶ÍÁ¶ĞŞĞĞ¡£",
-                                  "ÎªÁËÔÚÂÒÊÀÖĞÉú´æÏÂÈ¥£¬[n]Ö»ÓĞÃ¿ÈÕ²»¶Ï¿àÁ·ĞŞĞĞ£¬[n]ÒÔÇó¸üÉÏÒ»²ãÂ¥¡£",
-                                  "½øĞŞÖ®µÀ£¬[n]ÈÕ»ıÔÂÀÛÓÈÎªÖØÒª¡£",
-                                  "¾«½øÖ®µÀ£¬[n]Î¨ÓĞÃ¿ÈÕ¿àÁ·¶øÒÑ¡£",
-                                  "ºô£¬½ñÌì¾Íµ½´ËÎªÖ¹°É£¡"});
+        local str = TableRandom({ "å¹³æ—¥çš„è‹¦ç»ƒæ˜¯éå¸¸é‡è¦çš„ã€‚",
+                                  "ä¸ºäº†ä¸è´Ÿä¼—æœ›å®Œæˆæˆ‘çš„ä½¿å‘½ï¼Œ[n]å¿…é¡»åŠ å€åŠªåŠ›é”»ç‚¼ä¿®è¡Œã€‚",
+                                  "ä¸ºäº†åœ¨ä¹±ä¸–ä¸­ç”Ÿå­˜ä¸‹å»ï¼Œ[n]åªæœ‰æ¯æ—¥ä¸æ–­è‹¦ç»ƒä¿®è¡Œï¼Œ[n]ä»¥æ±‚æ›´ä¸Šä¸€å±‚æ¥¼ã€‚",
+                                  "è¿›ä¿®ä¹‹é“ï¼Œ[n]æ—¥ç§¯æœˆç´¯å°¤ä¸ºé‡è¦ã€‚",
+                                  "ç²¾è¿›ä¹‹é“ï¼Œ[n]å”¯æœ‰æ¯æ—¥è‹¦ç»ƒè€Œå·²ã€‚",
+                                  "å‘¼ï¼Œä»Šå¤©å°±åˆ°æ­¤ä¸ºæ­¢å§ï¼"});
 				Talk(JY.PID, str)
         if new>=100 then
-					JY.Base[par.."¾­Ñé"]=JY.Base[par.."¾­Ñé"] - getNextExp(p[par]);
+					JY.Base[par.."ç»éªŒ"]=JY.Base[par.."ç»éªŒ"] - getNextExp(p[par]);
 					p[par]=p[par]+1;
-					DrawMulitStrBox(string.format("[Green]%s[Normal]µÄ%s³ÉÎª%dÁË£¡", p["Ãû³Æ"], par, p[par]));
+					DrawMulitStrBox(string.format("[Green]%s[Normal]çš„%sæˆä¸º%däº†ï¼", p["åç§°"], par, p[par]));
 				else
-					DrawMulitStrBox(string.format("[Green]%s[Normal]µÄ%s¾­Ñé³ÉÎª%d£¨%+d£©ÁË¡£", p["Ãû³Æ"], par, new, new - old));
+					DrawMulitStrBox(string.format("[Green]%s[Normal]çš„%sç»éªŒæˆä¸º%dï¼ˆ%+dï¼‰äº†ã€‚", p["åç§°"], par, new, new - old));
 				end
 				return true;
 			elseif btid==2 then
@@ -1356,15 +1356,15 @@ function TitleManual(fid)
 	local x0=(CC.ScreenW-width)/2;
 	local y0=(CC.ScreenH-height)/2;
 	local bt={};
-	button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2,CC.ScreenH-y0-58);
-	table.insert(bt,button_creat(1,11,320,y0-32,"×Ô¶¯ÈÎÃü",true,true));
-	table.insert(bt,button_creat(1,12,520,y0-32,"¸÷±ğÈÎÃü",true,true));
-	table.insert(bt,button_creat(1,13,620,y0-32,"È«½â³ı",true,true));
+	button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2,CC.ScreenH-y0-58);
+	table.insert(bt,button_creat(1,11,320,y0-32,"è‡ªåŠ¨ä»»å‘½",true,true));
+	table.insert(bt,button_creat(1,12,520,y0-32,"å„åˆ«ä»»å‘½",true,true));
+	table.insert(bt,button_creat(1,13,620,y0-32,"å…¨è§£é™¤",true,true));
 	local plist={};
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["µÇ³¡"]==3 and JY.Person[i]["ÊÆÁ¦"]==fid and JY.Person[i]["Éí·İ"]<=2 then
+		if JY.Person[i]["ç™»åœº"]==3 and JY.Person[i]["åŠ¿åŠ›"]==fid and JY.Person[i]["èº«ä»½"]<=2 then
 			table.insert(plist,i);
-			JY.Person[i]["ĞÂ¹Ù¾ô"]=JY.Person[i]["¹Ù¾ô"];
+			JY.Person[i]["æ–°å®˜çˆµ"]=JY.Person[i]["å®˜çˆµ"];
 		end
 	end
 	local function redraw()
@@ -1372,11 +1372,11 @@ function TitleManual(fid)
 		LoadPicEnhance(73,x0,y0,width,height);
 		local x,y=x0+64,y0+32;
 		for i,pid in ipairs(plist) do
-			if JY.Person[pid]["¹Ù¾ô"]~=JY.Person[pid]["ĞÂ¹Ù¾ô"] then
-				local gj1,gj2=JY.Person[pid]["¹Ù¾ô"],JY.Person[pid]["ĞÂ¹Ù¾ô"];
-				DrawStringEnhance(x,y,JY.Person[pid]["Ãû³Æ"],C_WHITE,24);
-				DrawStringEnhance(x+128,y,JY.Title[gj1]["Ãû³Æ"],C_WHITE,24);
-				DrawStringEnhance(x+256,y,JY.Title[gj2]["Ãû³Æ"],C_WHITE,24);
+			if JY.Person[pid]["å®˜çˆµ"]~=JY.Person[pid]["æ–°å®˜çˆµ"] then
+				local gj1,gj2=JY.Person[pid]["å®˜çˆµ"],JY.Person[pid]["æ–°å®˜çˆµ"];
+				DrawStringEnhance(x,y,JY.Person[pid]["åç§°"],C_WHITE,24);
+				DrawStringEnhance(x+128,y,JY.Title[gj1]["åç§°"],C_WHITE,24);
+				DrawStringEnhance(x+256,y,JY.Title[gj2]["åç§°"],C_WHITE,24);
 				y=y+24;
 			end
 		end
@@ -1396,8 +1396,8 @@ function TitleManual(fid)
 		if event==3 then
 			if btid==1 then
 				for i,pid in ipairs(plist) do
-					if JY.Person[pid]["¹Ù¾ô"]~=JY.Person[pid]["ĞÂ¹Ù¾ô"] then
-						JY.Person[pid]["¹Ù¾ô"]=JY.Person[pid]["ĞÂ¹Ù¾ô"];
+					if JY.Person[pid]["å®˜çˆµ"]~=JY.Person[pid]["æ–°å®˜çˆµ"] then
+						JY.Person[pid]["å®˜çˆµ"]=JY.Person[pid]["æ–°å®˜çˆµ"];
 					end
 				end
 				return true;
@@ -1409,7 +1409,7 @@ function TitleManual(fid)
 				TitleSingle(fid);
 			elseif btid==13 then
 				for i,pid in ipairs(plist) do
-					JY.Person[pid]["ĞÂ¹Ù¾ô"]=0;
+					JY.Person[pid]["æ–°å®˜çˆµ"]=0;
 				end
 			end
 		end
@@ -1418,15 +1418,15 @@ end
 function TitleAuto(fid,preview)
 	local par;
 	if preview then
-		par="ĞÂ¹Ù¾ô";
+		par="æ–°å®˜çˆµ";
 	else
-		par="¹Ù¾ô";
+		par="å®˜çˆµ";
 	end
 	local plist1={};
 	local plist2={};
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["µÇ³¡"]==3 and JY.Person[i]["ÊÆÁ¦"]==fid and JY.Person[i]["Éí·İ"]<=2 then
-			if JY.Person[i]["ÎÄÎä"]==0 then
+		if JY.Person[i]["ç™»åœº"]==3 and JY.Person[i]["åŠ¿åŠ›"]==fid and JY.Person[i]["èº«ä»½"]<=2 then
+			if JY.Person[i]["æ–‡æ­¦"]==0 then
 				table.insert(plist1,i);
 			else
 				table.insert(plist2,i);
@@ -1434,14 +1434,14 @@ function TitleAuto(fid,preview)
 		end
 	end
 	table.sort(plist1,	function(a,b)
-							return JY.Person[a]["Í³ÂÊ"]+JY.Person[a]["ÎäÁ¦"]+JY.Person[a]["÷ÈÁ¦"]*0.5>JY.Person[b]["Í³ÂÊ"]+JY.Person[b]["ÎäÁ¦"]+JY.Person[b]["÷ÈÁ¦"]*0.5;
+							return JY.Person[a]["ç»Ÿç‡"]+JY.Person[a]["æ­¦åŠ›"]+JY.Person[a]["é­…åŠ›"]*0.5>JY.Person[b]["ç»Ÿç‡"]+JY.Person[b]["æ­¦åŠ›"]+JY.Person[b]["é­…åŠ›"]*0.5;
 						end)
 	table.sort(plist2,	function(a,b)
-							return JY.Person[a]["ÖÇÄ±"]+JY.Person[a]["ÕşÎñ"]+JY.Person[a]["÷ÈÁ¦"]*0.5>JY.Person[b]["ÖÇÄ±"]+JY.Person[b]["ÕşÎñ"]+JY.Person[b]["÷ÈÁ¦"]*0.5;
+							return JY.Person[a]["æ™ºè°‹"]+JY.Person[a]["æ”¿åŠ¡"]+JY.Person[a]["é­…åŠ›"]*0.5>JY.Person[b]["æ™ºè°‹"]+JY.Person[b]["æ”¿åŠ¡"]+JY.Person[b]["é­…åŠ›"]*0.5;
 						end)
 	for i=1,JY.TitleNum-1 do
 		local plist;
-		if JY.Title[i]["ÎÄÎä"]==0 then
+		if JY.Title[i]["æ–‡æ­¦"]==0 then
 			plist=plist1;
 		else
 			plist=plist2;
@@ -1461,26 +1461,26 @@ function TitleSingle(fid)
 	local x0=(CC.ScreenW-width)/2;
 	local y0=(CC.ScreenH-height)/2;
 	local bt={};
-	button_mainbt_1(bt,"È·ÈÏ",1,CC.ScreenH-y0-58);
+	button_mainbt_1(bt,"ç¡®è®¤",1,CC.ScreenH-y0-58);
 	local ml;
 	local plist={};
 	local glist={};
 	local sortlist={};
 	local strlist={};
 	local offset={0,90,180,270,360,450};
-	local title={"¹Ù¾ô","¹Ù½×","±£Áô","±£Áô","±£Áô","ÈËÎï",};
+	local title={"å®˜çˆµ","å®˜é˜¶","ä¿ç•™","ä¿ç•™","ä¿ç•™","äººç‰©",};
 	for i=1,JY.TitleNum-1 do
 		glist[i]=i;
-		sortlist[i]={i,JY.Title[i]["¹Ù½×"],0,0,0,0};
-		strlist[i]={JY.Title[i]["Ãû³Æ"],""..JY.Title[i]["¹Ù½×"],"--","--","--",""}
+		sortlist[i]={i,JY.Title[i]["å®˜é˜¶"],0,0,0,0};
+		strlist[i]={JY.Title[i]["åç§°"],""..JY.Title[i]["å®˜é˜¶"],"--","--","--",""}
 	end
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["µÇ³¡"]==3 and JY.Person[i]["ÊÆÁ¦"]==fid and JY.Person[i]["Éí·İ"]<=2 then
+		if JY.Person[i]["ç™»åœº"]==3 and JY.Person[i]["åŠ¿åŠ›"]==fid and JY.Person[i]["èº«ä»½"]<=2 then
 			table.insert(plist,i);
-			local tid=JY.Person[i]["ĞÂ¹Ù¾ô"];
+			local tid=JY.Person[i]["æ–°å®˜çˆµ"];
 			if tid>0 then
 				sortlist[tid][6]=i;
-				strlist[tid][6]=JY.Person[i]["Ãû³Æ"];
+				strlist[tid][6]=JY.Person[i]["åç§°"];
 			end
 		end
 	end
@@ -1489,11 +1489,11 @@ function TitleSingle(fid)
 	local sortlist2={};
 	local strlist2={};
 	local offset2={0,90,180,270,360,450,540,630,720};
-	local title2={"ĞÕÃû","ºÃ¸Ğ","Í³","Îä","ÖÇ","Õş","÷È","¹¦¼¨","¹Ù¾ô"};
+	local title2={"å§“å","å¥½æ„Ÿ","ç»Ÿ","æ­¦","æ™º","æ”¿","é­…","åŠŸç»©","å®˜çˆµ"};
 	for i,pid in ipairs(plist) do
 		local p=JY.Person[pid];
-		sortlist2[pid]={i,p["ºÃ¸Ğ"],p["Í³ÂÊ"],p["ÎäÁ¦"],p["ÖÇÄ±"],p["ÕşÎñ"],p["÷ÈÁ¦"],0,JY.Title[p["¹Ù¾ô"]]["Rank"]};
-		strlist2[pid]={p["Ãû³Æ"],""..p["ºÃ¸Ğ"],""..p["Í³ÂÊ"],""..p["ÎäÁ¦"],""..p["ÖÇÄ±"],""..p["ÕşÎñ"],""..p["÷ÈÁ¦"],"",JY.Title[p["ĞÂ¹Ù¾ô"]]["Ãû³Æ"]}
+		sortlist2[pid]={i,p["å¥½æ„Ÿ"],p["ç»Ÿç‡"],p["æ­¦åŠ›"],p["æ™ºè°‹"],p["æ”¿åŠ¡"],p["é­…åŠ›"],0,JY.Title[p["å®˜çˆµ"]]["Rank"]};
+		strlist2[pid]={p["åç§°"],""..p["å¥½æ„Ÿ"],""..p["ç»Ÿç‡"],""..p["æ­¦åŠ›"],""..p["æ™ºè°‹"],""..p["æ”¿åŠ¡"],""..p["é­…åŠ›"],"",JY.Title[p["æ–°å®˜çˆµ"]]["åç§°"]}
 	end
 	ml2=creatMultiList(x0+32,y0+16,704,height-64,plist,sortlist2,strlist2,title2,offset2)
 	local page=2;
@@ -1538,13 +1538,13 @@ function TitleSingle(fid)
 end
 function TitleInit(fid)
 	for i=1,JY.TitleNum-1 do
-		JY.Title[i]["ÈËÎï"]=0;
+		JY.Title[i]["äººç‰©"]=0;
 	end
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["µÇ³¡"]==3 and JY.Person[i]["ÊÆÁ¦"]==fid and JY.Person[i]["Éí·İ"]<=2 then
-			local tid=JY.Person[i]["¹Ù¾ô"];
+		if JY.Person[i]["ç™»åœº"]==3 and JY.Person[i]["åŠ¿åŠ›"]==fid and JY.Person[i]["èº«ä»½"]<=2 then
+			local tid=JY.Person[i]["å®˜çˆµ"];
 			if tid>0 then
-				JY.Title[tid]["ÈËÎï"]=i;
+				JY.Title[tid]["äººç‰©"]=i;
 			end
 		end
 	end
@@ -1552,21 +1552,21 @@ end
 function Assign(cid)
 	local c=JY.City[cid];
 	local s={};
-	s[1]={	str="¿ª¿Ñµ£µ±¹Ù",
+	s[1]={	str="å¼€å¦æ‹…å½“å®˜",
 			txtdx=60,
 			pic=45,
 			left=180,
 			top=100,
 			right=180+118,
 			bottom=100+32,}
-	s[2]={	str="ÉÌÒµµ£µ±¹Ù",
+	s[2]={	str="å•†ä¸šæ‹…å½“å®˜",
 			txtdx=60,
 			pic=45,
 			left=180,
 			top=252,
 			right=180+118,
 			bottom=252+32,}
-	s[3]={	str="·ÀÓùµ£µ±¹Ù",
+	s[3]={	str="é˜²å¾¡æ‹…å½“å®˜",
 			txtdx=60,
 			pic=45,
 			left=180,
@@ -1594,31 +1594,31 @@ function Assign(cid)
 	local t_select={}
 	local owner={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,}
 	for i=1,5 do
-		owner[i]=c["¿ª¿Ñµ£µ±"..i];
-		owner[10+i]=c["ÉÌÒµµ£µ±"..i];
-		owner[20+i]=c["·ÀÓùµ£µ±"..i];
+		owner[i]=c["å¼€å¦æ‹…å½“"..i];
+		owner[10+i]=c["å•†ä¸šæ‹…å½“"..i];
+		owner[20+i]=c["é˜²å¾¡æ‹…å½“"..i];
 	end
 	local sum={}
 	local function getsum()
-		sum["ÕşÎñ"]=0;
+		sum["æ”¿åŠ¡"]=0;
 		for i=1,10 do
 			local pid=owner[i];
 			if pid>0 then
-				sum["ÕşÎñ"]=sum["ÕşÎñ"]+JY.Person[pid]["ÕşÎñ"];
+				sum["æ”¿åŠ¡"]=sum["æ”¿åŠ¡"]+JY.Person[pid]["æ”¿åŠ¡"];
 			end
 		end
-		sum["÷ÈÁ¦"]=0;
+		sum["é­…åŠ›"]=0;
 		for i=11,20 do
 			local pid=owner[i];
 			if pid>0 then
-				sum["÷ÈÁ¦"]=sum["÷ÈÁ¦"]+JY.Person[pid]["÷ÈÁ¦"];
+				sum["é­…åŠ›"]=sum["é­…åŠ›"]+JY.Person[pid]["é­…åŠ›"];
 			end
 		end
-		sum["Í³ÂÊ"]=0;
+		sum["ç»Ÿç‡"]=0;
 		for i=21,30 do
 			local pid=owner[i];
 			if pid>0 then
-				sum["Í³ÂÊ"]=sum["Í³ÂÊ"]+JY.Person[pid]["Í³ÂÊ"];
+				sum["ç»Ÿç‡"]=sum["ç»Ÿç‡"]+JY.Person[pid]["ç»Ÿç‡"];
 			end
 		end
 	end
@@ -1631,21 +1631,21 @@ function Assign(cid)
 		for i=1,5 do
 			local pid=owner[i];
 			if pid>0 then
-				lib.PicLoadCache(2,(JY.Person[pid]["ÈİÃ²"]+2000)*2,s[1].right+16+90*(i-1),s[1].bottom-80,1);
-				DrawStringEnhance(s[1].right+16+90*(i-1)+45,s[1].bottom+48,JY.Person[pid]["Ãû³Æ"],C_WHITE,size,0.5);
-				DrawNumPic(s[1].right+16+90*(i-1)+70,s[1].bottom+32,JY.Person[pid]["ÕşÎñ"]);
+				lib.PicLoadCache(2,(JY.Person[pid]["å®¹è²Œ"]+2000)*2,s[1].right+16+90*(i-1),s[1].bottom-80,1);
+				DrawStringEnhance(s[1].right+16+90*(i-1)+45,s[1].bottom+48,JY.Person[pid]["åç§°"],C_WHITE,size,0.5);
+				DrawNumPic(s[1].right+16+90*(i-1)+70,s[1].bottom+32,JY.Person[pid]["æ”¿åŠ¡"]);
 			end
 			pid=owner[i+10];
 			if pid>0 then
-				lib.PicLoadCache(2,(JY.Person[pid]["ÈİÃ²"]+2000)*2,s[2].right+16+90*(i-1),s[2].bottom-80,1);
-				DrawStringEnhance(s[2].right+16+90*(i-1)+45,s[2].bottom+48,JY.Person[pid]["Ãû³Æ"],C_WHITE,size,0.5);
-				DrawNumPic(s[2].right+16+90*(i-1)+70,s[2].bottom+32,JY.Person[pid]["÷ÈÁ¦"]);
+				lib.PicLoadCache(2,(JY.Person[pid]["å®¹è²Œ"]+2000)*2,s[2].right+16+90*(i-1),s[2].bottom-80,1);
+				DrawStringEnhance(s[2].right+16+90*(i-1)+45,s[2].bottom+48,JY.Person[pid]["åç§°"],C_WHITE,size,0.5);
+				DrawNumPic(s[2].right+16+90*(i-1)+70,s[2].bottom+32,JY.Person[pid]["é­…åŠ›"]);
 			end
 			pid=owner[i+20];
 			if pid>0 then
-				lib.PicLoadCache(2,(JY.Person[pid]["ÈİÃ²"]+2000)*2,s[3].right+16+90*(i-1),s[3].bottom-80,1);
-				DrawStringEnhance(s[3].right+16+90*(i-1)+45,s[3].bottom+48,JY.Person[pid]["Ãû³Æ"],C_WHITE,size,0.5);
-				DrawNumPic(s[3].right+16+90*(i-1)+70,s[3].bottom+32,JY.Person[pid]["Í³ÂÊ"]);
+				lib.PicLoadCache(2,(JY.Person[pid]["å®¹è²Œ"]+2000)*2,s[3].right+16+90*(i-1),s[3].bottom-80,1);
+				DrawStringEnhance(s[3].right+16+90*(i-1)+45,s[3].bottom+48,JY.Person[pid]["åç§°"],C_WHITE,size,0.5);
+				DrawNumPic(s[3].right+16+90*(i-1)+70,s[3].bottom+32,JY.Person[pid]["ç»Ÿç‡"]);
 			end
 		end
 		--buttle
@@ -1663,9 +1663,9 @@ function Assign(cid)
 				DrawStringEnhance(v.left+v.txtdx,v.top+6,v.str,C_BLACK,size,0.5);
 			end
 		end
-		DrawStringEnhance(s[1].left+s[1].txtdx,s[1].bottom+6,"×ÜÕşÎñ",C_WHITE,size,0.9);	DrawNumPicBig(s[1].left+90,s[1].bottom+5,sum["ÕşÎñ"]);
-		DrawStringEnhance(s[2].left+s[2].txtdx,s[2].bottom+6,"×Ü÷ÈÁ¦",C_WHITE,size,0.9);	DrawNumPicBig(s[2].left+90,s[2].bottom+5,sum["÷ÈÁ¦"]);
-		DrawStringEnhance(s[3].left+s[3].txtdx,s[3].bottom+6,"×ÜÍ³ÂÊ",C_WHITE,size,0.9);	DrawNumPicBig(s[3].left+90,s[3].bottom+5,sum["Í³ÂÊ"]);
+		DrawStringEnhance(s[1].left+s[1].txtdx,s[1].bottom+6,"æ€»æ”¿åŠ¡",C_WHITE,size,0.9);	DrawNumPicBig(s[1].left+90,s[1].bottom+5,sum["æ”¿åŠ¡"]);
+		DrawStringEnhance(s[2].left+s[2].txtdx,s[2].bottom+6,"æ€»é­…åŠ›",C_WHITE,size,0.9);	DrawNumPicBig(s[2].left+90,s[2].bottom+5,sum["é­…åŠ›"]);
+		DrawStringEnhance(s[3].left+s[3].txtdx,s[3].bottom+6,"æ€»ç»Ÿç‡",C_WHITE,size,0.9);	DrawNumPicBig(s[3].left+90,s[3].bottom+5,sum["ç»Ÿç‡"]);
 	end
 	getsum();
 	while true do
@@ -1679,7 +1679,7 @@ function Assign(cid)
 		getkey();
 		current=0;
 		hold=false;
-		local order={"ÕşÎñ","÷ÈÁ¦","Í³ÂÊ"};
+		local order={"æ”¿åŠ¡","é­…åŠ›","ç»Ÿç‡"};
 		for i,v in pairs(s) do
 			if MOUSE.CLICK(v.left,v.top,v.right,v.bottom) then
 				current=i;
@@ -1687,7 +1687,7 @@ function Assign(cid)
 				if between(current,1,3) then
 					plist={}
 					for id,v in pairs(JY.Person) do
-						if id~=JY.PID and v["ÊÆÁ¦"]==JY.FID and v["ËùÔÚ"]==cid then
+						if id~=JY.PID and v["åŠ¿åŠ›"]==JY.FID and v["æ‰€åœ¨"]==cid then
 							local flag=true;
 							for ii,vv in pairs(owner) do
 								if vv>0 and (not between(ii,1+10*(current-1),10+10*(current-1))) and vv==id then
@@ -1720,9 +1720,9 @@ function Assign(cid)
 				elseif current==4 then
 				elseif current==98 then
 					for i=1,5 do
-						c["¿ª¿Ñµ£µ±"..i]=owner[i];
-						c["ÉÌÒµµ£µ±"..i]=owner[10+i];
-						c["·ÀÓùµ£µ±"..i]=owner[20+i];
+						c["å¼€å¦æ‹…å½“"..i]=owner[i];
+						c["å•†ä¸šæ‹…å½“"..i]=owner[10+i];
+						c["é˜²å¾¡æ‹…å½“"..i]=owner[20+i];
 					end
 					return true;
 				elseif current==99 then
@@ -1749,75 +1749,75 @@ end
 function Asura_CityGrow()
 	for cid = 1, JY.CityNum - 1 do
     local city = JY.City[cid];
-		local fid = city["ÊÆÁ¦"];
-    local pid = city["Ì«ÊØ"];
-    --ÈË¿ÚÃ¿ÔÂÔö³¤  Ôö³¤Á¿ºÍÈË¿ÚÆ½·½¸ùÕı±È(Ôö³¤ÂÊËæËæÈË¿ÚÔö¼Ó¶ø½µµÍ)£¬ËæÖÎ°²ÏÂ½µ¶øÏÂ½µ£¬µÁÔô³öÏÖÔò²»Ôö³¤
-    --ÈË¿Ú 500¡®00 ~ 30000¡¯00
-    if true then  --ÔİÎ´¿¼ÂÇµÁÔô
-      local grow = math.floor( (city["ÈË¿Ú"] ^ 0.5) / 10 * limitX((city["ÖÎ°²"] - 600) / 400, -1.5, 1) * (2 + math.random() - math.random()) );
-      city["ÈË¿Ú"] = limitX( city["ÈË¿Ú"] + grow, 500, 30000 );
+		local fid = city["åŠ¿åŠ›"];
+    local pid = city["å¤ªå®ˆ"];
+    --äººå£æ¯æœˆå¢é•¿  å¢é•¿é‡å’Œäººå£å¹³æ–¹æ ¹æ­£æ¯”(å¢é•¿ç‡éšéšäººå£å¢åŠ è€Œé™ä½)ï¼Œéšæ²»å®‰ä¸‹é™è€Œä¸‹é™ï¼Œç›—è´¼å‡ºç°åˆ™ä¸å¢é•¿
+    --äººå£ 500â€˜00 ~ 30000â€™00
+    if true then  --æš‚æœªè€ƒè™‘ç›—è´¼
+      local grow = math.floor( (city["äººå£"] ^ 0.5) / 10 * limitX((city["æ²»å®‰"] - 600) / 400, -1.5, 1) * (2 + math.random() - math.random()) );
+      city["äººå£"] = limitX( city["äººå£"] + grow, 500, 30000 );
     end
-    --½ğ£¬Ã¿¼¾¶ÈÔö³¤
-    --½ğÊÕÈë= (ÉÌÒµÖµ + 100)*(10+Ì«ÊØ÷ÈÁ¦+ÃñÖÒ)/200
-    if pid > 0 and JY.Base["µ±Ç°ÔÂ"] % 3 == 1 then
-      local grow = city["ÉÌÒµ"] / 10 * (1 + limitX(city["ÈË¿Ú"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[pid]["÷ÈÁ¦"], 10, 110));
-      if city["ÌØÕ÷"] == 3 then --½»Ò×¶¼ÊĞ
+    --é‡‘ï¼Œæ¯å­£åº¦å¢é•¿
+    --é‡‘æ”¶å…¥= (å•†ä¸šå€¼ + 100)*(10+å¤ªå®ˆé­…åŠ›+æ°‘å¿ )/200
+    if pid > 0 and JY.Base["å½“å‰æœˆ"] % 3 == 1 then
+      local grow = city["å•†ä¸š"] / 10 * (1 + limitX(city["äººå£"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[pid]["é­…åŠ›"], 10, 110));
+      if city["ç‰¹å¾"] == 3 then --äº¤æ˜“éƒ½å¸‚
         grow = grow * 1.2;
       end
       grow = math.floor(grow);
-      city["×Ê½ğ"] = limitX(city["×Ê½ğ"] + grow, 0, 10000);
+      city["èµ„é‡‘"] = limitX(city["èµ„é‡‘"] + grow, 0, 10000);
     end
-    --Á¸£¬Ã¿Äê7ÔÂÔö³¤
-    if pid > 0 and JY.Base["µ±Ç°ÔÂ"] == 7 then
-      local grow = 4 * city["¿ª¿Ñ"] / 10 * (1 + limitX(city["ÈË¿Ú"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[pid]["÷ÈÁ¦"], 10, 110));
+    --ç²®ï¼Œæ¯å¹´7æœˆå¢é•¿
+    if pid > 0 and JY.Base["å½“å‰æœˆ"] == 7 then
+      local grow = 4 * city["å¼€å¦"] / 10 * (1 + limitX(city["äººå£"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[pid]["é­…åŠ›"], 10, 110));
       grow = math.floor(grow);
-      city["Îï×Ê"] = limitX(city["Îï×Ê"] + grow, 0, 10000);
+      city["ç‰©èµ„"] = limitX(city["ç‰©èµ„"] + grow, 0, 10000);
     end
-    --ÙºÂ», Ã¿ÔÂÖ§¸¶
-    if fid > 0 and city["ÏÖÒÛ"] > 0 then
-      city["×Ê½ğ"] = city["×Ê½ğ"] - city["ÏÖÒÛ"] * 1;
-      if city["×Ê½ğ"] < 0 then
-        city["×Ê½ğ"] = 0;
+    --ä¿¸ç¦„, æ¯æœˆæ”¯ä»˜
+    if fid > 0 and city["ç°å½¹"] > 0 then
+      city["èµ„é‡‘"] = city["èµ„é‡‘"] - city["ç°å½¹"] * 1;
+      if city["èµ„é‡‘"] < 0 then
+        city["èµ„é‡‘"] = 0;
       end
     end
-    --¾üâÃ, Ã¿ÔÂÖ§¸¶
-    if fid > 0 and city["±øÁ¦"] > 0 then
-      city["Îï×Ê"] = city["Îï×Ê"] - math.ceil(city["±øÁ¦"] / 500);
-      if city["Îï×Ê"] < 0 then
-        city["Îï×Ê"] = 0;
+    --å†›é¥·, æ¯æœˆæ”¯ä»˜
+    if fid > 0 and city["å…µåŠ›"] > 0 then
+      city["ç‰©èµ„"] = city["ç‰©èµ„"] - math.ceil(city["å…µåŠ›"] / 500);
+      if city["ç‰©èµ„"] < 0 then
+        city["ç‰©èµ„"] = 0;
       end
     end
 	end
 end
 function AsuraGenTalkString(index,pid,eid)
-	local id=JY.Person[pid]["Ì¨´Ê"];
+	local id=JY.Person[pid]["å°è¯"];
 	local txt_id;
 	local str;
 	if index==01 then
 		
-	elseif index==14 then			--ĞÎÊÆÄæ×ª
+	elseif index==14 then			--å½¢åŠ¿é€†è½¬
 		txt_id=math.random(6261,6280);
-	elseif index==20 then			--Í»»÷
+	elseif index==20 then			--çªå‡»
 		txt_id=math.random(6381,6390);
-	elseif index==21 then			--ËÀÊØ
+	elseif index==21 then			--æ­»å®ˆ
 		txt_id=math.random(6401,6410);
-	elseif index==29 then			--Âñ·ü
+	elseif index==29 then			--åŸ‹ä¼
 		txt_id=math.random(6561,6580);
-	elseif index==30 then			--Õ½¶·¿ªÊ¼ ÓÅÊÆ
+	elseif index==30 then			--æˆ˜æ–—å¼€å§‹ ä¼˜åŠ¿
 		txt_id=math.random(6581,6587);
-	elseif index==31 then			--Õ½¶·¿ªÊ¼ ÁÓÊÆ
+	elseif index==31 then			--æˆ˜æ–—å¼€å§‹ åŠ£åŠ¿
 		txt_id=math.random(6601,6609);
-	elseif index==40 then			--Á÷·Å
+	elseif index==40 then			--æµæ”¾
 		txt_id=math.random(6781,6788);
-	elseif index==41 then		--Ì½Ë÷-Ê§°Ü
+	elseif index==41 then		--æ¢ç´¢-å¤±è´¥
 		txt_id=math.random(6801,6815);
-	elseif index==42 then		--Ì½Ë÷-³É¹¦
+	elseif index==42 then		--æ¢ç´¢-æˆåŠŸ
 		txt_id=math.random(6821,6827);
-	elseif index==43 then		--µÇÓÃ
+	elseif index==43 then		--ç™»ç”¨
 		txt_id=math.random(6841,6851);
-	elseif index==44 then		--µÇÓÃ-³É¹¦
+	elseif index==44 then		--ç™»ç”¨-æˆåŠŸ
 		txt_id=math.random(6861,6875);
-	elseif index==45 then		--µÇÓÃ-Ê§°Ü
+	elseif index==45 then		--ç™»ç”¨-å¤±è´¥
 		txt_id=math.random(6881,6896);
 	else
 		txt_id=index;
@@ -1844,10 +1844,10 @@ function AsuraGenTalkString(index,pid,eid)
 		end
 	end
 	str=JY.Str[txt_id];
-	str=string.gsub(str,"$N","[Green]"..JY.Person[pid]["Ãû³Æ"].."[Normal]");
-	str=string.gsub(str,"$C","[Red]"..JY.Person[pid]["ÍâºÅ"].."[Normal]");
-	str=string.gsub(str,"$n","[Green]"..JY.Person[eid]["Ãû³Æ"].."[Normal]");
-	str=string.gsub(str,"$c","[Red]"..JY.Person[eid]["ÍâºÅ"].."[Normal]");
+	str=string.gsub(str,"$N","[Green]"..JY.Person[pid]["åç§°"].."[Normal]");
+	str=string.gsub(str,"$C","[Red]"..JY.Person[pid]["å¤–å·"].."[Normal]");
+	str=string.gsub(str,"$n","[Green]"..JY.Person[eid]["åç§°"].."[Normal]");
+	str=string.gsub(str,"$c","[Red]"..JY.Person[eid]["å¤–å·"].."[Normal]");
 	--str=string.gsub(str,"*","\\n");
 	return str;
 end
@@ -1898,8 +1898,8 @@ function PercentRandom(t)
 end
 function GetCityPT(cid)
 	local pt=4;
-	pt=pt+4*JY.City[cid]["¹æÄ£"];
-	pt=pt+2*JY.City[cid]["¹æÄ£"];
+	pt=pt+4*JY.City[cid]["è§„æ¨¡"];
+	pt=pt+2*JY.City[cid]["è§„æ¨¡"];
 	return pt;
 end
 function FilterPerson(fid,pt,bc_flag)
@@ -1908,15 +1908,15 @@ function FilterPerson(fid,pt,bc_flag)
 	local rlist={};
 	local snum=20;
 	local cpt=0;
-	local jid=JY.Force[fid]["¾ıÖ÷"];
-	JY.Person[jid]["³öÕ½"]=1;
+	local jid=JY.Force[fid]["å›ä¸»"];
+	JY.Person[jid]["å‡ºæˆ˜"]=1;
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["ÊÆÁ¦"]==fid and JY.Person[i]["³öÕ½"]==0 then
+		if JY.Person[i]["åŠ¿åŠ›"]==fid and JY.Person[i]["å‡ºæˆ˜"]==0 then
 			table.insert(plist,i);
 		end
 	end
 	if #plist>snum then
-		table.sort(plist,function(a,b) if JY.Person[a]["ÃûÉù"]>JY.Person[b]["ÃûÉù"] then return true end end)
+		table.sort(plist,function(a,b) if JY.Person[a]["åå£°"]>JY.Person[b]["åå£°"] then return true end end)
 	end
 	if bc_flag then
 		for rpt=1,2 do
@@ -1930,45 +1930,45 @@ function FilterPerson(fid,pt,bc_flag)
 	snum=math.min(#plist,snum)
 	for i=1,snum do
 		local pid=plist[i];
-		if JY.Person[pid]["ÎÄÎä"]==1 then
-			table.insert(rndlist,JY.Person[pid]["ÃûÉù"]);
+		if JY.Person[pid]["æ–‡æ­¦"]==1 then
+			table.insert(rndlist,JY.Person[pid]["åå£°"]);
 		else
-			table.insert(rndlist,JY.Person[pid]["ÃûÉù"]/2);
+			table.insert(rndlist,JY.Person[pid]["åå£°"]/2);
 		end
 	end
 	for i=1,snum do
 		local r=PercentRandom(rndlist);
 		local pid=plist[r];
 		rndlist[r]=0;
-		cpt=cpt+1+JY.Person[pid]["Æ·¼¶"];
+		cpt=cpt+1+JY.Person[pid]["å“çº§"];
 		table.insert(rlist,pid);
 		if cpt>pt then
 			break;
 		end
 	end
-	--table.sort(rlist,function(a,b) if JY.Person[a]["ÃûÉù"]>JY.Person[b]["ÃûÉù"] then return true end end)
+	--table.sort(rlist,function(a,b) if JY.Person[a]["åå£°"]>JY.Person[b]["åå£°"] then return true end end)
 	table.sort(rlist,function(a,b)
-						local av,bv=JY.Person[a]["ÎäÁ¦"]+JY.Person[a]["Í³ÂÊ"],JY.Person[b]["ÎäÁ¦"]+JY.Person[b]["Í³ÂÊ"];
-						if between(JY.Person[a]["±øÖÖ"],24,29) then
+						local av,bv=JY.Person[a]["æ­¦åŠ›"]+JY.Person[a]["ç»Ÿç‡"],JY.Person[b]["æ­¦åŠ›"]+JY.Person[b]["ç»Ÿç‡"];
+						if between(JY.Person[a]["å…µç§"],24,29) then
 							av=av/4;
-						elseif between(JY.Person[a]["±øÖÖ"],7,12) then
+						elseif between(JY.Person[a]["å…µç§"],7,12) then
 							av=av/2;
 						end
-						if between(JY.Person[b]["±øÖÖ"],24,29) then
+						if between(JY.Person[b]["å…µç§"],24,29) then
 							bv=bv/4;
-						elseif between(JY.Person[b]["±øÖÖ"],7,12) then
+						elseif between(JY.Person[b]["å…µç§"],7,12) then
 							bv=bv/2;
 						end
 						if av>bv then
 							return true;
 						end
 					end)
-	--table.sort(rlist,function(a,b) if JY.Person[a]["ÎÄÎä"]<JY.Person[b]["ÎÄÎä"] then return true end end)
+	--table.sort(rlist,function(a,b) if JY.Person[a]["æ–‡æ­¦"]<JY.Person[b]["æ–‡æ­¦"] then return true end end)
 	if bc_flag then
 		table.insert(rlist,1,jid);
 	end
 	for i,v in ipairs(rlist) do
-		JY.Person[v]["³öÕ½"]=1;
+		JY.Person[v]["å‡ºæˆ˜"]=1;
 	end
 	return rlist;
 end
@@ -1982,8 +1982,8 @@ end
 function GenClassC(leader,oid)
 	local plistC={};
 	for i=1,JY.PersonNum-1 do
-		if JY.Person[i]["³öÕ½"]==0 and JY.Person[i]["ÊÆÁ¦"]==JY.Person[leader]["ÊÆÁ¦"] then --and GetXX(i,leader)<30 then
-			if JY.Person[i]["Æ·¼¶"]==1 then
+		if JY.Person[i]["å‡ºæˆ˜"]==0 and JY.Person[i]["åŠ¿åŠ›"]==JY.Person[leader]["åŠ¿åŠ›"] then --and GetXX(i,leader)<30 then
+			if JY.Person[i]["å“çº§"]==1 then
 				table.insert(plistC,i);
 			end
 		end
@@ -1995,11 +1995,11 @@ function GenClassC(leader,oid)
 	end
 end
 function BodyGuard(pid,oid);
-	local kid=JY.Person[pid]["Í³±ø"];
-	local str=JY.Person[oid]["Ãû³Æ"];
-	if kid==1 then	--²½±ø×ªÎªÔô±ø
-		if str=="²½±ø¶Ó" then
-			oid=GenPerson(true,pid,"Ôô±ø");
+	local kid=JY.Person[pid]["ç»Ÿå…µ"];
+	local str=JY.Person[oid]["åç§°"];
+	if kid==1 then	--æ­¥å…µè½¬ä¸ºè´¼å…µ
+		if str=="æ­¥å…µé˜Ÿ" then
+			oid=GenPerson(true,pid,"è´¼å…µ");
 		end
 	end
 	return oid;
@@ -2007,7 +2007,7 @@ end
 function GenPerson(flag,leader,name,name2)
 	local plist={};
 	local function basecheck(pid)
-		if JY.Person[pid]["µÇ³¡"]>=0 and JY.Person[pid]["³öÕ½"]==0 and JY.Person[pid]["ÊÆÁ¦"]==JY.Person[leader]["ÊÆÁ¦"] and GetXX(pid,leader)<30 then
+		if JY.Person[pid]["ç™»åœº"]>=0 and JY.Person[pid]["å‡ºæˆ˜"]==0 and JY.Person[pid]["åŠ¿åŠ›"]==JY.Person[leader]["åŠ¿åŠ›"] and GetXX(pid,leader)<30 then
 			return true;
 		else
 			return false;
@@ -2015,26 +2015,26 @@ function GenPerson(flag,leader,name,name2)
 	end
 	if not flag then
 		if name2==nil then
-			if name=="Í³ÂÊ" then
-				name=TableRandom({"²½±ø¶Ó","²½±ø¶Ó","²½±ø¶Ó","²½±ø¶Ó","Æï±ø¶Ó"});
-			elseif name=="ÎäÁ¦" then
-				name=TableRandom({"Æï±ø¶Ó","Æï±ø¶Ó","Æï±ø¶Ó","Æï±ø¶Ó","²½±ø¶Ó"});
-			elseif name=="ÖÇÄ±" then
-				name=TableRandom({"¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","Ôô±ø"});
-			elseif name=="ÍòÄÜ" then
-				name=TableRandom({"²½±ø¶Ó","¹­±ø¶Ó","Æï±ø¶Ó","Ôô±ø","²½±ø¶Ó"});
-			elseif name=="²½½«" then
-				name=TableRandom({"²½±ø¶Ó","²½±ø¶Ó","²½±ø¶Ó","²½±ø¶Ó","²½±ø¶Ó"});
-			elseif name=="Æï½«" then
-				name=TableRandom({"Æï±ø¶Ó","Æï±ø¶Ó","Æï±ø¶Ó","Æï±ø¶Ó","Æï±ø¶Ó"});
-			elseif name=="¹­½«" then
-				name=TableRandom({"¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó"});
-			elseif name=="Ôô½«" then
-				name=TableRandom({"Ôô±ø","Ôô±ø","Ôô±ø","Ôô±ø","Ôô±ø"});
-			elseif name=="Ä±½«" then
-				name=TableRandom({"¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","¹­±ø¶Ó","Ôô±ø"});
-			elseif name=="ÌØ½«" then
-				name=TableRandom({"²½±ø¶Ó","¹­±ø¶Ó","Æï±ø¶Ó","Ôô±ø","²½±ø¶Ó"});
+			if name=="ç»Ÿç‡" then
+				name=TableRandom({"æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","éª‘å…µé˜Ÿ"});
+			elseif name=="æ­¦åŠ›" then
+				name=TableRandom({"éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","æ­¥å…µé˜Ÿ"});
+			elseif name=="æ™ºè°‹" then
+				name=TableRandom({"å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","è´¼å…µ"});
+			elseif name=="ä¸‡èƒ½" then
+				name=TableRandom({"æ­¥å…µé˜Ÿ","å¼“å…µé˜Ÿ","éª‘å…µé˜Ÿ","è´¼å…µ","æ­¥å…µé˜Ÿ"});
+			elseif name=="æ­¥å°†" then
+				name=TableRandom({"æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ","æ­¥å…µé˜Ÿ"});
+			elseif name=="éª‘å°†" then
+				name=TableRandom({"éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ","éª‘å…µé˜Ÿ"});
+			elseif name=="å¼“å°†" then
+				name=TableRandom({"å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ"});
+			elseif name=="è´¼å°†" then
+				name=TableRandom({"è´¼å…µ","è´¼å…µ","è´¼å…µ","è´¼å…µ","è´¼å…µ"});
+			elseif name=="è°‹å°†" then
+				name=TableRandom({"å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","å¼“å…µé˜Ÿ","è´¼å…µ"});
+			elseif name=="ç‰¹å°†" then
+				name=TableRandom({"æ­¥å…µé˜Ÿ","å¼“å…µé˜Ÿ","éª‘å…µé˜Ÿ","è´¼å…µ","æ­¥å…µé˜Ÿ"});
 			else
 				name="";
 				return -1;
@@ -2043,100 +2043,100 @@ function GenPerson(flag,leader,name,name2)
 			name=name2;
 		end
 	end
-	if name=="Í³ÂÊ" then
+	if name=="ç»Ÿç‡" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["ÎäÁ¦"],60,85) and math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"])<JY.Person[id]["ÎäÁ¦"] then
+			if basecheck(id) and between(JY.Person[id]["æ­¦åŠ›"],60,85) and math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"])<JY.Person[id]["æ­¦åŠ›"] then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="ÎäÁ¦" then
+	elseif name=="æ­¦åŠ›" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["ÎäÁ¦"],60,85) and math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"])<JY.Person[id]["ÎäÁ¦"] then
+			if basecheck(id) and between(JY.Person[id]["æ­¦åŠ›"],60,85) and math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"])<JY.Person[id]["æ­¦åŠ›"] then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="ÖÇÄ±" then
+	elseif name=="æ™ºè°‹" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["ÖÇÄ±"],60,85) and math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÎäÁ¦"])<JY.Person[id]["ÖÇÄ±"] then
+			if basecheck(id) and between(JY.Person[id]["æ™ºè°‹"],60,85) and math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ­¦åŠ›"])<JY.Person[id]["æ™ºè°‹"] then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="ÍòÄÜ" then
+	elseif name=="ä¸‡èƒ½" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"],JY.Person[id]["ÎäÁ¦"]),60,80) and between(math.min(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"],JY.Person[id]["ÎäÁ¦"]),60,80) then
+			if basecheck(id) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"],JY.Person[id]["æ­¦åŠ›"]),60,80) and between(math.min(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"],JY.Person[id]["æ­¦åŠ›"]),60,80) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="²½½«" then
+	elseif name=="æ­¥å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["±øÖÖ"],1,6) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÎäÁ¦"]),60,90) then
+			if basecheck(id) and between(JY.Person[id]["å…µç§"],1,6) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ­¦åŠ›"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="Æï½«" then
+	elseif name=="éª‘å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["±øÖÖ"],13,18) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÎäÁ¦"]),60,90) then
+			if basecheck(id) and between(JY.Person[id]["å…µç§"],13,18) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ­¦åŠ›"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="¹­½«" then
+	elseif name=="å¼“å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["±øÖÖ"],7,12) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÎäÁ¦"]),60,90) then
+			if basecheck(id) and between(JY.Person[id]["å…µç§"],7,12) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ­¦åŠ›"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="Ôô½«" then
+	elseif name=="è´¼å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["±øÖÖ"],19,23) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÎäÁ¦"]),60,90) then
+			if basecheck(id) and between(JY.Person[id]["å…µç§"],19,23) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ­¦åŠ›"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="Ä±½«" then
+	elseif name=="è°‹å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and between(JY.Person[id]["±øÖÖ"],24,29) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"]),60,90) then
+			if basecheck(id) and between(JY.Person[id]["å…µç§"],24,29) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
 		if #plist>0 then
 			return TableRandom(plist);
 		end
-	elseif name=="ÌØ½«" then
+	elseif name=="ç‰¹å°†" then
 		plist={};
 		for id=1,JY.PersonNum-1 do
-			if basecheck(id) and (between(JY.Person[id]["±øÖÖ"],30,32) or between(JY.Person[id]["±øÖÖ"],35,48)) and between(math.max(JY.Person[id]["Í³ÂÊ"],JY.Person[id]["ÖÇÄ±"],JY.Person[id]["ÎäÁ¦"]),60,90) then
+			if basecheck(id) and (between(JY.Person[id]["å…µç§"],30,32) or between(JY.Person[id]["å…µç§"],35,48)) and between(math.max(JY.Person[id]["ç»Ÿç‡"],JY.Person[id]["æ™ºè°‹"],JY.Person[id]["æ­¦åŠ›"]),60,90) then
 				table.insert(plist,id);
 			end
 		end
@@ -2145,7 +2145,7 @@ function GenPerson(flag,leader,name,name2)
 		end
 	elseif #name>0 then
 		for id=1001,JY.PersonNum-1 do
-			if JY.Person[id]["Ãû³Æ"]==name and JY.Person[id]["³öÕ½"]==0 then
+			if JY.Person[id]["åç§°"]==name and JY.Person[id]["å‡ºæˆ˜"]==0 then
 				return id;
 			end
 		end
@@ -2153,7 +2153,7 @@ function GenPerson(flag,leader,name,name2)
 	--for others
 	plist={};
 	for id=1001,JY.PersonNum-1 do
-		if JY.Person[id]["³öÕ½"]==0 then
+		if JY.Person[id]["å‡ºæˆ˜"]==0 then
 			table.insert(plist,id);
 		end
 	end
@@ -2165,7 +2165,7 @@ function GenPerson(flag,leader,name,name2)
 end
 function PlayCityBGM(cid, war)
   if cid > 0 then
-    local mid = JY.City[cid]["ÒôÀÖ"];
+    local mid = JY.City[cid]["éŸ³ä¹"];
     if war then
       mid = mid + 10;
     end
@@ -2174,7 +2174,7 @@ function PlayCityBGM(cid, war)
 end
 function isLike(pid, eid)
   for i = 1, 5 do
-    local id = JY.Person[pid]["Ç×½üÎä½«" .. i];
+    local id = JY.Person[pid]["äº²è¿‘æ­¦å°†" .. i];
     if id == 0 then
       break;
     elseif id == eid then
@@ -2182,7 +2182,7 @@ function isLike(pid, eid)
     end
   end
   for i = 1, 5 do
-    local id = JY.Person[eid]["Ç×½üÎä½«" .. i];
+    local id = JY.Person[eid]["äº²è¿‘æ­¦å°†" .. i];
     if id == 0 then
       break;
     elseif id == pid then
@@ -2193,7 +2193,7 @@ function isLike(pid, eid)
 end
 function isHate(pid, eid)
   for i = 1, 5 do
-    local id = JY.Person[pid]["Ñá¶ñÎä½«" .. i];
+    local id = JY.Person[pid]["åŒæ¶æ­¦å°†" .. i];
     if id == 0 then
       break;
     elseif id == eid then
@@ -2201,7 +2201,7 @@ function isHate(pid, eid)
     end
   end
   for i = 1, 5 do
-    local id = JY.Person[eid]["Ñá¶ñÎä½«" .. i];
+    local id = JY.Person[eid]["åŒæ¶æ­¦å°†" .. i];
     if id == 0 then
       break;
     elseif id == pid then
@@ -2212,194 +2212,194 @@ function isHate(pid, eid)
 end
 --Scenario
 function ScenarioInit()
-	local sid=JY.Base["µ±Ç°¾ç±¾"];
-	JY.Base["µ±Ç°Äê"]=252;
-	JY.Base["µ±Ç°ÔÂ"]=3;
+	local sid=JY.Base["å½“å‰å‰§æœ¬"];
+	JY.Base["å½“å‰å¹´"]=252;
+	JY.Base["å½“å‰æœˆ"]=3;
 	for fid=1,52 do
-		JY.Force[fid]["×´Ì¬"]=JY.Force[fid]["×´Ì¬-¾ç±¾"..sid];
-		JY.Force[fid]["¾ıÖ÷"]=JY.Force[fid]["¾ıÖ÷-¾ç±¾"..sid];
-		JY.Force[fid]["¹Ù¾ô"]=JY.Force[fid]["¹Ù¾ô-¾ç±¾"..sid];
-		JY.Force[fid]["±¾³Ç"]=JY.Force[fid]["±¾³Ç-¾ç±¾"..sid];
-		JY.Force[fid]["Ãû³Æ"]=JY.Person[JY.Force[fid]["¾ıÖ÷"]]["Ãû³Æ"].."¾ü"
+		JY.Force[fid]["çŠ¶æ€"]=JY.Force[fid]["çŠ¶æ€-å‰§æœ¬"..sid];
+		JY.Force[fid]["å›ä¸»"]=JY.Force[fid]["å›ä¸»-å‰§æœ¬"..sid];
+		JY.Force[fid]["å®˜çˆµ"]=JY.Force[fid]["å®˜çˆµ-å‰§æœ¬"..sid];
+		JY.Force[fid]["æœ¬åŸ"]=JY.Force[fid]["æœ¬åŸ-å‰§æœ¬"..sid];
+		JY.Force[fid]["åç§°"]=JY.Person[JY.Force[fid]["å›ä¸»"]]["åç§°"].."å†›"
 	end
 	for pid=1,1000 do
-		JY.Person[pid]["µÇ³¡"]=JY.Person[pid]["µÇ³¡-¾ç±¾"..sid];
-		JY.Person[pid]["ÊÆÁ¦"]=JY.Person[pid]["ÊÆÁ¦-¾ç±¾"..sid];
-		JY.Person[pid]["ËùÔÚ"]=JY.Person[pid]["ËùÔÚ-¾ç±¾"..sid];
-		JY.Person[pid]["ÖÒ³Ï"]=JY.Person[pid]["ÖÒ³Ï-¾ç±¾"..sid];
-		JY.Person[pid]["¹¦¼¨"]=JY.Person[pid]["¹¦¼¨-¾ç±¾"..sid];
-		if JY.Person[pid]["ËùÔÚ"]==0 then
-			JY.Person[pid]["ËùÔÚ"]=math.random(1,50);
+		JY.Person[pid]["ç™»åœº"]=JY.Person[pid]["ç™»åœº-å‰§æœ¬"..sid];
+		JY.Person[pid]["åŠ¿åŠ›"]=JY.Person[pid]["åŠ¿åŠ›-å‰§æœ¬"..sid];
+		JY.Person[pid]["æ‰€åœ¨"]=JY.Person[pid]["æ‰€åœ¨-å‰§æœ¬"..sid];
+		JY.Person[pid]["å¿ è¯š"]=JY.Person[pid]["å¿ è¯š-å‰§æœ¬"..sid];
+		JY.Person[pid]["åŠŸç»©"]=JY.Person[pid]["åŠŸç»©-å‰§æœ¬"..sid];
+		if JY.Person[pid]["æ‰€åœ¨"]==0 then
+			JY.Person[pid]["æ‰€åœ¨"]=math.random(1,50);
 		end
-		if JY.Person[pid]["ÊÆÁ¦"]>0 then
-			JY.Person[pid]["Éí·İ"]=1;	--Ò»°ã
+		if JY.Person[pid]["åŠ¿åŠ›"]>0 then
+			JY.Person[pid]["èº«ä»½"]=1;	--ä¸€èˆ¬
 		else
-			JY.Person[pid]["Éí·İ"]=0;	--ÔÚÒ°
+			JY.Person[pid]["èº«ä»½"]=0;	--åœ¨é‡
 		end
 	end
 	for cid=1,50 do
-		JY.City[cid]["ÊÆÁ¦"]=JY.City[cid]["ÊÆÁ¦-¾ç±¾"..sid];
-		JY.City[cid]["Ì«ÊØ"]=JY.City[cid]["Ì«ÊØ-¾ç±¾"..sid];
-		local pid=JY.City[cid]["Ì«ÊØ"];
+		JY.City[cid]["åŠ¿åŠ›"]=JY.City[cid]["åŠ¿åŠ›-å‰§æœ¬"..sid];
+		JY.City[cid]["å¤ªå®ˆ"]=JY.City[cid]["å¤ªå®ˆ-å‰§æœ¬"..sid];
+		local pid=JY.City[cid]["å¤ªå®ˆ"];
 		if pid>0 then
-			JY.Person[pid]["Éí·İ"]=2;	--Ì«ÊØ
+			JY.Person[pid]["èº«ä»½"]=2;	--å¤ªå®ˆ
 		end
 	end
 	for fid=1,52 do
-		local pid=JY.Force[fid]["¾ıÖ÷"];
+		local pid=JY.Force[fid]["å›ä¸»"];
 		if pid>0 then
-			JY.Person[pid]["Éí·İ"]=3;	--¾ıÖ÷
+			JY.Person[pid]["èº«ä»½"]=3;	--å›ä¸»
 		end
 	end
 	UpdateForce();
 	for i,c in ipairs(JY.City) do
-		--c["·±ÈÙ"]=c["¹æÄ£"]*100+math.random(10)-math.random(10);
+		--c["ç¹è£"]=c["è§„æ¨¡"]*100+math.random(10)-math.random(10);
 	end
 	if sid==3 then
-		--JY.City[18]["·±ÈÙ"]=10;
+		--JY.City[18]["ç¹è£"]=10;
 	end
 	for fid=1,52 do
 		local zj,wz=0,0;
-		zj=zj+JY.Force[fid]["¹Ù¾ô"]*10;
-		wz=wz+JY.Force[fid]["¹Ù¾ô"]*10;
+		zj=zj+JY.Force[fid]["å®˜çˆµ"]*10;
+		wz=wz+JY.Force[fid]["å®˜çˆµ"]*10;
 		if zj>0 then
-			JY.Force[fid]["×Ê½ğ"]=80+math.floor(zj*10);
+			JY.Force[fid]["èµ„é‡‘"]=80+math.floor(zj*10);
 		end
 		if wz>0 then
-			JY.Force[fid]["Îï×Ê"]=80+math.floor(wz*10);
+			JY.Force[fid]["ç‰©èµ„"]=80+math.floor(wz*10);
 		end
 	end
 end
 --Force Relate
 function NewForce(fid,pid,cid)
 	local f=JY.Force[fid];
-	f["Ãû³Æ"]=JY.Person[pid]["Ãû³Æ"].."¾ü";
-	f["×´Ì¬"]=1;
-	f["¾ıÖ÷"]=pid;
-	JY.Person[pid]["µÇ³¡"]=3;
-	f["¹Ù¾ô"]=0;
-	f["±¾³Ç"]=cid;
-	JY.City[cid]["ÊÆÁ¦"]=fid;
-	f["Õ½ÂÔ"]=0;
-	f["×Ê½ğ"]=80+math.floor((3+JY.City[cid]["ÉÌÒµ"])*JY.City[cid]["·±ÈÙ"]/20);
-	f["Îï×Ê"]=80+math.floor((3+JY.City[cid]["Å©Òµ"])*JY.City[cid]["·±ÈÙ"]/20);
+	f["åç§°"]=JY.Person[pid]["åç§°"].."å†›";
+	f["çŠ¶æ€"]=1;
+	f["å›ä¸»"]=pid;
+	JY.Person[pid]["ç™»åœº"]=3;
+	f["å®˜çˆµ"]=0;
+	f["æœ¬åŸ"]=cid;
+	JY.City[cid]["åŠ¿åŠ›"]=fid;
+	f["æˆ˜ç•¥"]=0;
+	f["èµ„é‡‘"]=80+math.floor((3+JY.City[cid]["å•†ä¸š"])*JY.City[cid]["ç¹è£"]/20);
+	f["ç‰©èµ„"]=80+math.floor((3+JY.City[cid]["å†œä¸š"])*JY.City[cid]["ç¹è£"]/20);
 end
 function SelectForce(fid)
 	local f=JY.Force[fid];
-	JY.PID=f["¾ıÖ÷"];
+	JY.PID=f["å›ä¸»"];
 	JY.FID=fid;
-	JY.Base["µ±Ç°³Ç³Ø"]=f["±¾³Ç"];
-	JY.Base["ĞĞ¶¯Á¦"]=3+f["¹Ù¾ô"];
+	JY.Base["å½“å‰åŸæ± "]=f["æœ¬åŸ"];
+	JY.Base["è¡ŒåŠ¨åŠ›"]=3+f["å®˜çˆµ"];
 end
 function UpdateCity(cid)
   local c = JY.City[cid];
-  local fid = c["ÊÆÁ¦"];
+  local fid = c["åŠ¿åŠ›"];
   local frontLine = 0;
   local ptA = 0;
   local ptB = 0;
   if fid > 0 then
-    ptA = ptA + c["¹æÄ£"] * 5;
+    ptA = ptA + c["è§„æ¨¡"] * 5;
     for i, v in pairs(JY.CityToCity[cid]) do
       ptA = ptA + 20;
-      if JY.City[i]["ÊÆÁ¦"] > 0 and JY.City[i]["ÊÆÁ¦"] ~= fid then
-        ptA = ptA + JY.City[i]["±øÁ¦"] / 2000;
+      if JY.City[i]["åŠ¿åŠ›"] > 0 and JY.City[i]["åŠ¿åŠ›"] ~= fid then
+        ptA = ptA + JY.City[i]["å…µåŠ›"] / 2000;
         frontLine = 1;
       end
     end
-    ptB = ptB + limitX(c["ÈË¿Ú"] / 10, 0, 1000);
+    ptB = ptB + limitX(c["äººå£"] / 10, 0, 1000);
     if frontLine > 0 then
       ptB = ptB / 2;
     else
     end
-    if c["ÌØÕ÷"] == 1 or c["ÌØÕ÷"] == 2 then
+    if c["ç‰¹å¾"] == 1 or c["ç‰¹å¾"] == 2 then
       ptB = ptB * 1.2;
-    elseif c["ÌØÕ÷"] == 4 then
+    elseif c["ç‰¹å¾"] == 4 then
       ptA = ptA * 1.2;
-    elseif c["ÌØÕ÷"] == 5 then
+    elseif c["ç‰¹å¾"] == 5 then
       ptA = ptA * 1.1;
     end
-    if JY.Force[fid]["±¾³Ç"] == cid then
+    if JY.Force[fid]["æœ¬åŸ"] == cid then
       ptA = ptA * 1.5;
       ptB = ptB * 1.5;
     end
     ptA = math.floor(ptA);
     ptB = math.floor(ptB);
   end
-  c["Ç°Ïß"] = frontLine;
-  c["Õ½ÂÔ¼ÛÖµ"] = ptA;
-  c["ÕşÂÔ¼ÛÖµ"] = ptB;
+  c["å‰çº¿"] = frontLine;
+  c["æˆ˜ç•¥ä»·å€¼"] = ptA;
+  c["æ”¿ç•¥ä»·å€¼"] = ptB;
 end
 function UpdateForcePersonNum(fid)
 	local num=0;
 	for pid,v in ipairs(JY.Person) do
-		if v["ÊÆÁ¦"]==fid then
+		if v["åŠ¿åŠ›"]==fid then
 			num=num+1;
 		end
 	end
-	JY.Force[fid]["ÏÖÒÛ"]=num;
+	JY.Force[fid]["ç°å½¹"]=num;
 end
 function UpdateForce()
 	--Reset all
 	for fid,v in pairs(JY.Force) do
-		v["³Ç³Ø"]=0;
-		v["ÏÖÒÛ"]=0;
+		v["åŸæ± "]=0;
+		v["ç°å½¹"]=0;
 	end
 	for cid,v in ipairs(JY.City) do
-		local fid=v["ÊÆÁ¦"];
-		v["ÏÖÒÛ"]=0;
-		v["ÔÚÒ°"]=0;
+		local fid=v["åŠ¿åŠ›"];
+		v["ç°å½¹"]=0;
+		v["åœ¨é‡"]=0;
     UpdateCity(cid);
 	end
 	ConnectCity();
 	--Person
 	for pid,v in ipairs(JY.Person) do
-		if v["µÇ³¡"]==2 or v["µÇ³¡"]==3 then
-			local cid=v["ËùÔÚ"];
+		if v["ç™»åœº"]==2 or v["ç™»åœº"]==3 then
+			local cid=v["æ‰€åœ¨"];
 			if cid>0 then
-				local fid=v["ÊÆÁ¦"];
+				local fid=v["åŠ¿åŠ›"];
 				if fid>0 then
-					JY.City[cid]["ÏÖÒÛ"]=JY.City[cid]["ÏÖÒÛ"]+1;
+					JY.City[cid]["ç°å½¹"]=JY.City[cid]["ç°å½¹"]+1;
 				else
-					JY.City[cid]["ÔÚÒ°"]=JY.City[cid]["ÔÚÒ°"]+1;
+					JY.City[cid]["åœ¨é‡"]=JY.City[cid]["åœ¨é‡"]+1;
 				end
 			end
 		end
 	end
 	--City
 	for cid,v in ipairs(JY.City) do
-		local fid=v["ÊÆÁ¦"];
+		local fid=v["åŠ¿åŠ›"];
 		if fid>0 then
-			JY.Force[fid]["³Ç³Ø"]=JY.Force[fid]["³Ç³Ø"]+1;
-			JY.Force[fid]["ÏÖÒÛ"]=JY.Force[fid]["ÏÖÒÛ"]+v["ÏÖÒÛ"];
+			JY.Force[fid]["åŸæ± "]=JY.Force[fid]["åŸæ± "]+1;
+			JY.Force[fid]["ç°å½¹"]=JY.Force[fid]["ç°å½¹"]+v["ç°å½¹"];
 		end
 	end
 	--Force
 	for fid,v in pairs(JY.Force) do
-		if v["×´Ì¬"]>0 then
-			if v["³Ç³Ø"]==0 then
-				Talk("´«Áî",string.format("[Green]%s[Normal]´óÈË£¬[Red]%s[Normal]ÃğÍöÁË¡£",JY.Person[JY.PID]["Ãû³Æ"],JY.Force[fid]["Ãû³Æ"]));
-				v["×´Ì¬"]=0;
+		if v["çŠ¶æ€"]>0 then
+			if v["åŸæ± "]==0 then
+				Talk("ä¼ ä»¤",string.format("[Green]%s[Normal]å¤§äººï¼Œ[Red]%s[Normal]ç­äº¡äº†ã€‚",JY.Person[JY.PID]["åç§°"],JY.Force[fid]["åç§°"]));
+				v["çŠ¶æ€"]=0;
 				break;
 			else
-				local bcid=v["±¾³Ç"];
-				if JY.City[bcid]["ÊÆÁ¦"]~=fid then
+				local bcid=v["æœ¬åŸ"];
+				if JY.City[bcid]["åŠ¿åŠ›"]~=fid then
 					local t_city={};
 					for j,w in ipairs(JY.City) do
-						if w["ÊÆÁ¦"]==fid then
+						if w["åŠ¿åŠ›"]==fid then
 							table.insert(t_city,j);
 						end
 					end
-					table.sort(t_city,function(a,b) if JY.City[a]["¹æÄ£"]+JY.City[a]["·ÀÓù"]>JY.City[b]["¹æÄ£"]+JY.City[b]["·ÀÓù"] then return true end end)
+					table.sort(t_city,function(a,b) if JY.City[a]["è§„æ¨¡"]+JY.City[a]["é˜²å¾¡"]>JY.City[b]["è§„æ¨¡"]+JY.City[b]["é˜²å¾¡"] then return true end end)
 					local nbc=t_city[1];
-					v["±¾³Ç"]=nbc;
-					Talk("´«Áî",string.format("[Green]%s[Normal]´óÈË£¬[Red]%s[Normal]Ç¨ÒÆ±¾³ÇÖÁ[Red]%s[Normal]ÁË¡£",JY.Person[JY.PID]["Ãû³Æ"],JY.Force[fid]["Ãû³Æ"],JY.City[nbc]["Ãû³Æ"]));
+					v["æœ¬åŸ"]=nbc;
+					Talk("ä¼ ä»¤",string.format("[Green]%s[Normal]å¤§äººï¼Œ[Red]%s[Normal]è¿ç§»æœ¬åŸè‡³[Red]%s[Normal]äº†ã€‚",JY.Person[JY.PID]["åç§°"],JY.Force[fid]["åç§°"],JY.City[nbc]["åç§°"]));
 				end
 			end
 		end
 	end
 	--ZhongCheng
 	for fid,v in pairs(JY.Force) do
-		if v["×´Ì¬"]>0 then
+		if v["çŠ¶æ€"]>0 then
 			ZhongCheng(fid);
 		end
 	end
@@ -2407,34 +2407,34 @@ end
 function ZhongCheng(fid)
 	local t={};
 	for i,v in ipairs(JY.Person) do
-		if v["ÊÆÁ¦"]==fid then
-			if i~=JY.Force[fid]["¾ıÖ÷"] then
-				table.insert(t,{id=i,v=v["ÃûÉù"]});
+		if v["åŠ¿åŠ›"]==fid then
+			if i~=JY.Force[fid]["å›ä¸»"] then
+				table.insert(t,{id=i,v=v["åå£°"]});
 			end
 		end
 	end
 	table.sort(t,function(a,b) return a.v>b.v end);
 	local n=#t;
 	for i=1,6 do
-		JY.Force[fid]["ÖØ³¼"..i]=0;
+		JY.Force[fid]["é‡è‡£"..i]=0;
 	end
 	for i=1,math.min(n,6) do
-		JY.Force[fid]["ÖØ³¼"..i]=t[i].id;
+		JY.Force[fid]["é‡è‡£"..i]=t[i].id;
 	end
 end
 function occupyCity(fid, cid)
   local c = JY.City[cid];
-  local eForce = c["ÊÆÁ¦"];
+  local eForce = c["åŠ¿åŠ›"];
   
-  c["ÊÆÁ¦"] = fid;
-  c["Ì«ÊØ"] = 0;
+  c["åŠ¿åŠ›"] = fid;
+  c["å¤ªå®ˆ"] = 0;
   if eForce == 0 then
     return;
   end
   
   local retreatCityList = {};
   for i, v in pairs(JY.CityToCity[cid]) do
-    if JY.City[i]["ÊÆÁ¦"] == c["ÊÆÁ¦"] then
+    if JY.City[i]["åŠ¿åŠ›"] == c["åŠ¿åŠ›"] then
       table.insert(retreatCityList, i);
     end
   end
@@ -2442,19 +2442,19 @@ function occupyCity(fid, cid)
   if #retreatCityList > 0 then
     retreatCity = TableRandom(retreatCityList);
   end
-  local master = JY.Force[fid]["¾ıÖ÷"];
+  local master = JY.Force[fid]["å›ä¸»"];
   for i = 1, 750 do
-    if JY.Person[i]["ÊÆÁ¦"] == eForce and JY.Person[i]["ËùÔÚ"] == cid then
-      JY.Person[i]["Éí·İ"] = 1;
-      if retreatCity > 0 and math.random() < 0.1 + math.max(JY.Person[i]["ÎäÁ¦"], JY.Person[i]["ÖÇÄ±"]) / 125 then  -- ³·ÍË³É¹¦¼¸ÂÊ
-        JY.Person[i]["ËùÔÚ"] = retreatCity;
+    if JY.Person[i]["åŠ¿åŠ›"] == eForce and JY.Person[i]["æ‰€åœ¨"] == cid then
+      JY.Person[i]["èº«ä»½"] = 1;
+      if retreatCity > 0 and math.random() < 0.1 + math.max(JY.Person[i]["æ­¦åŠ›"], JY.Person[i]["æ™ºè°‹"]) / 125 then  -- æ’¤é€€æˆåŠŸå‡ ç‡
+        JY.Person[i]["æ‰€åœ¨"] = retreatCity;
       elseif true then
         dispathPrisoner(fid, i);
-      elseif GetXX(i, master) < math.random(100) then --½µ·ü
-        JY.Person[i]["ÊÆÁ¦"] = fid;
+      elseif GetXX(i, master) < math.random(100) then --é™ä¼
+        JY.Person[i]["åŠ¿åŠ›"] = fid;
       else
-        JY.Person[i]["ÊÆÁ¦"] = 0;
-        JY.Person[i]["Éí·İ"] = 0;
+        JY.Person[i]["åŠ¿åŠ›"] = 0;
+        JY.Person[i]["èº«ä»½"] = 0;
       end
     end
   end
@@ -2464,9 +2464,9 @@ function dispathPrisoner(fid, pid)
   local bt = {};
   local width, height = 800, 360;
   local x0, y0 = (CC.ScreenW - width) / 2, (CC.ScreenH - height) / 2;
-  table.insert(bt, button_creat(1, 1, CC.ScreenW / 2 + 0, CC.ScreenH - y0 - 72, "È°½µ", true, true));
-  table.insert(bt, button_creat(1, 2, CC.ScreenW / 2 + 104, CC.ScreenH - y0 - 72, "´¦Õ¶", true, true));
-  table.insert(bt, button_creat(1, 3, CC.ScreenW / 2 + 208, CC.ScreenH - y0 - 72, "ÊÍ·Å", true, true));
+  table.insert(bt, button_creat(1, 1, CC.ScreenW / 2 + 0, CC.ScreenH - y0 - 72, "åŠé™", true, true));
+  table.insert(bt, button_creat(1, 2, CC.ScreenW / 2 + 104, CC.ScreenH - y0 - 72, "å¤„æ–©", true, true));
+  table.insert(bt, button_creat(1, 3, CC.ScreenW / 2 + 208, CC.ScreenH - y0 - 72, "é‡Šæ”¾", true, true));
   local p = JY.Person[pid];
   local str = genPrisonerString(pid);
   local function redraw()
@@ -2475,27 +2475,27 @@ function dispathPrisoner(fid, pid)
     local x, y = x0, y0;
     LoadPicEnhance(73, x, y, width, height);
     x = x + 96; y = y + 10;
-    lib.PicLoadCache(2, p["ÈİÃ²"] * 2, x, y, 1, nil, nil, nil, 340);
+    lib.PicLoadCache(2, p["å®¹è²Œ"] * 2, x, y, 1, nil, nil, nil, 340);
     x = x - 32; y = y0 + height - 80;
 		LoadPicEnhance(207, x - 40, y - 16, 320 + 80, 96);
-		DrawStringEnhance(x + 36, y ,p["Ãû³Æ"], C_ORANGE, size, 0.5);
+		DrawStringEnhance(x + 36, y ,p["åç§°"], C_ORANGE, size, 0.5);
 		DrawStringEnhance(x + 72, y ,str, M_White, size);
     --drawAttribute
     x = x0 + width / 2; y = y0 + 32;
-    DrawStringEnhance(x, y, p["Ãû³Æ"] .. " " .. p["×Ö"], C_WHITE, size);
+    DrawStringEnhance(x, y, p["åç§°"] .. " " .. p["å­—"], C_WHITE, size);
     y = y + size + 4;
-    DrawStringEnhance(x, y, string.format("Í³ÂÊ [w]%3d[name] ÎäÁ¦ [w]%3d[name] ÖÇÄ± [w]%3d[n][name]ÕşÎñ [w]%3d[name] ÷ÈÁ¦ [w]%3d", p["Í³ÂÊ"], p["ÎäÁ¦"], p["ÖÇÄ±"], p["ÕşÎñ"], p["÷ÈÁ¦"]), C_Name, size);
+    DrawStringEnhance(x, y, string.format("ç»Ÿç‡ [w]%3d[name] æ­¦åŠ› [w]%3d[name] æ™ºè°‹ [w]%3d[n][name]æ”¿åŠ¡ [w]%3d[name] é­…åŠ› [w]%3d", p["ç»Ÿç‡"], p["æ­¦åŠ›"], p["æ™ºè°‹"], p["æ”¿åŠ¡"], p["é­…åŠ›"]), C_Name, size);
     y = y + (size + 2) * 2;
-    DrawStringEnhance(x, y, "²½±ø  [w]" .. JY.Str[p["²½±øÊÊĞÔ"] + 9160] .. " [name]¹­±ø  [w]" .. JY.Str[p["¹­±øÊÊĞÔ"] + 9160] .. " [name]Æï±ø  [w]" .. JY.Str[p["Æï±øÊÊĞÔ"] + 9160], C_Name, size);
+    DrawStringEnhance(x, y, "æ­¥å…µ  [w]" .. JY.Str[p["æ­¥å…µé€‚æ€§"] + 9160] .. " [name]å¼“å…µ  [w]" .. JY.Str[p["å¼“å…µé€‚æ€§"] + 9160] .. " [name]éª‘å…µ  [w]" .. JY.Str[p["éª‘å…µé€‚æ€§"] + 9160], C_Name, size);
     y = y + (size + 4);
     DrawSkillTable(pid, x, y);
     
     x, y = CC.ScreenW / 2, y0 - 36;
     lib.PicLoadCache(4, 4 * 2, x, y);
-    DrawStringEnhance(x, y, "´¦ÖÃ·ıÂ²", C_WHITE, 36, 0.5, 0.5);
+    DrawStringEnhance(x, y, "å¤„ç½®ä¿˜è™", C_WHITE, 36, 0.5, 0.5);
 		button_redraw(bt);
   end
-  local master = JY.Force[fid]["¾ıÖ÷"];
+  local master = JY.Force[fid]["å›ä¸»"];
   local obeyFlag = false;
   if GetXX(pid, master) < math.random(100) then
     obeyFlag = true;
@@ -2533,66 +2533,66 @@ function dispathPrisoner(fid, pid)
 end
 function genPrisonerString(pid)
   local str = {
-    "Æ«Æ«ÊÇ" .. JY.Person[pid]["Ãû³Æ"] .. "¡­¡­",
-    "ÄÜ·ñÈÃÎÒ¼û¼ûĞÖ³¤£¬[n]ÎÒÏëÓëËû¸æ±ğ¡£",
-    "Èô´Ë£¬[n]µ«ÇóÒ»ËÀ£¬±ğÎŞËûÑÔ¡£",
-    "¡­¡­",
-    "ÖÒ³¼²»ÊÌ¶şÖ÷£¬[n]ÎÒÒÑ¾­ÏëºÃÁË¡£",
-    "ºó»Ú°¡¡­¡­",
-    "Ëæ±ã°É£¡",
-    "Õâ´ÎÖ»²»¹ıÊÇÔËÆø²»¼Ñ£¬[n]ÏÂ´Î²»»á°Ü¸øÄã¡£",
-    "ºß£¬ÎªÊ²Ã´ÎÒ»áÔÚÕâÀï£¿",
-    "ÖÕÓÚÎÒÒ²Ê§È¥ÁËÎäÔË¡£",
-    "ÊÂÒÑÖÁ´Ë£¬[n]Ö»ºÃÌıÌìÓÉÃüÁË¡£",
-    "ÄÜ»îÖÁ½ñ£¬[n]ÒÑÎŞÔ¹ÎŞ»Ú¡­¡­",
-    "Õâ¾ÍÊÇÎÒµÄÄ©ÈÕÂğ£¬[n]Õæ²»¹ıñ«¡­¡­",
+    "ååæ˜¯" .. JY.Person[pid]["åç§°"] .. "â€¦â€¦",
+    "èƒ½å¦è®©æˆ‘è§è§å…„é•¿ï¼Œ[n]æˆ‘æƒ³ä¸ä»–å‘Šåˆ«ã€‚",
+    "è‹¥æ­¤ï¼Œ[n]ä½†æ±‚ä¸€æ­»ï¼Œåˆ«æ— ä»–è¨€ã€‚",
+    "â€¦â€¦",
+    "å¿ è‡£ä¸ä¾äºŒä¸»ï¼Œ[n]æˆ‘å·²ç»æƒ³å¥½äº†ã€‚",
+    "åæ‚”å•Šâ€¦â€¦",
+    "éšä¾¿å§ï¼",
+    "è¿™æ¬¡åªä¸è¿‡æ˜¯è¿æ°”ä¸ä½³ï¼Œ[n]ä¸‹æ¬¡ä¸ä¼šè´¥ç»™ä½ ã€‚",
+    "å“¼ï¼Œä¸ºä»€ä¹ˆæˆ‘ä¼šåœ¨è¿™é‡Œï¼Ÿ",
+    "ç»ˆäºæˆ‘ä¹Ÿå¤±å»äº†æ­¦è¿ã€‚",
+    "äº‹å·²è‡³æ­¤ï¼Œ[n]åªå¥½å¬å¤©ç”±å‘½äº†ã€‚",
+    "èƒ½æ´»è‡³ä»Šï¼Œ[n]å·²æ— æ€¨æ— æ‚”â€¦â€¦",
+    "è¿™å°±æ˜¯æˆ‘çš„æœ«æ—¥å—ï¼Œ[n]çœŸä¸è¿‡ç˜¾â€¦â€¦",
   };
   return TableRandom(str);
 end
 function genPrisonerApproveString(pid)
   local str = {
-    "ÄúÄÜ¾ÈÎÒÂğ£¿[n]Ì«ºÃÁË¡£",
-    "Õâ»òĞíÒ²ÊÇÔµ·Ö£¬[n]Ô¸ÒâÎªÄúĞ§ÀÍ¡£",
-    "ÖªµÀÁË¡£[n]´Ó½ñÎÒÔ¸°ïÖúËïÈ¨´óÈË¡£",
-    "ÓĞÉúÓÚÊÀ²ÅÄÜÊÌ·îÌìÏÂ£¬[n]Ô¸ÉáÉíĞ§ÀÍ¡£",
-    "ÕâÒ²ÊÇÎªÁËÌìÏÂ°²Äş£¬[n]ÎÒ½µ·üÓÚÄúÁË¡£",
-    "ÓëĞÖ³¤¹²Í¬Õ½¶·Ò²²»»µ£¬[n]Ô¸ÒâĞ§ÀÍ¡£",
-    "ÕâÑùÊµÊô²»µÃÒÑ£¬[n]µ«ÇóÍ×ÉÆ´¦Ö®¡£",
-    "ÎÒ¿ÊÍûµÄ²»Ö»ÊÇÕ½¶·¡­¡­£¬[n]Ï£Íû¶ÔÄúÓĞËù°ïÖú¡£",
+    "æ‚¨èƒ½æ•‘æˆ‘å—ï¼Ÿ[n]å¤ªå¥½äº†ã€‚",
+    "è¿™æˆ–è®¸ä¹Ÿæ˜¯ç¼˜åˆ†ï¼Œ[n]æ„¿æ„ä¸ºæ‚¨æ•ˆåŠ³ã€‚",
+    "çŸ¥é“äº†ã€‚[n]ä»ä»Šæˆ‘æ„¿å¸®åŠ©å­™æƒå¤§äººã€‚",
+    "æœ‰ç”Ÿäºä¸–æ‰èƒ½ä¾å¥‰å¤©ä¸‹ï¼Œ[n]æ„¿èˆèº«æ•ˆåŠ³ã€‚",
+    "è¿™ä¹Ÿæ˜¯ä¸ºäº†å¤©ä¸‹å®‰å®ï¼Œ[n]æˆ‘é™ä¼äºæ‚¨äº†ã€‚",
+    "ä¸å…„é•¿å…±åŒæˆ˜æ–—ä¹Ÿä¸åï¼Œ[n]æ„¿æ„æ•ˆåŠ³ã€‚",
+    "è¿™æ ·å®å±ä¸å¾—å·²ï¼Œ[n]ä½†æ±‚å¦¥å–„å¤„ä¹‹ã€‚",
+    "æˆ‘æ¸´æœ›çš„ä¸åªæ˜¯æˆ˜æ–—â€¦â€¦ï¼Œ[n]å¸Œæœ›å¯¹æ‚¨æœ‰æ‰€å¸®åŠ©ã€‚",
   };
   return TableRandom(str);
 end
 function genPrisonerRejectString(pid)
   local str = {
-    "ÎÒ²»ÄÜºñÑÕÎŞ³ÜµØÉú´æ£¡",
-    "ÏëËµ·şÎÒÂğ£¬ ĞİÏë£¬[n]ËÀÁËÕâÌõĞÄ°É£¡",
-    "ÄÇÊÇ²»¿ÉÄÜµÄÊÂ¡£",
-    "ÖÒ³¼²»ÊÌ¶şÖ÷¡£",
+    "æˆ‘ä¸èƒ½åšé¢œæ— è€»åœ°ç”Ÿå­˜ï¼",
+    "æƒ³è¯´æœæˆ‘å—ï¼Œ ä¼‘æƒ³ï¼Œ[n]æ­»äº†è¿™æ¡å¿ƒå§ï¼",
+    "é‚£æ˜¯ä¸å¯èƒ½çš„äº‹ã€‚",
+    "å¿ è‡£ä¸ä¾äºŒä¸»ã€‚",
   };
   return TableRandom(str);
 end
 function genPrisonerReleaseString(pid)
   local str = {
-    "ÊÂËäÄÑµÃ£¬µ«Çë¼Ç×¡£¬[n]Õ½³¡ÉÏ²»½²ÈËÇé¡£",
-    "ÊÇËµÒªÊÍ·ÅÎÒÂğ£¿[n]¡­¡­¸ĞĞ»¡£",
-    "ÖÂĞ»ÁË¡£",
-    "ÏÂ´Î²»»áÍ¬Ñù¶Ô´ı¡£",
-    "ÏÂ´ÎÔÙ¼û°É¡£",
-    "ÔçÍí»áÈÃÄãºó»Ú[n]½ñÌìÃ»ÄÜÉ±µôÎÒ¡£",
-    "ÊÇÂğ£¬¿É±ğºó»ÚÅ¶¡£",
+    "äº‹è™½éš¾å¾—ï¼Œä½†è¯·è®°ä½ï¼Œ[n]æˆ˜åœºä¸Šä¸è®²äººæƒ…ã€‚",
+    "æ˜¯è¯´è¦é‡Šæ”¾æˆ‘å—ï¼Ÿ[n]â€¦â€¦æ„Ÿè°¢ã€‚",
+    "è‡´è°¢äº†ã€‚",
+    "ä¸‹æ¬¡ä¸ä¼šåŒæ ·å¯¹å¾…ã€‚",
+    "ä¸‹æ¬¡å†è§å§ã€‚",
+    "æ—©æ™šä¼šè®©ä½ åæ‚”[n]ä»Šå¤©æ²¡èƒ½æ€æ‰æˆ‘ã€‚",
+    "æ˜¯å—ï¼Œå¯åˆ«åæ‚”å“¦ã€‚",
   };
   return TableRandom(str);
 end
 function genPrisonerKillString(pid)
-  local fid = JY.Person[pid]["ÊÆÁ¦"];
-  local id = JY.Force[fid]["¾ıÖ÷"];
-  local name = JY.Person[id]["Ãû³Æ"];
+  local fid = JY.Person[pid]["åŠ¿åŠ›"];
+  local id = JY.Force[fid]["å›ä¸»"];
+  local name = JY.Person[id]["åç§°"];
   local str = {
-    "¶Ô²»Æğ" .. name .."´óÈË£¬[n]²»ÄÜÔÙÎªÄúĞ§ÀÍÁË¡£",
-    name .."´óÈË£¬ÇëÔ­ÁÂ¡£",
-    "ÕâÒ»¶¨ÊÇÊ²Ã´µØ·½¸ã´íÁË¡£",
-    "ÄÜ¹»ÎªÏñ" .. name .."´óÈËÄÇÑùµÄÏÈÉúĞ§ÀÍ¹ı£¬[n]²»ºó»Ú¡£",
-    "µ½´ËÎªÖ¹Âğ£¬[n]" .. name .."´óÈË£¬¶Ô²»Æğ¡£",
+    "å¯¹ä¸èµ·" .. name .."å¤§äººï¼Œ[n]ä¸èƒ½å†ä¸ºæ‚¨æ•ˆåŠ³äº†ã€‚",
+    name .."å¤§äººï¼Œè¯·åŸè°…ã€‚",
+    "è¿™ä¸€å®šæ˜¯ä»€ä¹ˆåœ°æ–¹æé”™äº†ã€‚",
+    "èƒ½å¤Ÿä¸ºåƒ" .. name .."å¤§äººé‚£æ ·çš„å…ˆç”Ÿæ•ˆåŠ³è¿‡ï¼Œ[n]ä¸åæ‚”ã€‚",
+    "åˆ°æ­¤ä¸ºæ­¢å—ï¼Œ[n]" .. name .."å¤§äººï¼Œå¯¹ä¸èµ·ã€‚",
   };
   return TableRandom(str);
 end

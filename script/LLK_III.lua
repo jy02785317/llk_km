@@ -36,11 +36,11 @@ function WarMenu:event()
 	self.blatk = 0;
   self.bldef = 0;
 	for wid, wp in ipairs(War.Person) do
-		if wp["´æ»î"]>0 then
-			if wp["µĞÎÒ"]==0 then
-				self.blatk = self.blatk + wp["±øÁ¦"];
+		if wp["å­˜æ´»"]>0 then
+			if wp["æ•Œæˆ‘"]==0 then
+				self.blatk = self.blatk + wp["å…µåŠ›"];
 			else
-				self.bldef = self.bldef + wp["±øÁ¦"];
+				self.bldef = self.bldef + wp["å…µåŠ›"];
 			end
 		end
 	end
@@ -83,8 +83,8 @@ function WarMenu:redraw()
 	lib.PicLoadCache(4, pic*2, 66, 57);
 	DrawStringEnhance(66, 54, "[B]"..self.timer, M_LightBlue, 32, 0.5, 0.5);
 	DrawStringEnhance(186, 28, War.name,C_WHITE, 28, 0.5, 0.5);
-	DrawStringEnhance(234, 55, "ÎÒ¾ü",C_WHITE, 16, 1);
-	DrawStringEnhance(277, 55, "µĞ¾ü",C_WHITE, 16, 0);
+	DrawStringEnhance(234, 55, "æˆ‘å†›",C_WHITE, 16, 1);
+	DrawStringEnhance(277, 55, "æ•Œå†›",C_WHITE, 16, 0);
   
 	lib.Background(254 - 128 * self.blatk / self.blmax, 74, 254, 74 + 16, 128, M_RoyalBlue);
 	DrawStringEnhance(250, 72, "[B]" .. self.blatk, M_LightBlue, 18, 1);
@@ -111,11 +111,11 @@ function WarMenu:redraw()
     end
   end
   for wid, wp in ipairs(War.Person) do
-    if wp["´æ»î"] > 0 then
-      dx, dy = GetMiniMapXY(wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"]);
-      lib.PicLoadCache(0, (291 + wp["µĞÎÒ"]) * 2, dx, dy, 0, nil, nil, 12);
-      --lib.PicLoadCache(2, (6000 + wp.p["ÈİÃ²"]) * 2, dx, dy, 0, nil, nil, 24);
-      --lib.PicLoadCache(2, (6000 + wp.p["ÈİÃ²"]) * 2, dx, dy, 4 + 8, nil, RGB(111,0,0), 24);
+    if wp["å­˜æ´»"] > 0 then
+      dx, dy = GetMiniMapXY(wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"]);
+      lib.PicLoadCache(0, (291 + wp["æ•Œæˆ‘"]) * 2, dx, dy, 0, nil, nil, 12);
+      --lib.PicLoadCache(2, (6000 + wp.p["å®¹è²Œ"]) * 2, dx, dy, 0, nil, nil, 24);
+      --lib.PicLoadCache(2, (6000 + wp.p["å®¹è²Œ"]) * 2, dx, dy, 4 + 8, nil, RGB(111,0,0), 24);
     end
   end
 end
@@ -164,7 +164,7 @@ function WarArmySelection:event()
 		local sx,sy=GetScreenXY(War.mx, War.my);
 		if MOUSE.CLICK(sx-16,sy-8,sx+16,sy+8) then
       for i, wid in ipairs(self.armyList) do
-        if War.Person[wid]["µĞÎÒ"] == 0 then
+        if War.Person[wid]["æ•Œæˆ‘"] == 0 then
           War.Person[wid].AIConfig.tx, War.Person[wid].AIConfig.ty = War.mx, War.my;
         end
       end
@@ -182,8 +182,8 @@ function WarArmySelection:event()
       self.status = 0;
       self.armyList = {};
       for wid, wp in ipairs(War.Person) do
-        if wp.show and wp["´æ»î"] > 0 then
-          local sx, sy = GetScreenXY(wp["×ø±êX"], wp["×ø±êY"]);
+        if wp.show and wp["å­˜æ´»"] > 0 then
+          local sx, sy = GetScreenXY(wp["åæ ‡X"], wp["åæ ‡Y"]);
           if between(sx + War.x_off, self.hx, self.rx) and between(sy + War.y_off, self.hy, self.ry) then
             table.insert(self.armyList, wid);
           end
@@ -245,37 +245,37 @@ function WarArmySelection:redrawArmySelection()
     local wp = War.Person[self.armyList[1]];
     local sx = self.ox + 8;
     local sy = self.oy + 8;
-    if wp["µĞÎÒ"] == 0 then
+    if wp["æ•Œæˆ‘"] == 0 then
       color = 8438015;
     else
       color = 16291992;
     end
-    DrawStringEnhance(sx + 48, sy, wp.p["Ãû³Æ"], C_Name, 24, 0.5);
-    lib.PicLoadCache(4, (276 + 4 * wp.bz["±øÏµ"] + 2 * wp["µĞÎÒ"]) * 2, sx + 90, sy + 2, 1);
-    DrawStringEnhance(sx + 112, sy, "" .. wp["±øÁ¦"], C_WHITE, 24);
+    DrawStringEnhance(sx + 48, sy, wp.p["åç§°"], C_Name, 24, 0.5);
+    lib.PicLoadCache(4, (276 + 4 * wp.bz["å…µç³»"] + 2 * wp["æ•Œæˆ‘"]) * 2, sx + 90, sy + 2, 1);
+    DrawStringEnhance(sx + 112, sy, "" .. wp["å…µåŠ›"], C_WHITE, 24);
     sy = sy + 28;
-    lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 2000)*2, sx, sy, 1);
+    lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 2000)*2, sx, sy, 1);
     sx = sx + 90;
-    DrawStringEnhance(sx, sy, "±øÖÖ: [white]" .. wp.bz["Ãû³Æ"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "å…µç§: [white]" .. wp.bz["åç§°"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÎäÁ¦: [white]" .. wp.p["ÎäÁ¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "æ­¦åŠ›: [white]" .. wp.p["æ­¦åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÖÇÄ±: [white]" .. wp.p["ÖÇÄ±"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "æ™ºè°‹: [white]" .. wp.p["æ™ºè°‹"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Í³ÂÊ: [white]" .. wp.p["Í³ÂÊ"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "ç»Ÿç‡: [white]" .. wp.p["ç»Ÿç‡"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Èâ²«: [white]" .. wp["¹¥»÷Á¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "è‚‰æ: [white]" .. wp["æ”»å‡»åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Ô¶³Ì: [white]" .. wp["Ô¶³Ì¹¥»÷Á¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "è¿œç¨‹: [white]" .. wp["è¿œç¨‹æ”»å‡»åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÊØ±¸: [white]" .. wp["·ÀÓùÁ¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "å®ˆå¤‡: [white]" .. wp["é˜²å¾¡åŠ›"], C_Name, 16);
   elseif self.num < 7 then
     LoadPicEnhance(115, self.ox, self.oy, self.width, self.height);
     for i, wid in ipairs(self.armyList) do
       local sx = self.ox + 8;
       local sy = self.oy + (i - 1) * 40 + 8;
       local wp = War.Person[wid];
-      if wp["µĞÎÒ"] == 0 then
+      if wp["æ•Œæˆ‘"] == 0 then
         color = 8438015;
       else
         color = 16291992;
@@ -283,14 +283,14 @@ function WarArmySelection:redrawArmySelection()
       if wid == self.curPerson then
         lib.Background(sx, sy, sx + 192, sy + 36, 192);
       end
-      lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 6000)*2, sx, sy, 1, nil, nil, 36);
+      lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 6000)*2, sx, sy, 1, nil, nil, 36);
       sx = sx + 44;
-      DrawStringEnhance(sx, sy, wp.p["Ãû³Æ"], C_Name, 18);
-      lib.PicLoadCache(4, (276 + 4 * wp.bz["±øÏµ"] + 2 * wp["µĞÎÒ"]) * 2, sx + 72, sy, 1);
-      DrawStringEnhance(sx + 92, sy, "" .. wp["±øÁ¦"], C_WHITE, 18);
+      DrawStringEnhance(sx, sy, wp.p["åç§°"], C_Name, 18);
+      lib.PicLoadCache(4, (276 + 4 * wp.bz["å…µç³»"] + 2 * wp["æ•Œæˆ‘"]) * 2, sx + 72, sy, 1);
+      DrawStringEnhance(sx + 92, sy, "" .. wp["å…µåŠ›"], C_WHITE, 18);
       sy = sy + 18;
-      DrawStringEnhance(sx, sy, "¹¥»÷    ÊØ±¸", C_Name, 18);
-      DrawStringEnhance(sx + 38, sy, string.format("%3d     %3d", math.max(wp["¹¥»÷Á¦"], wp["Ô¶³Ì¹¥»÷Á¦"]), wp["·ÀÓùÁ¦"]), C_WHITE, 18);
+      DrawStringEnhance(sx, sy, "æ”»å‡»    å®ˆå¤‡", C_Name, 18);
+      DrawStringEnhance(sx + 38, sy, string.format("%3d     %3d", math.max(wp["æ”»å‡»åŠ›"], wp["è¿œç¨‹æ”»å‡»åŠ›"]), wp["é˜²å¾¡åŠ›"]), C_WHITE, 18);
     end
   else
     LoadPicEnhance(115, self.ox, self.oy, self.width, self.height);
@@ -299,7 +299,7 @@ function WarArmySelection:redrawArmySelection()
       local sx = self.ox + 8;
       local sy = self.oy + (i - 1) * 26 + 8;
       local wp = War.Person[wid];
-      if wp["µĞÎÒ"] == 0 then
+      if wp["æ•Œæˆ‘"] == 0 then
         color = 8438015;
       else
         color = 16291992;
@@ -309,27 +309,27 @@ function WarArmySelection:redrawArmySelection()
       end
       sx = sx + 8;
       if i == 10 and totalNum > 10 then
-        DrawStringEnhance(sx + 24, sy + 2, "¼°ÆäËû" .. (totalNum - 9) .. "ÈË", C_WHITE, 20);
+        DrawStringEnhance(sx + 24, sy + 2, "åŠå…¶ä»–" .. (totalNum - 9) .. "äºº", C_WHITE, 20);
         break;
       else
-        lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 6000)*2, sx, sy, 1, nil, nil, 24);
-        DrawStringEnhance(sx + 24, sy + 2, wp.p["Ãû³Æ"], C_Name, 20);
-        lib.PicLoadCache(4, (276 + 4 * wp.bz["±øÏµ"] + 2 * wp["µĞÎÒ"]) * 2, sx + 100, sy + 2, 1);
-        DrawStringEnhance(sx + 120, sy + 2, "" .. wp["±øÁ¦"], C_WHITE, 20);
+        lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 6000)*2, sx, sy, 1, nil, nil, 24);
+        DrawStringEnhance(sx + 24, sy + 2, wp.p["åç§°"], C_Name, 20);
+        lib.PicLoadCache(4, (276 + 4 * wp.bz["å…µç³»"] + 2 * wp["æ•Œæˆ‘"]) * 2, sx + 100, sy + 2, 1);
+        DrawStringEnhance(sx + 120, sy + 2, "" .. wp["å…µåŠ›"], C_WHITE, 20);
       end
     end
   end
 end
 function WarArmySelection:redrawArmyPath()
   for i, wid in ipairs(self.armyList) do
-    if War.Person[wid]["µĞÎÒ"] == 0 then
+    if War.Person[wid]["æ•Œæˆ‘"] == 0 then
       War_DrawPath(wid);
     end
   end
 end
 -- Functions
 function War_DrawArmy()
-	--·½Õó
+	--æ–¹é˜µ
 	local zx={}
 	zx[1]={{x=0,y=0}	}	--1
 	zx[2]={{x=-0.4,y=0},{x=0.4,y=0}	}	--2
@@ -386,35 +386,35 @@ function War_DrawArmy()
 	local num=0;
 	for i,wp in ipairs(War.Person) do
 		if wp.show then
-			local ox,oy=wp["×ø±êX"],wp["×ø±êY"];
-			if wp["¶¯×÷"]==1 then	--ÒÆ¶¯
-				ox,oy=ox+(wp["ÒÆ¶¯X"]-ox)*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"],oy+(wp["ÒÆ¶¯Y"]-oy)*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"];
+			local ox,oy=wp["åæ ‡X"],wp["åæ ‡Y"];
+			if wp["åŠ¨ä½œ"]==1 then	--ç§»åŠ¨
+				ox,oy=ox+(wp["ç§»åŠ¨X"]-ox)*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"],oy+(wp["ç§»åŠ¨Y"]-oy)*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"];
 			end
-			wp["ÆÁÄ»X"],wp["ÆÁÄ»Y"]=GetScreenXY(ox,oy);
-			if between(wp["ÆÁÄ»X"],-64,CC.ScreenW+64) then
-				local width=wp.bz["ÌùÍ¼³ß´ç"];
-				local pic=(wp["ÌùÍ¼"]+10*wp["·½Ïò"])*2;
+			wp["å±å¹•X"],wp["å±å¹•Y"]=GetScreenXY(ox,oy);
+			if between(wp["å±å¹•X"],-64,CC.ScreenW+64) then
+				local width=wp.bz["è´´å›¾å°ºå¯¸"];
+				local pic=(wp["è´´å›¾"]+10*wp["æ–¹å‘"])*2;
 				local frame=0;
-				if wp["¶¯×÷"]==0 then
+				if wp["åŠ¨ä½œ"]==0 then
 					frame=War.Frame;
-				elseif wp["¶¯×÷"]==1 then
+				elseif wp["åŠ¨ä½œ"]==1 then
 					--frame=War.Frame;
-					frame=math.min(7,(math.floor(8*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"])));
+					frame=math.min(7,(math.floor(8*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"])));
 					pic=pic+2;
-				elseif wp["¶¯×÷"]==2 then
-					frame=math.min(7,(math.floor(8*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"])));
+				elseif wp["åŠ¨ä½œ"]==2 then
+					frame=math.min(7,(math.floor(8*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"])));
 					pic=pic+4;
-				elseif wp["¶¯×÷"]==3 then
-					frame=math.min(7,(math.floor(12*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"])));
+				elseif wp["åŠ¨ä½œ"]==3 then
+					frame=math.min(7,(math.floor(12*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"])));
 					pic=pic+8;
 				end
-				local n=math.floor(wp["±øÁ¦"]/1000)
+				local n=math.floor(wp["å…µåŠ›"]/1000)
 				if n>16 then
 					n=16
 				elseif n<3 then
 					n=3;
 				end
-				if wp.bz["¾ŞĞÍ"]>0 then
+				if wp.bz["å·¨å‹"]>0 then
 					n=1;
 				end
 				for j,v in ipairs(zx[n]) do
@@ -446,26 +446,26 @@ function War_DrawArmy()
 	end
 	for id,wp in ipairs(War.Person) do
 		if wp.show then
-      local sx, sy= wp["ÆÁÄ»X"], wp["ÆÁÄ»Y"];
-			--ÆìÖÄ
+      local sx, sy= wp["å±å¹•X"], wp["å±å¹•Y"];
+			--æ——å¸œ
 			if between(sx, -64, CC.ScreenW + 64) then
-				WarDrawFlag(sx-1,sy-64,wp.force_id,wp.flag_id,wp["·½Ïò"],(War.Frame%4))
+				WarDrawFlag(sx-1,sy-64,wp.force_id,wp.flag_id,wp["æ–¹å‘"],(War.Frame%4))
 			end
-			--¹­¼ı¹ì¼£
-      local n=math.floor(wp["±øÁ¦"]/1000)
+			--å¼“ç®­è½¨è¿¹
+      local n=math.floor(wp["å…µåŠ›"]/1000)
       if n>16 then
         n=16
       elseif n<3 then
         n=3;
       end
-      if wp.bz["¾ŞĞÍ"]>0 then
+      if wp.bz["å·¨å‹"]>0 then
         n=1;
       end
-			if wp["¶¯×÷"]==3 and wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"]>1/3 then
+			if wp["åŠ¨ä½œ"]==3 and wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"]>1/3 then
 				for i,v in pairs(zx[n]) do
-          sx, sy = GetScreenXY(wp["×ø±êX"] + v.x, wp["×ø±êY"] + v.y);
-					local dx,dy=GetScreenXY(wp["Ä¿±êX"]+v.x*1.5,wp["Ä¿±êY"]+v.y*1.5);
-					local f=math.min(1,1.5*wp["¶¯×÷½ø¶È"]/wp["¶¯×÷½ø¶È×î´óÖµ"]-0.5+i/n/4);
+          sx, sy = GetScreenXY(wp["åæ ‡X"] + v.x, wp["åæ ‡Y"] + v.y);
+					local dx,dy=GetScreenXY(wp["ç›®æ ‡X"]+v.x*1.5,wp["ç›®æ ‡Y"]+v.y*1.5);
+					local f=math.min(1,1.5*wp["åŠ¨ä½œè¿›åº¦"]/wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"]-0.5+i/n/4);
 					local h=80;
 					local ax=sx+(dx-sx)*f;
 					local ay=sy+(dy-sy)*f-h+h*4*(f-0.5)^2-24;
@@ -477,9 +477,9 @@ function War_DrawArmy()
 			end
     end
   end
-	for id,wp in ipairs(War.Person) do  --Âı 
+	for id,wp in ipairs(War.Person) do  --æ…¢ 
 		if wp.show then
-      local sx, sy= wp["ÆÁÄ»X"], wp["ÆÁÄ»Y"];
+      local sx, sy= wp["å±å¹•X"], wp["å±å¹•Y"];
       --hp
 			if between(sx, -64, CC.ScreenW + 64) then
         War_DrawStateBar(id, sx, sy);
@@ -488,7 +488,7 @@ function War_DrawArmy()
   end
 	for id,wp in ipairs(War.Person) do
 		if wp.show then
-      local sx, sy= wp["ÆÁÄ»X"], wp["ÆÁÄ»Y"];
+      local sx, sy= wp["å±å¹•X"], wp["å±å¹•Y"];
 			--hurt_str
 			for i=#wp.hurt_str_dy,1,-1 do
         if between(sx, -64, CC.ScreenW + 64) then
@@ -505,7 +505,7 @@ function War_DrawArmy()
   end
 	for id,wp in ipairs(War.Person) do
 		if wp.show then
-      local sx, sy= wp["ÆÁÄ»X"], wp["ÆÁÄ»Y"];
+      local sx, sy= wp["å±å¹•X"], wp["å±å¹•Y"];
       --War Special Atk
       if wp.SpecialAction.id > 0 then
         if between(sx, -64, CC.ScreenW + 64) then
@@ -527,22 +527,22 @@ function War_DrawArmy()
 end
 function War_DrawStateBar(wid,x,y)
 	local wp=War.Person[wid];
-	lib.PicLoadCache(4,(260+2*wp["µĞÎÒ"])*2,x,y,1);
+	lib.PicLoadCache(4,(260+2*wp["æ•Œæˆ‘"])*2,x,y,1);
 	x=x+1;
 	y=y+1;
-	lib.PicLoadCache(2,(wp.p["ÈİÃ²"]+6000)*2,x,y,1,255,-1,32);
+	lib.PicLoadCache(2,(wp.p["å®¹è²Œ"]+6000)*2,x,y,1,255,-1,32);
 	x=x+34;
 	y=y+5;
-	lib.PicLoadCache(4,(276+4*wp.bz["±øÏµ"]+2*wp["µĞÎÒ"])*2,x,y,1);
+	lib.PicLoadCache(4,(276+4*wp.bz["å…µç³»"]+2*wp["æ•Œæˆ‘"])*2,x,y,1);
 	x=x+45;
-	DrawStringEnhance(x,y,""..wp["±øÁ¦"],C_WHITE,20,0.5);
+	DrawStringEnhance(x,y,""..wp["å…µåŠ›"],C_WHITE,20,0.5);
 end
 function War_DrawStateBar(wid,x,y)
 	local wp = War.Person[wid];
   y = y + 12;
-	lib.PicLoadCache(4, (260 + 2 * wp["µĞÎÒ"]) * 2, x, y, 0, 0, 0, 64);
-	lib.PicLoadCache(2, (wp.p["ÈİÃ²"] + 6000) * 2, x - 24, y, 0, 0, 0, 26);
-	DrawStringEnhance(x + 9, y, "" .. wp["±øÁ¦"], C_WHITE, 15, 0.5, 0.5);
+	lib.PicLoadCache(4, (260 + 2 * wp["æ•Œæˆ‘"]) * 2, x, y, 0, 0, 0, 64);
+	lib.PicLoadCache(2, (wp.p["å®¹è²Œ"] + 6000) * 2, x - 24, y, 0, 0, 0, 26);
+	DrawStringEnhance(x + 9, y, "" .. wp["å…µåŠ›"], C_WHITE, 15, 0.5, 0.5);
 end
 function War_DrawMultiStateBar()
 	local xoff = War.x_off % 28
@@ -557,8 +557,8 @@ function War_DrawMultiStateBar()
 	end
 	local t_show = {};
 	for i, wp in ipairs(War.Person) do
-		if wp["´æ»î"] > 0 then
-			local ox , oy = math.floor((wp["ÆÁÄ»X"] + War.x_off) / 37), math.floor((wp["ÆÁÄ»Y"] + War.y_off) / 34);
+		if wp["å­˜æ´»"] > 0 then
+			local ox , oy = math.floor((wp["å±å¹•X"] + War.x_off) / 37), math.floor((wp["å±å¹•Y"] + War.y_off) / 34);
 			if between(ox, 0, maxx) and between(oy, 0, maxy) then
 				tmap[ox-1][oy-1]=1;
 				tmap[ox][oy-1]=1;
@@ -594,14 +594,14 @@ function War_DrawMultiStateBar()
   }
 	for i,wp in ipairs(War.Person) do
 		if wp.show then
-			local ox, oy = math.floor((wp["ÆÁÄ»X"] + War.x_off) / 37), math.floor((wp["ÆÁÄ»Y"] + War.y_off) / 34);
-      if 2 == wp["¶¯×÷"] or 3 ==wp["¶¯×÷"] then
-        local off = xyoff[wp["·½Ïò"]];
-        --[[if 0 == wp["·½Ïò"] then
+			local ox, oy = math.floor((wp["å±å¹•X"] + War.x_off) / 37), math.floor((wp["å±å¹•Y"] + War.y_off) / 34);
+      if 2 == wp["åŠ¨ä½œ"] or 3 ==wp["åŠ¨ä½œ"] then
+        local off = xyoff[wp["æ–¹å‘"]];
+        --[[if 0 == wp["æ–¹å‘"] then
           ox = ox - 1;
-        elseif 1 == wp["·½Ïò"] then
+        elseif 1 == wp["æ–¹å‘"] then
           ox = ox - 2;
-        elseif 2 == wp["·½Ïò"] then
+        elseif 2 == wp["æ–¹å‘"] then
           ox = ox - 1;
         end]]--
         for idx = 1, #off, 2 do
@@ -615,20 +615,20 @@ function War_DrawMultiStateBar()
           end
         end
       else
-        ox, oy = wp["ÆÁÄ»X"] - 56, wp["ÆÁÄ»Y"] - 96;
+        ox, oy = wp["å±å¹•X"] - 56, wp["å±å¹•Y"] - 96;
       end
-      if wp["×´Ì¬X"] == -1 then
-        wp["×´Ì¬X"], wp["×´Ì¬Y"] = ox, oy;
+      if wp["çŠ¶æ€X"] == -1 then
+        wp["çŠ¶æ€X"], wp["çŠ¶æ€Y"] = ox, oy;
       end
-      if wp["×´Ì¬X"] > ox then
-        wp["×´Ì¬X"] = limitX(wp["×´Ì¬X"] - 16, ox, wp["×´Ì¬X"]);
-      elseif wp["×´Ì¬X"] < ox then
-        wp["×´Ì¬X"] = limitX(wp["×´Ì¬X"] + 16, wp["×´Ì¬X"], ox);
+      if wp["çŠ¶æ€X"] > ox then
+        wp["çŠ¶æ€X"] = limitX(wp["çŠ¶æ€X"] - 16, ox, wp["çŠ¶æ€X"]);
+      elseif wp["çŠ¶æ€X"] < ox then
+        wp["çŠ¶æ€X"] = limitX(wp["çŠ¶æ€X"] + 16, wp["çŠ¶æ€X"], ox);
       end
-      if wp["×´Ì¬Y"] > oy then
-        wp["×´Ì¬Y"] = limitX(wp["×´Ì¬Y"] - 16, oy, wp["×´Ì¬Y"]);
-      elseif wp["×´Ì¬Y"] < ox then
-        wp["×´Ì¬Y"] = limitX(wp["×´Ì¬Y"] + 16, wp["×´Ì¬Y"], oy);
+      if wp["çŠ¶æ€Y"] > oy then
+        wp["çŠ¶æ€Y"] = limitX(wp["çŠ¶æ€Y"] - 16, oy, wp["çŠ¶æ€Y"]);
+      elseif wp["çŠ¶æ€Y"] < ox then
+        wp["çŠ¶æ€Y"] = limitX(wp["çŠ¶æ€Y"] + 16, wp["çŠ¶æ€Y"], oy);
       end
 		end
 	end
@@ -644,9 +644,9 @@ function War_DrawMultiStateBar1()
 	
 	for wid,wp in ipairs(War.Person) do
 		if wp.show then
-			if showall or wp["Ñ¡ÖĞ"]>0 then
-				sx=wp["ÆÁÄ»X"]-56;
-				sy=wp["ÆÁÄ»Y"]-96;
+			if showall or wp["é€‰ä¸­"]>0 then
+				sx=wp["å±å¹•X"]-56;
+				sy=wp["å±å¹•Y"]-96;
 				if between(sx,-128,CC.ScreenW) then
 					War_DrawStateBar(wid,sx,sy);
 					
@@ -673,19 +673,19 @@ function War_DrawTalk()
 	local t={};
 	for wid,wp in ipairs(War.Person) do
 		if wp.show then
-			if #wp.talkstr>0 and between(wp["ÆÁÄ»X"],-384,CC.ScreenW) then
+			if #wp.talkstr>0 and between(wp["å±å¹•X"],-384,CC.ScreenW) then
 				table.insert(t,wid);
 			end
 		end
 	end
-	table.sort(t,function(a,b) if War.Person[a]["ÒÆ¶¯Y"]<War.Person[b]["ÒÆ¶¯Y"] or (War.Person[a]["ÒÆ¶¯Y"]==War.Person[b]["ÒÆ¶¯Y"] and War.Person[a]["ÒÆ¶¯X"]<War.Person[b]["ÒÆ¶¯X"]) then return true end end)
+	table.sort(t,function(a,b) if War.Person[a]["ç§»åŠ¨Y"]<War.Person[b]["ç§»åŠ¨Y"] or (War.Person[a]["ç§»åŠ¨Y"]==War.Person[b]["ç§»åŠ¨Y"] and War.Person[a]["ç§»åŠ¨X"]<War.Person[b]["ç§»åŠ¨X"]) then return true end end)
 	for i=1,#t do
 		War_DrawTalk_sub(t[i]);
 	end
 end
 function War_DrawTalk_sub(wid)
 	local wp=War.Person[wid];
-	local sx,sy=wp["ÆÁÄ»X"],wp["ÆÁÄ»Y"];
+	local sx,sy=wp["å±å¹•X"],wp["å±å¹•Y"];
 	if true then
 		local pic;
 		local dt,width=DrawStringEnhanceInit("[n][W][b]"..wp.talkstr,M_Wheat,16,0,0.5,1920);
@@ -709,22 +709,22 @@ function War_DrawTalk_sub(wid)
 		local x1,y1;
 		local x2,y2;
 		local x3,y3;
-		if wp.talkd==0 then	--×óÏÂ
+		if wp.talkd==0 then	--å·¦ä¸‹
 			pic=690;
 			x1,y1=sx+25-width,sy-16;
 			y2=y1+28+16;
 			y3=y1+28+16;
-		elseif wp.talkd==1 then	--×óÉÏ
+		elseif wp.talkd==1 then	--å·¦ä¸Š
 			pic=691;
 			x1,y1=sx+25-width,sy-96;
 			y2=y1+28;
 			y3=y1+28;
-		elseif wp.talkd==2 then	--ÓÒÉÏ
+		elseif wp.talkd==2 then	--å³ä¸Š
 			pic=692;
 			x1,y1=sx-25,sy-96;
 			y2=y1+28;
 			y3=y1+28;
-		else			--ÓÒÏÂ
+		else			--å³ä¸‹
 			pic=693;
 			x1,y1=sx-25,sy-16;
 			y2=y1+28+16;
@@ -733,7 +733,7 @@ function War_DrawTalk_sub(wid)
 		x2=x1+32;
 		x3=x1+64;
 		LoadPicEnhance(pic,x1,y1,width);
-		lib.PicLoadCache(2,(wp.p["ÈİÃ²"]+6000)*2,x2,y2,0,nil,nil,48);
+		lib.PicLoadCache(2,(wp.p["å®¹è²Œ"]+6000)*2,x2,y2,0,nil,nil,48);
 		DrawStringEnhanceSub(x3,y3,dt,16);
 		if MOUSE.HOLD(x1,y2-28,x1+width,y2+28) then
 			wp.talkstr="";
@@ -746,18 +746,18 @@ function War_DrawStatus(wid,sx,sy)
 	Glass(sx,sy,sx+208,sy+108,C_BLACK,192);
 	sx=sx+42;
 	sy=sy+8;
-	DrawStringEnhance(sx,sy,wp.p["Ãû³Æ"],C_Name,16,0.5);
-	lib.PicLoadCache(2,(wp.p["ÈİÃ²"]+6000)*2,sx,sy+60,0,nil,nil,72);
+	DrawStringEnhance(sx,sy,wp.p["åç§°"],C_Name,16,0.5);
+	lib.PicLoadCache(2,(wp.p["å®¹è²Œ"]+6000)*2,sx,sy+60,0,nil,nil,72);
 	sx=sx+46;
-	DrawStringEnhance(sx,sy,"±øÖÖ: "..wp.bz["Ãû³Æ"],C_WHITE,16);
+	DrawStringEnhance(sx,sy,"å…µç§: "..wp.bz["åç§°"],C_WHITE,16);
 	sy=sy+20;
-	DrawStringEnhance(sx,sy,"±øÁ¦: "..wp["±øÁ¦"],C_WHITE,16);
+	DrawStringEnhance(sx,sy,"å…µåŠ›: "..wp["å…µåŠ›"],C_WHITE,16);
 	sy=sy+20;
-	DrawStringEnhance(sx,sy,"Èâ²«: "..wp["¹¥»÷Á¦"],C_WHITE,16);
+	DrawStringEnhance(sx,sy,"è‚‰æ: "..wp["æ”»å‡»åŠ›"],C_WHITE,16);
 	sy=sy+20;
-	DrawStringEnhance(sx,sy,"Ô¶³Ì: "..wp["Ô¶³Ì¹¥»÷Á¦"],C_WHITE,16);                       
+	DrawStringEnhance(sx,sy,"è¿œç¨‹: "..wp["è¿œç¨‹æ”»å‡»åŠ›"],C_WHITE,16);                       
 	sy=sy+20;
-	DrawStringEnhance(sx,sy,"ÊØ±¸: "..wp["·ÀÓùÁ¦"],C_WHITE,16);
+	DrawStringEnhance(sx,sy,"å®ˆå¤‡: "..wp["é˜²å¾¡åŠ›"],C_WHITE,16);
 end
 function War_DrawStatus()
   local ox = CC.ScreenW - 208;
@@ -772,53 +772,53 @@ function War_DrawStatus()
     local wp = War.Person[WarAreaSelection.armySelect[1]];
     local sx = ox + 8;
     local sy = oy + 8;
-    DrawStringEnhance(sx + 48, sy, wp.p["Ãû³Æ"], C_Name, 24, 0.5);
-    lib.PicLoadCache(4, (276 + 4 * wp.bz["±øÏµ"] + 2 * wp["µĞÎÒ"]) * 2, sx + 90, sy + 2, 1);
-    DrawStringEnhance(sx + 112, sy, "" .. wp["±øÁ¦"], C_WHITE, 24);
+    DrawStringEnhance(sx + 48, sy, wp.p["åç§°"], C_Name, 24, 0.5);
+    lib.PicLoadCache(4, (276 + 4 * wp.bz["å…µç³»"] + 2 * wp["æ•Œæˆ‘"]) * 2, sx + 90, sy + 2, 1);
+    DrawStringEnhance(sx + 112, sy, "" .. wp["å…µåŠ›"], C_WHITE, 24);
     sy = sy + 28;
-    lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 2000)*2, sx, sy, 1);
+    lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 2000)*2, sx, sy, 1);
     sx = sx + 90;
-    DrawStringEnhance(sx, sy, "±øÖÖ: [white]" .. wp.bz["Ãû³Æ"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "å…µç§: [white]" .. wp.bz["åç§°"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÎäÁ¦: [white]" .. wp.p["ÎäÁ¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "æ­¦åŠ›: [white]" .. wp.p["æ­¦åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÖÇÄ±: [white]" .. wp.p["ÖÇÄ±"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "æ™ºè°‹: [white]" .. wp.p["æ™ºè°‹"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Í³ÂÊ: [white]" .. wp.p["Í³ÂÊ"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "ç»Ÿç‡: [white]" .. wp.p["ç»Ÿç‡"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Èâ²«: [white]" .. wp["¹¥»÷Á¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "è‚‰æ: [white]" .. wp["æ”»å‡»åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "Ô¶³Ì: [white]" .. wp["Ô¶³Ì¹¥»÷Á¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "è¿œç¨‹: [white]" .. wp["è¿œç¨‹æ”»å‡»åŠ›"], C_Name, 16);
     sy = sy + 18;
-    DrawStringEnhance(sx, sy, "ÊØ±¸: [white]" .. wp["·ÀÓùÁ¦"], C_Name, 16);
+    DrawStringEnhance(sx, sy, "å®ˆå¤‡: [white]" .. wp["é˜²å¾¡åŠ›"], C_Name, 16);
     sy = sy + 18;
   elseif n <= 5 then
     for i, wid in ipairs(WarAreaSelection.armySelect) do
       local sx = ox + 8;
       local sy = oy + (i - 1) * 72 + 8;
       local wp = War.Person[wid];
-      lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 6000)*2, sx, sy, 1, nil, nil, 64);
+      lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 6000)*2, sx, sy, 1, nil, nil, 64);
       sx = sx + 64;
-      DrawStringEnhance(sx, sy, wp.p["Ãû³Æ"], C_Name, 16);
-      DrawStringEnhance(sx + 64, sy, wp.bz["Ãû³Æ"], C_WHITE, 16);
+      DrawStringEnhance(sx, sy, wp.p["åç§°"], C_Name, 16);
+      DrawStringEnhance(sx + 64, sy, wp.bz["åç§°"], C_WHITE, 16);
       sy = sy + 16;
-      DrawStringEnhance(sx, sy, "±øÁ¦ [white]" .. wp["±øÁ¦"], C_Name, 16);
+      DrawStringEnhance(sx, sy, "å…µåŠ› [white]" .. wp["å…µåŠ›"], C_Name, 16);
       sy = sy + 16;
-      DrawStringEnhance(sx, sy, "Îä   ÖÇ   Í³", C_Name, 16);
-      DrawStringEnhance(sx + 16, sy, wp.p["ÎäÁ¦"] .. "   " .. wp.p["ÖÇÄ±"] .. "   " .. wp.p["Í³ÂÊ"], C_WHITE, 16);
+      DrawStringEnhance(sx, sy, "æ­¦   æ™º   ç»Ÿ", C_Name, 16);
+      DrawStringEnhance(sx + 16, sy, wp.p["æ­¦åŠ›"] .. "   " .. wp.p["æ™ºè°‹"] .. "   " .. wp.p["ç»Ÿç‡"], C_WHITE, 16);
       sy = sy + 16;
-      DrawStringEnhance(sx, sy, "¹¥»÷    ÊØ±¸", C_Name, 16);
-      DrawStringEnhance(sx + 32, sy, math.max(wp["¹¥»÷Á¦"], wp["Ô¶³Ì¹¥»÷Á¦"]) .. "      " .. wp["·ÀÓùÁ¦"], C_WHITE, 16);
+      DrawStringEnhance(sx, sy, "æ”»å‡»    å®ˆå¤‡", C_Name, 16);
+      DrawStringEnhance(sx + 32, sy, math.max(wp["æ”»å‡»åŠ›"], wp["è¿œç¨‹æ”»å‡»åŠ›"]) .. "      " .. wp["é˜²å¾¡åŠ›"], C_WHITE, 16);
     end
   else
     for i, wid in ipairs(WarAreaSelection.armySelect) do
       local sx = ox + 16;
       local sy = oy + (i - 1) * 26 + 8;
       local wp = War.Person[wid];
-      lib.PicLoadCache(2,(wp.p["ÈİÃ²"] + 6000)*2, sx, sy, 1, nil, nil, 24);
-      DrawStringEnhance(sx + 24, sy + 2, wp.p["Ãû³Æ"], C_Name, 20);
-      lib.PicLoadCache(4, (276 + 4 * wp.bz["±øÏµ"] + 2 * wp["µĞÎÒ"]) * 2, sx + 100, sy + 2, 1);
-      DrawStringEnhance(sx + 120, sy + 2, "" .. wp["±øÁ¦"], C_WHITE, 20);
+      lib.PicLoadCache(2,(wp.p["å®¹è²Œ"] + 6000)*2, sx, sy, 1, nil, nil, 24);
+      DrawStringEnhance(sx + 24, sy + 2, wp.p["åç§°"], C_Name, 20);
+      lib.PicLoadCache(4, (276 + 4 * wp.bz["å…µç³»"] + 2 * wp["æ•Œæˆ‘"]) * 2, sx + 100, sy + 2, 1);
+      DrawStringEnhance(sx + 120, sy + 2, "" .. wp["å…µåŠ›"], C_WHITE, 20);
     end
   end
 end
@@ -856,7 +856,7 @@ function WarDrawFlag(x0,y0,fid,xid,d,frame)
 	fid=fid+406;
 	local x,y=x0,y0;
 	if d~=3 then
-		lib.PicLoadCache(0,402*2,x0,y0,1,255);	--Æì¸Ë
+		lib.PicLoadCache(0,402*2,x0,y0,1,255);	--æ——æ†
 	end
 	if d==0 or d==1 then
 		x=x-30;
@@ -880,11 +880,11 @@ function WarDrawFlag(x0,y0,fid,xid,d,frame)
 		x=x-15;
 		y=y+2;
 	end
-	--ÆìÖÄ
+	--æ——å¸œ
 	lib.SetClip(x,y,x+32,y+40)
 	lib.PicLoadCache(0,fid*2,x-frame*32,y-d*40,1,255);
 	lib.SetClip(0,0,0,0)
-	--ĞÕÊÏ
+	--å§“æ°
 	if d==3 and d==3 then
 		
 	else
@@ -896,40 +896,40 @@ function WarDrawFlag(x0,y0,fid,xid,d,frame)
 		lib.SetClip(0,0,0,0)
 	end
 	if d==3 then
-		lib.PicLoadCache(0,402*2,x0,y0,1,255);	--Æì¸Ë
+		lib.PicLoadCache(0,402*2,x0,y0,1,255);	--æ——æ†
 	end
 	
 end
 function GetFlagID(pid)
-	local str=string.sub(JY.Person[pid]["Ãû³Æ"],1,2);
-	local ft={	["Ë§"]=0,["°¢"]=1,["Î¤"]=2,["ÒÁ"]=3,["Òü"]=4,["ÓÚ"]=5,["ÎÀ"]=6,["Ô¬"]=7,["ÑÖ"]=8,["Íõ"]=9,
-				["ºÎ"]=10,["Øá"]=11,["¼Ö"]=12,["»ª"]=13,["¹ù"]=14,["¶õ"]=15,["ÀÖ"]=16,["»ô"]=17,["ºÂ"]=18,["ÏÄ"]=19,
-				["ºØ"]=20,["¹Ø"]=21,["º«"]=22,["¹Ü"]=23,["Îã"]=24,["ãÛ"]=25,["¸Ê"]=26,["»¸"]=27,["¼ò"]=28,["ÑÕ"]=29,
-				["Îº"]=30,["ôğ"]=31,["Ï·"]=32,["Å£"]=33,["Çğ"]=34,["½ª"]=35,["¹®"]=36,["ÇÅ"]=37,["¹¨"]=38,["Ğí"]=39,
-				["¼Í"]=40,["½ğ"]=41,["Óİ"]=42,["ĞÏ"]=43,["àS"]=44,["ÑÏ"]=45,["Ç£"]=46,["Îâ"]=47,["¾ä"]=48,["»Æ"]=49,
-				["¸ß"]=50,["ºî"]=51,["¹«"]=52,["¿×"]=53,["»Ê"]=54,["ºú"]=55,["Îé"]=56,["Îá"]=57,["¹Ë"]=58,["Ø£"]=59,
-				["´Ş"]=60,["²Ì"]=61,["×ó"]=62,["óĞ"]=63,["Ê©"]=64,["Ê¦"]=65,["Ë¾"]=66,["Ğ»"]=67,["³µ"]=68,["É³"]=69,
-				["Öì"]=70,["Ã‘"]=71,["ÖÜ"]=72,["Öİ"]=73,["×£"]=74,["Ü÷"]=75,["´¾"]=76,["½¹"]=77,["ÖÓ"]=78,["½¯"]=79,
-				["ÚÛ"]=80,["Ïò"]=81,["ÉÛ"]=82,["Ğì"]=83,["Öî"]=84,["Éò"]=85,["Éê"]=86,["á¯"]=87,["ĞÁ"]=88,["Éó"]=89,
-				["ÇØ"]=90,["íõ"]=91,["×Ş"]=92,["³É"]=93,["Ê¢"]=94,["Ê¯"]=95,["Ñ¦"]=96,["È«"]=97,["µ¥"]=98,["²Ü"]=99,
-				["ËÎ"]=100,["ê°"]=101,["¾Ú"]=102,["ËÕ"]=103,["×æ"]=104,["Ëï"]=105,["Ì«"]=106,["´ø"]=107,["´÷"]=108,["¶ä"]=109,
-				["Ì·"]=110,["ÕÅ"]=111,["ÕÔ"]=112,["³Â"]=113,["³Ì"]=114,["¶¡"]=115,["Ö£"]=116,["µä"]=117,["Ìï"]=118,["ëø"]=119,
-				["¶­"]=120,["µË"]=121,["µ³"]=122,["ÌÕ"]=123,["ÌÆ"]=124,["¶Å"]=125,["Äş"]=126,["Åá"]=127,["Âí"]=128,["Íò"]=129,
-				["·®"]=130,["ÅË"]=131,["·Ñ"]=132,["±°"]=133,["ÃÓ"]=134,["±Ï"]=135,["Îä"]=136,["·ë"]=137,["¸µ"]=138,["ÎÄ"]=139,
-				["±å"]=140,["·½"]=141,["ÅÓ"]=142,["Ã¦"]=143,["·ê"]=144,["±«"]=145,["·¨"]=146,["²½"]=147,["ÄÂ"]=148,["å§"]=149,
-				["Ä¾"]=150,["Âú"]=151,["Ã«"]=152,["ÃÏ"]=153,["Óá"]=154,["Ñî"]=155,["Óº"]=156,["Ñò"]=157,["À×"]=158,["Âæ"]=159,
-				["ÂŞ"]=160,["Àî"]=161,["Â½"]=162,["Áõ"]=163,["Áô"]=164,["ÂÀ"]=165,["ÁÎ"]=166,["Áº"]=167,["Áè"]=168,["Â×"]=169,
-				["Àä"]=170,["Â¥"]=171,["Â³"]=172,["Â¬"]=173,["Êñ"]=174,["ÙÁ"]=175,["ÎÚ"]=176,["Ç¼"]=177,["É½"]=178,["ÄÏ"]=179,
-				["Ñà"]=180,["Æë"]=181,["³ş"]=182,["Á¹"]=183,["Ô½"]=184,["½ú"]=185,["Çø"]=186,["ì¶"]=187,["ÎÂ"]=188,["¶í"]=189,
-				["éğ"]=190,["Ç¿"]=191,["¹ú"]=192,["ºô"]=193,["Ê¿"]=194,["Ì£"]=195,["²¨"]=196,["ÃÔ"]=197,["Â¦"]=198,["ºº"]=199,
-				["ÉÌ"]=200,["ĞÂ"]=201,["Ëå"]=202,
-				["íf"]=2,["Ğl"]=6,["é"]=8,["…^"]=186,["œØ"]=188,["ÙZ"]=12,["ÈA"]=13,["˜·"]=16,["ÙR"]=20,["êP"]=21,
-				["ín"]=22,["êR"]=25,["º†"]=28,["î"]=29,["‘ò"]=32,["ì–"]=36,["˜ò"]=37,["ı"]=38,["ÔS"]=39,["¼o"]=40,
-				["‡À"]=45,[" ¿"]=46,["…Ç"]=47,["üS"]=49,["‡ø"]=192,["î™"]=58,["Ÿ"]=65,["Ü‡"]=68,["æR"]=78,["ÊY"]=79,
-				["×S"]=80,["ÖT"]=84,["Œ"]=89,["àu"]=92,["†Î"]=98,["ÌK"]=103,["ŒO"]=105,["§"]=107,["×T"]=110,["ˆ"]=111,
-				["Úw"]=112,["ê"]=113,["à‡"]=121,["üh"]=122,["ñR"]=128,["Èf"]=129,["ÙM"]=132,["ñT"]=137,["ı‹"]=142,["õU"]=145,
-				["M"]=151,["—î"]=155,["ñ˜"]=159,["Á_"]=160,["ê‘"]=162,["„¢"]=163,["…Î"]=165,["‚"]=169,["Šä"]=198,["˜Ç"]=171,
-				["ô”"]=172,["±R"]=173,["İV"]=190,["Š"]=191,["õ"]=176,
+	local str=string.sub(JY.Person[pid]["åç§°"],1,2);
+	local ft={	["å¸…"]=0,["é˜¿"]=1,["éŸ¦"]=2,["ä¼Š"]=3,["å°¹"]=4,["äº"]=5,["å«"]=6,["è¢"]=7,["é˜"]=8,["ç‹"]=9,
+				["ä½•"]=10,["è’¯"]=11,["è´¾"]=12,["å"]=13,["éƒ­"]=14,["é„‚"]=15,["ä¹"]=16,["éœ"]=17,["éƒ"]=18,["å¤"]=19,
+				["è´º"]=20,["å…³"]=21,["éŸ©"]=22,["ç®¡"]=23,["æ¯‹"]=24,["é˜š"]=25,["ç”˜"]=26,["æ¡“"]=27,["ç®€"]=28,["é¢œ"]=29,
+				["é­"]=30,["éº´"]=31,["æˆ"]=32,["ç‰›"]=33,["ä¸˜"]=34,["å§œ"]=35,["å·©"]=36,["æ¡¥"]=37,["é¾š"]=38,["è®¸"]=39,
+				["çºª"]=40,["é‡‘"]=41,["è™"]=42,["é‚¢"]=43,["éƒ¤"]=44,["ä¸¥"]=45,["ç‰µ"]=46,["å´"]=47,["å¥"]=48,["é»„"]=49,
+				["é«˜"]=50,["ä¾¯"]=51,["å…¬"]=52,["å­”"]=53,["çš‡"]=54,["èƒ¡"]=55,["ä¼"]=56,["å¾"]=57,["é¡¾"]=58,["å…€"]=59,
+				["å´”"]=60,["è”¡"]=61,["å·¦"]=62,["ç¬®"]=63,["æ–½"]=64,["å¸ˆ"]=65,["å¸"]=66,["è°¢"]=67,["è½¦"]=68,["æ²™"]=69,
+				["æœ±"]=70,["è„©"]=71,["å‘¨"]=72,["å·"]=73,["ç¥"]=74,["è€"]=75,["æ·³"]=76,["ç„¦"]=77,["é’Ÿ"]=78,["è’‹"]=79,
+				["è°¯"]=80,["å‘"]=81,["é‚µ"]=82,["å¾"]=83,["è¯¸"]=84,["æ²ˆ"]=85,["ç”³"]=86,["å²‘"]=87,["è¾›"]=88,["å®¡"]=89,
+				["ç§¦"]=90,["çœ­"]=91,["é‚¹"]=92,["æˆ"]=93,["ç››"]=94,["çŸ³"]=95,["è–›"]=96,["å…¨"]=97,["å•"]=98,["æ›¹"]=99,
+				["å®‹"]=100,["è‡§"]=101,["æ²®"]=102,["è‹"]=103,["ç¥–"]=104,["å­™"]=105,["å¤ª"]=106,["å¸¦"]=107,["æˆ´"]=108,["æœµ"]=109,
+				["è°­"]=110,["å¼ "]=111,["èµµ"]=112,["é™ˆ"]=113,["ç¨‹"]=114,["ä¸"]=115,["éƒ‘"]=116,["å…¸"]=117,["ç”°"]=118,["æ»•"]=119,
+				["è‘£"]=120,["é‚“"]=121,["å…š"]=122,["é™¶"]=123,["å”"]=124,["æœ"]=125,["å®"]=126,["è£´"]=127,["é©¬"]=128,["ä¸‡"]=129,
+				["æ¨Š"]=130,["æ½˜"]=131,["è´¹"]=132,["å‘"]=133,["ç³œ"]=134,["æ¯•"]=135,["æ­¦"]=136,["å†¯"]=137,["å‚…"]=138,["æ–‡"]=139,
+				["å"]=140,["æ–¹"]=141,["åº"]=142,["å¿™"]=143,["é€¢"]=144,["é²"]=145,["æ³•"]=146,["æ­¥"]=147,["ç©†"]=148,["æ¿®"]=149,
+				["æœ¨"]=150,["æ»¡"]=151,["æ¯›"]=152,["å­Ÿ"]=153,["ä¿"]=154,["æ¨"]=155,["é›"]=156,["ç¾Š"]=157,["é›·"]=158,["éª†"]=159,
+				["ç½—"]=160,["æ"]=161,["é™†"]=162,["åˆ˜"]=163,["ç•™"]=164,["å•"]=165,["å»–"]=166,["æ¢"]=167,["å‡Œ"]=168,["ä¼¦"]=169,
+				["å†·"]=170,["æ¥¼"]=171,["é²"]=172,["å¢"]=173,["èœ€"]=174,["å€­"]=175,["ä¹Œ"]=176,["ç¾Œ"]=177,["å±±"]=178,["å—"]=179,
+				["ç‡•"]=180,["é½"]=181,["æ¥š"]=182,["å‡‰"]=183,["è¶Š"]=184,["æ™‹"]=185,["åŒº"]=186,["æ–¼"]=187,["æ¸©"]=188,["ä¿„"]=189,
+				["è½²"]=190,["å¼º"]=191,["å›½"]=192,["å‘¼"]=193,["å£«"]=194,["è¹‹"]=195,["æ³¢"]=196,["è¿·"]=197,["å¨„"]=198,["æ±‰"]=199,
+				["å•†"]=200,["æ–°"]=201,["éš‹"]=202,
+				["éŸ‹"]=2,["è¡›"]=6,["é–»"]=8,["å€"]=186,["æº«"]=188,["è³ˆ"]=12,["è¯"]=13,["æ¨‚"]=16,["è³€"]=20,["é—œ"]=21,
+				["éŸ“"]=22,["é—"]=25,["ç°¡"]=28,["é¡"]=29,["æˆ²"]=32,["é"]=36,["æ©‹"]=37,["é¾”"]=38,["è¨±"]=39,["ç´€"]=40,
+				["åš´"]=45,["ç‰½"]=46,["å³"]=47,["é»ƒ"]=49,["åœ‹"]=192,["é¡§"]=58,["å¸«"]=65,["è»Š"]=68,["é¾"]=78,["è”£"]=79,
+				["è­™"]=80,["è«¸"]=84,["å¯©"]=89,["é„’"]=92,["å–®"]=98,["è˜‡"]=103,["å­«"]=105,["å¸¶"]=107,["è­š"]=110,["å¼µ"]=111,
+				["è¶™"]=112,["é™³"]=113,["é„§"]=121,["é»¨"]=122,["é¦¬"]=128,["è¬"]=129,["è²»"]=132,["é¦®"]=137,["é¾"]=142,["é®‘"]=145,
+				["æ»¿"]=151,["æ¥Š"]=155,["é§±"]=159,["ç¾…"]=160,["é™¸"]=162,["åŠ‰"]=163,["å‘‚"]=165,["å€«"]=169,["å©"]=198,["æ¨“"]=171,
+				["é­¯"]=172,["ç›§"]=173,["è»»"]=190,["å¼·"]=191,["çƒ"]=176,
 				}
 	local r=ft[str];
 	r=r or -1;
@@ -943,8 +943,8 @@ function War_DrawBuindling()
   --Building
   for i, bd in ipairs(War.Building) do
     local sx, sy = GetScreenXY(bd.x, bd.y);
-    if 1 == bd.id then --³ÇÃÅ
-      --³Ç
+    if 1 == bd.id then --åŸé—¨
+      --åŸ
       if War.CityPosition==0 then
         if War.x_off<380 then
           lib.PicLoadCache(0,163*2,0-War.x_off,120-2-War.y_off,1,255);
@@ -959,7 +959,7 @@ function War_DrawBuindling()
 			lib.PicLoadCache(4, 264 * 2, sx, sy, 0);
       lib.FillColor(sx - 46, sy - 4, sx + 46, sy + 4, C_RED);
       DrawStringEnhance(sx, sy, '[B]800', C_WHITE, 16, 0.5, 0.5);
-    elseif 2 == bd.id then --íÎ
+    elseif 2 == bd.id then --ç ¦
       if between(sx, -128, CC.ScreenW) then
         lib.PicLoadCache(0, 151 * 2, sx, sy);
       end
@@ -970,13 +970,13 @@ function War_DrawBuindling()
       DrawStringEnhance(sx, sy, '[B]800', C_WHITE, 16, 0.5, 0.5);
     end
     
-    --¹­¼ı¹ì¼£
-    if bd["Ä¿±êID"] > 0 and bd["¶¯×÷½ø¶È"]/bd["¶¯×÷½ø¶È×î´óÖµ"] > 1/3 then
+    --å¼“ç®­è½¨è¿¹
+    if bd["ç›®æ ‡ID"] > 0 and bd["åŠ¨ä½œè¿›åº¦"]/bd["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] > 1/3 then
       local n = 9;
       for ii, v in pairs(zx[n]) do
         sx, sy = GetScreenXY(bd.x + v.x*1, bd.y + v.y*1);
-        local dx, dy = GetScreenXY(bd["Ä¿±êX"] + v.x*1.5, bd["Ä¿±êY"] + v.y*1.5);
-        local f = math.min(1, 1.5*bd["¶¯×÷½ø¶È"]/bd["¶¯×÷½ø¶È×î´óÖµ"] - 0.5 + ii/n/4);
+        local dx, dy = GetScreenXY(bd["ç›®æ ‡X"] + v.x*1.5, bd["ç›®æ ‡Y"] + v.y*1.5);
+        local f = math.min(1, 1.5*bd["åŠ¨ä½œè¿›åº¦"]/bd["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] - 0.5 + ii/n/4);
         local h = 80;
         local ax = sx + (dx-sx)*f;
         local ay = sy + (dy-sy)*f - h + h*4*(f-0.5)^2 - 24;
@@ -1009,10 +1009,10 @@ function War_DrawMap()
   end
   --lib.Debug('>> ' .. (os.clock() - t1))
   for wid, wp in ipairs(War.Person) do
-    if wp["´æ»î"] > 0 then
-      local ox, oy = wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"];
+    if wp["å­˜æ´»"] > 0 then
+      local ox, oy = wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"];
       War.MAP[ox][oy].wid = wid;
-      if wp["µĞÎÒ"] == 0 then
+      if wp["æ•Œæˆ‘"] == 0 then
         for x = math.max(0, ox - 10), math.min(127, ox + 10) do
           for y = math.max(0, oy - 10), math.min(127, oy + 10) do
             if War.MAP[x][y] then-- and (ox - x)^2 + (oy - y)^2 < 100 then
@@ -1040,13 +1040,13 @@ function War_DrawMap()
   
 	--MovePath
 	for i,wp in ipairs(War.Person) do
-		if wp.show and wp["Ñ¡ÖĞ"]>0 then
+		if wp.show and wp["é€‰ä¸­"]>0 then
       War_DrawAIPath(i);
 			War_DrawPath(i);
 		end
 	end
   WarArmySelection:redrawArmyPath()
-	--µ±Ç°Î»ÖÃ
+	--å½“å‰ä½ç½®
   if War.MAP[War.mx] and War.MAP[War.mx][War.my] then
     local dx, dy = GetScreenXY(War.mx, War.my);
     lib.PicLoadCache(4, 270*2, dx, dy);
@@ -1062,16 +1062,16 @@ function War_DrawMap()
 	
 	if War.MAP[War.mx] and War.MAP[War.mx][War.my] then
 		if War.tBrush[War.MAP[War.mx][War.my].dx]~=nil then
-			DrawStringEnhance(420,24,"[B]µ±Ç°µØĞÎ: "..War.tBrush[War.MAP[War.mx][War.my].dx],C_WHITE,24);
+			DrawStringEnhance(420,24,"[B]å½“å‰åœ°å½¢: "..War.tBrush[War.MAP[War.mx][War.my].dx],C_WHITE,24);
 		else
-			DrawStringEnhance(420,24,"[B]µ±Ç°µØĞÎ: "..War.MAP[War.mx][War.my].dx,C_WHITE,24);
+			DrawStringEnhance(420,24,"[B]å½“å‰åœ°å½¢: "..War.MAP[War.mx][War.my].dx,C_WHITE,24);
 		end
 		DrawStringEnhance(420,0,"[B]XY: "..War.mx.." , "..War.my,C_WHITE,24);
 	end
 	--[[for i=1,math.min(8,#War.AI_Pool) do
 		local wid=War.AI_Pool[i];
-		local pid=War.Person[wid]["ÈËÎïID"]
-		DrawStringEnhance(CC.ScreenW,80+i*24,"[B]"..JY.Person[pid]["Ãû³Æ"],C_WHITE,24,1);
+		local pid=War.Person[wid]["äººç‰©ID"]
+		DrawStringEnhance(CC.ScreenW,80+i*24,"[B]"..JY.Person[pid]["åç§°"],C_WHITE,24,1);
 	end]]--
 	
 end
@@ -1106,17 +1106,17 @@ function War_PlayWav()
 	local Wav_atk2=0;
 	for i,wp in ipairs(War.Person) do
 		if wp.show then
-			if between(wp["ÆÁÄ»X"],0,CC.ScreenW) and between(wp["ÆÁÄ»Y"],0,CC.ScreenH) then
-				if War.FrameT==0 and wp["¶¯×÷"]==1 then
+			if between(wp["å±å¹•X"],0,CC.ScreenW) and between(wp["å±å¹•Y"],0,CC.ScreenH) then
+				if War.FrameT==0 and wp["åŠ¨ä½œ"]==1 then
 					Wav_moving=Wav_moving+1;
 				end
-				if wp["¶¯×÷"]==2 then--or wp["¶¯×÷"]==3 then
+				if wp["åŠ¨ä½œ"]==2 then--or wp["åŠ¨ä½œ"]==3 then
 					Wav_fight=Wav_fight+1;
 				end
-				--if wp["¶¯×÷½ø¶È"]==wp["¶¯×÷½ø¶È×î´óÖµ"] then
-					if wp["¶¯×÷"]==2 then
+				--if wp["åŠ¨ä½œè¿›åº¦"]==wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] then
+					if wp["åŠ¨ä½œ"]==2 then
 						Wav_atk1=Wav_atk1+1;
-					elseif wp["¶¯×÷"]==3 then
+					elseif wp["åŠ¨ä½œ"]==3 then
 						Wav_atk2=Wav_atk2+1;
 					end
 				--end
@@ -1126,7 +1126,7 @@ function War_PlayWav()
 	if War.WavTimer>0 then
 		War.WavTimer=War.WavTimer-1;
 	else
-		--ÈËÉù 000 -006    003 004 ÒôÁ¿´ó
+		--äººå£° 000 -006    003 004 éŸ³é‡å¤§
 		if Wav_fight>16 then
 			lib.PlayWAV(CONFIG.CurrentPath.."sound/se_b004.wav");
 			War.WavTimer=math.floor(4840/CC.FrameNum)-0;
@@ -1163,12 +1163,12 @@ function War_AutoAction()
   --building
   for bid, bd in ipairs(War.Building) do
     if bd.live and 2 == bd.id then
-      if bd["¶¯×÷½ø¶È"] == bd["¶¯×÷½ø¶È×î´óÖµ"] then
+      if bd["åŠ¨ä½œè¿›åº¦"] == bd["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] then
         --close old action
-        local eid = bd["Ä¿±êID"];
-        if eid > 0 and War.Person[eid]["´æ»î"] > 0 and math.abs(bd["Ä¿±êX"] - War.Person[eid]["×ø±êX"]) < 2 and math.abs(bd["Ä¿±êY"] - War.Person[eid]["×ø±êY"]) < 2 then
+        local eid = bd["ç›®æ ‡ID"];
+        if eid > 0 and War.Person[eid]["å­˜æ´»"] > 0 and math.abs(bd["ç›®æ ‡X"] - War.Person[eid]["åæ ‡X"]) < 2 and math.abs(bd["ç›®æ ‡Y"] - War.Person[eid]["åæ ‡Y"]) < 2 then
           local hurt = 111;
-          War.Person[eid]["±øÁ¦"] = War.Person[eid]["±øÁ¦"] - hurt;
+          War.Person[eid]["å…µåŠ›"] = War.Person[eid]["å…µåŠ›"] - hurt;
           table.insert(War.Person[eid].hurt_str, 1, "-" .. hurt);
           if #War.Person[eid].hurt_str_dy == 0 or War.Person[eid].hurt_str_dy[1] > 0 then
             table.insert(War.Person[eid].hurt_str_dy, 1, 0);
@@ -1176,35 +1176,35 @@ function War_AutoAction()
             table.insert(War.Person[eid].hurt_str_dy, 1, War.Person[eid].hurt_str_dy[1] - 2);
           end
           War_SetAttrib(eid);
-          if War.Person[eid]["±øÁ¦"] <= 0 then
-            War.Person[eid]["´æ»î"] = 0;
+          if War.Person[eid]["å…µåŠ›"] <= 0 then
+            War.Person[eid]["å­˜æ´»"] = 0;
             War.Person[eid].SpecialAction.id = 21;
             War.Person[eid].SpecialAction.pic = 1500;
             War.Person[eid].SpecialAction.timer = 32;
           end
         end
         --start new action
-        bd["Ä¿±êID"] = 0;
-        bd["¶¯×÷½ø¶È"] = 0;
+        bd["ç›®æ ‡ID"] = 0;
+        bd["åŠ¨ä½œè¿›åº¦"] = 0;
         eid = bd.target;
         if eid > 0 then
           if true then  --can atk
-            bd["Ä¿±êID"] = eid;
-            if War.Person[eid]["¶¯×÷"] == 1 and #War.Person[eid].movepath > 0 then
-              bd["Ä¿±êX"], bd["Ä¿±êY"] = War.Person[eid].movepath[1].x, War.Person[eid].movepath[1].y;
+            bd["ç›®æ ‡ID"] = eid;
+            if War.Person[eid]["åŠ¨ä½œ"] == 1 and #War.Person[eid].movepath > 0 then
+              bd["ç›®æ ‡X"], bd["ç›®æ ‡Y"] = War.Person[eid].movepath[1].x, War.Person[eid].movepath[1].y;
             else
-              bd["Ä¿±êX"], bd["Ä¿±êY"] = War.Person[eid]["ÒÆ¶¯X"], War.Person[eid]["ÒÆ¶¯Y"];
+              bd["ç›®æ ‡X"], bd["ç›®æ ‡Y"] = War.Person[eid]["ç§»åŠ¨X"], War.Person[eid]["ç§»åŠ¨Y"];
             end
           end
         end
       else
-				bd["¶¯×÷½ø¶È"] = bd["¶¯×÷½ø¶È"] + 1;
+				bd["åŠ¨ä½œè¿›åº¦"] = bd["åŠ¨ä½œè¿›åº¦"] + 1;
       end
     end
   end
-	--¸ù¾İAI£¬ÈËÎï×ÔĞĞĞĞ¶¯
+	--æ ¹æ®AIï¼Œäººç‰©è‡ªè¡Œè¡ŒåŠ¨
 	for wid,wp in pairs(War.Person) do
-		if wp["´æ»î"]>0 then
+		if wp["å­˜æ´»"]>0 then
       if wp.dz < 1300 then
         wp.dz = wp.dz + wp.dzinc;
       end
@@ -1214,20 +1214,20 @@ function War_AutoAction()
 					if wp.bingfa_id>0 then
 						wp.bingfa_id=0;
 						wp.talkstr="";
-						wp.bingfa_time=1024;	--ÀäÈ´Ê±¼ä
+						wp.bingfa_time=1024;	--å†·å´æ—¶é—´
 					else
 						wp.bingfa_time=0;
 					end
 				end
 			end
-			if wp["¶¯×÷½ø¶È"] == wp["¶¯×÷½ø¶È×î´óÖµ"] then
+			if wp["åŠ¨ä½œè¿›åº¦"] == wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] then
         --close old action
-				if wp["¶¯×÷"] == 1 then	--ÒÆ¶¯
-					--×ø±êĞŞ¸Ä
-					wp["×ø±êX"],wp["×ø±êY"] = wp["ÒÆ¶¯X"],wp["ÒÆ¶¯Y"];
-				elseif wp["¶¯×÷"]==2 or wp["¶¯×÷"]==3 then
-          local eid = wp["Ä¿±êID"];
-					if eid>0 and War.Person[eid]["´æ»î"] > 0 and math.abs(wp["Ä¿±êX"] - War.Person[eid]["×ø±êX"]) < 2 and math.abs(wp["Ä¿±êY"] - War.Person[eid]["×ø±êY"]) < 2 then --AI_CanAtk(wid,eid,wp["×ø±êX"],wp["×ø±êY"])==wp["¶¯×÷"]-1 then
+				if wp["åŠ¨ä½œ"] == 1 then	--ç§»åŠ¨
+					--åæ ‡ä¿®æ”¹
+					wp["åæ ‡X"],wp["åæ ‡Y"] = wp["ç§»åŠ¨X"],wp["ç§»åŠ¨Y"];
+				elseif wp["åŠ¨ä½œ"]==2 or wp["åŠ¨ä½œ"]==3 then
+          local eid = wp["ç›®æ ‡ID"];
+					if eid>0 and War.Person[eid]["å­˜æ´»"] > 0 and math.abs(wp["ç›®æ ‡X"] - War.Person[eid]["åæ ‡X"]) < 2 and math.abs(wp["ç›®æ ‡Y"] - War.Person[eid]["åæ ‡Y"]) < 2 then --AI_CanAtk(wid,eid,wp["åæ ‡X"],wp["åæ ‡Y"])==wp["åŠ¨ä½œ"]-1 then
 						local hurt = War_CalHurt(wid, eid);
             if hurt > 0 then
               if between(wp.SpecialAction.id, 1, 10) then
@@ -1245,10 +1245,10 @@ function War_AutoAction()
                   table.insert(War.Person[eid].hurt_str_dy, 1, War.Person[eid].hurt_str_dy[1] - 2);
                 end
               end
-              War.Person[eid]["±øÁ¦"] = War.Person[eid]["±øÁ¦"] - hurt;
+              War.Person[eid]["å…µåŠ›"] = War.Person[eid]["å…µåŠ›"] - hurt;
               War_SetAttrib(eid);
-              if War.Person[eid]["±øÁ¦"] <= 0 then
-                War.Person[eid]["´æ»î"] = 0;
+              if War.Person[eid]["å…µåŠ›"] <= 0 then
+                War.Person[eid]["å­˜æ´»"] = 0;
                 War.Person[eid].SpecialAction.id = 21;
                 War.Person[eid].SpecialAction.pic = 1500;
                 War.Person[eid].SpecialAction.timer = 32;
@@ -1258,36 +1258,36 @@ function War_AutoAction()
 				end
         
         --start new action
-        wp["¶¯×÷"] = 0;
-				wp["¶¯×÷½ø¶È"] = 0;
-        wp["¶¯×÷½ø¶È×î´óÖµ"] = 4;
+        wp["åŠ¨ä½œ"] = 0;
+				wp["åŠ¨ä½œè¿›åº¦"] = 0;
+        wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = 4;
         if #wp.movepath > 0 then
-          if WarCanPass(wid, wp.movepath[1].x, wp.movepath[1].y) then	--ÏÂÒ»²½ÒÆ¶¯Ä¿±ê¿Éµ½´ï
-            wp["¶¯×÷"] = 1;
+          if WarCanPass(wid, wp.movepath[1].x, wp.movepath[1].y) then	--ä¸‹ä¸€æ­¥ç§»åŠ¨ç›®æ ‡å¯åˆ°è¾¾
+            wp["åŠ¨ä½œ"] = 1;
             War_MoveToNext(wid);
           end
         else
           local eid = wp.target;
           local atk_r = 0;
           if eid > 0 then
-            wp["Ä¿±êID"] = eid;
-            atk_r = AI_CanAtk(wid, eid, wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"]);
+            wp["ç›®æ ‡ID"] = eid;
+            atk_r = AI_CanAtk(wid, eid, wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"]);
           end
           if false and atk_r>0 and wp.bingfa_time==0 then
             local bfid,bflv=1,-999;
-            if wp.bz["±øÏµ"]==1 and atk_r==1 then
-              bfid,bflv=1,wp.p["²½±øÊÊĞÔ"];
-            elseif wp.bz["±øÏµ"]==2 and atk_r==2 then
-              bfid,bflv=7,wp.p["¹­±øÊÊĞÔ"];
-            elseif wp.bz["±øÏµ"]==3 and atk_r==1 then
-              bfid,bflv=4,wp.p["Æï±øÊÊĞÔ"];
-            elseif wp.bz["±øÏµ"]==3 and atk_r==2 then
-              bfid,bflv=10,math.floor((wp.p["¹­±øÊÊĞÔ"]+wp.p["Æï±øÊÊĞÔ"]+1)/2);
+            if wp.bz["å…µç³»"]==1 and atk_r==1 then
+              bfid,bflv=1,wp.p["æ­¥å…µé€‚æ€§"];
+            elseif wp.bz["å…µç³»"]==2 and atk_r==2 then
+              bfid,bflv=7,wp.p["å¼“å…µé€‚æ€§"];
+            elseif wp.bz["å…µç³»"]==3 and atk_r==1 then
+              bfid,bflv=4,wp.p["éª‘å…µé€‚æ€§"];
+            elseif wp.bz["å…µç³»"]==3 and atk_r==2 then
+              bfid,bflv=10,math.floor((wp.p["å¼“å…µé€‚æ€§"]+wp.p["éª‘å…µé€‚æ€§"]+1)/2);
             end
             local rnd=math.random(0,150);
-            if bflv>1 and rnd<=bflv+wp.p["Æ·¼¶"]-2 then
+            if bflv>1 and rnd<=bflv+wp.p["å“çº§"]-2 then
               wp.bingfa_id=bfid+rnd%3;
-              wp.bingfa_time=128+wp.p["ÖÇÄ±"];
+              wp.bingfa_time=128+wp.p["æ™ºè°‹"];
               local str;
               if bfid==1 then
                 str=JY.Str[math.random(6001,6009)];
@@ -1299,64 +1299,64 @@ function War_AutoAction()
                 str=JY.Str[math.random(6061,6066)];
               end
               str=string.gsub(str,"Ga","[Yellow]"..JY.Str[8400+wp.bingfa_id].."[W]");
-              str=string.gsub(str,"pids","[Orange]"..wp.p["Ãû³Æ"].."¶Ó[W]");
-              str=string.gsub(str,"eids","[Orange]"..War.Person[eid].p["Ãû³Æ"].."¶Ó[W]");
+              str=string.gsub(str,"pids","[Orange]"..wp.p["åç§°"].."é˜Ÿ[W]");
+              str=string.gsub(str,"eids","[Orange]"..War.Person[eid].p["åç§°"].."é˜Ÿ[W]");
               wp.talkstr=str;
             end
           end
-          if atk_r == 1 then	--½ü³Ì¹¥»÷
-            wp["¶¯×÷"] = 2;
-            wp["¶¯×÷½ø¶È×î´óÖµ"] = 24;
-            wp["Ä¿±êX"],wp["Ä¿±êY"] = War.Person[eid]["ÒÆ¶¯X"],War.Person[eid]["ÒÆ¶¯Y"];
-            wp["·½Ïò"] = GetDirection(wp["Ä¿±êX"]-wp["×ø±êX"],wp["Ä¿±êY"]-wp["×ø±êY"],wp["·½Ïò"]);
-          elseif atk_r == 2 then	--Ô¶³Ì¹¥»÷
-            wp["¶¯×÷"] = 3;
-            wp["¶¯×÷½ø¶È×î´óÖµ"] = 24*1.5;
-            if War.Person[eid]["¶¯×÷"] == 1 and #War.Person[eid].movepath > 0 then
-              wp["Ä¿±êX"], wp["Ä¿±êY"] = War.Person[eid].movepath[1].x, War.Person[eid].movepath[1].y;
+          if atk_r == 1 then	--è¿‘ç¨‹æ”»å‡»
+            wp["åŠ¨ä½œ"] = 2;
+            wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = 24;
+            wp["ç›®æ ‡X"],wp["ç›®æ ‡Y"] = War.Person[eid]["ç§»åŠ¨X"],War.Person[eid]["ç§»åŠ¨Y"];
+            wp["æ–¹å‘"] = GetDirection(wp["ç›®æ ‡X"]-wp["åæ ‡X"],wp["ç›®æ ‡Y"]-wp["åæ ‡Y"],wp["æ–¹å‘"]);
+          elseif atk_r == 2 then	--è¿œç¨‹æ”»å‡»
+            wp["åŠ¨ä½œ"] = 3;
+            wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = 24*1.5;
+            if War.Person[eid]["åŠ¨ä½œ"] == 1 and #War.Person[eid].movepath > 0 then
+              wp["ç›®æ ‡X"], wp["ç›®æ ‡Y"] = War.Person[eid].movepath[1].x, War.Person[eid].movepath[1].y;
             else
-              wp["Ä¿±êX"], wp["Ä¿±êY"] = War.Person[eid]["ÒÆ¶¯X"],War.Person[eid]["ÒÆ¶¯Y"];
+              wp["ç›®æ ‡X"], wp["ç›®æ ‡Y"] = War.Person[eid]["ç§»åŠ¨X"],War.Person[eid]["ç§»åŠ¨Y"];
             end
-            wp["·½Ïò"] = GetDirection(wp["Ä¿±êX"]-wp["×ø±êX"],wp["Ä¿±êY"]-wp["×ø±êY"],wp["·½Ïò"]);
+            wp["æ–¹å‘"] = GetDirection(wp["ç›®æ ‡X"]-wp["åæ ‡X"],wp["ç›®æ ‡Y"]-wp["åæ ‡Y"],wp["æ–¹å‘"]);
           end
           if War_SpecialAction(wp, atk_r) then
-            wp["¶¯×÷½ø¶È×î´óÖµ"] = math.ceil(wp["¶¯×÷½ø¶È×î´óÖµ"] * 3 / 4);
+            wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = math.ceil(wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] * 3 / 4);
           end
         end
-				wp.talkd = math.floor(wp["·½Ïò"]/2);
+				wp.talkd = math.floor(wp["æ–¹å‘"]/2);
 			else
-				wp["¶¯×÷½ø¶È"] = wp["¶¯×÷½ø¶È"] + 1;
+				wp["åŠ¨ä½œè¿›åº¦"] = wp["åŠ¨ä½œè¿›åº¦"] + 1;
 			end
 		end
 	end
 end
 function War_SpecialAction(wp, method)
   if method > 0 and wp.SpecialAction.id == 0 and wp.dz > 1000 then
-    if method == 1 then --½ü³Ì¹¥»÷
-      if wp.bz["±øÏµ"] == 1 and math.random() < 0.10 then  --²½±ø
+    if method == 1 then --è¿‘ç¨‹æ”»å‡»
+      if wp.bz["å…µç³»"] == 1 and math.random() < 0.10 then  --æ­¥å…µ
         wp.dz = wp.dz - 1000;
         wp.SpecialAction.id = 1;
         wp.SpecialAction.power = 2.5;
         wp.SpecialAction.pic = 1700;
-      elseif (wp.bz["±øÏµ"] == 3 or wp.bid == 14) and math.random() < 0.10 then  --Æï±ø
+      elseif (wp.bz["å…µç³»"] == 3 or wp.bid == 14) and math.random() < 0.10 then  --éª‘å…µ
         wp.dz = wp.dz - 1000;
         wp.SpecialAction.id = 1;
         wp.SpecialAction.power = 2.5;
         wp.SpecialAction.pic = 1900;
       end
-    elseif method == 2 then --Ô¶³Ì¹¥»÷
-      if wp.bz["±øÏµ"] == 2 and math.random() < 0.10 then  --¹­±ø
+    elseif method == 2 then --è¿œç¨‹æ”»å‡»
+      if wp.bz["å…µç³»"] == 2 and math.random() < 0.10 then  --å¼“å…µ
         wp.dz = wp.dz - 1000;
         wp.SpecialAction.id = 2;
         wp.SpecialAction.power = 2.0;
         wp.SpecialAction.pic = 1800;
-      elseif wp.bid == 14 and math.random() < 0.10 then  --Í»Æï
+      elseif wp.bid == 14 and math.random() < 0.10 then  --çªéª‘
         wp.dz = wp.dz - 1000;
         wp.SpecialAction.id = 2;
         wp.SpecialAction.power = 2.0;
         wp.SpecialAction.pic = 2000;
       end
-    elseif method == 11 then --»Ø±Ü
+    elseif method == 11 then --å›é¿
       if math.random() < 0.03 then
         wp.dz = wp.dz - 800;
         wp.SpecialAction.id = 11;
@@ -1373,30 +1373,30 @@ function War_SpecialAction(wp, method)
 end
 function War_MoveToNext(wid)
 	local wp = War.Person[wid];
-	wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"] = wp.movepath[1].x, wp.movepath[1].y;
-  War.MAP[wp["×ø±êX"]][wp["×ø±êY"]].wid = 0;
-  War.MAP[wp["ÒÆ¶¯X"]][wp["ÒÆ¶¯Y"]].wid = wid;
-	wp["·½Ïò"] = wp.movepath[1].d;
+	wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"] = wp.movepath[1].x, wp.movepath[1].y;
+  War.MAP[wp["åæ ‡X"]][wp["åæ ‡Y"]].wid = 0;
+  War.MAP[wp["ç§»åŠ¨X"]][wp["ç§»åŠ¨Y"]].wid = wid;
+	wp["æ–¹å‘"] = wp.movepath[1].d;
 	table.remove(wp.movepath, 1);
-	wp["¶¯×÷"] = 1;
-	local spd = GetMoveCost(wid, wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"]);
+	wp["åŠ¨ä½œ"] = 1;
+	local spd = GetMoveCost(wid, wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"]);
 	if spd == 0 then
 		spd = 100;
 	end
-	if wp["·½Ïò"] % 2 == 1 then
+	if wp["æ–¹å‘"] % 2 == 1 then
 		spd = spd * 1.414;
 	end
 	spd = math.ceil(spd);
-	wp["¶¯×÷½ø¶È×î´óÖµ"] = spd;
+	wp["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = spd;
 end
 function AI_CanAtk(wid,eid,x,y)
 	local m;
-	local v=(x-War.Person[eid]["ÒÆ¶¯X"])^2 + (y-War.Person[eid]["ÒÆ¶¯Y"])^2;
+	local v=(x-War.Person[eid]["ç§»åŠ¨X"])^2 + (y-War.Person[eid]["ç§»åŠ¨Y"])^2;
 	if v < 49 then
-		m = (War.Person[wid]["Ìå»ı"]+War.Person[eid]["Ìå»ı"]+1)^2;
+		m = (War.Person[wid]["ä½“ç§¯"]+War.Person[eid]["ä½“ç§¯"]+1)^2;
 		if v < m then	return 1 end
 	else
-		m=(War.Person[wid]["Ìå»ı"]+War.Person[eid]["Ìå»ı"]+War.Person[wid].bz["Éä³Ì"])^2;
+		m=(War.Person[wid]["ä½“ç§¯"]+War.Person[eid]["ä½“ç§¯"]+War.Person[wid].bz["å°„ç¨‹"])^2;
 		if v<m then	return 2 end
 	end
 	return 0;
@@ -1406,9 +1406,9 @@ function War_AI()
 		local wid = War.AI_Pool[1];
 		local wp = War.Person[wid];
 		table.remove(War.AI_Pool, 1);
-		if wp["´æ»î"] > 0 then
+		if wp["å­˜æ´»"] > 0 then
 			table.insert(War.AI_Pool, wid);
-			if true then--or wp["¶¯×÷½ø¶È"]==0 then	--½øĞĞAI
+			if true then--or wp["åŠ¨ä½œè¿›åº¦"]==0 then	--è¿›è¡ŒAI
 				findpath(wid);
 			end
 		end
@@ -1427,12 +1427,12 @@ function War_AI()
         eid = 0,
       };
       for eid, wp in ipairs(War.Person) do
-        if wp["´æ»î"] > 0 and wp["µĞÎÒ"] ~= bd.group then
-          local x, y = wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"];
-          if War.MAP[x][y].shadow > 0 and   --¿É¼û
-          (bd.x - x)^2 + (bd.y - y)^2 < (wp["Ìå»ı"] + 2 + bd.rng)^2 then  --Éä³ÌÄÚ£¬ÉèbuildingµÄsize = 2
-            local v = 1000 / (1 + (bd.x - x)^2 + (bd.y - y)^2); --¾àÀë½üµÄÓÅÏÈ
-            v = v + 100 - wp["±øÁ¦"] / 200;
+        if wp["å­˜æ´»"] > 0 and wp["æ•Œæˆ‘"] ~= bd.group then
+          local x, y = wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"];
+          if War.MAP[x][y].shadow > 0 and   --å¯è§
+          (bd.x - x)^2 + (bd.y - y)^2 < (wp["ä½“ç§¯"] + 2 + bd.rng)^2 then  --å°„ç¨‹å†…ï¼Œè®¾buildingçš„size = 2
+            local v = 1000 / (1 + (bd.x - x)^2 + (bd.y - y)^2); --è·ç¦»è¿‘çš„ä¼˜å…ˆ
+            v = v + 100 - wp["å…µåŠ›"] / 200;
             v = v + math.random(10);
             if v > target.v then
               target.v = v;
@@ -1448,14 +1448,14 @@ function War_AI()
 	end
 end
 function GetMapXY(dx, dy)
-	--´ÓÆÁÄ»×ø±êdx dy£¬×ª»»ÎªµØÍ¼×ø±êmx my
+	--ä»å±å¹•åæ ‡dx dyï¼Œè½¬æ¢ä¸ºåœ°å›¾åæ ‡mx my
 	local x_off,y_off = 1040 - War.x_off, -264 - War.y_off;
 	local mx = math.floor((dx + dy * 2 - x_off - y_off * 2) / 32 + 0.501);
 	local my = math.floor((dy * 2 - dx + x_off - y_off * 2) / 32 + 0.501);
 	return mx, my;
 end
 function GetScreenXY(mx,my)
-	--´ÓÆÁÄ»×ø±êdx dy£¬×ª»»ÎªµØÍ¼×ø±êmx my
+	--ä»å±å¹•åæ ‡dx dyï¼Œè½¬æ¢ä¸ºåœ°å›¾åæ ‡mx my
 	local x_off,y_off=1040-War.x_off,-264-War.y_off;
 	local dx=(mx-my)*16+x_off;
 	local dy=(mx+my)*8+y_off;
@@ -1464,17 +1464,17 @@ end
 function War_CalHurt(wid, eid)
 	local wp = War.Person[wid];
 	local ep = War.Person[eid];
-  local hurt_type = wp["¶¯×÷"];
+  local hurt_type = wp["åŠ¨ä½œ"];
 	local atk,def;
 	if hurt_type == 2 then
-		atk = wp["¹¥»÷Á¦"];
+		atk = wp["æ”»å‡»åŠ›"];
 	else
-		atk = wp["Ô¶³Ì¹¥»÷Á¦"];
+		atk = wp["è¿œç¨‹æ”»å‡»åŠ›"];
 	end
-	def = ep["·ÀÓùÁ¦"];
-	local dx = War.MAP[ep["×ø±êX"]][ep["×ø±êY"]].dx;
-	--¿ªÊ¼¼ÆËãÉËº¦		¹ÌÓĞ±øÁ¦Ïà¹Ø + ¹¥·ÀÏà¹Ø + Ëæ»úÊı
-	local hurt = math.max(20 , wp.p["ÎäÁ¦"]+wp.p["Í³ÂÊ"] , wp["±øÁ¦"]/200 , atk)*atk/(atk+def) + (math.random()-math.random())*5;
+	def = ep["é˜²å¾¡åŠ›"];
+	local dx = War.MAP[ep["åæ ‡X"]][ep["åæ ‡Y"]].dx;
+	--å¼€å§‹è®¡ç®—ä¼¤å®³		å›ºæœ‰å…µåŠ›ç›¸å…³ + æ”»é˜²ç›¸å…³ + éšæœºæ•°
+	local hurt = math.max(20 , wp.p["æ­¦åŠ›"]+wp.p["ç»Ÿç‡"] , wp["å…µåŠ›"]/200 , atk)*atk/(atk+def) + (math.random()-math.random())*5;
 	hurt = math.max(atk*atk/(atk+def),1) + (math.random()-math.random())*5;
 	--SpecialAction
   if ep.SpecialAction.id == 11 or War_SpecialAction(ep, 11) then
@@ -1483,7 +1483,7 @@ function War_CalHurt(wid, eid)
     if between(wp.SpecialAction.id, 1, 10) then
       hurt = hurt * wp.SpecialAction.power;
     end
-    hurt = math.floor(hurt * 20 / (8 + ep.bz["ÊÊĞÔ"..dx]));
+    hurt = math.floor(hurt * 20 / (8 + ep.bz["é€‚æ€§"..dx]));
     hurt = limitX(hurt, 1, 9999);
     return hurt;
   end
@@ -1491,91 +1491,91 @@ end
 function War_SetAttrib(wid)
 	local wp=War.Person[wid];
 	local att=	20 + 
-				math.max(	30000/(200-wp.p["ÎäÁ¦"])-150,
-							math.min(wp["±øÁ¦"]*2+wp["±øÁ¦ÉÏÏŞ"],wp.p["Í³ÂÊ"]*300)/(200-wp.p["Í³ÂÊ"])-150) + 
-				wp["±øÁ¦"]/500;
+				math.max(	30000/(200-wp.p["æ­¦åŠ›"])-150,
+							math.min(wp["å…µåŠ›"]*2+wp["å…µåŠ›ä¸Šé™"],wp.p["ç»Ÿç‡"]*300)/(200-wp.p["ç»Ÿç‡"])-150) + 
+				wp["å…µåŠ›"]/500;
 	--if att<10 then att=10 end
-	wp["¹¥»÷Á¦"]=math.floor(att*wp.bz["¹¥»÷Á¦"]/10);
-	wp["Ô¶³Ì¹¥»÷Á¦"]=math.floor(att*wp.bz["Ô¶³Ì¹¥»÷Á¦"]/10);
-	wp["·ÀÓùÁ¦"]=math.floor(att*wp.bz["·ÀÓùÁ¦"]/10);
+	wp["æ”»å‡»åŠ›"]=math.floor(att*wp.bz["æ”»å‡»åŠ›"]/10);
+	wp["è¿œç¨‹æ”»å‡»åŠ›"]=math.floor(att*wp.bz["è¿œç¨‹æ”»å‡»åŠ›"]/10);
+	wp["é˜²å¾¡åŠ›"]=math.floor(att*wp.bz["é˜²å¾¡åŠ›"]/10);
   --[[
-	if wp["±øÁ¦"]>12000 then
-		wp["Ìå»ı"]=2;
-	elseif wp["±øÁ¦"]>8000 then
-		wp["Ìå»ı"]=1.5;
-	elseif wp["±øÁ¦"]>4000 then
-		wp["Ìå»ı"]=1;
+	if wp["å…µåŠ›"]>12000 then
+		wp["ä½“ç§¯"]=2;
+	elseif wp["å…µåŠ›"]>8000 then
+		wp["ä½“ç§¯"]=1.5;
+	elseif wp["å…µåŠ›"]>4000 then
+		wp["ä½“ç§¯"]=1;
 	else
-		wp["Ìå»ı"]=0.5;
+		wp["ä½“ç§¯"]=0.5;
 	end
   ]]--
-	if wp["±øÁ¦"]>12000 then
-		wp["Ìå»ı"]=2.5;
-	elseif wp["±øÁ¦"]>8000 then
-		wp["Ìå»ı"]=2;
-	elseif wp["±øÁ¦"]>4000 then
-		wp["Ìå»ı"]=1.5;
+	if wp["å…µåŠ›"]>12000 then
+		wp["ä½“ç§¯"]=2.5;
+	elseif wp["å…µåŠ›"]>8000 then
+		wp["ä½“ç§¯"]=2;
+	elseif wp["å…µåŠ›"]>4000 then
+		wp["ä½“ç§¯"]=1.5;
 	else
-		wp["Ìå»ı"]=1;
+		wp["ä½“ç§¯"]=1;
 	end
-  wp.dzinc = 0.8 + (wp.p["Í³ÂÊ"] + math.max(wp.p["ÎäÁ¦"], wp.p["ÖÇÄ±"])) / 200;
+  wp.dzinc = 0.8 + (wp.p["ç»Ÿç‡"] + math.max(wp.p["æ­¦åŠ›"], wp.p["æ™ºè°‹"])) / 200;
 end
 function War_AddPerson(group,order,pid,bid,bl)
 	local wid=1+#War.Person;
-	local fid=JY.Person[pid]["ÊÆÁ¦"];
+	local fid=JY.Person[pid]["åŠ¿åŠ›"];
 	War.Person[wid]={
-    ["·½Ïò"] = 0,
-    ["×ø±êX"]=War.GroupXY[group][order].x,
-    ["×ø±êY"]=War.GroupXY[group][order].y,
-    ["ÒÆ¶¯X"]=War.GroupXY[group][order].x,
-    ["ÒÆ¶¯Y"]=War.GroupXY[group][order].y,
-    ["Ä¿±êX"]=-1,
-    ["Ä¿±êY"]=-1,
-    ["ÆÁÄ»X"]=-1,
-    ["ÆÁÄ»Y"]=-1,
-    ["×´Ì¬X"]=-1,
-    ["×´Ì¬Y"]=-1,
-    ["Ä¿±êID"]=0,
-    ["¶¯×÷"]=0,
-    ["¶¯×÷½ø¶È"]=0,
-    ["¶¯×÷½ø¶È×î´óÖµ"]=0,
-    ["ÌùÍ¼"]=0,
-    ["ÈËÎïID"]=pid,
-    ["±øÁ¦"]=bl,
-    ["±øÁ¦ÉÏÏŞ"]=bl,
-    ["¹¥»÷Á¦"]=0,
-    ["Ô¶³Ì¹¥»÷Á¦"]=0,
-    ["·ÀÓùÁ¦"]=0,
-    ["±øÖÖ"]=bid,
-    ["´æ»î"]=1,
-    show = true,  --ÊÇ·ñÏÔÊ¾
-    ["Ñ¡ÖĞ"]=0,
+    ["æ–¹å‘"] = 0,
+    ["åæ ‡X"]=War.GroupXY[group][order].x,
+    ["åæ ‡Y"]=War.GroupXY[group][order].y,
+    ["ç§»åŠ¨X"]=War.GroupXY[group][order].x,
+    ["ç§»åŠ¨Y"]=War.GroupXY[group][order].y,
+    ["ç›®æ ‡X"]=-1,
+    ["ç›®æ ‡Y"]=-1,
+    ["å±å¹•X"]=-1,
+    ["å±å¹•Y"]=-1,
+    ["çŠ¶æ€X"]=-1,
+    ["çŠ¶æ€Y"]=-1,
+    ["ç›®æ ‡ID"]=0,
+    ["åŠ¨ä½œ"]=0,
+    ["åŠ¨ä½œè¿›åº¦"]=0,
+    ["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"]=0,
+    ["è´´å›¾"]=0,
+    ["äººç‰©ID"]=pid,
+    ["å…µåŠ›"]=bl,
+    ["å…µåŠ›ä¸Šé™"]=bl,
+    ["æ”»å‡»åŠ›"]=0,
+    ["è¿œç¨‹æ”»å‡»åŠ›"]=0,
+    ["é˜²å¾¡åŠ›"]=0,
+    ["å…µç§"]=bid,
+    ["å­˜æ´»"]=1,
+    show = true,  --æ˜¯å¦æ˜¾ç¤º
+    ["é€‰ä¸­"]=0,
     --AI--
-    ["AI·½Õë"]=0,
-    ["AIÄ¿±êID"]=0,
-    ["AIÄ¿±êX"]=0,
-    ["AIÄ¿±êY"]=0,
+    ["AIæ–¹é’ˆ"]=0,
+    ["AIç›®æ ‡ID"]=0,
+    ["AIç›®æ ‡X"]=0,
+    ["AIç›®æ ‡Y"]=0,
     ------
-    building = false, --ÊÇ·ñÎªÕ½³¡½¨Öş
+    building = false, --æ˜¯å¦ä¸ºæˆ˜åœºå»ºç­‘
     flag_id=GetFlagID(pid),
     force_id=fid,
     bingfa_id=0,
     bingfa_time=0,
     talkstr="",
     talkd=0,
-    movepath = {},	--Ô¤¶©ÒÆ¶¯Â·¾¶
-    target = 0, --Ô¤¶¨¹¥»÷Ä¿±ê
-    AIConfig = {  --AIÉèÖÃ
+    movepath = {},	--é¢„è®¢ç§»åŠ¨è·¯å¾„
+    target = 0, --é¢„å®šæ”»å‡»ç›®æ ‡
+    AIConfig = {  --AIè®¾ç½®
       kind = 0,
       tx = 0,
       ty = 0,
     },
-    AISearch = {},  --AIË¼¿¼ÇøÓò
-    hurt_str={},	--ÊÜÉËÏÔÊ¾
-    hurt_str_dy={},	--ÊÜÉËÏÔÊ¾
-    dz = 0, --¶·Ö¾£¬¾ö¶¨ÌØÊâ¼¼·¢¶¯
-    dzinc = 0,  --¶·Ö¾ÉÏÉıÂÊ
-    SpecialAction = {  --ÌØÊâ¹¥»÷
+    AISearch = {},  --AIæ€è€ƒåŒºåŸŸ
+    hurt_str={},	--å—ä¼¤æ˜¾ç¤º
+    hurt_str_dy={},	--å—ä¼¤æ˜¾ç¤º
+    dz = 0, --æ–—å¿—ï¼Œå†³å®šç‰¹æ®ŠæŠ€å‘åŠ¨
+    dzinc = 0,  --æ–—å¿—ä¸Šå‡ç‡
+    SpecialAction = {  --ç‰¹æ®Šæ”»å‡»
       id = 0,
       power = 0,
       pic = 0,
@@ -1597,33 +1597,33 @@ function War_AddPerson(group,order,pid,bid,bl)
 	War.Person[wid].bid = bid;
 	War.Person[wid].bz=JY.Bingzhong[bid];
 	if group<6 then
-		War.Person[wid]["ÌùÍ¼"] = War.Person[wid].bz["ÌùÍ¼"];
-		War.Person[wid]["µĞÎÒ"] = 0;
+		War.Person[wid]["è´´å›¾"] = War.Person[wid].bz["è´´å›¾"];
+		War.Person[wid]["æ•Œæˆ‘"] = 0;
     if War.CityPosition == 0 then
-      War.Person[wid]["·½Ïò"] = 6;
+      War.Person[wid]["æ–¹å‘"] = 6;
     else
-      War.Person[wid]["·½Ïò"] = 0;
+      War.Person[wid]["æ–¹å‘"] = 0;
     end
     War.Person[wid].SpecialAction.color = RGB(55,164,250);
 	else
-		War.Person[wid]["ÌùÍ¼"]=War.Person[wid].bz["ÌùÍ¼"]+80;
-		War.Person[wid]["µĞÎÒ"]=1;
+		War.Person[wid]["è´´å›¾"]=War.Person[wid].bz["è´´å›¾"]+80;
+		War.Person[wid]["æ•Œæˆ‘"]=1;
     if War.CityPosition == 0 then
-      War.Person[wid]["·½Ïò"] = 2;
+      War.Person[wid]["æ–¹å‘"] = 2;
     else
-      War.Person[wid]["·½Ïò"] = 4;
+      War.Person[wid]["æ–¹å‘"] = 4;
     end
     War.Person[wid].SpecialAction.color = RGB(250,87,95);
-		War.Person[wid]["AI·½Õë"]=1;
-		War.Person[wid]["AIÄ¿±êX"]=War.GroupXY[group][order].x;
-		War.Person[wid]["AIÄ¿±êY"]=War.GroupXY[group][order].y;
+		War.Person[wid]["AIæ–¹é’ˆ"]=1;
+		War.Person[wid]["AIç›®æ ‡X"]=War.GroupXY[group][order].x;
+		War.Person[wid]["AIç›®æ ‡Y"]=War.GroupXY[group][order].y;
 	end
 	War_SetAttrib(wid);
-	War.MAP[War.Person[wid]["×ø±êX"]][War.Person[wid]["×ø±êY"]].wid = wid;
+	War.MAP[War.Person[wid]["åæ ‡X"]][War.Person[wid]["åæ ‡Y"]].wid = wid;
 	table.insert(War.AI_Pool, wid);
 end
 function War_AddBuilding(id, group, x, y, lv)
-  -- id 1 ³ÇÃÅ 2 íÎ 3 ³ÇÇ½ÊØ¾ü
+  -- id 1 åŸé—¨ 2 ç ¦ 3 åŸå¢™å®ˆå†›
   local bid = 1 + #War.Building;
   War.Building[bid] = {
     id = id,
@@ -1638,12 +1638,12 @@ function War_AddBuilding(id, group, x, y, lv)
     atk = 100,
     def = 100,
     rng = 15,
-    target = 0, --Ô¤¶¨¹¥»÷Ä¿±ê
-    ["Ä¿±êX"] = -1,
-    ["Ä¿±êY"] = -1,
-    ["Ä¿±êID"] = 0,
-    ["¶¯×÷½ø¶È"] = 0,
-    ["¶¯×÷½ø¶È×î´óÖµ"] = 48,
+    target = 0, --é¢„å®šæ”»å‡»ç›®æ ‡
+    ["ç›®æ ‡X"] = -1,
+    ["ç›®æ ‡Y"] = -1,
+    ["ç›®æ ‡ID"] = 0,
+    ["åŠ¨ä½œè¿›åº¦"] = 0,
+    ["åŠ¨ä½œè¿›åº¦æœ€å¤§å€¼"] = 48,
   };
   if 2 == id then
     table.insert(War.BuildingAI_Pool, bid);
@@ -1653,11 +1653,11 @@ function War_LoadDX()
 	local len = 4 + 63*65*2;
 	local data = Byte.create(len);
 	Byte.loadfile(data,string.format(CONFIG.CurrentPath.."D_YMAP.S8/D_YMAP.S8.%03d",War.mapid),0,len);
-	War.GroupXY={	--³ö³¡Î»ÖÃ
+	War.GroupXY={	--å‡ºåœºä½ç½®
 					[1]={},[2]={},[3]={},[4]={},[5]={},
 					[6]={},[7]={},[8]={},[9]={},[10]={},[16]={},
 				}
-  local function convertXY(x, y)  --ÆæÒì×ø±ê×ªÎª±ê×¼×ø±ê
+  local function convertXY(x, y)  --å¥‡å¼‚åæ ‡è½¬ä¸ºæ ‡å‡†åæ ‡
     local y1, y2 = math.floor(y / 2), y % 2;
     local rx = x + y1 + y2;
     local ry = 64 - x + y1;
@@ -1671,11 +1671,11 @@ function War_LoadDX()
       local x, y = convertXY(i, j, 1);
       local sx, sy = GetScreenXY(x, y);
       if between(sx, 24, 2008 - 24) and sy < 768 - 16 then
-        --%16µÃµ½µÚÒ»Î»£¬µØĞÎ
-        --µÚ¶şÎ» µĞÎÒÔ®±êÊ¶ ÎÒ·½Õı¹æ¾üÎª0 1/2·Ö±ğÎªÎÒ·½Ô®¾ü
-        --					µĞ·½³ÇÃÅ²¼ÕóÎª5 Ó­»÷Îª8 6/7·Ö±ğÎªÔ®¾ü
-        --			F »³ÒÉÊÇ ÖĞ¼ä¾İµã
-        --µÚÈıÎ» ²¿¶ÓĞòºÅ
+        --%16å¾—åˆ°ç¬¬ä¸€ä½ï¼Œåœ°å½¢
+        --ç¬¬äºŒä½ æ•Œæˆ‘æ´æ ‡è¯† æˆ‘æ–¹æ­£è§„å†›ä¸º0 1/2åˆ†åˆ«ä¸ºæˆ‘æ–¹æ´å†›
+        --					æ•Œæ–¹åŸé—¨å¸ƒé˜µä¸º5 è¿å‡»ä¸º8 6/7åˆ†åˆ«ä¸ºæ´å†›
+        --			F æ€€ç–‘æ˜¯ ä¸­é—´æ®ç‚¹
+        --ç¬¬ä¸‰ä½ éƒ¨é˜Ÿåºå·
         if v<65521 then
           local group = 1 + math.floor(v / 16) % 16;
           local order = 1 + math.floor(v / 256) % 16;
@@ -1702,20 +1702,20 @@ function War_LoadDX()
 	else
 		War.CityPosition = 1;
 	end
-	if War.CityPosition == 0 then	--³ÇÔÚ×ó±ß
+	if War.CityPosition == 0 then	--åŸåœ¨å·¦è¾¹
 		for y=55, 72 do
 			War.MAP[9][y].dx = 14
 		end
-    War_AddBuilding(1, 1, 9, 62, 3); --³ÇÃÅ
+    War_AddBuilding(1, 1, 9, 62, 3); --åŸé—¨
 	else
 		for x=53, 70 do
 			War.MAP[x][11].dx = 14
 		end
-    War_AddBuilding(1, 1, 60, 11, 3); --³ÇÃÅ
+    War_AddBuilding(1, 1, 60, 11, 3); --åŸé—¨
 	end
-  War_AddBuilding(2, 0, War.GroupXY[1][1].x, War.GroupXY[1][1].y, 1); --¹¥»÷·½ÓªµØ
+  War_AddBuilding(2, 0, War.GroupXY[1][1].x, War.GroupXY[1][1].y, 1); --æ”»å‡»æ–¹è¥åœ°
   for i, v in ipairs(War.GroupXY[16]) do
-    War_AddBuilding(2, 1, v.x, v.y, 1); --·ÀÊØ·½ÖĞ¼äÓªµØ
+    War_AddBuilding(2, 1, v.x, v.y, 1); --é˜²å®ˆæ–¹ä¸­é—´è¥åœ°
   end
   
 --	for i,v in ipairs(War.GroupXY[16]) do
@@ -1731,14 +1731,14 @@ function War_LoadDX()
 --	end
 end
 function War_LoadMap(warid)
-	if JY.Connection[warid]["¹ÅÕ½³¡"]>0 then
-		War.name=JY.Str[9180+JY.Connection[warid]["¹ÅÕ½³¡"]].."Ö®Õ½";
+	if JY.Connection[warid]["å¤æˆ˜åœº"]>0 then
+		War.name=JY.Str[9180+JY.Connection[warid]["å¤æˆ˜åœº"]].."ä¹‹æˆ˜";
 	else
-		War.name=JY.City[JY.Connection[warid]["¶¼ÊĞ2"]]["Ãû³Æ"].."Ö®Õ½";
+		War.name=JY.City[JY.Connection[warid]["éƒ½å¸‚2"]]["åç§°"].."ä¹‹æˆ˜";
 	end
-	War.mapid=JY.Connection[warid]["Õ½³¡"];
-	War.wid1=JY.Connection[warid]["Õ½³¡µØÍ¼1"];
-	War.wid2=JY.Connection[warid]["Õ½³¡µØÍ¼2"];
+	War.mapid=JY.Connection[warid]["æˆ˜åœº"];
+	War.wid1=JY.Connection[warid]["æˆ˜åœºåœ°å›¾1"];
+	War.wid2=JY.Connection[warid]["æˆ˜åœºåœ°å›¾2"];
 	War.CityPosition=0;
 	War_LoadDX();
 	War.Target={[0] = {}, [1] = {}, [2] = {},};
@@ -1789,19 +1789,19 @@ function skipWar(warid)
   local function setAttrib(i)
     local wp = army[i];
     local att=	20 + 
-          math.max(	30000/(200-wp.p["ÎäÁ¦"]) - 150,
-                math.min(wp.bl * 2 + wp.blMax, wp.p["Í³ÂÊ"] * 300) / (200 - wp.p["Í³ÂÊ"]) - 150) + 
+          math.max(	30000/(200-wp.p["æ­¦åŠ›"]) - 150,
+                math.min(wp.bl * 2 + wp.blMax, wp.p["ç»Ÿç‡"] * 300) / (200 - wp.p["ç»Ÿç‡"]) - 150) + 
           wp.bl / 500;
-    local fid = wp.p["ÊÆÁ¦"];
+    local fid = wp.p["åŠ¿åŠ›"];
     if fid == 1 or fid == 2 or fid == 3 then
       att = att * 1.1;
     end
     if fid == 2 then
       att = att * 1.1
     end
-    wp.atk1 = math.floor(att * wp.bz["¹¥»÷Á¦"] / 10);
-    wp.atk2 = math.floor(att * wp.bz["Ô¶³Ì¹¥»÷Á¦"] / 10);
-    wp.def = math.floor(att * wp.bz["·ÀÓùÁ¦"] / 10);
+    wp.atk1 = math.floor(att * wp.bz["æ”»å‡»åŠ›"] / 10);
+    wp.atk2 = math.floor(att * wp.bz["è¿œç¨‹æ”»å‡»åŠ›"] / 10);
+    wp.def = math.floor(att * wp.bz["é˜²å¾¡åŠ›"] / 10);
   end
   local function sortArmy()
     table.sort(army, function(a, b)
@@ -1819,7 +1819,7 @@ function skipWar(warid)
         table.insert(wlist, {
           id = i,
           pid = v.pid,
-          bz = v.bz["±øÏµ"],
+          bz = v.bz["å…µç³»"],
           enemy = v.enemy,
           hit = 0,
         });
@@ -1855,7 +1855,7 @@ function skipWar(warid)
           wlist[1].hit = wlist[1].hit + 1;
           local ep = army[eid.id];
           local atk;
-          if wp.bz["±øÏµ"] == 2 then
+          if wp.bz["å…µç³»"] == 2 then
             atk = wp.atk2;
           else
             atk = wp.atk1;
@@ -1892,19 +1892,19 @@ function skipWar(warid)
     end
   end
   --War_LoadMap(warid);
-	if JY.Connection[warid]["¹ÅÕ½³¡"]>0 then
-		War.name=JY.Str[9180+JY.Connection[warid]["¹ÅÕ½³¡"]].."Ö®Õ½";
+	if JY.Connection[warid]["å¤æˆ˜åœº"]>0 then
+		War.name=JY.Str[9180+JY.Connection[warid]["å¤æˆ˜åœº"]].."ä¹‹æˆ˜";
 	else
-		War.name=JY.City[JY.Connection[warid]["¶¼ÊĞ2"]]["Ãû³Æ"].."Ö®Õ½";
+		War.name=JY.City[JY.Connection[warid]["éƒ½å¸‚2"]]["åç§°"].."ä¹‹æˆ˜";
 	end
-	War.mapid=JY.Connection[warid]["Õ½³¡"];
+	War.mapid=JY.Connection[warid]["æˆ˜åœº"];
 	for i, v in ipairs(War.ArmyA1) do
     table.insert(army, {
       group = 2,
       idx = i,
       pid = v.pid,
-      head = JY.Person[v.pid]["ÈİÃ²"] + 6000,
-      name = JY.Person[v.pid]["Ãû³Æ"],
+      head = JY.Person[v.pid]["å®¹è²Œ"] + 6000,
+      name = JY.Person[v.pid]["åç§°"],
       bl = v.bl,
       blMax = v.bl,
       atk1 = 0,
@@ -1912,7 +1912,7 @@ function skipWar(warid)
       def = 0,
       p = JY.Person[v.pid],
       bz = JY.Bingzhong[v.bz],
-      bzPic = 276 + 4 * JY.Bingzhong[v.bz]["±øÏµ"],
+      bzPic = 276 + 4 * JY.Bingzhong[v.bz]["å…µç³»"],
       live = true,
       enemy = false,
     });
@@ -1922,8 +1922,8 @@ function skipWar(warid)
       group = 3,
       idx = i,
       pid = v.pid,
-      head = JY.Person[v.pid]["ÈİÃ²"] + 6000,
-      name = JY.Person[v.pid]["Ãû³Æ"],
+      head = JY.Person[v.pid]["å®¹è²Œ"] + 6000,
+      name = JY.Person[v.pid]["åç§°"],
       bl = v.bl,
       blMax = v.bl,
       atk1 = 0,
@@ -1931,7 +1931,7 @@ function skipWar(warid)
       def = 0,
       p = JY.Person[v.pid],
       bz = JY.Bingzhong[v.bz],
-      bzPic = 276 + 4 * JY.Bingzhong[v.bz]["±øÏµ"] + 2,
+      bzPic = 276 + 4 * JY.Bingzhong[v.bz]["å…µç³»"] + 2,
       live = true,
       enemy = true,
     });
@@ -1958,17 +1958,17 @@ function skipWar(warid)
         lib.Delay(CC.FrameNum);
         getkey();
       end
-      Talk("", "Õ½¶·½áÊø");
+      Talk("", "æˆ˜æ–—ç»“æŸ");
       return r;
     end
   end
   
   --[[
-  ¸øÃ¿¸ö²¿¶Ó, ÉèÖÃ¹¥»÷Ä¿±ê, follow ÒÔÏÂrule
+  ç»™æ¯ä¸ªéƒ¨é˜Ÿ, è®¾ç½®æ”»å‡»ç›®æ ‡, follow ä»¥ä¸‹rule
 
-×ÔÉíÎª²½±øÊ±, µĞ·½ÒÔ ±»¹¥»÷´ÎÊıĞ¡µÄ>²½>¹­>Æï µÄ´ÎĞòÅÅĞò, ¹¥»÷×îÓÅÏÈµÄ, ±»¹¥»÷Ö®Ä¿±ê, ±ê¼Ç±»¹¥»÷´ÎÊı+1
-×ÔÉíÎª¹­±øÊ±, µĞ·½ÒÔ ±»¹¥»÷´ÎÊıĞ¡µÄ>¹­>Æï>²½ µÄ´ÎĞòÅÅĞò, ¹¥»÷×îÓÅÏÈµÄ, ±»¹¥»÷Ö®Ä¿±ê, ±ê¼Ç±»¹¥»÷´ÎÊı+1
-×ÔÉíÎªÆï±øÊ±, µĞ·½ÒÔ ±»¹¥»÷´ÎÊıĞ¡µÄ>Æï>²½>¹­ µÄ´ÎĞòÅÅĞò, ¹¥»÷×îÓÅÏÈµÄ, ±»¹¥»÷Ö®Ä¿±ê, ±ê¼Ç±»¹¥»÷´ÎÊı+1
+è‡ªèº«ä¸ºæ­¥å…µæ—¶, æ•Œæ–¹ä»¥ è¢«æ”»å‡»æ¬¡æ•°å°çš„>æ­¥>å¼“>éª‘ çš„æ¬¡åºæ’åº, æ”»å‡»æœ€ä¼˜å…ˆçš„, è¢«æ”»å‡»ä¹‹ç›®æ ‡, æ ‡è®°è¢«æ”»å‡»æ¬¡æ•°+1
+è‡ªèº«ä¸ºå¼“å…µæ—¶, æ•Œæ–¹ä»¥ è¢«æ”»å‡»æ¬¡æ•°å°çš„>å¼“>éª‘>æ­¥ çš„æ¬¡åºæ’åº, æ”»å‡»æœ€ä¼˜å…ˆçš„, è¢«æ”»å‡»ä¹‹ç›®æ ‡, æ ‡è®°è¢«æ”»å‡»æ¬¡æ•°+1
+è‡ªèº«ä¸ºéª‘å…µæ—¶, æ•Œæ–¹ä»¥ è¢«æ”»å‡»æ¬¡æ•°å°çš„>éª‘>æ­¥>å¼“ çš„æ¬¡åºæ’åº, æ”»å‡»æœ€ä¼˜å…ˆçš„, è¢«æ”»å‡»ä¹‹ç›®æ ‡, æ ‡è®°è¢«æ”»å‡»æ¬¡æ•°+1
 
   ]]
 end
@@ -2050,7 +2050,7 @@ function LLK_III_Main(warid)
 				dofile(CONFIG.ScriptPath .. "UI.lua");
 			end
 		end
-		--ÒÆ¶¯µØÍ¼
+		--ç§»åŠ¨åœ°å›¾
     if MOUSE.x < 10 then
       War.x_off = limitX(War.x_off - 12, 0, 2016 - CC.ScreenW);
     elseif MOUSE.x > CC.ScreenW - 10 then
@@ -2061,7 +2061,7 @@ function LLK_III_Main(warid)
     elseif MOUSE.y > CC.ScreenH - 10 then
       War.y_off = limitX(War.y_off + 8, 0, 768 - CC.ScreenH);
     end
-    --Ñ¡Ôñ²¿¶Ó
+    --é€‰æ‹©éƒ¨é˜Ÿ
     WarArmySelection:event();
     
     --[=[
@@ -2080,15 +2080,15 @@ function LLK_III_Main(warid)
 			end
 		end
     ]=]--
-		--Ñ¡Ôñ²¿¶Ó
+		--é€‰æ‹©éƒ¨é˜Ÿ
     --[[
 		local sx,sy=GetScreenXY(War.mx, War.my);
 		if MOUSE.CLICK(sx-16,sy-8,sx+16,sy+8) then
 			for wid, wp in ipairs(War.Person) do
-				if 1 == wp["´æ»î"] and math.abs(wp["ÒÆ¶¯X"] - War.mx) <= 1 and math.abs(wp["ÒÆ¶¯Y"] - War.my) <= 1 then
-					wp["Ñ¡ÖĞ"] = 1;
+				if 1 == wp["å­˜æ´»"] and math.abs(wp["ç§»åŠ¨X"] - War.mx) <= 1 and math.abs(wp["ç§»åŠ¨Y"] - War.my) <= 1 then
+					wp["é€‰ä¸­"] = 1;
 				else
-					wp["Ñ¡ÖĞ"] = 0;
+					wp["é€‰ä¸­"] = 0;
 				end
 			end
 		end
@@ -2107,7 +2107,7 @@ function WarCanPass(wid, x, y)
 		if War.MAP[i][j] then
 			local eid = War.MAP[i][j].wid;
 			if eid > 0 and eid ~= wid then
-				local size = War.Person[wid]["Ìå»ı"] + War.Person[eid]["Ìå»ı"];
+				local size = War.Person[wid]["ä½“ç§¯"] + War.Person[eid]["ä½“ç§¯"];
 				if size > tr[idx] then
 					return false;
 				end
@@ -2119,16 +2119,16 @@ end
 function GetMoveCost(wid, x, y)
 	if War.MAP[x][y] then
     local dx = War.MAP[x][y].dx;
-    local cost = War.Person[wid].bz["ÒÆ¶¯Á¦" .. dx];
+    local cost = War.Person[wid].bz["ç§»åŠ¨åŠ›" .. dx];
     return cost;
   else
     return 0;
   end
 end
-function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
+function findpath(wid)--,x1,y1,x2,y2) --å°†å¯»æ•ŒåŠ å…¥åœ¨å†…
 	local wp = War.Person[wid];
-	local x1,y1=wp["ÒÆ¶¯X"],wp["ÒÆ¶¯Y"]--wp["×ø±êX"],wp["×ø±êY"];
-	local x2,y2=wp["Ä¿±êX"],wp["Ä¿±êY"];
+	local x1,y1=wp["ç§»åŠ¨X"],wp["ç§»åŠ¨Y"]--wp["åæ ‡X"],wp["åæ ‡Y"];
+	local x2,y2=wp["ç›®æ ‡X"],wp["ç›®æ ‡Y"];
 	local Open={}
 	local Neibo={}
 	local iter;
@@ -2143,7 +2143,7 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 					father={},
           search={},
 				}
-	--ÉèÖÃÅö×² ±ê¼Ç²»¿ÉÒÆ¶¯µÄÎ»ÖÃ ÒÔ¼° µĞÈËÎ»ÖÃ
+	--è®¾ç½®ç¢°æ’ æ ‡è®°ä¸å¯ç§»åŠ¨çš„ä½ç½® ä»¥åŠ æ•Œäººä½ç½®
 	local tx={0,	-1,1,0,0,	-1,-1,1,1,	-2,2,0,0,	-2,-1,1,2,-2,-1,1,2}
 	local ty={0,	0,0,-1,1,	-1,1,-1,1,	0,0,-2,2,	1,2,2,1,-1,-2,-2,-1}
 	local tx = {-1,0,1,		-2,-1,0,1,2,		-2,-1,0,1,2,		-2,-1,0,1,2,		-1,0,1};
@@ -2152,14 +2152,14 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 	local n;
 	local min_len,cur_len=256*256,0;
 	for i, v in ipairs(War.Person) do
-    local ox, oy = v["ÒÆ¶¯X"], v["ÒÆ¶¯Y"];
-    if i ~= wid and v["´æ»î"] > 0 and War.MAP[ox][oy].shadow > 0 then
-      local size = wp["Ìå»ı"] + v["Ìå»ı"];
+    local ox, oy = v["ç§»åŠ¨X"], v["ç§»åŠ¨Y"];
+    if i ~= wid and v["å­˜æ´»"] > 0 and War.MAP[ox][oy].shadow > 0 then
+      local size = wp["ä½“ç§¯"] + v["ä½“ç§¯"];
       for idx = 1, #tx do
         local nx, ny = ox + tx[idx], oy + ty[idx];
         if War.MAP[nx][ny] and size > tr[idx] then
-          if v["µĞÎÒ"] ~= wp["µĞÎÒ"] or v["¶¯×÷"] ~= 1 then
-            Asmap.s[128*nx + ny] = 2; --¹Ø±Õ´Ë½Úµã
+          if v["æ•Œæˆ‘"] ~= wp["æ•Œæˆ‘"] or v["åŠ¨ä½œ"] ~= 1 then
+            Asmap.s[128*nx + ny] = 2; --å…³é—­æ­¤èŠ‚ç‚¹
           end
         end
       end
@@ -2172,19 +2172,19 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
     eid = 0,
   };
   local emeny = {};
-  local wid_bx = War.Person[wid].bz["±øÏµ"];
+  local wid_bx = War.Person[wid].bz["å…µç³»"];
   for i, v in pairs(War.Person) do
-    if v["´æ»î"] > 0 and v["µĞÎÒ"] ~= wp["µĞÎÒ"] and War.MAP[v["×ø±êX"]][v["×ø±êY"]].shadow > 0 then
-      local eid_bl = War.Person[i]["±øÁ¦"];
-      local eid_bx = War.Person[i].bz["±øÏµ"];
-      local v = 200 - eid_bl/200;  --µĞ·½±øÁ¦Ô½Ğ¡£¬È¨ÖµÔ½¸ß
-      if wid_bx == 3 and eid_bx == 2 then --Æï±øÓÅÏÈ¹¥»÷¹­±ø
+    if v["å­˜æ´»"] > 0 and v["æ•Œæˆ‘"] ~= wp["æ•Œæˆ‘"] and War.MAP[v["åæ ‡X"]][v["åæ ‡Y"]].shadow > 0 then
+      local eid_bl = War.Person[i]["å…µåŠ›"];
+      local eid_bx = War.Person[i].bz["å…µç³»"];
+      local v = 200 - eid_bl/200;  --æ•Œæ–¹å…µåŠ›è¶Šå°ï¼Œæƒå€¼è¶Šé«˜
+      if wid_bx == 3 and eid_bx == 2 then --éª‘å…µä¼˜å…ˆæ”»å‡»å¼“å…µ
         v = v + 50;
       end
-      if wid_bx == 2 and eid_bx == 3 then --¹­±øÓÅÏÈ¹¥»÷Æï±ø
+      if wid_bx == 2 and eid_bx == 3 then --å¼“å…µä¼˜å…ˆæ”»å‡»éª‘å…µ
         v = v + 20;
       end
-      if eid_bx == 1 then --ËùÓĞ±øÖÖÓÅÏÈ¹¥»÷²½±ø(³°·í)
+      if eid_bx == 1 then --æ‰€æœ‰å…µç§ä¼˜å…ˆæ”»å‡»æ­¥å…µ(å˜²è®½)
         v = v + 20;
       end
       table.insert(emeny, {
@@ -2200,7 +2200,7 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
       local atk_r = AI_CanAtk(wid, v.eid, x, y);
       if atk_r > 0 then
         local nv = v.v;
-        if atk_r == 1 and wp.bz["±øÏµ"] == 2 then
+        if atk_r == 1 and wp.bz["å…µç³»"] == 2 then
           nv = nv / 10;
         end
         if nv > maxv then
@@ -2215,11 +2215,11 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
     local iter = 128 * x + y;
     local eid, v = findEmenyCanAtk(x,y);
     if eid > 0 then
-      v = v + 128 - Asmap.g[iter];  --ÒÆ¶¯µÄcostÔ½Ğ¡£¬È¨ÖµÔ½¸ß
-      if x == x1 and y == y1 then --Ô­µØ£¬²»ÒÆ¶¯£¬¶îÍâ¼ÓÈ¨
+      v = v + 128 - Asmap.g[iter];  --ç§»åŠ¨çš„costè¶Šå°ï¼Œæƒå€¼è¶Šé«˜
+      if x == x1 and y == y1 then --åŸåœ°ï¼Œä¸ç§»åŠ¨ï¼Œé¢å¤–åŠ æƒ
         v = v + 50;
       end
-    else  --ÎŞ·¨¹¥»÷µĞÈËÊ±£¬ÀëÄ¿±êµÄ¾àÀëÔ½Ğ¡£¬È¨ÖµÔ½¸ß
+    else  --æ— æ³•æ”»å‡»æ•Œäººæ—¶ï¼Œç¦»ç›®æ ‡çš„è·ç¦»è¶Šå°ï¼Œæƒå€¼è¶Šé«˜
       v = 256 - Asmap.h[iter];
     end
     if v > target.v then
@@ -2230,13 +2230,13 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
     end
   end
   
-  local aiType = wp['µĞÎÒ'];
-  if 0 == aiType then --Ö÷¶¯³ö»÷
+  local aiType = wp['æ•Œæˆ‘'];
+  if 0 == aiType then --ä¸»åŠ¨å‡ºå‡»
     if #emeny > 0 then
       local eid = emeny[1].eid;
-      x2, y2 = War.Person[eid]["ÒÆ¶¯X"], War.Person[eid]["ÒÆ¶¯Y"];
+      x2, y2 = War.Person[eid]["ç§»åŠ¨X"], War.Person[eid]["ç§»åŠ¨Y"];
     else
-      if wp['µĞÎÒ'] == 0 then
+      if wp['æ•Œæˆ‘'] == 0 then
         x2, y2 = War.Target[0].x, War.Target[0].y;
         if wp.AIConfig.tx > 0 then
           x2, y2 = wp.AIConfig.tx, wp.AIConfig.ty;
@@ -2245,14 +2245,14 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
         x2, y2 = War.Target[1].x, War.Target[1].y;
       end
     end
-  elseif 1 == aiType then --±»¶¯³ö»÷
-    x2, y2 = wp["ÒÆ¶¯X"], wp["ÒÆ¶¯Y"];
-  elseif 2 == aiType then --Ô­µØ¼áÊØ
-  elseif 3 == aiType then --¹¥»÷×ø±ê
+  elseif 1 == aiType then --è¢«åŠ¨å‡ºå‡»
+    x2, y2 = wp["ç§»åŠ¨X"], wp["ç§»åŠ¨Y"];
+  elseif 2 == aiType then --åŸåœ°åšå®ˆ
+  elseif 3 == aiType then --æ”»å‡»åæ ‡
   end
   
 
-	local function manhatten(x,y) --A*ÖĞµÄÆô·¢Ê½º¯Êı£¬ÓÃÓÚÇóÖ¸¶¨Î»ÖÃºÍÖÕµãÖ®¼äµÄÂü¹ş¶Ù¾àÀë
+	local function manhatten(x,y) --A*ä¸­çš„å¯å‘å¼å‡½æ•°ï¼Œç”¨äºæ±‚æŒ‡å®šä½ç½®å’Œç»ˆç‚¹ä¹‹é—´çš„æ›¼å“ˆé¡¿è·ç¦»
 		--return math.abs(x-x2) + math.abs(y-y2);
 		
     --local dx,dy=math.abs(x-x2),math.abs(y-y2);
@@ -2262,7 +2262,7 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
     
     return math.sqrt((x - x2)^2 + (y - y2)^2)
 	end
-	local function increment(node)  --Çóµ±Ç°µãÓë¸¸Ç×½ÚµãµÄ¾àÀë
+	local function increment(node)  --æ±‚å½“å‰ç‚¹ä¸çˆ¶äº²èŠ‚ç‚¹çš„è·ç¦»
 		local dxy=math.abs(node-Asmap.father[node]);
 		if dxy==1 or dxy==128 then
 			return Asmap.w[node];
@@ -2270,7 +2270,7 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 			return 1.4*Asmap.w[node];
 		end
 	end
-	local function NewG(node,father)  --Çó³öÓÃµ±Ç°µã×÷Îª¸¸½ÚµãÊ±Õâ¸öµãµÄGÖµ
+	local function NewG(node,father)  --æ±‚å‡ºç”¨å½“å‰ç‚¹ä½œä¸ºçˆ¶èŠ‚ç‚¹æ—¶è¿™ä¸ªç‚¹çš„Gå€¼
 		local dxy=math.abs(node-father);
 		if dxy==1 or dxy==128 then
 			return Asmap.w[father]+Asmap.w[node];
@@ -2279,12 +2279,12 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 		end
 	end
 	local function MinHeapInsert(t,v)
-		--×îĞ¡¶ş²æÊ÷£¬ĞÂÔöÔªËØ
+		--æœ€å°äºŒå‰æ ‘ï¼Œæ–°å¢å…ƒç´ 
 		table.insert(t,v);
 		local n=#t;
 		local f;
 		while n>1 do
-			f=math.floor(n/2);	--¸¸½Úµã
+			f=math.floor(n/2);	--çˆ¶èŠ‚ç‚¹
 			if Asmap.f[v]<Asmap.f[t[f]] then
 				t[n],t[f]=t[f],t[n];
 				n=f;
@@ -2295,7 +2295,7 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 		
 	end
 	local function MinHeapRemove(t)
-		--×îĞ¡¶ş²æÊ÷£¬ÒÆ³ıµÚÒ»Î»
+		--æœ€å°äºŒå‰æ ‘ï¼Œç§»é™¤ç¬¬ä¸€ä½
 		t[1], t[#t] = t[#t], t[1]
 		table.remove(t)
 		-- table.remove(t,1);
@@ -2321,24 +2321,24 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 	end
 
 	iter = 128 * x1 + y1;
-	Asmap.g[iter]=0;                  --ÒÑ»¨·ÑµÄcost
-	Asmap.s[iter]=1;                  --×´Ì¬ nil Î´´¦Àí 1 ÒÑ¿ªÆô 2 ÒÑ¹Ø±Õ
-	Asmap.h[iter]=manhatten(x1, y1);  --¾àÀëÄ¿±êµÄÂü¹ş¶Ù¾àÀë
-	--°ÑÆğµã·ÅÈë¿ªÆôÁĞ±í
+	Asmap.g[iter]=0;                  --å·²èŠ±è´¹çš„cost
+	Asmap.s[iter]=1;                  --çŠ¶æ€ nil æœªå¤„ç† 1 å·²å¼€å¯ 2 å·²å…³é—­
+	Asmap.h[iter]=manhatten(x1, y1);  --è·ç¦»ç›®æ ‡çš„æ›¼å“ˆé¡¿è·ç¦»
+	--æŠŠèµ·ç‚¹æ”¾å…¥å¼€å¯åˆ—è¡¨
 	table.insert(Open,iter);
-	--µ±¿ªÆôÁĞ±íÎª¿Õ»òÕßÖÕµãÔÚ¹Ø±ÕÁĞ±íÖĞ£¬½áÊøÑ°¾¶
+	--å½“å¼€å¯åˆ—è¡¨ä¸ºç©ºæˆ–è€…ç»ˆç‚¹åœ¨å…³é—­åˆ—è¡¨ä¸­ï¼Œç»“æŸå¯»å¾„
 	local search=0;
   local max_search = 256;
 	while #Open > 0 and search < max_search do
 		search=search+1;
 		
-		iter = Open[1];   --È¡³ö¿ªÆôÁĞ±íÖĞfÖµ×îĞ¡µÄ½Úµã£¨Ö®Ò»£©£¬²¢ÉèÎªiter£¨µ±Ç°µã£©
-		MinHeapRemove(Open);  --°Ñµ±Ç°µã´Ó¿ªÆôÁĞ±íÖĞÉ¾³ı
-		Asmap.s[iter]=2;  --°Ñµ±Ç°µã¼ÇÂ¼ÔÚ¹Ø±ÕÁĞ±íÖĞ
-		Asmap.search[iter]=search;  --°Ñµ±Ç°µã¼ÇÂ¼ÔÚ¹Ø±ÕÁĞ±íÖĞ
+		iter = Open[1];   --å–å‡ºå¼€å¯åˆ—è¡¨ä¸­få€¼æœ€å°çš„èŠ‚ç‚¹ï¼ˆä¹‹ä¸€ï¼‰ï¼Œå¹¶è®¾ä¸ºiterï¼ˆå½“å‰ç‚¹ï¼‰
+		MinHeapRemove(Open);  --æŠŠå½“å‰ç‚¹ä»å¼€å¯åˆ—è¡¨ä¸­åˆ é™¤
+		Asmap.s[iter]=2;  --æŠŠå½“å‰ç‚¹è®°å½•åœ¨å…³é—­åˆ—è¡¨ä¸­
+		Asmap.search[iter]=search;  --æŠŠå½“å‰ç‚¹è®°å½•åœ¨å…³é—­åˆ—è¡¨ä¸­
 		local cx,cy=(math.floor(iter/128)),iter%128;
     findEmeny(cx,cy);
-		--°Ñµ±Ç°µãµÄÁÚ¾Ó¼ÓÈëÁÚ¾ÓÁĞ±í
+		--æŠŠå½“å‰ç‚¹çš„é‚»å±…åŠ å…¥é‚»å±…åˆ—è¡¨
 		Neibo={};
 		for i = math.max(cx - 1, 0), math.min(cx + 1, 127) do
 			for j = math.max(cy - 1, 0), math.min(cy + 1, 127) do
@@ -2350,19 +2350,19 @@ function findpath(wid)--,x1,y1,x2,y2) --½«Ñ°µĞ¼ÓÈëÔÚÄÚ
 				end
 			end
 		end
-		--¶ÔÓÚÃ¿¸öÁÚ¾Ó£¬·ÖÈıÖÖÇé¿ö½øĞĞ²Ù×÷
+		--å¯¹äºæ¯ä¸ªé‚»å±…ï¼Œåˆ†ä¸‰ç§æƒ…å†µè¿›è¡Œæ“ä½œ
 		for i,v in ipairs(Neibo) do
-			--Èç¹ûÕâ¸öÁÚ¾Ó½ÚµãÔÚ¹Ø±ÕÁĞ±íÖĞ£¬»òÕßÕâ¸öÁÚ¾Ó½Úµã²»¿ÉÍ¨¹ı£¬ÂÔ¹ıËü
+			--å¦‚æœè¿™ä¸ªé‚»å±…èŠ‚ç‚¹åœ¨å…³é—­åˆ—è¡¨ä¸­ï¼Œæˆ–è€…è¿™ä¸ªé‚»å±…èŠ‚ç‚¹ä¸å¯é€šè¿‡ï¼Œç•¥è¿‡å®ƒ
 			if Asmap.s[v] == 2 or Asmap.w[v] == 0 then
-			--Èç¹ûÕâ¸öÁÚ¾Ó½ÚµãÒÑ¾­ÔÚ¿ªÆôÁĞ±íÖĞ
+			--å¦‚æœè¿™ä¸ªé‚»å±…èŠ‚ç‚¹å·²ç»åœ¨å¼€å¯åˆ—è¡¨ä¸­
 			elseif Asmap.s[v]==1 then
-			--¿´¿´ÒÔµ±Ç°¸ñ×ÓÎª¸¸½Úµã£¬Ëã³öÀ´µÄĞÂGÖµÊÇ²»ÊÇ±ÈÔ­À´µÄGÖµĞ¡£¬Èç¹û¸üĞ¡£¬¾Í¸Ä±äÕâÒ»¸ñµÄ¸¸½Úµã£¬GÖµ£¬ÖØĞÂ¼ÆËãFÖµ
+			--çœ‹çœ‹ä»¥å½“å‰æ ¼å­ä¸ºçˆ¶èŠ‚ç‚¹ï¼Œç®—å‡ºæ¥çš„æ–°Gå€¼æ˜¯ä¸æ˜¯æ¯”åŸæ¥çš„Gå€¼å°ï¼Œå¦‚æœæ›´å°ï¼Œå°±æ”¹å˜è¿™ä¸€æ ¼çš„çˆ¶èŠ‚ç‚¹ï¼ŒGå€¼ï¼Œé‡æ–°è®¡ç®—Få€¼
 				if NewG(v,iter)<Asmap.g[v] then
 					Asmap.father[v] = iter;
 					Asmap.g[v] = Asmap.g[iter] + increment(v);
 					Asmap.f[v] = Asmap.g[v] + Asmap.h[v];
 				end
-			--Èç¹ûÕâ¸öÁÚ¾Ó½Úµã²»ÔÚ¿ªÆôÁĞ±íÖĞ
+			--å¦‚æœè¿™ä¸ªé‚»å±…èŠ‚ç‚¹ä¸åœ¨å¼€å¯åˆ—è¡¨ä¸­
 			else
 				Asmap.father[v] = iter;
 				Asmap.g[v] = Asmap.g[iter] + increment(v);
@@ -2430,17 +2430,17 @@ function GetDirection(dx,dy,od)
 end
 
 --==================================================--
---					µ¥Ìô²¿·Ö						--
+--					å•æŒ‘éƒ¨åˆ†						--
 --==================================================--
 function Fight(pid,eid)
 	local x0,y0=CC.ScreenW/2,CC.ScreenH/2;
-	--0 ¾²Ö¹ 1 ¹¥»÷-»ÓÎè 2 ÒÆ¶¯ 3 ¹¥»÷-´Ì-ÉÏ 4 ±ØÉ±£¿5 ´Ì-ÏÂ 6 Îè¶¯ 7 ·ÀÓù 8 ±»»÷ÖĞ 9 ÂäÂí
+	--0 é™æ­¢ 1 æ”»å‡»-æŒ¥èˆ 2 ç§»åŠ¨ 3 æ”»å‡»-åˆº-ä¸Š 4 å¿…æ€ï¼Ÿ5 åˆº-ä¸‹ 6 èˆåŠ¨ 7 é˜²å¾¡ 8 è¢«å‡»ä¸­ 9 è½é©¬
 	local p={	[1]={
 						pid=pid,
-						name=JY.Person[pid]["Ãû³Æ"],
-						hpic=JY.Person[pid]["ÈİÃ²"],
-						wl=JY.Person[pid]["ÎäÁ¦"],
-						atk=400/(140-JY.Person[pid]["ÎäÁ¦"]),
+						name=JY.Person[pid]["åç§°"],
+						hpic=JY.Person[pid]["å®¹è²Œ"],
+						wl=JY.Person[pid]["æ­¦åŠ›"],
+						atk=400/(140-JY.Person[pid]["æ­¦åŠ›"]),
 						def=8,
 						hp=100,
 						pic=1300,
@@ -2450,10 +2450,10 @@ function Fight(pid,eid)
 					},
 				[2]={
 						pid=eid,
-						name=JY.Person[eid]["Ãû³Æ"],
-						hpic=JY.Person[eid]["ÈİÃ²"],
-						wl=JY.Person[eid]["ÎäÁ¦"],
-						atk=400/(140-JY.Person[eid]["ÎäÁ¦"]),
+						name=JY.Person[eid]["åç§°"],
+						hpic=JY.Person[eid]["å®¹è²Œ"],
+						wl=JY.Person[eid]["æ­¦åŠ›"],
+						atk=400/(140-JY.Person[eid]["æ­¦åŠ›"]),
 						def=8,
 						hp=100,
 						pic=1310,
@@ -2492,27 +2492,27 @@ function Fight(pid,eid)
 		DrawStringEnhance(CC.ScreenW-588+179+61,0+78+13,p[2].name,C_WHITE,24,0.5,0.5);
 		DrawStringEnhance(0+268+61+103,CC.ScreenH-284+161+13,""..p[1].wl,C_WHITE,24,0.5,0.5);
 		DrawStringEnhance(CC.ScreenW-588+179+61-103,0+78+13,""..p[2].wl,C_WHITE,24,0.5,0.5);
-		DrawStringEnhance(0+268+61+138,CC.ScreenH-284+161+43,"[B]ÌåÁ¦",C_WHITE,18,0.5,0.5);
-		DrawStringEnhance(CC.ScreenW-588+179+61-139,0+78+43,"[B]ÌåÁ¦",C_WHITE,18,0.5,0.5);
-		DrawStringEnhance(0+268+61+106,CC.ScreenH-284+161-17,"[B]ÎäÁ¦",C_WHITE,18,0.5,0.5);
-		DrawStringEnhance(CC.ScreenW-588+179+61-108,0+78-17,"[B]ÎäÁ¦",C_WHITE,18,0.5,0.5);
+		DrawStringEnhance(0+268+61+138,CC.ScreenH-284+161+43,"[B]ä½“åŠ›",C_WHITE,18,0.5,0.5);
+		DrawStringEnhance(CC.ScreenW-588+179+61-139,0+78+43,"[B]ä½“åŠ›",C_WHITE,18,0.5,0.5);
+		DrawStringEnhance(0+268+61+106,CC.ScreenH-284+161-17,"[B]æ­¦åŠ›",C_WHITE,18,0.5,0.5);
+		DrawStringEnhance(CC.ScreenW-588+179+61-108,0+78-17,"[B]æ­¦åŠ›",C_WHITE,18,0.5,0.5);
 		lib.PicLoadCache(2,p[1].hpic*2,132,CC.ScreenH-138-12,0,nil,nil,180);
 		lib.PicLoadCache(2,p[2].hpic*2,CC.ScreenW-132,138-12,0,nil,nil,180);
 	end
 	local bt={};
-	--ºì·¢³ö³¡ Îè¶¯ À¶·½³ö³¡ »Ó¶¯
-	--Ê¤Àûºó ´Ì ÉÏ
-	--Îè¶¯ ºó ½Ó ÈÎÒâ¹¥»÷ÕĞÊ½£¬¶¼Ëã±ØÉ±
-	table.insert(bt,button_creat(1,21,20,20,"¾²Ö¹",true,true));	--0
-	table.insert(bt,button_creat(1,22,20,54,"»Ó¶¯",true,true));	--1
-	table.insert(bt,button_creat(1,23,20,88,"ÒÆ¶¯",true,true));	--2
-	table.insert(bt,button_creat(1,24,20,122,"Ê¤Àû",true,true));	--3
-	table.insert(bt,button_creat(1,25,20,156,"Åü¿³",true,true));	--4
-	table.insert(bt,button_creat(1,26,20,190,"´Ì-ÏÂ",true,true));	--5
-	table.insert(bt,button_creat(1,27,20,224,"Îè¶¯",true,true));	--6
-	table.insert(bt,button_creat(1,28,20,258,"·ÀÓù",true,true));	--7
-	table.insert(bt,button_creat(1,29,20,292,"ÊÜÉË",true,true));	--8
-	table.insert(bt,button_creat(1,30,20,326,"ÂäÂí",true,true));	--9
+	--çº¢å‘å‡ºåœº èˆåŠ¨ è“æ–¹å‡ºåœº æŒ¥åŠ¨
+	--èƒœåˆ©å åˆº ä¸Š
+	--èˆåŠ¨ å æ¥ ä»»æ„æ”»å‡»æ‹›å¼ï¼Œéƒ½ç®—å¿…æ€
+	table.insert(bt,button_creat(1,21,20,20,"é™æ­¢",true,true));	--0
+	table.insert(bt,button_creat(1,22,20,54,"æŒ¥åŠ¨",true,true));	--1
+	table.insert(bt,button_creat(1,23,20,88,"ç§»åŠ¨",true,true));	--2
+	table.insert(bt,button_creat(1,24,20,122,"èƒœåˆ©",true,true));	--3
+	table.insert(bt,button_creat(1,25,20,156,"åŠˆç ",true,true));	--4
+	table.insert(bt,button_creat(1,26,20,190,"åˆº-ä¸‹",true,true));	--5
+	table.insert(bt,button_creat(1,27,20,224,"èˆåŠ¨",true,true));	--6
+	table.insert(bt,button_creat(1,28,20,258,"é˜²å¾¡",true,true));	--7
+	table.insert(bt,button_creat(1,29,20,292,"å—ä¼¤",true,true));	--8
+	table.insert(bt,button_creat(1,30,20,326,"è½é©¬",true,true));	--9
 	local function Draw(frame,rpt)
 		frame=frame or 1;
 		rpt=rpt or 4;
@@ -2553,7 +2553,7 @@ function Fight(pid,eid)
 		p[id].action=action;
 		p[id].frame=0;
 	end
-	--·â×°Ò»Ğ©¶¯×÷
+	--å°è£…ä¸€äº›åŠ¨ä½œ
 	local function arrive(id)
 		local r=math.random(1,2);
 		if r==1 then
@@ -2590,7 +2590,7 @@ function Fight(pid,eid)
 			return 5;
 		end
 	end
-	local function atk_0()	--¹¥»÷ - Æ½
+	local function atk_0()	--æ”»å‡» - å¹³
 		setAction(1,rnd_atk());
 		setAction(2,rnd_atk());
 		Draw(4,3);
@@ -2599,7 +2599,7 @@ function Fight(pid,eid)
 		setAction(1,0);
 		setAction(2,0);
 	end
-	local function atk_1(id)	--¹¥»÷ - Çá
+	local function atk_1(id)	--æ”»å‡» - è½»
 		setAction(id,5);
 		setAction(3-id,rnd_atk());
 		Draw(4,3);
@@ -2615,7 +2615,7 @@ function Fight(pid,eid)
 		setAction(1,0);
 		setAction(2,0);
 	end
-	local function atk_2(id)	--¹¥»÷ - ÖØ
+	local function atk_2(id)	--æ”»å‡» - é‡
 		setAction(id,4);
 		setAction(3-id,rnd_atk());
 		Draw(4,3);
@@ -2631,7 +2631,7 @@ function Fight(pid,eid)
 		setAction(1,0);
 		setAction(2,0);
 	end
-	local function atk_3(id)	--¹¥»÷ - ±ØÉ±
+	local function atk_3(id)	--æ”»å‡» - å¿…æ€
 		setAction(id,6);
 		lib.PlayWAV(CONFIG.CurrentPath.."sound/se_i012.wav");
 		Draw(8,3);
@@ -2649,7 +2649,7 @@ function Fight(pid,eid)
 		setAction(1,0);
 		setAction(2,0);
 	end
-	local function atk_4(id)	--¹¥»÷ - ³¬±ØÉ±
+	local function atk_4(id)	--æ”»å‡» - è¶…å¿…æ€
 		setAction(id,6);
 		lib.PlayWAV(CONFIG.CurrentPath.."sound/se_i012.wav");
 		Draw(8,3);
@@ -2691,7 +2691,7 @@ function Fight(pid,eid)
 		setAction(2,0);
 	end
 	--lib.PlayWAV(CONFIG.CurrentPath.."sound/se_i003.wav");
-	--µÇ³¡
+	--ç™»åœº
 	arrive(1);
 	arrive(2);
 	move();
@@ -2749,12 +2749,12 @@ function LoadSan8Record()
 	local idx1=0;
 	local idx2=0;
 	for i=0,pnum-1 do
-		local fid=Byte.get8(data1,size1*i+0)	--ÊÆÁ¦
-		local sg=Byte.get8(data1,size1*i+1)		--Ê¿¹ÙÄêÏŞ
-		local zc=Byte.get8(data1,size1*i+10)		--ÖÒ³Ï
-		local zf--=Byte.get8(data1,size1*i+60)		--Õ½·¨
+		local fid=Byte.get8(data1,size1*i+0)	--åŠ¿åŠ›
+		local sg=Byte.get8(data1,size1*i+1)		--å£«å®˜å¹´é™
+		local zc=Byte.get8(data1,size1*i+10)		--å¿ è¯š
+		local zf--=Byte.get8(data1,size1*i+60)		--æˆ˜æ³•
 		local zfstr=""
-		--Í»»÷ ÂÒ»÷ ½ÁÂÒ ÆæÏ® Ç¹Õó ³µĞü »ğ¼ı ÆëÉä ÂÒÉä ¼ıá° ¼¤Á÷ ÁÒ»ğ ÂäÊ¯ ÑıÊõ ¹¥³Ç
+		--çªå‡» ä¹±å‡» æ…ä¹± å¥‡è¢­ æªé˜µ è½¦æ‚¬ ç«ç®­ é½å°„ ä¹±å°„ ç®­å²š æ¿€æµ çƒˆç« è½çŸ³ å¦–æœ¯ æ”»åŸ
 		for j=0,7 do
 			zf=Byte.get8(data1,size1*i+60+j)
 			if zf<0 then
@@ -2773,7 +2773,7 @@ function LoadSan8Record()
 				zfstr=zfstr.."0|"
 			end
 		end
-		local other=Byte.get32(data2,size2*i+0)		--Î»ÖÃ£¬Éí·İ
+		local other=Byte.get32(data2,size2*i+0)		--ä½ç½®ï¼Œèº«ä»½
 		lib.Debug("> |"..i.."|"..fid.."|"..sg.."|"..zc.."|"..other.."|"..zfstr.."|<")
 	end
 end

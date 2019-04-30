@@ -1,53 +1,53 @@
 
-function JY_Main()        --Ö÷³ÌĞòÈë¿Ú
-	os.remove("debug.txt");        --Çå³ıÒÔÇ°µÄdebugÊä³ö
-    xpcall(JY_Main_sub,myErrFun);     --²¶»ñµ÷ÓÃ´íÎó
+function JY_Main()        --ä¸»ç¨‹åºå…¥å£
+	os.remove("debug.txt");        --æ¸…é™¤ä»¥å‰çš„debugè¾“å‡º
+    xpcall(JY_Main_sub,myErrFun);     --æ•è·è°ƒç”¨é”™è¯¯
 end
 
-function myErrFun(err)      --´íÎó´¦Àí£¬´òÓ¡´íÎóĞÅÏ¢
-    lib.Debug(err);                 --Êä³ö´íÎóĞÅÏ¢
-    lib.Debug(debug.traceback());   --Êä³öµ÷ÓÃ¶ÑÕ»ĞÅÏ¢
+function myErrFun(err)      --é”™è¯¯å¤„ç†ï¼Œæ‰“å°é”™è¯¯ä¿¡æ¯
+    lib.Debug(err);                 --è¾“å‡ºé”™è¯¯ä¿¡æ¯
+    lib.Debug(debug.traceback());   --è¾“å‡ºè°ƒç”¨å †æ ˆä¿¡æ¯
 end
-function SetGlobal()   --ÉèÖÃÓÎÏ·ÄÚ²¿Ê¹ÓÃµÄÈ«³Ì±äÁ¿
+function SetGlobal()   --è®¾ç½®æ¸¸æˆå†…éƒ¨ä½¿ç”¨çš„å…¨ç¨‹å˜é‡
 	JY={};
-	JY.Status=GAME_START  --ÓÎÏ·µ±Ç°×´Ì¬
-	--±£´æR¡ÁÊı¾İ
-	JY.Base={};           --»ù±¾Êı¾İ
-	JY.ForceNum=0;      --Force¸öÊı
-	JY.Force={};        --ForceÊı¾İ
-	JY.PersonNum=0;      --ÈËÎï¸öÊı
-	JY.Person={};        --ÈËÎïÊı¾İ
-	JY.BingzhongNum=0;      --ÈËÎï¸öÊı
-	JY.Bingzhong={};        --ÈËÎïÊı¾İ
-	JY.SceneNum=0;      --³¡¾°¸öÊı
-	JY.Scene={};        --³¡¾°Êı¾İ
-	JY.WarmapNum=0;      --Õ½³¡¸öÊı
-	JY.Warmap={};        --Õ½³¡Êı¾İ
+	JY.Status=GAME_START  --æ¸¸æˆå½“å‰çŠ¶æ€
+	--ä¿å­˜RÃ—æ•°æ®
+	JY.Base={};           --åŸºæœ¬æ•°æ®
+	JY.ForceNum=0;      --Forceä¸ªæ•°
+	JY.Force={};        --Forceæ•°æ®
+	JY.PersonNum=0;      --äººç‰©ä¸ªæ•°
+	JY.Person={};        --äººç‰©æ•°æ®
+	JY.BingzhongNum=0;      --äººç‰©ä¸ªæ•°
+	JY.Bingzhong={};        --äººç‰©æ•°æ®
+	JY.SceneNum=0;      --åœºæ™¯ä¸ªæ•°
+	JY.Scene={};        --åœºæ™¯æ•°æ®
+	JY.WarmapNum=0;      --æˆ˜åœºä¸ªæ•°
+	JY.Warmap={};        --æˆ˜åœºæ•°æ®
 	JY.CityNum=0;
 	JY.City={};
 	JY.ConnectionNum=0;
 	JY.Connection={};
   JY.CityToCity = {};
-	JY.ItemNum=0;      --µÀ¾ß¸öÊı
-	JY.Item={};        --µÀ¾ßÊı¾İ
-	JY.TitleNum=0;      --²ßÂÔ¸öÊı
-	JY.Title={};        --²ßÂÔÊı¾İ
-	JY.SkillNum=0;      --ÌØ¼¼¸öÊı
-	JY.Skill={};        --ÌØ¼¼Êı¾İ
+	JY.ItemNum=0;      --é“å…·ä¸ªæ•°
+	JY.Item={};        --é“å…·æ•°æ®
+	JY.TitleNum=0;      --ç­–ç•¥ä¸ªæ•°
+	JY.Title={};        --ç­–ç•¥æ•°æ®
+	JY.SkillNum=0;      --ç‰¹æŠ€ä¸ªæ•°
+	JY.Skill={};        --ç‰¹æŠ€æ•°æ®
 	JY.StrNum=0;
 	JY.Str={};
-	JY.SubScene=-1;          --µ±Ç°×Ó³¡¾°±àºÅ
+	JY.SubScene=-1;          --å½“å‰å­åœºæ™¯ç¼–å·
 	JY.SubPic=-1;
-	JY.SubSceneX=0;          --×Ó³¡¾°ÏÔÊ¾Î»ÖÃÆ«ÒÆ£¬³¡¾°ÒÆ¶¯Ö¸ÁîÊ¹ÓÃ
+	JY.SubSceneX=0;          --å­åœºæ™¯æ˜¾ç¤ºä½ç½®åç§»ï¼Œåœºæ™¯ç§»åŠ¨æŒ‡ä»¤ä½¿ç”¨
 	JY.SubSceneY=0;
 
-	JY.Darkness=0;             --=0 ÆÁÄ»Õı³£ÏÔÊ¾£¬=1 ²»ÏÔÊ¾£¬ÆÁÄ»È«ºÚ
+	JY.Darkness=0;             --=0 å±å¹•æ­£å¸¸æ˜¾ç¤ºï¼Œ=1 ä¸æ˜¾ç¤ºï¼Œå±å¹•å…¨é»‘
 
-	JY.MmapMusic=-1;         --ÇĞ»»´óµØÍ¼ÒôÀÖ£¬·µ»ØÖ÷µØÍ¼Ê±£¬Èç¹ûÉèÖÃ£¬Ôò²¥·Å´ËÒôÀÖ
+	JY.MmapMusic=-1;         --åˆ‡æ¢å¤§åœ°å›¾éŸ³ä¹ï¼Œè¿”å›ä¸»åœ°å›¾æ—¶ï¼Œå¦‚æœè®¾ç½®ï¼Œåˆ™æ’­æ”¾æ­¤éŸ³ä¹
 
-	JY.CurrentBGM=-1;       --µ±Ç°²¥·ÅµÄÒôÀÖid£¬ÓÃÀ´ÔÚ¹Ø±ÕÒôÀÖÊ±±£´æÒôÀÖid£®
-	JY.EnableMusic=1;        --ÊÇ·ñ²¥·ÅÒôÀÖ 1 ²¥·Å£¬0 ²»²¥·Å
-	JY.EnableSound=1;        --ÊÇ·ñ²¥·ÅÒôĞ§ 1 ²¥·Å£¬0 ²»²¥·Å
+	JY.CurrentBGM=-1;       --å½“å‰æ’­æ”¾çš„éŸ³ä¹idï¼Œç”¨æ¥åœ¨å…³é—­éŸ³ä¹æ—¶ä¿å­˜éŸ³ä¹idï¼
+	JY.EnableMusic=1;        --æ˜¯å¦æ’­æ”¾éŸ³ä¹ 1 æ’­æ”¾ï¼Œ0 ä¸æ’­æ”¾
+	JY.EnableSound=1;        --æ˜¯å¦æ’­æ”¾éŸ³æ•ˆ 1 æ’­æ”¾ï¼Œ0 ä¸æ’­æ”¾
 	
 	JY.NameList={};
 	JY.Talk={headid=0,name="",str=""};
@@ -57,7 +57,7 @@ function SetGlobal()   --ÉèÖÃÓÎÏ·ÄÚ²¿Ê¹ÓÃµÄÈ«³Ì±äÁ¿
 	JY.FID=0;
 	JY.GameStatus=creatGameStatus();
 	JY.CityMenu=creatCityMenu();
-	JY.Tid=0;		--SMAPÊ±£¬µ±Ç°Ñ¡ÔñµÄÈËÎï »ò ÕıÔÚËµ»°µÄÈËÎï
+	JY.Tid=0;		--SMAPæ—¶ï¼Œå½“å‰é€‰æ‹©çš„äººç‰© æˆ– æ­£åœ¨è¯´è¯çš„äººç‰©
 	JY.LLK_N=0;
 	JY.DG={
 			pid=-1,
@@ -70,15 +70,15 @@ function SetGlobal()   --ÉèÖÃÓÎÏ·ÄÚ²¿Ê¹ÓÃµÄÈ«³Ì±äÁ¿
 				x={},
 				y={},
 				}
-	JY.Death=0;	--ÓÃÓÚÕ½³¡ÊÂ¼ş-"µ±ÏûÃğXXÊ±´¥·¢"
-	JY.EventType=0;	--0×ø±ê²âÊÔ 1ÊôĞÔ²âÊÔ 2ÓÎÏ·×´Ì¬²âÊÔ 3ÎÒ¾ü»ØºÏ¿ªÊ¼ 4ÓÑ¾ü»ØºÏ¿ªÊ¼ 5µĞ¾ü»ØºÏ¿ªÊ¼
+	JY.Death=0;	--ç”¨äºæˆ˜åœºäº‹ä»¶-"å½“æ¶ˆç­XXæ—¶è§¦å‘"
+	JY.EventType=0;	--0åæ ‡æµ‹è¯• 1å±æ€§æµ‹è¯• 2æ¸¸æˆçŠ¶æ€æµ‹è¯• 3æˆ‘å†›å›åˆå¼€å§‹ 4å‹å†›å›åˆå¼€å§‹ 5æ•Œå†›å›åˆå¼€å§‹
 	JY.ReFreshTime=0;
 	War={};
 	War.Person={};
-	TeamSelect={};	--ÓÃÓÚ´¢´æÕ½¶·Ç°ÈËÎïÑ¡Ôñ
+	TeamSelect={};	--ç”¨äºå‚¨å­˜æˆ˜æ–—å‰äººç‰©é€‰æ‹©
 end
 
-function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
+function JY_Main_sub()        --çœŸæ­£çš„æ¸¸æˆä¸»ç¨‹åºå…¥å£
 	lib.FillColor();
 	lib.ShowSurface(0);
 	dofile(CONFIG.ScriptPath .. "jyconst.lua");
@@ -101,7 +101,7 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 	-- xml = require("xmlSimple").newParser()
 	SetGlobalConst();
 	SetGlobal();
-    --½ûÖ¹·ÃÎÊÈ«³Ì±äÁ¿
+    --ç¦æ­¢è®¿é—®å…¨ç¨‹å˜é‡
     setmetatable(_G,{ __newindex =function (_,n)
                        error("attempt read write to undeclared variable " .. n,2);
                        end,
@@ -111,28 +111,28 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
                      }  );
     lib.Debug("JY_Main start.");
 
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6));         --³õÊ¼»¯Ëæ»úÊı·¢ÉúÆ÷
-	lib.EnableKeyRepeat(CONFIG.KeyRepeatDelay,CONFIG.KeyRePeatInterval);   --ÉèÖÃ¼üÅÌÖØ¸´ÂÊ
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6));         --åˆå§‹åŒ–éšæœºæ•°å‘ç”Ÿå™¨
+	lib.EnableKeyRepeat(CONFIG.KeyRepeatDelay,CONFIG.KeyRePeatInterval);   --è®¾ç½®é”®ç›˜é‡å¤ç‡
 
     lib.GetKey();
 	
-	--¼ÓÔØHZ
+	--åŠ è½½HZ
     local hznum=20000;
 	local datasize=(4+6)*hznum;
 	local data=Byte.create(datasize);
     Byte.loadfile(data,CONFIG.DataPath .. "EFTDATA.R3",0,datasize);
-	CC.Font={};
-	local odx=Byte.get32(data,2);
-	for i=1,hznum do
-	    local idx=Byte.get32(data,2+4*i);
-		if idx-odx>2 then
-			local picid=Byte.get16(data,odx);
-			odx=odx+2;
-			local str=Byte.getstr(data,odx,idx-odx);
-			CC.Font[str]=picid;
-		end
-		odx=idx;
-	end
+	-- CC.Font={};
+	-- local odx=Byte.get32(data,2);
+	-- for i=1,hznum do
+	--     local idx=Byte.get32(data,2+4*i);
+	-- 	if idx-odx>2 then
+	-- 		local picid=Byte.get16(data,odx);
+	-- 		odx=odx+2;
+	-- 		local str=Byte.getstr(data,odx,idx-odx);
+	-- 		CC.Font[str]=picid;
+	-- 	end
+	-- 	odx=idx;
+	-- end
 	
 	--LoadSan8Record();
 	--LLK_III_Main();
@@ -143,8 +143,8 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 		local idx = Byte.create(4*2000*4)
 		local index=0;
 		for i=0,2000-1 do
-			--local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\output_03\\1_%04d_.png",i);
-			local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\X512\\1_%04d_.png",i);
+			--local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\output_03\\1_%04d_.png",i);
+			local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\X512\\1_%04d_.png",i);
 			local sourcefile=io.open(filename,"rb")
 			--lib.Debug(filename)
 			if filelength(filename)>0 then
@@ -155,7 +155,7 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 			Byte.set32(idx,4*(i),index);
 		end
 		for i=0,2000-1 do
-			local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\X128_1\\1_%04d_.png",i);
+			local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\X128_1\\1_%04d_.png",i);
 			local sourcefile=io.open(filename,"rb")
 			--lib.Debug(filename)
 			if filelength(filename)>0 then
@@ -166,8 +166,8 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 			Byte.set32(idx,4*(2000+i),index);
 		end
 		for i=0,2000-1 do
-			--local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\output_01\\2_%04d_.png",i);
-			local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\X128_2\\2_%04d_.png",i);
+			--local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\output_01\\2_%04d_.png",i);
+			local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\X128_2\\2_%04d_.png",i);
 			local sourcefile=io.open(filename,"rb")
 			--lib.Debug(filename)
 			if filelength(filename)>0 then
@@ -178,7 +178,7 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 			Byte.set32(idx,4*(4000+i),index);
 		end
 		for i=0,2000-1 do
-			local filename=string.format("D:\\Á¬Á¬¿´II\\pic\\San13\\output_04\\4_%04d_.png",i);
+			local filename=string.format("D:\\è¿è¿çœ‹II\\pic\\San13\\output_04\\4_%04d_.png",i);
 			local sourcefile=io.open(filename,"rb")
 			--lib.Debug(filename)
 			if filelength(filename)>0 then
@@ -249,7 +249,7 @@ function JY_Main_sub()        --ÕæÕıµÄÓÎÏ·Ö÷³ÌĞòÈë¿Ú
 	km_mian()
 end
 
-function CleanMemory()            --ÇåÀíluaÄÚ´æ
+function CleanMemory()            --æ¸…ç†luaå†…å­˜
     if CONFIG.CleanMemory==1 then
 		 collectgarbage("collect");
 		 --lib.Debug(string.format("Lua memory=%d",collectgarbage("count")));
@@ -258,11 +258,11 @@ end
 
 
 function Game_Cycle()
-	for i=JY.Base["ÊÂ¼ş333"]+1,9999,1 do
+	for i=JY.Base["äº‹ä»¶333"]+1,9999,1 do
 		PlayBGM(math.random(19));
 		if lianliankan(i+9) then
-			if i>JY.Base["ÊÂ¼ş333"] then
-				JY.Base["ÊÂ¼ş333"]=i;
+			if i>JY.Base["äº‹ä»¶333"] then
+				JY.Base["äº‹ä»¶333"]=i;
 			end
 		else
 			return;
@@ -303,13 +303,13 @@ function lianliankan(level)
 		end
 	end
 	if X_Num<6 or Y_Num<4 then
-		WarDrawStrBoxConfirm("ÆÁÄ»·Ö±æÂÊÉèÖÃ¹ıĞ¡£¡",C_WHITE,true)
+		WarDrawStrBoxConfirm("å±å¹•åˆ†è¾¨ç‡è®¾ç½®è¿‡å°ï¼",C_WHITE,true)
 		return false;
 	end
 	num=X_Num*Y_Num/2;
 	limit=X_Num*Y_Num*(10+level)*100+5000;
 	local function sample(st,rp)
-		--Ëæ»ú³éÑù£¬rp ÊÇ·ñ·Å»Ø
+		--éšæœºæŠ½æ ·ï¼Œrp æ˜¯å¦æ”¾å›
 		local n=#st;
 		local r=-1;
 		if n>1 then
@@ -323,11 +323,11 @@ function lianliankan(level)
 	end
 	local t_head={};
 	for i=4000,5265 do
-		--Í¼Æ¬³Ø
+		--å›¾ç‰‡æ± 
 		table.insert(t_head,i);
 	end
 	for i=1,math.min(level,50) do
-		headbox[i]=sample(t_head);	--¾ö¶¨±¾´ÎÊ¹ÓÃµÄÍ·Ïñ
+		headbox[i]=sample(t_head);	--å†³å®šæœ¬æ¬¡ä½¿ç”¨çš„å¤´åƒ
 	end
 	t_head={};
 	for i=1,Y_Num*X_Num/2 do
@@ -536,13 +536,13 @@ function lianliankan(level)
 	lib.Delay(20);
 	while num>0 do
 		if (now_time-start_time)>limit then
-			WarDrawStrBoxConfirm("Ê§°Ü£¬ÓÎÏ·¼´½«½áÊø£®",C_WHITE,true)
+			WarDrawStrBoxConfirm("å¤±è´¥ï¼Œæ¸¸æˆå³å°†ç»“æŸï¼",C_WHITE,true)
 			return false;
 		end
 		local eventtype,keypress,x,y=lib.GetKey(1);
 		if eventtype==3 and keypress==3 then
 			PlayWavE(1);
-			if WarDrawStrBoxYesNo('½áÊøÓÎÏ·Âğ£¿',C_WHITE,true) then
+			if WarDrawStrBoxYesNo('ç»“æŸæ¸¸æˆå—ï¼Ÿ',C_WHITE,true) then
 				return false;
 			end
 		end
@@ -568,7 +568,7 @@ function lianliankan(level)
 						select_b.x=0;
 						PlayWavE(1);
 					else
-						WarDrawStrBoxConfirm("·¢ÉúÒì³££¬ÓÎÏ·¼´½«½áÊø£¡",C_WHITE,true);
+						WarDrawStrBoxConfirm("å‘ç”Ÿå¼‚å¸¸ï¼Œæ¸¸æˆå³å°†ç»“æŸï¼",C_WHITE,true);
 						return false;
 					end
 				end
@@ -611,16 +611,16 @@ function lianliankan(level)
 			--lib.ShowSurface(0);
 			Delay(10);
 	end
-	WarDrawStrBoxConfirm(string.format("¹§Ï²£¡½øÈëµÚ%d¹Ø",level-8),C_WHITE,true)
+	WarDrawStrBoxConfirm(string.format("æ­å–œï¼è¿›å…¥ç¬¬%då…³",level-8),C_WHITE,true)
 	lib.ShowSurface(0);
 	lib.Delay(500);
 	return true;
 end
 
---»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò£¬ËÄ½Ç°¼½ø
-function DrawBox(x1,y1,x2,y2,color)         --»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò
+--ç»˜åˆ¶ä¸€ä¸ªå¸¦èƒŒæ™¯çš„ç™½è‰²æ–¹æ¡†ï¼Œå››è§’å‡¹è¿›
+function DrawBox(x1,y1,x2,y2,color)         --ç»˜åˆ¶ä¸€ä¸ªå¸¦èƒŒæ™¯çš„ç™½è‰²æ–¹æ¡†
     local s=4;
-    --lib.Background(x1,y1+s,x1+s,y2-s,128);    --ÒõÓ°£¬ËÄ½Ç¿Õ³ö
+    --lib.Background(x1,y1+s,x1+s,y2-s,128);    --é˜´å½±ï¼Œå››è§’ç©ºå‡º
     --lib.Background(x1+s,y1,x2-s,y2,128);
     --lib.Background(x2-s,y1+s,x2,y2-s,128);
 	lib.Background(x1+4,y1,x2-4,y1+s,128);
@@ -641,8 +641,8 @@ function DrawBox(x1,y1,x2,y2,color)         --»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò
     DrawBox_1(x1,y1,x2,y2,color);
 end
 
---»æÖÆËÄ½Ç°¼½øµÄ·½¿ò
-function DrawBox_1(x1,y1,x2,y2,color)       --»æÖÆËÄ½Ç°¼½øµÄ·½¿ò
+--ç»˜åˆ¶å››è§’å‡¹è¿›çš„æ–¹æ¡†
+function DrawBox_1(x1,y1,x2,y2,color)       --ç»˜åˆ¶å››è§’å‡¹è¿›çš„æ–¹æ¡†
     local s=4;
     --lib.DrawRect(x1+s,y1,x2-s,y1,color);
     --lib.DrawRect(x2-s,y1,x2-s,y1+s,color);
@@ -670,12 +670,12 @@ function DrawBox_1(x1,y1,x2,y2,color)       --»æÖÆËÄ½Ç°¼½øµÄ·½¿ò
 	lib.DrawRect(x2-s+1,y2-1,x2-2,y2-1,color);
 	lib.DrawRect(x2-1,y2-s+1,x2-1,y2-2,color);
 end
---»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò£¬ËÄ½Ç°¼½ø
-function DrawBox(x1,y1,x2,y2,color,bjcolor)         --»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò
+--ç»˜åˆ¶ä¸€ä¸ªå¸¦èƒŒæ™¯çš„ç™½è‰²æ–¹æ¡†ï¼Œå››è§’å‡¹è¿›
+function DrawBox(x1,y1,x2,y2,color,bjcolor)         --ç»˜åˆ¶ä¸€ä¸ªå¸¦èƒŒæ™¯çš„ç™½è‰²æ–¹æ¡†
     local s=4
 	bjcolor=bjcolor or 0;
 	if bjcolor>=0 then
-		lib.Background(x1,y1+s,x1+s,y2-s,128,bjcolor);    --ÒõÓ°£¬ËÄ½Ç¿Õ³ö
+		lib.Background(x1,y1+s,x1+s,y2-s,128,bjcolor);    --é˜´å½±ï¼Œå››è§’ç©ºå‡º
 		lib.Background(x1+s,y1,x2-s,y2,128,bjcolor);
 		lib.Background(x2-s,y1+s,x2,y2-s,128,bjcolor);
 	end
@@ -685,7 +685,7 @@ function DrawBox(x1,y1,x2,y2,color,bjcolor)         --»æÖÆÒ»¸ö´ø±³¾°µÄ°×É«·½¿ò
 		DrawBox_1(x1,y1,x2-1,y2-1,color);
 	end
 end
---ĞŞ¸ÄºóµÄdrawbox£¬±ß¿ò¼Ó´Ö
+--ä¿®æ”¹åçš„drawboxï¼Œè¾¹æ¡†åŠ ç²—
 function DrawGameBox(x1,y1,x2,y2)
 	--[[
     lib.DrawRect(x1,y1,x2-1,y1,C_WHITE);
@@ -727,19 +727,19 @@ function WarFillColor(x1,y1,x2,y2,clarity,color,size)
 		flag1=not flag1;
 	end
 end
---ÏÔÊ¾ÒõÓ°×Ö·û´®
-function DrawString(x,y,str,color,size,align)         --ÏÔÊ¾ÒõÓ°×Ö·û´®
+--æ˜¾ç¤ºé˜´å½±å­—ç¬¦ä¸²
+function DrawString(x,y,str,color,size,align)         --æ˜¾ç¤ºé˜´å½±å­—ç¬¦ä¸²
 	align=align or 0;
 	x=x-#str*(size/2)*align;
 	lib.DrawStr(x-1,y,str,color,size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
 	lib.DrawStr(x,y,str,color,size,CC.FontName,CC.SrcCharSet,CC.OSCharSet);
 end
-function DrawStringBG(x,y,str,color,size,align,bg)         --ÏÔÊ¾ÒõÓ°×Ö·û´®
+function DrawStringBG(x,y,str,color,size,align,bg)         --æ˜¾ç¤ºé˜´å½±å­—ç¬¦ä¸²
 	align=align or 0;
 	x=x-#str*(size/2)*align;
 	lib.DrawStr(x,y,str,color,size,CC.FontName,CC.SrcCharSet,CC.OSCharSet,bg);
 end
-function DrawString2(x,y,str,color,size)         --ÏÔÊ¾ÒõÓ°×Ö·û´®
+function DrawString2(x,y,str,color,size)         --æ˜¾ç¤ºé˜´å½±å­—ç¬¦ä¸²
 	if CONFIG.Windows then
 		lib.DrawStr(x-2,y,str,C_BLACK,size,0,CC.FontName,CC.SrcCharSet,CC.OSCharSet,1);
 		lib.DrawStr(x+1,y,str,C_BLACK,size,0,CC.FontName,CC.SrcCharSet,CC.OSCharSet,1);
@@ -750,9 +750,9 @@ function DrawString2(x,y,str,color,size)         --ÏÔÊ¾ÒõÓ°×Ö·û´®
 		DrawString(x,y,str,color,size);
 	end
 end
---ÏÔÊ¾´ø¿òµÄ×Ö·û´®
---(x,y) ×ø±ê£¬Èç¹û¶¼Îª-1,ÔòÔÚÆÁÄ»ÖĞ¼äÏÔÊ¾
-function DrawStrBox(x,y,str,color,size)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
+--æ˜¾ç¤ºå¸¦æ¡†çš„å­—ç¬¦ä¸²
+--(x,y) åæ ‡ï¼Œå¦‚æœéƒ½ä¸º-1,åˆ™åœ¨å±å¹•ä¸­é—´æ˜¾ç¤º
+function DrawStrBox(x,y,str,color,size)         --æ˜¾ç¤ºå¸¦æ¡†çš„å­—ç¬¦ä¸²
     local ll=#str;
     local w=size*ll/2+2*CC.MenuBorderPixel;
 	local h=size+2*CC.MenuBorderPixel;
@@ -766,7 +766,7 @@ function DrawStrBox(x,y,str,color,size)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
     DrawBox(x,y,x+w-1,y+h-1,C_WHITE);
     DrawString(x+CC.MenuBorderPixel,y+CC.MenuBorderPixel,str,color,size);
 end
-function DrawStrBox(x,y,str,color,size,bjcolor)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
+function DrawStrBox(x,y,str,color,size,bjcolor)         --æ˜¾ç¤ºå¸¦æ¡†çš„å­—ç¬¦ä¸²
 	
 	local strarray={}
 	local num,maxlen;
@@ -800,7 +800,7 @@ function DrawStrBox(x,y,str,color,size,bjcolor)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
 		DrawStringEnhance(x+CC.MenuBorderPixel,y+CC.MenuBorderPixel+size*(i-1),strarray[i],color,size);
 	end
 end
-function DrawStr(x,y,str,color,size)         --ÏÔÊ¾×Ö·û´®,»á·ÖĞĞ
+function DrawStr(x,y,str,color,size)         --æ˜¾ç¤ºå­—ç¬¦ä¸²,ä¼šåˆ†è¡Œ
 	
 	local strarray={}
 	local num,maxlen;
@@ -835,19 +835,19 @@ function Split(szFullString,szSeparator)
 	end
 	return nSplitIndex,nSplitArray
 end
-function DrawItemStatus(id,notWar)        --ÏÔÊ¾ÎïÆ·ÊôĞÔ
-	DrawStrStatus(JY.Item[id]["Ãû³Æ"],JY.Item[id]["ËµÃ÷"]);
+function DrawItemStatus(id,notWar)        --æ˜¾ç¤ºç‰©å“å±æ€§
+	DrawStrStatus(JY.Item[id]["åç§°"],JY.Item[id]["è¯´æ˜"]);
 end
-function DrawSkillStatus(id)        --ÏÔÊ¾¼¼ÄÜÊôĞÔ
-	DrawStrStatus(JY.Skill[id]["Ãû³Æ"],JY.Skill[id]["ËµÃ÷"]);
+function DrawSkillStatus(id)        --æ˜¾ç¤ºæŠ€èƒ½å±æ€§
+	DrawStrStatus(JY.Skill[id]["åç§°"],JY.Skill[id]["è¯´æ˜"]);
 end
-function DrawBingZhongStatus(id)        --ÏÔÊ¾¼¼ÄÜÊôĞÔ
-	DrawStrStatus(JY.Bingzhong[id]["Ãû³Æ"],JY.Bingzhong[id]["ËµÃ÷"]);
+function DrawBingZhongStatus(id)        --æ˜¾ç¤ºæŠ€èƒ½å±æ€§
+	DrawStrStatus(JY.Bingzhong[id]["åç§°"],JY.Bingzhong[id]["è¯´æ˜"]);
 end
-function DrawLieZhuan(name)        --ÏÔÊ¾ÁĞ´«
-	DrawStrStatus("Èı¹úÓ¢½ÜÁĞ´« - "..name,CC.LieZhuan[name]);
+function DrawLieZhuan(name)        --æ˜¾ç¤ºåˆ—ä¼ 
+	DrawStrStatus("ä¸‰å›½è‹±æ°åˆ—ä¼  - "..name,CC.LieZhuan[name]);
 end
-function DrawStrStatus(str1,str2)        --ÏÔÊ¾ÊôĞÔ
+function DrawStrStatus(str1,str2)        --æ˜¾ç¤ºå±æ€§
     lib.GetKey();
 	local x,y;
 	local w,h=320,128;
@@ -911,7 +911,7 @@ function DrawStrStatus(str1,str2)        --ÏÔÊ¾ÊôĞÔ
 		end
 	end
 end
-function WarDrawStrBoxConfirm(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N
+function WarDrawStrBoxConfirm(str,color,notWar)        --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶è¯¢é—®Y/N
     lib.GetKey();
 	local x,y;
 	local size=16;
@@ -996,7 +996,7 @@ function WarDrawStrBoxConfirm(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N
 		end
 	end
 end
-function WarDrawStrBoxYesNo(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N
+function WarDrawStrBoxYesNo(str,color,notWar)        --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶è¯¢é—®Y/N
     lib.GetKey();
 	local x,y;
 	local size=16;
@@ -1092,7 +1092,7 @@ function WarDrawStrBoxYesNo(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N
 		end
 	end
 end
-function WarDrawStrBoxConfirm(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N	--¸ÄÎªwaitkey
+function WarDrawStrBoxConfirm(str,color,notWar)        --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶è¯¢é—®Y/N	--æ”¹ä¸ºwaitkey
     lib.GetKey();
 	while true do
 		local t1=lib.GetTime();
@@ -1109,8 +1109,8 @@ function WarDrawStrBoxConfirm(str,color,notWar)        --ÏÔÊ¾×Ö·û´®²¢Ñ¯ÎÊY/N	--¸
 		end
 	end
 end
---ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü£¬×Ö·û´®´ø¿ò£¬ÏÔÊ¾ÔÚÆÁÄ»ÖĞ¼ä
-function DrawStrBoxWaitKey(s,color)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü
+--æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶ç­‰å¾…å‡»é”®ï¼Œå­—ç¬¦ä¸²å¸¦æ¡†ï¼Œæ˜¾ç¤ºåœ¨å±å¹•ä¸­é—´
+function DrawStrBoxWaitKey(s,color)          --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶ç­‰å¾…å‡»é”®
 	color=color or C_WHITE;
     lib.GetKey();
 	DrawGame();
@@ -1120,7 +1120,7 @@ function DrawStrBoxWaitKey(s,color)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü
 	DrawGame();
     ShowScreen();
 end
-function WarDrawStrBoxWaitKey(s,color,x,y)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü ÊÊÓÃÓÚÕ½¶·£¬»­Ãæ±£³ÖË¢ĞÂ
+function WarDrawStrBoxWaitKey(s,color,x,y)          --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶ç­‰å¾…å‡»é”® é€‚ç”¨äºæˆ˜æ–—ï¼Œç”»é¢ä¿æŒåˆ·æ–°
 	x=x or -1;
 	y=y or -1;
     lib.GetKey();
@@ -1135,7 +1135,7 @@ function WarDrawStrBoxWaitKey(s,color,x,y)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü ÊÊÓÃÓ
 	    end
 	end
 end
-function WarDrawStrBoxDelay(s,color,x,y,n)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü ÊÊÓÃÓÚÕ½¶·£¬»­Ãæ±£³ÖË¢ĞÂ
+function WarDrawStrBoxDelay(s,color,x,y,n)          --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶ç­‰å¾…å‡»é”® é€‚ç”¨äºæˆ˜æ–—ï¼Œç”»é¢ä¿æŒåˆ·æ–°
 	x=x or -1;
 	y=y or -1;
 	n=n or 36;
@@ -1151,7 +1151,7 @@ function WarDrawStrBoxDelay(s,color,x,y,n)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü ÊÊÓÃÓ
 	    end
 	end
 end
-function DrawYJZBox(x,y,str,color,size)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
+function DrawYJZBox(x,y,str,color,size)         --æ˜¾ç¤ºå¸¦æ¡†çš„å­—ç¬¦ä¸²
 	size=size or 20;
 	local strarray={}
 	local num,maxlen;
@@ -1203,7 +1203,7 @@ function DrawYJZBox(x,y,str,color,size)         --ÏÔÊ¾´ø¿òµÄ×Ö·û´®
 		DrawStringEnhance(x,y+(size+6)*(i-1),strarray[i],color,size);
 	end
 end
-function WarDrawStrBoxDelay2(s,color,x,y,n)          --ÏÔÊ¾×Ö·û´®²¢µÈ´ı»÷¼ü ÊÊÓÃÓÚÕ½¶·£¬»­Ãæ±£³ÖË¢ĞÂ
+function WarDrawStrBoxDelay2(s,color,x,y,n)          --æ˜¾ç¤ºå­—ç¬¦ä¸²å¹¶ç­‰å¾…å‡»é”® é€‚ç”¨äºæˆ˜æ–—ï¼Œç”»é¢ä¿æŒåˆ·æ–°
 	x=x or -1;
 	y=y or -1;
 	n=n or 16;
@@ -1224,11 +1224,11 @@ function ShowScreen()
 	end
 end
 
-function RGB(r,g,b)          --ÉèÖÃÑÕÉ«RGB
+function RGB(r,g,b)          --è®¾ç½®é¢œè‰²RGB
    return r*65536+g*256+b;
 end
 
-function GetRGB(color)      --·ÖÀëÑÕÉ«µÄRGB·ÖÁ¿
+function GetRGB(color)      --åˆ†ç¦»é¢œè‰²çš„RGBåˆ†é‡
     color=color%(65536*256);
     local r=math.floor(color/65536);
     color=color%65536;
@@ -1236,8 +1236,8 @@ function GetRGB(color)      --·ÖÀëÑÕÉ«µÄRGB·ÖÁ¿
     local b=color%256;
     return r,g,b
 end
---µÈ´ı¼üÅÌÊäÈë
-function WaitKey(flag)       --µÈ´ı¼üÅÌÊäÈë
+--ç­‰å¾…é”®ç›˜è¾“å…¥
+function WaitKey(flag)       --ç­‰å¾…é”®ç›˜è¾“å…¥
 	ShowScreen();
 	MOUSE.CLICK();
 	while true do
@@ -1248,10 +1248,10 @@ function WaitKey(flag)       --µÈ´ı¼üÅÌÊäÈë
 		end
 	end
 end
-function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
+function LoadRecord(id)       -- è¯»å–æ¸¸æˆè¿›åº¦
     local t1=lib.GetTime();
     local data=Byte.create(4*8);
-	--¶ÁÈ¡savedata
+	--è¯»å–savedata
 	--[[
     Byte.loadfile(data,CC.SavedataFile,0,4*8);
 	CC.OSCharSet=Byte.get16(data,0);
@@ -1263,7 +1263,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 	else
 		lib.LoadSoundConfig(CC.MusicVolume,CC.SoundVolume);
 	end]]--
-    --¶ÁÈ¡R*.idxÎÄ¼ş
+    --è¯»å–R*.idxæ–‡ä»¶
     local data=Byte.create(4*12);
     Byte.loadfile(data,CC.R_GRPFilename[0],0,4*12);
 	local idx={}
@@ -1272,11 +1272,11 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 	    idx[i]=Byte.get32(data,4*(i-1)*1);
 	end
 	
-    --¶ÁÈ¡R*.grpÎÄ¼ş
+    --è¯»å–R*.grpæ–‡ä»¶
 		lib.Debug(idx[1]-idx[0])
-    JY.Data_Base=Byte.create(idx[1]-idx[0]);              --»ù±¾Êı¾İ
+    JY.Data_Base=Byte.create(idx[1]-idx[0]);              --åŸºæœ¬æ•°æ®
     Byte.loadfile(JY.Data_Base,CC.R_GRPFilename[id],idx[0],idx[1]-idx[0]);
-    --ÉèÖÃ·ÃÎÊ»ù±¾Êı¾İµÄ·½·¨£¬ÕâÑù¾Í¿ÉÒÔÓÃ·ÃÎÊ±íµÄ·½Ê½·ÃÎÊÁË£®¶ø²»ÓÃ°Ñ¶ş½øÖÆÊı¾İ×ª»¯Îª±í£®½ÚÔ¼¼ÓÔØÊ±¼äºÍ¿Õ¼ä
+    --è®¾ç½®è®¿é—®åŸºæœ¬æ•°æ®çš„æ–¹æ³•ï¼Œè¿™æ ·å°±å¯ä»¥ç”¨è®¿é—®è¡¨çš„æ–¹å¼è®¿é—®äº†ï¼è€Œä¸ç”¨æŠŠäºŒè¿›åˆ¶æ•°æ®è½¬åŒ–ä¸ºè¡¨ï¼èŠ‚çº¦åŠ è½½æ—¶é—´å’Œç©ºé—´
 	local meta_t={
 	    __index=function(t,k)
 	        return GetDataFromStruct(JY.Data_Base,0,CC.Base_S,k);
@@ -1304,14 +1304,14 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		}
         setmetatable(JY.Force[i],meta_t);
 	end
-    JY.PersonNum=math.floor((idx[3]-idx[2])/CC.PersonSize);   --ÈËÎï	/newgamesaveºÍÊµ¼Ê´æµµ »ìºÏ¶ÁÈ¡
+    JY.PersonNum=math.floor((idx[3]-idx[2])/CC.PersonSize);   --äººç‰©	/newgamesaveå’Œå®é™…å­˜æ¡£ æ··åˆè¯»å–
 	JY.Data_Person_Base=Byte.create(CC.PersonSize*JY.PersonNum);
 	JY.Data_Person=Byte.create(CC.PersonSize*JY.PersonNum);
 	Byte.loadfile(JY.Data_Person_Base,	CC.R_GRPFilename[0],idx[2],CC.PersonSize*JY.PersonNum);
 	Byte.loadfile(JY.Data_Person,		CC.R_GRPFilename[id],idx[2],CC.PersonSize*JY.PersonNum);
 	for i=0,JY.PersonNum-1 do
 		JY.Person[i]={};
-		if between(i,901,1000) then		--901-1000ÎªĞÂÎä½«ÇøÓò
+		if between(i,901,1000) then		--901-1000ä¸ºæ–°æ­¦å°†åŒºåŸŸ
 			local meta_t={
 				__index=function(t,k)
 					return GetDataFromStruct(JY.Data_Person,i*CC.PersonSize,CC.Person_S,k);
@@ -1325,7 +1325,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		else
 			local meta_t={
 				__index=function(t,k)
-					return GetPersonData(i*CC.PersonSize,CC.Person_S,k);	--0ÒÔºóµÄÈËÎï»ìºÏ¶ÁÈ¡£¬0ÎªÖ÷½Ç
+					return GetPersonData(i*CC.PersonSize,CC.Person_S,k);	--0ä»¥åçš„äººç‰©æ··åˆè¯»å–ï¼Œ0ä¸ºä¸»è§’
 				end,
 
 				__newindex=function(t,k,v)
@@ -1336,7 +1336,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		end
 	end
 	
-    JY.BingzhongNum=math.floor((idx[4]-idx[3])/CC.BingzhongSize);   --±øÖÖ	/¶ÁÈ¡newgamesave
+    JY.BingzhongNum=math.floor((idx[4]-idx[3])/CC.BingzhongSize);   --å…µç§	/è¯»å–newgamesave
 	JY.Data_Bingzhong=Byte.create(CC.BingzhongSize*JY.BingzhongNum);
 	Byte.loadfile(JY.Data_Bingzhong,CC.R_GRPFilename[0],idx[3],CC.BingzhongSize*JY.BingzhongNum);
 	for i=0,JY.BingzhongNum-1 do
@@ -1352,7 +1352,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		}
         setmetatable(JY.Bingzhong[i],meta_t);
 	end
-    JY.SceneNum=math.floor((idx[5]-idx[4])/CC.SceneSize);   --³¡¾°
+    JY.SceneNum=math.floor((idx[5]-idx[4])/CC.SceneSize);   --åœºæ™¯
 	JY.Data_Scene=Byte.create(CC.SceneSize*JY.SceneNum);
 	Byte.loadfile(JY.Data_Scene,CC.R_GRPFilename[id],idx[4],CC.SceneSize*JY.SceneNum);
 	for i=0,JY.SceneNum-1 do
@@ -1368,7 +1368,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		}
         setmetatable(JY.Scene[i],meta_t);
 	end
-    JY.WarmapNum=math.floor((idx[6]-idx[5])/CC.WarmapSize);   --³¡¾°
+    JY.WarmapNum=math.floor((idx[6]-idx[5])/CC.WarmapSize);   --åœºæ™¯
 	JY.Data_Warmap=Byte.create(CC.WarmapSize*JY.WarmapNum);
 	Byte.loadfile(JY.Data_Warmap,CC.R_GRPFilename[id],idx[5],CC.WarmapSize*JY.WarmapNum);
 	for i=0,JY.WarmapNum-1 do
@@ -1419,7 +1419,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
         setmetatable(JY.Connection[i],meta_t);
 	end
 	
-    JY.ItemNum=math.floor((idx[9]-idx[8])/CC.ItemSize);   --µÀ¾ß	/¶ÁÈ¡newgamesave
+    JY.ItemNum=math.floor((idx[9]-idx[8])/CC.ItemSize);   --é“å…·	/è¯»å–newgamesave
 	JY.Data_Item=Byte.create(CC.ItemSize*JY.ItemNum);
 	Byte.loadfile(JY.Data_Item,CC.R_GRPFilename[0],idx[8],CC.ItemSize*JY.ItemNum);
 	for i=0,JY.ItemNum-1 do
@@ -1436,7 +1436,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
         setmetatable(JY.Item[i],meta_t);
 	end
 	
-    JY.TitleNum=math.floor((idx[10]-idx[9])/CC.TitleSize);   --¹Ù¾ô	/¶ÁÈ¡newgamesave
+    JY.TitleNum=math.floor((idx[10]-idx[9])/CC.TitleSize);   --å®˜çˆµ	/è¯»å–newgamesave
 	JY.Data_Magic=Byte.create(CC.TitleSize*JY.TitleNum);
 	Byte.loadfile(JY.Data_Magic,CC.R_GRPFilename[0],idx[9],CC.TitleSize*JY.TitleNum);
 	for i=0,JY.TitleNum-1 do
@@ -1452,7 +1452,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		}
         setmetatable(JY.Title[i],meta_t);
 	end
-    JY.SkillNum=math.floor((idx[11]-idx[10])/CC.SkillSize);   --ÌØ¼¼	/¶ÁÈ¡newgamesave
+    JY.SkillNum=math.floor((idx[11]-idx[10])/CC.SkillSize);   --ç‰¹æŠ€	/è¯»å–newgamesave
 	JY.Data_Skill=Byte.create(CC.SkillSize*JY.SkillNum);
 	Byte.loadfile(JY.Data_Skill,CC.R_GRPFilename[0],idx[10],CC.SkillSize*JY.SkillNum);
 	for i=0,JY.SkillNum-1 do
@@ -1485,24 +1485,24 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 	collectgarbage();
 	lib.Debug(string.format("Loadrecord%d time=%d",id,lib.GetTime()-t1));
 	
-	JY.PID=JY.Base["Ö÷½Ç"];
-	JY.FID=JY.Base["µ±Ç°ÊÆÁ¦"];
-	JY.SubScene=JY.Base["µ±Ç°³¡¾°"];
-	JY.EventID=JY.Base["µ±Ç°ÊÂ¼ş"];
-	JY.CurrentBGM=JY.Base["µ±Ç°ÒôÀÖ"];
+	JY.PID=JY.Base["ä¸»è§’"];
+	JY.FID=JY.Base["å½“å‰åŠ¿åŠ›"];
+	JY.SubScene=JY.Base["å½“å‰åœºæ™¯"];
+	JY.EventID=JY.Base["å½“å‰äº‹ä»¶"];
+	JY.CurrentBGM=JY.Base["å½“å‰éŸ³ä¹"];
 	
 	for i = 1, JY.CityNum - 1 do
     JY.CityToCity[i] = {};
   end
 	for i = 1, JY.ConnectionNum - 1 do
-    local from, to = JY.Connection[i]["¶¼ÊĞ1"], JY.Connection[i]["¶¼ÊĞ2"];
+    local from, to = JY.Connection[i]["éƒ½å¸‚1"], JY.Connection[i]["éƒ½å¸‚2"];
     JY.CityToCity[from][to] = i;
   end
 
-	JY.NameList={};	--Çå¿Õ
-	JY.NameList["Ö÷½Ç"]=0;
+	JY.NameList={};	--æ¸…ç©º
+	JY.NameList["ä¸»è§’"]=0;
 	for i=1,JY.PersonNum-1 do
-		local str=JY.Person[i]["Ãû³Æ"];
+		local str=JY.Person[i]["åç§°"];
 		if JY.NameList[str]==nil then
 			JY.NameList[str]=i;
 		else
@@ -1519,16 +1519,16 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 	end
 	
 	if id>0 then
-		if ((JY.Status==GAME_SMAP_MANUAL) and JY.Base["Õ½³¡´æµµ"]==0) then
+		if ((JY.Status==GAME_SMAP_MANUAL) and JY.Base["æˆ˜åœºå­˜æ¡£"]==0) then
 			Dark();
 			DrawSMap();
 			Light();
 		end
-		if ((JY.Status==GAME_WMAP or JY.Status==GAME_START) and JY.Base["Õ½³¡´æµµ"]==1) then
+		if ((JY.Status==GAME_WMAP or JY.Status==GAME_START) and JY.Base["æˆ˜åœºå­˜æ¡£"]==1) then
 			Dark();
 		end
-		JY.Status=JY.Base["µ±Ç°×´Ì¬"];
-		if JY.Base["Õ½³¡´æµµ"]==1 then
+		JY.Status=JY.Base["å½“å‰çŠ¶æ€"];
+		if JY.Base["æˆ˜åœºå­˜æ¡£"]==1 then
 			WarLoad(id);
 		end
 		if JY.CurrentBGM>=0 then
@@ -1537,7 +1537,7 @@ function LoadRecord(id)       -- ¶ÁÈ¡ÓÎÏ·½ø¶È
 		Dark();
 	end
 end
-function fileexist(filename)         --¼ì²âÎÄ¼şÊÇ·ñ´æÔÚ
+function fileexist(filename)         --æ£€æµ‹æ–‡ä»¶æ˜¯å¦å­˜åœ¨
     local inp=io.open(filename,"rb");
 	if inp==nil then
 		return false;
@@ -1552,30 +1552,30 @@ function copyfile(source,destination)
 	sourcefile:close()
 	destinationfile:close()
 end
--- Ğ´ÓÎÏ·½ø¶È
--- id=0 ĞÂ½ø¶È£¬=1/2/3 ½ø¶È
-function SaveRecord(id)         -- Ğ´ÓÎÏ·½ø¶È
+-- å†™æ¸¸æˆè¿›åº¦
+-- id=0 æ–°è¿›åº¦ï¼Œ=1/2/3 è¿›åº¦
+function SaveRecord(id)         -- å†™æ¸¸æˆè¿›åº¦
     local t1=lib.GetTime()
 	--
 	if JY.Status==GAME_WMAP then
-		JY.Base["Õ½³¡´æµµ"]=1;
+		JY.Base["æˆ˜åœºå­˜æ¡£"]=1;
 	else
-		JY.Base["Õ½³¡´æµµ"]=0;
+		JY.Base["æˆ˜åœºå­˜æ¡£"]=0;
 	end
-	JY.Base["Ê±¼ä"]=string.sub(os.date(),0,14);
-	JY.Base["µ±Ç°×´Ì¬"]=JY.Status;
-	JY.Base["Ö÷½Ç"]=JY.PID;
-	JY.Base["µ±Ç°ÊÆÁ¦"]=JY.FID;
-	JY.Base["µ±Ç°³¡¾°"]=JY.SubScene;
-	JY.Base["µ±Ç°ÊÂ¼ş"]=JY.EventID;
-	JY.Base["µ±Ç°ÒôÀÖ"]=JY.CurrentBGM;
+	JY.Base["æ—¶é—´"]=string.sub(os.date(),0,14);
+	JY.Base["å½“å‰çŠ¶æ€"]=JY.Status;
+	JY.Base["ä¸»è§’"]=JY.PID;
+	JY.Base["å½“å‰åŠ¿åŠ›"]=JY.FID;
+	JY.Base["å½“å‰åœºæ™¯"]=JY.SubScene;
+	JY.Base["å½“å‰äº‹ä»¶"]=JY.EventID;
+	JY.Base["å½“å‰éŸ³ä¹"]=JY.CurrentBGM;
     --local data=Byte.create(4*8);
-	--¶ÁÈ¡savedata
+	--è¯»å–savedata
 	--[[
 	Byte.set16(data,2,CC.MusicVolume);
 	Byte.set16(data,4,CC.SoundVolume);
 	Byte.savefile(data,CC.SavedataFile,0,4*8);]]--
-    --¶ÁÈ¡R*.idxÎÄ¼ş
+    --è¯»å–R*.idxæ–‡ä»¶
     local data=Byte.create(4*11);
     Byte.loadfile(data,CC.R_GRPFilename[0],0,4*11);
 	local idx={}
@@ -1584,7 +1584,7 @@ function SaveRecord(id)         -- Ğ´ÓÎÏ·½ø¶È
 	    idx[i]=Byte.get32(data,4*(i-1)*1);
 	end
 
-    --Ğ´R*.grpÎÄ¼ş
+    --å†™R*.grpæ–‡ä»¶
 	if true then--not fileexist(CC.R_GRPFilename[id]) then
 		copyfile(CC.R_GRPFilename[0],CC.R_GRPFilename[id])
 	end
@@ -1595,12 +1595,12 @@ function SaveRecord(id)         -- Ğ´ÓÎÏ·½ø¶È
 	Byte.savefile(JY.Data_City,CC.R_GRPFilename[id],idx[6],CC.CitySize*JY.CityNum);
     lib.Debug(string.format("SaveRecord time=%d",lib.GetTime()-t1));
 end
---´ÓÊı¾İµÄ½á¹¹ÖĞ·­ÒëÊı¾İ
---data ¶ş½øÖÆÊı×é
---offset dataÖĞµÄÆ«ÒÆ
---t_struct Êı¾İµÄ½á¹¹£¬ÔÚjyconstÖĞÓĞºÜ¶à¶¨Òå
---key  ·ÃÎÊµÄkey
-function GetDataFromStruct(data,offset,t_struct,key)  --´ÓÊı¾İµÄ½á¹¹ÖĞ·­ÒëÊı¾İ£¬ÓÃÀ´È¡Êı¾İ
+--ä»æ•°æ®çš„ç»“æ„ä¸­ç¿»è¯‘æ•°æ®
+--data äºŒè¿›åˆ¶æ•°ç»„
+--offset dataä¸­çš„åç§»
+--t_struct æ•°æ®çš„ç»“æ„ï¼Œåœ¨jyconstä¸­æœ‰å¾ˆå¤šå®šä¹‰
+--key  è®¿é—®çš„key
+function GetDataFromStruct(data,offset,t_struct,key)  --ä»æ•°æ®çš„ç»“æ„ä¸­ç¿»è¯‘æ•°æ®ï¼Œç”¨æ¥å–æ•°æ®
     local t=t_struct[key];
 	local r;
 	if t[2]==0 then
@@ -1632,7 +1632,7 @@ function GetDataFromStruct(data,offset,t_struct,key)  --´ÓÊı¾İµÄ½á¹¹ÖĞ·­ÒëÊı¾İ£¬
 	
 	return r;
 end
-function SetDataFromStruct(data,offset,t_struct,key,v)  --´ÓÊı¾İµÄ½á¹¹ÖĞ·­ÒëÊı¾İ£¬±£´æÊı¾İ
+function SetDataFromStruct(data,offset,t_struct,key,v)  --ä»æ•°æ®çš„ç»“æ„ä¸­ç¿»è¯‘æ•°æ®ï¼Œä¿å­˜æ•°æ®
     local t=t_struct[key];
 	
 	if t[2]==0 then
@@ -1682,21 +1682,21 @@ function between(v,Min,Max)
 end
 function ResizeScreen(w,h)
 end
-function Light()            --³¡¾°±äÁÁ
+function Light()            --åœºæ™¯å˜äº®
 	if JY.Dark then
 		JY.Dark=false;
 		lib.ShowSlow(CC.FrameNum/4,0);
 		lib.GetKey();
 	end
 end
-function Dark()             --³¡¾°±äºÚ
+function Dark()             --åœºæ™¯å˜é»‘
 	if not JY.Dark then
 		JY.Dark=true;
 		lib.ShowSlow(CC.FrameNum/4,1);
 		lib.GetKey();
 	end
 end
---²¥·ÅMP3
+--æ’­æ”¾MP3
 function PlayBGM(id)
 	id=id or 0
     JY.CurrentBGM=id;
@@ -1711,8 +1711,8 @@ function StopBGM()
 	JY.CurrentBGM=-1;
 	lib.PlayMIDI("");
 end
---²¥·ÅÒôĞ§e**
-function PlayWavE(id)              --²¥·ÅÒôĞ§e**
+--æ’­æ”¾éŸ³æ•ˆe**
+function PlayWavE(id)              --æ’­æ”¾éŸ³æ•ˆe**
     if JY.EnableSound==0 then
         return ;
     end
@@ -1720,11 +1720,11 @@ function PlayWavE(id)              --²¥·ÅÒôĞ§e**
         lib.PlayWAV(string.format(CC.EFile,id));
     end
 end
---²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®£¬¼´Ã¿¸ôn¸öÖĞÎÄ×Ö·û¼ÓÒ»¸öĞÇºÅ
-function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
+--äº§ç”Ÿå¯¹è¯æ˜¾ç¤ºéœ€è¦çš„å­—ç¬¦ä¸²ï¼Œå³æ¯éš”nä¸ªä¸­æ–‡å­—ç¬¦åŠ ä¸€ä¸ªæ˜Ÿå·
+function GenTalkString(str,n)              --äº§ç”Ÿå¯¹è¯æ˜¾ç¤ºéœ€è¦çš„å­—ç¬¦ä¸²
     local tmpstr="";
 	local num=0;
-    for s in string.gmatch(str .. "*","(.-)%*") do           --È¥µô¶Ô»°ÖĞµÄËùÓĞ*. ×Ö·û´®Î²²¿¼ÓÒ»¸öĞÇºÅ£¬±ÜÃâÎŞ·¨Æ¥Åä
+    for s in string.gmatch(str .. "*","(.-)%*") do           --å»æ‰å¯¹è¯ä¸­çš„æ‰€æœ‰*. å­—ç¬¦ä¸²å°¾éƒ¨åŠ ä¸€ä¸ªæ˜Ÿå·ï¼Œé¿å…æ— æ³•åŒ¹é…
         tmpstr=tmpstr .. s;
     end
 
@@ -1733,13 +1733,13 @@ function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
 		num=num+1;
 		local w=0;
 		while w<#tmpstr do
-		    local v=string.byte(tmpstr,w+1);          --µ±Ç°×Ö·ûµÄÖµ
+		    local v=string.byte(tmpstr,w+1);          --å½“å‰å­—ç¬¦çš„å€¼
 			if v>=128 then
 			    w=w+2;
 			else
 			    w=w+1;
 			end
-			if w >= 2*n-1 then     --ÎªÁË±ÜÃâ¿ç¶ÎÖĞÎÄ×Ö·û
+			if w >= 2*n-1 then     --ä¸ºäº†é¿å…è·¨æ®µä¸­æ–‡å­—ç¬¦
 			    break;
 			end
 		end
@@ -1759,40 +1759,40 @@ function GenTalkString(str,n)              --²úÉú¶Ô»°ÏÔÊ¾ĞèÒªµÄ×Ö·û´®
 	end
     return newstr,num;
 end
-function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --Í¨ÓÃ²Ëµ¥º¯Êı
+function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --é€šç”¨èœå•å‡½æ•°
     local w=0;
-    local h=0;   --±ß¿òµÄ¿í¸ß
+    local h=0;   --è¾¹æ¡†çš„å®½é«˜
     local i=0;
-    local num=0;     --Êµ¼ÊµÄÏÔÊ¾²Ëµ¥Ïî
-    local newNumItem=0;  --ÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    local num=0;     --å®é™…çš„æ˜¾ç¤ºèœå•é¡¹
+    local newNumItem=0;  --èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
 	size=size or CC.Fontbig;
 	size=16;
 	color=color or C_ORANGE;
 	selectColor=selectColor or C_WHITE;
     lib.GetKey();
 	local sid=lib.SaveSur(0,0,CC.ScreenW,CC.ScreenH);
-    local newMenu={};   -- ¶¨ÒåĞÂµÄÊı×é£¬ÒÔ±£´æËùÓĞÄÜÏÔÊ¾µÄ²Ëµ¥Ïî
+    local newMenu={};   -- å®šä¹‰æ–°çš„æ•°ç»„ï¼Œä»¥ä¿å­˜æ‰€æœ‰èƒ½æ˜¾ç¤ºçš„èœå•é¡¹
 
-    --¼ÆËãÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    --è®¡ç®—èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
     for i=1,numItem do
         if menuItem[i][3]>0 then
             newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i,1};   --ĞÂÊı×é¶àÁË[4],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
-																					  --ĞÂÊı×é¶àÁË[5], ´ú±í¶ÔÆë 123 ×óÖĞÓÒ
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i,1};   --æ–°æ•°ç»„å¤šäº†[4],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
+																					  --æ–°æ•°ç»„å¤šäº†[5], ä»£è¡¨å¯¹é½ 123 å·¦ä¸­å³
 			if string.sub(menuItem[i][1],1,1)=="@" then
 				newMenu[newNumItem][1]=string.sub(menuItem[i][1],2);
 				newMenu[newNumItem][1]=2;
 			end
         end
     end
-    --¼ÆËãÊµ¼ÊÏÔÊ¾µÄ²Ëµ¥ÏîÊı
+    --è®¡ç®—å®é™…æ˜¾ç¤ºçš„èœå•é¡¹æ•°
     if numShow==0 or numShow > newNumItem then
         num=newNumItem;
     else
         num=numShow;
     end
 
-    --¼ÆËã±ß¿òÊµ¼Ê¿í¸ß
+    --è®¡ç®—è¾¹æ¡†å®é™…å®½é«˜
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
@@ -1800,8 +1800,8 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
                 maxlength=string.len(newMenu[i][1]);
             end
         end
-        w=size*maxlength/2+2*CC.MenuBorderPixel;        --°´ÕÕ°ë¸öºº×Ö¼ÆËã¿í¶È£¬Ò»±ßÁô4¸öÏóËØ
-        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --×ÖÖ®¼äÁô4¸öÏóËØ£¬ÉÏÃæÔÙÁô4¸öÏóËØ
+        w=size*maxlength/2+2*CC.MenuBorderPixel;        --æŒ‰ç…§åŠä¸ªæ±‰å­—è®¡ç®—å®½åº¦ï¼Œä¸€è¾¹ç•™4ä¸ªè±¡ç´ 
+        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --å­—ä¹‹é—´ç•™4ä¸ªè±¡ç´ ï¼Œä¸Šé¢å†ç•™4ä¸ªè±¡ç´ 
     else
         w=x2-x1;
         h=y2-y1;
@@ -1819,9 +1819,9 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		y1=(CC.ScreenH-h)/2;
 	end]]--
 	
-    local start=1;             --ÏÔÊ¾µÄµÚÒ»Ïî
+    local start=1;             --æ˜¾ç¤ºçš„ç¬¬ä¸€é¡¹
 
-	local current =0;          --µ±Ç°Ñ¡ÔñÏî
+	local current =0;          --å½“å‰é€‰æ‹©é¡¹
 	for i=1,newNumItem do
 	    if newMenu[i][3]==2 then
 		    current=i;
@@ -1858,7 +1858,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		h_off=8;
 		w=144;
 		h=16+24*num;
-	elseif isBox==3 then	--baseon 2£¬µ÷Õû¿í¶È
+	elseif isBox==3 then	--baseon 2ï¼Œè°ƒæ•´å®½åº¦
 		x_off=4;
 		y_off=6;
 		row_off=4;
@@ -1886,7 +1886,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		y1=(CC.ScreenH-h)/2;
 	end
 	local function redraw(flag)
-		if num~=0 then --ÔİÇÒÕâÑù¸Ä
+		if num~=0 then --æš‚ä¸”è¿™æ ·æ”¹
 	        --Cls(x1,y1,x1+w,y1+h);
 			if isBox==1 then
 				lib.SetClip(x1,y1,x1+w,y1+8+24*num);
@@ -1922,7 +1922,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		end
 
 	    for i=start,start+num-1 do
-  	        local drawColor=color;           --ÉèÖÃ²»Í¬µÄ»æÖÆÑÕÉ«
+  	        local drawColor=color;           --è®¾ç½®ä¸åŒçš„ç»˜åˆ¶é¢œè‰²
 			local menustr=newMenu[i][1];
 			local dx=0;
 			if newMenu[i][5]==2 then
@@ -2005,7 +2005,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 				JY.ReFreshTime=lib.GetTime();
 				lib.LoadSur(sid);
 				redraw();
-				ReFresh(CC.OpearteSpeed); --ÕâÀïÓ¦¸Ã¿ÉÒÔ¾ö¶¨²Ëµ¥µÄ·´Ó¦ËÙ¶È
+				ReFresh(CC.OpearteSpeed); --è¿™é‡Œåº”è¯¥å¯ä»¥å†³å®šèœå•çš„ååº”é€Ÿåº¦
 				if newMenu[sel][2]==nil then
 					returnValue=newMenu[sel][4];
 					wait=false;
@@ -2015,7 +2015,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 					JY.MenuPic.pic[JY.MenuPic.num]=lib.SaveSur(x1,y1,x1+w,y1+h);
 					JY.MenuPic.x[JY.MenuPic.num]=x1;
 					JY.MenuPic.y[JY.MenuPic.num]=y1;
-					local r=newMenu[sel][2](newMenu[sel][4]);               --µ÷ÓÃ²Ëµ¥º¯Êı
+					local r=newMenu[sel][2](newMenu[sel][4]);               --è°ƒç”¨èœå•å‡½æ•°
 					lib.FreeSur(JY.MenuPic.pic[JY.MenuPic.num]);
 					JY.MenuPic.num=JY.MenuPic.num-1;
 					if r==1 then
@@ -2039,12 +2039,12 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 	lib.FreeSur(sid);
     return returnValue;
 end
-function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --Í¨ÓÃ²Ëµ¥º¯Êı
+function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --é€šç”¨èœå•å‡½æ•°
     local w=0;
-    local h=0;   --±ß¿òµÄ¿í¸ß
+    local h=0;   --è¾¹æ¡†çš„å®½é«˜
     local i=0;
-    local num=0;     --Êµ¼ÊµÄÏÔÊ¾²Ëµ¥Ïî
-    local newNumItem=0;  --ÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    local num=0;     --å®é™…çš„æ˜¾ç¤ºèœå•é¡¹
+    local newNumItem=0;  --èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
 	size=size or CC.Fontbig;
 	size=16;
 	color=color or C_ORANGE;
@@ -2052,14 +2052,14 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
     lib.GetKey();
 
 	local sid=lib.SaveSur(0,0,CC.ScreenW,CC.ScreenH);
-    local newMenu={};   -- ¶¨ÒåĞÂµÄÊı×é£¬ÒÔ±£´æËùÓĞÄÜÏÔÊ¾µÄ²Ëµ¥Ïî
+    local newMenu={};   -- å®šä¹‰æ–°çš„æ•°ç»„ï¼Œä»¥ä¿å­˜æ‰€æœ‰èƒ½æ˜¾ç¤ºçš„èœå•é¡¹
 
-    --¼ÆËãÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    --è®¡ç®—èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
     for i=1,numItem do
         if menuItem[i][3]>0 then
             newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i,1};   --ĞÂÊı×é¶àÁË[4],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
-																					  --ĞÂÊı×é¶àÁË[5], ´ú±í¶ÔÆë 123 ×óÖĞÓÒ
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i,1};   --æ–°æ•°ç»„å¤šäº†[4],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
+																					  --æ–°æ•°ç»„å¤šäº†[5], ä»£è¡¨å¯¹é½ 123 å·¦ä¸­å³
 			if string.sub(menuItem[i][1],1,1)=="@" then
 				newMenu[newNumItem][1]=string.sub(menuItem[i][1],2);
 				newMenu[newNumItem][5]=2;
@@ -2067,14 +2067,14 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
         end
     end
 
-    --¼ÆËãÊµ¼ÊÏÔÊ¾µÄ²Ëµ¥ÏîÊı
+    --è®¡ç®—å®é™…æ˜¾ç¤ºçš„èœå•é¡¹æ•°
     if numShow==0 or numShow > newNumItem then
         num=newNumItem;
     else
         num=numShow;
     end
 
-    --¼ÆËã±ß¿òÊµ¼Ê¿í¸ß
+    --è®¡ç®—è¾¹æ¡†å®é™…å®½é«˜
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
@@ -2082,8 +2082,8 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
                 maxlength=string.len(newMenu[i][1]);
             end
         end
-        w=size*maxlength/2+2*CC.MenuBorderPixel;        --°´ÕÕ°ë¸öºº×Ö¼ÆËã¿í¶È£¬Ò»±ßÁô4¸öÏóËØ
-        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --×ÖÖ®¼äÁô4¸öÏóËØ£¬ÉÏÃæÔÙÁô4¸öÏóËØ
+        w=size*maxlength/2+2*CC.MenuBorderPixel;        --æŒ‰ç…§åŠä¸ªæ±‰å­—è®¡ç®—å®½åº¦ï¼Œä¸€è¾¹ç•™4ä¸ªè±¡ç´ 
+        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --å­—ä¹‹é—´ç•™4ä¸ªè±¡ç´ ï¼Œä¸Šé¢å†ç•™4ä¸ªè±¡ç´ 
     else
         w=x2-x1;
         h=y2-y1;
@@ -2101,9 +2101,9 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		y1=(CC.ScreenH-h)/2;
 	end]]--
 	
-    local start=1;             --ÏÔÊ¾µÄµÚÒ»Ïî
+    local start=1;             --æ˜¾ç¤ºçš„ç¬¬ä¸€é¡¹
 
-	local current =0;          --µ±Ç°Ñ¡ÔñÏî
+	local current =0;          --å½“å‰é€‰æ‹©é¡¹
 	for i=1,newNumItem do
 	    if newMenu[i][3]==2 then
 		    current=i;
@@ -2140,14 +2140,14 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		h_off=8;
 		w=144;
 		h=16+24*num;
-	elseif isBox==20 then	--2µÄ¼Ó¿í°æ±¾
+	elseif isBox==20 then	--2çš„åŠ å®½ç‰ˆæœ¬
 		x_off=4;
 		y_off=6;
 		row_off=4;
 		h_off=8;
 		w=420;
 		h=16+24*num;
-	elseif isBox==3 then	--baseon 2£¬µ÷Õû¿í¶È
+	elseif isBox==3 then	--baseon 2ï¼Œè°ƒæ•´å®½åº¦
 		x_off=4;
 		y_off=6;
 		row_off=4;
@@ -2161,14 +2161,14 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		h_off=12;
 		w=112;
 		h=16+8+20*num;
-	elseif isBox==5 then	--²ßÂÔ<=8ÓÃ
+	elseif isBox==5 then	--ç­–ç•¥<=8ç”¨
 		x_off=4;
 		y_off=9;
 		row_off=0;
 		h_off=12;
 		w=104;
 		h=16+8+20*num;
-	elseif isBox==6 then	--²ßÂÔ>8ÓÃ
+	elseif isBox==6 then	--ç­–ç•¥>8ç”¨
 		x_off=4;
 		y_off=9;
 		row_off=0;
@@ -2198,7 +2198,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		end
 	end
 	local function redraw(flag)
-		if num~=0 then --ÔİÇÒÕâÑù¸Ä
+		if num~=0 then --æš‚ä¸”è¿™æ ·æ”¹
 	        --Cls(x1,y1,x1+w,y1+h);
 			if isBox==1 then
 				lib.SetClip(x1,y1,x1+w,y1+8+24*num);
@@ -2259,7 +2259,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 		end
 
 	    for i=start,start+num-1 do
-  	        local drawColor=color;           --ÉèÖÃ²»Í¬µÄ»æÖÆÑÕÉ«
+  	        local drawColor=color;           --è®¾ç½®ä¸åŒçš„ç»˜åˆ¶é¢œè‰²
 			local menustr=newMenu[i][1];
 			local dx=0;
 			if newMenu[i][5]==2 then
@@ -2380,7 +2380,7 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
 					JY.MenuPic.pic[JY.MenuPic.num]=lib.SaveSur(x1,y1,x1+w,y1+h);
 					JY.MenuPic.x[JY.MenuPic.num]=x1;
 					JY.MenuPic.y[JY.MenuPic.num]=y1;
-					local r=newMenu[sel][2](newMenu[sel][4]);               --µ÷ÓÃ²Ëµ¥º¯Êı
+					local r=newMenu[sel][2](newMenu[sel][4]);               --è°ƒç”¨èœå•å‡½æ•°
 					lib.FreeSur(JY.MenuPic.pic[JY.MenuPic.num]);
 					JY.MenuPic.num=JY.MenuPic.num-1;
 					if r==1 then
@@ -2424,36 +2424,36 @@ function ShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,se
     return returnValue;
 end
 
-function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --Í¨ÓÃ²Ëµ¥º¯Êı
+function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color,selectColor)     --é€šç”¨èœå•å‡½æ•°
     local w=0;
-    local h=0;   --±ß¿òµÄ¿í¸ß
+    local h=0;   --è¾¹æ¡†çš„å®½é«˜
     local i=0;
-    local num=0;     --Êµ¼ÊµÄÏÔÊ¾²Ëµ¥Ïî
-    local newNumItem=0;  --ÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    local num=0;     --å®é™…çš„æ˜¾ç¤ºèœå•é¡¹
+    local newNumItem=0;  --èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
 	size=size or CC.Fontbig;
 	size=16;
 	color=color or C_ORANGE;
 	selectColor=selectColor or C_WHITE;
     lib.GetKey();
 
-    local newMenu={};   -- ¶¨ÒåĞÂµÄÊı×é£¬ÒÔ±£´æËùÓĞÄÜÏÔÊ¾µÄ²Ëµ¥Ïî
+    local newMenu={};   -- å®šä¹‰æ–°çš„æ•°ç»„ï¼Œä»¥ä¿å­˜æ‰€æœ‰èƒ½æ˜¾ç¤ºçš„èœå•é¡¹
 
-    --¼ÆËãÄÜ¹»ÏÔÊ¾µÄ×Ü²Ëµ¥ÏîÊı
+    --è®¡ç®—èƒ½å¤Ÿæ˜¾ç¤ºçš„æ€»èœå•é¡¹æ•°
     for i=1,numItem do
         if menuItem[i][3]>0 then
             newNumItem=newNumItem+1;
-            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i};   --ĞÂÊı×é¶àÁË[4],±£´æºÍÔ­Êı×éµÄ¶ÔÓ¦
+            newMenu[newNumItem]={menuItem[i][1],menuItem[i][2],menuItem[i][3],i};   --æ–°æ•°ç»„å¤šäº†[4],ä¿å­˜å’ŒåŸæ•°ç»„çš„å¯¹åº”
         end
     end
 
-    --¼ÆËãÊµ¼ÊÏÔÊ¾µÄ²Ëµ¥ÏîÊı
+    --è®¡ç®—å®é™…æ˜¾ç¤ºçš„èœå•é¡¹æ•°
     if numShow==0 or numShow > newNumItem then
         num=newNumItem;
     else
         num=numShow;
     end
 
-    --¼ÆËã±ß¿òÊµ¼Ê¿í¸ß
+    --è®¡ç®—è¾¹æ¡†å®é™…å®½é«˜
     local maxlength=0;
     if x2==0 and y2==0 then
         for i=1,newNumItem do
@@ -2461,8 +2461,8 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
                 maxlength=string.len(newMenu[i][1]);
             end
         end
-        w=size*maxlength/2+2*CC.MenuBorderPixel;        --°´ÕÕ°ë¸öºº×Ö¼ÆËã¿í¶È£¬Ò»±ßÁô4¸öÏóËØ
-        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --×ÖÖ®¼äÁô4¸öÏóËØ£¬ÉÏÃæÔÙÁô4¸öÏóËØ
+        w=size*maxlength/2+2*CC.MenuBorderPixel;        --æŒ‰ç…§åŠä¸ªæ±‰å­—è®¡ç®—å®½åº¦ï¼Œä¸€è¾¹ç•™4ä¸ªè±¡ç´ 
+        h=(size+CC.RowPixel)*num+CC.MenuBorderPixel;            --å­—ä¹‹é—´ç•™4ä¸ªè±¡ç´ ï¼Œä¸Šé¢å†ç•™4ä¸ªè±¡ç´ 
     else
         w=x2-x1;
         h=y2-y1;
@@ -2480,9 +2480,9 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		y1=(CC.ScreenH-h)/2;
 	end]]--
 	
-    local start=1;             --ÏÔÊ¾µÄµÚÒ»Ïî
+    local start=1;             --æ˜¾ç¤ºçš„ç¬¬ä¸€é¡¹
 
-	local current =0;          --µ±Ç°Ñ¡ÔñÏî
+	local current =0;          --å½“å‰é€‰æ‹©é¡¹
 	for i=1,newNumItem do
 	    if newMenu[i][3]==2 then
 		    current=i;
@@ -2519,7 +2519,7 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		h_off=8;
 		w=144;
 		h=16+24*num;
-	elseif isBox==3 then	--baseon 2£¬µ÷Õû¿í¶È
+	elseif isBox==3 then	--baseon 2ï¼Œè°ƒæ•´å®½åº¦
 		x_off=4;
 		y_off=6;
 		row_off=4;
@@ -2533,14 +2533,14 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		h_off=12;
 		w=112;
 		h=16+8+20*num;
-	elseif isBox==5 then	--²ßÂÔ<=8ÓÃ
+	elseif isBox==5 then	--ç­–ç•¥<=8ç”¨
 		x_off=4;
 		y_off=9;
 		row_off=0;
 		h_off=12;
 		w=104;
 		h=16+8+20*num;
-	elseif isBox==6 then	--²ßÂÔ>8ÓÃ
+	elseif isBox==6 then	--ç­–ç•¥>8ç”¨
 		x_off=4;
 		y_off=9;
 		row_off=0;
@@ -2557,7 +2557,7 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		y1=(CC.ScreenH-h)/2
 	end
 	local function redraw(flag)
-		if num~=0 then --ÔİÇÒÕâÑù¸Ä
+		if num~=0 then --æš‚ä¸”è¿™æ ·æ”¹
 	        --Cls(x1,y1,x1+w,y1+h);
 			if isBox==1 then
 				lib.SetClip(x1,y1,x1+w,y1+8+24*num);
@@ -2611,7 +2611,7 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		end
 
 	    for i=start,start+num-1 do
-  	        local drawColor=color;           --ÉèÖÃ²»Í¬µÄ»æÖÆÑÕÉ«
+  	        local drawColor=color;           --è®¾ç½®ä¸åŒçš„ç»˜åˆ¶é¢œè‰²
 			local menustr=newMenu[i][1];
 	        if i==current then
 	            drawColor=selectColor;
@@ -2718,7 +2718,7 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 					JY.MenuPic.pic[JY.MenuPic.num]=lib.SaveSur(x1,y1,x1+w,y1+h);
 					JY.MenuPic.x[JY.MenuPic.num]=x1;
 					JY.MenuPic.y[JY.MenuPic.num]=y1;
-					local r=newMenu[sel][2](newMenu[sel][4]);               --µ÷ÓÃ²Ëµ¥º¯Êı
+					local r=newMenu[sel][2](newMenu[sel][4]);               --è°ƒç”¨èœå•å‡½æ•°
 					lib.FreeSur(JY.MenuPic.pic[JY.MenuPic.num]);
 					JY.MenuPic.num=JY.MenuPic.num-1;
 					if r==1 then

@@ -22,7 +22,7 @@ CityMap = {
   my = 0,
   selectForce = false,
   purpose = "view",
-  selectItem = "´úºÅ",
+  selectItem = "ä»£å·",
   selectItemChangeable = true,
   selected = -1,
   hold = -1,
@@ -38,36 +38,36 @@ CityMap = {
   showRoad = true,
 }
 function CityMap:init()
-  --³õÊ¼»¯×ø±ê
+  --åˆå§‹åŒ–åæ ‡
   self.x0, self.y0 = (CC.ScreenW - self.width) / 2, (CC.ScreenH - self.height) / 2;
   self.mx = (CC.ScreenW - 392 + 232)/2;
   self.my = (CC.ScreenH - 352 - 48) / 2;
-  --³õÊ¼»¯°´Å¥
+  --åˆå§‹åŒ–æŒ‰é’®
   self.sheet = {};
-  table.insert(self.sheet, button_creat(10, 1, self.mx + 92, self.y0 - 32, "¶¼ÊĞ", true, true));
-  table.insert(self.sheet, button_creat(10, 2, self.mx, self.y0 - 32, "ÊÆÁ¦", true, true));
+  table.insert(self.sheet, button_creat(10, 1, self.mx + 92, self.y0 - 32, "éƒ½å¸‚", true, true));
+  table.insert(self.sheet, button_creat(10, 2, self.mx, self.y0 - 32, "åŠ¿åŠ›", true, true));
   self.bt = {};
   if self.purpose == "view" then
-    button_mainbt_1(self.bt, "¹Ø±Õ", 41, self.y0 + self.height - 56);
+    button_mainbt_1(self.bt, "å…³é—­", 41, self.y0 + self.height - 56);
   end
-  --¼ÓÔØÊı¾İ
+  --åŠ è½½æ•°æ®
   self.citys = {};
-  --self.selectItem = "´úºÅ";
-  --self.selectItem = "Öİ";
+  --self.selectItem = "ä»£å·";
+  --self.selectItem = "å·";
   local function cityName(i)
     if self.selectForce then
-      if JY.City[i]["ÊÆÁ¦"] > 0 then
-        return JY.Force[JY.City[i]["ÊÆÁ¦"]]["Ãû³Æ"] .. "[5]" .. JY.City[i]["Ãû³Æ"];
+      if JY.City[i]["åŠ¿åŠ›"] > 0 then
+        return JY.Force[JY.City[i]["åŠ¿åŠ›"]]["åç§°"] .. "[5]" .. JY.City[i]["åç§°"];
       else
-        return JY.City[i]["Ãû³Æ"];
+        return JY.City[i]["åç§°"];
       end
     else
-      return JY.City[i]["Ãû³Æ"];
+      return JY.City[i]["åç§°"];
     end
   end
   local function cityBgColor(i)
-    if JY.City[i]["ÊÆÁ¦"] > 0 then
-      return FlagColor[JY.City[i]["ÊÆÁ¦"]];
+    if JY.City[i]["åŠ¿åŠ›"] > 0 then
+      return FlagColor[JY.City[i]["åŠ¿åŠ›"]];
     else
       return 0;
     end
@@ -75,7 +75,7 @@ function CityMap:init()
   for i = 1, JY.CityNum - 1 do
     local sid;
     if self.selectForce then
-      sid = JY.City[i]["ÊÆÁ¦"];
+      sid = JY.City[i]["åŠ¿åŠ›"];
     else
       sid = i;
     end
@@ -83,11 +83,11 @@ function CityMap:init()
       sid = sid,
       name = cityName(i),
       pic = 700 + i,
-      color = FlagColor[JY.City[i]["ÊÆÁ¦"]],
+      color = FlagColor[JY.City[i]["åŠ¿åŠ›"]],
       bgColor = cityBgColor(i),
       enable = self.cityEnable[i],
-      x = self.mx + JY.City[i]["ÖĞµØÍ¼X"],
-      y = self.my + JY.City[i]["ÖĞµØÍ¼Y"],
+      x = self.mx + JY.City[i]["ä¸­åœ°å›¾X"],
+      y = self.my + JY.City[i]["ä¸­åœ°å›¾Y"],
     };
   end
   self.data = {};
@@ -95,8 +95,8 @@ function CityMap:init()
     for i = 1, JY.ForceNum - 1 do
       local force = JY.Force[i];
       self.data[i] = {
-        name = force["Ãû³Æ"],
-        leaderName = JY.Person[force["¾ıÖ÷"]]["Ãû³Æ"],
+        name = force["åç§°"],
+        leaderName = JY.Person[force["å›ä¸»"]]["åç§°"],
         cityNum = 0,
         peopleNum = 0,
         soldierNum = 0,
@@ -106,13 +106,13 @@ function CityMap:init()
     end
     for i = 1, JY.CityNum - 1 do
       local city = JY.City[i];
-      local fid = city["ÊÆÁ¦"];
+      local fid = city["åŠ¿åŠ›"];
       if fid > 0 then
         self.data[fid].cityNum = self.data[fid].cityNum + 1;
-        self.data[fid].peopleNum = self.data[fid].peopleNum + city["ÏÖÒÛ"];
-        self.data[fid].soldierNum = self.data[fid].soldierNum + city["±øÁ¦"];
-        self.data[fid].gold = self.data[fid].gold + city["×Ê½ğ"];
-        self.data[fid].food = self.data[fid].food + city["Îï×Ê"];
+        self.data[fid].peopleNum = self.data[fid].peopleNum + city["ç°å½¹"];
+        self.data[fid].soldierNum = self.data[fid].soldierNum + city["å…µåŠ›"];
+        self.data[fid].gold = self.data[fid].gold + city["èµ„é‡‘"];
+        self.data[fid].food = self.data[fid].food + city["ç‰©èµ„"];
       end
     end
     for i, v in ipairs(self.data) do
@@ -126,17 +126,17 @@ function CityMap:init()
     for i = 1, JY.CityNum - 1 do
       local city = JY.City[i];
       self.data[i] = {
-        name = city["Ãû³Æ"],
-        zhou = JY.Str[city["Öİ"] + 9030],
-        forceName = JY.Force[city["ÊÆÁ¦"]]["Ãû³Æ"],
-        leaderName = JY.Person[city["Ì«ÊØ"]]["Ãû³Æ"],
-        gold = city["×Ê½ğ"] * 10 .. "",
-        food = city["Îï×Ê"] * 10 .. "",
-        peopleNum = city["ÏÖÒÛ"] .. "",
-        soldierNum = city["±øÁ¦"] .. "",
-        def = math.floor(city["·ÀÓù"] / 2) .. "",
-        security = math.floor(city["ÖÎ°²"] / 10) .. "",
-        feature = JY.Str[city["ÌØÕ÷"] + 9010]
+        name = city["åç§°"],
+        zhou = JY.Str[city["å·"] + 9030],
+        forceName = JY.Force[city["åŠ¿åŠ›"]]["åç§°"],
+        leaderName = JY.Person[city["å¤ªå®ˆ"]]["åç§°"],
+        gold = city["èµ„é‡‘"] * 10 .. "",
+        food = city["ç‰©èµ„"] * 10 .. "",
+        peopleNum = city["ç°å½¹"] .. "",
+        soldierNum = city["å…µåŠ›"] .. "",
+        def = math.floor(city["é˜²å¾¡"] / 2) .. "",
+        security = math.floor(city["æ²»å®‰"] / 10) .. "",
+        feature = JY.Str[city["ç‰¹å¾"] + 9010]
       };
     end
   end
@@ -145,50 +145,50 @@ function CityMap:event()
   local event, btid, idx = button_event(self.bt);
   if event == 3 then
     if btid == 11 then
-      if self.selectItemChangeable and self.selectItem ~= "´úºÅ" then
-        self.selectItem = "´úºÅ";
+      if self.selectItemChangeable and self.selectItem ~= "ä»£å·" then
+        self.selectItem = "ä»£å·";
         self:init();
         return 0;
       end
     elseif btid == 12 then
-      if self.selectItemChangeable and self.selectItem ~= "ÊÆÁ¦" then
-        self.selectItem = "ÊÆÁ¦";
+      if self.selectItemChangeable and self.selectItem ~= "åŠ¿åŠ›" then
+        self.selectItem = "åŠ¿åŠ›";
         self:init();
         return 0;
       end
     elseif btid == 13 then
-      if self.selectItemChangeable and self.selectItem ~= "Öİ" then
-        self.selectItem = "Öİ";
+      if self.selectItemChangeable and self.selectItem ~= "å·" then
+        self.selectItem = "å·";
         self:init();
         return 0;
       end
     elseif btid == 14 then
-      if self.selectItemChangeable and self.selectItem ~= "µØ·½" then
-        self.selectItem = "µØ·½";
+      if self.selectItemChangeable and self.selectItem ~= "åœ°æ–¹" then
+        self.selectItem = "åœ°æ–¹";
         self:init();
         return 0;
       end
     elseif btid == 21 then
-      if self.bgItem ~= "´úºÅ" then
-        self.bgItem = "´úºÅ";
+      if self.bgItem ~= "ä»£å·" then
+        self.bgItem = "ä»£å·";
         self:init();
         return 0;
       end
     elseif btid == 22 then
-      if self.bgItem ~= "ÊÆÁ¦" then
-        self.bgItem = "ÊÆÁ¦";
+      if self.bgItem ~= "åŠ¿åŠ›" then
+        self.bgItem = "åŠ¿åŠ›";
         self:init();
         return 0;
       end
     elseif btid == 23 then
-      if self.bgItem ~= "Öİ" then
-        self.bgItem = "Öİ";
+      if self.bgItem ~= "å·" then
+        self.bgItem = "å·";
         self:init();
         return 0;
       end
     elseif btid == 24 then
-      if self.bgItem ~= "µØ·½" then
-        self.bgItem = "µØ·½";
+      if self.bgItem ~= "åœ°æ–¹" then
+        self.bgItem = "åœ°æ–¹";
         self:init();
         return 0;
       end
@@ -207,12 +207,12 @@ function CityMap:event()
   if event == 3 and btid ~= self.curSheet then
     self.curSheet = btid;
     if btid == 1 then
-      self.selectItem = "´úºÅ";
+      self.selectItem = "ä»£å·";
       self.selectForce = false;
       self:init();
       return 0;
     elseif btid == 2 then
-      self.selectItem = "ÊÆÁ¦";
+      self.selectItem = "åŠ¿åŠ›";
       self.selectForce = true;
       self:init();
       return 0;
@@ -285,16 +285,16 @@ function CityMap:event()
   end
 end
 function CityMap:redraw()
-  --ÖØ»æ  392/352 406/366
+  --é‡ç»˜  392/352 406/366
   local x0, y0 = self.x0, self.y0;
   local mx, my = self.mx, self.my;
   local bx, by = mx + 392 + 12, my;
   self.sheet[self.curSheet].on = 2;
   button_redraw(self.sheet);
   LoadPicEnhance(73, x0, y0, self.width, self.height);
-  --[[DrawStringEnhance(bx, by, "[B]Çé±¨ÇĞ»»", C_WHITE, 24);  by = by + 24;
+  --[[DrawStringEnhance(bx, by, "[B]æƒ…æŠ¥åˆ‡æ¢", C_WHITE, 24);  by = by + 24;
   LoadPicEnhance(72, bx - 12, by, 200);    by = by + 84;
-  DrawStringEnhance(bx, by, "[B]±³¾°ÇĞ»»", C_WHITE, 24);  by = by + 24;
+  DrawStringEnhance(bx, by, "[B]èƒŒæ™¯åˆ‡æ¢", C_WHITE, 24);  by = by + 24;
   LoadPicEnhance(72, bx - 12, by, 200);]]--
   button_redraw(self.bt);
   --lib.Background(mx - 2, my - 2, mx + 392 + 2, my + 352 + 2, 64);
@@ -336,7 +336,7 @@ function CityMap:redraw()
     else
       pic = 151;
     end
-		--[[if JY.Base["µ±Ç°³Ç³Ø"]==i then
+		--[[if JY.Base["å½“å‰åŸæ± "]==i then
 			lib.PicLoadCache(4,598*2,x1+1,y1+1);
 		end]]--
     lib.FillColor(x1 - 5, y1 - 5, x1 + 5, y1 + 5, city.color);
@@ -358,13 +358,13 @@ function CityMap:redraw()
   local size = 20;
   --lib.Background(x1, y1, x1 + 240, y1 + 360, 128, C_WHITE);
   if self.selectForce then
-    for i, v in ipairs({"ÊÆÁ¦", "¾ıÖ÷", "¶¼ÊĞ", "ÏÖÒÛ", "±øÁ¦", "×Ê½ğ", "Îï×Ê",}) do
+    for i, v in ipairs({"åŠ¿åŠ›", "å›ä¸»", "éƒ½å¸‚", "ç°å½¹", "å…µåŠ›", "èµ„é‡‘", "ç‰©èµ„",}) do
       lib.PicLoadCache(4, 208 * 2, x1, y1, 1);
       DrawStringEnhance(x1 + 50, y1 + 3, v, C_Name, size, 0.5);
       y1 = y1 + 28;
     end
   else
-    for i, v in ipairs({"¶¼ÊĞ", "Öİ", "ÊÆÁ¦", "Ì«ÊØ", "×Ê½ğ", "Îï×Ê", "ÏÖÒÛ", "±øÁ¦", "·ÀÓù", "ÖÎ°²", "ÌØÕ÷",}) do
+    for i, v in ipairs({"éƒ½å¸‚", "å·", "åŠ¿åŠ›", "å¤ªå®ˆ", "èµ„é‡‘", "ç‰©èµ„", "ç°å½¹", "å…µåŠ›", "é˜²å¾¡", "æ²»å®‰", "ç‰¹å¾",}) do
       lib.PicLoadCache(4, 208 * 2, x1, y1, 1);
       DrawStringEnhance(x1 + 50, y1 + 3, v, C_Name, size, 0.5);
       y1 = y1 + 28;
@@ -384,7 +384,7 @@ function CityMap:redraw()
       DrawStringEnhance(x1, y1, v.food, C_WHITE, size);  y1 = y1 + 28;
     else
       DrawStringEnhance(x1, y1, v.name, C_WHITE, size);  y1 = y1 + 28;
-      DrawStringEnhance(x1, y1, v.zhou, C_WHITE, size);  y1 = y1 + 28;  --JY.Str[city["µØ·½"] + 9050] .. "[5]" .. 
+      DrawStringEnhance(x1, y1, v.zhou, C_WHITE, size);  y1 = y1 + 28;  --JY.Str[city["åœ°æ–¹"] + 9050] .. "[5]" .. 
       DrawStringEnhance(x1, y1, v.forceName, C_WHITE, size);  y1 = y1 + 28;
       DrawStringEnhance(x1, y1, v.leaderName, C_WHITE, size);  y1 = y1 + 28;
       DrawStringEnhance(x1, y1, v.gold, C_WHITE, size);  y1 = y1 + 28;
@@ -420,7 +420,7 @@ function CityMap:show()
       break;
     elseif event == 1 and id > 0 then
       self.selected = -1;
-      if self.selectItem == "Öİ" or self.selectItem == "µØ·½" then
+      if self.selectItem == "å·" or self.selectItem == "åœ°æ–¹" then
         local plist = {};
         for i = 1, JY.CityNum - 1 do
           if JY.City[i][self.selectItem] == id then
@@ -428,11 +428,11 @@ function CityMap:show()
           end
         end
         ShowCityList(plist, 0);
-      elseif self.selectItem == "ÊÆÁ¦" then
+      elseif self.selectItem == "åŠ¿åŠ›" then
         local forceList = {};
         local index = 1;
         for i = 1, JY.ForceNum - 1 do
-          if JY.Force[i]["×´Ì¬"] > 0 then
+          if JY.Force[i]["çŠ¶æ€"] > 0 then
             table.insert(forceList, i);
             if i == id then
               index = #forceList;
@@ -461,7 +461,7 @@ function CityMap:showForceMap()
   self.selectForce = true;
   self.cityEnable = {};
   for i = 1, JY.CityNum - 1 do
-    self.cityEnable[i] = JY.City[i]["ÊÆÁ¦"] > 0;
+    self.cityEnable[i] = JY.City[i]["åŠ¿åŠ›"] > 0;
   end
   self:init();
   while true do
@@ -479,7 +479,7 @@ function CityMap:showForceMap()
       break;
     elseif event == 1 and id > 0 then
       self.selected = -1;
-      if self.selectItem == "Öİ" or self.selectItem == "µØ·½" then
+      if self.selectItem == "å·" or self.selectItem == "åœ°æ–¹" then
         local plist = {};
         for i = 1, JY.CityNum - 1 do
           if JY.City[i][self.selectItem] == id then
@@ -487,11 +487,11 @@ function CityMap:showForceMap()
           end
         end
         ShowCityList(plist, 0);
-      elseif self.selectItem == "ÊÆÁ¦" then
+      elseif self.selectItem == "åŠ¿åŠ›" then
         local forceList = {};
         local index = 1;
         for i = 1, JY.ForceNum - 1 do
-          if JY.Force[i]["×´Ì¬"] > 0 then
+          if JY.Force[i]["çŠ¶æ€"] > 0 then
             table.insert(forceList, i);
             if i == id then
               index = #forceList;
@@ -503,7 +503,7 @@ function CityMap:showForceMap()
         local cityList = {};
         local index = 1;
         for i = 1, JY.CityNum - 1 do
-          if (self.bgItem == "´úºÅ") or (self.bgItem == "Öİ" and JY.City[i]["Öİ"] == JY.City[id]["Öİ"]) or (self.bgItem == "µØ·½" and JY.City[i]["µØ·½"] == JY.City[id]["µØ·½"]) or (self.bgItem == "ÊÆÁ¦" and JY.City[i]["ÊÆÁ¦"] == JY.City[id]["ÊÆÁ¦"]) then
+          if (self.bgItem == "ä»£å·") or (self.bgItem == "å·" and JY.City[i]["å·"] == JY.City[id]["å·"]) or (self.bgItem == "åœ°æ–¹" and JY.City[i]["åœ°æ–¹"] == JY.City[id]["åœ°æ–¹"]) or (self.bgItem == "åŠ¿åŠ›" and JY.City[i]["åŠ¿åŠ›"] == JY.City[id]["åŠ¿åŠ›"]) then
             table.insert(cityList, i);
             if i == id then
               index = #cityList;
@@ -516,7 +516,7 @@ function CityMap:showForceMap()
   end
 end
 function CityMap:selectNearbyCity()
-  local cid = JY.Person[JY.PID]["ËùÔÚ"];
+  local cid = JY.Person[JY.PID]["æ‰€åœ¨"];
   self.selectForce = false;
   self.cityEnable = {};
   for i, v in pairs(JY.CityToCity[cid]) do
@@ -617,8 +617,8 @@ function DrawStringEnhanceInit(str,color,size,xadj,yadj,widthlim)
 		width=width+nwidth;
 	end
 	while #str>0 do
-		local tv=string.sub(str,1,1);	--Tryµ¥×Ö·û
-		if tv=="[" then	--¿ØÖÆ×Ö·û
+		local tv=string.sub(str,1,1);	--Tryå•å­—ç¬¦
+		if tv=="[" then	--æ§åˆ¶å­—ç¬¦
 			local idx=string.find(str,"]",2);
 			if idx>1 then
 				local cv=string.sub(str,2,idx-1);
@@ -629,7 +629,7 @@ function DrawStringEnhanceInit(str,color,size,xadj,yadj,widthlim)
 					col=1;
 					width=0;
 					dt[row]={};
-				elseif cv=="white" or cv=="w" then	--¿ØÖÆÎÄ×ÖÑÕÉ«
+				elseif cv=="white" or cv=="w" then	--æ§åˆ¶æ–‡å­—é¢œè‰²
 					oldcolor=tcolor;
 					tcolor=M_White;
 				elseif cv=="black" or cv=="b" then
@@ -655,7 +655,7 @@ function DrawStringEnhanceInit(str,color,size,xadj,yadj,widthlim)
 					tcolor=C_Name;
 				elseif cv=="normal" then
 					tcolor=oldcolor;
-				elseif cv=="White" or cv=="W"then	--¿ØÖÆÎÄ×Ö±³¾°ÑÕÉ«
+				elseif cv=="White" or cv=="W"then	--æ§åˆ¶æ–‡å­—èƒŒæ™¯é¢œè‰²
 					oldbg=bgcolor;
 					bgcolor=M_White;
 				elseif cv=="Black" or cv=="B" then
@@ -694,23 +694,23 @@ function DrawStringEnhanceInit(str,color,size,xadj,yadj,widthlim)
 				if cn~=nil then
 					add(cn);
 				end
-			else	--Òì³££¬ÍË³ö
+			else	--å¼‚å¸¸ï¼Œé€€å‡º
 				return;
 			end
 		else
 			local v="";
 			local nwidth;
-			if string.byte(tv)<128 then	--Ó¢ÎÄÒÔ¼°Êı×Ö
+			if string.byte(tv)<128 then	--è‹±æ–‡ä»¥åŠæ•°å­—
 				v=tv;
 				str=string.sub(str,2,-1);
-			else	--ºº×Ö
-				v=string.sub(str,1,2);
-				str=string.sub(str,3,-1);
+			else	--æ±‰å­—
+				v=string.sub(str,1,3);
+				str=string.sub(str,4,-1);
 			end
 			add(CC.Font[v] or 0);
 		end
 	end
-	--Õë¶Ô×îºóÒ»ĞĞ
+	--é’ˆå¯¹æœ€åä¸€è¡Œ
 	twidth[row]=width;
 	local maxheight;
 	if row==1 then
@@ -736,8 +736,8 @@ function DrawStringEnhance(x,y,str,color,size,xadj,yadj,widthlim,alpha)
 	DrawStringEnhanceSub(x,y,dt,size,alpha);
 end
 function DrawNumPic(x,y,num1,num2,color)
-	--Ö»ÓĞÒ»¸öÊı×ÖÊ±£¬xÎª/µÄ¾ÓÖĞµã,y»¹ÊÇ¶¥¶Ë
-	--ÓĞÁ½¸öÊı×ÖÊ±£¬ÏÔÊ¾ xxx/yyyµÄ¸ñÊ½£¬xÎª/µÄ¾ÓÖĞµã,y»¹ÊÇ¶¥¶Ë
+	--åªæœ‰ä¸€ä¸ªæ•°å­—æ—¶ï¼Œxä¸º/çš„å±…ä¸­ç‚¹,yè¿˜æ˜¯é¡¶ç«¯
+	--æœ‰ä¸¤ä¸ªæ•°å­—æ—¶ï¼Œæ˜¾ç¤º xxx/yyyçš„æ ¼å¼ï¼Œxä¸º/çš„å±…ä¸­ç‚¹,yè¿˜æ˜¯é¡¶ç«¯
 	color=color or 'yellow';
 	local width=8;
 	local cx=x;
@@ -798,8 +798,8 @@ function DrawNumPic(x,y,num1,num2,color)
 	end
 end
 function DrawNumPicBig(x,y,num1,num2,color)
-	--Ö»ÓĞÒ»¸öÊı×ÖÊ±£¬xÎª/µÄ¾ÓÖĞµã,y»¹ÊÇ¶¥¶Ë
-	--ÓĞÁ½¸öÊı×ÖÊ±£¬ÏÔÊ¾ xxx/yyyµÄ¸ñÊ½£¬xÎª/µÄ¾ÓÖĞµã,y»¹ÊÇ¶¥¶Ë
+	--åªæœ‰ä¸€ä¸ªæ•°å­—æ—¶ï¼Œxä¸º/çš„å±…ä¸­ç‚¹,yè¿˜æ˜¯é¡¶ç«¯
+	--æœ‰ä¸¤ä¸ªæ•°å­—æ—¶ï¼Œæ˜¾ç¤º xxx/yyyçš„æ ¼å¼ï¼Œxä¸º/çš„å±…ä¸­ç‚¹,yè¿˜æ˜¯é¡¶ç«¯
 	color=color or 'yellow';
 	local width=13;
 	local cx=x;
@@ -900,23 +900,23 @@ function LoadPicEnhance(picid,x,y,w,h,flag)
 	end
 end
 function DrawPJ(lv,cx,cy,color,size)
-	DrawStringEnhance(cx,cy,"Æ·¼¶",color,size);
+	DrawStringEnhance(cx,cy,"å“çº§",color,size);
 	local pj_str;
 	local pj_color=color;
 	if lv==1 then
-		pj_str="£Ã";
+		pj_str="ï¼£";
 		pj_color=C_WHITE;
 	elseif lv==2 then
-		pj_str="£Â";
+		pj_str="ï¼¢";
 		pj_color=C_WHITE;
 	elseif lv==3 then
-		pj_str="£Á";
+		pj_str="ï¼¡";
 		pj_color=M_Yellow;
 	elseif lv==4 then
-		pj_str="£Ó";
+		pj_str="ï¼³";
 		pj_color=C_ORANGE;
 	else
-		pj_str="£Ä";
+		pj_str="ï¼¤";
 		pj_color=M_Gray;
 	end
 	DrawStringEnhance(cx+size*2.5+1,cy-1,pj_str,M_Gray,size);
@@ -930,14 +930,14 @@ function DrawPersonStatusMini_Sub(pid,x,y)
 	local cx=x or (CC.ScreenW-pw);
 	local cy=y or ((CC.ScreenH-ph)/2);
 	LoadPicEnhance(73,cx,cy,pw,ph);
-	lib.PicLoadCache(2,(p["ÈİÃ²"]+2000)*2,cx+pw/2-48,cy+4,1);
+	lib.PicLoadCache(2,(p["å®¹è²Œ"]+2000)*2,cx+pw/2-48,cy+4,1);
 	cx=cx+40;
 	cy=cy+132;
-	DrawStringEnhance(cx,cy,p["Ãû³Æ"].." "..p["×Ö"],C_WHITE,size);
+	DrawStringEnhance(cx,cy,p["åç§°"].." "..p["å­—"],C_WHITE,size);
 	cy=cy+size+2;
-	DrawPJ(p["Æ·¼¶"],cx,cy,C_Name,size);
+	DrawPJ(p["å“çº§"],cx,cy,C_Name,size);
 	cy=cy+size+2;
-	for i,v in pairs({"Í³ÂÊ","ÎäÁ¦","ÖÇÄ±","ÕşÎñ","÷ÈÁ¦"}) do
+	for i,v in pairs({"ç»Ÿç‡","æ­¦åŠ›","æ™ºè°‹","æ”¿åŠ¡","é­…åŠ›"}) do
 		DrawStringEnhance(cx,cy,v,C_Name,size);
 		local pic=213;
 		if p[v]>=70 then
@@ -968,14 +968,14 @@ end
 function GetAllForceList()
   local plist = {};
   for i = 1, JY.ForceNum - 1 do
-    if JY.Force[i]["×´Ì¬"] > 0 then
+    if JY.Force[i]["çŠ¶æ€"] > 0 then
       table.insert(plist, i);
     end
   end
   return plist;
 end
 function GetForceWujiang(fid, disablelist)
-  local order = "Éí·İ";
+  local order = "èº«ä»½";
 	disablelist = disablelist or {}
 	local function inlist(pid)
 		for i, v in pairs(disablelist) do
@@ -987,7 +987,7 @@ function GetForceWujiang(fid, disablelist)
 	end
 	local plist = {};
 	for pid = 0, 750 do
-		if JY.Person[pid]["ÊÆÁ¦"] == fid and JY.Person[pid]["µÇ³¡"]==3 and JY.Person[pid]["Éí·İ"]>0 and (not inlist(pid)) then
+		if JY.Person[pid]["åŠ¿åŠ›"] == fid and JY.Person[pid]["ç™»åœº"]==3 and JY.Person[pid]["èº«ä»½"]>0 and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
@@ -1001,7 +1001,7 @@ end
 function GetForceCityList(fid)
 	local plist={};
 	for i=1,JY.CityNum-1 do
-		if JY.City[i]["ÊÆÁ¦"]==fid then
+		if JY.City[i]["åŠ¿åŠ›"]==fid then
 			table.insert(plist,i);
 		end
 	end
@@ -1010,28 +1010,28 @@ end
 function GetMoveCity(cid)
 	local plist={};
 	for i=1,JY.ConnectionNum-1 do
-		if JY.Connection[i]["¶¼ÊĞ1"]==cid then
-			local cid2=JY.Connection[i]["¶¼ÊĞ2"];
-			table.insert(plist,JY.Connection[i]["¶¼ÊĞ2"]);
+		if JY.Connection[i]["éƒ½å¸‚1"]==cid then
+			local cid2=JY.Connection[i]["éƒ½å¸‚2"];
+			table.insert(plist,JY.Connection[i]["éƒ½å¸‚2"]);
 		end
 	end
 	return plist;
 end
 function GetAtkCity(cid)
 	local plist={};
-	local fid=JY.City[cid]["ÊÆÁ¦"];
+	local fid=JY.City[cid]["åŠ¿åŠ›"];
 	for i=1,JY.ConnectionNum-1 do
-		if JY.Connection[i]["¶¼ÊĞ1"]==cid then
-			local cid2=JY.Connection[i]["¶¼ÊĞ2"];
-			if JY.City[cid2]["ÊÆÁ¦"]~=fid then
-				table.insert(plist,JY.Connection[i]["¶¼ÊĞ2"]);
+		if JY.Connection[i]["éƒ½å¸‚1"]==cid then
+			local cid2=JY.Connection[i]["éƒ½å¸‚2"];
+			if JY.City[cid2]["åŠ¿åŠ›"]~=fid then
+				table.insert(plist,JY.Connection[i]["éƒ½å¸‚2"]);
 			end
 		end
 	end
 	return plist;
 end
 function GetCityWujiang(cid,disablelist)
-	local order="Éí·İ";
+	local order="èº«ä»½";
 	disablelist=disablelist or {}
 	local function inlist(pid)
 		for i,v in pairs(disablelist) do
@@ -1044,7 +1044,7 @@ function GetCityWujiang(cid,disablelist)
 	local plist={};
 	local fid=JY.FID;
 	for pid=0,750 do
-		if JY.Person[pid]["ËùÔÚ"]==cid and between(JY.Person[pid]["µÇ³¡"],2,3) and (not inlist(pid)) then
+		if JY.Person[pid]["æ‰€åœ¨"]==cid and between(JY.Person[pid]["ç™»åœº"],2,3) and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
@@ -1056,7 +1056,7 @@ function GetCityWujiang(cid,disablelist)
 	return plist;
 end
 function GetCityXianyi(cid,disablelist)
-	local order="Éí·İ";
+	local order="èº«ä»½";
 	disablelist=disablelist or {}
 	local function inlist(pid)
 		for i,v in pairs(disablelist) do
@@ -1069,7 +1069,7 @@ function GetCityXianyi(cid,disablelist)
 	local plist={};
 	local fid=JY.FID;
 	for pid=0,750 do
-		if JY.Person[pid]["ËùÔÚ"]==cid and JY.Person[pid]["µÇ³¡"]==3 and JY.Person[pid]["Éí·İ"]>0 and (not inlist(pid)) then
+		if JY.Person[pid]["æ‰€åœ¨"]==cid and JY.Person[pid]["ç™»åœº"]==3 and JY.Person[pid]["èº«ä»½"]>0 and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
@@ -1093,14 +1093,14 @@ function GetCityZaiye(cid,disablelist)
 	local plist={};
 	local fid=JY.FID;
 	for pid=0,750 do
-		if JY.Person[pid]["ËùÔÚ"]==cid and JY.Person[pid]["µÇ³¡"]==2 and JY.Person[pid]["Éí·İ"]==0 and (not inlist(pid)) then
+		if JY.Person[pid]["æ‰€åœ¨"]==cid and JY.Person[pid]["ç™»åœº"]==2 and JY.Person[pid]["èº«ä»½"]==0 and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
 	return plist;
 end
 function GetMyList(order,disablelist)
-	order=order or "ÃûÉù";
+	order=order or "åå£°";
 	disablelist=disablelist or {}
 	local function inlist(pid)
 		for i,v in pairs(disablelist) do
@@ -1113,7 +1113,7 @@ function GetMyList(order,disablelist)
 	local plist={};
 	local fid=JY.FID;
 	for pid=0,750 do
-		if fid>0 and JY.Person[pid]["ÊÆÁ¦"]==fid and (not inlist(pid)) and pid~=JY.Force[fid]["¾ıÖ÷"] then
+		if fid>0 and JY.Person[pid]["åŠ¿åŠ›"]==fid and (not inlist(pid)) and pid~=JY.Force[fid]["å›ä¸»"] then
 			table.insert(plist,pid);
 		end
 	end
@@ -1122,8 +1122,8 @@ function GetMyList(order,disablelist)
 							return true;
 						end
 					end)
-	if not inlist(JY.Force[fid]["¾ıÖ÷"]) then
-		table.insert(plist,1,JY.Force[fid]["¾ıÖ÷"]);
+	if not inlist(JY.Force[fid]["å›ä¸»"]) then
+		table.insert(plist,1,JY.Force[fid]["å›ä¸»"]);
 	end
 	return plist;
 end
@@ -1142,7 +1142,7 @@ function GetZaiyeList(...)
 	end
 	local plist={};
 	for pid=0,750 do
-		if JY.Person[pid]["ÊÆÁ¦"]==0 and JY.Person[pid]["µÇ³¡"]==2 and (not inlist(pid)) then
+		if JY.Person[pid]["åŠ¿åŠ›"]==0 and JY.Person[pid]["ç™»åœº"]==2 and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
@@ -1163,7 +1163,7 @@ function GetAllList(...)
 	end
 	local plist={};
 	for pid=1,750 do
-		if between(JY.Person[pid]["µÇ³¡"],0,4) and (not inlist(pid)) then
+		if between(JY.Person[pid]["ç™»åœº"],0,4) and (not inlist(pid)) then
 			table.insert(plist,pid);
 		end
 	end
@@ -1171,7 +1171,7 @@ function GetAllList(...)
 end
 function GetWarList()
 	local plist={};
-	plist.label={"ÎÒ¾ü","ÓÑ¾ü","µĞ¾ü"}
+	plist.label={"æˆ‘å†›","å‹å†›","æ•Œå†›"}
 	plist[1]={};plist[2]={};plist[3]={};
 	for i,v in pairs(War.Person) do
 		if v.enemy then
@@ -1192,7 +1192,7 @@ function creatNumPad(x,y,v,minv,maxv)
 	table.insert(np.bt,button_creat(0,7,x0,y0+height,"7",true,true));
 	table.insert(np.bt,button_creat(0,8,x0+width,y0+height,"8",true,true));
 	table.insert(np.bt,button_creat(0,9,x0+width*2,y0+height,"9",true,true));
-	table.insert(np.bt,button_creat(0,11,x0+width*3,y0+height,"¡ûBS",true,true));
+	table.insert(np.bt,button_creat(0,11,x0+width*3,y0+height,"â†BS",true,true));
 	table.insert(np.bt,button_creat(0,4,x0,y0+height*2,"4",true,true));
 	table.insert(np.bt,button_creat(0,5,x0+width,y0+height*2,"5",true,true));
 	table.insert(np.bt,button_creat(0,6,x0+width*2,y0+height*2,"6",true,true));
@@ -1203,7 +1203,7 @@ function creatNumPad(x,y,v,minv,maxv)
 	table.insert(np.bt,button_creat(0,12,x0+width*3,y0+height*3,"Min",true,true));
 	table.insert(np.bt,button_creat(0,0,x0,y0+height*4,"0",true,true));
 	table.insert(np.bt,button_creat(0,10,x0+width,y0+height*4,"00",true,true));
-	table.insert(np.bt,button_creat(1,14,x0+width*2+3,y0+height*4,"¾ö¶¨",true,true));
+	table.insert(np.bt,button_creat(1,14,x0+width*2+3,y0+height*4,"å†³å®š",true,true));
 	return np;
 end
 function drawNumPad(np)
@@ -1246,8 +1246,8 @@ function creatScrollBar(x,y,height,minv,maxv,shownum)
 	local sb={	x1=x-2,x2=x+3,y1=y,y2=y+height+1,
 				bx1=x-8,bx2=x+9,
 				show=true,on=false,hold=false,	}
-	--maxv-minvÔ½´ó hÔ½Ğ¡
-	--shownumÔ½´ó hÔ½´ó
+	--maxv-minvè¶Šå¤§ hè¶Šå°
+	--shownumè¶Šå¤§ hè¶Šå¤§
 	local h=height*shownum/(maxv-minv);
 	h=limitX(h,36,h*4/5);
 	h=math.floor(h/2)*2;
@@ -1321,7 +1321,7 @@ function creatSingleList(x,y,width,height,indexlist,strlist,title)
 				index=indexlist,str=strlist,maxn=#indexlist,
 				top=1,on=0,hold=0,select=1,val=indexlist[1],
 				title="[B]"..title,tx=x+width/2,ty=y+18,	}
-	--¼ÆËãÊµ¼Ê¿ÉÒÔÏÔÊ¾µÄlistÊıÁ¿	Ò»ĞĞ31ÏñËØ
+	--è®¡ç®—å®é™…å¯ä»¥æ˜¾ç¤ºçš„listæ•°é‡	ä¸€è¡Œ31åƒç´ 
 	sl.pixel_row=31;
 	local num=math.floor(height/sl.pixel_row);
 	sl.shownum=num;
@@ -1391,7 +1391,7 @@ function creatMultiList(x,y,width,height,indexlist,sortlist,strlist,title,offset
 				index=indexlist,sort=sortlist,sortkey=0,str=strlist,maxn=#indexlist,
 				top=1,on=0,hold=0,select=0,val=indexlist[1],multi=1,selnum=0,sellist={},
 				title=title,offset=offset,ty=y+14,	}
-	--¼ÆËãÊµ¼Ê¿ÉÒÔÏÔÊ¾µÄlistÊıÁ¿	Ò»ĞĞ31ÏñËØ
+	--è®¡ç®—å®é™…å¯ä»¥æ˜¾ç¤ºçš„listæ•°é‡	ä¸€è¡Œ31åƒç´ 
 	ml.pixel_row=31;
 	local num=math.floor(height/ml.pixel_row);
 	ml.shownum=num;
@@ -1535,15 +1535,15 @@ function ShowCityList(plist,flag)
 	local cid,sid=0,0;
 	--init
 	for i=1,JY.CityNum-1 do
-		JY.City[i]["±ê¼Ç"]=0;
+		JY.City[i]["æ ‡è®°"]=0;
 	end
 	for i,v in ipairs(plist) do
-		JY.City[v]["±ê¼Ç"]=1;
+		JY.City[v]["æ ‡è®°"]=1;
 	end
 	if kind==0 then
 	
 	else
-		title = {       "¶¼ÊĞ", "ÖİÓò",  "ÊÆÁ¦", "Ì«ÊØ","ÏÖÒÛ","±øÁ¦","×Ê½ğ","Îï×Ê","¿ª·¢","ÉÌÒµ","¼¼Êõ","·ÀÓù","ÖÎ°²"};
+		title = {       "éƒ½å¸‚", "å·åŸŸ",  "åŠ¿åŠ›", "å¤ªå®ˆ","ç°å½¹","å…µåŠ›","èµ„é‡‘","ç‰©èµ„","å¼€å‘","å•†ä¸š","æŠ€æœ¯","é˜²å¾¡","æ²»å®‰"};
     local widths = {50,     50,    80,     80,    50,    80,    80,     80,    50,    50,    50,    50,   50};
     offset[1] = 0;
     for i = 2, #widths do
@@ -1551,28 +1551,28 @@ function ShowCityList(plist,flag)
     end
 		--offset={0,   50,  100,   150,    320,  390,    460,   520,   590,   650,   700,  750,    800}
 		for i,v in ipairs(plist) do
-			sortlist[v]={v,JY.City[v]["Öİ"],JY.City[v]["ÊÆÁ¦"],JY.City[v]["Ì«ÊØ"],JY.City[v]["ÏÖÒÛ"],JY.City[v]["±øÁ¦"],JY.City[v]["×Ê½ğ"],JY.City[v]["Îï×Ê"],JY.City[v]["¿ª¿Ñ"],JY.City[v]["ÉÌÒµ"],JY.City[v]["¼¼Êõ"],JY.City[v]["·ÀÓù"],JY.City[v]["ÖÎ°²"]};
+			sortlist[v]={v,JY.City[v]["å·"],JY.City[v]["åŠ¿åŠ›"],JY.City[v]["å¤ªå®ˆ"],JY.City[v]["ç°å½¹"],JY.City[v]["å…µåŠ›"],JY.City[v]["èµ„é‡‘"],JY.City[v]["ç‰©èµ„"],JY.City[v]["å¼€å¦"],JY.City[v]["å•†ä¸š"],JY.City[v]["æŠ€æœ¯"],JY.City[v]["é˜²å¾¡"],JY.City[v]["æ²»å®‰"]};
 			strlist[v]={"--","--","--","--","--","--","--","--","--","--","--","--","--",};
-			strlist[v][1]=JY.City[v]["Ãû³Æ"];
-			local id=JY.City[v]["Öİ"];
+			strlist[v][1]=JY.City[v]["åç§°"];
+			local id=JY.City[v]["å·"];
 			strlist[v][2]=JY.Str[9030+id];
-			id=JY.City[v]["ÊÆÁ¦"];
+			id=JY.City[v]["åŠ¿åŠ›"];
 			if id>0 then
-				strlist[v][3]=JY.Force[id]["Ãû³Æ"];
+				strlist[v][3]=JY.Force[id]["åç§°"];
 			end
-			id=JY.City[v]["Ì«ÊØ"];
+			id=JY.City[v]["å¤ªå®ˆ"];
 			if id>0 then
-				strlist[v][4]=JY.Person[id]["Ãû³Æ"];
+				strlist[v][4]=JY.Person[id]["åç§°"];
 			end
-			strlist[v][5] = JY.City[v]["ÏÖÒÛ"].."";
-			strlist[v][6] = JY.City[v]["±øÁ¦"].."";
-			strlist[v][7] = (JY.City[v]["×Ê½ğ"] * 10).."";
-			strlist[v][8] = (JY.City[v]["Îï×Ê"] * 10).."";
-			strlist[v][9] = math.floor(JY.City[v]["¿ª¿Ñ"] / 2).."";
-			strlist[v][10] = math.floor(JY.City[v]["ÉÌÒµ"] / 2).."";
-			strlist[v][11] = math.floor(JY.City[v]["¼¼Êõ"] / 2).."";
-			strlist[v][12] = math.floor(JY.City[v]["·ÀÓù"] / 2).."";
-			strlist[v][13] = math.floor(JY.City[v]["ÖÎ°²"] / 10).."";
+			strlist[v][5] = JY.City[v]["ç°å½¹"].."";
+			strlist[v][6] = JY.City[v]["å…µåŠ›"].."";
+			strlist[v][7] = (JY.City[v]["èµ„é‡‘"] * 10).."";
+			strlist[v][8] = (JY.City[v]["ç‰©èµ„"] * 10).."";
+			strlist[v][9] = math.floor(JY.City[v]["å¼€å¦"] / 2).."";
+			strlist[v][10] = math.floor(JY.City[v]["å•†ä¸š"] / 2).."";
+			strlist[v][11] = math.floor(JY.City[v]["æŠ€æœ¯"] / 2).."";
+			strlist[v][12] = math.floor(JY.City[v]["é˜²å¾¡"] / 2).."";
+			strlist[v][13] = math.floor(JY.City[v]["æ²»å®‰"] / 10).."";
 		end
 	end
 	local width=960;
@@ -1581,11 +1581,11 @@ function ShowCityList(plist,flag)
 	local y0=(CC.ScreenH-height)/2;
 	local bt={};
 	if flag==0 then
-		button_mainbt_1(bt,"·µ»Ø",2)
+		button_mainbt_1(bt,"è¿”å›",2)
 	elseif flag==1 then
-		button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2);
 	elseif flag==2 then
-		button_mainbt_1(bt,"¾ö¶¨",1)
+		button_mainbt_1(bt,"å†³å®š",1)
 	end
 	local ml=creatMultiList(x0+48,y0+16,840,height-64,plist,sortlist,strlist,title,offset)
 	local function redraw()
@@ -1682,12 +1682,12 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 							{
 								x1=96,y1=dy,
 								x2=864,y2=dy+31,
-								str1=p["Ãû³Æ"],str2=string.format("Lv%02d",p["µÈ¼¶"]),str3="",
+								str1=p["åç§°"],str2=string.format("Lv%02d",p["ç­‰çº§"]),str3="",
 								par1_1=0,par1_2=0,
 								par2_1=0,par2_2=0,
-								par11=p["ÎäÁ¦"],par12=p["ÖÇÄ±"],par13=p["Í³ÂÊ"],par14=p["ÕşÎñ"],par15=p["÷ÈÁ¦"],
+								par11=p["æ­¦åŠ›"],par12=p["æ™ºè°‹"],par13=p["ç»Ÿç‡"],par14=p["æ”¿åŠ¡"],par15=p["é­…åŠ›"],
 								c3="yellow",c4="yellow",c5="yellow",c6="yellow",c7="yellow",
-								headid=p["ÈİÃ²"]+2000,
+								headid=p["å®¹è²Œ"]+2000,
 								id=t_person[i].pid,
 								t_person_index=i;
 								select=t_person[i].select,
@@ -1707,7 +1707,7 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 		LoadPicEnhance(74,72,64,816);
 		local par_x={	32,		108,	172,	252,	332,	400,	460,	520,	580,	640,}
 		local att_name={};
-		att_name={"ĞÕÃû",	"ÓÑºÃ",	"Éí·İ",	"¹Ù¾ô",	"²ßÂÔ",	"ÎäÁ¦",	"ÖÇÄ±",	"Í³ÂÊ",	"ÕşÎñ",	"÷ÈÁ¦"}
+		att_name={"å§“å",	"å‹å¥½",	"èº«ä»½",	"å®˜çˆµ",	"ç­–ç•¥",	"æ­¦åŠ›",	"æ™ºè°‹",	"ç»Ÿç‡",	"æ”¿åŠ¡",	"é­…åŠ›"}
 		for i,v in pairs(att_name) do
 			DrawStringEnhance(96+par_x[i]-#v*size/4,68,v,C_BLACK,size);
 		end
@@ -1770,7 +1770,7 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 				DrawStringEnhance(v.x1+v.txtdx-#v.str*size/4,v.y1+6,v.str,C_WHITE,size);
 			end
 		end
-		--¹ö¶¯Ìõ
+		--æ»šåŠ¨æ¡
 		drawScrollBar(sb);
 	end
 	
@@ -1877,7 +1877,7 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 	local y0=math.floor((CC.ScreenH-height)/2);
 	local sortlist={};
 	local strlist={};
-	local title=	{"ĞÕÃû","ºÃ¸Ğ","ÊÆÁ¦","ËùÔÚ","Éí·İ",	"Í³","Îä","ÖÇ","Õş","÷È",	"¹Ù¾ô","Ö¸»Ó","²½","¹­","Æï"};
+	local title=	{"å§“å","å¥½æ„Ÿ","åŠ¿åŠ›","æ‰€åœ¨","èº«ä»½",	"ç»Ÿ","æ­¦","æ™º","æ”¿","é­…",	"å®˜çˆµ","æŒ‡æŒ¥","æ­¥","å¼“","éª‘"};
 	local size=		{80,64,80,64,64,						32,32,32,32,32,				80,64,32,32,32};
 	local offset={0};
 	for i=2,#size do
@@ -1885,10 +1885,10 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 	end
 	for i,v in ipairs(plist) do
 		local p=JY.Person[v];
-		sortlist[v]={v,p["ºÃ¸Ğ"],100-p["ÊÆÁ¦"],100-p["ËùÔÚ"],p["Éí·İ"],p["Í³ÂÊ"],p["ÎäÁ¦"],p["ÖÇÄ±"],p["ÕşÎñ"],p["÷ÈÁ¦"],JY.Title[p["¹Ù¾ô"]]["Rank"],GetMaxBingli(v),p["²½±øÊÊĞÔ"],p["¹­±øÊÊĞÔ"],p["Æï±øÊÊĞÔ"]};
-		strlist[v]={p["Ãû³Æ"],""..p["ºÃ¸Ğ"],JY.Force[p["ÊÆÁ¦"]]["Ãû³Æ"],JY.City[p["ËùÔÚ"]]["Ãû³Æ"],JY.Str[9170+p["Éí·İ"]],
-					""..p["Í³ÂÊ"],""..p["ÎäÁ¦"],""..p["ÖÇÄ±"],""..p["ÕşÎñ"],""..p["÷ÈÁ¦"],
-					JY.Title[p["¹Ù¾ô"]]["Ãû³Æ"],""..GetMaxBingli(v),JY.Str[9160+p["²½±øÊÊĞÔ"]],JY.Str[9160+p["¹­±øÊÊĞÔ"]],JY.Str[9160+p["Æï±øÊÊĞÔ"]],};
+		sortlist[v]={v,p["å¥½æ„Ÿ"],100-p["åŠ¿åŠ›"],100-p["æ‰€åœ¨"],p["èº«ä»½"],p["ç»Ÿç‡"],p["æ­¦åŠ›"],p["æ™ºè°‹"],p["æ”¿åŠ¡"],p["é­…åŠ›"],JY.Title[p["å®˜çˆµ"]]["Rank"],GetMaxBingli(v),p["æ­¥å…µé€‚æ€§"],p["å¼“å…µé€‚æ€§"],p["éª‘å…µé€‚æ€§"]};
+		strlist[v]={p["åç§°"],""..p["å¥½æ„Ÿ"],JY.Force[p["åŠ¿åŠ›"]]["åç§°"],JY.City[p["æ‰€åœ¨"]]["åç§°"],JY.Str[9170+p["èº«ä»½"]],
+					""..p["ç»Ÿç‡"],""..p["æ­¦åŠ›"],""..p["æ™ºè°‹"],""..p["æ”¿åŠ¡"],""..p["é­…åŠ›"],
+					JY.Title[p["å®˜çˆµ"]]["åç§°"],""..GetMaxBingli(v),JY.Str[9160+p["æ­¥å…µé€‚æ€§"]],JY.Str[9160+p["å¼“å…µé€‚æ€§"]],JY.Str[9160+p["éª‘å…µé€‚æ€§"]],};
 		
 	end
 	local ml=creatMultiList(x0,y0,width,height,plist,sortlist,strlist,title,offset);
@@ -1902,18 +1902,18 @@ function ShowPersonList(plist,order,fun,multi,t_select)
 	local bt={};
 	local flag=1;
 	if flag==0 then
-		button_mainbt_1(bt,"·µ»Ø",2)
+		button_mainbt_1(bt,"è¿”å›",2)
 	elseif flag==1 then
-		button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2);
 	elseif flag==2 then
-		button_mainbt_1(bt,"¾ö¶¨",1)
+		button_mainbt_1(bt,"å†³å®š",1)
 	end
 	local function redraw()
 		DrawGame();
 		LoadPicEnhance(73,x0-32,y0-8,width+64,height+16);
 		drawMultiList(ml);
 		if ml.on>0 then
-			lib.PicLoadCache(2,(JY.Person[plist[ml.on]]["ÈİÃ²"]+2000)*2,ml.x1-45,ml.y1+ml.pixel_row*(ml.on-ml.top+0.5));
+			lib.PicLoadCache(2,(JY.Person[plist[ml.on]]["å®¹è²Œ"]+2000)*2,ml.x1-45,ml.y1+ml.pixel_row*(ml.on-ml.top+0.5));
 		end
 		button_redraw(bt);
 	end
@@ -1996,7 +1996,7 @@ function Confirm(tstr,str)
 	local h=math.max(height+24+44+20+54,240);
 	local x0,y0=(CC.ScreenW-w)/2,(CC.ScreenH-h)/2;
 	local bt={};
-	button_mainbt_1(bt,"È·ÈÏ",1,CC.ScreenH-y0-58);
+	button_mainbt_1(bt,"ç¡®è®¤",1,CC.ScreenH-y0-58);
 	local function redraw()
 		DrawGame();
 		local x,y=x0,y0;
@@ -2031,7 +2031,7 @@ function ConfirmYesNo(tstr,str)
 	local h=math.max(height+24+44+20+54,240);
 	local x0,y0=(CC.ScreenW-w)/2,(CC.ScreenH-h)/2;
 	local bt={};
-	button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2,CC.ScreenH-y0-58);
+	button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2,CC.ScreenH-y0-58);
 	local function redraw()
 		DrawGame();
 		local x,y=x0,y0;
@@ -2093,7 +2093,7 @@ function eventGameStatus(gs)
 	end
 	if MOUSE.CLICK(gs.x2,gs.y2,gs.x2+192,gs.y2+256) then
 		PlayWavE(0);
-		DrawCityStatus({JY.Person[JY.PID]["ËùÔÚ"]},1);
+		DrawCityStatus({JY.Person[JY.PID]["æ‰€åœ¨"]},1);
 	elseif MOUSE.IN(gs.x2,gs.y2,gs.x2+192,gs.y2+256) then
 		gs.on2=true;
 	else
@@ -2121,25 +2121,25 @@ function drawGameStatus(gs)
 	local f=JY.Force[JY.FID];
 	local p=JY.Person[JY.PID];
 	lib.PicLoadCache(4,6*2,x-32,y+16,1);
-	lib.PicLoadCache(2,(p["ÈİÃ²"]+6000)*2,x,y);
+	lib.PicLoadCache(2,(p["å®¹è²Œ"]+6000)*2,x,y);
 	if gs.ontime~=128 then
-		lib.PicLoadCache(2,(p["ÈİÃ²"]+6000)*2,x,y,2+8,math.abs(gs.ontime-128));
+		lib.PicLoadCache(2,(p["å®¹è²Œ"]+6000)*2,x,y,2+8,math.abs(gs.ontime-128));
 	end
 	x=x+128;y=y+18;
 	DrawStringEnhance(x,y,chinese_year_month(),C_Name,24,0.5);
 	x=x+120;
-	DrawStringEnhance(x,y,JY.Str[9170+p["Éí·İ"]],C_Name,24,0.5);
+	DrawStringEnhance(x,y,JY.Str[9170+p["èº«ä»½"]],C_Name,24,0.5);
 	x=x+180;
-	DrawStringEnhance(x,y,"×Ê½ğ",C_Name,24,1);
+	DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,24,1);
 	DrawStringEnhance(x,y," ".."500",C_WHITE,24);
 	x=x+180;
-	DrawStringEnhance(x,y,"ĞĞ¶¯Á¦",C_Name,24,1);
-	DrawStringEnhance(x,y," "..JY.Base["ĞĞ¶¯Á¦"],C_WHITE,24);
-	--[[DrawStringEnhance(x,y,"ĞĞ¶¯Á¦",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,JY.Base["ĞĞ¶¯Á¦"]);		x=x+130;
-	DrawStringEnhance(x,y,"ÏÖÒÛ",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["ÏÖÒÛ"]);		x=x+130;
-	DrawStringEnhance(x,y,"³Ç³Ø",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["³Ç³Ø"]);		x=x+130;
-	DrawStringEnhance(x,y,"×Ê½ğ",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["×Ê½ğ"]*10);		x=x+130;
-	DrawStringEnhance(x,y,"Îï×Ê",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["Îï×Ê"]*10);		x=x+130;]]--
+	DrawStringEnhance(x,y,"è¡ŒåŠ¨åŠ›",C_Name,24,1);
+	DrawStringEnhance(x,y," "..JY.Base["è¡ŒåŠ¨åŠ›"],C_WHITE,24);
+	--[[DrawStringEnhance(x,y,"è¡ŒåŠ¨åŠ›",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,JY.Base["è¡ŒåŠ¨åŠ›"]);		x=x+130;
+	DrawStringEnhance(x,y,"ç°å½¹",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["ç°å½¹"]);		x=x+130;
+	DrawStringEnhance(x,y,"åŸæ± ",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["åŸæ± "]);		x=x+130;
+	DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["èµ„é‡‘"]*10);		x=x+130;
+	DrawStringEnhance(x,y,"ç‰©èµ„",C_Name,20,0.5);					DrawNumPicBig(x+60,y-1,f["ç‰©èµ„"]*10);		x=x+130;]]--
 	--DrawCCityM(CC.ScreenW-400,64,true);
 	--DrawCityStatus
 	local x,y=gs.x2,gs.y2;
@@ -2160,7 +2160,7 @@ function drawGameStatus(gs)
 		end
 	end
   --
-	local cid=JY.Person[JY.PID]["ËùÔÚ"];
+	local cid=JY.Person[JY.PID]["æ‰€åœ¨"];
 	local c=JY.City[cid];
 	local size=18;
 	if gs.ontime2~=128 then
@@ -2169,21 +2169,21 @@ function drawGameStatus(gs)
 	LoadPicEnhance(78,x,y,256,200);
 	LoadPicEnhance(44,x,y+42,256);
 	x=x+12;
-	DrawStringEnhance(x+96,y+8,"[B][wheat]"..c["Ãû³Æ"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+c["ÊÆÁ¦"])*2,x+4,y+12,1);  y=y+52;
-	DrawStringEnhance(x,y,"Ì«ÊØ",C_Name,size);					DrawStringEnhance(x + 80,y,JY.Person[c["Ì«ÊØ"]]["Ãû³Æ"],C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"ÊÆÁ¦",C_Name,size);					DrawStringEnhance(x + 80,y,JY.Force[c["ÊÆÁ¦"]]["Ãû³Æ"],C_WHITE,size,0.5);			x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"×Ê½ğ",C_Name,size);					DrawStringEnhance(x + 80,y,c["×Ê½ğ"].."0",C_WHITE,size,0.5);		x = x + 120;	
-	DrawStringEnhance(x,y,"Îï×Ê",C_Name,size);					DrawStringEnhance(x + 80,y,c["Îï×Ê"].."0",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"¿ª¿Ñ",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["¿ª¿Ñ"]/2).."/"..math.floor(c["×î´ó¿ª¿Ñ"]/2),C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"ÉÌÒµ",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["ÉÌÒµ"]/2).."/"..math.floor(c["×î´óÉÌÒµ"]/2),C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"¼¼Êõ",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["¼¼Êõ"]/2).."/"..math.floor(c["×î´ó¼¼Êõ"]/2),C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"·ÀÓù",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["·ÀÓù"]/2).."/"..math.floor(c["×î´ó·ÀÓù"]/2),C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"ÖÎ°²",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["ÖÎ°²"]/10).."/100",C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"ÈË¿Ú",C_Name,size);					DrawStringEnhance(x + 80,y,c["ÈË¿Ú"].."00",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"±øÁ¦",C_Name,size);					DrawStringEnhance(x + 80,y,c["±øÁ¦"].."",C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"ÑµÁ·",C_Name,size);					DrawStringEnhance(x + 80,y,c["±øÁ¦"].."",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
-	DrawStringEnhance(x,y,"ÏÖÒÛ",C_Name,size);					DrawStringEnhance(x + 80,y,c["ÏÖÒÛ"].."",C_WHITE,size,0.5);		x = x + 120;
-	DrawStringEnhance(x,y,"ÔÚÒ°",C_Name,size);					DrawStringEnhance(x + 80,y,c["ÔÚÒ°"].."",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x+96,y+8,"[B][wheat]"..c["åç§°"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+c["åŠ¿åŠ›"])*2,x+4,y+12,1);  y=y+52;
+	DrawStringEnhance(x,y,"å¤ªå®ˆ",C_Name,size);					DrawStringEnhance(x + 80,y,JY.Person[c["å¤ªå®ˆ"]]["åç§°"],C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"åŠ¿åŠ›",C_Name,size);					DrawStringEnhance(x + 80,y,JY.Force[c["åŠ¿åŠ›"]]["åç§°"],C_WHITE,size,0.5);			x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,size);					DrawStringEnhance(x + 80,y,c["èµ„é‡‘"].."0",C_WHITE,size,0.5);		x = x + 120;	
+	DrawStringEnhance(x,y,"ç‰©èµ„",C_Name,size);					DrawStringEnhance(x + 80,y,c["ç‰©èµ„"].."0",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"å¼€å¦",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["å¼€å¦"]/2).."/"..math.floor(c["æœ€å¤§å¼€å¦"]/2),C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"å•†ä¸š",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["å•†ä¸š"]/2).."/"..math.floor(c["æœ€å¤§å•†ä¸š"]/2),C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"æŠ€æœ¯",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["æŠ€æœ¯"]/2).."/"..math.floor(c["æœ€å¤§æŠ€æœ¯"]/2),C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"é˜²å¾¡",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["é˜²å¾¡"]/2).."/"..math.floor(c["æœ€å¤§é˜²å¾¡"]/2),C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"æ²»å®‰",C_Name,size);					DrawStringEnhance(x + 80,y,math.floor(c["æ²»å®‰"]/10).."/100",C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"äººå£",C_Name,size);					DrawStringEnhance(x + 80,y,c["äººå£"].."00",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"å…µåŠ›",C_Name,size);					DrawStringEnhance(x + 80,y,c["å…µåŠ›"].."",C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"è®­ç»ƒ",C_Name,size);					DrawStringEnhance(x + 80,y,c["å…µåŠ›"].."",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
+	DrawStringEnhance(x,y,"ç°å½¹",C_Name,size);					DrawStringEnhance(x + 80,y,c["ç°å½¹"].."",C_WHITE,size,0.5);		x = x + 120;
+	DrawStringEnhance(x,y,"åœ¨é‡",C_Name,size);					DrawStringEnhance(x + 80,y,c["åœ¨é‡"].."",C_WHITE,size,0.5);		x = x - 120; y = y + size + 2;
   --
   x, y = 0, 0;
   DrawCCityS(0, 0);
@@ -2230,199 +2230,199 @@ function DrawGame()
 	end
 end
 function DrawCity(cid)
-	cid=cid or JY.Person[JY.PID]["ËùÔÚ"];
+	cid=cid or JY.Person[JY.PID]["æ‰€åœ¨"];
 	local x0,y0=0,CC.ScreenH-768;
 	local tx={};
 	local ty={};
 	local tpic={};
-	--Î÷±± È«²¿×ø±ê½ÃÕıÍê±Ï
-	--ÆäÓà¶¼ÊĞ£¬»ù±¾ÉèÊ©×ø±êĞ£ÕıÍê±Ï£¬Ê£ÓàÌØÊâÉèÊ©
-	--È«²¿³ÇÇ½ÕÚ±Î ÉĞÎ´Ğ£Õı
-	if between(cid,48,50) then					--ÄÏÂù
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖĞ¡	ÕÚÕÖÖĞ	ÕÚÕÖ´ó	ÕÚÕÖ¾Ş
+	--è¥¿åŒ— å…¨éƒ¨åæ ‡çŸ«æ­£å®Œæ¯•
+	--å…¶ä½™éƒ½å¸‚ï¼ŒåŸºæœ¬è®¾æ–½åæ ‡æ ¡æ­£å®Œæ¯•ï¼Œå‰©ä½™ç‰¹æ®Šè®¾æ–½
+	--å…¨éƒ¨åŸå¢™é®è”½ å°šæœªæ ¡æ­£
+	if between(cid,48,50) then					--å—è›®
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©å°	é®ç½©ä¸­	é®ç½©å¤§	é®ç½©å·¨
 		tx={	0,		176,	0,		000,	354,	460,	640,	28,		396,	320,	236,	244,	500,	440,	364,	208,	588,	472,	0,		0,		0,		0};
 		ty={	0,		216,	628,	000,	156,	316,	288,	368,	384,	436,	452,	520,	420,	456,	508,	344,	412,	450,	0,		0,		0,		0};
 		tpic={	341,	345,	0,		000,	000,	499,	000,	503,	494,	498,	505,	497,	504,	493,	496,	623,	627,	624,	0,		0,		0,		0};
-	elseif JY.City[cid]["µØ·½"]==1 then			--ºÓ±±
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖĞ¡	ÕÚÕÖÖĞ	ÕÚÕÖ´ó	ÕÚÕÖ¾Ş
+	elseif JY.City[cid]["åœ°æ–¹"]==1 then			--æ²³åŒ—
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©å°	é®ç½©ä¸­	é®ç½©å¤§	é®ç½©å·¨
 		tx={	0,		0,		0,		0,		356,	460,	640,	28,		396,	320,	236,	244,	500,	440,	364,	376,	692,	484,	596,	0,		0,		608};
 		ty={	0,		176,	628,	0,		156,	316,	288,	368,	384,	436,	452,	520,	420,	456,	508,	316,	428,	460,	440,	0,		0,		508};
 		tpic={	331,	335,	0,		0,		000,	486,	720,	490,	481,	485,	492,	484,	491,	480,	483,	541,	547,	545,	403,	0,		0,		404};
-	elseif JY.City[cid]["µØ·½"]==2 then		--ÖĞÔ­
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖ
+	elseif JY.City[cid]["åœ°æ–¹"]==2 then		--ä¸­åŸ
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©
 		tx={	0,		0,		0,		380,	0,		460,	0,		28,		396,	320,	236,	244,	500,	440,	364,	640,	540,	728,	0,		0,		520,	0};
 		ty={	0,		192,	628,	248,	0,		316,	0,		368,	384,	436,	452,	520,	420,	456,	508,	348,	416,	364,	0,		0,		524,	0};
 		tpic={	301,	305,	0,		701,	0,		446,	0,		450,	441,	445,	452,	444,	451,	440,	443,	617,	600,	614,	0,		0,		370,	0};
-	elseif JY.City[cid]["µØ·½"]==3 then		--Î÷±±
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖ
+	elseif JY.City[cid]["åœ°æ–¹"]==3 then		--è¥¿åŒ—
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©
 		tx={	0,		0,		0,		0,		609,	460,	640,	28,		396,	320,	236,	244,	500,	440,	364,	592,	836,	480,	0,		0,		480,	0};
 		ty={	0,		232,	528,	0,		144,	316,	288,	368,	384,	436,	452,	520,	420,	456,	508,	408,	368,	460,	0,		0,		592,	0};
 		tpic={	351,	355,	0,		0,		0,		512,	729,	516,	507,	511,	518,	510,	517,	506,	509,	574,	567,	566,	0,		0,		416,	0};
-	elseif JY.City[cid]["µØ·½"]==4 then		--°ÍÊñ
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖ
+	elseif JY.City[cid]["åœ°æ–¹"]==4 then		--å·´èœ€
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©
 		tx={	0,		0,		0,		380,	0,		460,	0,		28,		396,	320,	236,	244,	500,	440,	364,	484,	644,	701,	0,		0,		596,	0};
 		ty={	0,		192,	632,	248,	0,		316,	0,		368,	384,	436,	452,	520,	420,	456,	508,	452,	340,	424,	0,		0,		440,	0};
 		tpic={	321,	325,	0,		715,	0,		472,	0,		476,	467,	471,	478,	470,	477,	466,	469,	634,	636,	633,	0,		0,		393,	0};
-	elseif JY.City[cid]["µØ·½"]==5 then		--³ş
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖ
+	elseif JY.City[cid]["åœ°æ–¹"]==5 then		--æ¥š
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©
 		tx={	0,		0,		0,		380,	0,		460,	0,		28,		396,	320,	236,	244,	500,	440,	364,	548,	664,	495,	0,		0,		0,		492};
 		ty={	0,		208,	552,	248,	0,		316,	0,		368,	384,	436,	452,	520,	420,	456,	508,	420,	420,	492,	0,		0,		0,		584};
 		tpic={	361,	365,	0,		734,	0,		525,	0,		529,	520,	524,	531,	523,	530,	519,	522,	581,	579,	585,	0,		0,		0,		426};
-	elseif JY.City[cid]["µØ·½"]==6 then		--ÎâÔ½
-		--		±³¾°	³Ç		ºÓÁ÷	×°ÊÎ	×°ÊÎ2	¹¬³Ç	×°ÊÎ3	Å©µØ	ÊĞ³¡	¹¤·¿	×¤Ëù	³ÇÇ½	¾Æ¼Ò	±øÓª	×ÔÕ¬	ÌØ1		ÌØ2		ÌØ3		ÕÚÕÖ
+	elseif JY.City[cid]["åœ°æ–¹"]==6 then		--å´è¶Š
+		--		èƒŒæ™¯	åŸ		æ²³æµ	è£…é¥°	è£…é¥°2	å®«åŸ	è£…é¥°3	å†œåœ°	å¸‚åœº	å·¥æˆ¿	é©»æ‰€	åŸå¢™	é…’å®¶	å…µè¥	è‡ªå®…	ç‰¹1		ç‰¹2		ç‰¹3		é®ç½©
 		tx={	0,		0,		0,		0,		548,	460,	640,	28,		396,	320,	236,	244,	500,	440,	364,	546,	732,	668,	0,		0,		0,		0};
 		ty={	0,		220,	528,	0,		592,	316,	288,	368,	384,	436,	452,	520,	420,	456,	508,	416,	364,	432,	0,		0,		0,		0};
 		tpic={	311,	315,	0,		0,		392,	459,	709,	463,	454,	458,	465,	457,	464,	453,	456,	565,	553,	558,	0,		0,		0,		0};
 	end
 	--
-	if JY.City[cid]["¹æÄ£"]==1 then
+	if JY.City[cid]["è§„æ¨¡"]==1 then
 		tpic[16]=0;tpic[17]=0;tpic[18]=0;
 		tpic[20]=0;tpic[21]=0;tpic[22]=0;
-		if JY.City[cid]["µØ·½"]==6 then
+		if JY.City[cid]["åœ°æ–¹"]==6 then
 			tpic[5]=0;
 		end
-	elseif JY.City[cid]["¹æÄ£"]==2 then
+	elseif JY.City[cid]["è§„æ¨¡"]==2 then
 		tpic[2]=tpic[2]+1;
 		tpic[6]=tpic[6]+1;
 		tpic[17]=0;tpic[18]=0;
 		tpic[21]=0;tpic[22]=0;
-	elseif JY.City[cid]["¹æÄ£"]==3 then
+	elseif JY.City[cid]["è§„æ¨¡"]==3 then
 		tpic[2]=tpic[2]+2;
 		tpic[6]=tpic[6]+2;
 		tpic[18]=0;
 		tpic[22]=0;
-	elseif JY.City[cid]["¹æÄ£"]==4 then
+	elseif JY.City[cid]["è§„æ¨¡"]==4 then
 		tpic[2]=tpic[2]+3;
 		tpic[6]=tpic[6]+3;
 	end
-	if cid==1 then		--ÁÉ¶«
+	if cid==1 then		--è¾½ä¸œ
 		tpic[1]=332;
 		tpic[5]=402;
 		tpic[7]=722;
-	elseif cid==2 then		--±±Æ½
+	elseif cid==2 then		--åŒ—å¹³
 		tpic[1]=332;
 		tpic[5]=402;
-	elseif cid==3 then		--ËE
+	elseif cid==3 then		--è–Š
 		tpic[1]=332;
 		tpic[7]=721;
-	elseif cid==4 then		--²³º£
-	elseif cid==5 then		--Æ½Ô­
-	elseif cid==6 then		--Úş
+	elseif cid==4 then		--æ¸¤æµ·
+	elseif cid==5 then		--å¹³åŸ
+	elseif cid==6 then		--é‚º
 		tpic[6]=479;
 		tpic[7]=725;
-	elseif cid==7 then		--½úÑô
+	elseif cid==7 then		--æ™‹é˜³
 		tpic[5]=402;
-	elseif cid==8 then		--ÉÏµ³
+	elseif cid==8 then		--ä¸Šå…š
 		tpic[5]=402;
 		tpic[7]=724;
-	elseif cid==10 then		--±±º£
+	elseif cid==10 then		--åŒ—æµ·
 		tpic[7]=723;
-	elseif cid==11 then		--å§Ñô
+	elseif cid==11 then		--æ¿®é˜³
 		tpic[3]=304;
 		tpic[4]=707;
-	elseif cid==12 then		--³ÂÁô
+	elseif cid==12 then		--é™ˆç•™
 		tpic[1]=302;
 		tpic[4]=705;
-	elseif cid==13 then		--ÏÂÚü
+	elseif cid==13 then		--ä¸‹é‚³
 		tpic[1]=302;
-	elseif cid==14	then	--Ğ¡Åæ
+	elseif cid==14	then	--å°æ²›
 		tpic[1]=302;
 		tpic[4]=704;
-	elseif cid==16	then	--Ğí²ı
+	elseif cid==16	then	--è®¸æ˜Œ
 		tpic[1]=302;
 		tpic[4]=706;
-	elseif cid==17	then	--ÈêÄÏ
+	elseif cid==17	then	--æ±å—
 		tpic[1]=302;
-	elseif cid==18	then	--ÂåÑô
+	elseif cid==18	then	--æ´›é˜³
 		tpic[1]=302;
 		tpic[4]=702;
-	elseif cid==20 then		--³¤°²
+	elseif cid==20 then		--é•¿å®‰
 		tpic[1]=352;
 		tpic[5]=730;
-	elseif cid==21 then		--ÌìË®
+	elseif cid==21 then		--å¤©æ°´
 		tpic[1]=352;
-	elseif cid==22 then		--Î÷Æ½
+	elseif cid==22 then		--è¥¿å¹³
 		tpic[7]=733;
-	elseif cid==23 then		--Î÷Á¹/ÎäÍş
+	elseif cid==23 then		--è¥¿å‡‰/æ­¦å¨
 		tpic[3]=354;
 		tpic[7]=731;
-	elseif cid==25 then		--ÊÙ´º
+	elseif cid==25 then		--å¯¿æ˜¥
 		--tpic[3]=304;
 		tpic[1]=312;
 		tpic[3]=314;
 		tpic[7]=712;
-	elseif cid==26 then		--Â®½­
+	elseif cid==26 then		--åºæ±Ÿ
 		--tpic[3]=304;
 		tpic[1]=312;
 		tpic[3]=314;
 		tpic[7]=712;
-	elseif cid==27 then		--½¨Òµ
+	elseif cid==27 then		--å»ºä¸š
 		tpic[1]=312;
 		tpic[3]=314;
 		tpic[7]=712;
-	elseif cid==28 then		--Îâ
+	elseif cid==28 then		--å´
 		tpic[1]=312;
 		tpic[3]=314;
 		tpic[7]=713;
-	elseif cid==29 then		--»á»ü
+	elseif cid==29 then		--ä¼šç¨½
 		tpic[5]=0;
 		tpic[7]=714;
-	elseif cid==31 then		--²ñÉ£
+	elseif cid==31 then		--æŸ´æ¡‘
 		tpic[1]=312;
 		tpic[3]=314;
 		tpic[7]=710;
-	elseif cid==32 then		--Íğ
+	elseif cid==32 then		--å®›
 		tpic[1]=362;
 		tpic[4]=737;
-	elseif cid==33 then		--ĞÂÒ°
+	elseif cid==33 then		--æ–°é‡
 		tpic[1]=362;
-	elseif cid==34 then		--ÏåÑô
+	elseif cid==34 then		--è¥„é˜³
 		tpic[3]=364;
 		tpic[4]=738;
-	elseif cid==35 then		--ÉÏÓ¹
+	elseif cid==35 then		--ä¸Šåº¸
 		tpic[3]=364;
-	elseif cid==36 then		--½­ÏÄ
+	elseif cid==36 then		--æ±Ÿå¤
 		tpic[3]=364;
-	elseif cid==37 then		--½­Áê
+	elseif cid==37 then		--æ±Ÿé™µ
 		tpic[3]=364;
 		tpic[4]=735;
-	elseif cid==38 then		--³¤É³
+	elseif cid==38 then		--é•¿æ²™
 		tpic[1]=363;
-	elseif cid==39 then		--ÎäÁê
-	elseif cid==40 then		--¹ğÑô
+	elseif cid==39 then		--æ­¦é™µ
+	elseif cid==40 then		--æ¡‚é˜³
 		tpic[1]=363;
-	elseif cid==41 then		--ÁãÁê
+	elseif cid==41 then		--é›¶é™µ
 		tpic[1]=363;
 		tpic[4]=736;
-	elseif cid==42 then		--ººÖĞ
+	elseif cid==42 then		--æ±‰ä¸­
 		tpic[1]=322;
-	elseif cid==43 then		--Îä¶¼
+	elseif cid==43 then		--æ­¦éƒ½
 		tpic[1]=322;
 		tpic[4]=717;
-	elseif cid==44 then		--ÓÀ°²
+	elseif cid==44 then		--æ°¸å®‰
 		tpic[3]=324;
-	elseif cid==45 then		--¸¢/è÷äü
+	elseif cid==45 then		--æ¶ª/æ¢“æ½¼
 		tpic[4]=716;
-	elseif cid==46 then		--°Í/½­Öİ
+	elseif cid==46 then		--å·´/æ±Ÿå·
 		tpic[4]=718;
-	elseif cid==47 then		--³É¶¼
+	elseif cid==47 then		--æˆéƒ½
 		tpic[4]=719;
-	elseif cid==48 then		--½¨Äş
+	elseif cid==48 then		--å»ºå®
 		tpic[7]=728;
-	elseif cid==49 then		--ÓÀ²ı
+	elseif cid==49 then		--æ°¸æ˜Œ
 		tpic[7]=726;
-	elseif cid==50 then		--Èı½­/ÔÆÄÏ
+	elseif cid==50 then		--ä¸‰æ±Ÿ/äº‘å—
 		tpic[7]=727;
 	end
-	if cid==JY.Person[JY.PID]["ËùÔÚ"] then
+	if cid==JY.Person[JY.PID]["æ‰€åœ¨"] then
 		tpic[15]=tpic[15]-1;
 	end
 	--
 	lib.FillColor(0,0,0,0,0);
-	local fid=JY.City[cid]["ÊÆÁ¦"];
+	local fid=JY.City[cid]["åŠ¿åŠ›"];
 	local xid=0;
 	if fid>0 then
-		xid=GetFlagID(JY.Force[fid]["¾ıÖ÷"]);
+		xid=GetFlagID(JY.Force[fid]["å›ä¸»"]);
 	end
 	if fid==4 or fid==8 or fid==11 or fid==12 
 		or fid==14 or fid==16 or fid==19 or fid==23 
@@ -2450,7 +2450,7 @@ function creatCityMenu()
 	local cm={
 				cx=	{620,	280,	470,	424,	356,	300,	590,	534,	466},
 				cy=	{400+y0,	440+y0,	450+y0,	486+y0,	540+y0,	620+y0,	470+y0,	516+y0,	580+y0},
-				cstr=	{"[B]¹¬³Ç","[B]Å©µØ","[B]ÊĞ³¡","[B]¹¤·¿","[B]×¤Ëù","[B]³ÇÃÅ","[B]¾Æ¼Ò","[B]±øÓª","[B]×ÔÕ¬"},
+				cstr=	{"[B]å®«åŸ","[B]å†œåœ°","[B]å¸‚åœº","[B]å·¥æˆ¿","[B]é©»æ‰€","[B]åŸé—¨","[B]é…’å®¶","[B]å…µè¥","[B]è‡ªå®…"},
 				on=0,
 				mu=nil,
 				};
@@ -2485,51 +2485,51 @@ function eventCityMenu(cm)
 			if MOUSE.CLICK(cm.cx[i]-36,cm.cy[i]-18,cm.cx[i]+36,cm.cy[i]+18) then
 				cm.on=i;
 				local p=JY.Person[JY.PID];
-				local cid=p["ËùÔÚ"];
+				local cid=p["æ‰€åœ¨"];
 				local c=JY.City[cid];
 				local mymune={};
 				if i==1 then
-					mymune={	{"ÕşÌü",101,between(p["Éí·İ"],1,3),true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"³öÕ÷",111,p["Éí·İ"]>=0,JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"ÊË¹Ù",102,p["Éí·İ"]==0,JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¹Ù¾ô",104,p["Éí·İ"]>0,JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"²âÊÔÌ«ÊØ",105,p["Éí·İ"]>=0,JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"·ÃÎÊ",103,true,c["ÏÖÒÛ"]>0 and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"æ”¿å…",101,between(p["èº«ä»½"],1,3),true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"å‡ºå¾",111,p["èº«ä»½"]>=0,JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä»•å®˜",102,p["èº«ä»½"]==0,JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"å®˜çˆµ",104,p["èº«ä»½"]>0,JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"æµ‹è¯•å¤ªå®ˆ",105,p["èº«ä»½"]>=0,JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è®¿é—®",103,true,c["ç°å½¹"]>0 and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==2 then
-					mymune={	{"¿ª¿Ñ",201,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",202,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"»á»°",209,false,false and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"å¼€å¦",201,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",202,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä¼šè¯",209,false,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==3 then
-					mymune={	{"ÉÌÒµ",301,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¹ºÂò",302,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"Âô³ö",303,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",309,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"å•†ä¸š",301,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è´­ä¹°",302,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"å–å‡º",303,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",309,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==4 then
-					mymune={	{"¼¼Êõ",401,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",409,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"»á»°",403,false,false and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"æŠ€æœ¯",401,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",409,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä¼šè¯",403,false,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==5 then
-					mymune={	{"ÖÎ°²",501,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",509,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"»á»°",503,false,false and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"æ²»å®‰",501,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",509,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä¼šè¯",503,false,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==6 then
-					mymune={	{"ĞŞ²¹",601,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"ÔöÖş",602,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",609,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"ä¿®è¡¥",601,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"å¢ç­‘",602,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",609,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==7 then
-					mymune={	{"Ñç»á",701,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"Î¯ÍĞ",702,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"·ÃÎÊ",703,true,((p["Éí·İ"]>0 and c["ÔÚÒ°"]>0) or c["ÔÚÒ°"]>1) and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",709,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"å®´ä¼š",701,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"å§”æ‰˜",702,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è®¿é—®",703,true,((p["èº«ä»½"]>0 and c["åœ¨é‡"]>0) or c["åœ¨é‡"]>1) and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",709,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==8 then
-					mymune={	{"Ä¼±ø",801,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"ÑµÁ·",802,true,false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"¼ûÎÅ",809,true,true and JY.Base["ĞĞ¶¯Á¦"]>0},	}
+					mymune={	{"å‹Ÿå…µ",801,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è®­ç»ƒ",802,true,false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è§é—»",809,true,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},	}
 				elseif i==9 then
-					mymune={	{"¶ÍÁ¶",901,true,JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"ÏÂÒ°",902,between(p["Éí·İ"],1,2),false and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"Ç¨¾Ó",903,p["Éí·İ"]==0,true and JY.Base["ĞĞ¶¯Á¦"]>0},
-								{"ĞİÏ¢",909,true,true},	}
+					mymune={	{"é”»ç‚¼",901,true,JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä¸‹é‡",902,between(p["èº«ä»½"],1,2),false and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"è¿å±…",903,p["èº«ä»½"]==0,true and JY.Base["è¡ŒåŠ¨åŠ›"]>0},
+								{"ä¼‘æ¯",909,true,true},	}
 				end
 				cm.mu=creatMenu(cm.cx[i]+36,cm.cy[i],0,0.5,mymune);
 				PlayWavE(0);
@@ -2620,7 +2620,7 @@ function DrawPolygon(num,T,sx,sy,length,color,size)
 	cx=sx+length;
 	cy=sy+length;
 	angle=math.pi*2/num;
-	--È·¶¨µã×ø±ê
+	--ç¡®å®šç‚¹åæ ‡
 	for i=1,num do
 		p[i]={
 					x=cx+length*limitX(T[i]/100+0.0,0,1.1)*math.cos(angle*(i-1)-math.pi/2),
@@ -2649,13 +2649,13 @@ function DrawPolygon(num,T,sx,sy,length,color,size)
 		end
 		ppp[n][num+1]=ppp[n][1];
 	end
-	--»ù×¼
+	--åŸºå‡†
 	for n=1,4 do
 		for i=1,num do
 			lib.DrawLine(ppp[n][i].x,ppp[n][i].y,ppp[n][i+1].x,ppp[n][i+1].y,M_Gray);
 		end
 	end
-	--ÍâÎ§
+	--å¤–å›´
 	for i=1,num do
 		--lib.DrawLine(pp[i].x-1,pp[i].y,pp[i+1].x-1,pp[i+1].y,M_Gray);
 		--lib.DrawLine(pp[i].x,pp[i].y-1,pp[i+1].x,pp[i+1].y-1,M_Gray);
@@ -2663,7 +2663,7 @@ function DrawPolygon(num,T,sx,sy,length,color,size)
 		--lib.DrawLine(pp[i].x,pp[i].y+1,pp[i+1].x,pp[i+1].y+1,M_Gray);
 		lib.DrawLine(pp[i].x,pp[i].y,pp[i+1].x,pp[i+1].y,M_Gray);
 	end
-	--»ù×¼Ïß
+	--åŸºå‡†çº¿
 	for i=1,num do
 		--lib.DrawLine(cx-1,cy,pp[i].x-1,pp[i].y,M_Gray);
 		--lib.DrawLine(cx,cy-1,pp[i].x,pp[i].y-1,M_Gray);
@@ -2671,7 +2671,7 @@ function DrawPolygon(num,T,sx,sy,length,color,size)
 		--lib.DrawLine(cx,cy+1,pp[i].x,pp[i].y+1,M_Gray);
 		lib.DrawLine(cx,cy,pp[i].x,pp[i].y,M_Gray);
 	end
-	--ÄÚ²¿
+	--å†…éƒ¨
 	for i=1,num do
 		--lib.DrawLine(p[i].x-1,p[i].y,p[i+1].x-1,p[i+1].y,M_DarkOrange);
 		--lib.DrawLine(p[i].x,p[i].y-1,p[i+1].x,p[i+1].y-1,M_DarkOrange);
@@ -2680,19 +2680,19 @@ function DrawPolygon(num,T,sx,sy,length,color,size)
 		DrawLine(p[i].x,p[i].y,p[i+1].x,p[i+1].y,M_Yellow);
 	end
 	--str
-	DrawStringEnhance(pp[1].x-size,pp[1].y-size-8,'Í³ÂÊ',color,size);
-	DrawStringEnhance(pp[2].x+8,pp[2].y-size,'Îä',color,size);
-	DrawStringEnhance(pp[2].x+8,pp[2].y,'Á¦',color,size);
-	DrawStringEnhance(pp[3].x-size,pp[3].y+8,'ÖÇÄ±',color,size);
-	DrawStringEnhance(pp[4].x-size,pp[4].y+8,'ÕşÎñ',color,size);
-	DrawStringEnhance(pp[5].x-size-8,pp[5].y-size,'÷È',color,size);
-	DrawStringEnhance(pp[5].x-size-8,pp[5].y,'Á¦',color,size);
-	--µã
+	DrawStringEnhance(pp[1].x-size,pp[1].y-size-8,'ç»Ÿç‡',color,size);
+	DrawStringEnhance(pp[2].x+8,pp[2].y-size,'æ­¦',color,size);
+	DrawStringEnhance(pp[2].x+8,pp[2].y,'åŠ›',color,size);
+	DrawStringEnhance(pp[3].x-size,pp[3].y+8,'æ™ºè°‹',color,size);
+	DrawStringEnhance(pp[4].x-size,pp[4].y+8,'æ”¿åŠ¡',color,size);
+	DrawStringEnhance(pp[5].x-size-8,pp[5].y-size,'é­…',color,size);
+	DrawStringEnhance(pp[5].x-size-8,pp[5].y,'åŠ›',color,size);
+	--ç‚¹
 	for i=1,num do
 		lib.DrawRect(p[i].x-1,p[i].y-1,p[i].x+1,p[i].y+1,M_Yellow);
 		DrawNumPic(pz[i].x,pz[i].y-5,T[i]);
 	end
-	--»æÖÆÃû³Æ
+	--ç»˜åˆ¶åç§°
 	--[[
 	for i=1,num do
 		DrawStringEnhance(p[i].x,p[i].y,TN[i],C_WHITE,CC.Fontbig)
@@ -2828,37 +2828,37 @@ function button_creat(kind,id,x,y,txt,show,enable)
 		bt.txty=0;
 		bt.enable=false;
 	elseif kind==99 then
-		if bt.txt=="ÊÇ" then
+		if bt.txt=="æ˜¯" then
 			bt.pic1=12;	--normal
 			bt.pic2=13;	--on
 			bt.pic3=14;	--hold
 			bt.pic4=0;	--disable
-		elseif bt.txt=="·ñ" then
+		elseif bt.txt=="å¦" then
 			bt.pic1=15;	--normal
 			bt.pic2=16;	--on
 			bt.pic3=17;	--hold
 			bt.pic4=0;	--disable
-		elseif bt.txt=="¹Ø±Õ" then
+		elseif bt.txt=="å…³é—­" then
 			bt.pic1=18;	--normal
 			bt.pic2=19;	--on
 			bt.pic3=20;	--hold
 			bt.pic4=137;	--disable
-		elseif bt.txt=="·µ»Ø" then
+		elseif bt.txt=="è¿”å›" then
 			bt.pic1=21;	--normal
 			bt.pic2=22;	--on
 			bt.pic3=23;	--hold
 			bt.pic4=136;	--disable
-		elseif bt.txt=="¾ö¶¨" then
+		elseif bt.txt=="å†³å®š" then
 			bt.pic1=24;	--normal
 			bt.pic2=25;	--on
 			bt.pic3=26;	--hold
 			bt.pic4=138;	--disable
-		elseif bt.txt=="È·ÈÏ" then
+		elseif bt.txt=="ç¡®è®¤" then
 			bt.pic1=27;	--normal
 			bt.pic2=28;	--on
 			bt.pic3=29;	--hold
 			bt.pic4=139;	--disable
-		elseif bt.txt=="¿ªÕ½" then
+		elseif bt.txt=="å¼€æˆ˜" then
 			bt.pic1=140;	--normal
 			bt.pic2=141;	--on
 			bt.pic3=142;	--hold
@@ -2958,7 +2958,7 @@ function PersonStatus(plist,index,edit)
 	edit=edit or false;
 	local strlist={};
 	for i,v in ipairs(plist) do
-		strlist[i]=JY.Person[v]["Ãû³Æ"];
+		strlist[i]=JY.Person[v]["åç§°"];
 	end
 	local width=360+540+96;
 	local height=512;
@@ -2966,33 +2966,33 @@ function PersonStatus(plist,index,edit)
 	local pid=plist[index];
 	ReSetAttrib(pid,true);
 	local p=JY.Person[pid];
-	local fid=p["ÊÆÁ¦"];
+	local fid=p["åŠ¿åŠ›"];
 	local st={};
 	if edit then
-		table.insert(st,button_creat(10,3,584,y0-32,"±øÖÖ",false,false));
-		table.insert(st,button_creat(10,2,492,y0-32,"ÁĞ´«",true,false));
+		table.insert(st,button_creat(10,3,584,y0-32,"å…µç§",false,false));
+		table.insert(st,button_creat(10,2,492,y0-32,"åˆ—ä¼ ",true,false));
 	else
-		table.insert(st,button_creat(10,3,584,y0-32,"±øÖÖ",false,true));
-		table.insert(st,button_creat(10,2,492,y0-32,"ÁĞ´«",true,true));
+		table.insert(st,button_creat(10,3,584,y0-32,"å…µç§",false,true));
+		table.insert(st,button_creat(10,2,492,y0-32,"åˆ—ä¼ ",true,true));
 	end
-	table.insert(st,button_creat(10,1,400,y0-32,"ÄÜÁ¦",true,true));
+	table.insert(st,button_creat(10,1,400,y0-32,"èƒ½åŠ›",true,true));
 	local bt={};
 	if edit then
-		table.insert(bt,button_creat(1,1,150,500,"±ä¸üĞÎÏó",true,true));
-		table.insert(bt,button_creat(1,2,550,53,"¸ü¸ÄĞÕÃû",true,true));
-		table.insert(bt,button_creat(1,3,820,54,"ÖØÖÃÊôĞÔ",true,true));
-		table.insert(bt,button_creat(1,4,732,340,"ÖØÖÃ¼¼ÄÜ",true,true));
-		table.insert(bt,button_creat(1,5,550,120,"±ä¸ü±øÖÖ",true,true));
-		button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",98,99);
+		table.insert(bt,button_creat(1,1,150,500,"å˜æ›´å½¢è±¡",true,true));
+		table.insert(bt,button_creat(1,2,550,53,"æ›´æ”¹å§“å",true,true));
+		table.insert(bt,button_creat(1,3,820,54,"é‡ç½®å±æ€§",true,true));
+		table.insert(bt,button_creat(1,4,732,340,"é‡ç½®æŠ€èƒ½",true,true));
+		table.insert(bt,button_creat(1,5,550,120,"å˜æ›´å…µç§",true,true));
+		button_mainbt_2(bt,"å†³å®š","è¿”å›",98,99);
 	else
-		button_mainbt_1(bt,"¹Ø±Õ",99);
+		button_mainbt_1(bt,"å…³é—­",99);
 	end
-	--local b=JY.Bingzhong[p["±øÖÖ"]];
-	local att={70,70,70,70,70,70,70,}	--³õÊ¼»¯Ö÷½ÇÎåÎ¬ÓÃµÄ»ù×¼Öµ
+	--local b=JY.Bingzhong[p["å…µç§"]];
+	local att={70,70,70,70,70,70,70,}	--åˆå§‹åŒ–ä¸»è§’äº”ç»´ç”¨çš„åŸºå‡†å€¼
 	local size=24;
 	local size2=20;
 	local sheet=3;
-	local sl=creatSingleList(x0+24,y0+12,84,456,plist,strlist,"Îä½«")
+	local sl=creatSingleList(x0+24,y0+12,84,456,plist,strlist,"æ­¦å°†")
 	rollSingleList(sl,index);
 	local function redraw()
 		DrawGame();
@@ -3000,97 +3000,97 @@ function PersonStatus(plist,index,edit)
 		local cx,cy=x0+120,y0;
 		LoadPicEnhance(73,x0,cy,width,height);
 		--Glass(x0,cy,x0+width,cy+height,nil,192)
-		lib.PicLoadCache(2,p["ÈİÃ²"]*2,cx,cy,1);
+		lib.PicLoadCache(2,p["å®¹è²Œ"]*2,cx,cy,1);
 		cx = cx + 360;
 		cy = cy + 8;
 		LoadPicEnhance(79, cx, cy, 180);
     cy = cy + 6;
-		DrawStringEnhance(cx + 90, cy, p["Ãû³Æ"].." "..p["×Ö"], C_WHITE, size, 0.5);
+		DrawStringEnhance(cx + 90, cy, p["åç§°"].." "..p["å­—"], C_WHITE, size, 0.5);
 		lib.PicLoadCache(4, 88 * 2, cx + 240, cy, 1);
-		DrawStringEnhance(cx + 240 + size, cy + 4, JY.Str[9170 + p["Éí·İ"]], C_WHITE, size2, 0.5);
+		DrawStringEnhance(cx + 240 + size, cy + 4, JY.Str[9170 + p["èº«ä»½"]], C_WHITE, size2, 0.5);
 		lib.PicLoadCache(4, 80 * 2, cx + 300, cy, 1);
-		DrawStringEnhance(cx + 300 + size, cy + 4, JY.Str[9065 + p["ĞÔ±ğ"]], C_WHITE, size2, 0.5);
+		DrawStringEnhance(cx + 300 + size, cy + 4, JY.Str[9065 + p["æ€§åˆ«"]], C_WHITE, size2, 0.5);
 		
 		cy = cy + 32;
     LoadPicEnhance(72,cx-16,cy,512);
 		cy=cy+8
 		if sheet==3 then
-			DrawPolygon(5,{p["Í³ÂÊ2"],p["ÎäÁ¦2"],p["ÖÇÄ±2"],p["ÕşÎñ2"],p["÷ÈÁ¦2"]},cx+200,cy+32,150,C_Name,size2)
-			DrawStringEnhance(cx,cy,"ËùÔÚ[w]  "..JY.City[p["ËùÔÚ"]]["Ãû³Æ"],C_Name,size);
+			DrawPolygon(5,{p["ç»Ÿç‡2"],p["æ­¦åŠ›2"],p["æ™ºè°‹2"],p["æ”¿åŠ¡2"],p["é­…åŠ›2"]},cx+200,cy+32,150,C_Name,size2)
+			DrawStringEnhance(cx,cy,"æ‰€åœ¨[w]  "..JY.City[p["æ‰€åœ¨"]]["åç§°"],C_Name,size);
 			cy=cy+size+2;
 			if fid>0 then
-				DrawStringEnhance(cx,cy,"ÊÆÁ¦[w]  "..JY.Force[fid]["Ãû³Æ"],C_Name,size);
+				DrawStringEnhance(cx,cy,"åŠ¿åŠ›[w]  "..JY.Force[fid]["åç§°"],C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"¹Ù¾ô[w]  "..JY.Title[p["¹Ù¾ô"]]["Ãû³Æ"],C_Name,size);
+				DrawStringEnhance(cx,cy,"å®˜çˆµ[w]  "..JY.Title[p["å®˜çˆµ"]]["åç§°"],C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"¹¦¼¨[w]  "..p["¹¦¼¨"],C_Name,size);
+				DrawStringEnhance(cx,cy,"åŠŸç»©[w]  "..p["åŠŸç»©"],C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÙºÂ»[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"ä¿¸ç¦„[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÖÒ³Ï[w]  " .. p["ÖÒ³Ï"],C_Name,size);
+				DrawStringEnhance(cx,cy,"å¿ è¯š[w]  " .. p["å¿ è¯š"],C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÊË¹Ù[w]  " .. (JY.Base["µ±Ç°Äê"] - p["µÇ³¡Äê"]) .. "Äê",C_Name,size);
+				DrawStringEnhance(cx,cy,"ä»•å®˜[w]  " .. (JY.Base["å½“å‰å¹´"] - p["ç™»åœºå¹´"]) .. "å¹´",C_Name,size);
 			else
-				DrawStringEnhance(cx,cy,"ÊÆÁ¦[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"åŠ¿åŠ›[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"¹Ù¾ô[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"å®˜çˆµ[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"¹¦¼¨[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"åŠŸç»©[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÙºÂ»[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"ä¿¸ç¦„[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÖÒ³Ï[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"å¿ è¯š[w]  --",C_Name,size);
 				cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÊË¹Ù[w]  --",C_Name,size);
+				DrawStringEnhance(cx,cy,"ä»•å®˜[w]  --",C_Name,size);
 			end
       cy=cy+size+2;
-      DrawStringEnhance(cx,cy,"ÄêÁä[w]  " .. (JY.Base["µ±Ç°Äê"] - p["ÉúÄê"]) .. "Ëê",C_Name,size);
+      DrawStringEnhance(cx,cy,"å¹´é¾„[w]  " .. (JY.Base["å½“å‰å¹´"] - p["ç”Ÿå¹´"]) .. "å²",C_Name,size);
 			cy=cy+size+2;
-				DrawStringEnhance(cx,cy,"ÏàĞÔ[w]  " .. p["ÏàĞÔ"],C_Name,size);
+				DrawStringEnhance(cx,cy,"ç›¸æ€§[w]  " .. p["ç›¸æ€§"],C_Name,size);
 				cy=cy+size+2;
 			LoadPicEnhance(72,cx-16,cy,512);
 			cy=cy+8;
-			DrawStringEnhance(cx,cy,"¼¼ÄÜ",C_Name,size);
+			DrawStringEnhance(cx,cy,"æŠ€èƒ½",C_Name,size);
 			local skill_id=DrawSkillTable(pid,cx+128,cy);
 			cy=cy+size+2+27;
-			for i,v in pairs({"²½±øÊÊĞÔ","¹­±øÊÊĞÔ","Æï±øÊÊĞÔ"}) do
+			for i,v in pairs({"æ­¥å…µé€‚æ€§","å¼“å…µé€‚æ€§","éª‘å…µé€‚æ€§"}) do
 				local sx=p[v];
 				lib.PicLoadCache(4,89*2,cx,cy,1);
 				DrawStringEnhance(cx+60,cy+4,v..JY.Str[sx+9160],C_WHITE,20,0.5);
 				cy=cy+27;
 			end
 			if skill_id>0 then
-        DrawStringEnhance(MOUSE.x, MOUSE.y, "¼¼ÄÜËµÃ÷ - "..JY.Skill[skill_id]["Ãû³Æ"], C_Name, size2);
+        DrawStringEnhance(MOUSE.x, MOUSE.y, "æŠ€èƒ½è¯´æ˜ - "..JY.Skill[skill_id]["åç§°"], C_Name, size2);
 				--[[cx=409;cy=390;
 				LoadPicEnhance(78,cx-15,cy-10,490,120);
-				DrawStringEnhance(cx,cy,"¼¼ÄÜËµÃ÷ - "..JY.Skill[skill_id]["Ãû³Æ"],C_Name,size2);
+				DrawStringEnhance(cx,cy,"æŠ€èƒ½è¯´æ˜ - "..JY.Skill[skill_id]["åç§°"],C_Name,size2);
 				cy=cy+size2+2;
-				DrawStringEnhance(cx,cy,JY.Skill[skill_id]["ËµÃ÷"],C_WHITE,size2,0,0,size2*23);]]--
+				DrawStringEnhance(cx,cy,JY.Skill[skill_id]["è¯´æ˜"],C_WHITE,size2,0,0,size2*23);]]--
 			end
 		elseif sheet==2 then
 			LoadPicEnhance(78,cx,cy,448,400);
 			cx=cx+15
 			cy=cy+10
-			DrawStringEnhance(cx,cy,"Èı¹úÓ¢½ÜÁĞ´« - "..p["Ãû³Æ"],C_Name,size);
+			DrawStringEnhance(cx,cy,"ä¸‰å›½è‹±æ°åˆ—ä¼  - "..p["åç§°"],C_Name,size);
 			cy=cy+size+2;
-			if p["ÁĞ´«"]>0 then
-				DrawStringEnhance(cx,cy,JY.Str[p["ÁĞ´«"]],C_WHITE,size2,0,0,420);
+			if p["åˆ—ä¼ "]>0 then
+				DrawStringEnhance(cx,cy,JY.Str[p["åˆ—ä¼ "]],C_WHITE,size2,0,0,420);
 			end
 		elseif sheet==1 then
 			cx=409;cy=60;
 			LoadPicEnhance(78,cx-15,cy-10,536,180);
-			--DrawStringEnhance(cx,cy,"±øÖÖ¼ò½é - "..b["Ãû³Æ"],C_Name,size2);
+			--DrawStringEnhance(cx,cy,"å…µç§ç®€ä»‹ - "..b["åç§°"],C_Name,size2);
 			cy=cy+size2+2;
-			--DrawStringEnhance(cx,cy,b["ËµÃ÷"],C_WHITE,size2,0,0,524);
+			--DrawStringEnhance(cx,cy,b["è¯´æ˜"],C_WHITE,size2,0,0,524);
 			cy=cy+160;
-			DrawStringEnhance(cx,cy,"ÏÖÔÚ¿ªÊ¼",C_Name,size2);
+			DrawStringEnhance(cx,cy,"ç°åœ¨å¼€å§‹",C_Name,size2);
 		end
 		button_redraw(bt);
 		drawSingleList(sl);
 	end	
 	local function ReSetSkill()
 		local t_skill={6,7,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,29,31,32,33,34,35,41,42}
-		if p["ĞÔ±ğ"]==1 and math.random()<0.2 then
+		if p["æ€§åˆ«"]==1 and math.random()<0.2 then
 			table.insert(t_skill,47);
 		end
 		if math.random()<0.1 then
@@ -3131,17 +3131,17 @@ function PersonStatus(plist,index,edit)
 		for i=1,6 do
 			local num=#t_skill;
 			local n=math.random(num)
-			p["¼¼ÄÜ"..i]=t_skill[n];
+			p["æŠ€èƒ½"..i]=t_skill[n];
 			table.remove(t_skill,n);
 		end
 	end
 	if edit then
-		p["ÏàĞÔ"]=math.random(1,149);
-		p["³É³¤"]=99;
+		p["ç›¸æ€§"]=math.random(1,149);
+		p["æˆé•¿"]=99;
 		--ReSetSkill();
-		--p["±øÖÖ"]=1;
-		--p["ÁéÇÉ"]=IrwinHall(80,5,4);
-		--p["¸£Ô´"]=IrwinHall(70,5,4);
+		--p["å…µç§"]=1;
+		--p["çµå·§"]=IrwinHall(80,5,4);
+		--p["ç¦æº"]=IrwinHall(70,5,4);
 		ReSetAttrib(0,true);
 	end
 	while true do
@@ -3158,7 +3158,7 @@ function PersonStatus(plist,index,edit)
 			pid=sl.val;
 			ReSetAttrib(pid,true);
 			p=JY.Person[pid];
-			fid=p["ÊÆÁ¦"];
+			fid=p["åŠ¿åŠ›"];
 		end
 		local event,btid=button_event(st);
 		if event==3 then
@@ -3173,103 +3173,103 @@ function PersonStatus(plist,index,edit)
 		event,btid=button_event(bt);
 		if event==3 then
 			if btid==1 then
-				p["ÄÚÕşÈİÃ²"]=SelectFace(p["ÄÚÕşÈİÃ²"]);
-				p["Õ½¶·ÈİÃ²"]=p["ÄÚÕşÈİÃ²"];
-				p["ÏàĞÔ"]=math.random(1,149);
-				if between(p["ÈİÃ²"],1179,1208) then
-					p["ĞÔ±ğ"]=1;
-				elseif between(p["ÈİÃ²"],1219,1228) then
-					p["ĞÔ±ğ"]=1;
-				elseif between(p["ÈİÃ²"],1240,1246) then
-					p["ĞÔ±ğ"]=1;
-				elseif between(p["ÈİÃ²"],1258,1264) then
-					p["ĞÔ±ğ"]=1;
-				else--if between(p["ÈİÃ²"],1251,1280) then
-					p["ĞÔ±ğ"]=0;
+				p["å†…æ”¿å®¹è²Œ"]=SelectFace(p["å†…æ”¿å®¹è²Œ"]);
+				p["æˆ˜æ–—å®¹è²Œ"]=p["å†…æ”¿å®¹è²Œ"];
+				p["ç›¸æ€§"]=math.random(1,149);
+				if between(p["å®¹è²Œ"],1179,1208) then
+					p["æ€§åˆ«"]=1;
+				elseif between(p["å®¹è²Œ"],1219,1228) then
+					p["æ€§åˆ«"]=1;
+				elseif between(p["å®¹è²Œ"],1240,1246) then
+					p["æ€§åˆ«"]=1;
+				elseif between(p["å®¹è²Œ"],1258,1264) then
+					p["æ€§åˆ«"]=1;
+				else--if between(p["å®¹è²Œ"],1251,1280) then
+					p["æ€§åˆ«"]=0;
 				end
 			elseif btid==2 then
-				p["Ãû³Æ"]=Input(p["Ãû³Æ"],p["ÈİÃ²"]);
-				if p["Ãû³Æ"]=="ÂÜÀò¿Ø" then
-					p["ÎäÁ¦"]=100;
-					p["ÖÇÄ±"]=100;
-					p["Í³ÂÊ"]=100;
-					p["ÕşÎñ"]=100;
-					p["÷ÈÁ¦"]=1;
-					p["ÁéÇÉ"]=1;
-					p["¸£Ô´"]=1;
-					p["±øÖÖ"]=21;
+				p["åç§°"]=Input(p["åç§°"],p["å®¹è²Œ"]);
+				if p["åç§°"]=="èè‰æ§" then
+					p["æ­¦åŠ›"]=100;
+					p["æ™ºè°‹"]=100;
+					p["ç»Ÿç‡"]=100;
+					p["æ”¿åŠ¡"]=100;
+					p["é­…åŠ›"]=1;
+					p["çµå·§"]=1;
+					p["ç¦æº"]=1;
+					p["å…µç§"]=21;
 				end
 			elseif btid==3 then
-				p["ÎäÁ¦"]=limitX(IrwinHall(att[1],10,2),1,100);
-				p["ÖÇÄ±"]=limitX(IrwinHall(att[2],10,2),1,100);
-				p["Í³ÂÊ"]=limitX(IrwinHall(att[3],10,2),1,100);
-				p["ÕşÎñ"]=limitX(IrwinHall(att[4],10,2),1,100);
-				p["÷ÈÁ¦"]=limitX(IrwinHall(att[5],10,2),1,100);
-				p["ÁéÇÉ"]=limitX(IrwinHall(att[6],10,2),1,100);
-				p["¸£Ô´"]=limitX(IrwinHall(att[7],10,2),1,100);
-				if p["ĞÔ±ğ"]==1 then
-					p["÷ÈÁ¦"]=limitX(p["÷ÈÁ¦"]+5,1,100);
+				p["æ­¦åŠ›"]=limitX(IrwinHall(att[1],10,2),1,100);
+				p["æ™ºè°‹"]=limitX(IrwinHall(att[2],10,2),1,100);
+				p["ç»Ÿç‡"]=limitX(IrwinHall(att[3],10,2),1,100);
+				p["æ”¿åŠ¡"]=limitX(IrwinHall(att[4],10,2),1,100);
+				p["é­…åŠ›"]=limitX(IrwinHall(att[5],10,2),1,100);
+				p["çµå·§"]=limitX(IrwinHall(att[6],10,2),1,100);
+				p["ç¦æº"]=limitX(IrwinHall(att[7],10,2),1,100);
+				if p["æ€§åˆ«"]==1 then
+					p["é­…åŠ›"]=limitX(p["é­…åŠ›"]+5,1,100);
 				end
-				if p["±øÖÖ"]==1 then
-					p["Í³ÂÊ"]=limitX(p["Í³ÂÊ"]+10,1,100);
+				if p["å…µç§"]==1 then
+					p["ç»Ÿç‡"]=limitX(p["ç»Ÿç‡"]+10,1,100);
 				end
-				if p["±øÖÖ"]==7 then
-					p["ÎäÁ¦"]=limitX(p["ÎäÁ¦"]+5,1,100);
-					p["ÖÇÄ±"]=limitX(p["ÖÇÄ±"]+5,1,100);
+				if p["å…µç§"]==7 then
+					p["æ­¦åŠ›"]=limitX(p["æ­¦åŠ›"]+5,1,100);
+					p["æ™ºè°‹"]=limitX(p["æ™ºè°‹"]+5,1,100);
 				end
-				if p["±øÖÖ"]==13 then
-					p["ÎäÁ¦"]=limitX(p["ÎäÁ¦"]+10,1,100);
+				if p["å…µç§"]==13 then
+					p["æ­¦åŠ›"]=limitX(p["æ­¦åŠ›"]+10,1,100);
 				end
-				if p["±øÖÖ"]==19 then
-					p["ÎäÁ¦"]=limitX(p["ÎäÁ¦"]+5,1,100);
-					p["Í³ÂÊ"]=limitX(p["Í³ÂÊ"]+5,1,100);
+				if p["å…µç§"]==19 then
+					p["æ­¦åŠ›"]=limitX(p["æ­¦åŠ›"]+5,1,100);
+					p["ç»Ÿç‡"]=limitX(p["ç»Ÿç‡"]+5,1,100);
 				end
-				if p["±øÖÖ"]==24 then
-					p["ÖÇÄ±"]=limitX(p["ÖÇÄ±"]+10,1,100);
+				if p["å…µç§"]==24 then
+					p["æ™ºè°‹"]=limitX(p["æ™ºè°‹"]+10,1,100);
 				end
 				ReSetAttrib(pid,true);
 			elseif btid==4 then
 				ReSetSkill();
 				ReSetAttrib(pid,true);
 			elseif btid==5 then
-				if p["±øÖÖ"]==1 then
-					p["±øÖÖ"]=4;
-					att={75,70,75,70,70,60,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==4 then
-					p["±øÖÖ"]=7;
-					att={65,70,65,70,70,75,75,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==7 then
-					p["±øÖÖ"]=13;
-					att={75,60,75,65,75,70,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==13 then
-					p["±øÖÖ"]=16;
-					att={75,65,70,65,75,70,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==16 then
-					p["±øÖÖ"]=19;
-					att={70,75,70,60,70,70,75,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==19 then
-					p["±øÖÖ"]=24;
-					att={65,75,75,75,70,60,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==24 then
-					p["±øÖÖ"]=27;
-					att={70,75,70,75,70,70,60,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==27 then
-					p["±øÖÖ"]=30;
-					att={75,65,70,65,70,75,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
-				elseif p["±øÖÖ"]==30 then
-					p["±øÖÖ"]=33;
-					att={70,70,70,70,70,70,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
+				if p["å…µç§"]==1 then
+					p["å…µç§"]=4;
+					att={75,70,75,70,70,60,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==4 then
+					p["å…µç§"]=7;
+					att={65,70,65,70,70,75,75,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==7 then
+					p["å…µç§"]=13;
+					att={75,60,75,65,75,70,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==13 then
+					p["å…µç§"]=16;
+					att={75,65,70,65,75,70,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==16 then
+					p["å…µç§"]=19;
+					att={70,75,70,60,70,70,75,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==19 then
+					p["å…µç§"]=24;
+					att={65,75,75,75,70,60,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==24 then
+					p["å…µç§"]=27;
+					att={70,75,70,75,70,70,60,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==27 then
+					p["å…µç§"]=30;
+					att={75,65,70,65,70,75,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
+				elseif p["å…µç§"]==30 then
+					p["å…µç§"]=33;
+					att={70,70,70,70,70,70,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
 				else
-					p["±øÖÖ"]=1;
-					att={70,70,75,70,70,65,70,}	--ÎäÖÇÍ³Õş÷ÈÇÉ¸£
+					p["å…µç§"]=1;
+					att={70,70,75,70,70,65,70,}	--æ­¦æ™ºç»Ÿæ”¿é­…å·§ç¦
 				end
-				b=JY.Bingzhong[p["±øÖÖ"]];
+				b=JY.Bingzhong[p["å…µç§"]];
 				ReSetAttrib(pid,true);
 			elseif btid==98 then
 				return pid;
 			elseif btid==99 then
 				if edit then
-					p["³É³¤"]=10;
+					p["æˆé•¿"]=10;
 				end
 				return 0;
 			end
@@ -3278,13 +3278,13 @@ function PersonStatus(plist,index,edit)
 end
 function SelectFace(faceid)
 	local st={}
-	table.insert(st,button_creat(10,3,584,0,"±øÖÖ",true,false));
-	table.insert(st,button_creat(10,2,492,0,"ÁĞ´«",true,false));
-	table.insert(st,button_creat(10,1,400,0,"ÄÜÁ¦",true,true));
+	table.insert(st,button_creat(10,3,584,0,"å…µç§",true,false));
+	table.insert(st,button_creat(10,2,492,0,"åˆ—ä¼ ",true,false));
+	table.insert(st,button_creat(10,1,400,0,"èƒ½åŠ›",true,true));
 	st[3].on=2;
 	local bt={};
-	table.insert(bt,button_creat(1,1,500,54,"ÉÏÒ»Ò³",true,false));
-	table.insert(bt,button_creat(1,2,700,54,"ÏÂÒ»Ò³",true,true));
+	table.insert(bt,button_creat(1,1,500,54,"ä¸Šä¸€é¡µ",true,false));
+	table.insert(bt,button_creat(1,2,700,54,"ä¸‹ä¸€é¡µ",true,true));
 	--init
 	local t_pic={
 				[1]={1129,1130,1131,1132,1133,1134,1135,1136,1137,1138,1139,1140,1141,1142,1143,1144,1145,1146,1147,1148,1149,1150,1151,1152,1153,1154,1155,1156,1157,1158,},
@@ -3385,15 +3385,15 @@ end
 function DrawCCityM(x0,y0)
 	--lib.PicLoadCache(4,700*2,x0,y0,1,255,M_Gray);
 	for i=1,JY.CityNum-1 do
-		local fid=JY.City[i]["ÊÆÁ¦"];
+		local fid=JY.City[i]["åŠ¿åŠ›"];
 		lib.PicLoadCache(4,(700+i)*2,x0,y0,1+4,255,FlagColor[fid]);
 	end
 	lib.PicLoadCache(4,(700+51)*2,x0,y0,1,255);
 	for i=1,JY.CityNum-1 do
-		local x1,y1=x0+JY.City[i]["ÖĞµØÍ¼X"]+1,y0+JY.City[i]["ÖĞµØÍ¼Y"]+1;
-		local fid=JY.City[i]["ÊÆÁ¦"];
-		local pic=151+JY.City[i]["±ê¼Ç"];
-		if JY.Base["µ±Ç°³Ç³Ø"]==i then
+		local x1,y1=x0+JY.City[i]["ä¸­åœ°å›¾X"]+1,y0+JY.City[i]["ä¸­åœ°å›¾Y"]+1;
+		local fid=JY.City[i]["åŠ¿åŠ›"];
+		local pic=151+JY.City[i]["æ ‡è®°"];
+		if JY.Base["å½“å‰åŸæ± "]==i then
 			lib.PicLoadCache(4,598*2,x1+1,y1+1);
 		end
 		lib.FillColor(x1-5,y1-5,x1+5,y1+5,FlagColor[fid]);
@@ -3410,9 +3410,9 @@ function DrawCCityS(x0,y0,control)
 	lib.PicLoadCache(4,160*2,x0,y0,1);
 	--lib.FillColor();
 	for i=1,JY.CityNum-1 do
-		local x1,y1=x0+JY.City[i]["Ğ¡µØÍ¼X"],y0+JY.City[i]["Ğ¡µØÍ¼Y"];
-		local pic=500+JY.City[i]["ÊÆÁ¦"];
-		if JY.Base["µ±Ç°³Ç³Ø"]==i then
+		local x1,y1=x0+JY.City[i]["å°åœ°å›¾X"],y0+JY.City[i]["å°åœ°å›¾Y"];
+		local pic=500+JY.City[i]["åŠ¿åŠ›"];
+		if JY.Base["å½“å‰åŸæ± "]==i then
 			lib.PicLoadCache(4,599*2,x1+1,y1+1);
 		end
 		lib.PicLoadCache(4,pic*2,x1,y1);
@@ -3421,12 +3421,12 @@ function DrawCCityS(x0,y0,control)
 		end
 	end
 	if cid>0 then
-		DrawLabel(tx,ty,JY.City[cid]["Ãû³Æ"]);
+		DrawLabel(tx,ty,JY.City[cid]["åç§°"]);
 	end
 end
 function DrawCCityS(x, y)
   local mapBGColor = RGB(48, 48, 16);
-  local playerCityID = JY.Person[JY.PID]["ËùÔÚ"];
+  local playerCityID = JY.Person[JY.PID]["æ‰€åœ¨"];
   local cid = 0;
   local cityX, cityY;
   
@@ -3448,8 +3448,8 @@ function DrawCCityS(x, y)
     end
   end
   for i = 1, JY.CityNum - 1 do
-    local fid = JY.City[i]["ÊÆÁ¦"];
-    local cx, cy = x + JY.City[i]["ÖĞµØÍ¼X"] / 2, y + JY.City[i]["ÖĞµØÍ¼Y"] / 2;
+    local fid = JY.City[i]["åŠ¿åŠ›"];
+    local cx, cy = x + JY.City[i]["ä¸­åœ°å›¾X"] / 2, y + JY.City[i]["ä¸­åœ°å›¾Y"] / 2;
     --[[local event = MOUSE.EVENT(cx - 3, cy - 3, cx + 3, cy + 3);
     if event == 3 then
       PlayWavE(0);
@@ -3488,27 +3488,27 @@ function DrawCCityS(x, y)
   
   lib.PicLoadCache(4, 700 * 2, x, y, 1 + 8, nil, nil, 203);
   if cid > 0 then
-    DrawLabel(MOUSE.x + 8, MOUSE.y + 24, JY.City[cid]["Ãû³Æ"]);
+    DrawLabel(MOUSE.x + 8, MOUSE.y + 24, JY.City[cid]["åç§°"]);
   end
 end
 function DrawCityStatus(plist,index)
 	local strlist={};
 	for i,v in ipairs(plist) do
-		strlist[i]=JY.City[v]["Ãû³Æ"];
+		strlist[i]=JY.City[v]["åç§°"];
 	end
 	local cid=plist[index]
 	local c=JY.City[cid];
-	local fid=c["ÊÆÁ¦"];
+	local fid=c["åŠ¿åŠ›"];
 	local width,height=800,480;
 	local size=24;
 	local size2=20;
 	local x0=(CC.ScreenW-width)/2;
 	local y0=(CC.ScreenH-height)/2;
 	local bt={};
-	table.insert(bt,button_creat(1,11,x0+150,y0+424,"¶¼ÊĞÎä½«",true,true));
-	button_mainbt_1(bt,"¹Ø±Õ",2, y0 + height - 56);
-	bt[1].enable=c["ÏÖÒÛ"]+c["ÔÚÒ°"]>0;
-	local sl=creatSingleList(x0+24,y0+12,84,403,plist,strlist,"¶¼ÊĞ");
+	table.insert(bt,button_creat(1,11,x0+150,y0+424,"éƒ½å¸‚æ­¦å°†",true,true));
+	button_mainbt_1(bt,"å…³é—­",2, y0 + height - 56);
+	bt[1].enable=c["ç°å½¹"]+c["åœ¨é‡"]>0;
+	local sl=creatSingleList(x0+24,y0+12,84,403,plist,strlist,"éƒ½å¸‚");
 	rollSingleList(sl,index);
 	local function redraw()
 		DrawGame();
@@ -3517,57 +3517,57 @@ function DrawCityStatus(plist,index)
 		x=x+144; y=y+16;
 		LoadPicEnhance(79,x,y,120);
 		LoadPicEnhance(72,x-16,y+38,width-160);
-		DrawStringEnhance(x+60,y+5,c["Ãû³Æ"],C_WHITE,size,0.5);
+		DrawStringEnhance(x+60,y+5,c["åç§°"],C_WHITE,size,0.5);
 		y=y+4;	x=x+140;
-		DrawStringEnhance(x,y,"Ì«ÊØ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[c["Ì«ÊØ"]]["Ãû³Æ"],C_WHITE,size);
+		DrawStringEnhance(x,y,"å¤ªå®ˆ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[c["å¤ªå®ˆ"]]["åç§°"],C_WHITE,size);
 		lib.PicLoadCache(4,87*2,x+220,y,1);
-		DrawStringEnhance(x+224,y+4,JY.Str[9010+c["ÌØÕ÷"]],C_WHITE,size2);
-		if c["½ÓÈÀ"]>0 then
+		DrawStringEnhance(x+224,y+4,JY.Str[9010+c["ç‰¹å¾"]],C_WHITE,size2);
+		if c["æ¥å£¤"]>0 then
 			lib.PicLoadCache(4,82*2,x+280,y,1);
-			DrawStringEnhance(x+284,y+4,"Ç°Ïß",C_WHITE,size2);
+			DrawStringEnhance(x+284,y+4,"å‰çº¿",C_WHITE,size2);
 		end
 		y=y+50;
-		if c["Ì«ÊØ"]>0 then
-			lib.PicLoadCache(2,(JY.Person[c["Ì«ÊØ"]]["ÈİÃ²"]+4000)*2,x-80,y+64,0);
+		if c["å¤ªå®ˆ"]>0 then
+			lib.PicLoadCache(2,(JY.Person[c["å¤ªå®ˆ"]]["å®¹è²Œ"]+4000)*2,x-80,y+64,0);
 		end
 			y=y-4;
-		DrawStringEnhance(x,y,"ÊÆÁ¦",C_Name,size);					DrawStringEnhance(x+60,y,JY.Force[fid]["Ãû³Æ"],C_WHITE,size);			y=y+size+4;
-		DrawStringEnhance(x,y,"Öİ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9030+c["Öİ"]],C_WHITE,size);
-		DrawStringEnhance(x+140,y,"µØ·½",C_Name,size);				DrawStringEnhance(x+140+60,y,JY.Str[9050+c["µØ·½"]],C_WHITE,size);		y=y+size+4;
-		DrawStringEnhance(x,y,"¹æÄ£",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9000+c["¹æÄ£"]],C_WHITE,size);
-		DrawStringEnhance(x + 140,y,"ÈË¿Ú",C_Name,size);					DrawNumPicBig(x + 140 + 90, y, c["ÈË¿Ú"] * 100);			y=y+size+4;
-		DrawStringEnhance(x,y,"×Ê½ğ",C_Name,size);					DrawNumPicBig(x+90,y,c["×Ê½ğ"]*10);
-		DrawStringEnhance(x+140,y,"Îï×Ê",C_Name,size);				DrawNumPicBig(x+140+90,y,c["Îï×Ê"]*10);		y=y+size+4;
-		DrawStringEnhance(x,y,"ÏÖÒÛ",C_Name,size);					DrawNumPicBig(x+90,y,c["ÏÖÒÛ"]);
-		DrawStringEnhance(x+140,y,"ÔÚÒ°",C_Name,size);				DrawNumPicBig(x+140+90,y,c["ÔÚÒ°"]);		y=y+size+4;
-		DrawStringEnhance(x,y,"±øÁ¦",C_Name,size);					DrawNumPicBig(x+90,y,c["±øÁ¦"]);
-		DrawStringEnhance(x+140,y,"Ê¿Æø",C_Name,size);				DrawNumPicBig(x+140+90,y,c["Ê¿Æø"]);		y=y+size+4;
+		DrawStringEnhance(x,y,"åŠ¿åŠ›",C_Name,size);					DrawStringEnhance(x+60,y,JY.Force[fid]["åç§°"],C_WHITE,size);			y=y+size+4;
+		DrawStringEnhance(x,y,"å·",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9030+c["å·"]],C_WHITE,size);
+		DrawStringEnhance(x+140,y,"åœ°æ–¹",C_Name,size);				DrawStringEnhance(x+140+60,y,JY.Str[9050+c["åœ°æ–¹"]],C_WHITE,size);		y=y+size+4;
+		DrawStringEnhance(x,y,"è§„æ¨¡",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9000+c["è§„æ¨¡"]],C_WHITE,size);
+		DrawStringEnhance(x + 140,y,"äººå£",C_Name,size);					DrawNumPicBig(x + 140 + 90, y, c["äººå£"] * 100);			y=y+size+4;
+		DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,size);					DrawNumPicBig(x+90,y,c["èµ„é‡‘"]*10);
+		DrawStringEnhance(x+140,y,"ç‰©èµ„",C_Name,size);				DrawNumPicBig(x+140+90,y,c["ç‰©èµ„"]*10);		y=y+size+4;
+		DrawStringEnhance(x,y,"ç°å½¹",C_Name,size);					DrawNumPicBig(x+90,y,c["ç°å½¹"]);
+		DrawStringEnhance(x+140,y,"åœ¨é‡",C_Name,size);				DrawNumPicBig(x+140+90,y,c["åœ¨é‡"]);		y=y+size+4;
+		DrawStringEnhance(x,y,"å…µåŠ›",C_Name,size);					DrawNumPicBig(x+90,y,c["å…µåŠ›"]);
+		DrawStringEnhance(x+140,y,"å£«æ°”",C_Name,size);				DrawNumPicBig(x+140+90,y,c["å£«æ°”"]);		y=y+size+4;
 		x=x-132;	y=y+8;
-		--DrawStringEnhance(x,y,"ÌØÕ÷",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9010+c["ÌØÕ÷"]],C_WHITE,size);		x=x+140;
-		--DrawStringEnhance(x,y,"½ÓÈÀ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+c["½ÓÈÀ"]],C_WHITE,size);		y=y+size+4;		x=x-140;
-		DrawStringEnhance(x,y,"¿ª¿Ñ",C_Name,size);					DrawNumPicBig(x+160,y,c["¿ª¿Ñ"]/2,c["×î´ó¿ª¿Ñ"]/2);		drawbar(x,y+size,1000*c["¿ª¿Ñ"]/2000);
+		--DrawStringEnhance(x,y,"ç‰¹å¾",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9010+c["ç‰¹å¾"]],C_WHITE,size);		x=x+140;
+		--DrawStringEnhance(x,y,"æ¥å£¤",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+c["æ¥å£¤"]],C_WHITE,size);		y=y+size+4;		x=x-140;
+		DrawStringEnhance(x,y,"å¼€å¦",C_Name,size);					DrawNumPicBig(x+160,y,c["å¼€å¦"]/2,c["æœ€å¤§å¼€å¦"]/2);		drawbar(x,y+size,1000*c["å¼€å¦"]/2000);
 		local grow
-    --grow = (c["¿ª¿Ñ"] + 10) * (10 + JY.Person[c["Ì«ÊØ"]]["÷ÈÁ¦"] + 100) / 50;
-    grow = 4 * c["¿ª¿Ñ"] / 10 * (1 + limitX(c["ÈË¿Ú"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[c["Ì«ÊØ"]]["÷ÈÁ¦"], 10, 110));
+    --grow = (c["å¼€å¦"] + 10) * (10 + JY.Person[c["å¤ªå®ˆ"]]["é­…åŠ›"] + 100) / 50;
+    grow = 4 * c["å¼€å¦"] / 10 * (1 + limitX(c["äººå£"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[c["å¤ªå®ˆ"]]["é­…åŠ›"], 10, 110));
     grow = math.floor(grow);
-    DrawStringEnhance(x + 240, y, string.format("(+%d/Äê)",grow * 10), C_WHITE, size);         y=y+size+12;
-		DrawStringEnhance(x,y,"ÉÌÒµ",C_Name,size);					DrawNumPicBig(x+160,y,c["ÉÌÒµ"]/2,c["×î´óÉÌÒµ"]/2);		drawbar(x,y+size,1000*c["ÉÌÒµ"]/2000);
+    DrawStringEnhance(x + 240, y, string.format("(+%d/å¹´)",grow * 10), C_WHITE, size);         y=y+size+12;
+		DrawStringEnhance(x,y,"å•†ä¸š",C_Name,size);					DrawNumPicBig(x+160,y,c["å•†ä¸š"]/2,c["æœ€å¤§å•†ä¸š"]/2);		drawbar(x,y+size,1000*c["å•†ä¸š"]/2000);
 		
-    --grow = (c["ÉÌÒµ"] + 10) * (10 + JY.Person[c["Ì«ÊØ"]]["÷ÈÁ¦"] + 100) / 200;
-    grow = c["ÉÌÒµ"] / 10 * (1 + limitX(c["ÈË¿Ú"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[c["Ì«ÊØ"]]["÷ÈÁ¦"], 10, 110));
-    if c["ÌØÕ÷"] == 3 then --½»Ò×¶¼ÊĞ
+    --grow = (c["å•†ä¸š"] + 10) * (10 + JY.Person[c["å¤ªå®ˆ"]]["é­…åŠ›"] + 100) / 200;
+    grow = c["å•†ä¸š"] / 10 * (1 + limitX(c["äººå£"] / 5000, 0, 2) +  15/ limitX(110 - JY.Person[c["å¤ªå®ˆ"]]["é­…åŠ›"], 10, 110));
+    if c["ç‰¹å¾"] == 3 then --äº¤æ˜“éƒ½å¸‚
       grow = grow * 1.2;
     end
     grow = math.floor(grow);
-    DrawStringEnhance(x + 240, y, string.format("(+%d/¼¾)",grow * 10), C_WHITE, size);         y=y+size+12;
-		DrawStringEnhance(x,y,"¼¼Êõ",C_Name,size);					DrawNumPicBig(x+160,y,c["¼¼Êõ"]/2,c["×î´ó¼¼Êõ"]/2);		drawbar(x,y+size,1000*c["¼¼Êõ"]/2000);		y=y+size+12;
-		DrawStringEnhance(x,y,"·ÀÓù",C_Name,size);					DrawNumPicBig(x+160,y,c["·ÀÓù"]/2,c["×î´ó·ÀÓù"]/2);		drawbar(x,y+size,1000*c["·ÀÓù"]/2000);		y=y+size+12;
-		DrawStringEnhance(x,y,"ÖÎ°²",C_Name,size);					DrawNumPicBig(x+160,y,c["ÖÎ°²"]/10,100);		drawbar(x,y+size,1000*c["ÖÎ°²"]/1000);		y=y+size+12;
+    DrawStringEnhance(x + 240, y, string.format("(+%d/å­£)",grow * 10), C_WHITE, size);         y=y+size+12;
+		DrawStringEnhance(x,y,"æŠ€æœ¯",C_Name,size);					DrawNumPicBig(x+160,y,c["æŠ€æœ¯"]/2,c["æœ€å¤§æŠ€æœ¯"]/2);		drawbar(x,y+size,1000*c["æŠ€æœ¯"]/2000);		y=y+size+12;
+		DrawStringEnhance(x,y,"é˜²å¾¡",C_Name,size);					DrawNumPicBig(x+160,y,c["é˜²å¾¡"]/2,c["æœ€å¤§é˜²å¾¡"]/2);		drawbar(x,y+size,1000*c["é˜²å¾¡"]/2000);		y=y+size+12;
+		DrawStringEnhance(x,y,"æ²»å®‰",C_Name,size);					DrawNumPicBig(x+160,y,c["æ²»å®‰"]/10,100);		drawbar(x,y+size,1000*c["æ²»å®‰"]/1000);		y=y+size+12;
     
     x = x + 360; y = y - 80;
-		DrawStringEnhance(x,y,"Õ½ÂÔ",C_Name,size);					DrawNumPicBig(x+90,y,c["Õ½ÂÔ¼ÛÖµ"]); y=y+size+4;
-		DrawStringEnhance(x,y,"ÕşÂÔ",C_Name,size);					DrawNumPicBig(x+90,y,c["ÕşÂÔ¼ÛÖµ"]); y=y+size+4;
-		DrawStringEnhance(x,y,"Ç°Ïß",C_Name,size);					DrawNumPicBig(x+90,y,c["Ç°Ïß"]); y=y+size+4;
+		DrawStringEnhance(x,y,"æˆ˜ç•¥",C_Name,size);					DrawNumPicBig(x+90,y,c["æˆ˜ç•¥ä»·å€¼"]); y=y+size+4;
+		DrawStringEnhance(x,y,"æ”¿ç•¥",C_Name,size);					DrawNumPicBig(x+90,y,c["æ”¿ç•¥ä»·å€¼"]); y=y+size+4;
+		DrawStringEnhance(x,y,"å‰çº¿",C_Name,size);					DrawNumPicBig(x+90,y,c["å‰çº¿"]); y=y+size+4;
     
     
 		button_redraw(bt);
@@ -3586,8 +3586,8 @@ function DrawCityStatus(plist,index)
 			index=sl.select;
 			cid=plist[index]
 			c=JY.City[cid];
-			fid=c["ÊÆÁ¦"];
-			bt[1].enable=c["ÏÖÒÛ"]+c["ÔÚÒ°"]>0;
+			fid=c["åŠ¿åŠ›"];
+			bt[1].enable=c["ç°å½¹"]+c["åœ¨é‡"]>0;
 		end
 		local event,btid=button_event(bt);
 		if event==3 then
@@ -3604,26 +3604,26 @@ function DrawCityStatus(plist,index)
 --	x0=x0+24;
 --	--LoadPicEnhance(205,x,y,w,h);						x=x+36;y=y+32;
 --	Glass(x,y,x+w,y+h,FlagColor[fid],244);				x=x+36;y=y+24;
---	DrawStringEnhance(x+85,y+2,"[B][wheat]"..c["Ãû³Æ"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+c["ÊÆÁ¦"])*2,x+180,y+6,1);			y=y+42;
+--	DrawStringEnhance(x+85,y+2,"[B][wheat]"..c["åç§°"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+c["åŠ¿åŠ›"])*2,x+180,y+6,1);			y=y+42;
 --	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);			y=y+20;
---	DrawStringEnhance(x,y,"ÊÆÁ¦",C_Name,size);					DrawStringEnhance(x+60,y,JY.Force[fid]["Ãû³Æ"],C_WHITE,size);	y=y+size+4;	
---	DrawStringEnhance(x,y,"Ì«ÊØ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[c["Ì«ÊØ"]]["Ãû³Æ"],C_WHITE,size);		x=x+140;
---	DrawStringEnhance(x,y,"¹æÄ£",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9000+c["¹æÄ£"]],C_WHITE,size);							y=y+size+4;		x=x-140;
---	DrawStringEnhance(x,y,"Öİ",C_Name,size);						DrawStringEnhance(x+60,y,JY.Str[9030+c["Öİ"]],C_WHITE,size);			x=x+140
---	DrawStringEnhance(x,y,"µØ·½",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9050+c["µØ·½"]],C_WHITE,size);		y=y+size+4;		x=x-140;
---	DrawStringEnhance(x,y,"ÌØÕ÷",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9010+c["ÌØÕ÷"]],C_WHITE,size);		x=x+140;
---	DrawStringEnhance(x,y,"½ÓÈÀ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+c["½ÓÈÀ"]],C_WHITE,size);		y=y+size+4;		x=x-140;
+--	DrawStringEnhance(x,y,"åŠ¿åŠ›",C_Name,size);					DrawStringEnhance(x+60,y,JY.Force[fid]["åç§°"],C_WHITE,size);	y=y+size+4;	
+--	DrawStringEnhance(x,y,"å¤ªå®ˆ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[c["å¤ªå®ˆ"]]["åç§°"],C_WHITE,size);		x=x+140;
+--	DrawStringEnhance(x,y,"è§„æ¨¡",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9000+c["è§„æ¨¡"]],C_WHITE,size);							y=y+size+4;		x=x-140;
+--	DrawStringEnhance(x,y,"å·",C_Name,size);						DrawStringEnhance(x+60,y,JY.Str[9030+c["å·"]],C_WHITE,size);			x=x+140
+--	DrawStringEnhance(x,y,"åœ°æ–¹",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9050+c["åœ°æ–¹"]],C_WHITE,size);		y=y+size+4;		x=x-140;
+--	DrawStringEnhance(x,y,"ç‰¹å¾",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9010+c["ç‰¹å¾"]],C_WHITE,size);		x=x+140;
+--	DrawStringEnhance(x,y,"æ¥å£¤",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+c["æ¥å£¤"]],C_WHITE,size);		y=y+size+4;		x=x-140;
 --	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);	y=y+20;
---	DrawStringEnhance(x,y,"¿ª¿Ñ",C_Name,size);					DrawNumPicBig(x+160,y,c["¿ª¿Ñ"]/10,c["×î´ó¿ª¿Ñ"]/10);		drawbar(x,y+size,1000*c["¿ª¿Ñ"]/c["×î´ó¿ª¿Ñ"]);		y=y+size+8;
---	DrawStringEnhance(x,y,"ÉÌÒµ",C_Name,size);					DrawNumPicBig(x+160,y,c["ÉÌÒµ"]/10,c["×î´óÉÌÒµ"]/10);		drawbar(x,y+size,1000*c["ÉÌÒµ"]/c["×î´óÉÌÒµ"]);		y=y+size+8;
---	DrawStringEnhance(x,y,"±øÁ¦",C_Name,size);					DrawNumPicBig(x+90,y,c["±øÁ¦"]);		x=x+140;
---	DrawStringEnhance(x,y,"Ê¿Æø",C_Name,size);					DrawNumPicBig(x+90,y,c["Ê¿Æø"]);		y=y+size+4;		x=x-140;
---	DrawStringEnhance(x,y,"ÏÖÒÛ",C_Name,size);					DrawNumPicBig(x+90,y,c["ÏÖÒÛ"]);		x=x+140;
---	DrawStringEnhance(x,y,"ÔÚÒ°",C_Name,size);					DrawNumPicBig(x+90,y,c["ÔÚÒ°"]);		y=y+size+4;		x=x-140;
+--	DrawStringEnhance(x,y,"å¼€å¦",C_Name,size);					DrawNumPicBig(x+160,y,c["å¼€å¦"]/10,c["æœ€å¤§å¼€å¦"]/10);		drawbar(x,y+size,1000*c["å¼€å¦"]/c["æœ€å¤§å¼€å¦"]);		y=y+size+8;
+--	DrawStringEnhance(x,y,"å•†ä¸š",C_Name,size);					DrawNumPicBig(x+160,y,c["å•†ä¸š"]/10,c["æœ€å¤§å•†ä¸š"]/10);		drawbar(x,y+size,1000*c["å•†ä¸š"]/c["æœ€å¤§å•†ä¸š"]);		y=y+size+8;
+--	DrawStringEnhance(x,y,"å…µåŠ›",C_Name,size);					DrawNumPicBig(x+90,y,c["å…µåŠ›"]);		x=x+140;
+--	DrawStringEnhance(x,y,"å£«æ°”",C_Name,size);					DrawNumPicBig(x+90,y,c["å£«æ°”"]);		y=y+size+4;		x=x-140;
+--	DrawStringEnhance(x,y,"ç°å½¹",C_Name,size);					DrawNumPicBig(x+90,y,c["ç°å½¹"]);		x=x+140;
+--	DrawStringEnhance(x,y,"åœ¨é‡",C_Name,size);					DrawNumPicBig(x+90,y,c["åœ¨é‡"]);		y=y+size+4;		x=x-140;
 --	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);	y=y+20;
---	DrawStringEnhance(x,y,"ÉèÊ©",C_Name,size);					DrawStringEnhance(x+60,y,"ÎŞ",C_WHITE,size);							y=y+size+4;	
---														DrawStringEnhance(x+60,y,"ÎŞ",C_WHITE,size);							y=y+size+4;	
---														DrawStringEnhance(x+60,y,"ÎŞ",C_WHITE,size);							y=y+size+4;	
+--	DrawStringEnhance(x,y,"è®¾æ–½",C_Name,size);					DrawStringEnhance(x+60,y,"æ— ",C_WHITE,size);							y=y+size+4;	
+--														DrawStringEnhance(x+60,y,"æ— ",C_WHITE,size);							y=y+size+4;	
+--														DrawStringEnhance(x+60,y,"æ— ",C_WHITE,size);							y=y+size+4;	
 end
 function DrawForceStatus(id,x0,y0)
 	local f=JY.Force[id];
@@ -3633,37 +3633,37 @@ function DrawForceStatus(id,x0,y0)
 	x0=x0+24;
 	--LoadPicEnhance(205,x,y,w,h);						x=x+36;y=y+32;
 	Glass(x,y,x+w,y+h,FlagColor[id],244);				x=x+36;y=y+24;
-	DrawStringEnhance(x+85,y+2,"[B][wheat]"..f["Ãû³Æ"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+id)*2,x+180,y+6,1);			y=y+42;
+	DrawStringEnhance(x+85,y+2,"[B][wheat]"..f["åç§°"],C_WHITE,32,0.5);		lib.PicLoadCache(4,(600+id)*2,x+180,y+6,1);			y=y+42;
 	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);			y=y+20;
-	DrawStringEnhance(x,y,"¾ıÖ÷",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[f["¾ıÖ÷"]]["Ãû³Æ"],C_WHITE,size);	y=y+size+4;	
-	DrawStringEnhance(x,y,"¹Ù¾ô",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9080+f["¹Ù¾ô"]],C_WHITE,size);		x=x+140;
-	DrawStringEnhance(x,y,"±¾³Ç",C_Name,size);					DrawStringEnhance(x+60,y,JY.City[f["±¾³Ç"]]["Ãû³Æ"],C_WHITE,size);		y=y+size+4;		x=x-140;
-	DrawStringEnhance(x,y,"ÏÖÒÛ",C_Name,size);					DrawStringEnhance(x+60,y,""..f["ÏÖÒÛ"],C_WHITE,size);		x=x+140;
-	DrawStringEnhance(x,y,"³Ç³Ø",C_Name,size);					DrawStringEnhance(x+60,y,""..f["³Ç³Ø"],C_WHITE,size);		y=y+size+4;		x=x-140;
-	DrawStringEnhance(x,y,"×Ê½ğ",C_Name,size);					DrawStringEnhance(x+60,y,""..f["×Ê½ğ"]*10,C_WHITE,size);		x=x+140;
-	DrawStringEnhance(x,y,"Îï×Ê",C_Name,size);					DrawStringEnhance(x+60,y,""..f["Îï×Ê"]*10,C_WHITE,size);		y=y+size+4;		x=x-140;
+	DrawStringEnhance(x,y,"å›ä¸»",C_Name,size);					DrawStringEnhance(x+60,y,JY.Person[f["å›ä¸»"]]["åç§°"],C_WHITE,size);	y=y+size+4;	
+	DrawStringEnhance(x,y,"å®˜çˆµ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9080+f["å®˜çˆµ"]],C_WHITE,size);		x=x+140;
+	DrawStringEnhance(x,y,"æœ¬åŸ",C_Name,size);					DrawStringEnhance(x+60,y,JY.City[f["æœ¬åŸ"]]["åç§°"],C_WHITE,size);		y=y+size+4;		x=x-140;
+	DrawStringEnhance(x,y,"ç°å½¹",C_Name,size);					DrawStringEnhance(x+60,y,""..f["ç°å½¹"],C_WHITE,size);		x=x+140;
+	DrawStringEnhance(x,y,"åŸæ± ",C_Name,size);					DrawStringEnhance(x+60,y,""..f["åŸæ± "],C_WHITE,size);		y=y+size+4;		x=x-140;
+	DrawStringEnhance(x,y,"èµ„é‡‘",C_Name,size);					DrawStringEnhance(x+60,y,""..f["èµ„é‡‘"]*10,C_WHITE,size);		x=x+140;
+	DrawStringEnhance(x,y,"ç‰©èµ„",C_Name,size);					DrawStringEnhance(x+60,y,""..f["ç‰©èµ„"]*10,C_WHITE,size);		y=y+size+4;		x=x-140;
 	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);	y=y+20;
-	DrawStringEnhance(x,y,"Õ½ÂÔ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9070+f["Õ½ÂÔ"]],C_WHITE,size);
-	if f["Õ½ÂÔ"]>0 then
+	DrawStringEnhance(x,y,"æˆ˜ç•¥",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9070+f["æˆ˜ç•¥"]],C_WHITE,size);
+	if f["æˆ˜ç•¥"]>0 then
 		x=x+140
-		DrawStringEnhance(x,y,"Ä¿±ê",C_Name,size);					DrawStringEnhance(x+60,y,"ÖĞÔ­",C_WHITE,size);		x=x-140;
+		DrawStringEnhance(x,y,"ç›®æ ‡",C_Name,size);					DrawStringEnhance(x+60,y,"ä¸­åŸ",C_WHITE,size);		x=x-140;
 	end
 	y=y+size+4;
-	DrawStringEnhance(x,y,"µĞÒâ",C_Name,size);					DrawStringEnhance(x+60,y,""..f["µĞÒâ"],C_WHITE,size);		x=x+140;
-	y=y+size+4;		x=x-140;--DrawStringEnhance(x,y,"½ÓÈÀ",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+f["½ÓÈÀ"]],C_WHITE,size);		y=y+size+4;		x=x-140;
+	DrawStringEnhance(x,y,"æ•Œæ„",C_Name,size);					DrawStringEnhance(x+60,y,""..f["æ•Œæ„"],C_WHITE,size);		x=x+140;
+	y=y+size+4;		x=x-140;--DrawStringEnhance(x,y,"æ¥å£¤",C_Name,size);					DrawStringEnhance(x+60,y,JY.Str[9060+f["æ¥å£¤"]],C_WHITE,size);		y=y+size+4;		x=x-140;
 	y=y+8;	lib.PicLoadCache(4,44*2,x0,y,1);	y=y+20;
-	DrawStringEnhance(x,y,"ÖØ³¼",C_Name,size);					x=x+100;
+	DrawStringEnhance(x,y,"é‡è‡£",C_Name,size);					x=x+100;
 	for i=0,5 do
-		local pid=f["ÖØ³¼"..(i+1)];
+		local pid=f["é‡è‡£"..(i+1)];
 		if pid>0 then
-			DrawStringEnhance(x+100*(i%2),y+(size+4)*math.floor(i/2),JY.Person[pid]["Ãû³Æ"],C_WHITE,size,0.5);
+			DrawStringEnhance(x+100*(i%2),y+(size+4)*math.floor(i/2),JY.Person[pid]["åç§°"],C_WHITE,size,0.5);
 		end
 	end
 end
 function DrawForceStatus(plist, index)
 	local strlist={};
 	for i,v in ipairs(plist) do
-		strlist[i] = JY.Force[v]["Ãû³Æ"];
+		strlist[i] = JY.Force[v]["åç§°"];
 	end
 	local fid = plist[index]
 	local width, height = 800, 480;
@@ -3672,11 +3672,11 @@ function DrawForceStatus(plist, index)
 	local x0 = (CC.ScreenW - width) / 2;
 	local y0 = (CC.ScreenH - height) / 2;
 	local bt = {};
-	table.insert(bt, button_creat(1, 11, x0 + 138, y0 + 420, "¶¼ÊĞ", true, true));
-	table.insert(bt, button_creat(1, 12, x0 + 242, y0 + 420, "Îä½«", true, true));
-	button_mainbt_1(bt, "¹Ø±Õ", 2, y0 + height - 56);
-	--bt[1].enable=c["ÏÖÒÛ"]+c["ÔÚÒ°"]>0;
-	local sl = creatSingleList(x0 + 24, y0 + 12, 84, 420, plist, strlist, "ÊÆÁ¦");
+	table.insert(bt, button_creat(1, 11, x0 + 138, y0 + 420, "éƒ½å¸‚", true, true));
+	table.insert(bt, button_creat(1, 12, x0 + 242, y0 + 420, "æ­¦å°†", true, true));
+	button_mainbt_1(bt, "å…³é—­", 2, y0 + height - 56);
+	--bt[1].enable=c["ç°å½¹"]+c["åœ¨é‡"]>0;
+	local sl = creatSingleList(x0 + 24, y0 + 12, 84, 420, plist, strlist, "åŠ¿åŠ›");
 	rollSingleList(sl, index);
   local forceData = {};
   local function fixNum(n)
@@ -3689,13 +3689,13 @@ function DrawForceStatus(plist, index)
   end
   local function getForceData()
     local f = JY.Force[fid];
-    forceData.name = f["Ãû³Æ"];
-    forceData.leader = f["¾ıÖ÷"];
-    forceData.leaderName = JY.Person[forceData.leader]["Ãû³Æ"];
-    forceData.title = f["¹Ù¾ô"];
+    forceData.name = f["åç§°"];
+    forceData.leader = f["å›ä¸»"];
+    forceData.leaderName = JY.Person[forceData.leader]["åç§°"];
+    forceData.title = f["å®˜çˆµ"];
     forceData.titleName = JY.Str[9080 + forceData.title];
-    forceData.capital = f["±¾³Ç"];
-    forceData.capitalName = JY.City[forceData.capital]["Ãû³Æ"];
+    forceData.capital = f["æœ¬åŸ"];
+    forceData.capitalName = JY.City[forceData.capital]["åç§°"];
     forceData.cityNum = 0;
     forceData.personNum = 0;
     forceData.gold = 0;
@@ -3703,29 +3703,29 @@ function DrawForceStatus(plist, index)
     forceData.peopleNum = 0;
     forceData.soldierNum = 0;
     forceData.color = FlagColor[fid];
-    forceData.cityX = JY.City[forceData.capital]["ÖĞµØÍ¼X"] / 2;
-    forceData.cityY = JY.City[forceData.capital]["ÖĞµØÍ¼Y"] / 2;
+    forceData.cityX = JY.City[forceData.capital]["ä¸­åœ°å›¾X"] / 2;
+    forceData.cityY = JY.City[forceData.capital]["ä¸­åœ°å›¾Y"] / 2;
     forceData.citys = {};
     for i = 1, JY.CityNum - 1 do
-      if JY.City[i]["ÊÆÁ¦"] == fid then
+      if JY.City[i]["åŠ¿åŠ›"] == fid then
         table.insert(forceData.citys, i);
         forceData.cityNum = forceData.cityNum + 1;
-        forceData.personNum = forceData.personNum + JY.City[i]["ÏÖÒÛ"];
-        forceData.gold = forceData.gold + JY.City[i]["×Ê½ğ"];
-        forceData.food = forceData.food + JY.City[i]["Îï×Ê"];
-        forceData.peopleNum = forceData.peopleNum + JY.City[i]["ÈË¿Ú"];
-        forceData.soldierNum = forceData.soldierNum + JY.City[i]["±øÁ¦"];
+        forceData.personNum = forceData.personNum + JY.City[i]["ç°å½¹"];
+        forceData.gold = forceData.gold + JY.City[i]["èµ„é‡‘"];
+        forceData.food = forceData.food + JY.City[i]["ç‰©èµ„"];
+        forceData.peopleNum = forceData.peopleNum + JY.City[i]["äººå£"];
+        forceData.soldierNum = forceData.soldierNum + JY.City[i]["å…µåŠ›"];
       end
     end
-    forceData.strategy = f["Õ½ÂÔ"];
-    forceData.strategyTarget = f["Ä¿±ê"];
+    forceData.strategy = f["æˆ˜ç•¥"];
+    forceData.strategyTarget = f["ç›®æ ‡"];
     forceData.strategyStr = JY.Str[9260 + forceData.strategy];
     if forceData.strategy == 2 then
       forceData.strategyStr = forceData.strategyStr .. "[5]" .. JY.Str[9050 + forceData.strategyTarget];
     elseif forceData.strategy == 3 then
       forceData.strategyStr = forceData.strategyStr .. "[5]" .. JY.Str[9030 + forceData.strategyTarget];
     elseif forceData.strategy == 5 then
-      forceData.strategyStr = forceData.strategyStr .. "[5]" .. JY.Force[forceData.strategyTarget]["Ãû³Æ"];
+      forceData.strategyStr = forceData.strategyStr .. "[5]" .. JY.Force[forceData.strategyTarget]["åç§°"];
     end
     forceData.goldStr = chinese_number(fixNum(forceData.gold) * 10);
     forceData.foodStr = chinese_number(fixNum(forceData.food) * 10);
@@ -3734,11 +3734,11 @@ function DrawForceStatus(plist, index)
     if forceData.peopleNum <= 0 then
       forceData.peopleNumStr = "0";
     elseif forceData.peopleNum < 10 then
-      forceData.peopleNumStr = math.floor(forceData.peopleNum) .. "°Ù";
+      forceData.peopleNumStr = math.floor(forceData.peopleNum) .. "ç™¾";
     elseif forceData.peopleNum < 100 then
-      forceData.peopleNumStr = math.floor(forceData.peopleNum / 10) .. "Ç§";
+      forceData.peopleNumStr = math.floor(forceData.peopleNum / 10) .. "åƒ";
     else
-      forceData.peopleNumStr = math.floor(forceData.peopleNum / 100) .. "Íò";
+      forceData.peopleNumStr = math.floor(forceData.peopleNum / 100) .. "ä¸‡";
     end
     forceData.peopleNumStr = chinese_number(fixNum(forceData.peopleNum) * 100);
     forceData.soldierNumStr = chinese_number(fixNum(forceData.soldierNum));
@@ -3752,21 +3752,21 @@ function DrawForceStatus(plist, index)
 		LoadPicEnhance(72, x - 16, y + 38, width -  160);
 		DrawStringEnhance(x + 60, y + 5, forceData.name, C_WHITE, size, 0.5);
 		y = y + 4;	x = x + 140;
-		DrawStringEnhance(x, y, "¾ıÖ÷", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.leaderName, C_WHITE, size);
+		DrawStringEnhance(x, y, "å›ä¸»", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.leaderName, C_WHITE, size);
 		lib.PicLoadCache(4, 87 * 2, x + 220, y, 1);
     DrawStringEnhance(x + 244, y + 4, forceData.titleName, C_WHITE, size2, 0.5);
 		
 		y = y + 50;
-    lib.PicLoadCache(2, (JY.Person[forceData.leader]["ÈİÃ²"] + 0000) * 2, x - 160, y, 1, nil, nil, 240);
+    lib.PicLoadCache(2, (JY.Person[forceData.leader]["å®¹è²Œ"] + 0000) * 2, x - 160, y, 1, nil, nil, 240);
     x = x + 80;
-    DrawStringEnhance(x, y, "¶¼³Ç", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.capitalName, C_WHITE, size);			y = y + size + 4;
-    DrawStringEnhance(x, y, "×Ê½ğ", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.goldStr, C_WHITE, size);     x = x + 180;
-    DrawStringEnhance(x, y, "Îï×Ê", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.foodStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
-    DrawStringEnhance(x, y, "¶¼ÊĞ", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.cityNumStr, C_WHITE, size);			x = x + 180
-    DrawStringEnhance(x, y, "Îä½«", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.personNumStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
-    DrawStringEnhance(x, y, "ÈË¿Ú", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.peopleNumStr, C_WHITE, size);			x = x + 180
-    DrawStringEnhance(x, y, "±øÁ¦", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.soldierNumStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
-    DrawStringEnhance(x, y, "Õ½ÂÔ", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.strategyStr, C_WHITE, size);			--x = x + 180
+    DrawStringEnhance(x, y, "éƒ½åŸ", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.capitalName, C_WHITE, size);			y = y + size + 4;
+    DrawStringEnhance(x, y, "èµ„é‡‘", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.goldStr, C_WHITE, size);     x = x + 180;
+    DrawStringEnhance(x, y, "ç‰©èµ„", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.foodStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
+    DrawStringEnhance(x, y, "éƒ½å¸‚", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.cityNumStr, C_WHITE, size);			x = x + 180
+    DrawStringEnhance(x, y, "æ­¦å°†", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.personNumStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
+    DrawStringEnhance(x, y, "äººå£", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.peopleNumStr, C_WHITE, size);			x = x + 180
+    DrawStringEnhance(x, y, "å…µåŠ›", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.soldierNumStr, C_WHITE, size);			y = y + size + 4; x = x - 180;
+    DrawStringEnhance(x, y, "æˆ˜ç•¥", C_Name, size);					DrawStringEnhance(x + 60, y, forceData.strategyStr, C_WHITE, size);			--x = x + 180
     
     x = x + 120; y = y + 96;
     lib.PicLoadCache(4, 700 * 2, x, y, 1, nil, nil, 203);
@@ -3812,34 +3812,34 @@ function DrawForceStatus(plist, index)
 	end
 end
 function SelectCity(kind,purpose)
-	--kind --0,²é¿´ÊÆÁ¦	1,²é¿´ÈÎÒâ³ÇÊĞ	2,²é¿´¿Õ°×³ÇÊĞ	
-	--purpose --0 ²é¿´ 1£¬Ñ¡Ôñ¿Õ°×³ÇÊĞ ²»¿É·µ»Ø	2, Ñ¡Ôñ½ÓÈÀ³ÇÊĞ ¿É·µ»Ø 3,Ñ¡Ôñ´æ»îÊÆÁ¦ ²»¿É·µ»Ø
+	--kind --0,æŸ¥çœ‹åŠ¿åŠ›	1,æŸ¥çœ‹ä»»æ„åŸå¸‚	2,æŸ¥çœ‹ç©ºç™½åŸå¸‚	
+	--purpose --0 æŸ¥çœ‹ 1ï¼Œé€‰æ‹©ç©ºç™½åŸå¸‚ ä¸å¯è¿”å›	2, é€‰æ‹©æ¥å£¤åŸå¸‚ å¯è¿”å› 3,é€‰æ‹©å­˜æ´»åŠ¿åŠ› ä¸å¯è¿”å›
 	local x0,y0=CC.ScreenW-520,32;
-	local lstr,tx,ty="",0,0;	--Êó±êÒÆ¶¯µ½µÄcity/force
+	local lstr,tx,ty="",0,0;	--é¼ æ ‡ç§»åŠ¨åˆ°çš„city/force
 	local sid,cid=0,0;
 	local pid=797;
 	--UI
 	local bt={};
 	if purpose==0 then
-		button_mainbt_1(bt,"·µ»Ø",2)
+		button_mainbt_1(bt,"è¿”å›",2)
 	elseif purpose==1 or purpose==2 or purpose==3 then
-		button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2);
 	end
 	--[[
-		button_mainbt_1(bt,"È·ÈÏ",2)
+		button_mainbt_1(bt,"ç¡®è®¤",2)
 	elseif kind==1 then
-		button_mainbt_2(bt,"¾ö¶¨","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å†³å®š","è¿”å›",1,2);
 	else
-		button_mainbt_1(bt,"·µ»Ø",2)
+		button_mainbt_1(bt,"è¿”å›",2)
 	end]]--
 	--init
 	for i=1,JY.CityNum-1 do
-		JY.City[i]["±ê¼Ç"]=0;
+		JY.City[i]["æ ‡è®°"]=0;
 	end
 	local function setforce(fid,v)
 		for i=1,JY.CityNum-1 do
-			if JY.City[i]["ÊÆÁ¦"]==fid then
-				JY.City[i]["±ê¼Ç"]=v;
+			if JY.City[i]["åŠ¿åŠ›"]==fid then
+				JY.City[i]["æ ‡è®°"]=v;
 			end
 		end
 	end
@@ -3865,31 +3865,31 @@ function SelectCity(kind,purpose)
 	end
 	if kind==0 then
 		for i=1,JY.CityNum-1 do
-			if JY.City[i]["ÊÆÁ¦"]==0 then
-				JY.City[i]["±ê¼Ç"]=0;
+			if JY.City[i]["åŠ¿åŠ›"]==0 then
+				JY.City[i]["æ ‡è®°"]=0;
 			else
-				JY.City[i]["±ê¼Ç"]=1;
+				JY.City[i]["æ ‡è®°"]=1;
 			end
 		end
 	elseif kind==1 then
 		for i=1,JY.CityNum-1 do
-			if purpose==1 and JY.City[i]["ÊÆÁ¦"]>0 then
-				JY.City[i]["±ê¼Ç"]=0;
-			elseif purpose==2 and (JY.City[i]["½ÓÈÀ"]==0 or JY.City[i]["ÊÆÁ¦"]==JY.FID) then
-				JY.City[i]["±ê¼Ç"]=0;
+			if purpose==1 and JY.City[i]["åŠ¿åŠ›"]>0 then
+				JY.City[i]["æ ‡è®°"]=0;
+			elseif purpose==2 and (JY.City[i]["æ¥å£¤"]==0 or JY.City[i]["åŠ¿åŠ›"]==JY.FID) then
+				JY.City[i]["æ ‡è®°"]=0;
 			else
-				JY.City[i]["±ê¼Ç"]=1;
+				JY.City[i]["æ ‡è®°"]=1;
 			end
 		end
 	end
 	--
 	redraw();
 	if purpose==1 then
-		Talk(pid,"ÇëÑ¡ÔñÒ»¸ö¿Õ°×³Ç³Ø¿ªÊ¼°É¡£");
+		Talk(pid,"è¯·é€‰æ‹©ä¸€ä¸ªç©ºç™½åŸæ± å¼€å§‹å§ã€‚");
 	elseif purpose==2 then
-		Talk(pid,"ÇëÑ¡ÔñÒª¹¥´òµÄ³Ç³Ø¡£");
+		Talk(pid,"è¯·é€‰æ‹©è¦æ”»æ‰“çš„åŸæ± ã€‚");
 	elseif purpose==3 then
-		Talk(pid,"ÇëÑ¡ÔñÒ»¸öÊÆÁ¦¿ªÊ¼°É¡£");
+		Talk(pid,"è¯·é€‰æ‹©ä¸€ä¸ªåŠ¿åŠ›å¼€å§‹å§ã€‚");
 	end
 	while true do
 		local t1=lib.GetTime();
@@ -3904,22 +3904,22 @@ function SelectCity(kind,purpose)
 		lstr="";
 		if kind==0 then
 			for i=1,JY.CityNum-1 do
-				if JY.City[i]["±ê¼Ç"]==0 then
+				if JY.City[i]["æ ‡è®°"]==0 then
 					
-				elseif JY.City[i]["ÊÆÁ¦"]==sid then
-					JY.City[i]["±ê¼Ç"]=3;
+				elseif JY.City[i]["åŠ¿åŠ›"]==sid then
+					JY.City[i]["æ ‡è®°"]=3;
 				else
-					JY.City[i]["±ê¼Ç"]=1;
+					JY.City[i]["æ ‡è®°"]=1;
 				end
 			end
 		elseif kind==1 then
 			for i=1,JY.CityNum-1 do
-				if JY.City[i]["±ê¼Ç"]==0 then
+				if JY.City[i]["æ ‡è®°"]==0 then
 				
 				elseif i==sid then
-					JY.City[i]["±ê¼Ç"]=3;
+					JY.City[i]["æ ‡è®°"]=3;
 				else
-					JY.City[i]["±ê¼Ç"]=1;
+					JY.City[i]["æ ‡è®°"]=1;
 				end
 			end
 		end
@@ -3933,19 +3933,19 @@ function SelectCity(kind,purpose)
 					if sid>0 then
 						return sid;
 					else
-						Talk(pid,"ÇëÏÈÑ¡ÔñÒ»¸ö³Ç³Ø¡£");
+						Talk(pid,"è¯·å…ˆé€‰æ‹©ä¸€ä¸ªåŸæ± ã€‚");
 					end
 				elseif purpose==2 then
 					if sid>0 then
 						return sid;
 					else
-						Talk(pid,"»¹Ã»ÓĞÑ¡ÔñÒª¹¥´òµÄ³Ç³Ø¡£");
+						Talk(pid,"è¿˜æ²¡æœ‰é€‰æ‹©è¦æ”»æ‰“çš„åŸæ± ã€‚");
 					end
 				elseif purpose==3 then
 					if sid>0 then
 						return sid;
 					else
-						Talk(pid,"ÇëÏÈÑ¡ÔñÒ»¸öÊÆÁ¦¡£");
+						Talk(pid,"è¯·å…ˆé€‰æ‹©ä¸€ä¸ªåŠ¿åŠ›ã€‚");
 					end
 				end
 			elseif btid==2 then
@@ -3954,15 +3954,15 @@ function SelectCity(kind,purpose)
 		end
 		if MOUSE.IN(x0,y0,x0+520,y0+448) then
 			for i=1,JY.CityNum-1 do
-				local x1,y1=x0+JY.City[i]["ÖĞµØÍ¼X"],y0+JY.City[i]["ÖĞµØÍ¼Y"];
+				local x1,y1=x0+JY.City[i]["ä¸­åœ°å›¾X"],y0+JY.City[i]["ä¸­åœ°å›¾Y"];
 				if MOUSE.CLICK(x1-7,y1-7,x1+6,y1+6) then
-					if kind==0 then			lstr=JY.Force[JY.City[i]["ÊÆÁ¦"]]["Ãû³Æ"];
-					elseif kind==1 then		lstr=JY.City[i]["Ãû³Æ"];					end
+					if kind==0 then			lstr=JY.Force[JY.City[i]["åŠ¿åŠ›"]]["åç§°"];
+					elseif kind==1 then		lstr=JY.City[i]["åç§°"];					end
 					tx,ty=MOUSE.x,MOUSE.y;
-					if between(JY.City[i]["±ê¼Ç"],1,3) then
+					if between(JY.City[i]["æ ‡è®°"],1,3) then
 						PlayWavE(0);
 						if kind==0 then
-							cid=JY.City[i]["ÊÆÁ¦"];
+							cid=JY.City[i]["åŠ¿åŠ›"];
 							if cid==sid then
 								setforce(sid,2);
 								sid=0;
@@ -3977,43 +3977,43 @@ function SelectCity(kind,purpose)
 							cid=i;
 							if i==sid then
 								sid=0;
-								JY.City[i]["±ê¼Ç"]=2;
+								JY.City[i]["æ ‡è®°"]=2;
 							else
 								sid=i;
-								JY.City[i]["±ê¼Ç"]=3;
+								JY.City[i]["æ ‡è®°"]=3;
 							end
 						end
 						break;
 					end
 				elseif MOUSE.HOLD(x1-7,y1-7,x1+6,y1+6) then
-					if kind==0 then			lstr=JY.Force[JY.City[i]["ÊÆÁ¦"]]["Ãû³Æ"];
-					elseif kind==1 then		lstr=JY.City[i]["Ãû³Æ"];					end
+					if kind==0 then			lstr=JY.Force[JY.City[i]["åŠ¿åŠ›"]]["åç§°"];
+					elseif kind==1 then		lstr=JY.City[i]["åç§°"];					end
 					tx,ty=MOUSE.x,MOUSE.y;
 					if kind==0 then
-						if JY.City[i]["±ê¼Ç"]==1 then
-							cid=JY.City[i]["ÊÆÁ¦"];
+						if JY.City[i]["æ ‡è®°"]==1 then
+							cid=JY.City[i]["åŠ¿åŠ›"];
 							setforce(cid,3);
 						end
 					elseif kind==1 then
-						if JY.City[i]["±ê¼Ç"]==1 then
+						if JY.City[i]["æ ‡è®°"]==1 then
 							cid=i;
-							JY.City[i]["±ê¼Ç"]=3;
+							JY.City[i]["æ ‡è®°"]=3;
 						end
 					end
 					break;
 				elseif MOUSE.IN(x1-7,y1-7,x1+6,y1+6) then
-					if kind==0 then			lstr=JY.Force[JY.City[i]["ÊÆÁ¦"]]["Ãû³Æ"];
-					elseif kind==1 then		lstr=JY.City[i]["Ãû³Æ"];					end
+					if kind==0 then			lstr=JY.Force[JY.City[i]["åŠ¿åŠ›"]]["åç§°"];
+					elseif kind==1 then		lstr=JY.City[i]["åç§°"];					end
 					tx,ty=MOUSE.x,MOUSE.y;
 					if kind==0 then
-						if JY.City[i]["±ê¼Ç"]==1 then
-							cid=JY.City[i]["ÊÆÁ¦"];
+						if JY.City[i]["æ ‡è®°"]==1 then
+							cid=JY.City[i]["åŠ¿åŠ›"];
 							setforce(cid,2);
 						end
 					elseif kind==1 then
-						if JY.City[i]["±ê¼Ç"]==1 then
+						if JY.City[i]["æ ‡è®°"]==1 then
 							cid=i;
-							JY.City[i]["±ê¼Ç"]=2;
+							JY.City[i]["æ ‡è®°"]=2;
 						end
 					end
 					break;
@@ -4032,38 +4032,38 @@ function SelectArmy(cid)
 	local bt={};
 	local flag=1;
 	if flag==1 then
-		button_mainbt_2(bt,"¿ªÕ½","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å¼€æˆ˜","è¿”å›",1,2);
 	elseif flag==2 then
-		button_mainbt_1(bt,"¿ªÕ½",1)
+		button_mainbt_1(bt,"å¼€æˆ˜",1)
 	end
-	table.insert(bt,button_creat(1,11,15,20,"±àÖÆ",true,true));
+	table.insert(bt,button_creat(1,11,15,20,"ç¼–åˆ¶",true,true));
 	local ml;
 	local sortlist={};
 	local strlist={};
 	local offset={};
 	local title={};
 	offset={0,90,180,270,360,450}
-	title={"Îä½«","±øÁ¦","±øÖÖ","ÊÊĞÔ","¹¥»÷","·ÀÓù",};
+	title={"æ­¦å°†","å…µåŠ›","å…µç§","é€‚æ€§","æ”»å‡»","é˜²å¾¡",};
 	local plist={};
 	local army={};
 	local army_info={};
 	local function fresh()
 		army_info={};
 		for i,v in ipairs(army) do
-			sortlist[v]={v,v.bl,v.bz,JY.Person[v.pid]["²½±øÊÊĞÔ"],JY.Person[v.pid]["¹­±øÊÊĞÔ"],JY.Person[v.pid]["Æï±øÊÊĞÔ"]};
+			sortlist[v]={v,v.bl,v.bz,JY.Person[v.pid]["æ­¥å…µé€‚æ€§"],JY.Person[v.pid]["å¼“å…µé€‚æ€§"],JY.Person[v.pid]["éª‘å…µé€‚æ€§"]};
 			strlist[v]={"--","--","--","--","--","--",};
-			strlist[v][1]=JY.Person[v.pid]["Ãû³Æ"];
+			strlist[v][1]=JY.Person[v.pid]["åç§°"];
 			strlist[v][2]=""..v.bl;
-			strlist[v][3]=JY.Bingzhong[v.bz]["Ãû³Æ"];
-			for ii,vv in ipairs({"²½±øÊÊĞÔ","¹­±øÊÊĞÔ","Æï±øÊÊĞÔ"}) do
-				if ii==JY.Bingzhong[v.bz]["±øÏµ"] then
+			strlist[v][3]=JY.Bingzhong[v.bz]["åç§°"];
+			for ii,vv in ipairs({"æ­¥å…µé€‚æ€§","å¼“å…µé€‚æ€§","éª‘å…µé€‚æ€§"}) do
+				if ii==JY.Bingzhong[v.bz]["å…µç³»"] then
 					strlist[v][4]=vv..JY.Str[JY.Person[v.pid][vv]+9160];
 					break;
 				end
 			end
-			local att=20+math.max(20000/(200-JY.Person[v.pid]["ÎäÁ¦"])-100,v.bl*2/(200-JY.Person[v.pid]["Í³ÂÊ"])-100)+v.bl/200;
-			strlist[v][5]=""..math.floor(att*math.max(JY.Bingzhong[v.bz]["¹¥»÷Á¦"],JY.Bingzhong[v.bz]["Ô¶³Ì¹¥»÷Á¦"])/10);
-			strlist[v][6]=""..math.floor(att*JY.Bingzhong[v.bz]["·ÀÓùÁ¦"]/10);
+			local att=20+math.max(20000/(200-JY.Person[v.pid]["æ­¦åŠ›"])-100,v.bl*2/(200-JY.Person[v.pid]["ç»Ÿç‡"])-100)+v.bl/200;
+			strlist[v][5]=""..math.floor(att*math.max(JY.Bingzhong[v.bz]["æ”»å‡»åŠ›"],JY.Bingzhong[v.bz]["è¿œç¨‹æ”»å‡»åŠ›"])/10);
+			strlist[v][6]=""..math.floor(att*JY.Bingzhong[v.bz]["é˜²å¾¡åŠ›"]/10);
 			army_info[v.pid]={bz=v.bz,bl=v.bl};
 		end
 		ml=creatMultiList(x0+128,y0+16,704,height-64,plist,sortlist,strlist,title,offset)
@@ -4073,7 +4073,7 @@ function SelectArmy(cid)
 		LoadPicEnhance(73,x0,y0,width,height);
 		drawMultiList(ml);
 		if ml.on>0 then
-			lib.PicLoadCache(2,(JY.Person[plist[ml.on]]["ÈİÃ²"]+2000)*2,ml.x1-45,ml.y1+ml.pixel_row*(ml.on-ml.top+0.5));
+			lib.PicLoadCache(2,(JY.Person[plist[ml.on]]["å®¹è²Œ"]+2000)*2,ml.x1-45,ml.y1+ml.pixel_row*(ml.on-ml.top+0.5));
 		end
 		button_redraw(bt);
 	end
@@ -4127,28 +4127,28 @@ function SelectUnitTypeNum(bz,bl,bzlist,blmax)
 	local x_map=x0+32;
 	local y_map=y0+32;
 	local bt={};
-	button_mainbt_1(bt,"¾ö¶¨",1,(CC.ScreenH+height)/2-64);
-	--±øÖÖ
+	button_mainbt_1(bt,"å†³å®š",1,(CC.ScreenH+height)/2-64);
+	--å…µç§
 	local sortlist={};
 	local strlist={};
 	local offset={};
 	local title={};
 	offset={0,60,120}
-	title={"±øÖÖ","¹¥»÷","·ÀÓù",};
+	title={"å…µç§","æ”»å‡»","é˜²å¾¡",};
 	local idx=1;
 	for i,v in ipairs(bzlist) do
-		sortlist[v]={v,math.max(JY.Bingzhong[v]["¹¥»÷Á¦"],JY.Bingzhong[v]["Ô¶³Ì¹¥»÷Á¦"]),JY.Bingzhong[v]["·ÀÓùÁ¦"]}
+		sortlist[v]={v,math.max(JY.Bingzhong[v]["æ”»å‡»åŠ›"],JY.Bingzhong[v]["è¿œç¨‹æ”»å‡»åŠ›"]),JY.Bingzhong[v]["é˜²å¾¡åŠ›"]}
 		strlist[v]={"--","--","--",};
-		strlist[v][1]=JY.Bingzhong[v]["Ãû³Æ"];
-		strlist[v][2]=""..math.max(JY.Bingzhong[v]["¹¥»÷Á¦"],JY.Bingzhong[v]["Ô¶³Ì¹¥»÷Á¦"]);
-		strlist[v][3]=""..JY.Bingzhong[v]["·ÀÓùÁ¦"];
+		strlist[v][1]=JY.Bingzhong[v]["åç§°"];
+		strlist[v][2]=""..math.max(JY.Bingzhong[v]["æ”»å‡»åŠ›"],JY.Bingzhong[v]["è¿œç¨‹æ”»å‡»åŠ›"]);
+		strlist[v][3]=""..JY.Bingzhong[v]["é˜²å¾¡åŠ›"];
 		if bz==v then
 			idx=i;
 		end
 	end
 	local ml=creatMultiList(x0+100,y0+48,200,160,bzlist,sortlist,strlist,title,offset);
 	rollMultiList(ml,idx);
-	--±øÁ¦
+	--å…µåŠ›
 	local np=creatNumPad(x0+340,y0+48,bl,0,blmax);
 	
 	local sid=lib.SaveSur(0,0,CC.ScreenW,CC.ScreenH);
@@ -4197,12 +4197,12 @@ function SelectArmy(cid)
 	end
 	local flag=1;
 	if flag==1 then
-		button_mainbt_2(bt,"¿ªÕ½","·µ»Ø",1,2);
+		button_mainbt_2(bt,"å¼€æˆ˜","è¿”å›",1,2);
 	elseif flag==2 then
-		button_mainbt_1(bt,"¿ªÕ½",1)
+		button_mainbt_1(bt,"å¼€æˆ˜",1)
 	end
-	table.insert(bt,button_creat(1,11,150,200,"×Ô¶¯±àÖÆ",true,true));
-	table.insert(bt,button_creat(1,12,150,260,"×î´ó±øÁ¦",true,true));
+	table.insert(bt,button_creat(1,11,150,200,"è‡ªåŠ¨ç¼–åˆ¶",true,true));
+	table.insert(bt,button_creat(1,12,150,260,"æœ€å¤§å…µåŠ›",true,true));
 	local plist={};
 	local army={};
 	local function redraw()
@@ -4210,7 +4210,7 @@ function SelectArmy(cid)
 		LoadPicEnhance(73,x0,y0,width,height);
 		for i,v in ipairs(per) do
 			if v.pid>0 then
-				lib.PicLoadCache(2,(JY.Person[v.pid]["ÈİÃ²"]+4000)*2,v.x,v.y,1);
+				lib.PicLoadCache(2,(JY.Person[v.pid]["å®¹è²Œ"]+4000)*2,v.x,v.y,1);
 			else
 				lib.PicLoadCache(4,112*2,v.x,v.y,1);
 			end
@@ -4229,13 +4229,13 @@ function SelectArmy(cid)
 				lib.PicLoadCache(4,33*2,v.x-3,v.y+158,1);
 			elseif v.hold==3 then
 				lib.PicLoadCache(4,32*2,v.x-3,v.y+158,1);
-				DrawStringEnhance(v.x+45+1,v.y+158+17+1,JY.Bingzhong[v.bz]["Ãû³Æ"],C_BLACK,20,0.5,0.5);
+				DrawStringEnhance(v.x+45+1,v.y+158+17+1,JY.Bingzhong[v.bz]["åç§°"],C_BLACK,20,0.5,0.5);
 			elseif v.on==3 then
 				lib.PicLoadCache(4,31*2,v.x-3,v.y+158,1);
-				DrawStringEnhance(v.x+45,v.y+158+17,JY.Bingzhong[v.bz]["Ãû³Æ"],C_BLACK,20,0.5,0.5);
+				DrawStringEnhance(v.x+45,v.y+158+17,JY.Bingzhong[v.bz]["åç§°"],C_BLACK,20,0.5,0.5);
 			else
 				lib.PicLoadCache(4,30*2,v.x-3,v.y+158,1);
-				DrawStringEnhance(v.x+45,v.y+158+17,JY.Bingzhong[v.bz]["Ãû³Æ"],C_BLACK,20,0.5,0.5);
+				DrawStringEnhance(v.x+45,v.y+158+17,JY.Bingzhong[v.bz]["åç§°"],C_BLACK,20,0.5,0.5);
 			end
 		end
 		button_redraw(bt);
@@ -4346,12 +4346,12 @@ function ShowBZList(x0,y0,bz,bzlist)
 	local idx=1;
 	local strlist={}
 	for i,v in ipairs(bzlist) do
-		strlist[i]=JY.Bingzhong[v]["Ãû³Æ"];
+		strlist[i]=JY.Bingzhong[v]["åç§°"];
 		if bz==v then
 			idx=i;
 		end
 	end
-	local sl=creatSingleList(x0+6,y0+8,68,31*5,bzlist,strlist,"±øÖÖ")
+	local sl=creatSingleList(x0+6,y0+8,68,31*5,bzlist,strlist,"å…µç§")
 	rollSingleList(sl,idx);
 	while true do
 		local t1=lib.GetTime();
@@ -4374,13 +4374,13 @@ function AutoSelectArmy(cid)
 	local plist=GetCityWujiang(cid);
 	local bzlist={1,4,7}
 	local function value(pid)
-		local v=JY.Person[pid]["Í³ÂÊ"]+JY.Person[pid]["ÎäÁ¦"]/2;
-		v=v+10*math.max(JY.Person[pid]["²½±øÊÊĞÔ"],JY.Person[pid]["Æï±øÊÊĞÔ"],JY.Person[pid]["¹­±øÊÊĞÔ"]);
+		local v=JY.Person[pid]["ç»Ÿç‡"]+JY.Person[pid]["æ­¦åŠ›"]/2;
+		v=v+10*math.max(JY.Person[pid]["æ­¥å…µé€‚æ€§"],JY.Person[pid]["éª‘å…µé€‚æ€§"],JY.Person[pid]["å¼“å…µé€‚æ€§"]);
 		return v;
 	end
 	local function bz_value(pid,bzid)
-		local v=JY.Person[pid]["Í³ÂÊ"]+JY.Person[pid]["ÎäÁ¦"]/2;
-		v=v+10*math.max(JY.Person[pid]["²½±øÊÊĞÔ"],JY.Person[pid]["Æï±øÊÊĞÔ"],JY.Person[pid]["¹­±øÊÊĞÔ"]);
+		local v=JY.Person[pid]["ç»Ÿç‡"]+JY.Person[pid]["æ­¦åŠ›"]/2;
+		v=v+10*math.max(JY.Person[pid]["æ­¥å…µé€‚æ€§"],JY.Person[pid]["éª‘å…µé€‚æ€§"],JY.Person[pid]["å¼“å…µé€‚æ€§"]);
 		return v;
 	end
 	table.sort(plist,function(a,b) 
@@ -4390,7 +4390,7 @@ function AutoSelectArmy(cid)
 					end)
 	local num=math.min(10,#plist);
   plist = Sample(plist,num)
-	local bl_actual=JY.City[cid]["±øÁ¦"];
+	local bl_actual=JY.City[cid]["å…µåŠ›"];
 	local bl_max=0;
 	for i=1,num do
 		bl_max=bl_max+GetMaxBingli(plist[i]);
@@ -4401,12 +4401,12 @@ function AutoSelectArmy(cid)
 		local v,maxv=0,0;
 		for id=1,9 do
 			v=0;
-			if JY.Bingzhong[id]["±øÏµ"]==1 then
-				v=JY.Person[pid]["²½±øÊÊĞÔ"]*10+JY.Person[pid]["Í³ÂÊ"]/10+JY.Bingzhong[id]["¹¥»÷Á¦"]+JY.Bingzhong[id]["·ÀÓùÁ¦"];
-			elseif JY.Bingzhong[id]["±øÏµ"]==2 then
-				v=JY.Person[pid]["¹­±øÊÊĞÔ"]*10+JY.Person[pid]["ÖÇÄ±"]/10+JY.Bingzhong[id]["Ô¶³Ì¹¥»÷Á¦"]+JY.Bingzhong[id]["·ÀÓùÁ¦"]+JY.Bingzhong[id]["Éä³Ì"]/10;
+			if JY.Bingzhong[id]["å…µç³»"]==1 then
+				v=JY.Person[pid]["æ­¥å…µé€‚æ€§"]*10+JY.Person[pid]["ç»Ÿç‡"]/10+JY.Bingzhong[id]["æ”»å‡»åŠ›"]+JY.Bingzhong[id]["é˜²å¾¡åŠ›"];
+			elseif JY.Bingzhong[id]["å…µç³»"]==2 then
+				v=JY.Person[pid]["å¼“å…µé€‚æ€§"]*10+JY.Person[pid]["æ™ºè°‹"]/10+JY.Bingzhong[id]["è¿œç¨‹æ”»å‡»åŠ›"]+JY.Bingzhong[id]["é˜²å¾¡åŠ›"]+JY.Bingzhong[id]["å°„ç¨‹"]/10;
 			else
-				v=JY.Person[pid]["Æï±øÊÊĞÔ"]*10+JY.Person[pid]["ÎäÁ¦"]/10+JY.Bingzhong[id]["¹¥»÷Á¦"]+JY.Bingzhong[id]["·ÀÓùÁ¦"];
+				v=JY.Person[pid]["éª‘å…µé€‚æ€§"]*10+JY.Person[pid]["æ­¦åŠ›"]/10+JY.Bingzhong[id]["æ”»å‡»åŠ›"]+JY.Bingzhong[id]["é˜²å¾¡åŠ›"];
 			end
 			if v>maxv then
 				maxv=v;
@@ -4418,8 +4418,8 @@ function AutoSelectArmy(cid)
 	return army;
 end
 function GetMaxBingli(pid)
-	local v=math.max(3000,math.floor(ValueAdjust(JY.Person[pid]["Í³ÂÊ"],70)*1)*100);
-	if JY.Person[pid]["¼¼ÄÜ8"]>0 then
+	local v=math.max(3000,math.floor(ValueAdjust(JY.Person[pid]["ç»Ÿç‡"],70)*1)*100);
+	if JY.Person[pid]["æŠ€èƒ½8"]>0 then
 		v=v+2000;
 	end
 	return v;
