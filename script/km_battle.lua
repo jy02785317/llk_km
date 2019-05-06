@@ -304,6 +304,8 @@ function km_drawUnit(pid, isActive)
 		else
 			pic = 5014
 		end
+	else
+		return
 	end
 	lib.PicLoadCache(1, pic * 2, x, y)
 	if role.highlight > 0 then
@@ -684,6 +686,7 @@ function km_insertRoleToWar(pid, x, y, d, isHide, isEnemy, ai, ai_x, ai_y)
 	role.anim = 1
 	role.highlight = 0
 	role.isEnemy = isEnemy
+	role.active = true
 	km_calRoleWarAttribute(pid)
 	km_calRoleUnitPic(pid)
 	table.insert(KM.war.role, pid)
@@ -710,6 +713,23 @@ function km_calRoleWarAttribute(pid)
 
 	role.movWav = unit['移动音效']
 	role.atkWav = unit['攻击音效']
+end
+function km_resetRoleAnim()
+	for i, role in ipairs(KM.role) do
+		if role.status == 1 then
+			if role.HP > 0 then
+				if role.HP / role.maxHP < 0.25 then
+					role.anim = 5
+				elseif role.active then
+					role.anim = 1
+				else
+					role.anim = 0
+				end
+			else
+				km_retreat(i)
+			end
+		end
+	end
 end
 function km_calRoleUnitPic(pid)
 	local role = KM.role[pid]
@@ -887,6 +907,7 @@ function km_moveRoleToGrid(pid, grid)
 	end
 	oGrid.pid = 0
 	grid.pid = pid
+	role.anim = 1
 	role.frame = 0
 	local step = limitX( math.floor(21 / role.mov), 2, 10 )
 	local num = 0
@@ -911,6 +932,7 @@ function km_moveRoleToGrid(pid, grid)
 		role.y = g.y
 		oGrid = g
 	end
+	role.anim = 0
 	role.frame = nil
 end
 function km_calDirection(dx, dy)
@@ -946,10 +968,13 @@ function km_atk(pid, eid)
 	-- 连击判定成功的话，写入连击标识，下次不能连击 可以改成0，无限随机连击噢，不必担心不能结束，一是有概率，二是看下一条
 	-- 	即便连击判定成功，如果对方耐久力为0，则不会发生连击
 	km_atkSub(pid, eid, 1)
-	km_atkSub(eid, pid, 2)
-	if isDouble and eRole.HP > 0 then
+	if eRole.HP > 0 then
+		km_atkSub(eid, pid, 2)
+	end
+	if isDouble and pRole.HP > 0 and eRole.HP > 0 then
 		km_atkSub(pid, eid, 2)
 	end
+	km_resetRoleAnim()
 end
 -- category 1 普通 2 反击/穿刺等附带攻击
 function km_atkSub(pid, eid, category)
@@ -1151,4 +1176,19 @@ function km_showRoleEffect(pid, text)
 		delay = 0,
 		dur = 24,
 	})
+end
+function km_retreat(pid)
+	local role = KM.role[pid]
+	role.anim = 5
+	km_waitFrame(4)
+	PlayWavE(16)
+	for i = 1, 3 do
+		role.anim = 5
+		km_waitFrame(8)
+		role.anim = 9
+		km_waitFrame(8)
+	end
+	role.status = 2
+	km_getGrid(role.x, role.y).pid = 0
+	-- WarDrawStrBoxDelay(JY.Person[War.Person[pid].id]["姓名"].."撤退了！",C_WHITE)
 end
