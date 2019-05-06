@@ -73,6 +73,22 @@ function km_drawWar(isActive)
 				km_drawUnit(v)
 			end
 		end
+		if war.showRoleAttrib > 0 then
+			local role = KM.role[war.showRoleAttrib]
+			local sx, sy = km_gridToScreen(role.x, role.y)
+			local sx = sx - 66
+			local sy = sy - 40
+			if sy < 0 then
+				sy = sy + 96
+			end
+			lib.Background(sx, sy, sx + 180, sy + 34, 128)
+			lib.PicLoadCache(2, (role['头像'] + 6000) * 2, sx + 18, sy + 16, 0, nil, nil, 48)
+			if war.showAttrib == 1 then
+				km_drawbar(sx + 48, sy, 128, '兵力', 1, role.maxHP, role.HP, role.HP)
+			elseif war.showAttrib == 2 then
+				km_drawbar(sx + 48, sy, 128, '经验', 1, role.nextExp, role['经验'], role['经验'])
+			end
+		end
 	end
 	-- floating text
 	do
@@ -331,16 +347,22 @@ function km_drawUnitBrief(pid, isActive)
 	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Orange]友军', M_White, CC.FontSizeM, 0, 0)
 	-- end
 	y = y + CC.FontSize + 4
-	lib.Background(x, y + CC.FontSizeM, x + 140, y + CC.FontSizeM + 12, 128);
-	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, math.floor(140 * role.HP / role.maxHP), 12);
-	DrawStringEnhance(x, y, string.format('兵力[B]%6d', role.HP), M_White, CC.FontSizeM, 0, 0)
-	DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
-	x = x + 152
-	lib.Background(x, y + CC.FontSizeM, x + 112, y + CC.FontSizeM + 12, 128);
-	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, 118 * math.floor(role.SP / role.maxSP), 12);
-	DrawStringEnhance(x, y, string.format('策略[B]%4d', role.SP), M_White, CC.FontSizeM, 0, 0)
-	DrawStringEnhance(x + CC.FontSizeM * 4, y + 4, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
-	x = x - 152
+	km_drawbar(x, y, 140, '[w]兵力', 1, role.maxHP, role.HP, role.HP)
+	km_drawbar(x + 152, y, 120, '[w]策略', 1, role.maxSP, role.SP, role.SP)
+	-- lib.Background(x, y + CC.FontSizeM, x + 140, y + CC.FontSizeM + 12, 128)
+	-- if role.HP > 0 then
+	-- 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, math.floor(140 * role.HP / role.maxHP), 12)
+	-- end
+	-- DrawStringEnhance(x, y, string.format('兵力[B]%6d', role.HP), M_White, CC.FontSizeM, 0, 0)
+	-- DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
+	-- x = x + 152
+	-- lib.Background(x, y + CC.FontSizeM, x + 112, y + CC.FontSizeM + 12, 128)
+	-- if role.HP > 0 then
+	-- 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, 118 * math.floor(role.SP / role.maxSP), 12)
+	-- end
+	-- DrawStringEnhance(x, y, string.format('策略[B]%4d', role.SP), M_White, CC.FontSizeM, 0, 0)
+	-- DrawStringEnhance(x + CC.FontSizeM * 4, y + 4, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
+	-- x = x - 152
 	y = y + CC.FontSizeM + 12 + 4
 	DrawStringEnhance(x + CC.FontSizeM * 9, y + CC.FontSizeM + 4 + 2, string.format('/%d', role.nextExp), M_White, CC.FontSizeS, 0, 0)
 	DrawStringEnhance(x, y, "攻击      防御      移动[n]精神      经验", M_White, CC.FontSizeM, 0, 0)
@@ -412,6 +434,8 @@ function km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
 		isShowSelectArea = false,
 		selectArea = {},
 		floatingText = {},
+		showRoleAttrib = 0,
+		showAttrib = 0,
 	}
 end
 function km_handleWarUI()
@@ -987,10 +1011,14 @@ function km_atkSub(pid, eid, category)
 	end
 	if hurt > 0 then
 		km_showRoleEffect(eid, '[B]' .. tostring(hurt))
+		-- eRole.HP = eRole.HP - hurt
 	else
 		km_showRoleEffect(eid, '[B]MISS')
 	end
-	km_waitFrame(16)
+	km_waitFrame(24)
+	if hurt > 0 then
+		km_transitAttribute(eid, 1, -hurt, 500)
+	end
 	-- 还原
 	pRole.anim = 0
 	pRole.highlight = 0
@@ -998,6 +1026,29 @@ function km_atkSub(pid, eid, category)
 	eRole.anim = 0
 	eRole.highlight = 0
 	eRole.frame = nil
+end
+function km_transitAttribute(pid, showAttrib, delta, t)
+	local role = KM.role[pid]
+	local n = math.ceil(t / CC.FrameNum)
+	KM.war.showRoleAttrib = pid
+	KM.war.showAttrib = showAttrib
+	local oriValue = 0
+	if showAttrib == 1 then
+		oriValue = role.HP
+	elseif showAttrib == 2 then
+		oriValue = role['经验']
+	end
+	km_waitFrame(1)
+	for i = 1, n do
+		if showAttrib == 1 then
+			role.HP = oriValue + math.floor(delta * i / n)
+		elseif showAttrib == 2 then
+			role['经验'] = oriValue + math.floor(delta * i / n)
+		end
+		km_waitFrame(1)
+	end
+	km_waitFrame(16)
+	KM.war.showRoleAttrib = 0
 end
 function km_calAtkHurt(pid, eid, category)
 	local pRole, eRole = KM.role[pid], KM.role[eid]
