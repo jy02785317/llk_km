@@ -142,6 +142,7 @@ function SetGlobalConst()
 	CC.UnitTxtFilename = CONFIG.DataPath .. "unit.txt"
 	CC.TerrainTxtFilename = CONFIG.DataPath .. "terrain.txt"
 	CC.UnitTerrainTxtFilename = CONFIG.DataPath .. "unit_terrain.txt"
+	CC.UnitSkinTxtFilename = CONFIG.DataPath .. "unit_skin.txt"
 
 	CC.MaxLv = 50
 	CC.MaxItemNum = 15

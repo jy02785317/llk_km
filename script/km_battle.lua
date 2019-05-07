@@ -736,7 +736,22 @@ function km_calRoleUnitPic(pid)
 	local uid = role['兵种']
 	local unit = KM.unit[uid]
 	local pic = 0
-	if role.isEnemy then
+	for i, v in ipairs(KM.skin) do
+		if v['人物'] == pid then
+			for j, u in ipairs(v['兵种']) do
+				if u == uid then
+					pic = v['形象']
+					break
+				end
+			end
+			if pic > 0 then
+				break
+			end
+		end
+	end
+	if pic > 0 then
+
+	elseif role.isEnemy then
 		pic = unit['敌军形象']
 	elseif role['阵营'] == 1 or role['阵营'] == 7 then
 		pic = unit['我军形象']

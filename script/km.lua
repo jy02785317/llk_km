@@ -1047,8 +1047,17 @@ function km_loadTXT(file)
                     v = math.floor(tonumber(str) or 0)
                 elseif kind == 'float' then
                     v = tonumber(str) or 0
-                elseif kind == 'string' or kind == 'array' then
-                    v = str
+                elseif kind == 'string' then
+					v = str
+				elseif kind == 'array' then
+					v = {}
+					local num, t = Split(str, ',')
+					for ii, vv in ipairs(t) do
+						local val = tonumber(trim(vv))
+						if val ~= nil then
+							table.insert(v, val)
+						end
+					end
                 else
                     v = tonumber(str) or str
                 end
@@ -1073,6 +1082,7 @@ function km_initStaticData()
 	KM.city = km_loadTXT(CC.CityTxtFilename)
 	KM.unit = km_loadTXT(CC.UnitTxtFilename)
 	KM.terrain = km_loadTXT(CC.TerrainTxtFilename)
+	KM.skin = km_loadTXT(CC.UnitSkinTxtFilename)
 	do
 		for k, v in pairs(KM.unit) do
 			local t = {}
@@ -1090,9 +1100,7 @@ function km_initStaticData()
 			local cost = v['移动消耗']
 			local def = v['防御']
 			if tid > 0 then
-				local num, units = Split(v['兵种'], ',')
-				for i, vv in ipairs(units) do
-					local uid = tonumber(trim(vv))
+				for i, uid in ipairs(v['兵种']) do
 					local unit = KM.unit[uid]
 					if unit then
 						if cost > 0 then
