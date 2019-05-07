@@ -297,7 +297,11 @@ Instruct['播放音乐'] = function(parms)
 	if err then
 		return err
 	end
-	PlayBGM(music)
+	if music > 0 then
+		PlayBGM(music)
+	else
+		StopBGM()
+	end
 end
 Instruct['开启城市'] = function(parms)
 	local err, city = km_assertInt(parms)

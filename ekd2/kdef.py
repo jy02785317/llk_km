@@ -734,7 +734,7 @@ def dumpKdef(int_CID, int_SCID):
                 log('    人物动作: {}<{}>, <动作编号>{}, <方向>{}<{}>'.format(v1 + 1, s1, v2, v3, s3))
             elif inst == 0x38:
                 v1 = int.from_bytes(kdef.read(1), byteorder = 'little', signed = True)
-                log('    播放音乐: {}'.format(v1))
+                log('    播放音乐: {}'.format(v1 + 1))
             elif inst == 0x39:
                 v1 = int.from_bytes(kdef.read(2), byteorder = 'little', signed = False)
                 v2 = int.from_bytes(kdef.read(1), byteorder = 'little', signed = False)

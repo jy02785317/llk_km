@@ -1703,8 +1703,10 @@ function PlayBGM(id)
     if JY.EnableMusic==0 then
         return ;
     end
-    if id>=0 and id<=99 then
-        lib.PlayMIDI(string.format(CC.BGMFile,id));
+    if id>0 and id<=99 then
+		lib.PlayMIDI(string.format(CC.BGMFile,id));
+	else
+		StopBGM()
     end
 end
 function StopBGM()

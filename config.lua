@@ -21,8 +21,8 @@ if (file) then
 	CONFIG.JYMain_Lua=CONFIG.ScriptPath .. "jymain.lua";   --lua主程序名
 	CONFIG.FontName=CONFIG.DataPath .. "font.ttf";
 	CONFIG.FontName=CONFIG.CurrentPath .. "data\\simfang.ttf";
-	CONFIG.MusicVolume=16;            --设置播放音乐的音量(0-128)
-	CONFIG.SoundVolume=16;            --设置播放音效的音量(0-128)
+	CONFIG.MusicVolume=32;            --设置播放音乐的音量(0-128)
+	CONFIG.SoundVolume=32;            --设置播放音效的音量(0-128)
 	CONFIG.Width  = 1024--960;       -- 游戏图形窗口宽
 	CONFIG.Height = 576--576;      -- 游戏图形窗口宽
 else
