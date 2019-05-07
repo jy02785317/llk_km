@@ -226,6 +226,10 @@ function km_waitFrame(num)
 		coroutine.yield()
 	end
 end
+function km_waitTime(t)
+	local n = math.ceil(t / CC.FrameNum)
+	km_waitFrame(n)
+end
 function km_waitEvent(...)
 	KM.event.name = ''
 	if #{...} == 0 then
@@ -784,6 +788,7 @@ function km_drawRoleStatus(pid)
 	if MOUSE.CLICK(x, y, x + 64, y + 48) then
 		lib.PicLoadCache(4, 20 * 2, x, y, 1)
 		KM.event.name = '关闭人物详情'
+		PlayWavE(0)
 	elseif MOUSE.HOLD(x, y, x + 64, y + 48) then
 		lib.PicLoadCache(4, 20 * 2, x, y, 1)
 	elseif MOUSE.IN(x, y, x + 64, y + 48) then

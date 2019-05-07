@@ -472,15 +472,19 @@ function km_warOperate()
 		local pid = war.pid
 		if war.isShowSelectArea then
 			if not km_isXYInSelectArea(grid.x, grid.y, war.selectArea) then
+				PlayWavE(1)
 				km_alert('不在攻击范围内．')
 				war.isShowSelectArea = false
 				km_warMenu(pid)
 			elseif war.action == '攻击' then
 				if grid.pid == 0 or KM.role[grid.pid].status ~= 1 then
+					PlayWavE(2)
 					km_alert('没有敌人．')
 				elseif not KM.role[grid.pid].isEnemy then
+					PlayWavE(2)
 					km_alert('不能攻击我方．')
 				else
+					PlayWavE(0)
 					war.isShowSelectArea = false
 					war.isActive = false
 					km_atk(pid, grid.pid)
@@ -491,6 +495,7 @@ function km_warOperate()
 			end
 		elseif war.isShowMoveArea then
 			if grid.pid > 0 then
+				PlayWavE(0)
 				if grid.pid == pid then
 					local role = KM.role[pid]
 					if role.isEnemy or (role['阵营'] ~= 1 and role['阵营'] ~= 7) then
@@ -503,15 +508,19 @@ function km_warOperate()
 					km_selectRole(grid.pid)
 				end
 			elseif grid.s ~= 2 then
+				PlayWavE(1)
 				km_alert('不是在移动范围里．')
 				war.isShowMoveArea = false
 			else
 				local role = KM.role[pid]
 				if role.isEnemy then
+					PlayWavE(2)
 					km_alert('不是我军部队．')
 				elseif (role['阵营'] ~= 1 and role['阵营'] ~= 7) then
+					PlayWavE(2)
 					km_alert('不能操作的部队．')
 				else
+					PlayWavE(0)
 					war.isShowMoveArea = false
 					war.isActive = false
 					km_moveRoleToGrid(pid, grid)
@@ -520,6 +529,7 @@ function km_warOperate()
 				end
 			end
 		else
+			PlayWavE(0)
 			if grid.pid > 0 then
 				km_selectRole(grid.pid)
 			end
@@ -1006,26 +1016,27 @@ function km_atkSub(pid, eid, category)
 	pRole.d = km_calDirection(dx, dy)
 	pRole.anim = 0
 	PlayWavE(6)
-	km_waitFrame(4)
+	km_waitTime(40)
 	-- 攻击
-	pRole.anim = 2
-	pRole.frame = 0
 	if isBlow then	-- 暴击
 		PlayWavE(6)
 		-- WarAtkWords(pid)
 	end
+	pRole.anim = 2
+	pRole.frame = 0
+	km_waitTime(40)
 	PlayWavE(pRole.atkWav);	-- 攻击音效
-	km_waitFrame(16)
+	km_waitTime(320)
 	if isBlow then	-- 暴击
 		PlayWavE(33)
 		for highlight = 8, 192, 6 do
 			pRole.highlight = highlight
-			km_waitFrame(1)
+			km_waitTime(40)
 		end
 		pRole.highlight = 0
 	end
 	for i = 0, 3 do
-		km_waitFrame(5)
+		km_waitTime(120)
 		pRole.frame = i
 	end
 	--敌人
@@ -1055,10 +1066,11 @@ function km_atkSub(pid, eid, category)
 	else
 		km_showRoleEffect(eid, '[B]MISS')
 	end
-	km_waitFrame(24)
+	km_waitTime(640)
 	if hurt > 0 then
 		km_transitAttribute(eid, 1, -hurt, 500)
 	end
+	km_gainExp(1, pid, eid)
 	-- 还原
 	pRole.anim = 0
 	pRole.highlight = 0
@@ -1087,7 +1099,7 @@ function km_transitAttribute(pid, showAttrib, delta, t)
 		end
 		km_waitFrame(1)
 	end
-	km_waitFrame(16)
+	km_waitTime(320)
 	KM.war.showRoleAttrib = 0
 end
 function km_calAtkHurt(pid, eid, category)
@@ -1175,6 +1187,36 @@ function km_calAtkHurt(pid, eid, category)
 			即便连击判定成功，如果对方耐久力为0，则不会发生连击
 	]]
 end
+function km_gainExp(act, pid, eid)
+	local v = 0
+	local pRole, eRole = KM.role[pid], KM.role[eid]
+	if pRole.isEnemy == true or ( pRole['阵营'] ~= 1 and pRole['阵营'] ~= 7 ) or pRole.HP == 0 or pRole['等级'] >= CC.MaxLv then
+		return
+	end
+	if act == 1 then
+		if eRole.HP == 0 then
+			if eRole['等级'] > pRole['等级'] then
+				v = (3 + eRole['等级'] - pRole['等级']) * 2
+			else
+				v = 4
+			end
+			if eid == KM.war.foeMarshal then
+				v = v + 48
+			elseif eRole['等级'] > pRole['等级'] then
+				v = v + 32
+			else
+				v = v + 2 * math.floor( 32 / ( 3 + pRole['等级'] - eRole['等级'] ) )
+			end
+		end
+	end
+	if v > 0 then
+		km_transitAttribute(pid, 2, v, 500)
+		if pRole['经验'] >= pRole.nextExp then
+			pRole['经验'] = pRole['经验'] - pRole.nextExp
+			km_lvUp(pid)
+		end
+	end
+end
 function km_showRoleEffect(pid, text)
 	local role = KM.role[pid]
 	local sx, sy = km_gridToScreen(role.x, role.y)
@@ -1192,18 +1234,41 @@ function km_showRoleEffect(pid, text)
 		dur = 24,
 	})
 end
+function km_lvUp(pid)
+	local role = KM.role[pid]
+	role.anim = 0
+	for i = 1, 2 do
+		role.d = 4
+		km_waitTime(120)
+		role.d = 1
+		km_waitTime(120)
+		role.d = 2
+		km_waitTime(120)
+		role.d = 3
+		km_waitTime(120)
+	end
+	PlayWavE(11)
+	role.anim = 6
+	km_waitTime(640)
+	role['等级'] = role['等级'] + 1
+	km_calRoleWarAttribute(pid)
+	-- WarDrawStrBoxWaitKey(JY.Person[pid]["姓名"].."的等级上升了！",C_WHITE);
+end
 function km_retreat(pid)
 	local role = KM.role[pid]
-	role.anim = 5
-	km_waitFrame(4)
-	PlayWavE(16)
+	-- role.anim = 5
+	-- km_waitFrame(160)
 	for i = 1, 3 do
+		if i < 3 then
+			PlayWavE(16)
+		end
 		role.anim = 5
-		km_waitFrame(8)
+		km_waitTime(160)
 		role.anim = 9
-		km_waitFrame(8)
+		km_waitTime(160)
 	end
 	role.status = 2
 	km_getGrid(role.x, role.y).pid = 0
+	km_waitTime(320)
 	-- WarDrawStrBoxDelay(JY.Person[War.Person[pid].id]["姓名"].."撤退了！",C_WHITE)
 end
