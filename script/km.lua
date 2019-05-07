@@ -659,27 +659,6 @@ function km_createMenu2(menu, x, y)
 	menu2.y = y or CC.ScreenH2 - menu2.height / 2
 end
 function km_drawRoleStatus(pid)
-	-- local function drawbar(x, y, v, max_v)
-	-- 	local w = 60
-	-- 	max_v = max_v or 100
-	-- 	max_v = max_v / 4
-	-- 	local c1 = RGB(187, 180, 182)
-	-- 	local c2 = RGB(247, 242, 231)
-	-- 	lib.Background(x, y, x + w * 4, y + 7, 128)
-	-- 	lib.DrawRect(x, y + 5, x + w - 2, y + 5, c1)
-	-- 	lib.DrawRect(x + w, y + 5, x + w * 2 - 2, y + 5, c1)
-	-- 	lib.DrawRect(x + w * 2, y + 5, x + w * 3 - 2, y + 5, c1)
-	-- 	lib.DrawRect(x + w * 3, y + 5, x + w * 4 - 2, y + 5, c1)
-		
-	-- 	lib.DrawRect(x + w - 2, y, x + w - 2, y + 4, c1)
-	-- 	lib.DrawRect(x + w * 2 - 2, y, x + w * 2 - 2, y + 4, c1)
-	-- 	lib.DrawRect(x + w * 3 - 2, y, x + w * 3 - 2, y + 4, c1)
-	-- 	for i = 0, 3 do
-	-- 		if v - max_v * i > 0 then
-	-- 			lib.FillColor(x + w * i, y, x + w * i + math.floor((w - 2) * limitX((v - max_v * i) / max_v, 0, 1)), y + 5, c2);
-	-- 		end
-	-- 	end
-	-- end
 	local role = KM.role[pid]
 	local x, y = 128, CC.ScreenH2 - 240
 	LoadPicEnhance(73, x, y, 640, 480)
@@ -716,41 +695,6 @@ function km_drawRoleStatus(pid)
 	y = y + CC.FontSize + 8
 	km_drawbar(x, y, 240, '经验', 1, role.nextExp, role['经验'], role['经验'])
 	y = y + CC.FontSize + 8
-	-- DrawStringEnhance(x, y, string.format('兵力[B][w]%12d', role.HP), C_Name, CC.FontSize, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.HP, math.max(role.maxHP, 3000))
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format('策略[B][w]%12d', role.SP), C_Name, CC.FontSize, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.SP, math.max(role.maxSP, 100))
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format("攻击[B][w]%12d", role.atk), C_Name, CC.FontSize)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.atk, 1200)
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format("防御[B][w]%12d", role.def), C_Name, CC.FontSize)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.def, 1200)
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format("精神[B][w]%12d", role.mag), C_Name, CC.FontSize)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.mag, 1200)
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format("移动[B][w]%12d", role.mov), C_Name, CC.FontSize)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.mov, 9)
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format("速度[B][w]%12d", role.spd), C_Name, CC.FontSize)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role.spd, 15)
-	-- y = y + 8
-	-- DrawStringEnhance(x, y, string.format('经验[B][w]%12d', role['经验']), C_Name, CC.FontSize, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSize * 8, y + 8, string.format('/%d', role.nextExp), M_White, CC.FontSizeS, 0, 0)
-	-- y = y + CC.FontSize
-	-- drawbar(x, y, role['经验'], role.nextExp)
-	-- y = y + 8
 	--
 	y = CC.ScreenH2 - 240 + 16
 	x = x + 300
@@ -773,14 +717,6 @@ function km_drawRoleStatus(pid)
 	DrawStringEnhance(x + 120, y, '[B]' .. role['等级'], M_White, CC.FontSize, 1, 0)
 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[role['兵种']]['名称'], M_White, CC.FontSizeM, 0, 0)
 	y = y + CC.FontSize
-	-- for i, v in ipairs({"武力", "统御", "智力"}) do
-	-- 	DrawStringEnhance(x, y, string.format("%s[B][w]%12d", v, role[v]), C_Name, CC.FontSizeM)
-	-- 	y = y + CC.FontSizeM
-	-- 	drawbar(x, y, role[v])
-	-- 	y = y + 8
-	-- end
-
-
 	--
 	x = 128 + 320 - 32
 	y = CC.ScreenH - 80

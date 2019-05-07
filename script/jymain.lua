@@ -55,8 +55,8 @@ function SetGlobal()   --设置游戏内部使用的全程变量
 	JY.CURRENT_COLOR=C_WHITE;
 	JY.PID=0;
 	JY.FID=0;
-	JY.GameStatus=creatGameStatus();
-	JY.CityMenu=creatCityMenu();
+	-- JY.GameStatus=creatGameStatus();
+	-- JY.CityMenu=creatCityMenu();
 	JY.Tid=0;		--SMAP时，当前选择的人物 或 正在说话的人物
 	JY.LLK_N=0;
 	JY.DG={
@@ -82,17 +82,17 @@ function JY_Main_sub()        --真正的游戏主程序入口
 	lib.FillColor();
 	lib.ShowSurface(0);
 	dofile(CONFIG.ScriptPath .. "jyconst.lua");
-	dofile(CONFIG.ScriptPath .. "S.RPG.lua");
+	-- dofile(CONFIG.ScriptPath .. "S.RPG.lua");
 	dofile(CONFIG.ScriptPath .. "S.lua");
-	dofile(CONFIG.ScriptPath .. "fight.lua");
+	-- dofile(CONFIG.ScriptPath .. "fight.lua");
 	dofile(CONFIG.ScriptPath .. "UI.lua");
 	dofile(CONFIG.ScriptPath .. "mouse.lua");
 	dofile(CONFIG.ScriptPath .. "input.lua");
-	dofile(CONFIG.ScriptPath .. "Asura.lua");
-	dofile(CONFIG.ScriptPath .. "kdef.lua");
-	dofile(CONFIG.ScriptPath .. "LLK_III.lua");
-	dofile(CONFIG.ScriptPath .. "AI.lua");
-	dofile(CONFIG.ScriptPath .. "Sha.lua");
+	-- dofile(CONFIG.ScriptPath .. "Asura.lua");
+	-- dofile(CONFIG.ScriptPath .. "kdef.lua");
+	-- dofile(CONFIG.ScriptPath .. "LLK_III.lua");
+	-- dofile(CONFIG.ScriptPath .. "AI.lua");
+	-- dofile(CONFIG.ScriptPath .. "Sha.lua");
 	dofile(CONFIG.ScriptPath .. "km.lua");
 	dofile(CONFIG.ScriptPath .. "km_scenario.lua");
 	dofile(CONFIG.ScriptPath .. "km_battle.lua");
@@ -2767,4 +2767,13 @@ function WarShowMenu(menuItem,numItem,numShow,x1,y1,x2,y2,isBox,isEsc,size,color
 		ReFresh();
 	end]]--
     return returnValue;
+end
+
+function limitX(x,minv,maxv)       --限制x的范围
+    if x<minv then
+	    x=minv;
+	elseif x>maxv then
+	    x=maxv;
+	end
+	return x
 end

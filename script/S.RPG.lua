@@ -2937,14 +2937,6 @@ function WarBingZhongUp(id,bzid)--兵种变更，动画
 	JY.MenuPic.num=MenuPicNum;
 end
 --
-function limitX(x,minv,maxv)       --限制x的范围
-    if x<minv then
-	    x=minv;
-	elseif x>maxv then
-	    x=maxv;
-	end
-	return x
-end
 function SetWarConst()
 	War.DX={[0]="平原","森林","山地","河流","桥梁",
 				"城墙","城池","草原","村庄","悬崖",

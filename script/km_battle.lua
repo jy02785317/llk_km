@@ -117,81 +117,13 @@ function km_drawWar(isActive)
 		end
 	end
 	if isActive and war.isActive then
-		-- if war.gridX > 1 and x == 0 then
-		-- 	lib.PicLoadCache(4, 246 * 2, MOUSE.x, MOUSE.y);
-		-- 	if MOUSE.HOLD(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- 		war.gridX = war.gridX - 1
-		-- 	end
-		-- elseif war.gridX < war.gridW - war.screenW + 1 and x == war.screenW - 1 then
-		-- 	lib.PicLoadCache(4, 242 * 2, MOUSE.x, MOUSE.y);
-		-- 	if MOUSE.HOLD(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- 		war.gridX = war.gridX + 1
-		-- 	end
-		-- -- elseif war.gridY > 1 and y == 0 then
-		-- -- 	lib.PicLoadCache(4, 248 * 2, MOUSE.x, MOUSE.y);
-		-- -- 		if MOUSE.HOLD(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- -- 			war.gridY = war.gridY - 1
-		-- -- 		end
-		-- elseif war.gridY > 1 and y == 0 then
-		-- 	lib.PicLoadCache(4, 248 * 2, MOUSE.x, MOUSE.y);
-		-- 		if MOUSE.IN(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- 			war.gridY = war.gridY - 1
-		-- 		end
-		-- -- elseif war.gridY < war.gridH - war.screenH + 1 and y == war.screenH - 1 then
-		-- -- 	lib.PicLoadCache(4, 244 * 2, MOUSE.x, MOUSE.y);
-		-- -- 	if MOUSE.HOLD(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- -- 		war.gridY = war.gridY + 1
-		-- -- 	end
-		-- elseif war.gridY < war.gridH - war.screenH + 1 and y == war.screenH - 1 then
-		-- 	lib.PicLoadCache(4, 244 * 2, MOUSE.x, MOUSE.y);
-		-- 	if MOUSE.IN(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- 		war.gridY = war.gridY + 1
-		-- 	end
-		-- else
-		-- 	if curGrid and MOUSE.CLICK(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-		-- 		if war.isShowMoveArea then
-		-- 			KM.event.category = 3
-		-- 			KM.event.name = '选择移动目标'
-		-- 			KM.event.grid = curGrid
-		-- 		elseif curGrid.pid > 0 then
-		-- 			KM.event.category = 3
-		-- 			KM.event.name = '选择部队'
-		-- 			KM.event.pid = curGrid.pid
-		-- 		end
-		-- 	end
-		-- end
 		if curGrid and MOUSE.CLICK(48 * x, 48 * y, 48 * (x + 1), 48 * (y + 1)) then
-			-- if war.opStep == 0 then
-			-- 	KM.event.name = '选择部队'
-			-- 	KM.event.pid = curGrid.pid
-			-- elseif war.opStep == 1 then
-			-- 	KM.event.name = '选择移动目标'
-			-- 	KM.event.grid = curGrid
-			-- elseif war.opStep == 2 then
-			-- 	KM.event.name = '选择作用目标'
-			-- 	KM.event.grid = curGrid
-			-- end
 			KM.event.name = '选择地图网格'
 			KM.event.grid = curGrid
-
-			-- if war.isShowMoveArea then
-			-- 	KM.event.category = 3
-			-- 	KM.event.name = '选择移动目标'
-			-- 	KM.event.grid = curGrid
-			-- elseif war.isShowSelectArea then
-			-- 	KM.event.category = 3
-			-- 	KM.event.name = '选择作用目标'
-			-- 	KM.event.grid = curGrid
-			-- elseif curGrid.pid > 0 then
-			-- 	KM.event.category = 3
-			-- 	KM.event.name = '选择部队'
-			-- 	KM.event.pid = curGrid.pid
-			-- end
 		elseif MOUSE.HOLD(0, 0, CC.ScreenW, CC.ScreenH) then
 			KM.event.name = '地图拖动'
 			KM.event.x = MOUSE.x
 			KM.event.y = MOUSE.y
-			-- log('地图拖动', KM.event.x, KM.event.y)
 		else
 			KM.event.dx = 0
 			KM.event.dy = 0
@@ -340,31 +272,9 @@ function km_drawUnitBrief(pid, isActive)
 	DrawStringEnhance(x + 140, y + 4, '[B]级', M_White, CC.FontSizeM, 1, 0)
 	DrawStringEnhance(x + 120, y, '[B]' .. role['等级'], M_White, CC.FontSize, 1, 0)
 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[B]' .. KM.unit[uid]['名称'], M_White, CC.FontSizeM, 0, 0)
-	-- if role.isEnemy then
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Red]敌军', M_White, CC.FontSizeM, 0, 0)
-	-- elseif role['阵营'] == 1 or role['阵营'] == 7 then
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, string.format('[B]经验 %3d', 108), M_White, CC.FontSizeM, 0, 0)
-	-- 	DrawStringEnhance(x + 152 + CC.FontSizeM * 4, y + CC.FontSize - CC.FontSizeS, string.format('[B]/%d', 120), M_White, CC.FontSizeS, 0, 0)
-	-- else
-	-- 	DrawStringEnhance(x + 152, y + CC.FontSize - CC.FontSizeM, '[Orange]友军', M_White, CC.FontSizeM, 0, 0)
-	-- end
 	y = y + CC.FontSize + 4
 	km_drawbar(x, y, 140, '[w]兵力', 1, role.maxHP, role.HP, role.HP)
 	km_drawbar(x + 152, y, 120, '[w]策略', 1, role.maxSP, role.SP, role.SP)
-	-- lib.Background(x, y + CC.FontSizeM, x + 140, y + CC.FontSizeM + 12, 128)
-	-- if role.HP > 0 then
-	-- 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, math.floor(140 * role.HP / role.maxHP), 12)
-	-- end
-	-- DrawStringEnhance(x, y, string.format('兵力[B]%6d', role.HP), M_White, CC.FontSizeM, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('/%d', role.maxHP), M_White, CC.FontSizeS, 0, 0)
-	-- x = x + 152
-	-- lib.Background(x, y + CC.FontSizeM, x + 112, y + CC.FontSizeM + 12, 128)
-	-- if role.HP > 0 then
-	-- 	lib.PicLoadCache(4, 216 * 2, x, y + CC.FontSizeM, 1, nil, nil, 118 * math.floor(role.SP / role.maxSP), 12)
-	-- end
-	-- DrawStringEnhance(x, y, string.format('策略[B]%4d', role.SP), M_White, CC.FontSizeM, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSizeM * 4, y + 4, string.format('/%d', role.maxSP), M_White, CC.FontSizeS, 0, 0)
-	-- x = x - 152
 	y = y + CC.FontSizeM + 12 + 4
 	DrawStringEnhance(x + CC.FontSizeM * 9, y + CC.FontSizeM + 4 + 2, string.format('/%d', role.nextExp), M_White, CC.FontSizeS, 0, 0)
 	DrawStringEnhance(x, y, "攻击      防御      移动[n]精神      经验", M_White, CC.FontSizeM, 0, 0)
@@ -384,28 +294,6 @@ function km_drawUnitBrief(pid, isActive)
 		lib.PicLoadCache(4, 80 * 2, x, y, 1)
 	end
 	DrawStringEnhance(x + 24, y + 14, "详情", M_White, CC.FontSizeM, 0.5, 0.5)
-	-- if MOUSE.CLICK()
-	-- x = x + 204
-	-- lib.PicLoadCache(4, 87 * 2, x, y, 1, nil, nil, 88, 60);
-	-- DrawStringEnhance(x, y, '[B]经验', M_White, CC.FontSizeS, 0, 0)
-	-- DrawStringEnhance(x + 64, y + 52, string.format('[B]/%3d', 120), M_White, CC.FontSizeS, 1, 1)
-	-- DrawStringEnhance(x + 30, y + 25, string.format('[B]%3d', 108), M_White, CC.FontSize, 0.5, 0.5)
-	-- DrawStringEnhance(x + 2, y + 2, string.format('[B]经验[n] [n]    /%3d', 140), M_White, CC.FontSizeS, 0, 0)
-	-- DrawStringEnhance(x + 32, y + 24, '[B]' .. 108, M_White, CC.FontSize, 0.5, 0.5)
-	-- DrawStringEnhance(x, y, string.format('[B]策略%4d', 500), M_White, CC.FontSizeM, 0, 0)
-	-- DrawStringEnhance(x + CC.FontSizeM * 5, y + 4, string.format('[B]/%d', 800), M_White, CC.FontSizeS, 0, 0)
-	-- DrawStringEnhance(x, y, '[B]' .. '兵力[n]策略', M_White, FontSizeS, 0, 0)
-	-- x = x + FontSizeS * 2 + 8
-	-- lib.Background(x, y, x + 128, y + 16, 128);
-	-- lib.PicLoadCache(4, 216 * 2, x, y, 1, nil, nil, 100, 16);
-	-- DrawStringEnhance(x + 54, y, '[B]500/500', M_White, FontSizeS, 0.5, 0)
-	-- y = y + FontSizeS + 4
-	-- lib.Background(x, y, x + 128, y + 16, 128);
-	-- lib.PicLoadCache(4, 216 * 2, x, y, 1, nil, nil, 100, 16);
-	-- DrawStringEnhance(x + 54, y, '[B]500/500', M_White, FontSizeS, 0.5, 0)
-	-- y = CC.ScreenH - 128
-	-- x = x + 128
-	-- DrawStringEnhance(x, y, "攻击 200 防御 200 [n]精神 100 移动 5 [n]经验 50/150", M_White, FontSizeS, 0, 0)
 end
 --logic
 function km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
@@ -576,11 +464,6 @@ function km_warOperate()
 		elseif war.action == '策略' then
 		end
 	end
-	-- while true do
-	-- 	km_waitFrame(1)
-	-- 	ev.category = 0
-	-- 	ev.name = ''
-	-- end
 end
 function km_selectRole(pid)
 	KM.war.pid = pid
@@ -614,10 +497,6 @@ function km_warMenu(pid)
 		menu2.y = y - menu2.height + 48
 	end
 	menu2.show = true
-	-- km_waitEvent('选择结束')
-	-- menu2.show = false
-	-- km_waitFrame()
-	-- return KM.event.selection
 end
 function km_hideWarMenu()
 	KM.UI.menu2.show = false
@@ -994,7 +873,14 @@ function km_atk(pid, eid)
 	-- 	即便连击判定成功，如果对方耐久力为0，则不会发生连击
 	km_atkSub(pid, eid, 1)
 	if eRole.HP > 0 then
-		km_atkSub(eid, pid, 2)
+		local flag = false
+		local area = km_calRoleAtkArea(eid)
+		for i, v in ipairs(area) do
+			if v.x == pRole.x and v.y == pRole.y then
+				km_atkSub(eid, pid, 2)
+				break
+			end
+		end
 	end
 	if isDouble and pRole.HP > 0 and eRole.HP > 0 then
 		km_atkSub(pid, eid, 2)
