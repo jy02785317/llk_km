@@ -356,6 +356,104 @@ end
 function km_warOperate()
 	local ev = KM.event
 	local war = KM.war
+	local pid = war.pid
+	if war.opStep == 0 then
+		war.isShowMoveArea = false
+		war.isShowSelectArea = false
+		km_hideWarMenu()
+		km_waitEvent('选择地图网格')
+		local grid = ev.grid
+		if grid.pid > 0 then
+			war.opStep = 1
+			km_selectRole(grid.pid)
+		end
+	elseif war.opStep == 1 then
+		km_waitEvent('选择地图网格')
+		local grid = ev.grid
+		if grid.pid > 0 then
+			if grid.pid == pid then
+				local role = KM.role[pid]
+				if role.isEnemy or (role['阵营'] ~= 1 and role['阵营'] ~= 7) then
+					km_showRoleStatus(pid)
+				else
+					PlayWavE(0)
+					war.isShowMoveArea = false
+					war.opStep = 2
+				end
+			else
+				km_selectRole(grid.pid)
+			end
+		elseif grid.s ~= 2 then
+			PlayWavE(1)
+			km_alert('不是在移动范围里．')
+			war.opStep = 0
+		else
+			local role = KM.role[pid]
+			if role.isEnemy then
+				PlayWavE(2)
+				km_alert('不是我军部队．')
+			elseif (role['阵营'] ~= 1 and role['阵营'] ~= 7) then
+				PlayWavE(2)
+				km_alert('不能操作的部队．')
+			else
+				-- PlayWavE(0)
+				war.isShowMoveArea = false
+				war.isActive = false
+				km_moveRoleToGrid(pid, grid)
+				war.isActive = true
+				war.opStep = 2
+			end
+		end
+	elseif war.opStep == 2 then
+		war.isShowMoveArea = false
+		war.isShowSelectArea = false
+		km_warMenu(pid)
+		local r = km_waitEvent('战斗菜单_攻击', '战斗菜单_技能', '战斗菜单_策略', '战斗菜单_道具', '战斗菜单_情报', '战斗菜单_休息')
+		km_hideWarMenu()
+		if r == 1 then
+			war.opStep = 11
+		elseif r == 3 then
+			km_trick(pid, ev.grid, 1)
+		elseif r == 5 then
+			km_showRoleStatus(pid)
+		elseif r == 6 then
+			war.opStep = 0
+		end
+	elseif war.opStep == 11 then
+		km_hideWarMenu()
+		war.selectArea = km_calRoleAtkArea(pid)
+		if #war.selectArea == 0 then
+			war.opStep = 2
+			return
+		end
+		war.isShowSelectArea = true
+		km_waitEvent('选择地图网格')
+		local grid = ev.grid
+		if not km_isXYInSelectArea(grid.x, grid.y, war.selectArea) then
+			PlayWavE(1)
+			km_alert('不在攻击范围内．')
+			war.opStep = 2
+		elseif grid.pid == 0 or KM.role[grid.pid].status ~= 1 then
+			PlayWavE(2)
+			km_alert('没有敌人．')
+		elseif not KM.role[grid.pid].isEnemy then
+			PlayWavE(2)
+			km_alert('不能攻击我方．')
+		else
+			PlayWavE(0)
+			war.isShowSelectArea = false
+			war.isActive = false
+			km_atk(pid, grid.pid)
+			war.isActive = true
+			war.opStep = 0
+		end
+
+	else
+		return
+	end
+	do
+		return
+	end
 	if ev.name == '选择地图网格' then
 		local grid = ev.grid
 		local pid = war.pid
@@ -480,9 +578,9 @@ function km_warMenu(pid)
 	local menu = {
 		{ text = '攻击', show = true, enable = true, name = '战斗菜单_攻击', },
 		{ text = '技能', show = false, enable = true, name = '战斗菜单_技能', },
-		{ text = '策略', show = true, enable = false, name = '战斗菜单_策略', },
+		{ text = '策略', show = true, enable = true, name = '战斗菜单_策略', },
 		{ text = '道具', show = true, enable = false, name = '战斗菜单_道具', },
-		{ text = '情报', show = true, enable = false, name = '战斗菜单_情报', },
+		{ text = '情报', show = true, enable = true, name = '战斗菜单_情报', },
 		{ text = '休息', show = true, enable = true, name = '战斗菜单_休息', },
 	}
 	km_createMenu2(menu)
@@ -907,7 +1005,7 @@ function km_atkSub(pid, eid, category)
 	km_waitTime(40)
 	-- 攻击
 	if isBlow then
-		WarAtkWords(pid)
+		-- WarAtkWords(pid)
 		km_playUnitAction(pid, 2)
 	else
 		km_playUnitAction(pid, 1)
@@ -1104,6 +1202,14 @@ function km_showRoleEffect(pid, text)
 		dur = 24,
 	})
 end
+function km_trick(pid, grid, trick)
+	local pRole = KM.role[pid]
+	if grid.x ~= pRole.x or grid.y ~= pRole.y then
+		pRole.d = km_calDirection(grid.x - pRole.x, grid.y - pRole.y)
+	end
+	km_playUnitAction(pid, 9)
+	km_waitEvent('播放动作结束')
+end
 function km_lvUp(pid)
 	local role = KM.role[pid]
 	km_playUnitAction(pid, 41)
@@ -1126,6 +1232,7 @@ function km_playUnitAction(pid, action)
 		case action
 		1 attack normal
 		2 attack blow
+		9 use trick
 		11 be attacked
 		12 be attacked by a blow
 		21 defence
@@ -1158,6 +1265,15 @@ function km_playUnitAction(pid, action)
 				km_waitTime(120)
 				role.frame = i
 			end
+		elseif action == 9 then
+			role.anim = 2
+			role.frame = 0
+			km_waitTime(160)
+			PlayWavE(8)
+			km_waitTime(320)
+			PlayWavE(39)
+			km_waitTime(480)
+			role.anim = 0
 		elseif action == 11 or action == 12 then
 			role.anim = 4
 			role.highlight = 240
@@ -1201,6 +1317,7 @@ function km_playUnitAction(pid, action)
 			km_waitTime(640)
 		elseif action == 44 then
 			role.anim = 6
+			PlayWavE(0)
 			km_waitTime(150)
 			role.anim = 1
 		end
