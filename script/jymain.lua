@@ -116,11 +116,11 @@ function JY_Main_sub()        --真正的游戏主程序入口
 
     lib.GetKey();
 	
-	--加载HZ
-    local hznum=20000;
-	local datasize=(4+6)*hznum;
-	local data=Byte.create(datasize);
-    Byte.loadfile(data,CONFIG.DataPath .. "EFTDATA.R3",0,datasize);
+	-- --加载HZ
+    -- local hznum=20000;
+	-- local datasize=(4+6)*hznum;
+	-- local data=Byte.create(datasize);
+    -- Byte.loadfile(data,CONFIG.DataPath .. "EFTDATA.R3",0,datasize);
 	-- CC.Font={};
 	-- local odx=Byte.get32(data,2);
 	-- for i=1,hznum do
@@ -1251,18 +1251,6 @@ end
 function LoadRecord(id)       -- 读取游戏进度
     local t1=lib.GetTime();
     local data=Byte.create(4*8);
-	--读取savedata
-	--[[
-    Byte.loadfile(data,CC.SavedataFile,0,4*8);
-	CC.OSCharSet=Byte.get16(data,0);
-	CC.MusicVolume=Byte.get16(data,2);
-	CC.SoundVolume=Byte.get16(data,4);
-	if CONFIG.Windows then
-		Config();
-		PicCacheIni();
-	else
-		lib.LoadSoundConfig(CC.MusicVolume,CC.SoundVolume);
-	end]]--
     --读取R*.idx文件
     local data=Byte.create(4*12);
     Byte.loadfile(data,CC.R_GRPFilename[0],0,4*12);
@@ -1569,12 +1557,6 @@ function SaveRecord(id)         -- 写游戏进度
 	JY.Base["当前场景"]=JY.SubScene;
 	JY.Base["当前事件"]=JY.EventID;
 	JY.Base["当前音乐"]=JY.CurrentBGM;
-    --local data=Byte.create(4*8);
-	--读取savedata
-	--[[
-	Byte.set16(data,2,CC.MusicVolume);
-	Byte.set16(data,4,CC.SoundVolume);
-	Byte.savefile(data,CC.SavedataFile,0,4*8);]]--
     --读取R*.idx文件
     local data=Byte.create(4*11);
     Byte.loadfile(data,CC.R_GRPFilename[0],0,4*11);

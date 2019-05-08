@@ -326,6 +326,7 @@ function km_initWar(isRetreatable, maxTurn, inheritTurn, foeMarshal, ourMarshal)
 		floatingText = {},
 		showRoleAttrib = 0,
 		showAttrib = 0,
+		unitAnimation = {},
 	}
 end
 function km_handleWarUI()
@@ -468,6 +469,7 @@ end
 function km_selectRole(pid)
 	KM.war.pid = pid
 	km_calMoveArea(pid)
+	km_playUnitAction(pid, 44)
 	KM.war.isShowMoveArea = true
 end
 function km_warMenu(pid)
@@ -615,7 +617,7 @@ function km_resetRoleAnim()
 					role.anim = 0
 				end
 			else
-				km_retreat(i)
+				km_defeat(i)
 			end
 		end
 	end
@@ -904,48 +906,29 @@ function km_atkSub(pid, eid, category)
 	PlayWavE(6)
 	km_waitTime(40)
 	-- 攻击
-	if isBlow then	-- 暴击
-		PlayWavE(6)
-		-- WarAtkWords(pid)
+	if isBlow then
+		WarAtkWords(pid)
+		km_playUnitAction(pid, 2)
+	else
+		km_playUnitAction(pid, 1)
 	end
-	pRole.anim = 2
-	pRole.frame = 0
-	km_waitTime(40)
-	PlayWavE(pRole.atkWav);	-- 攻击音效
-	km_waitTime(320)
-	if isBlow then	-- 暴击
-		PlayWavE(33)
-		for highlight = 8, 192, 6 do
-			pRole.highlight = highlight
-			km_waitTime(40)
-		end
-		pRole.highlight = 0
-	end
-	for i = 0, 3 do
-		km_waitTime(120)
-		pRole.frame = i
-	end
+	km_waitEvent('播放动作结束')
 	--敌人
 	eRole.d = km_calDirection(-dx, -dy)
 	if isMiss then
-		eRole.anim = 3
 		if isBlow then
-			eRole.highlight = 256
-			PlayWavE(31)
+			km_playUnitAction(eid, 22)
 		else
-			PlayWavE(30)
+			km_playUnitAction(eid, 21)
 		end
-	elseif false then	-- 混乱
-		PlayWavE(35)
 	else
-		eRole.anim = 4
-		eRole.highlight = 240
 		if isBlow then
-			PlayWavE(36)
+			km_playUnitAction(eid, 12)
 		else
-			PlayWavE(35)
+			km_playUnitAction(eid, 11)
 		end
 	end
+	km_waitEvent('播放动作结束')
 	if hurt > 0 then
 		km_showRoleEffect(eid, '[B]' .. tostring(hurt))
 		-- eRole.HP = eRole.HP - hurt
@@ -1093,6 +1076,7 @@ function km_gainExp(act, pid, eid)
 			else
 				v = v + 2 * math.floor( 32 / ( 3 + pRole['等级'] - eRole['等级'] ) )
 			end
+			v = v + 100
 		end
 	end
 	if v > 0 then
@@ -1122,39 +1106,107 @@ function km_showRoleEffect(pid, text)
 end
 function km_lvUp(pid)
 	local role = KM.role[pid]
-	role.anim = 0
-	for i = 1, 2 do
-		role.d = 4
-		km_waitTime(120)
-		role.d = 1
-		km_waitTime(120)
-		role.d = 2
-		km_waitTime(120)
-		role.d = 3
-		km_waitTime(120)
-	end
-	PlayWavE(11)
-	role.anim = 6
-	km_waitTime(640)
+	km_playUnitAction(pid, 41)
+	km_waitEvent('播放动作结束')
 	role['等级'] = role['等级'] + 1
 	km_calRoleWarAttribute(pid)
 	-- WarDrawStrBoxWaitKey(JY.Person[pid]["姓名"].."的等级上升了！",C_WHITE);
 end
-function km_retreat(pid)
+function km_defeat(pid)
 	local role = KM.role[pid]
-	-- role.anim = 5
-	-- km_waitFrame(160)
-	for i = 1, 3 do
-		if i < 3 then
-			PlayWavE(16)
-		end
-		role.anim = 5
-		km_waitTime(160)
-		role.anim = 9
-		km_waitTime(160)
-	end
+	km_playUnitAction(pid, 31)
+	km_waitEvent('播放动作结束')
 	role.status = 2
 	km_getGrid(role.x, role.y).pid = 0
 	km_waitTime(320)
 	-- WarDrawStrBoxDelay(JY.Person[War.Person[pid].id]["姓名"].."撤退了！",C_WHITE)
+end
+function km_playUnitAction(pid, action)
+	--[[
+		case action
+		1 attack normal
+		2 attack blow
+		11 be attacked
+		12 be attacked by a blow
+		21 defence
+		22 defence by a blow
+		31 defeated
+		32 reteat
+		33 die
+		41 lvup
+		42 rankup
+		43 gasp
+		44 active
+	]]
+	local co = coroutine.create( function()
+		local role = KM.role[pid]
+		if action == 1 or action == 2 then
+			role.anim = 2
+			role.frame = 0
+			km_waitTime(40)
+			PlayWavE(role.atkWav)
+			km_waitTime(320)
+			if action == 2 then
+				PlayWavE(33)
+				for highlight = 8, 192, 6 do
+					role.highlight = highlight
+					km_waitTime(40)
+				end
+				role.highlight = 0
+			end
+			for i = 0, 3 do
+				km_waitTime(120)
+				role.frame = i
+			end
+		elseif action == 11 or action == 12 then
+			role.anim = 4
+			role.highlight = 240
+			if action == 12 then
+				PlayWavE(36)
+			else
+				PlayWavE(35)
+			end
+		elseif action == 21 or action == 22 then
+			role.anim = 3
+			if action == 22 then
+				role.highlight = 256
+				PlayWavE(31)
+			else
+				PlayWavE(30)
+			end
+		elseif action == 31 then
+			for i = 1, 3 do
+				if i < 3 then
+					PlayWavE(16)
+				end
+				role.anim = 5
+				km_waitTime(160)
+				role.anim = 9
+				km_waitTime(160)
+			end
+		elseif action == 41 then
+			role.anim = 0
+			for i = 1, 2 do
+				role.d = 4
+				km_waitTime(120)
+				role.d = 1
+				km_waitTime(120)
+				role.d = 2
+				km_waitTime(120)
+				role.d = 3
+				km_waitTime(120)
+			end
+			PlayWavE(11)
+			role.anim = 6
+			km_waitTime(640)
+		elseif action == 44 then
+			role.anim = 6
+			km_waitTime(150)
+			role.anim = 1
+		end
+		KM.event.name = '播放动作结束'
+		KM.event.pid = pid
+		KM.event.action = action
+	end )
+	table.insert(KM.war.unitAnimation, co)
 end

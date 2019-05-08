@@ -137,12 +137,13 @@ function SetGlobalConst()
 	CC.DirectY={-1, 0, 1, 0};
 	CC.TmxFilename = CONFIG.TmxPath .. "%03d.tmx"
 	CC.SnrFilename = CONFIG.SnrPath .. "SNR%d-%d.txt"
-	CC.RoleTxtFilename = CONFIG.DataPath .. "role.txt"
-	CC.CityTxtFilename = CONFIG.DataPath .. "city.txt"
-	CC.UnitTxtFilename = CONFIG.DataPath .. "unit.txt"
-	CC.TerrainTxtFilename = CONFIG.DataPath .. "terrain.txt"
-	CC.UnitTerrainTxtFilename = CONFIG.DataPath .. "unit_terrain.txt"
-	CC.UnitSkinTxtFilename = CONFIG.DataPath .. "unit_skin.txt"
+	CC.FontTxtFilename = CONFIG.DataPath .. "font.tsv"
+	CC.RoleTxtFilename = CONFIG.DataPath .. "role.tsv"
+	CC.CityTxtFilename = CONFIG.DataPath .. "city.tsv"
+	CC.UnitTxtFilename = CONFIG.DataPath .. "unit.tsv"
+	CC.TerrainTxtFilename = CONFIG.DataPath .. "terrain.tsv"
+	CC.UnitTerrainTxtFilename = CONFIG.DataPath .. "unit_terrain.tsv"
+	CC.UnitSkinTxtFilename = CONFIG.DataPath .. "unit_skin.tsv"
 
 	CC.MaxLv = 50
 	CC.MaxItemNum = 15
@@ -401,20 +402,15 @@ function SetGlobalConst()
 	CC.SpWidth[13624] = 0.5	--空格
 
 
-	CC.MapFile=CONFIG.DataPath .. "HEXZMAP.R3";
 
 
 	--各种贴图文件名。
-	CC.MMAPPicFile={CONFIG.DataPath .. "mmap.idx",CONFIG.DataPath .. "mmap.grp"};
-	CC.SMAPPicFile={CONFIG.DataPath .. "smap.idx",CONFIG.DataPath .. "smap.grp"};
-	CC.WMAPPicFile={CONFIG.DataPath .. "wmap.idx",CONFIG.DataPath .. "wmap.grp"};
-	CC.EFT={CONFIG.DataPath .. "eft.idx",CONFIG.DataPath .. "eft.grp"};
-	CC.FightPicFile={CONFIG.DataPath .. "fight%03d.idx",CONFIG.DataPath .. "fight%03d.grp"};  --此处为字符串格式，类似于C中printf的格式。
-
-	CC.HeadPicFile={CONFIG.DataPath .. "hdgrp.idx",CONFIG.DataPath .. "hdgrp.grp"};
-	CC.UIPicFile={CONFIG.DataPath .. "ui.idx",CONFIG.DataPath .. "ui.grp"};
-	CC.ThingPicFile={CONFIG.DataPath .. "thing.idx",CONFIG.DataPath .. "thing.grp"};
-
+	CC.MMAPPicFile={CONFIG.ImagePath .. "mmap.idx",CONFIG.ImagePath .. "mmap.grp"};
+	CC.SMAPPicFile={CONFIG.ImagePath .. "smap.idx",CONFIG.ImagePath .. "smap.grp"};
+	CC.WMAPPicFile={CONFIG.ImagePath .. "wmap.idx",CONFIG.ImagePath .. "wmap.grp"};
+	CC.EFT={CONFIG.ImagePath .. "eft.idx",CONFIG.ImagePath .. "eft.grp"};
+	CC.HeadPicFile={CONFIG.ImagePath .. "hdgrp.idx",CONFIG.ImagePath .. "hdgrp.grp"};
+	CC.UIPicFile={CONFIG.ImagePath .. "ui.idx",CONFIG.ImagePath .. "ui.grp"};
 
 	CC.BGMFile=CONFIG.MusicPath .. "%02d.ogg";
 	CC.ATKFile=CONFIG.SoundPath .. "atk%02d.wav";
@@ -528,33 +524,8 @@ function SetGlobalConst()
 					 CONFIG.DataPath .. "ESAVE7.grp",
 					 CONFIG.DataPath .. "ESAVE8.grp",
 					 CONFIG.DataPath .. "ESAVE9.grp",};
-   CC.S_Filename={[0]=CONFIG.DataPath .. "allsin.grp",
-                  CONFIG.DataPath .. "s1.grp",
-				  CONFIG.DataPath .. "s2.grp",
-				  CONFIG.DataPath .. "s3.grp",};
 
-   CC.TempS_Filename=CONFIG.DataPath .. "allsinbk.grp";
-
-   CC.D_Filename={[0]=CONFIG.DataPath .. "alldef.grp",
-                   CONFIG.DataPath .. "d1.grp",
-				   CONFIG.DataPath .. "d2.grp",
-				   CONFIG.DataPath .. "d3.grp",};
-
-   CC.PaletteFile=CONFIG.DataPath .. "mmap.col";
-   CC.SavedataFile=CONFIG.DataPath .. "savedata.grp";
-   CC.FirstFile=CONFIG.PicturePath .. "title.png";
-   CC.DeadFile=CONFIG.PicturePath .. "dead.png";
-   CC.MMapFile={CONFIG.DataPath .. "earth.002",
-                CONFIG.DataPath .. "surface.002",
-				CONFIG.DataPath .. "building.002",
-		        CONFIG.DataPath .. "buildx.002",
-				CONFIG.DataPath .. "buildy.002"};
-    CC.WarFile=CONFIG.DataPath .. "war.sta";
-    CC.WarMapFile={CONFIG.DataPath .. "warfld.idx",
-                    CONFIG.DataPath .. "warfld.grp"};
-    
-    CC.TalkIdxFile=CONFIG.ScriptPath .. "oldtalk.idx";
-    CC.TalkGrpFile=CONFIG.ScriptPath .. "oldtalk.grp";
+   CC.PaletteFile=CONFIG.ImagePath .. "mmap.col";
    
 	--定义记录文件R×结构。  lua不支持结构，无法直接从二进制文件中读取，因此需要这些定义，用table中不同的名字来仿真结构。
 	CC.MyThingNum=200      --主角物品数量

@@ -12,6 +12,7 @@ if (file) then
 	CONFIG.Windows = true
 	CONFIG.CurrentPath =".\\"
 	CONFIG.DataPath=CONFIG.CurrentPath .. "data\\";
+	CONFIG.ImagePath = CONFIG.CurrentPath .. "image\\"
 	CONFIG.TmxPath=CONFIG.CurrentPath .. "map\\";
 	CONFIG.SnrPath=CONFIG.CurrentPath .. "snr\\";
 	CONFIG.PicturePath=CONFIG.CurrentPath .. "pic\\";
@@ -29,6 +30,7 @@ else
 	CONFIG.Windows = false
 	CONFIG.CurrentPath = "/sdcard/llk2/";
 	CONFIG.DataPath=CONFIG.CurrentPath.."data/";
+	CONFIG.ImagePath = CONFIG.CurrentPath .. "image/"
 	CONFIG.TmxPath=CONFIG.CurrentPath .. "map/";
 	CONFIG.SnrPath=CONFIG.CurrentPath .. "snr/";
 	CONFIG.PicturePath=CONFIG.CurrentPath.."pic/";

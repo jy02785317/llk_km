@@ -140,6 +140,14 @@ function km_view()
 			km_drawSceneUI()
 		-- end
 	elseif KM.gameMode == 2 then
+		for i = #KM.war.unitAnimation, 1, -1 do
+			local co = KM.war.unitAnimation[i]
+			if 'dead' == coroutine.status(co) then
+				table.remove(KM.war.unitAnimation, i)
+			else
+				coroutine.resume(co)
+			end
+		end
 		km_drawWar(isGlobalActive)
 	end
 	if ui.notice.show then
@@ -1014,7 +1022,7 @@ function km_loadTXT(file)
 end
 function km_initStaticData()
 	CC.Font = {}
-	local font = km_loadTXT(CONFIG.DataPath .. "font.txt")
+	local font = km_loadTXT(CC.FontTxtFilename)
 	for i, v in ipairs(font) do
 		CC.Font[v['文字']] = v['贴图']
 	end
