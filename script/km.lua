@@ -28,11 +28,13 @@ KM = {
 	misc = {},
 }
 function log(...)
+	local fp = io.open(os.date('debug_%Y-%m-%d.txt'), 'a+')
 	local msg = ''
 	for k, v in ipairs({...}) do
-		msg = msg .. '\t' ..tostring(v)
+		msg = msg .. '\t' .. tostring(v)
 	end
-	lib.Debug(msg)
+	fp:write(os.date('%H:%M:%S '), msg, '\n')
+	fp:close()
 end
 function logTable(t, tabPos)
 	tabPos = tabPos or ''
@@ -108,7 +110,7 @@ function km_view()
 		ui.frameT = ui.frameT + 1
 	end
 	ui.frame = math.floor(ui.frameT / 16)
-	local isGlobalActive = not( ui.notice.show or ui.multiText.show or ui.talk.show or ui.menu.show or ui.menu2.show or ui.confirm.show or ui.alert.show or ui.showRoleStatus > 0 )
+	local isGlobalActive = not( ui.notice.show or ui.multiText.show or ui.talk.show or ui.menu.show or ui.menu2.show or ui.table.show or ui.confirm.show or ui.alert.show or ui.showRoleStatus > 0 )
 	lib.FillColor(0,0,0,0);
 	if KM.gameMode < 2 then
 		if ui.scene.map > 0 then
@@ -170,6 +172,10 @@ function km_view()
 		local isActive = true
 		km_drawMenu2(ui.menu2, isActive)
 	end
+	if ui.table.show then
+		local isActive = true
+		km_drawTable(ui.table, isActive)
+	end
 	if ui.confirm.show then
 		local isActive = true
 		km_drawConfirm(isActive)
@@ -194,6 +200,7 @@ end
 function km_gameLogic()
 	km_loadScenario(1, 1)
 	km_playScenario()
+	km_showTrickTable()
 	while true do
 		if KM.gameMode == 0 then
 			km_operate()
@@ -317,6 +324,211 @@ function km_talk(pid, text)
 	talk.show = false
 	km_waitFrame()
 end
+function km_table(tHead, tBody, title, quorum, sortKey)
+	local tb = {
+		show = true,
+		x = 0,
+		y = 0,
+		w = 640,
+		h = 480,
+		rowHight = 31,
+		rowShowNum = 1,
+		rowNum = #tBody,
+		top = 1,
+		on = 0,
+		sel = {},
+		quorum = quorum or 0,
+		title = title or '',
+		sortKey = sortKey or 0,
+		xoff = {},
+		head = tHead,
+		body = {},
+		--ScrollBar
+		sb = {
+			show = false,
+			hold = false,
+			bw = 18,
+			bh = 36,
+			h = 480,
+			v = 0,
+			old = 0,
+		},
+	}
+	tb.rowShowNum = math.floor(tb.h / tb.rowHight) - 1
+	tb.h = tb.rowHight * (tb.rowShowNum + 1)
+	tb.x = (CC.ScreenW - tb.w) / 2
+	tb.y = (CC.ScreenH - tb.h) / 2
+	for i, v in ipairs(tHead) do
+		local t = {}
+		if type(v) == 'table' then
+			t.str = v.str or '属性'
+			t.w = v.w or 64
+			t.xoff = v.xoff or 0.5
+			t.sortKey = v.sortKey or i
+		else
+			t.str = tostring(v)
+			t.w = 64
+			t.xoff = 0.5
+			t.sortKey = i
+		end
+		tb.head[i] = t
+	end
+	for id, row in ipairs(tBody) do
+		local t = { [0] = id }
+		for i, v in ipairs(tHead) do
+			t[i] = row[i]
+		end
+		tb.body[id] = t
+	end
+	if sortKey ~= 0 then
+	end
+	if tb.rowShowNum < tb.rowNum then
+		local sb = tb.sb
+		sb.h = tb.h - tb.rowHight
+		sb.bh = sb.h * tb.rowShowNum / (tb.rowNum + 1)
+		sb.bh = math.ceil(limitX(sb.bh, 36, sb.h * 0.75))
+		sb.show = true
+	end
+
+	KM.UI.table = tb
+end
+function km_sortStable(tb, sortKey)
+	table.sort(tb, function(a, b)
+		local va, vb
+		if sortKey >= 0 then
+			va, vb = a[sortKey], b[sortKey]
+		else
+			va, vb = b[-sortKey], a[-sortKey]
+		end
+		if va == nil then
+			return false
+		else
+			return va < vb
+		end
+	end)
+end
+function km_drawTable(tb, isActive)
+	local x = tb.x
+	local y = tb.y
+	local sb = tb.sb
+	LoadPicEnhance(73, x - 32, y - 8, tb.w + 64, tb.h + 16)
+	LoadPicEnhance(74, x, y, tb.w)
+	for i, v in ipairs(tb.head) do
+		local str = v.str
+		if MOUSE.CLICK(x, y, x + v.w, y + 30) then
+			PlayWavE(0)
+			if tb.sortKey == v.sortKey then
+				tb.sortKey = -v.sortKey
+			else
+				tb.sortKey = v.sortKey
+			end
+			km_sortStable(tb.body, tb.sortKey)
+		elseif MOUSE.IN(x, y, x + v.w, y + 30) then
+			str = '[Yellow]' .. str
+		end
+		DrawStringEnhance(x + v.w * 0.5, y + 14, str, C_BLACK, CC.FontSize, 0.5, 0.5)
+		x = x + v.w
+	end
+	x = tb.x
+	local w = tb.w
+	if sb.show then
+		w = w - sb.bw - 4
+	end
+	local cur = 0
+	if MOUSE.IN(x, y + tb.rowHight, x + w, y + tb.h) then
+		cur = tb.top + math.floor((MOUSE.y - y) / tb.rowHight) - 1
+		if cur <= tb.rowNum then
+			if MOUSE.CLICK(x, y + tb.rowHight * (cur - tb.top + 1), x + w, y + tb.rowHight * (cur - tb.top + 2)) then
+				local row = tb.body[cur]
+				local isSel = false
+				for i, v in ipairs(tb.sel) do
+					if v == row[0] then
+						isSel = true
+						table.remove(tb.sel, i)
+						PlayWavE(1)
+						break
+					end
+				end
+				if not isSel then
+					if tb.quorum > 1 then
+						if #tb.sel < tb.quorum then
+							table.insert(tb.sel, row[0])
+							PlayWavE(0)
+						else
+							PlayWavE(2)
+						end
+					elseif tb.quorum == 1 then
+						tb.sel[1] = row[0]
+						PlayWavE(0)
+					else
+						PlayWavE(0)
+					end
+				end
+			end
+		end
+	end
+	for i = 1, math.min(tb.rowShowNum, tb.rowNum - tb.top + 1) do
+		y = y + tb.rowHight
+		local idx = tb.top + i - 1
+		local row = tb.body[idx]
+		local isSel = false
+		for ii, v in ipairs(tb.sel) do
+			if v == row[0] then
+				isSel = true
+				break
+			end
+		end
+		if idx == cur then
+			if isSel then
+				LoadPicEnhance(71, x, y - 5, w)
+			else
+				LoadPicEnhance(70, x, y - 5, w)
+			end
+		end
+		LoadPicEnhance(72, x, y + 27, w)
+		local x1 = x
+		for j = 1, #row do
+			local v = row[j]
+			local str = tostring(v)
+			if isSel then
+				str = '[Red]' .. str
+			end
+			local colW = tb.head[j].w
+			local xoff = tb.head[j].xoff
+			DrawStringEnhance(x1 + colW * xoff, y + 16, str, M_White, CC.FontSizeM, xoff, 0.5)
+			x1 = x1 + colW
+		end
+	end
+	--ScrollBar
+	if sb.show then
+		x = x + w
+		y = tb.y + tb.rowHight
+		lib.FillColor(x + 6, y, x + sb.bw - 6, y + sb.h, M_Gray)
+		local x1, y1 = x, y + sb.v * (sb.h - sb.bh)
+		local x2, y2 = x1 + sb.bw, y1 + sb.bh
+		local col = 0xd8d6ca
+		if sb.hold then
+			col = M_White
+		elseif MOUSE.IN(x1, y1, x2, y2) then
+			col = C_WHITE
+		end
+		if sb.hold then
+			if MOUSE.status == 'HOLD' then
+				sb.v = limitX(sb.old + (MOUSE.y - MOUSE.hy) / (sb.h - sb.bh), 0, 1)
+				tb.top = 1 + math.floor((tb.rowNum - tb.rowShowNum) * sb.v + 0.5)
+			else
+				sb.hold = false
+			end
+		else
+			if MOUSE.HOLD(x1, y1, x2, y2) then
+				sb.old = sb.v
+				sb.hold = true
+			end
+		end
+		lib.FillColor(x1 - 1, y1 - 1, x2 + 1, y2 + 1, 0x5e5c57)
+		lib.FillColor(x1, y1, x2, y2, col)
+	end
+end
 function km_confirm()
 	local ui = KM.UI
 	ui.talk.show = true
@@ -412,6 +624,9 @@ function km_initUI()
 			width = 0,
 			height = 0,
 			item = {},
+		},
+		table = {	-- 多功能表格
+			show = false,
 		},
 		confirm = {	-- 是/否 确认
 			show = false,
@@ -604,7 +819,7 @@ function km_drawMenu(menu, isActive)
 			end
 		else
 			if MOUSE.CLICK(v.x1, v.y1, v.x2, v.y2) then
-				PlayWavE(1)
+				PlayWavE(2)
 			end
 		end
 	end
@@ -628,7 +843,7 @@ function km_drawMenu2(menu, isActive)
 						KM.event.name = v.name or '选择结束'
 						KM.event.selection = i
 					else
-						PlayWavE(1)
+						PlayWavE(2)
 					end
 				elseif MOUSE.IN(x1, y - CC.FontSize / 2, x2, y + CC.FontSize / 2) then
 					menu.current = i
@@ -1028,6 +1243,7 @@ function km_initStaticData()
 	end
 	CC.Font[' '] = 13624
 	KM.role = km_loadTXT(CC.RoleTxtFilename)
+	KM.trick = km_loadTXT(CC.TrickTxtFilename)
 	KM.city = km_loadTXT(CC.CityTxtFilename)
 	KM.unit = km_loadTXT(CC.UnitTxtFilename)
 	KM.terrain = km_loadTXT(CC.TerrainTxtFilename)

@@ -601,6 +601,19 @@ end
 function km_hideWarMenu()
 	KM.UI.menu2.show = false
 end
+function km_showTrickTable()
+	local head = {
+		{str = '策略', w = 96, sortKey = 0},
+		{str = '消耗', w = 48},
+		{str = '类型', w = 96},
+		{str = '说明', w = 256, xoff = 0},
+	}
+	local body = {}
+	for i, v in ipairs(KM.trick) do
+		table.insert(body, { v['名称'], v['消耗'], v['类型'], v['说明'] })
+	end
+	km_table(head, body, '策略', 1, 0)
+end
 function km_loadTMX(id)
 	-- local xml = newParser()
 	local file = string.format(CC.TmxFilename, id)

@@ -139,6 +139,7 @@ function SetGlobalConst()
 	CC.SnrFilename = CONFIG.SnrPath .. "SNR%d-%d.txt"
 	CC.FontTxtFilename = CONFIG.DataPath .. "font.tsv"
 	CC.RoleTxtFilename = CONFIG.DataPath .. "role.tsv"
+	CC.TrickTxtFilename = CONFIG.DataPath .. "trick.tsv"
 	CC.CityTxtFilename = CONFIG.DataPath .. "city.tsv"
 	CC.UnitTxtFilename = CONFIG.DataPath .. "unit.tsv"
 	CC.TerrainTxtFilename = CONFIG.DataPath .. "terrain.tsv"
