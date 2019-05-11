@@ -104,6 +104,9 @@ function km_view()
 	local ui = KM.UI
 	KM.event.category = 0
 	getkey()
+	if MOUSE.EXIT() then
+		os.exit()
+	end
 	if ui.frameT >= 63 then
 		ui.frameT = 0
 	else
@@ -389,8 +392,16 @@ function km_table(tHead, tBody, title, quorum, sortKey)
 		sb.bh = math.ceil(limitX(sb.bh, 36, sb.h * 0.75))
 		sb.show = true
 	end
-
 	KM.UI.table = tb
+	--confirm
+	KM.UI.confirm.x = tb.x + tb.w / 2
+	KM.UI.confirm.y = tb.y + tb.h
+	if quorum > 0 then
+		KM.UI.confirm.text = {'决定', '返回'}
+	else
+		KM.UI.confirm.text = {'关闭'}
+	end
+	KM.UI.confirm.show = true
 end
 function km_sortStable(tb, sortKey)
 	table.sort(tb, function(a, b)
@@ -532,6 +543,9 @@ end
 function km_confirm()
 	local ui = KM.UI
 	ui.talk.show = true
+	ui.confirm.x = CC.ScreenW2
+	ui.confirm.y = CC.ScreenH - 81
+	ui.confirm.text = {'是', '否'}
 	ui.confirm.show = true
 	km_waitEvent('确认结束')
 	ui.confirm.show = false
@@ -630,6 +644,9 @@ function km_initUI()
 		},
 		confirm = {	-- 是/否 确认
 			show = false,
+			x = CC.ScreenW2,
+			y = CC.ScreenH - 81,
+			text = {},
 		},
 		alert = {
 			show = false,
@@ -743,13 +760,19 @@ function km_drawTalk(head, name, text, isActive)
 	end
 end
 function km_drawConfirm(isActive)
-	local x = CC.ScreenW2 - 108
-	local y = CC.ScreenH - 81
-	lib.PicLoadCache(4, 11 * 2, CC.ScreenW2 - 108, y, 1)
+	local ui = KM.UI.confirm
+	local x = ui.x
+	local y = ui.y
+	local n = #ui.text
+	if n == 1 then
+		lib.PicLoadCache(4, 10 * 2, x - 84, y, 1)
+	elseif n == 2 then
+		lib.PicLoadCache(4, 11 * 2, x - 108, y, 1)
+	end
 	y = y + 8
-	x = x + 40
-	local pic = 12
-	for i = 0, 1 do
+	x = x + 2 - 35 * n
+	for i, v in ipairs(ui.text) do
+		local pic = CC.ConfirmPic[v] or 27
 		if MOUSE.CLICK(x, y, x + 66, y + 44) then
 			lib.PicLoadCache(4, (pic + 2) * 2, x, y, 1)
 			KM.event.name = '确认结束'
@@ -761,7 +784,6 @@ function km_drawConfirm(isActive)
 		else
 			lib.PicLoadCache(4, pic * 2, x, y, 1)
 		end
-		pic = 15
 		x = x + 70
 	end
 end
