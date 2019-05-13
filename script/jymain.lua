@@ -27,7 +27,7 @@ function SetGlobal()   --设置游戏内部使用的全程变量
 	JY.City={};
 	JY.ConnectionNum=0;
 	JY.Connection={};
-  JY.CityToCity = {};
+	JY.CityToCity = {};
 	JY.ItemNum=0;      --道具个数
 	JY.Item={};        --道具数据
 	JY.TitleNum=0;      --策略个数
@@ -93,6 +93,7 @@ function JY_Main_sub()        --真正的游戏主程序入口
 	-- dofile(CONFIG.ScriptPath .. "LLK_III.lua");
 	-- dofile(CONFIG.ScriptPath .. "AI.lua");
 	-- dofile(CONFIG.ScriptPath .. "Sha.lua");
+	dofile(CONFIG.ScriptPath .. "node.lua");
 	dofile(CONFIG.ScriptPath .. "km.lua");
 	dofile(CONFIG.ScriptPath .. "km_scenario.lua");
 	dofile(CONFIG.ScriptPath .. "km_battle.lua");

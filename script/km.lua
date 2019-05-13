@@ -78,11 +78,34 @@ function km_mian()
     local co_gameLogic = coroutine.create(km_gameLogic)
     local co_uiLogic = coroutine.create(km_uiLogic)
 	local t1
+	local GUI = Node:new({
+		name = 'GUI',
+		x = CC.ScreenW2,
+		y = CC.ScreenH2,
+	})
+	local c1 = Node:new()
+	c1.name = 'background'
+	c1.img = 11
+	GUI:addChild(c1)
+	local c2 = Node:new()
+	c2.name = 'yes'
+	c2.img = 12
+	c2.x = -35
+	c1:addChild(c2)
+	local c3 = c2:new()
+	c3.name = 'no'
+	c3.img = 15
+	c3.x = 35
+	GUI:getChild('background'):addChild(c3)
+	c1 = nil
+	c2 = nil
+	c3 = nil
 	-- CC.FrameNum = 20
 	local alive, msg
     while true do
         t1 = lib.GetTime()
 		km_view()
+		GUI:redraw()
         ShowScreen()
 		alive, msg = coroutine.resume(co_gameLogic)
 		if not alive then
